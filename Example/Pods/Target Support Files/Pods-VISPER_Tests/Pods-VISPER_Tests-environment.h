@@ -6,6 +6,12 @@
 // project.
 
 
+// JLRoutes
+#define COCOAPODS_POD_AVAILABLE_JLRoutes
+#define COCOAPODS_VERSION_MAJOR_JLRoutes 1
+#define COCOAPODS_VERSION_MINOR_JLRoutes 5
+#define COCOAPODS_VERSION_PATCH_JLRoutes 2
+
 // Kiwi
 #define COCOAPODS_POD_AVAILABLE_Kiwi
 #define COCOAPODS_VERSION_MAJOR_Kiwi 2

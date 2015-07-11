@@ -10,7 +10,7 @@
 Pod::Spec.new do |s|
   s.name             = "VISPER"
   s.version          = "0.1.0"
-  s.summary          = "A short description of VISPER."
+  s.summary          = "A iOS library supporting the VIPER-Architecture for iOS-Apps"
   s.description      = <<-DESC
                        An optional longer description of VISPER
 
@@ -18,11 +18,10 @@ Pod::Spec.new do |s|
                        * Don't worry about the indent, we strip it!
                        DESC
   s.homepage         = "https://github.com/<GITHUB_USERNAME>/VISPER"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Jan Bartel" => "barteljan@yahoo.de" }
   s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/VISPER.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'https://twitter.com/janbartel'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
@@ -34,5 +33,5 @@ Pod::Spec.new do |s|
 
   s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'JLRoutes', '~> 1.5.2'
 end

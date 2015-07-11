@@ -1,7 +1,7 @@
 {
   "name": "VISPER",
   "version": "0.1.0",
-  "summary": "A short description of VISPER.",
+  "summary": "A iOS library supporting the VIPER-Architecture for iOS-Apps",
   "description": "                       An optional longer description of VISPER\n\n                       * Markdown format.\n                       * Don't worry about the indent, we strip it!\n",
   "homepage": "https://github.com/<GITHUB_USERNAME>/VISPER",
   "license": "MIT",
@@ -12,6 +12,7 @@
     "git": "https://github.com/<GITHUB_USERNAME>/VISPER.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://twitter.com/janbartel",
   "platforms": {
     "ios": "7.0"
   },
@@ -23,5 +24,10 @@
     ]
   },
   "public_header_files": "Pod/Classes/**/*.h",
-  "frameworks": "UIKit"
+  "frameworks": "UIKit",
+  "dependencies": {
+    "JLRoutes": [
+      "~> 1.5.2"
+    ]
+  }
 }

@@ -1,6 +1,8 @@
 #import <UIKit/UIKit.h>
 
 #import "IVISPERViewController.h"
+#import "IVISPERViewControllerServiceProvider.h"
+#import "VISPERViewControllerServiceProvider.h"
 #import "VISPERViewController.h"
 #import "IVISPERViewEvent.h"
 #import "VISPERViewEvent.h"

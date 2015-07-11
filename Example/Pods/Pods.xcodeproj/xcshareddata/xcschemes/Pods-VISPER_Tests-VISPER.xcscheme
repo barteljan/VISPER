@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D0807CBFADE5BF005D32D4B2"
+               BlueprintIdentifier = "D94388BF2A2CECBB58AC27FB"
                BuildableName = "VISPER.framework"
                BlueprintName = "Pods-VISPER_Tests-VISPER"
                ReferencedContainer = "container:Pods.xcodeproj">
