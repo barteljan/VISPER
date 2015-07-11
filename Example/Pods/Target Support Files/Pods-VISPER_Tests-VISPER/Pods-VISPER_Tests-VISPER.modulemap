@@ -1,0 +1,6 @@
+framework module VISPER {
+  umbrella header "Pods-VISPER_Tests-VISPER-umbrella.h"
+
+  export *
+  module * { export * }
+}

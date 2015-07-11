@@ -1,0 +1,17 @@
+PODS:
+  - Kiwi (2.3.1)
+  - VISPER (0.1.0)
+
+DEPENDENCIES:
+  - Kiwi
+  - VISPER (from `../`)
+
+EXTERNAL SOURCES:
+  VISPER:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
+  VISPER: d89ef61a324b8adf62f01fce93d7d6aa43a66f54
+
+COCOAPODS: 0.37.2
