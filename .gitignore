@@ -1,6 +1,9 @@
 # OS X
 .DS_Store
 
+.idea/*
+Example/.idea/*
+
 # Xcode
 build/
 *.pbxuser

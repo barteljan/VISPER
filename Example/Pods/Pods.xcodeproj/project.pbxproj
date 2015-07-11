@@ -153,6 +153,9 @@
 		99DFECDBEF31D4BD915EDE14 /* KWPendingNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 754E37F19C39F7923867FAF8 /* KWPendingNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9A013F1FE1F3F487F557CD10 /* KWProbe.h in Headers */ = {isa = PBXBuildFile; fileRef = 972C23681A2E3A87EB016C8F /* KWProbe.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9A2DA32FDEF9BC658F2A6256 /* KWCallSite.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B09ED4BF99540501935446B /* KWCallSite.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A6CDC701B51572000A29FD6 /* IVISPERWireframe.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6CDC6F1B51572000A29FD6 /* IVISPERWireframe.h */; };
+		9A6CDC731B515EF000A29FD6 /* VISPERWireframe.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6CDC711B515EF000A29FD6 /* VISPERWireframe.h */; };
+		9A6CDC741B515EF000A29FD6 /* VISPERWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6CDC721B515EF000A29FD6 /* VISPERWireframe.m */; };
 		9AAA22B3C700BE66007EADB2 /* KWMock.h in Headers */ = {isa = PBXBuildFile; fileRef = B80ECD3FACEAFD3DBC7B7035 /* KWMock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9DA3A10932CFCE496BD55A7C /* KWExistVerifier.h in Headers */ = {isa = PBXBuildFile; fileRef = CD9D552B648BA45C535863B2 /* KWExistVerifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9E70B81C28BF0E034B65178C /* KWBeBetweenMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 486461414F2D610520942B6E /* KWBeBetweenMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -470,6 +473,9 @@
 		9779990DE8D5DC7381C14E62 /* KWRegisterMatchersNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KWRegisterMatchersNode.m; path = Classes/Nodes/KWRegisterMatchersNode.m; sourceTree = "<group>"; };
 		992B2980CA6CBFB8F2ABDEFD /* NSObject+KiwiVerifierAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+KiwiVerifierAdditions.m"; path = "Classes/Core/NSObject+KiwiVerifierAdditions.m"; sourceTree = "<group>"; };
 		9A4557A2B62A508D2202AF19 /* KWHaveMatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KWHaveMatcher.m; path = Classes/Matchers/KWHaveMatcher.m; sourceTree = "<group>"; };
+		9A6CDC6F1B51572000A29FD6 /* IVISPERWireframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IVISPERWireframe.h; path = Wireframe/IVISPERWireframe.h; sourceTree = "<group>"; };
+		9A6CDC711B515EF000A29FD6 /* VISPERWireframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VISPERWireframe.h; path = Wireframe/VISPERWireframe.h; sourceTree = "<group>"; };
+		9A6CDC721B515EF000A29FD6 /* VISPERWireframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VISPERWireframe.m; path = Wireframe/VISPERWireframe.m; sourceTree = "<group>"; };
 		9A97D0865AE4D62874AF92EE /* KWInequalityMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KWInequalityMatcher.h; path = Classes/Matchers/KWInequalityMatcher.h; sourceTree = "<group>"; };
 		9B09ED4BF99540501935446B /* KWCallSite.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KWCallSite.h; path = Classes/Core/KWCallSite.h; sourceTree = "<group>"; };
 		9B782C3BCA64B58765AB6799 /* NSProxy+KiwiVerifierAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSProxy+KiwiVerifierAdditions.m"; path = "Classes/Core/NSProxy+KiwiVerifierAdditions.m"; sourceTree = "<group>"; };
@@ -934,6 +940,7 @@
 				00590E8F6A24AD692EEA59DB /* Controller */,
 				349ABAE75690CCF370FF1516 /* Events */,
 				7648135D168D93E09AA2E7B4 /* Presenter */,
+				9A6CDC6E1B51565C00A29FD6 /* Wireframe */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1051,6 +1058,16 @@
 			path = "Example/Pods/Target Support Files/Pods-VISPER_Example-VISPER";
 			sourceTree = "<group>";
 		};
+		9A6CDC6E1B51565C00A29FD6 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				9A6CDC6F1B51572000A29FD6 /* IVISPERWireframe.h */,
+				9A6CDC711B515EF000A29FD6 /* VISPERWireframe.h */,
+				9A6CDC721B515EF000A29FD6 /* VISPERWireframe.m */,
+			);
+			name = Wireframe;
+			sourceTree = "<group>";
+		};
 		A5561310C1AC1187F6189086 = {
 			isa = PBXGroup;
 			children = (
@@ -1135,6 +1152,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A6CDC701B51572000A29FD6 /* IVISPERWireframe.h in Headers */,
+				9A6CDC731B515EF000A29FD6 /* VISPERWireframe.h in Headers */,
 				E834AE8E6E94ED851D621E71 /* Pods-VISPER_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1615,6 +1634,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AA68EA6CFD44F376836590A /* Pods-VISPER_Example-dummy.m in Sources */,
+				9A6CDC741B515EF000A29FD6 /* VISPERWireframe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
