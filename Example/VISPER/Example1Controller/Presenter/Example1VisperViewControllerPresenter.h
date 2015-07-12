@@ -1,5 +1,5 @@
 //
-//  ExampleVisperViewControllerPresenter.h
+//  Example1VisperViewControllerPresenter.h
 //  VISPER
 //
 //  Created by Bartel on 11.07.15.
@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <VISPER/VISPERViewControllerPresenter.h>
 
-@interface ExampleVisperViewControllerPresenter : VISPERViewControllerPresenter
+@interface Example1VisperViewControllerPresenter : VISPERViewControllerPresenter
 
 @end

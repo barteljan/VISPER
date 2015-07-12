@@ -1,19 +1,19 @@
 //
-//  ExampleVisperViewController.m
+//  Example1VisperViewController.m
 //  VISPER
 //
 //  Created by Bartel on 10.07.15.
 //  Copyright (c) 2015 Jan Bartel. All rights reserved.
 //
 
-#import "ExampleVisperViewController.h"
+#import "Example1VisperViewController.h"
 #import "VISPERViewEvent.h"
 
-@interface ExampleVisperViewController ()
+@interface Example1VisperViewController ()
 
 @end
 
-@implementation ExampleVisperViewController
+@implementation Example1VisperViewController
 @dynamic presenter;
 
 - (void)viewDidLoad {

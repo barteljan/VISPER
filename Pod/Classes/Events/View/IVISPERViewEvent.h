@@ -7,9 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IVISPEREvent.h"
 
-@protocol IVISPERViewEvent <NSObject>
-    -(NSString*)name;
-    -(id)sender;
-    -(NSDictionary *)info;
+@protocol IVISPERViewEvent <IVISPEREvent>
 @end

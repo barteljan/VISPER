@@ -1,14 +1,15 @@
 //
-//  ExampleVisperViewControllerPresenter.m
+//  Example1VisperViewControllerPresenter.m
 //  VISPER
 //
 //  Created by Bartel on 11.07.15.
 //  Copyright (c) 2015 Jan Bartel. All rights reserved.
 //
 
-#import "ExampleVisperViewControllerPresenter.h"
+#import "Example1VisperViewControllerPresenter.h"
+#import <VISPER/IVISPERViewEvent.h>
 
-@implementation ExampleVisperViewControllerPresenter
+@implementation Example1VisperViewControllerPresenter
 
 -(void)renderView:(UIView*)view
    withController:(UIViewController*)viewController
@@ -27,7 +28,7 @@
 -(void)nextButtonPressed:(id)sender
                     view:(UIView*)view
           viewController:(UIViewController*)viewController{
-    NSLog(@"Next Button Pressed");
+    [self.wireframe routeURL:[NSURL URLWithString:@"/example2"]];
 }
 
 @end

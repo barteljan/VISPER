@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
@@ -13,6 +14,7 @@
         <customObject id="bYg-Ix-Cfg" userLabel="App Delegate" customClass="AppDelegate">
             <connections>
                 <outlet property="window" destination="Na2-4i-xf1" id="dKf-QP-AH2"/>
+                <outlet property="wireframe" destination="7Pk-aq-aF5" id="sO2-Jr-xdt"/>
             </connections>
         </customObject>
         <window opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Na2-4i-xf1">
@@ -29,10 +31,23 @@
                 <autoresizingMask key="autoresizingMask"/>
             </navigationBar>
             <viewControllers>
-                <viewController title="Example" nibName="ExampleVisperViewController" id="mFB-eO-yB5" customClass="ExampleVisperViewController">
-                    <navigationItem key="navigationItem" title="Example" id="FnD-ci-9Wv"/>
+                <viewController title="Example" nibName="Example1VisperViewController" id="mFB-eO-yB5" customClass="Example1VisperViewController">
+                    <navigationItem key="navigationItem" title="Example1VisperVC" id="FnD-ci-9Wv"/>
+                    <connections>
+                        <outlet property="presenter" destination="Y87-Tc-LGH" id="Apz-0V-U1r"/>
+                    </connections>
                 </viewController>
             </viewControllers>
         </navigationController>
+        <customObject id="7Pk-aq-aF5" customClass="VISPERWireframe">
+            <connections>
+                <outlet property="navigationController" destination="CIG-O0-I37" id="zL1-hO-Ewc"/>
+            </connections>
+        </customObject>
+        <customObject id="Y87-Tc-LGH" customClass="Example1VisperViewControllerPresenter">
+            <connections>
+                <outlet property="wireframe" destination="7Pk-aq-aF5" id="yXe-WP-QDz"/>
+            </connections>
+        </customObject>
     </objects>
 </document>

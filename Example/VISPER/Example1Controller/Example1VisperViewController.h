@@ -1,5 +1,5 @@
 //
-//  ExampleVisperViewController.h
+//  Example1VisperViewController.h
 //  VISPER
 //
 //  Created by Bartel on 10.07.15.
@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <VISPER/VISPERViewController.h>
-#import <VISPER/VISPERViewPresenter.h>
 
-@interface ExampleVisperViewController : VISPERViewController<IVISPERViewController>
+@interface Example1VisperViewController : VISPERViewController<IVISPERViewController>
 - (IBAction)nextButtonPressed:(id)sender;
 
 @end

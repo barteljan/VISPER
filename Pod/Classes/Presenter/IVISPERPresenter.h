@@ -9,8 +9,12 @@
 @import Foundation;
 @import UIKit;
 #import "IVISPERViewEvent.h"
+#import "IVISPERWireframe.h"
 
 @protocol IVISPERPresenter <NSObject>
+
+-(NSObject<IVISPERWireframe>*)wireframe;
+-(void)setWireframe:(NSObject<IVISPERWireframe>*)wireframe;
 
 -(void)renderView:(UIView*)view
    withController:(UIViewController*)viewController

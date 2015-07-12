@@ -20,7 +20,7 @@
 /**
  * Navigation controller of the wireframe
  **/
-@property(nonatomic)UINavigationController *navigationController;
+@property(nonatomic) IBOutlet UINavigationController *navigationController;
 
 /**
  * Called any time routeURL returns NO. Respects shouldFallbackToGlobalRoutes.

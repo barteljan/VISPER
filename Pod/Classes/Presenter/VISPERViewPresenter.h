@@ -14,6 +14,8 @@
 
 @interface VISPERViewPresenter : NSObject<IVISPERPresenter>
 
+@property(nonatomic) IBOutlet NSObject<IVISPERWireframe> *wireframe;
+
 -(void)renderView:(UIView*)view
    withController:(UIViewController*)viewController
           onEvent:(NSObject<IVISPERViewEvent>*)event;

@@ -8,7 +8,8 @@
 
 
 #import "AppDelegate.h"
-#import "ExampleVisperViewController.h"
+#import "Example1VisperViewController.h"
+#import "Example2VisperViewController.h"
 
 
 @interface AppDelegate ()
@@ -22,8 +23,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    //self.window
-    //    .rootViewController = [[ExampleVisperViewController alloc] //initWithNibName:@"ExampleVisperViewController" bundle:nil];
+    Example2VisperViewController *example2VC = [[Example2VisperViewController alloc] initWithNibName:@"Example2VisperViewController" bundle:nil];
+    
+    [self.wireframe addRoute:@"/example2"  pushedViewController:example2VC];
     
     return YES;
 }

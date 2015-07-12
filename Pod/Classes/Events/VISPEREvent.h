@@ -1,15 +1,15 @@
 //
-//  VISPERViewEvent.h
-//  VISPER
+//  VISPEREvent.h
+//  Pods
 //
-//  Created by Bartel on 10.07.15.
-//  Copyright (c) 2015 Jan Bartel. All rights reserved.
+//  Created by Bartel on 12.07.15.
+//
 //
 
 #import <Foundation/Foundation.h>
-#import "IVISPERViewEvent.h"
+#import "IVISPEREvent.h"
 
-@interface VISPERViewEvent : NSObject<IVISPERViewEvent>
+@interface VISPEREvent : NSObject<IVISPEREvent>
 
 -(instancetype)initWithName:(NSString*)name
                      sender:(id)sender;
