@@ -10,17 +10,16 @@
 Pod::Spec.new do |s|
   s.name             = "VISPER"
   s.version          = "0.1.0"
-  s.summary          = "A iOS library supporting the VIPER-Architecture for iOS-Apps"
+  s.summary          = "A iOS library to support the VIPER architecture in iOS-Apps"
   s.description      = <<-DESC
-                       An optional longer description of VISPER
+                       A iOS library to support the VIPER architecture in iOS-Apps.
 
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                       Contains some Controller and Presenter Base Classes and a Wireframe implementation using JLRoutes
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/VISPER"
+  s.homepage         = "https://github.com/barteljan/VISPER"
   s.license          = 'MIT'
   s.author           = { "Jan Bartel" => "barteljan@yahoo.de" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/VISPER.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/barteljan/VISPER.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/janbartel'
 
   s.platform     = :ios, '7.0'

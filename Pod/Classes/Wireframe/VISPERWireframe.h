@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <JLRoutes/JLRoutes.h>
 #import "IVISPERWireframe.h"
+#import "IVISPERWireframeServiceProvider.h"
 
 @interface VISPERWireframe : NSObject<IVISPERWireframe>
 
@@ -16,6 +17,11 @@
  * JLRoutes object for routing
  **/
 @property(nonatomic)JLRoutes *routes;
+
+/**
+ *  Service Provider for getting controller instances an routing blocks at runtime
+ **/
+@property(nonatomic)IBOutlet NSObject<IVISPERWireframeServiceProvider>*serviceProvider;
 
 /**
  * Navigation controller of the wireframe
@@ -30,9 +36,23 @@
 /**
  * init functions
  **/
+
+-(instancetype)initWithServiceProvider:(NSObject<IVISPERWireframeServiceProvider>*)serviceProvider;
 -(instancetype)initWithRoutes:(JLRoutes*)routes;
--(instancetype)initWithRoutes:(JLRoutes*)routes navigationController:(UINavigationController*)navigationController;
 -(instancetype)initWithNavigationController:(UINavigationController*)navigationController;
+
+-(instancetype)initWithRoutes:(JLRoutes*)routes
+              serviceProvider:(NSObject<IVISPERWireframeServiceProvider>*)serviceProvider;
+
+-(instancetype)initWithRoutes:(JLRoutes*)routes
+         navigationController:(UINavigationController*)navigationController;
+
+-(instancetype)initWithRoutes:(JLRoutes*)routes
+         navigationController:(UINavigationController*)navigationController
+              serviceProvider:(NSObject<IVISPERWireframeServiceProvider>*)serviceProvider;
+
+-(instancetype)initWithNavigationController:(UINavigationController*)navigationController
+                            serviceProvider:(NSObject<IVISPERWireframeServiceProvider>*)serviceProvider;
 
 /**
  * Returns the global routing namespace
@@ -63,11 +83,22 @@
 - (void)addRoute:(NSString *)routePattern handler:(BOOL (^)(NSDictionary *parameters))handlerBlock;
 
 /**
+ * add route for handling a block (block instance will be discovered at runtime 
+ * by the service provider)
+ */
+- (void)addRoute:(NSString *)routePattern;
+
+/**
  * Registers a routePattern in the global scheme namespace with a UIViewController to push on the wireframes navigation controller
  * when the route pattern is matched by a URL.
  **/
 - (void)addRoute:(NSString *)routePattern priority:(NSUInteger)priority pushedViewController:(UIViewController*)viewController;
 - (void)addRoute:(NSString *)routePattern pushedViewController:(UIViewController*)viewController;
+
+/**
+ * add route for pushing a controller (instance will be discovered at runtime by the service provider)
+ */
+- (void)addRouteForPushedController:(NSString*)routePattern;
 
 /**
  * Registers a routePattern in the global scheme namespace with a modal UIViewController to be shown
@@ -77,11 +108,22 @@
 - (void)addRoute:(NSString *)routePattern modalViewController:(UIViewController*)viewController;
 
 /**
+ * add route for a modal controller (instance will be discovered at runtime by the service provider)
+ */
+- (void)addRouteForModalController:(NSString*)routePattern;
+
+/**
  * Registers a routePattern in the global scheme namespace with a UIViewController to be shown
  * when the route pattern is matched by a URL.
  **/
 - (void)addRoute:(NSString *)routePattern priority:(NSUInteger)priority viewController:(UIViewController*)viewController;
 - (void)addRoute:(NSString *)routePattern viewController:(UIViewController*)viewController;
+
+/**
+ * add route for a controller (instance will be discovered at runtime by the service provider)
+ */
+- (void)addControllerRoute:(NSString *)routePattern;
+
 
 /**
  * Routes a URL, calling handler blocks (for patterns that match URL) until

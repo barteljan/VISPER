@@ -22,21 +22,38 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2j-zG-wh5">
-                    <rect key="frame" x="278" y="545" width="44" height="30"/>
-                    <state key="normal" title="Weiter">
+                    <rect key="frame" x="5" y="545" width="150" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="aaR-Rx-Dl1"/>
+                    </constraints>
+                    <state key="normal" title="Example 2">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="nextButtonPressed:" destination="-1" eventType="touchUpInside" id="STk-H2-hwh"/>
+                        <action selector="example2ButtonPressed:" destination="-1" eventType="touchUpInside" id="STk-H2-hwh"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd4-Yw-iRi">
+                    <rect key="frame" x="445" y="545" width="150" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="vwL-hd-H7k"/>
+                    </constraints>
+                    <state key="normal" title="Example 3">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="example3ButtonPressed:" destination="-1" eventType="touchUpInside" id="yeh-IQ-0FU"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="p2j-zG-wh5" secondAttribute="centerX" id="4HD-iT-Wig"/>
+                <constraint firstItem="p2j-zG-wh5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="5" id="0cd-5I-1K0"/>
                 <constraint firstAttribute="centerY" secondItem="q1C-Tk-rrl" secondAttribute="centerY" id="ALV-An-fem"/>
                 <constraint firstAttribute="centerX" secondItem="q1C-Tk-rrl" secondAttribute="centerX" id="BJZ-V4-AVN"/>
+                <constraint firstAttribute="trailing" secondItem="dd4-Yw-iRi" secondAttribute="trailing" constant="5" id="C2F-eg-jrg"/>
                 <constraint firstAttribute="bottom" secondItem="p2j-zG-wh5" secondAttribute="bottom" constant="25" id="vNc-eK-ccb"/>
+                <constraint firstAttribute="bottom" secondItem="dd4-Yw-iRi" secondAttribute="bottom" constant="25" id="wgN-yD-hlD"/>
             </constraints>
             <point key="canvasLocation" x="112" y="287"/>
         </view>

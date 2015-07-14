@@ -10,6 +10,6 @@
 #import <VISPER/VISPERViewController.h>
 
 @interface Example1VisperViewController : VISPERViewController<IVISPERViewController>
-- (IBAction)nextButtonPressed:(id)sender;
+- (IBAction)example2ButtonPressed:(id)sender;
 
 @end

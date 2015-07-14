@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "Example1VisperViewController.h"
 #import "Example2VisperViewController.h"
+#import "Example3VisperViewController.h"
 
 
 @interface AppDelegate ()
@@ -18,14 +19,13 @@
 
 @implementation AppDelegate
 
-
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     Example2VisperViewController *example2VC = [[Example2VisperViewController alloc] initWithNibName:@"Example2VisperViewController" bundle:nil];
+    self.wireframe.serviceProvider = self;
     
     [self.wireframe addRoute:@"/example2"  pushedViewController:example2VC];
+    [self.wireframe addRouteForPushedController:@"/example3"];
     
     return YES;
 }
@@ -52,6 +52,19 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(UIViewController*)controllerForRoute:(NSString*)routePattern
+                        withParameters:(NSDictionary*)parameters{
+    if ([routePattern isEqualToString:@"/example3"]) {
+        Example3VisperViewController *viewController =
+            [[Example3VisperViewController alloc] initWithNibName:@"Example3VisperViewController"
+                                                           bundle:nil];
+        viewController.presenter.wireframe = self.wireframe;
+        return viewController;
+    }
+    
+    return nil;
 }
 
 

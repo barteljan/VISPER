@@ -28,9 +28,13 @@
 
 
 
-- (IBAction)nextButtonPressed:(id)sender {
-    NSObject <IVISPERViewEvent> *event = [[VISPERViewEvent alloc] initWithName:@"nextButtonPressed" sender:sender];
+- (IBAction)example2ButtonPressed:(id)sender {
+    NSObject <IVISPERViewEvent> *event = [self.serviceProvider createEventWithName:@"example2ButtonPressed" sender:sender info:nil];
     [self sendEventToPresenter:event];
+}
 
+- (IBAction)example3ButtonPressed:(id)sender {
+    NSObject <IVISPERViewEvent> *event = [self.serviceProvider createEventWithName:@"example3ButtonPressed" sender:sender info:nil];
+    [self sendEventToPresenter:event];
 }
 @end

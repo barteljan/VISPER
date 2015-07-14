@@ -17,18 +17,29 @@
     
     [super renderView:view withController:viewController onEvent:event];
     
-    if([event.name isEqualToString:@"nextButtonPressed"]){
-        [self nextButtonPressed:event.sender
-                           view:view
-                 viewController:viewController];
+    if([event.name isEqualToString:@"example2ButtonPressed"]){
+        [self example2ButtonPressed:event.sender
+                               view:view
+                     viewController:viewController];
+    }else if([event.name isEqualToString:@"example3ButtonPressed"]){
+        [self example3ButtonPressed:event.sender
+                               view:view
+                     viewController:viewController];
     }
 }
 
 
--(void)nextButtonPressed:(id)sender
-                    view:(UIView*)view
-          viewController:(UIViewController*)viewController{
+-(void)example2ButtonPressed:(id)sender
+                        view:(UIView *)view
+              viewController:(UIViewController*)viewController{
     [self.wireframe routeURL:[NSURL URLWithString:@"/example2"]];
+}
+
+
+-(void)example3ButtonPressed:(id)sender
+                        view:(UIView *)view
+              viewController:(UIViewController*)viewController{
+    [self.wireframe routeURL:[NSURL URLWithString:@"/example3"]];
 }
 
 @end

@@ -15,6 +15,7 @@
 #import "VISPERViewControllerPresenter.h"
 #import "VISPERViewPresenter.h"
 #import "IVISPERWireframe.h"
+#import "IVISPERWireframeServiceProvider.h"
 #import "VISPERWireframe.h"
 
 FOUNDATION_EXPORT double VISPERVersionNumber;
