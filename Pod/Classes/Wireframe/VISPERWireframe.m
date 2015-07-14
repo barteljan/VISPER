@@ -174,7 +174,7 @@
                           UIViewController *viewController = [wireframe.serviceProvider controllerForRoute:routePattern
                                                                                             withParameters:parameters];
                           if(viewController){
-                              return [self showViewControllerBlockForController:viewController](parameters);
+                              return [wireframe showViewControllerBlockForController:viewController](parameters);
                           }
                       }
                       return NO;
