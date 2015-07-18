@@ -10,12 +10,16 @@
 #import <UIKit/UIKit.h>
 #import "IVISPERWireframe.h"
 #import <VISPER/IVISPERWireframeViewControllerServiceProvider.h>
+#import <VISPER/IVISPERWireframeRoutingOptionsServiceProvider.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate,
                                       IVISPERWireframeViewControllerServiceProvider,
                                       IVISPERWireframeRoutingOptionsServiceProvider>
 
 @property (strong, nonatomic) IBOutlet UIWindow *window;
-@property (strong,nonatomic) IBOutlet NSObject<IVISPERWireframe> *wireframe;
+@property (strong, nonatomic) IBOutlet UINavigationController *navigationController;
+@property (strong, nonatomic) IBOutlet NSObject<IVISPERWireframe> *wireframe;
+
+
 
 @end

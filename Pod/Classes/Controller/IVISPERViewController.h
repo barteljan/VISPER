@@ -13,6 +13,5 @@
 
 @protocol IVISPERViewController <NSObject>
 
--(NSObject<IVISPERPresenter>*)presenter;
 
 @end

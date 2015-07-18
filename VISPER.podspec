@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "VISPER"
-  s.version          = "0.1.1"
+  s.version          = "0.1.2"
   s.summary          = "A iOS library to support the VIPER architecture in iOS-Apps"
   s.description      = <<-DESC
                        A iOS library to support the VIPER architecture in iOS-Apps.
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/barteljan/VISPER.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/janbartel'
 
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '8.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'

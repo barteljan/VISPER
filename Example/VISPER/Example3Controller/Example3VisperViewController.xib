@@ -7,7 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Example3VisperViewController">
             <connections>
-                <outlet property="presenter" destination="haw-m0-aF6" id="6Zn-KG-ywm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,6 +20,9 @@
                     <state key="normal" title="Close Example3VC">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="closeViewController:" destination="-1" eventType="touchUpInside" id="mOV-3E-HYV"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -30,6 +32,5 @@
             </constraints>
             <point key="canvasLocation" x="269" y="337"/>
         </view>
-        <customObject id="haw-m0-aF6" customClass="Example3VisperViewControllerPresenter"/>
     </objects>
 </document>

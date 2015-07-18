@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <VISPER/VISPERViewController.h>
 
-@interface Example3VisperViewController : VISPERViewController
+@interface Example3VisperViewController : UIViewController
+
+- (IBAction)closeViewController:(id)sender;
 
 @end

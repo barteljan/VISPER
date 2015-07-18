@@ -16,6 +16,10 @@
 -(NSObject<IVISPERWireframe>*)wireframe;
 -(void)setWireframe:(NSObject<IVISPERWireframe>*)wireframe;
 
+-(BOOL)isResponsibleForView:(UIView*)view
+             withController:(UIViewController*)controller
+                    onEvent:(NSObject<IVISPERViewEvent> *)event;
+
 -(void)renderView:(UIView*)view
    withController:(UIViewController*)viewController
           onEvent:(NSObject<IVISPERViewEvent>*)event;

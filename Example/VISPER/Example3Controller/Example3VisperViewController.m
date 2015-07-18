@@ -7,7 +7,7 @@
 //
 
 #import "Example3VisperViewController.h"
-
+#import <VISPER/UIViewController+VISPER.h>
 @interface Example3VisperViewController ()
 
 @end
@@ -25,4 +25,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)closeViewController:(id)sender {
+    NSObject<IVISPERViewEvent>*event = [self.visperServiceProvider createEventWithName:@"shouldCloseViewController"
+                                                                                sender:self
+                                                                                  info:@{}];
+    [self notifyPresentersOfView:self.view withEvent:event];
+}
 @end

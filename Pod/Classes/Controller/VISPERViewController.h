@@ -10,13 +10,9 @@
 #import "IVISPERViewController.h"
 #import "IVISPERViewControllerServiceProvider.h"
 #import "IVISPERPresenter.h"
+#import "UIViewController+VISPER.h"
 
 @interface VISPERViewController : UIViewController<IVISPERViewController>
-
-@property (nonatomic) IBOutlet NSObject<IVISPERViewControllerServiceProvider> *serviceProvider;
-@property (nonatomic) IBOutlet NSObject<IVISPERPresenter> *presenter;
-
--(void)sendEventToPresenter:(NSObject<IVISPERViewEvent>*)event;
 
 -(instancetype)initWithServiceProvider:(NSObject<IVISPERViewControllerServiceProvider>*)serviceProvider
                              presenter:(NSObject<IVISPERPresenter>*)presenter;

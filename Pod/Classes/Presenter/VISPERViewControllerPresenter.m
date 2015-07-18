@@ -19,9 +19,6 @@
 -(void)renderView:(UIView*)view
    withController:(UIViewController*)viewController
           onEvent:(NSObject<IVISPERViewEvent>*)event{
-    [super renderView:view
-       withController:viewController
-              onEvent:event];
     
     NSDictionary *eventBlocks =
   @{

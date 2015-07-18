@@ -16,14 +16,6 @@
 
 @property(nonatomic) IBOutlet NSObject<IVISPERWireframe> *wireframe;
 
--(void)renderView:(UIView*)view
-   withController:(UIViewController*)viewController
-          onEvent:(NSObject<IVISPERViewEvent>*)event;
-
--(BOOL)isAllowedToRenderView:(UIView*)view
-                 onViewEvent:(NSObject<IVISPERViewEvent>*)event;
-
--(BOOL)isAllowedToRenderViewController:(UIViewController*)viewController
-                           onViewEvent:(NSObject<IVISPERViewEvent>*)event;
+-(instancetype)initWithWireframe:(NSObject<IVISPERWireframe>*)wireframe;
 
 @end
