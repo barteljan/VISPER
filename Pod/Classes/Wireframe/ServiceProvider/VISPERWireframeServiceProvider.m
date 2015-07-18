@@ -3,7 +3,6 @@
 //
 #import "VISPERWireframeServiceProvider.h"
 #import "VISPERRoutingOption.h"
-#import "IVISPERWireframePresentationType.h"
 #import "VISPERPresentationType.h"
 #import "VISPERPresentationTypePush.h"
 #import "VISPERPresentationTypeModal.h"

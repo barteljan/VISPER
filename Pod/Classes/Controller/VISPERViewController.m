@@ -7,9 +7,6 @@
 //
 
 #import "VISPERViewController.h"
-#import "IVISPERViewEvent.h"
-#import "VISPERViewEvent.h"
-#import "VISPERViewControllerServiceProvider.h"
 
 @interface VISPERViewController ()
 

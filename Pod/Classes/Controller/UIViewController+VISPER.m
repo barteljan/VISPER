@@ -7,8 +7,6 @@
 //
 
 #import "UIViewController+VISPER.h"
-#import "IVISPERPresenter.h"
-#import "IVISPERViewEvent.h"
 #import "VISPERViewControllerServiceProvider.h"
 
 #import <objc/runtime.h>

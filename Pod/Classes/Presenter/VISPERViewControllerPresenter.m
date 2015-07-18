@@ -160,6 +160,6 @@
         value = TRUE;
     }
     
-    return TRUE;
+    return value;
 }
 @end
