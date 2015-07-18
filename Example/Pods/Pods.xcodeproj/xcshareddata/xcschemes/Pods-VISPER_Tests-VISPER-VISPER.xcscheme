@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "387C3FA0D8116C937093C544"
+               BlueprintIdentifier = "E2971BDE3BCBB4D0FA7D7002"
                BuildableName = "VISPER.bundle"
                BlueprintName = "Pods-VISPER_Tests-VISPER-VISPER"
                ReferencedContainer = "container:Pods.xcodeproj">
