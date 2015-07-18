@@ -9,6 +9,10 @@
 @import Foundation;
 @import UIKit;
 #import "IVISPERWireframeServiceProvider.h"
+#import "IVISPERRoutingPresenter.h"
+#import "IVISPERRoutingOption.h"
+#import "IVISPERWireframeViewControllerServiceProvider.h"
+#import "IVISPERWireframeRoutingOptionsServiceProvider.h"
 
 @protocol IVISPERWireframe <NSObject>
 
@@ -24,6 +28,22 @@
  **/
 -(NSObject<IVISPERWireframeServiceProvider>*)serviceProvider;
 -(void)setServiceProvider:(NSObject<IVISPERWireframeServiceProvider>*)serviceProvider;
+
+
+/**
+ *  IVISPERWireframeViewControllerServiceProvider for providing controllers when none are given
+ */
+-(NSObject<IVISPERWireframeViewControllerServiceProvider>*)controllerServiceProvider;
+-(void)setControllerServiceProvider:(NSObject<IVISPERWireframeViewControllerServiceProvider>*)controllerServiceProvider;
+
+
+/**
+ *  IVISPERWireframeViewControllerServiceProvider for providing routing options when none are given
+ */
+-(NSObject<IVISPERWireframeRoutingOptionsServiceProvider>*)routingOptionsServiceProvider;
+-(void)setRoutingOptionsServiceProvider:(NSObject<IVISPERWireframeRoutingOptionsServiceProvider>*)routingOptionsServiceProvider;
+
+
 
 /**
  * Returns the global routing namespace
@@ -54,45 +74,30 @@
 - (void)addRoute:(NSString *)routePattern handler:(BOOL (^)(NSDictionary *parameters))handlerBlock;
 
 /**
- * add route for handling a block (block instance will be discovered at runtime)
+ * add route for handling a block (should be discovered by the controllerServiceProvider of this wireframe)
  */
 - (void)addRoute:(NSString *)routePattern;
 
-/**
- * Registers a routePattern in the global scheme namespace with a UIViewController to push on the wireframes navigation controller
- * when the route pattern is matched by a URL.
- **/
-- (void)addRoute:(NSString *)routePattern priority:(NSUInteger)priority pushedViewController:(UIViewController*)viewController;
-- (void)addRoute:(NSString *)routePattern pushedViewController:(UIViewController*)viewController;
 
 /**
- * add route for pushing a controller (instance will be discovered at runtime)
+ * add route for pushing a view controller (should be discovered by the controllerServiceProvider of this wireframe)
  */
-- (void)addRouteForPushedController:(NSString*)routePattern;
+- (void)addRoute:(NSString *)routePattern
+         options:(NSObject<IVISPERRoutingOption>*)options;
+
 
 /**
- * Registers a routePattern in the global scheme namespace with a modal UIViewController to be shown
- * when the route pattern is matched by a URL.
- **/
-- (void)addRoute:(NSString *)routePattern priority:(NSUInteger)priority modalViewController:(UIViewController*)viewController;
-- (void)addRoute:(NSString *)routePattern modalViewController:(UIViewController*)viewController;
-
-/**
- * add route for a modal controller (instance will be discovered at runtime)
+ * add route for a controller (instance will be discovered at runtime by the service provider)
  */
-- (void)addRouteForModalController:(NSString*)routePattern;
+- (void)addRoute:(NSString *)routePattern
+  withController:(UIViewController *)controller
+         options:(NSObject<IVISPERRoutingOption>*)options;
 
-/**
- * Registers a routePattern in the global scheme namespace with a UIViewController to be shown
- * when the route pattern is matched by a URL.
- **/
-- (void)addRoute:(NSString *)routePattern priority:(NSUInteger)priority viewController:(UIViewController*)viewController;
-- (void)addRoute:(NSString *)routePattern viewController:(UIViewController*)viewController;
+- (void)addRoute:(NSString *)routePattern
+        priority:(NSUInteger)priority
+  withController:(UIViewController *)controller
+         options:(NSObject<IVISPERRoutingOption>*)options;
 
-/**
- * add route for a controller (instance will be discovered at runtime)
- */
-- (void)addControllerRoute:(NSString *)routePattern;
 
 /**
  * Routes a URL, calling handler blocks (for patterns that match URL) until 
@@ -117,6 +122,18 @@
  **/
 @property (nonatomic, copy) void (^unmatchedURLHandler)(NSObject<IVISPERWireframe> *routes, NSURL *URL, NSDictionary *parameters);
 
+
+/**
+ * GENERATING CONVINIENCE ROUTING OPTIONS
+ **/
+-(NSObject<IVISPERRoutingOption> *)routingOption;
+-(NSObject<IVISPERRoutingOption> *)routingOption:(BOOL)animated;
+
+-(NSObject<IVISPERRoutingOption> *)pushRoutingOption;
+-(NSObject<IVISPERRoutingOption> *)pushRoutingOption:(BOOL)animated;
+
+-(NSObject<IVISPERRoutingOption> *)modalRoutingOption;
+-(NSObject<IVISPERRoutingOption> *)modalRoutingOption:(BOOL)animated;
 
 
 @end

@@ -9,9 +9,11 @@
 
 #import <UIKit/UIKit.h>
 #import "IVISPERWireframe.h"
-#import <VISPER/IVISPERWireframeServiceProvider.h>
+#import <VISPER/IVISPERWireframeViewControllerServiceProvider.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,IVISPERWireframeServiceProvider>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,
+                                      IVISPERWireframeViewControllerServiceProvider,
+                                      IVISPERWireframeRoutingOptionsServiceProvider>
 
 @property (strong, nonatomic) IBOutlet UIWindow *window;
 @property (strong,nonatomic) IBOutlet NSObject<IVISPERWireframe> *wireframe;

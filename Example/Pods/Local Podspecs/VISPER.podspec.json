@@ -1,6 +1,6 @@
 {
   "name": "VISPER",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "A iOS library to support the VIPER architecture in iOS-Apps",
   "description": "                       A iOS library to support the VIPER architecture in iOS-Apps.\n\n                       Contains some Controller and Presenter Base Classes and a Wireframe implementation using JLRoutes\n",
   "homepage": "https://github.com/barteljan/VISPER",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/barteljan/VISPER.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "social_media_url": "https://twitter.com/janbartel",
   "platforms": {

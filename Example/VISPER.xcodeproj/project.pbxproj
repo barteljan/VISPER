@@ -25,11 +25,11 @@
 		9A3457BC1B52B827002261DD /* Example3VisperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3457B71B52B827002261DD /* Example3VisperViewController.m */; };
 		9A3457BD1B52B827002261DD /* Example3VisperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A3457B81B52B827002261DD /* Example3VisperViewController.xib */; };
 		9A3457BE1B52B827002261DD /* Example3VisperViewControllerPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3457BB1B52B827002261DD /* Example3VisperViewControllerPresenter.m */; };
-		9A6CDC5B1B514DA600A29FD6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6CDC521B514DA600A29FD6 /* AppDelegate.m */; };
 		9A6CDC5C1B514DA600A29FD6 /* Application.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A6CDC531B514DA600A29FD6 /* Application.xib */; };
 		9A6CDC5D1B514DA600A29FD6 /* Example1VisperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6CDC561B514DA600A29FD6 /* Example1VisperViewController.m */; };
 		9A6CDC5E1B514DA600A29FD6 /* Example1VisperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A6CDC571B514DA600A29FD6 /* Example1VisperViewController.xib */; };
 		9A6CDC5F1B514DA600A29FD6 /* Example1VisperViewControllerPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6CDC5A1B514DA600A29FD6 /* Example1VisperViewControllerPresenter.m */; };
+		9ABA5E601B5A6CAB00A778B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5E5F1B5A6CAB00A778B1 /* AppDelegate.m */; };
 		D6628BCE8774C32B9F2CEE5E /* Pods_VISPER_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759AF88BAA8A5B83A989B73F /* Pods_VISPER_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -75,13 +75,13 @@
 		9A3457BA1B52B827002261DD /* Example3VisperViewControllerPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example3VisperViewControllerPresenter.h; sourceTree = "<group>"; };
 		9A3457BB1B52B827002261DD /* Example3VisperViewControllerPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example3VisperViewControllerPresenter.m; sourceTree = "<group>"; };
 		9A6CDC511B514DA600A29FD6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		9A6CDC521B514DA600A29FD6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9A6CDC531B514DA600A29FD6 /* Application.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Application.xib; sourceTree = "<group>"; };
 		9A6CDC551B514DA600A29FD6 /* Example1VisperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example1VisperViewController.h; sourceTree = "<group>"; };
 		9A6CDC561B514DA600A29FD6 /* Example1VisperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example1VisperViewController.m; sourceTree = "<group>"; };
 		9A6CDC571B514DA600A29FD6 /* Example1VisperViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example1VisperViewController.xib; sourceTree = "<group>"; };
 		9A6CDC591B514DA600A29FD6 /* Example1VisperViewControllerPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example1VisperViewControllerPresenter.h; sourceTree = "<group>"; };
 		9A6CDC5A1B514DA600A29FD6 /* Example1VisperViewControllerPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example1VisperViewControllerPresenter.m; sourceTree = "<group>"; };
+		9ABA5E5F1B5A6CAB00A778B1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A556768BB39F29B0CB31A65B /* Pods-VISPER_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER_Tests/Pods-VISPER_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A8AE3CD1BB0F2452F47336B6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		CFCCE0151092EBBA3C3F4978 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -257,7 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				9A6CDC511B514DA600A29FD6 /* AppDelegate.h */,
-				9A6CDC521B514DA600A29FD6 /* AppDelegate.m */,
+				9ABA5E5F1B5A6CAB00A778B1 /* AppDelegate.m */,
 				9A6CDC531B514DA600A29FD6 /* Application.xib */,
 			);
 			path = App;
@@ -483,11 +483,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A6CDC5B1B514DA600A29FD6 /* AppDelegate.m in Sources */,
 				9A3457BE1B52B827002261DD /* Example3VisperViewControllerPresenter.m in Sources */,
 				9A07CB0A1B520F5C002617A8 /* Example2VisperViewController.m in Sources */,
 				9A3457BC1B52B827002261DD /* Example3VisperViewController.m in Sources */,
 				9A07CB0F1B521099002617A8 /* Example2VisperViewControllerPresenter.m in Sources */,
+				9ABA5E601B5A6CAB00A778B1 /* AppDelegate.m in Sources */,
 				9A6CDC5F1B514DA600A29FD6 /* Example1VisperViewControllerPresenter.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				9A6CDC5D1B514DA600A29FD6 /* Example1VisperViewController.m in Sources */,

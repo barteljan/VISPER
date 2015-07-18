@@ -15,7 +15,20 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBA-ut-tgk">
+                    <rect key="frame" x="234" y="285" width="132" height="30"/>
+                    <state key="normal" title="Close Example3VC">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="DBA-ut-tgk" secondAttribute="centerX" id="ZsI-Bx-4q3"/>
+                <constraint firstAttribute="centerY" secondItem="DBA-ut-tgk" secondAttribute="centerY" id="deY-xT-Jvc"/>
+            </constraints>
+            <point key="canvasLocation" x="269" y="337"/>
         </view>
         <customObject id="haw-m0-aF6" customClass="Example3VisperViewControllerPresenter"/>
     </objects>
