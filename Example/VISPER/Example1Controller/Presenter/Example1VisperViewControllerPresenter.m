@@ -11,11 +11,13 @@
 
 @implementation Example1VisperViewControllerPresenter
 
--(void)renderView:(UIView*)view
-   withController:(UIViewController*)viewController
-          onEvent:(NSObject<IVISPERViewEvent>*)event{
+-(void)viewEvent:(NSObject<IVISPERViewEvent> *)event
+        withView:(UIView *)view
+   andController:(UIViewController *)viewController{
+    [super viewEvent:event
+            withView:view
+       andController:viewController];
     
-    [super renderView:view withController:viewController onEvent:event];
     
     if([event.name isEqualToString:@"example2ButtonPressed"]){
         [self example2ButtonPressed:event.sender

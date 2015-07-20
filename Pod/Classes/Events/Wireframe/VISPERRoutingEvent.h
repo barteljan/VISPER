@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "VISPEREvent.h"
+#import "IVISPERRoutingEvent.h"
 
-@interface VISPERRoutingEvent : VISPEREvent
+@interface VISPERRoutingEvent : VISPEREvent<IVISPERRoutingEvent>
 
 @end

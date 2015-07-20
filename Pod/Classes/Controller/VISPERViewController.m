@@ -55,7 +55,7 @@
     
     if(![UIViewController areVISPEREventsOnAllViewControllersEnabled]){
     
-        NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:@"loadView"
+        NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:NSStringFromSelector(_cmd)
                                                                                      sender:self
                                                                                        info:nil];
         [self notifyPresentersOfView:self.view withEvent:event];
@@ -66,7 +66,7 @@
     [super viewDidLoad];
     
     if(![UIViewController areVISPEREventsOnAllViewControllersEnabled]){
-        NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:@"viewDidLoad"
+        NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:NSStringFromSelector(_cmd)
                                                                                      sender:self
                                                                                        info:nil];
         [self notifyPresentersOfView:self.view withEvent:event];
@@ -77,7 +77,7 @@
     [super viewWillAppear:animated];
 
     if(![UIViewController areVISPEREventsOnAllViewControllersEnabled]){
-        NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:@"viewWillAppear"
+        NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:NSStringFromSelector(_cmd)
                                                                                      sender:self
                                                                                        info:@{@"animated":(animated)?@TRUE:@FALSE}];
         [self notifyPresentersOfView:self.view withEvent:event];
@@ -89,7 +89,7 @@
     [super viewDidAppear:animated];
     
     if(![UIViewController areVISPEREventsOnAllViewControllersEnabled]){
-        NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:@"viewDidAppear"
+        NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:NSStringFromSelector(_cmd)
                                                                                      sender:self
                                                                                        info:@{@"animated":(animated)?@TRUE:@FALSE}];
     
@@ -101,7 +101,7 @@
     [super viewWillDisappear:animated];
     
     if(![UIViewController areVISPEREventsOnAllViewControllersEnabled]){
-        NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:@"viewWillDisappear"
+        NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:NSStringFromSelector(_cmd)
                                                                                      sender:self
                                                                                        info:@{@"animated":(animated)?@TRUE:@FALSE}];
         [self notifyPresentersOfView:self.view withEvent:event];
@@ -113,7 +113,7 @@
     [super viewDidDisappear:animated];
     
     if(![UIViewController areVISPEREventsOnAllViewControllersEnabled]){
-        NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:@"viewDidDisappear"
+        NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:NSStringFromSelector(_cmd)
                                                                                      sender:self
                                                                                        info:@{@"animated":(animated)?@TRUE:@FALSE}];
         [self notifyPresentersOfView:self.view withEvent:event];
@@ -122,10 +122,29 @@
 
 -(void)viewWillTransitionToSize:(CGSize)size
       withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    if(![UIViewController areVISPEREventsOnAllViewControllersEnabled]){
+        NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:NSStringFromSelector(_cmd)
+                                                                                     sender:self
+                                                                                       info:@{
+                                                                                              @"width"       :[NSNumber numberWithFloat:size.width],
+                                                                                              @"height"      :[NSNumber numberWithFloat:size.height],
+                                                                                              @"coordinator" : coordinator
+                                                                                        }];
+        [self notifyPresentersOfView:self.view withEvent:event];
+    }
 
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    if(![UIViewController areVISPEREventsOnAllViewControllersEnabled]){
+        NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:NSStringFromSelector(_cmd)
+                                                                                     sender:self
+                                                                                       info:nil
+                                                                                              ];
+        [self notifyPresentersOfView:self.view withEvent:event];
+    }
+
 }
 @end

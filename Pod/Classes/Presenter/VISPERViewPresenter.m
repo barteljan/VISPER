@@ -19,9 +19,9 @@
 }
 
 
--(void)renderView:(UIView*)view
-   withController:(UIViewController*)viewController
-          onEvent:(NSObject<IVISPERViewEvent>*)event{
+-(void)viewEvent:(NSObject<IVISPERViewEvent>*)event
+        withView:(UIView*)view
+   andController:(UIViewController*)viewController{
     
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
@@ -34,6 +34,17 @@
                     onEvent:(NSObject<IVISPERViewEvent> *)event{
 
     return TRUE;
+}
+
+-(BOOL)isResponsibleForController:(UIViewController*)viewController
+                          onEvent:(NSObject<IVISPERRoutingEvent> *)event{
+    return TRUE;
+}
+
+-(void)routingEvent:(NSObject<IVISPERRoutingEvent>*)event
+         controller:(UIViewController*)viewController
+       andWireframe:(NSObject<IVISPERWireframe>*)wireframe{
+    
 }
 
 @end

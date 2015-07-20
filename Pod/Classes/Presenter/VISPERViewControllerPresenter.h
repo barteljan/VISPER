@@ -13,9 +13,9 @@
 /**
  * called when a view event happens
  */
--(void)renderView:(UIView*)view
-   withController:(UIViewController*)viewController
-          onEvent:(NSObject<IVISPERViewEvent>*)event;
+-(void)viewEvent:(NSObject<IVISPERViewEvent>*)event
+        withView:(UIView*)view
+   andController:(UIViewController*)viewController;
 
 
 /**
@@ -67,6 +67,24 @@
 - (void)viewDidDisappear:(BOOL)animated
                     view:(UIView*)view
           withController:(UIViewController*)viewController
-                 onEvent:(NSObject<IVISPERViewEvent>*)event;;
+                 onEvent:(NSObject<IVISPERViewEvent>*)event;
+
+/**
+ * Called on orientation change
+ **/
+-(void)viewWillTransitionToSize:(CGSize)size
+      withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+                           view:(UIView*)view
+                 withController:(UIViewController*)controller
+                        onEvent:(NSObject<IVISPERViewEvent>*)event;
+
+
+
+/**
+ * Called on memory warning
+ **/
+- (void)didReceiveMemoryWarning:(UIView*)view
+withController:(UIViewController*)controller
+                        onEvent:(NSObject<IVISPERViewEvent>*)event;
 
 @end

@@ -10,16 +10,14 @@
 
 @implementation Example3VisperViewControllerPresenter
 
--(void)renderView:(UIView*)view
-   withController:(UIViewController*)viewController
-          onEvent:(NSObject<IVISPERViewEvent>*)event{
-    
-    [super renderView:view withController:viewController onEvent:event];
+-(void)viewEvent:(NSObject<IVISPERViewEvent> *)event withView:(UIView *)view andController:(UIViewController *)viewController{
+    [super viewEvent:event withView:view andController:viewController];
     
     if([event.name isEqualToString:@"shouldCloseViewController"]){
         [self closeViewController:viewController];
     }
 }
+
 
 -(void)closeViewController:(UIViewController *)viewController{
     [viewController dismissViewControllerAnimated:YES completion:^{

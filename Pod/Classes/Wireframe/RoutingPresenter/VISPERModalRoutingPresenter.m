@@ -9,6 +9,8 @@
 #import "VISPERModalRoutingPresenter.h"
 #import "IVISPERWireframePresentationTypeModal.h"
 #import "IVISPERWireframe.h"
+#import "UIViewController+VISPER.h"
+#import "IVISPERRoutingEvent.h"
 
 @import UIKit;
 
@@ -41,9 +43,29 @@
                                         withParameters:parameters];
         }
                     
-                    
+        NSObject <IVISPERRoutingEvent> *willPresentControllerEvent =
+                    [self.serviceProvider createEventWithName:@"willPresentController"
+                                                       sender:blockWireframe
+                                                         info:@{
+                                                                @"routePattern":routePattern,
+                                                                @"priority":[NSNumber numberWithLong:priority],
+                                                                @"options" : options,
+                                                                @"parameters": parameters
+                                                                }];
+        [blockController routingEvent:willPresentControllerEvent withWireframe:blockWireframe];
         [blockWireframe.navigationController presentViewController:blockController
-                                                          animated:options.wireframePresentationType.animated completion:nil];
+                                                          animated:options.wireframePresentationType.animated completion:^{
+                                                              NSObject <IVISPERRoutingEvent> *didPresentControllerEvent =
+                                                              [self.serviceProvider createEventWithName:@"didPresentController"
+                                                                                                 sender:blockWireframe
+                                                                                                   info:@{
+                                                                                                          @"routePattern":routePattern,
+                                                                                                          @"priority":[NSNumber numberWithLong:priority],
+                                                                                                          @"options" : options,
+                                                                                                          @"parameters": parameters
+                                                                                                          }];
+                                                              [blockController routingEvent:didPresentControllerEvent withWireframe:blockWireframe];
+                                                          }];
         return YES;
     }];
 }

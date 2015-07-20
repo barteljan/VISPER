@@ -9,6 +9,7 @@
 #import "VISPERPushRoutingPresenter.h"
 #import "IVISPERWireframePresentationTypePush.h"
 #import "IVISPERWireframe.h"
+#import "UIViewController+VISPER.h"
 
 @implementation VISPERPushRoutingPresenter
 
@@ -38,11 +39,36 @@
                                         withParameters:parameters];
         }
         
+        NSObject <IVISPERRoutingEvent> *willPushControllerEvent =
+                [self.serviceProvider createEventWithName:@"willPushController"
+                                                   sender:blockWireframe
+                                                     info:@{
+                                                            @"routePattern":routePattern,
+                                                            @"priority":[NSNumber numberWithLong:priority],
+                                                            @"options" : options,
+                                                            @"parameters": parameters
+                                                            }];
+        [blockController routingEvent:willPushControllerEvent withWireframe:blockWireframe];
+        
+        [CATransaction begin];
         if([blockWireframe.navigationController respondsToSelector:@selector(showViewController:sender:)]){
             [blockWireframe.navigationController showViewController:blockController sender:blockWireframe];
         }else{
             [blockWireframe.navigationController pushViewController:blockController animated:YES];
         }
+        [CATransaction setCompletionBlock:^{
+            NSObject <IVISPERRoutingEvent> *didPushControllerEvent =
+            [self.serviceProvider createEventWithName:@"didPushController"
+                                               sender:blockWireframe
+                                                 info:@{
+                                                        @"routePattern":routePattern,
+                                                        @"priority":[NSNumber numberWithLong:priority],
+                                                        @"options" : options,
+                                                        @"parameters": parameters
+                                                        }];
+            [blockController routingEvent:didPushControllerEvent withWireframe:blockWireframe];
+        }];
+        [CATransaction commit];
         return YES;
                     
     }];

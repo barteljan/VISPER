@@ -7,8 +7,24 @@
 //
 
 #import "VISPERRoutingPresenter.h"
+#import "VISPERRoutingPresenterServiceProvider.h"
 
 @implementation VISPERRoutingPresenter
+
+-(instancetype)init{
+    VISPERRoutingPresenterServiceProvider *provider = [[VISPERRoutingPresenterServiceProvider alloc] init];
+    return [self initWithServiceProvider:provider];
+}
+
+
+-(instancetype)initWithServiceProvider:(NSObject<IVISPERRoutingPresenterServiceProvider>*)serviceProvider{
+    self = [super init];
+    if(self){
+        self->_serviceProvider = serviceProvider;
+    }
+    return self;
+}
+
 
 -(BOOL)isResponsibleForRoutingOption:(NSObject<IVISPERRoutingOption>*)routingOption{
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
