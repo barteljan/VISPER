@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "IVISPERInteractor.h"
 
-@interface VISPERInteractor : NSObject
+@interface VISPERInteractor : NSObject<IVISPERInteractor>
+
+@property(nonatomic,strong)NSString *identifier;
+
+-(id)initWithIdentifier:(NSString*)identifier;
 
 @end
