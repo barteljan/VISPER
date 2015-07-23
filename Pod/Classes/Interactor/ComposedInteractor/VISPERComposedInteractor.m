@@ -30,7 +30,7 @@
     }
 }
 
--(BOOL)isResponsibleForCommand:(NSObject<IVISPERInteractorCommand> *)command error:(NSError *)error{
+-(BOOL)isResponsibleForCommand:(NSObject*)command error:(NSError *)error{
     BOOL responsible = FALSE;
     
     for(NSObject<IVISPERInteractor>*interactor in self.interactors){
@@ -43,7 +43,7 @@
     return responsible;
 }
 
--(NSObject*)processCommand:(NSObject<IVISPERInteractorCommand>*)command
+-(NSObject*)processCommand:(NSObject*)command
                 completion:(void(^)(NSString *identifier,NSObject *object,NSError *error))completion{
     NSMutableArray *responseArray = [[NSMutableArray alloc] init];
     
