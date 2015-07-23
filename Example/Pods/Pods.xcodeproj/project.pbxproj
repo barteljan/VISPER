@@ -203,6 +203,8 @@
 		98C6200903A48952DD99F34C /* UIViewController+VISPER.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D9AB8E2B8DF4B0EF9AECE72 /* UIViewController+VISPER.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99B60D8DE3DC8EF2F275A9C4 /* KWGenericMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 56743DBAD59EB30F3BCAFB97 /* KWGenericMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9A9A7D1C50F8D560F9882340 /* VISPEREvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 73FC2367C40B5FF61ED0C0D8 /* VISPEREvent.m */; };
+		9ACE11B51B6160EF00FCCDA8 /* IVISPERInteractorCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ACE11B41B6160EF00FCCDA8 /* IVISPERInteractorCommand.h */; };
+		9ACE11B71B61611000FCCDA8 /* IVISPERInteractor.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ACE11B61B61611000FCCDA8 /* IVISPERInteractor.h */; };
 		9BC8730FF56BB5EC4DD8F569 /* VISPERPushRoutingPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F0B9D51EA5373BCFBDC5972 /* VISPERPushRoutingPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D4FAF6EFA9D337E4E71DB0D /* NSObject+KiwiVerifierAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B4691021466099BDE6FA0979 /* NSObject+KiwiVerifierAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		9DE9D7F1965992AF068435A2 /* KWBeBetweenMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 663453D634F008D99C952489 /* KWBeBetweenMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -583,6 +585,8 @@
 		996E91E0DC92520E3A83262E /* KWUserDefinedMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KWUserDefinedMatcher.h; path = Classes/Matchers/KWUserDefinedMatcher.h; sourceTree = "<group>"; };
 		99858985B38B976DEAF2B4BE /* NSObject+KiwiMockAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+KiwiMockAdditions.h"; path = "Classes/Mocking/NSObject+KiwiMockAdditions.h"; sourceTree = "<group>"; };
 		9A30150C98EE1988B2DCB067 /* Pods-VISPER_Tests-Kiwi.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VISPER_Tests-Kiwi.modulemap"; sourceTree = "<group>"; };
+		9ACE11B41B6160EF00FCCDA8 /* IVISPERInteractorCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IVISPERInteractorCommand.h; path = Interactor/IVISPERInteractorCommand.h; sourceTree = "<group>"; };
+		9ACE11B61B61611000FCCDA8 /* IVISPERInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IVISPERInteractor.h; path = Interactor/IVISPERInteractor.h; sourceTree = "<group>"; };
 		9ED61DAD6A3E4C38B6CC39A5 /* KWExampleSuite.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KWExampleSuite.m; path = Classes/Core/KWExampleSuite.m; sourceTree = "<group>"; };
 		9EDF17EAC86B5030220F6AAA /* KiwiMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KiwiMacros.h; path = Classes/Core/KiwiMacros.h; sourceTree = "<group>"; };
 		9F0A1F79639190C161C52E83 /* KWExistVerifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KWExistVerifier.m; path = Classes/Verifiers/KWExistVerifier.m; sourceTree = "<group>"; };
@@ -888,6 +892,7 @@
 				7EAEDF1F85918259464200BE /* Presenter */,
 				C9662C880EEC8A5379B8BE4D /* ServiceProvider */,
 				682FA5D9AA575F4495490CF5 /* Wireframe */,
+				9ACE11B21B6160A100FCCDA8 /* Interactor */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1034,6 +1039,23 @@
 				2EF467E84555030DA5A3C4C6 /* VISPERViewPresenter.m */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9ACE11B21B6160A100FCCDA8 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				9ACE11B31B6160AF00FCCDA8 /* Command */,
+				9ACE11B61B61611000FCCDA8 /* IVISPERInteractor.h */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		9ACE11B31B6160AF00FCCDA8 /* Command */ = {
+			isa = PBXGroup;
+			children = (
+				9ACE11B41B6160EF00FCCDA8 /* IVISPERInteractorCommand.h */,
+			);
+			name = Command;
 			sourceTree = "<group>";
 		};
 		A200162941A160EBDE1DB8AD /* ServiceProvider */ = {
@@ -1344,7 +1366,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ACE11B51B6160EF00FCCDA8 /* IVISPERInteractorCommand.h in Headers */,
 				0AD97BD4C897F5C499A2E823 /* Pods-VISPER_Example-umbrella.h in Headers */,
+				9ACE11B71B61611000FCCDA8 /* IVISPERInteractor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

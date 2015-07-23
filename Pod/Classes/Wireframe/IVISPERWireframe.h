@@ -17,50 +17,6 @@
 @protocol IVISPERWireframe <NSObject>
 
 /**
- * Getter and setter for the UINavigationController of this wireframe
- **/
--(UINavigationController*)navigationController;
--(void)setNavigationController:(UINavigationController*)navigationController;
-
-
-/**
- * Getter and setter for the service provider
- **/
--(NSObject<IVISPERWireframeServiceProvider>*)serviceProvider;
--(void)setServiceProvider:(NSObject<IVISPERWireframeServiceProvider>*)serviceProvider;
-
-
-/**
- *  IVISPERWireframeViewControllerServiceProvider for providing controllers when none are given
- */
--(NSObject<IVISPERWireframeViewControllerServiceProvider>*)controllerServiceProvider;
--(void)setControllerServiceProvider:(NSObject<IVISPERWireframeViewControllerServiceProvider>*)controllerServiceProvider;
-
-
-/**
- *  IVISPERWireframeViewControllerServiceProvider for providing routing options when none are given
- */
--(NSObject<IVISPERWireframeRoutingOptionsServiceProvider>*)routingOptionsServiceProvider;
--(void)setRoutingOptionsServiceProvider:(NSObject<IVISPERWireframeRoutingOptionsServiceProvider>*)routingOptionsServiceProvider;
-
-
-
-/**
- * Returns the global routing namespace
- **/
-- (NSObject<IVISPERWireframe>*)globalRoutes;
-
-/**
- * Returns a routing namespace for the given scheme
- */
-- (NSObject<IVISPERWireframe>*)routesForScheme:(NSString *)scheme;
-
-/**
- * Unregister and delete an entire scheme namespace
- */
-- (void)unregisterRouteScheme:(NSString *)scheme;
-
-/**
   * Removes a routePattern from the receiving scheme namespace.
  **/
 - (void)removeRoute:(NSString *)routePattern;
@@ -110,12 +66,55 @@
  * Returns whether a route exists for a URL
  **/
 - (BOOL)canRouteURL:(NSURL *)URL; // instance method
-- (BOOL)canRouteURL:(NSURL *)URL withParameters:(NSDictionary *)parameters; // instance method
+- (BOOL)canRouteURL:(NSURL *)URL withParameters:(NSDictionary *)parameters;
 
 /**
  * Prints the entire routing table
  **/
 -(NSString*)printRoutingTable;
+
+/**
+ * Returns the global routing namespace
+ **/
+- (NSObject<IVISPERWireframe>*)globalRoutes;
+
+/**
+ * Returns a routing namespace for the given scheme
+ */
+- (NSObject<IVISPERWireframe>*)routesForScheme:(NSString *)scheme;
+
+/**
+ * Unregister and delete an entire scheme namespace
+ */
+- (void)unregisterRouteScheme:(NSString *)scheme;
+
+/**
+ * Getter and setter for the UINavigationController of this wireframe
+ **/
+-(UINavigationController*)navigationController;
+-(void)setNavigationController:(UINavigationController*)navigationController;
+
+
+/**
+ * Getter and setter for the service provider
+ **/
+-(NSObject<IVISPERWireframeServiceProvider>*)serviceProvider;
+-(void)setServiceProvider:(NSObject<IVISPERWireframeServiceProvider>*)serviceProvider;
+
+
+/**
+ *  IVISPERWireframeViewControllerServiceProvider for providing controllers when none are given
+ */
+-(NSObject<IVISPERWireframeViewControllerServiceProvider>*)controllerServiceProvider;
+-(void)setControllerServiceProvider:(NSObject<IVISPERWireframeViewControllerServiceProvider>*)controllerServiceProvider;
+
+
+/**
+ *  IVISPERWireframeViewControllerServiceProvider for providing routing options when none are given
+ */
+-(NSObject<IVISPERWireframeRoutingOptionsServiceProvider>*)routingOptionsServiceProvider;
+-(void)setRoutingOptionsServiceProvider:(NSObject<IVISPERWireframeRoutingOptionsServiceProvider>*)routingOptionsServiceProvider;
+
 
 /**
  * Called any time routeURL returns NO. Respects shouldFallbackToGlobalRoutes.
