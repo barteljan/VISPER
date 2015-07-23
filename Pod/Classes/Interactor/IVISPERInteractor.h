@@ -14,5 +14,8 @@
 -(BOOL)isResponsibleForCommand:(NSObject<IVISPERInteractorCommand>*)command
                          error:(NSError*)error;
 
+@optional
+-(NSObject*)processCommand:(NSObject<IVISPERInteractorCommand>*)command
+                completion:(void(^)(NSObject*,NSError*))completion;
 
 @end
