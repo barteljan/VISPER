@@ -1,1 +1,0 @@
-PODS_VISPER_EXAMPLE_JLROUTES_OTHER_LDFLAGS = -framework "Foundation"
