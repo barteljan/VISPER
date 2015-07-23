@@ -14,8 +14,6 @@
 @property(nonatomic,strong)IBOutletCollection(NSObject<IVISPERInteractor>) NSArray *interactors;
 
 -(void)addInteractor:(NSObject<IVISPERInteractor>*)interactor;
-
 -(void)removeInteractor:(NSObject<IVISPERInteractor>*)interactor;
-
 
 @end

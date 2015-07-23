@@ -7,17 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "IVISPERInteractorCommand.h"
 
 @protocol IVISPERInteractor <NSObject>
 
--(BOOL)isResponsibleForCommand:(NSObject<IVISPERInteractorCommand>*)command
+-(BOOL)isResponsibleForCommand:(NSObject*)command
                          error:(NSError*)error;
 
 -(NSString*)identifier;
 
-@optional
--(NSObject*)processCommand:(NSObject<IVISPERInteractorCommand>*)command
+-(NSObject*)processCommand:(NSObject*)command
                 completion:(void(^)(NSString *identifier,NSObject *object,NSError *error))completion;
 
 @end

@@ -19,17 +19,14 @@
 }
 
 
--(BOOL)isResponsibleForCommand:(NSObject<IVISPERInteractorCommand>*)command
+-(BOOL)isResponsibleForCommand:(NSObject*)command
                          error:(NSError*)error{
     return NO;
 }
 
-
--(NSObject*)processCommand:(NSObject<IVISPERInteractorCommand>*)command
+-(NSObject*)processCommand:(NSObject*)command
                 completion:(void(^)(NSString *identifier,NSObject *object,NSError *error))completion{
-    completion(self.identifier,nil,nil);
     return nil;
 }
-
 
 @end

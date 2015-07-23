@@ -50,15 +50,20 @@
     for(NSObject<IVISPERInteractor>*interactor in self.interactors){
         NSError *error = nil;
         if([interactor isResponsibleForCommand:command error:error] &&
-           [interactor respondsToSelector:@selector(processCommand:completion:)]){
-           [interactor processCommand:command completion:^(NSString *identifier, NSObject *object, NSError *error) {
-               completion(identifier,object,error);
-           }];
+           [self canCallInteractor:interactor]){
+            NSObject *object =
+                [interactor processCommand:command
+                                completion:completion];
+           
+            (object)?[responseArray addObject:object]:"";
         }
     }
     
     return [NSArray arrayWithArray:responseArray];
 }
 
+-(BOOL)canCallInteractor:(NSObject<IVISPERInteractor>*)interactor{
+    return [interactor respondsToSelector:@selector(processCommand:completion:)];
+}
 
 @end
