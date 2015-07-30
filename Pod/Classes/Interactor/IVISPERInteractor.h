@@ -15,7 +15,7 @@
 
 -(NSString*)identifier;
 
--(NSObject*)processCommand:(NSObject*)command
+-(void)processCommand:(NSObject*)command
                 completion:(void(^)(NSString *identifier,NSObject *object,NSError *error))completion;
 
 @end

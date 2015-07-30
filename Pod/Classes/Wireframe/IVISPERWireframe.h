@@ -117,6 +117,36 @@
 
 
 /**
+ *
+ * Child wireframe instances
+ *
+ */
+
+
+/**
+ * Add child wireframe
+ **/
+-(void)addChildWireframe:(NSObject<IVISPERWireframe>*)wireframe;
+
+/**
+ * Remove child wireframe
+ **/
+-(void)removeChildWireframe:(NSObject<IVISPERWireframe>*)wireframe;
+
+
+/**
+ * Check for child wireframe
+ **/
+-(BOOL)hasChildWireframe:(NSObject<IVISPERWireframe>*)wireframe;
+
+
+/**
+ * Check if this wireframe is a descendant of the current wireframe
+ **/
+-(BOOL)hasDescendantWireframe:(NSObject<IVISPERWireframe>*)wireframe;
+
+
+/**
  * Called any time routeURL returns NO. Respects shouldFallbackToGlobalRoutes.
  **/
 @property (nonatomic, copy) void (^unmatchedURLHandler)(NSObject<IVISPERWireframe> *routes, NSURL *URL, NSDictionary *parameters);

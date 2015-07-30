@@ -31,8 +31,9 @@
  **/
 @property(nonatomic)IBOutlet NSObject<IVISPERWireframeViewControllerServiceProvider>*controllerServiceProvider;
 
+
 /**
- *
+ *  Service provider for providing Routing options if none are given for a specific route
  **/
 @property(nonatomic)IBOutlet NSObject<IVISPERWireframeRoutingOptionsServiceProvider>*routingOptionsServiceProvider;
 
@@ -40,6 +41,14 @@
  * Navigation controller of the wireframe
  **/
 @property(nonatomic) IBOutlet UINavigationController *navigationController;
+
+
+
+/**
+ * Child wireframes of this wireframe
+ **/
+@property(nonatomic) IBOutletCollection(NSObject<IVISPERWireframe>) NSArray *childWireframes;
+
 
 /**
  * Called any time routeURL returns NO. Respects shouldFallbackToGlobalRoutes.

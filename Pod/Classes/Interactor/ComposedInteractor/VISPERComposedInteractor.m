@@ -43,23 +43,19 @@
     return responsible;
 }
 
--(NSObject*)processCommand:(NSObject*)command
+-(void)processCommand:(NSObject*)command
                 completion:(void(^)(NSString *identifier,NSObject *object,NSError *error))completion{
-    NSMutableArray *responseArray = [[NSMutableArray alloc] init];
-    
+
     for(NSObject<IVISPERInteractor>*interactor in self.interactors){
         NSError *error = nil;
         if([interactor isResponsibleForCommand:command error:error] &&
            [self canCallInteractor:interactor]){
-            NSObject *object =
                 [interactor processCommand:command
                                 completion:completion];
-           
-            (object)?[responseArray addObject:object]:"";
         }
     }
     
-    return [NSArray arrayWithArray:responseArray];
+
 }
 
 -(BOOL)canCallInteractor:(NSObject<IVISPERInteractor>*)interactor{

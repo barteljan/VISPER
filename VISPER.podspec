@@ -9,13 +9,14 @@
 
 Pod::Spec.new do |s|
   s.name             = "VISPER"
-  s.version          = "0.1.8"
+  s.version          = "0.1.9"
   s.summary          = "A iOS library to support the VIPER architecture in iOS-Apps"
   s.description      = <<-DESC
                        A iOS library to support the VIPER architecture in iOS-Apps.
 
-                       Contains some Controller and Presenter Base Classes and a Wireframe implementation using JLRoutes
-                       DESC
+                       Contains some base classes to design VIPER based iOS-Apps.
+                       The framework includes a basic class for viewcontrollers, presenters, interactors and a wireframe
+DESC
   s.homepage         = "https://github.com/barteljan/VISPER"
   s.license          = 'MIT'
   s.author           = { "Jan Bartel" => "barteljan@yahoo.de" }

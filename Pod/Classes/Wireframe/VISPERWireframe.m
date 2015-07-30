@@ -164,29 +164,141 @@
  * one returns YES, optionally specifying add'l parameters
  **/
 - (BOOL)routeURL:(NSURL *)URL{
-    return [self.routes routeURL:URL];
+    BOOL success = [self.routes routeURL:URL];
+    
+    if(success){
+        return TRUE;
+    }
+    
+    for(NSObject<IVISPERWireframe>*wireframe in self.childWireframes){
+        success = [wireframe routeURL:URL];
+        if(success){
+            return TRUE;
+        }
+    }
+    
+    return FALSE;
 }
 
 - (BOOL)routeURL:(NSURL *)URL withParameters:(NSDictionary *)parameters{
-    return [self.routes routeURL:URL withParameters:parameters];
+    
+    BOOL success = [self.routes routeURL:URL withParameters:parameters];
+    
+    if(success){
+        return TRUE;
+    }
+    
+    for(NSObject<IVISPERWireframe>*wireframe in self.childWireframes){
+        success = [wireframe routeURL:URL withParameters:parameters];
+        if(success){
+            return TRUE;
+        }
+    }
+    
+    return FALSE;
 }
 
 /**
  * Returns whether a route exists for a URL
  **/
 - (BOOL)canRouteURL:(NSURL *)URL{
-    return [self.routes canRouteURL:URL];
+    
+    BOOL success = [self.routes canRouteURL:URL];
+    
+    if(success){
+        return TRUE;
+    }
+    
+    for(NSObject<IVISPERWireframe>*wireframe in self.childWireframes){
+        success = [wireframe canRouteURL:URL];
+        if(success){
+            return TRUE;
+        }
+    }
+    
+    return FALSE;
 }
 
 - (BOOL)canRouteURL:(NSURL *)URL withParameters:(NSDictionary *)parameters{
-    return [self.routes canRouteURL:URL];
+    
+    BOOL success = [self.routes canRouteURL:URL withParameters:parameters];
+    
+    if(success){
+        return TRUE;
+    }
+    
+    for(NSObject<IVISPERWireframe>*wireframe in self.childWireframes){
+        success = [wireframe canRouteURL:URL withParameters:parameters];
+        if(success){
+            return TRUE;
+        }
+    }
+    
+    return FALSE;
+}
+
+/**
+ *
+ * Child wireframe instances
+ *
+ */
+-(NSArray*)childWireframes{
+    if(!self->_childWireframes){
+        self->_childWireframes = [NSArray array];
+    }
+    return self->_childWireframes;
+}
+
+/**
+ * Add child wireframe
+ **/
+-(void)addChildWireframe:(NSObject<IVISPERWireframe>*)wireframe{
+    self.childWireframes = [self.childWireframes arrayByAddingObject:wireframe];
+}
+
+/**
+ * Remove child wireframe
+ **/
+-(void)removeChildWireframe:(NSObject<IVISPERWireframe>*)wireframe{
+    NSMutableArray *mutableChildren = [NSMutableArray arrayWithArray:self.childWireframes];
+    [mutableChildren removeObject:wireframe];
+    self.childWireframes = [NSArray arrayWithArray:mutableChildren];
+}
+
+
+/**
+ * Check for child wireframe
+ **/
+-(BOOL)hasChildWireframe:(NSObject<IVISPERWireframe>*)wireframe{
+    return [self.childWireframes containsObject:wireframe];
+}
+
+-(BOOL)hasDescendantWireframe:(NSObject<IVISPERWireframe>*)wireframe{
+    if([self hasChildWireframe:wireframe]){
+        return TRUE;
+    }
+    
+    for(NSObject<IVISPERWireframe> *childWireframe in self.childWireframes){
+        if([childWireframe hasDescendantWireframe:wireframe]){
+            return TRUE;
+        }
+    }
+    
+    return FALSE;
 }
 
 /**
  * Prints the entire routing table
  **/
 -(NSString*)printRoutingTable{
-    return [self description];
+    
+    NSString *routingTable = [self description];
+    
+    for(NSObject<IVISPERWireframe>*wireframe in self.childWireframes){
+        [routingTable stringByAppendingFormat:@"\n%@",[wireframe printRoutingTable]];
+    }
+    
+    return routingTable;
 }
 
 -(NSString*)description{
