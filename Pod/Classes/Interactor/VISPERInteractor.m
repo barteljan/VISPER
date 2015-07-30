@@ -20,12 +20,12 @@
 
 
 -(BOOL)isResponsibleForCommand:(NSObject*)command
-                         error:(NSError*)error{
+                         error:(NSError**)error{
     return NO;
 }
 
 -(void)processCommand:(NSObject*)command
-                completion:(void(^)(NSString *identifier,NSObject *object,NSError *error))completion{
+           completion:(BOOL(^)(NSString *identifier,NSObject *object,NSError **error))completion{
 }
 
 @end
