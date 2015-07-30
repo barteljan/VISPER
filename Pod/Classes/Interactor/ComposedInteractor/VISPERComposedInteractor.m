@@ -30,7 +30,7 @@
     }
 }
 
--(BOOL)isResponsibleForCommand:(NSObject*)command error:(NSError *)error{
+-(BOOL)isResponsibleForCommand:(NSObject*)command error:(NSError **)error{
     BOOL responsible = FALSE;
     
     for(NSObject<IVISPERInteractor>*interactor in self.interactors){
@@ -44,11 +44,11 @@
 }
 
 -(void)processCommand:(NSObject*)command
-                completion:(void(^)(NSString *identifier,NSObject *object,NSError *error))completion{
+                completion:(BOOL(^)(NSString *identifier,NSObject *object,NSError **error))completion{
 
     for(NSObject<IVISPERInteractor>*interactor in self.interactors){
         NSError *error = nil;
-        if([interactor isResponsibleForCommand:command error:error] &&
+        if([interactor isResponsibleForCommand:command error:&error] &&
            [self canCallInteractor:interactor]){
                 [interactor processCommand:command
                                 completion:completion];
