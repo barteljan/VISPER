@@ -306,6 +306,13 @@
 }
 
 /**
+ * Generate an empty wireframe which can communicate with this wireframe
+ **/
+-(NSObject<IVISPERWireframe>*)emptyWireframe{
+    return [self.serviceProvider emptyWireframeFromWireframe:self];
+}
+
+/**
 * GENERATING ROUTING OPTIONS
 **/
 -(NSObject<IVISPERRoutingOption> *)routingOption{
@@ -331,5 +338,6 @@
 -(NSObject<IVISPERRoutingOption> *)modalRoutingOption:(BOOL)animated{
     return [self.serviceProvider modalRoutingOption:animated];
 }
+
 
 @end

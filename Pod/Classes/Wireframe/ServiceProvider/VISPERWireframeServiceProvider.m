@@ -8,6 +8,7 @@
 #import "VISPERPresentationTypeModal.h"
 #import "VISPERPushRoutingPresenter.h"
 #import "VISPERModalRoutingPresenter.h"
+#import "VISPERWireframe.h"
 
 
 @interface VISPERWireframeServiceProvider()
@@ -90,6 +91,12 @@
             [[VISPERPresentationTypeModal alloc] initIsAnimated:animated];
 
     return [[VISPERRoutingOption alloc] initWithPresentationType:type];
+}
+
+-(NSObject<IVISPERWireframe>*)emptyWireframeFromWireframe:(NSObject<IVISPERWireframe>*)existingWireframe{
+    NSObject<IVISPERWireframe>*wireframe = [[VISPERWireframe alloc] initWithRoutes:[[JLRoutes alloc] init]
+                                                              navigationController:existingWireframe.navigationController serviceProvider:self];
+    return wireframe;
 }
 
 @end
