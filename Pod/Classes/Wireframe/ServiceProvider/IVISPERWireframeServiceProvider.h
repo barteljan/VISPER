@@ -43,6 +43,7 @@
 -(NSObject<IVISPERRoutingOption> *)routingOption:(BOOL)animated;
 -(NSObject<IVISPERRoutingOption> *)pushRoutingOption:(BOOL)animated;
 -(NSObject<IVISPERRoutingOption> *)modalRoutingOption:(BOOL)animated;
+-(NSObject<IVISPERRoutingOption> *)presentRootVCRoutingOption:(BOOL)animated;
 
 /**
  * Gernerate a new empty wireframe

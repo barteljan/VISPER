@@ -51,10 +51,11 @@
         [blockController routingEvent:willPushControllerEvent withWireframe:blockWireframe];
         
         [CATransaction begin];
-        if([blockWireframe.navigationController respondsToSelector:@selector(showViewController:sender:)]){
+        if([blockWireframe.navigationController respondsToSelector:@selector(showViewController:sender:)] &&
+           options.wireframePresentationType.animated == YES){
             [blockWireframe.navigationController showViewController:blockController sender:blockWireframe];
         }else{
-            [blockWireframe.navigationController pushViewController:blockController animated:YES];
+            [blockWireframe.navigationController pushViewController:blockController animated:options.wireframePresentationType.animated];
         }
         [CATransaction setCompletionBlock:^{
             NSObject <IVISPERRoutingEvent> *didPushControllerEvent =

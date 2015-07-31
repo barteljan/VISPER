@@ -8,6 +8,8 @@
 #import "VISPERPresentationTypeModal.h"
 #import "VISPERPushRoutingPresenter.h"
 #import "VISPERModalRoutingPresenter.h"
+#import "VISPERRootVCRoutingPresenter.h"
+#import "VISPERPresentationTypeRootVC.h"
 #import "VISPERWireframe.h"
 
 
@@ -30,6 +32,7 @@
         self->_privateRoutingPresenters = [NSMutableArray array];
         [self addRoutingPresenter:[[VISPERPushRoutingPresenter alloc] init]];
         [self addRoutingPresenter:[[VISPERModalRoutingPresenter alloc] init]];
+        [self addRoutingPresenter:[[VISPERRootVCRoutingPresenter alloc] init]];
     }
     return self->_privateRoutingPresenters;
 }
@@ -91,6 +94,14 @@
             [[VISPERPresentationTypeModal alloc] initIsAnimated:animated];
 
     return [[VISPERRoutingOption alloc] initWithPresentationType:type];
+}
+
+-(NSObject<IVISPERRoutingOption> *)presentRootVCRoutingOption:(BOOL)animated{
+    NSObject <IVISPERWireframePresentationType> *type =
+    [[VISPERPresentationTypeRootVC alloc] initIsAnimated:animated];
+    
+    return [[VISPERRoutingOption alloc] initWithPresentationType:type];
+
 }
 
 -(NSObject<IVISPERWireframe>*)emptyWireframeFromWireframe:(NSObject<IVISPERWireframe>*)existingWireframe{

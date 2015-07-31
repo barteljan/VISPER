@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Jan Bartel. All rights reserved.
 //
 
+#import <VISPER/UIViewController+VISPER.h>
 #import "Example3VisperViewControllerPresenter.h"
 
 @implementation Example3VisperViewControllerPresenter
@@ -20,8 +21,9 @@
 
 
 -(void)closeViewController:(UIViewController *)viewController{
-    [viewController dismissViewControllerAnimated:YES completion:^{
-        ;
-    }];
+    [viewController dismissThisViewControllerAnimated:YES
+                                           completion:^{
+                                               NSLog(@"dismissed vc");
+                                           }];
 }
 @end

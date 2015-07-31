@@ -5,7 +5,5 @@
 #import "VISPERPresentationTypeModal.h"
 
 
-@implementation VISPERPresentationTypeModal {
-
-}
+@implementation VISPERPresentationTypeModal
 @end

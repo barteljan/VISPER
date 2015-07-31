@@ -179,5 +179,7 @@
 -(NSObject<IVISPERRoutingOption> *)modalRoutingOption;
 -(NSObject<IVISPERRoutingOption> *)modalRoutingOption:(BOOL)animated;
 
+-(NSObject<IVISPERRoutingOption> *)presentRootVCRoutingOption;
+-(NSObject<IVISPERRoutingOption> *)presentRootVCRoutingOption:(BOOL)animated;
 
 @end

@@ -54,7 +54,8 @@
                                                                 }];
         [blockController routingEvent:willPresentControllerEvent withWireframe:blockWireframe];
         [blockWireframe.navigationController presentViewController:blockController
-                                                          animated:options.wireframePresentationType.animated completion:^{
+                                                          animated:options.wireframePresentationType.animated
+                                                        completion:^{
                                                               NSObject <IVISPERRoutingEvent> *didPresentControllerEvent =
                                                               [self.serviceProvider createEventWithName:@"didPresentController"
                                                                                                  sender:blockWireframe

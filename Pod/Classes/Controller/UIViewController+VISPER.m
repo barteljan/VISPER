@@ -139,7 +139,13 @@ static BOOL areVISPEREventsOnAllViewControllersEnabledVar;
     
 }
 
+-(void)willDismissViewController{
 
+}
+
+-(void)didDismissViewController{
+
+}
 
 #pragma mark forward view events to presenter
 
@@ -268,6 +274,36 @@ static BOOL areVISPEREventsOnAllViewControllersEnabledVar;
     [self notifyPresentersOfView:self.view withEvent:event];
     
 }
+
+-(void)dismissThisViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion {
+
+    void(^eventCompletionBlock)(void) = ^{
+        [self didDismissViewController];
+        if(completion){
+            completion();
+        }
+    };
+    
+    [completion copy];
+    
+    if(self.navigationController){
+
+        [CATransaction begin];
+        [self.navigationController popViewControllerAnimated:animated];
+        [CATransaction setCompletionBlock:eventCompletionBlock];
+        [CATransaction commit];
+
+    }else{
+        [self dismissViewControllerAnimated:animated completion:eventCompletionBlock];
+    }
+    
+
+
+}
+
+
+
+
 
 
 

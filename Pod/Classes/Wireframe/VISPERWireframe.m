@@ -402,5 +402,12 @@
     return [self.serviceProvider modalRoutingOption:animated];
 }
 
+-(NSObject<IVISPERRoutingOption> *)presentRootVCRoutingOption{
+    return [self.serviceProvider presentRootVCRoutingOption:YES];
+}
+
+-(NSObject<IVISPERRoutingOption> *)presentRootVCRoutingOption:(BOOL)animated{
+    return [self.serviceProvider presentRootVCRoutingOption:animated];
+}
 
 @end

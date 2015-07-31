@@ -55,5 +55,9 @@
                                    options:(NSObject<IVISPERRoutingOption>*)options
                                 parameters:(NSDictionary *)parameters;
 
+-(void)willDismissViewController;
+-(void)didDismissViewController;
+
+-(void)dismissThisViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion;
 
 @end
