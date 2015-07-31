@@ -39,6 +39,14 @@
                                         withParameters:parameters];
         }
         
+        [self sendWillRouteToControllerEventForController:blockController
+                                                wireframe:blockWireframe
+                                             routePattern:routePattern
+                                                 priority:priority
+                                                  options:options
+                                               parameters:parameters];
+                    
+                    
         NSObject <IVISPERRoutingEvent> *willPushControllerEvent =
                 [self.serviceProvider createEventWithName:@"willPushController"
                                                    sender:blockWireframe
@@ -68,6 +76,13 @@
                                                         @"parameters": parameters
                                                         }];
             [blockController routingEvent:didPushControllerEvent withWireframe:blockWireframe];
+            
+            [self sendDidRouteToControllerEventForController:blockController
+                                                    wireframe:blockWireframe
+                                                 routePattern:routePattern
+                                                     priority:priority
+                                                      options:options
+                                                   parameters:parameters];
         }];
         [CATransaction commit];
         return YES;

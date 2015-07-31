@@ -26,4 +26,18 @@
                         routingOptions:(NSObject<IVISPERRoutingOption>*)options
                         withParameters:(NSDictionary*)parameters;
 
+-(void)sendWillRouteToControllerEventForController:(UIViewController*)controller
+                                         wireframe:(NSObject<IVISPERWireframe>*)wireframe
+                                      routePattern:(NSString*)routePattern
+                                          priority:(NSInteger)priority
+                                           options:(NSObject<IVISPERRoutingOption>*)options
+                                        parameters:(NSDictionary*)parameters;
+
+-(void)sendDidRouteToControllerEventForController:(UIViewController*)controller
+                                        wireframe:(NSObject<IVISPERWireframe>*)wireframe
+                                     routePattern:(NSString*)routePattern
+                                         priority:(NSInteger)priority
+                                          options:(NSObject<IVISPERRoutingOption>*)options
+                                       parameters:(NSDictionary*)parameters;
+
 @end

@@ -159,6 +159,11 @@
     for(NSObject <IVISPERRoutingPresenter> *presenter in self.serviceProvider.routingPresenters){
         [presenter setControllerServiceProviders:[self controllerServiceProviders]];
         if([presenter isResponsibleForRoutingOption:options]){
+            
+            
+            
+            
+            
             [presenter addRoute:routePattern
                        priority:priority
                  withController:controller

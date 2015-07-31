@@ -43,6 +43,13 @@
                                         withParameters:parameters];
         }
                     
+        [self sendWillRouteToControllerEventForController:blockController
+                                                wireframe:blockWireframe
+                                             routePattern:routePattern
+                                                 priority:priority
+                                                  options:options
+                                               parameters:parameters];
+                    
         NSObject <IVISPERRoutingEvent> *willPresentControllerEvent =
                     [self.serviceProvider createEventWithName:@"willPresentController"
                                                        sender:blockWireframe
@@ -66,6 +73,12 @@
                                                                                                           @"parameters": parameters
                                                                                                           }];
                                                               [blockController routingEvent:didPresentControllerEvent withWireframe:blockWireframe];
+                                                            [self sendDidRouteToControllerEventForController:blockController
+                                                                                                    wireframe:blockWireframe
+                                                                                                 routePattern:routePattern
+                                                                                                     priority:priority
+                                                                                                      options:options
+                                                                                                   parameters:parameters];
                                                           }];
         return YES;
     }];

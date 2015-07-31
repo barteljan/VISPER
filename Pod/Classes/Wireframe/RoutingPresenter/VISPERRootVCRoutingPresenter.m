@@ -41,6 +41,13 @@
                                                     withParameters:parameters];
                     }
                     
+                    [self sendWillRouteToControllerEventForController:blockController
+                                                            wireframe:blockWireframe
+                                                         routePattern:routePattern
+                                                             priority:priority
+                                                              options:options
+                                                           parameters:parameters];
+                    
                     NSObject <IVISPERRoutingEvent> *willPresentControllerEvent =
                     [self.serviceProvider createEventWithName:@"willPresentRootViewController"
                                                        sender:blockWireframe
@@ -68,6 +75,13 @@
                                                                     @"parameters": parameters
                                                                     }];
                         [blockController routingEvent:didPresentControllerEvent withWireframe:blockWireframe];
+                        
+                        [self  sendDidRouteToControllerEventForController:blockController
+                                                                wireframe:blockWireframe
+                                                             routePattern:routePattern
+                                                                 priority:priority
+                                                                  options:options
+                                                               parameters:parameters];
                     }];
                     [CATransaction commit];
 

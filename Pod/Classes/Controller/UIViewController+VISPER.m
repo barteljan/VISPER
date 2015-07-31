@@ -75,7 +75,21 @@ static BOOL areVISPEREventsOnAllViewControllersEnabledVar;
         }
     }
     
-    if([event.name isEqualToString:@"willPushController"]){
+    if([event.name isEqualToString:@"willRouteToController"]){
+        [self willRouteToViewControllerOnWireframe:event.sender
+                                   routePattern:[event.info objectForKey:@"routePattern"]
+                                       priority:[[event.info objectForKey:@"priority"] longValue]
+                                        options:(NSObject<IVISPERRoutingOption>*)[event.info objectForKey:@"options"]
+                                     parameters:(NSDictionary*)[event.info objectForKey:@"parameters"]
+         ];
+    }else if([event.name isEqualToString:@"didRouteToController"]){
+        [self didRouteToViewControllerOnWireframe:event.sender
+                                     routePattern:[event.info objectForKey:@"routePattern"]
+                                         priority:[[event.info objectForKey:@"priority"] longValue]
+                                          options:(NSObject<IVISPERRoutingOption>*)[event.info objectForKey:@"options"]
+                                       parameters:(NSDictionary*)[event.info objectForKey:@"parameters"]
+         ];
+    }else if([event.name isEqualToString:@"willPushController"]){
         [self willPushViewControllerOnWireframe:event.sender
                        routePattern:[event.info objectForKey:@"routePattern"]
                            priority:[[event.info objectForKey:@"priority"] longValue]
@@ -103,8 +117,41 @@ static BOOL areVISPEREventsOnAllViewControllersEnabledVar;
                                            options:(NSObject<IVISPERRoutingOption>*)[event.info objectForKey:@"options"]
                                         parameters:(NSDictionary*)[event.info objectForKey:@"parameters"]
          ];
+    }else if([event.name isEqualToString:@"willPresentRootViewController"]){
+        [self willPresentRootViewControllerOnWireframe:event.sender
+                                          routePattern:[event.info objectForKey:@"routePattern"]
+                                              priority:[[event.info objectForKey:@"priority"] longValue]
+                                               options:(NSObject<IVISPERRoutingOption>*)[event.info objectForKey:@"options"]
+                                            parameters:(NSDictionary*)[event.info objectForKey:@"parameters"]
+         ];
+    }else if([event.name isEqualToString:@"didPresentRootViewController"]){
+        [self didPresentRootViewControllerOnWireframe:event.sender
+                                         routePattern:[event.info objectForKey:@"routePattern"]
+                                             priority:[[event.info objectForKey:@"priority"] longValue]
+                                              options:(NSObject<IVISPERRoutingOption>*)[event.info objectForKey:@"options"]
+                                           parameters:(NSDictionary*)[event.info objectForKey:@"parameters"]
+         ];
     }
+
+
 }
+
+-(void)willRouteToViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
+                               routePattern:(NSString*)routePattern
+                                   priority:(NSInteger)priority
+                                    options:(NSObject<IVISPERRoutingOption>*)options
+                                 parameters:(NSDictionary *)parameters{
+    
+}
+
+-(void)didRouteToViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
+                              routePattern:(NSString*)routePattern
+                                  priority:(NSInteger)priority
+                                   options:(NSObject<IVISPERRoutingOption>*)options
+                                parameters:(NSDictionary *)parameters{
+    
+}
+
 
 -(void)willPushViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
                             routePattern:(NSString*)routePattern
@@ -136,6 +183,22 @@ static BOOL areVISPEREventsOnAllViewControllersEnabledVar;
                                    priority:(NSInteger)priority
                                     options:(NSObject<IVISPERRoutingOption>*)options
                                  parameters:(NSDictionary *)parameters{
+    
+}
+
+-(void)willPresentRootViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
+                                   routePattern:(NSString*)routePattern
+                                       priority:(NSInteger)priority
+                                        options:(NSObject<IVISPERRoutingOption>*)options
+                                     parameters:(NSDictionary *)parameters{
+    
+}
+
+-(void)didPresentRootViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
+                                  routePattern:(NSString*)routePattern
+                                      priority:(NSInteger)priority
+                                       options:(NSObject<IVISPERRoutingOption>*)options
+                                    parameters:(NSDictionary *)parameters{
     
 }
 
