@@ -15,6 +15,7 @@
 #import "Example3VisperViewController.h"
 #import "Example3VisperViewControllerPresenter.h"
 #import <VISPER/UIViewController+VISPER.h>
+#import <VISPER/PriorizedObjectStore.h>
 
 
 @interface AppDelegate ()
@@ -26,8 +27,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [UIViewController enableVISPEREventsOnAllViewControllers];
-    self.wireframe.controllerServiceProvider     = self;
-    self.wireframe.routingOptionsServiceProvider = self;
+    [self.wireframe addControllerServiceProvider:self withPriority:0];
+    [self.wireframe addRoutingOptionsServiceProvider:self withPriority:0];
 
     Example1VisperViewControllerPresenter *example1VCPresenter =
         [[Example1VisperViewControllerPresenter alloc] initWithWireframe:self.wireframe];

@@ -16,7 +16,7 @@
 
 @interface VISPERRoutingPresenter : NSObject<IVISPERRoutingPresenter>
 
-@property(nonatomic)NSObject<IVISPERWireframeViewControllerServiceProvider>*controllerServiceProvider;
+@property(nonatomic)NSArray *controllerServiceProviders;
 @property(nonatomic)NSObject<IVISPERRoutingPresenterServiceProvider>*serviceProvider;
 
 

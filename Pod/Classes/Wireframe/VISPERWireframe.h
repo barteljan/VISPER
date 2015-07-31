@@ -13,6 +13,7 @@
 #import "IVISPERRoutingOption.h"
 #import "IVISPERWireframeViewControllerServiceProvider.h"
 #import "IVISPERWireframeRoutingOptionsServiceProvider.h"
+#import "PriorizedObjectStore.h"
 
 @interface VISPERWireframe : NSObject<IVISPERWireframe>
 
@@ -29,13 +30,13 @@
 /**
  *  Service Provider for getting controller instances when none are given at runtime
  **/
-@property(nonatomic)IBOutlet NSObject<IVISPERWireframeViewControllerServiceProvider>*controllerServiceProvider;
+-(NSArray *)controllerServiceProviders;
 
 
 /**
  *  Service provider for providing Routing options if none are given for a specific route
  **/
-@property(nonatomic)IBOutlet NSObject<IVISPERWireframeRoutingOptionsServiceProvider>*routingOptionsServiceProvider;
+-(NSArray *)routingOptionsServiceProviders;
 
 /**
  * Navigation controller of the wireframe

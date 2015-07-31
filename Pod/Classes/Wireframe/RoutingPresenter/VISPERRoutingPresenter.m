@@ -38,10 +38,16 @@
     
     UIViewController *controller = nil;
     
-    if(self.controllerServiceProvider){
-        controller = [self.controllerServiceProvider controllerForRoute:routePattern
-                                               routingOptions:options
-                                               withParameters:parameters];
+    if(self.controllerServiceProviders){
+        for(NSObject<IVISPERWireframeViewControllerServiceProvider> *provider in self.controllerServiceProviders){
+            controller = [provider controllerForRoute:routePattern
+                                       routingOptions:options
+                                       withParameters:parameters];
+            if(controller){
+                break;
+            }
+        }
+        
     }
     
     if(!controller){

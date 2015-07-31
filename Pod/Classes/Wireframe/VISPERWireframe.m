@@ -8,6 +8,13 @@
 
 #import "VISPERWireframe.h"
 #import "VISPERWireframeServiceProvider.h"
+#import "PriorizedObjectStore.h"
+
+@interface VISPERWireframe()
+@property(nonatomic,strong)PriorizedObjectStore *privateControllerServiceProviders;
+@property(nonatomic,strong)PriorizedObjectStore *privateRoutingOptionServiceProviders;
+@end
+
 
 @implementation VISPERWireframe
 
@@ -132,8 +139,13 @@
          options:(NSObject<IVISPERRoutingOption>*)options{
     
     
-    if(!options && self.routingOptionsServiceProvider){
-        options = [self.routingOptionsServiceProvider optionForRoutePattern:routePattern];
+    if(!options && self.routingOptionsServiceProviders){
+        for (NSObject<IVISPERWireframeRoutingOptionsServiceProvider> *provider in self.routingOptionsServiceProviders) {
+            options = [provider optionForRoutePattern:routePattern];
+            if(options){
+                break;
+            }
+        }
     }
     
     if(!options){
@@ -145,7 +157,7 @@
     }
     
     for(NSObject <IVISPERRoutingPresenter> *presenter in self.serviceProvider.routingPresenters){
-        [presenter setControllerServiceProvider:self.controllerServiceProvider];
+        [presenter setControllerServiceProviders:[self controllerServiceProviders]];
         if([presenter isResponsibleForRoutingOption:options]){
             [presenter addRoute:routePattern
                        priority:priority
@@ -156,7 +168,6 @@
         }
         
     }
-
 }
 
 /**
@@ -236,6 +247,58 @@
     
     return FALSE;
 }
+
+/**
+ *  IVISPERWireframeViewControllerServiceProvider for providing controllers when none are given
+ */
+-(PriorizedObjectStore*)privateControllerServiceProviders{
+    if(!self->_privateControllerServiceProviders){
+        self->_privateControllerServiceProviders = [[PriorizedObjectStore alloc] init];
+    }
+    return self->_privateControllerServiceProviders;
+}
+
+
+-(void)addControllerServiceProvider:(NSObject<IVISPERWireframeViewControllerServiceProvider>*)controllerServiceProvider
+                       withPriority:(NSInteger)priority{
+    [self.privateControllerServiceProviders addObject:controllerServiceProvider withPriority:priority];
+}
+
+-(void)removeControllerServiceProvider:(NSObject<IVISPERWireframeViewControllerServiceProvider>*)controllerServiceProvider{
+    [self.privateControllerServiceProviders removeObject:controllerServiceProvider];
+}
+
+-(NSArray*)controllerServiceProviders{
+    return [self.privateControllerServiceProviders allObjects];
+}
+
+/**
+ *  IVISPERWireframeViewControllerServiceProvider for providing routing options when none are given
+ */
+-(PriorizedObjectStore*)privateRoutingOptionServiceProviders{
+    if(!self->_privateRoutingOptionServiceProviders){
+        self->_privateRoutingOptionServiceProviders = [[PriorizedObjectStore alloc] init];
+    }
+    
+    return self->_privateRoutingOptionServiceProviders;
+}
+
+
+
+-(void)addRoutingOptionsServiceProvider:(NSObject<IVISPERWireframeRoutingOptionsServiceProvider>*)routingOptionsServiceProvider
+                           withPriority:(NSInteger)priority{
+    [self.privateRoutingOptionServiceProviders addObject:routingOptionsServiceProvider withPriority:priority];
+}
+
+
+-(void)removeRoutingOptionsServiceProvider:(NSObject<IVISPERWireframeRoutingOptionsServiceProvider>*)routingOptionsServiceProvider{
+    [self.privateRoutingOptionServiceProviders removeObject:routingOptionsServiceProvider];
+}
+
+-(NSArray*)routingOptionsServiceProviders{
+    return [self.privateRoutingOptionServiceProviders allObjects];
+}
+
 
 /**
  *

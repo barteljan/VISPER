@@ -15,7 +15,7 @@
 
 @protocol IVISPERRoutingPresenter <NSObject>
 
--(void)setControllerServiceProvider:(NSObject<IVISPERWireframeViewControllerServiceProvider>*)controllerServiceProvider;
+-(void)setControllerServiceProviders:(NSArray*)controllerServiceProviders;
 
 -(BOOL)isResponsibleForRoutingOption:(NSObject<IVISPERRoutingOption>*)routingOption;
 

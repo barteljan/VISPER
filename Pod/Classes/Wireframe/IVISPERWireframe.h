@@ -105,15 +105,26 @@
 /**
  *  IVISPERWireframeViewControllerServiceProvider for providing controllers when none are given
  */
--(NSObject<IVISPERWireframeViewControllerServiceProvider>*)controllerServiceProvider;
--(void)setControllerServiceProvider:(NSObject<IVISPERWireframeViewControllerServiceProvider>*)controllerServiceProvider;
+-(void)addControllerServiceProvider:(NSObject<IVISPERWireframeViewControllerServiceProvider>*)controllerServiceProvider
+                       withPriority:(NSInteger)priority;
+
+-(void)removeControllerServiceProvider:(NSObject<IVISPERWireframeViewControllerServiceProvider>*)controllerServiceProvider;
+
+-(NSArray*)controllerServiceProviders;
+
 
 
 /**
  *  IVISPERWireframeViewControllerServiceProvider for providing routing options when none are given
  */
--(NSObject<IVISPERWireframeRoutingOptionsServiceProvider>*)routingOptionsServiceProvider;
--(void)setRoutingOptionsServiceProvider:(NSObject<IVISPERWireframeRoutingOptionsServiceProvider>*)routingOptionsServiceProvider;
+
+-(void)addRoutingOptionsServiceProvider:(NSObject<IVISPERWireframeRoutingOptionsServiceProvider>*)routingOptionsServiceProvider
+                           withPriority:(NSInteger)priority;
+
+-(void)removeRoutingOptionsServiceProvider:(NSObject<IVISPERWireframeRoutingOptionsServiceProvider>*)routingOptionsServiceProvider;
+
+-(NSArray*)routingOptionsServiceProviders;
+
 
 
 /**
