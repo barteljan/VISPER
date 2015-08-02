@@ -112,10 +112,13 @@
         //replace or create options from routing option service provider
         if(blockWireframe.routingOptionsServiceProviders){
             for (NSObject<IVISPERWireframeRoutingOptionsServiceProvider> *provider in blockWireframe.routingOptionsServiceProviders) {
-                options = [provider optionForRoutePattern:routePattern
+                
+                NSObject<IVISPERRoutingOption> *tempOptions = nil;
+                tempOptions = [provider optionForRoutePattern:routePattern
                                                parameters:parameters
                                            currentOptions:options];
-                if(options){
+                if(tempOptions){
+                    options = tempOptions;
                     break;
                 }
             }
