@@ -19,11 +19,17 @@
 
 -(BOOL)isResponsibleForRoutingOption:(NSObject<IVISPERRoutingOption>*)routingOption;
 
-- (void)addRoute:(NSString *)routePattern
-        priority:(NSUInteger)priority
-  withController:(UIViewController*)controller
-         options:(NSObject<IVISPERRoutingOption>*)options
-     onWireframe:(NSObject<IVISPERWireframe>*)wireframe;
+-(void)routeForPattern:(NSString*)routePattern
+            controller:(UIViewController*)controller
+               options:(NSObject<IVISPERRoutingOption>*)options
+            parameters:(NSDictionary*)parameters
+           onWireframe:(NSObject<IVISPERWireframe>*)wireframe
+            completion:(void(^)(NSString *routePattern,
+                                UIViewController *controller,
+                                NSObject<IVISPERRoutingOption>*options,
+                                NSDictionary *parameters,
+                                NSObject<IVISPERWireframe>*wireframe))completion;
+
 
 
 @end

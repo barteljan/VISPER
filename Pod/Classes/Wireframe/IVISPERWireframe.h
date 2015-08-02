@@ -22,38 +22,13 @@
 - (void)removeRoute:(NSString *)routePattern;
 
 /**
-  * Registers a routePattern in the global scheme namespace with a handlerBlock to call when the route pattern is matched by a URL.
-  * The block returns a BOOL representing if the handlerBlock actually handled the route or not. If
-  * a block returns NO, JLRoutes will continue trying to find a matching route.
- **/
-- (void)addRoute:(NSString *)routePattern priority:(NSUInteger)priority handler:(BOOL (^)(NSDictionary *parameters))handlerBlock;
-- (void)addRoute:(NSString *)routePattern handler:(BOOL (^)(NSDictionary *parameters))handlerBlock;
-
-/**
- * add route for handling a block (should be discovered by the controllerServiceProvider of this wireframe)
+ * add route for handling a contoller or a (should be discovered by the controllerServiceProvider of this wireframe)
  */
 - (void)addRoute:(NSString *)routePattern;
 
-
-/**
- * add route for pushing a view controller (should be discovered by the controllerServiceProvider of this wireframe)
- */
-- (void)addRoute:(NSString *)routePattern
-         options:(NSObject<IVISPERRoutingOption>*)options;
-
-
-/**
- * add route for a controller (instance will be discovered at runtime by the service provider)
- */
-- (void)addRoute:(NSString *)routePattern
-  withController:(UIViewController *)controller
-         options:(NSObject<IVISPERRoutingOption>*)options;
-
 - (void)addRoute:(NSString *)routePattern
         priority:(NSUInteger)priority
-  withController:(UIViewController *)controller
-         options:(NSObject<IVISPERRoutingOption>*)options;
-
+         handler:(BOOL (^)(NSDictionary *parameters))handlerBlock;
 
 /**
  * Routes a URL, calling handler blocks (for patterns that match URL) until 
@@ -61,6 +36,7 @@
  **/
 - (BOOL)routeURL:(NSURL *)URL; // instance method
 - (BOOL)routeURL:(NSURL *)URL withParameters:(NSDictionary *)parameters;
+- (BOOL)routeURL:(NSURL *)URL withParameters:(NSDictionary *)parameters options:(NSObject<IVISPERRoutingOption>*)options;
 
 /**
  * Returns whether a route exists for a URL
@@ -112,6 +88,13 @@
 
 -(NSArray*)controllerServiceProviders;
 
+
+/**
+ * add Routing presenter, responsible for routing controllers with specific RoutingOptions
+ **/
+-(void)addRoutingPresenter:(NSObject<IVISPERRoutingPresenter>*)presenter withPriority:(NSInteger)priority;
+-(void)removeRoutingPresenter:(NSObject<IVISPERRoutingPresenter>*)presenter;
+-(NSArray*)routingPresenters;
 
 
 /**

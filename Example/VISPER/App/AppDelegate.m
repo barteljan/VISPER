@@ -29,33 +29,14 @@
     [UIViewController enableVISPEREventsOnAllViewControllers];
     [self.wireframe addControllerServiceProvider:self withPriority:0];
     [self.wireframe addRoutingOptionsServiceProvider:self withPriority:0];
-
-    Example1VisperViewControllerPresenter *example1VCPresenter =
-        [[Example1VisperViewControllerPresenter alloc] initWithWireframe:self.wireframe];
-
-    Example1VisperViewController *example1VC =
-        [[Example1VisperViewController alloc] initWithNibName:@"Example1VisperViewController"
-                                                       bundle:nil
-                                              serviceProvider:nil
-                                                    presenter:example1VCPresenter];
-    
-    
-    [self.navigationController setViewControllers:@[example1VC]];
-    
-
-    Example2VisperViewControllerPresenter *example2VCPresenter =
-        [[Example2VisperViewControllerPresenter alloc] initWithWireframe:self.wireframe];
-    
-    Example2VisperViewController *example2VC = [[Example2VisperViewController alloc] initWithNibName:@"Example2VisperViewController"
-                                                                                              bundle:nil];
-    [example2VC addVisperPresenter:example2VCPresenter];
-    
    
-    [self.wireframe addRoute:@"/example2"
-              withController:example2VC
-                     options:[self.wireframe pushRoutingOption:YES]];
-
+    [self.wireframe addRoute:@"/example1"];
+    [self.wireframe addRoute:@"/example2"];
     [self.wireframe addRoute:@"/example3"];
+    
+    [self.wireframe routeURL:[NSURL URLWithString:@"/example1"]
+              withParameters:nil
+                     options:[self.wireframe presentRootVCRoutingOption:NO]];
     
     return YES;
 }
@@ -63,7 +44,31 @@
 -(UIViewController*)controllerForRoute:(NSString*)routePattern
                         routingOptions:(NSObject<IVISPERRoutingOption>*)options
                         withParameters:(NSDictionary*)parameters{
-    if ([routePattern isEqualToString:@"/example3"]) {
+    
+    //create controller 1
+    if ([routePattern isEqualToString:@"/example1"]){
+        Example1VisperViewControllerPresenter *example1VCPresenter =
+        [[Example1VisperViewControllerPresenter alloc] initWithWireframe:self.wireframe];
+        
+        Example1VisperViewController *example1VC =
+        [[Example1VisperViewController alloc] initWithNibName:@"Example1VisperViewController"
+                                                       bundle:nil
+                                              serviceProvider:nil
+                                                    presenter:example1VCPresenter];
+        return example1VC;
+    }
+    //create controller 2
+    else if ([routePattern isEqualToString:@"/example2"]) {
+        Example2VisperViewControllerPresenter *example2VCPresenter =
+        [[Example2VisperViewControllerPresenter alloc] initWithWireframe:self.wireframe];
+        
+        Example2VisperViewController *example2VC = [[Example2VisperViewController alloc] initWithNibName:@"Example2VisperViewController"
+                                                                                                  bundle:nil];
+        [example2VC addVisperPresenter:example2VCPresenter];
+        return example2VC;
+    }
+    //create controller 3
+    else if ([routePattern isEqualToString:@"/example3"]) {
         Example3VisperViewControllerPresenter *example3VCPresenter =
             [[Example3VisperViewControllerPresenter alloc] initWithWireframe:self.wireframe];
         
@@ -78,8 +83,20 @@
     return nil;
 }
 
--(NSObject<IVISPERRoutingOption> *)optionForRoutePattern:(NSString *)routePattern{
-    return [self.wireframe modalRoutingOption:YES];
+-(NSObject<IVISPERRoutingOption> *)optionForRoutePattern:(NSString *)routePattern
+                                              parameters:(NSDictionary*)parameters
+                                          currentOptions:(NSObject<IVISPERRoutingOption>*)currentOptions{
+    if(currentOptions){
+        return currentOptions;
+    }
+    
+    if ([routePattern isEqualToString:@"/example2"]) {
+        return [self.wireframe pushRoutingOption:YES];
+    }else if([routePattern isEqualToString:@"/example3"]){
+        return [self.wireframe modalRoutingOption:YES];
+    }
+
+    return nil;
 }
 
 @end

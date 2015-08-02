@@ -9,10 +9,12 @@
 #import "VISPERWireframe.h"
 #import "VISPERWireframeServiceProvider.h"
 #import "PriorizedObjectStore.h"
+#import "UIViewController+VISPER.h"
 
 @interface VISPERWireframe()
 @property(nonatomic,strong)PriorizedObjectStore *privateControllerServiceProviders;
 @property(nonatomic,strong)PriorizedObjectStore *privateRoutingOptionServiceProviders;
+@property(nonatomic,strong)PriorizedObjectStore *privateRoutingPresenters;
 @end
 
 
@@ -100,13 +102,106 @@
  **/
 
 - (void)addRoute:(NSString *)routePattern{
-    [self addRoute:routePattern options:nil];
+    [self addRoute:routePattern priority:0];
 }
 
-- (void)addRoute:(NSString *)routePattern
-        priority:(NSUInteger)priority
-         handler:(BOOL (^)(NSDictionary *parameters))handlerBlock{
-    [self.routes addRoute:routePattern priority:priority handler:handlerBlock];
+- (void)addRoute:(NSString *)routePattern priority:(NSInteger)priority{
+    NSObject<IVISPERWireframe> *blockWireframe = self;
+    
+    [self addRoute:routePattern priority:priority handler:^BOOL(NSDictionary *parameters) {
+        
+        NSObject<IVISPERRoutingOption>* options = nil;
+        
+        //get routing options from parameters
+        if([parameters objectForKey:@"routingOption"] && [[parameters objectForKey:@"routingOption"] conformsToProtocol:@protocol(IVISPERRoutingOption)]){
+            options = [parameters objectForKey:@"routingOption"];
+        }
+        
+        //replace or create options from routing option service provider
+        if(blockWireframe.routingOptionsServiceProviders){
+            for (NSObject<IVISPERWireframeRoutingOptionsServiceProvider> *provider in blockWireframe.routingOptionsServiceProviders) {
+                options = [provider optionForRoutePattern:routePattern
+                                               parameters:parameters
+                                           currentOptions:options];
+                if(options){
+                    break;
+                }
+            }
+        }
+        
+        //get controller from controller service providers
+        UIViewController *controller = nil;
+        
+        if(blockWireframe.controllerServiceProviders){
+            for(NSObject<IVISPERWireframeViewControllerServiceProvider> *provider in blockWireframe.controllerServiceProviders){
+                controller = [provider controllerForRoute:routePattern
+                                           routingOptions:options
+                                           withParameters:parameters];
+                if(controller){
+                    break;
+                }
+            }
+            
+        }
+        
+        if(!controller){
+            @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                           reason:[NSString stringWithFormat:@"No controller for routePattern:%@ and parameters:%@ found", routePattern,parameters]
+                                         userInfo:@{
+                                                    @"routePattern"  :routePattern,
+                                                    @"routingOptions":options,
+                                                    @"parameters"     :parameters
+                                                    }];
+        }
+        
+        //TODO: presenter aus dem service provider raus
+        for(NSObject <IVISPERRoutingPresenter> *presenter in blockWireframe.routingPresenters){
+            
+            if([presenter isResponsibleForRoutingOption:options]){
+                
+                //send will route event
+                NSObject <IVISPERRoutingEvent> *willRouteToControllerEvent =
+                [blockWireframe.serviceProvider createEventWithName:@"willRouteToController"
+                                                             sender:blockWireframe
+                                                               info:@{
+                                                                      @"routePattern":routePattern,
+                                                                      @"options" : options,
+                                                                      @"parameters": parameters
+                                                                      }];
+                [controller routingEvent:willRouteToControllerEvent withWireframe:blockWireframe];
+                
+                
+                
+                [presenter routeForPattern:routePattern
+                                controller:controller
+                                   options:options
+                                parameters:parameters
+                               onWireframe:blockWireframe
+                                completion:^(NSString *routePattern,
+                                             UIViewController *controller,
+                                             NSObject<IVISPERRoutingOption> *option,
+                                             NSDictionary *parameters,
+                                             NSObject<IVISPERWireframe> *wireframe) {
+                                    
+                                    //send did route event
+                                    NSObject <IVISPERRoutingEvent> *didRouteToControllerEvent =
+                                    [wireframe.serviceProvider createEventWithName:@"didRouteToController"
+                                                                            sender:wireframe
+                                                                              info:@{
+                                                                                     @"routePattern":routePattern,
+                                                                                     @"options" : options,
+                                                                                     @"parameters": parameters
+                                                                                     }];
+                                    [controller routingEvent:didRouteToControllerEvent withWireframe:wireframe];
+                                }];
+                return YES;
+            }
+        }
+        
+        return NO;
+        
+    }];
+
 }
 
 - (void)addRoute:(NSString *)routePattern
@@ -114,66 +209,14 @@
     [self addRoute:routePattern priority:0 handler:handlerBlock];
 }
 
-- (void)addRoute:(NSString *)routePattern
-         options:(NSObject<IVISPERRoutingOption>*)options{
-    
-    
-    [self addRoute:routePattern
-    withController:nil
-           options:options];
-    
-}
-
-- (void)addRoute:(NSString *)routePattern
-  withController:(UIViewController *)controller
-         options:(NSObject<IVISPERRoutingOption>*)options{
-    [self addRoute:routePattern
-          priority:0
-    withController:controller
-           options:options];
-}
 
 - (void)addRoute:(NSString *)routePattern
         priority:(NSUInteger)priority
-  withController:(UIViewController *)controller
-         options:(NSObject<IVISPERRoutingOption>*)options{
-    
-    
-    if(!options && self.routingOptionsServiceProviders){
-        for (NSObject<IVISPERWireframeRoutingOptionsServiceProvider> *provider in self.routingOptionsServiceProviders) {
-            options = [provider optionForRoutePattern:routePattern];
-            if(options){
-                break;
-            }
-        }
-    }
-    
-    if(!options){
-        @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                       reason:[NSString stringWithFormat:@"No routing options for routePattern:%@ found", routePattern]
-                                     userInfo:@{
-                                                @"routePattern"  :routePattern,
-                                                }];
-    }
-    
-    for(NSObject <IVISPERRoutingPresenter> *presenter in self.serviceProvider.routingPresenters){
-        [presenter setControllerServiceProviders:[self controllerServiceProviders]];
-        if([presenter isResponsibleForRoutingOption:options]){
-            
-            
-            
-            
-            
-            [presenter addRoute:routePattern
-                       priority:priority
-                 withController:controller
-                        options:options
-                    onWireframe:self];
-            break;
-        }
-        
-    }
+         handler:(BOOL (^)(NSDictionary *parameters))handlerBlock{
+    [self.routes addRoute:routePattern priority:priority handler:handlerBlock];
 }
+
+
 
 /**
  * Routes a URL, calling handler blocks (for patterns that match URL) until
@@ -214,6 +257,14 @@
     return FALSE;
 }
 
+- (BOOL)routeURL:(NSURL *)URL withParameters:(NSDictionary *)parameters options:(NSObject<IVISPERRoutingOption>*)options{
+    NSMutableDictionary *tempParameters = [NSMutableDictionary dictionaryWithDictionary:parameters];
+    [tempParameters setObject:options forKey:@"routingOption"];
+    parameters = [NSDictionary dictionaryWithDictionary:tempParameters];
+    return [self routeURL:URL withParameters:parameters];
+}
+
+
 /**
  * Returns whether a route exists for a URL
  **/
@@ -252,6 +303,23 @@
     
     return FALSE;
 }
+
+/**
+ * Add and remove routing presenters
+ **/
+-(void)addRoutingPresenter:(NSObject<IVISPERRoutingPresenter>*)presenter withPriority:(NSInteger)priority{
+    [self.privateRoutingPresenters addObject:presenter withPriority:priority];
+}
+
+
+-(void)removeRoutingPresenter:(NSObject<IVISPERRoutingPresenter>*)presenter{
+    [self.privateRoutingPresenters removeObject:presenter];
+}
+
+-(NSArray*)routingPresenters{
+    return [self.privateRoutingPresenters allObjects];
+}
+
 
 /**
  *  IVISPERWireframeViewControllerServiceProvider for providing controllers when none are given

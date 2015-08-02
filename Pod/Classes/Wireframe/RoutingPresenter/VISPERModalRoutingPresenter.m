@@ -23,65 +23,51 @@
     return NO;
 }
 
-- (void)addRoute:(NSString *)routePattern
-        priority:(NSUInteger)priority
-  withController:(UIViewController*)controller
-         options:(NSObject<IVISPERRoutingOption>*)options
-     onWireframe:(NSObject<IVISPERWireframe>*)wireframe{
+
+-(void)routeForPattern:(NSString*)routePattern
+            controller:(UIViewController*)controller
+               options:(NSObject<IVISPERRoutingOption>*)options
+            parameters:(NSDictionary*)parameters
+           onWireframe:(NSObject<IVISPERWireframe>*)wireframe
+            completion:(void(^)(NSString*routePattern,
+                                UIViewController *controller,
+                                NSObject<IVISPERRoutingOption>*options,
+                                NSDictionary *parameters,
+                                NSObject<IVISPERWireframe>*wireframe))completion{
     
-    NSObject<IVISPERWireframe> *blockWireframe = wireframe;
     
+    NSObject <IVISPERRoutingEvent> *willPresentControllerEvent =
+    [self.serviceProvider createEventWithName:@"willPresentController"
+                                       sender:wireframe
+                                         info:@{
+                                                @"routePattern":routePattern,
+                                                @"options" : options,
+                                                @"parameters": parameters
+                                                }];
+    [controller routingEvent:willPresentControllerEvent withWireframe:wireframe];
     
-    [wireframe addRoute:routePattern
-               priority:priority
-                handler:^BOOL(NSDictionary *parameters) {
-          
-        UIViewController *blockController = controller;
-        if(!blockController){
-            blockController = [self controllerForRoute:routePattern
-                                        routingOptions:options
-                                        withParameters:parameters];
-        }
-                    
-        [self sendWillRouteToControllerEventForController:blockController
-                                                wireframe:blockWireframe
-                                             routePattern:routePattern
-                                                 priority:priority
-                                                  options:options
-                                               parameters:parameters];
-                    
-        NSObject <IVISPERRoutingEvent> *willPresentControllerEvent =
-                    [self.serviceProvider createEventWithName:@"willPresentController"
-                                                       sender:blockWireframe
-                                                         info:@{
-                                                                @"routePattern":routePattern,
-                                                                @"priority":[NSNumber numberWithLong:priority],
-                                                                @"options" : options,
-                                                                @"parameters": parameters
-                                                                }];
-        [blockController routingEvent:willPresentControllerEvent withWireframe:blockWireframe];
-        [blockWireframe.navigationController presentViewController:blockController
-                                                          animated:options.wireframePresentationType.animated
-                                                        completion:^{
-                                                              NSObject <IVISPERRoutingEvent> *didPresentControllerEvent =
-                                                              [self.serviceProvider createEventWithName:@"didPresentController"
-                                                                                                 sender:blockWireframe
-                                                                                                   info:@{
-                                                                                                          @"routePattern":routePattern,
-                                                                                                          @"priority":[NSNumber numberWithLong:priority],
-                                                                                                          @"options" : options,
-                                                                                                          @"parameters": parameters
-                                                                                                          }];
-                                                              [blockController routingEvent:didPresentControllerEvent withWireframe:blockWireframe];
-                                                            [self sendDidRouteToControllerEventForController:blockController
-                                                                                                    wireframe:blockWireframe
-                                                                                                 routePattern:routePattern
-                                                                                                     priority:priority
-                                                                                                      options:options
-                                                                                                   parameters:parameters];
-                                                          }];
-        return YES;
-    }];
+    [wireframe.navigationController presentViewController:controller
+                                                      animated:options.wireframePresentationType.animated
+                                                    completion:^{
+                                                        NSObject <IVISPERRoutingEvent> *didPresentControllerEvent =
+                                                        [self.serviceProvider createEventWithName:@"didPresentController"
+                                                                                           sender:wireframe
+                                                                                             info:@{
+                                                                                                    @"routePattern":routePattern,
+                                                                                                    @"options" : options,
+                                                                                                    @"parameters": parameters
+                                                                                                    }];
+                                                        [controller routingEvent:didPresentControllerEvent withWireframe:wireframe];
+                                                        completion(routePattern,
+                                                                   controller,
+                                                                   options,
+                                                                   parameters,
+                                                                   wireframe);
+                                                    }];
+
 }
+
+
+
 
 @end

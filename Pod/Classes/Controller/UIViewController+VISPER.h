@@ -33,49 +33,41 @@
 
 -(void)willRouteToViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
                                routePattern:(NSString*)routePattern
-                                   priority:(NSInteger)priority
                                     options:(NSObject<IVISPERRoutingOption>*)options
                                  parameters:(NSDictionary *)parameters;
 
 -(void)didRouteToViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
                               routePattern:(NSString*)routePattern
-                                  priority:(NSInteger)priority
                                    options:(NSObject<IVISPERRoutingOption>*)options
                                 parameters:(NSDictionary *)parameters;
 
 -(void)willPushViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
                             routePattern:(NSString*)routePattern
-                                priority:(NSInteger)priority
                                  options:(NSObject<IVISPERRoutingOption>*)options
                               parameters:(NSDictionary *)parameters;
 
 -(void)didPushViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
                            routePattern:(NSString*)routePattern
-                               priority:(NSInteger)priority
                                 options:(NSObject<IVISPERRoutingOption>*)options
                              parameters:(NSDictionary *)parameters;
 
 -(void)willPresentViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
                                routePattern:(NSString*)routePattern
-                                   priority:(NSInteger)priority
                                     options:(NSObject<IVISPERRoutingOption>*)options
                                  parameters:(NSDictionary *)parameters;
 
 -(void)didPresentViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
                               routePattern:(NSString*)routePattern
-                                  priority:(NSInteger)priority
                                    options:(NSObject<IVISPERRoutingOption>*)options
                                 parameters:(NSDictionary *)parameters;
 
 -(void)willPresentRootViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
                                    routePattern:(NSString*)routePattern
-                                       priority:(NSInteger)priority
                                         options:(NSObject<IVISPERRoutingOption>*)options
                                      parameters:(NSDictionary *)parameters;
 
 -(void)didPresentRootViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
                                   routePattern:(NSString*)routePattern
-                                      priority:(NSInteger)priority
                                        options:(NSObject<IVISPERRoutingOption>*)options
                                     parameters:(NSDictionary *)parameters;
 

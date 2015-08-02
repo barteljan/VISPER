@@ -11,6 +11,7 @@
 #import "VISPERRootVCRoutingPresenter.h"
 #import "VISPERPresentationTypeRootVC.h"
 #import "VISPERWireframe.h"
+#import "VISPERRoutingEvent.h"
 
 
 @interface VISPERWireframeServiceProvider()
@@ -108,6 +109,14 @@
     NSObject<IVISPERWireframe>*wireframe = [[VISPERWireframe alloc] initWithRoutes:[[JLRoutes alloc] init]
                                                               navigationController:existingWireframe.navigationController serviceProvider:self];
     return wireframe;
+}
+
+-(NSObject<IVISPERRoutingEvent>*)createEventWithName:(NSString*)name
+                                              sender:(id)sender
+                                                info:(NSDictionary*)info{
+    return [[VISPERRoutingEvent alloc] initWithName:name
+                                             sender:sender
+                                               info:info];
 }
 
 @end

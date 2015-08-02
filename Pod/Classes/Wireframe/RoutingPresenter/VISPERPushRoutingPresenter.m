@@ -20,74 +20,52 @@
     return NO;
 }
 
-- (void)addRoute:(NSString *)routePattern
-        priority:(NSUInteger)priority
-  withController:(UIViewController*)controller
-         options:(NSObject<IVISPERRoutingOption>*)options
-     onWireframe:(NSObject<IVISPERWireframe>*)wireframe{
-
-    NSObject<IVISPERWireframe> *blockWireframe = wireframe;
+-(void)routeForPattern:(NSString*)routePattern
+            controller:(UIViewController*)controller
+               options:(NSObject<IVISPERRoutingOption>*)options
+            parameters:(NSDictionary*)parameters
+           onWireframe:(NSObject<IVISPERWireframe>*)wireframe
+            completion:(void(^)(NSString*routePattern,
+                                UIViewController *controller,
+                                NSObject<IVISPERRoutingOption>*options,
+                                NSDictionary *parameters,
+                                NSObject<IVISPERWireframe>*wireframe))completion{
     
-    [wireframe addRoute:routePattern
-               priority:priority
-                handler:^BOOL(NSDictionary *parameters) {
-                    
-        UIViewController *blockController = controller;
-        if(!blockController){
-            blockController = [self controllerForRoute:routePattern
-                                        routingOptions:options
-                                        withParameters:parameters];
-        }
-        
-        [self sendWillRouteToControllerEventForController:blockController
-                                                wireframe:blockWireframe
-                                             routePattern:routePattern
-                                                 priority:priority
-                                                  options:options
-                                               parameters:parameters];
-                    
-                    
-        NSObject <IVISPERRoutingEvent> *willPushControllerEvent =
-                [self.serviceProvider createEventWithName:@"willPushController"
-                                                   sender:blockWireframe
-                                                     info:@{
-                                                            @"routePattern":routePattern,
-                                                            @"priority":[NSNumber numberWithLong:priority],
-                                                            @"options" : options,
-                                                            @"parameters": parameters
-                                                            }];
-        [blockController routingEvent:willPushControllerEvent withWireframe:blockWireframe];
-        
-        [CATransaction begin];
-        if([blockWireframe.navigationController respondsToSelector:@selector(showViewController:sender:)] &&
-           options.wireframePresentationType.animated == YES){
-            [blockWireframe.navigationController showViewController:blockController sender:blockWireframe];
-        }else{
-            [blockWireframe.navigationController pushViewController:blockController animated:options.wireframePresentationType.animated];
-        }
-        [CATransaction setCompletionBlock:^{
-            NSObject <IVISPERRoutingEvent> *didPushControllerEvent =
-            [self.serviceProvider createEventWithName:@"didPushController"
-                                               sender:blockWireframe
-                                                 info:@{
-                                                        @"routePattern":routePattern,
-                                                        @"priority":[NSNumber numberWithLong:priority],
-                                                        @"options" : options,
-                                                        @"parameters": parameters
-                                                        }];
-            [blockController routingEvent:didPushControllerEvent withWireframe:blockWireframe];
-            
-            [self sendDidRouteToControllerEventForController:blockController
-                                                    wireframe:blockWireframe
-                                                 routePattern:routePattern
-                                                     priority:priority
-                                                      options:options
-                                                   parameters:parameters];
-        }];
-        [CATransaction commit];
-        return YES;
-                    
+    
+    NSObject <IVISPERRoutingEvent> *willPushControllerEvent =
+    
+    [self.serviceProvider createEventWithName:@"willPushController"
+                                       sender:wireframe
+                                         info:@{
+                                                @"routePattern":routePattern,
+                                                @"options" : options,
+                                                @"parameters": parameters
+                                                }];
+    [controller routingEvent:willPushControllerEvent withWireframe:wireframe];
+    
+    [CATransaction begin];
+    if([wireframe.navigationController respondsToSelector:@selector(showViewController:sender:)] &&
+       options.wireframePresentationType.animated == YES){
+        [wireframe.navigationController showViewController:controller sender:wireframe];
+    }else{
+        [wireframe.navigationController pushViewController:controller
+                                                  animated:options.wireframePresentationType.animated];
+    }
+    
+    [CATransaction setCompletionBlock:^{
+        NSObject <IVISPERRoutingEvent> *didPushControllerEvent =
+        [self.serviceProvider createEventWithName:@"didPushController"
+                                           sender:wireframe
+                                             info:@{
+                                                    @"routePattern":routePattern,
+                                                    @"options" : options,
+                                                    @"parameters": parameters
+                                                    }];
+        [controller routingEvent:didPushControllerEvent withWireframe:wireframe];
+        completion(routePattern,controller,options,parameters,wireframe);
     }];
+    [CATransaction commit];
+
 }
 
 @end
