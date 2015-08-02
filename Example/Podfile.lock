@@ -1,7 +1,7 @@
 PODS:
   - JLRoutes (1.5.2)
   - Kiwi (2.3.1)
-  - VISPER (0.1.14):
+  - VISPER (0.1.15):
     - JLRoutes (~> 1.5.2)
 
 DEPENDENCIES:
@@ -15,6 +15,6 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   JLRoutes: fc36fd38ab476d5ac3a6a84b05be60e4b1a2bc81
   Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
-  VISPER: 9d00db9edb7dae3df811a82e5b8fdc03aaf4568d
+  VISPER: 1deb82b97dd85e1ea3afa1c62c243700d2e1ad69
 
 COCOAPODS: 0.37.2

@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VISPERRoutingPresenter.h"
+#import "VISPERNavigationControllerBasedRoutingPresenter.h"
 
-@interface VISPERModalRoutingPresenter : VISPERRoutingPresenter
+@interface VISPERModalRoutingPresenter : VISPERNavigationControllerBasedRoutingPresenter
+
 
 @end

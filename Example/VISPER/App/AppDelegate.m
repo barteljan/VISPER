@@ -15,7 +15,9 @@
 #import "Example3VisperViewController.h"
 #import "Example3VisperViewControllerPresenter.h"
 #import <VISPER/UIViewController+VISPER.h>
-#import <VISPER/PriorizedObjectStore.h>
+#import <VISPER/VISPERModalRoutingPresenter.h>
+#import <VISPER/VISPERPushRoutingPresenter.h>
+#import <VISPER/VISPERRootVCRoutingPresenter.h>
 
 
 @interface AppDelegate ()
@@ -27,9 +29,22 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [UIViewController enableVISPEREventsOnAllViewControllers];
+    
     [self.wireframe addControllerServiceProvider:self withPriority:0];
     [self.wireframe addRoutingOptionsServiceProvider:self withPriority:0];
-   
+    
+    [self.wireframe addRoutingPresenter:[[VISPERModalRoutingPresenter alloc]
+                                            initWithNavigationController:self.navigationController]
+                           withPriority:0];
+    
+    [self.wireframe addRoutingPresenter:[[VISPERPushRoutingPresenter alloc]
+                                            initWithNavigationController:self.navigationController]
+                           withPriority:0];
+    
+    [self.wireframe addRoutingPresenter:[[VISPERRootVCRoutingPresenter alloc]
+                                            initWithNavigationController:self.navigationController]
+                           withPriority:0];
+    
     [self.wireframe addRoute:@"/example1"];
     [self.wireframe addRoute:@"/example2"];
     [self.wireframe addRoute:@"/example3"];

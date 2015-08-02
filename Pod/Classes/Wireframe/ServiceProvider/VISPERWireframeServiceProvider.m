@@ -107,7 +107,7 @@
 
 -(NSObject<IVISPERWireframe>*)emptyWireframeFromWireframe:(NSObject<IVISPERWireframe>*)existingWireframe{
     NSObject<IVISPERWireframe>*wireframe = [[VISPERWireframe alloc] initWithRoutes:[[JLRoutes alloc] init]
-                                                              navigationController:existingWireframe.navigationController serviceProvider:self];
+                                                                    serviceProvider:self];
     return wireframe;
 }
 

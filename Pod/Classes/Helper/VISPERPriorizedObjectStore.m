@@ -1,21 +1,21 @@
 //
-//  PriorizedObjectStore.m
+//  VISPERPriorizedObjectStore.m
 //  Pods
 //
 //  Created by Bartel on 31.07.15.
 //
 //
 
-#import "PriorizedObjectStore.h"
-#import "PriorizedObjectStoreItem.h"
+#import "VISPERPriorizedObjectStore.h"
+#import "VISPERPriorizedObjectStoreItem.h"
 
-@interface PriorizedObjectStore()
+@interface VISPERPriorizedObjectStore ()
 
 @property(nonatomic,strong)NSMutableArray *prioriezedObjects;
 
 @end
 
-@implementation PriorizedObjectStore
+@implementation VISPERPriorizedObjectStore
 
 
 -(NSMutableArray*)prioriezedObjects{
@@ -34,14 +34,14 @@
     
     [self removeObject:object];
     
-    PriorizedObjectStoreItem *currentItem = [[PriorizedObjectStoreItem alloc] initWithObject:object
+    VISPERPriorizedObjectStoreItem *currentItem = [[VISPERPriorizedObjectStoreItem alloc] initWithObject:object
                                                                                     priority:priority];
 
     BOOL appendToEnd = TRUE;
     NSInteger index = 0;
     NSInteger lastPriority = 0;
     NSInteger currentPriority = 0;
-    for (PriorizedObjectStoreItem *item in self.prioriezedObjects) {
+    for (VISPERPriorizedObjectStoreItem *item in self.prioriezedObjects) {
         lastPriority = currentPriority;
         currentPriority = item.priority;
         
@@ -65,7 +65,7 @@
     NSMutableArray *objectsToRemove = [NSMutableArray array];
     
     //clean store from already priorized objects
-    for (PriorizedObjectStoreItem *item in self.prioriezedObjects) {
+    for (VISPERPriorizedObjectStoreItem *item in self.prioriezedObjects) {
         if([item.object isEqual:object]){
             [objectsToRemove addObject:item];
             break;
@@ -79,11 +79,21 @@
 -(NSArray*)allObjects{
     NSMutableArray *objectArray = [NSMutableArray array];
     
-    for(PriorizedObjectStoreItem *item in self.prioriezedObjects){
+    for(VISPERPriorizedObjectStoreItem *item in self.prioriezedObjects){
         [objectArray addObject:item.object];
     }
     
     return [NSArray arrayWithArray:objectArray];
 }
+
+-(NSInteger)priorityForObject:(NSObject*)object{
+    for(VISPERPriorizedObjectStoreItem *item in self.prioriezedObjects){
+        if([object isEqual:item.object]){
+            return item.priority;
+        }
+    }
+    return 0;
+}
+
 
 @end

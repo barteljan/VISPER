@@ -13,8 +13,12 @@
 @implementation VISPERRoutingPresenter
 
 -(instancetype)init{
-    VISPERRoutingPresenterServiceProvider *provider = [[VISPERRoutingPresenterServiceProvider alloc] init];
-    return [self initWithServiceProvider:provider];
+    self = [super init];
+    if(self){
+        VISPERRoutingPresenterServiceProvider *provider = [[VISPERRoutingPresenterServiceProvider alloc] init];
+        self->_serviceProvider = provider;
+    }
+    return self;
 }
 
 

@@ -44,11 +44,11 @@
     [controller routingEvent:willPushControllerEvent withWireframe:wireframe];
     
     [CATransaction begin];
-    if([wireframe.navigationController respondsToSelector:@selector(showViewController:sender:)] &&
+    if([self.navigationController respondsToSelector:@selector(showViewController:sender:)] &&
        options.wireframePresentationType.animated == YES){
-        [wireframe.navigationController showViewController:controller sender:wireframe];
+        [self.navigationController showViewController:controller sender:wireframe];
     }else{
-        [wireframe.navigationController pushViewController:controller
+        [self.navigationController pushViewController:controller
                                                   animated:options.wireframePresentationType.animated];
     }
     

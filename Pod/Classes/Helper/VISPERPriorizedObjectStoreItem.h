@@ -1,5 +1,5 @@
 //
-//  PriorizedObjectStoreItem.h
+//  VISPERPriorizedObjectStoreItem.h
 //  Pods
 //
 //  Created by Bartel on 31.07.15.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PriorizedObjectStoreItem : NSObject
+@interface VISPERPriorizedObjectStoreItem : NSObject
 
 @property(readonly,nonatomic,assign)NSInteger priority;
 @property(readonly,nonatomic,strong)NSObject *object;

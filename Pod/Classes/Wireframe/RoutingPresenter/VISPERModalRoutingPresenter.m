@@ -16,6 +16,7 @@
 
 @implementation VISPERModalRoutingPresenter
 
+
 -(BOOL)isResponsibleForRoutingOption:(NSObject<IVISPERRoutingOption>*)routingOption{
     if([routingOption.wireframePresentationType conformsToProtocol:@protocol(IVISPERWireframePresentationTypeModal)]){
         return YES;
@@ -46,7 +47,7 @@
                                                 }];
     [controller routingEvent:willPresentControllerEvent withWireframe:wireframe];
     
-    [wireframe.navigationController presentViewController:controller
+    [self.navigationController presentViewController:controller
                                                       animated:options.wireframePresentationType.animated
                                                     completion:^{
                                                         NSObject <IVISPERRoutingEvent> *didPresentControllerEvent =

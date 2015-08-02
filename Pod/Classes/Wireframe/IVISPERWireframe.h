@@ -64,12 +64,6 @@
  */
 - (void)unregisterRouteScheme:(NSString *)scheme;
 
-/**
- * Getter and setter for the UINavigationController of this wireframe
- **/
--(UINavigationController*)navigationController;
--(void)setNavigationController:(UINavigationController*)navigationController;
-
 
 /**
  * Getter and setter for the service provider

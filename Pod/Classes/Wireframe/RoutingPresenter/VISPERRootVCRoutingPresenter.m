@@ -45,7 +45,7 @@
     
     [CATransaction begin];
     
-    [wireframe.navigationController setViewControllers:@[controller]
+    [self.navigationController setViewControllers:@[controller]
                                                    animated:options.wireframePresentationType.animated];
     
     [CATransaction setCompletionBlock:^{

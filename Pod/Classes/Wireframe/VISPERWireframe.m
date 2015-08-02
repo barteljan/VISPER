@@ -8,13 +8,19 @@
 
 #import "VISPERWireframe.h"
 #import "VISPERWireframeServiceProvider.h"
-#import "PriorizedObjectStore.h"
+#import "VISPERPriorizedObjectStore.h"
 #import "UIViewController+VISPER.h"
 
 @interface VISPERWireframe()
-@property(nonatomic,strong)PriorizedObjectStore *privateControllerServiceProviders;
-@property(nonatomic,strong)PriorizedObjectStore *privateRoutingOptionServiceProviders;
-@property(nonatomic,strong)PriorizedObjectStore *privateRoutingPresenters;
+
+/**
+ * JLRoutes object for routing
+ **/
+@property(nonatomic)JLRoutes *routes;
+
+@property(nonatomic,strong) VISPERPriorizedObjectStore *privateControllerServiceProviders;
+@property(nonatomic,strong) VISPERPriorizedObjectStore *privateRoutingOptionServiceProviders;
+@property(nonatomic,strong) VISPERPriorizedObjectStore *privateRoutingPresenters;
 @end
 
 
@@ -26,41 +32,27 @@
 -(instancetype)init{
     VISPERWireframeServiceProvider *serviceProvider = [[VISPERWireframeServiceProvider alloc] init];
     return [self initWithRoutes:[JLRoutes globalRoutes]
-           navigationController:nil
                 serviceProvider:serviceProvider];
 }
 
--(instancetype)initWithNavigationController:(UINavigationController*)navigationController{
-    VISPERWireframeServiceProvider *serviceProvider = [[VISPERWireframeServiceProvider alloc] init];
-    return [self initWithRoutes:[JLRoutes globalRoutes]
-           navigationController:navigationController
-                serviceProvider:serviceProvider];
-}
-
--(instancetype)initWithNavigationController:(UINavigationController*)navigationController
-                            serviceProvider:(NSObject<IVISPERWireframeServiceProvider>*)serviceProvider{
+-(instancetype)initWithServiceProvider:(NSObject<IVISPERWireframeServiceProvider>*)serviceProvider{
     
     return [self initWithRoutes:[JLRoutes globalRoutes]
-           navigationController:navigationController
                 serviceProvider:serviceProvider];
 }
 
--(instancetype)initWithRoutes:(JLRoutes*)routes
-         navigationController:(UINavigationController*)navigationController{
+-(instancetype)initWithRoutes:(JLRoutes*)routes{
     VISPERWireframeServiceProvider *serviceProvider = [[VISPERWireframeServiceProvider alloc] init];
     return [self initWithRoutes:routes
-           navigationController:navigationController
                 serviceProvider:serviceProvider];
    
 }
 
 -(instancetype)initWithRoutes:(JLRoutes*)routes
-         navigationController:(UINavigationController*)navigationController
               serviceProvider:(NSObject<IVISPERWireframeServiceProvider>*)serviceProvider{
     self = [super init];
     if(self){
         self->_routes = routes;
-        self->_navigationController = navigationController;
         self->_serviceProvider = serviceProvider;
     }
     return self;
@@ -71,14 +63,14 @@
  * Returns the global routing namespace
  **/
 - (NSObject<IVISPERWireframe>*)globalRoutes{
-    return [[VISPERWireframe alloc] initWithRoutes:[JLRoutes globalRoutes] navigationController:self.navigationController];
+    return [[VISPERWireframe alloc] initWithRoutes:[JLRoutes globalRoutes]];
 }
 
 /**
  * Returns a routing namespace for the given scheme
  */
 - (NSObject<IVISPERWireframe>*)routesForScheme:(NSString *)scheme{
-    return [[VISPERWireframe alloc] initWithRoutes:[JLRoutes routesForScheme:scheme] navigationController:self.navigationController];
+    return [[VISPERWireframe alloc] initWithRoutes:[JLRoutes routesForScheme:scheme]];
 }
 
 /**
@@ -307,6 +299,13 @@
 /**
  * Add and remove routing presenters
  **/
+-(VISPERPriorizedObjectStore*)privateRoutingPresenters{
+    if(!self->_privateRoutingPresenters){
+        self->_privateRoutingPresenters = [[VISPERPriorizedObjectStore alloc] init];
+    }
+    return self->_privateRoutingPresenters;
+}
+
 -(void)addRoutingPresenter:(NSObject<IVISPERRoutingPresenter>*)presenter withPriority:(NSInteger)priority{
     [self.privateRoutingPresenters addObject:presenter withPriority:priority];
 }
@@ -324,9 +323,9 @@
 /**
  *  IVISPERWireframeViewControllerServiceProvider for providing controllers when none are given
  */
--(PriorizedObjectStore*)privateControllerServiceProviders{
+-(VISPERPriorizedObjectStore *)privateControllerServiceProviders{
     if(!self->_privateControllerServiceProviders){
-        self->_privateControllerServiceProviders = [[PriorizedObjectStore alloc] init];
+        self->_privateControllerServiceProviders = [[VISPERPriorizedObjectStore alloc] init];
     }
     return self->_privateControllerServiceProviders;
 }
@@ -348,9 +347,9 @@
 /**
  *  IVISPERWireframeViewControllerServiceProvider for providing routing options when none are given
  */
--(PriorizedObjectStore*)privateRoutingOptionServiceProviders{
+-(VISPERPriorizedObjectStore *)privateRoutingOptionServiceProviders{
     if(!self->_privateRoutingOptionServiceProviders){
-        self->_privateRoutingOptionServiceProviders = [[PriorizedObjectStore alloc] init];
+        self->_privateRoutingOptionServiceProviders = [[VISPERPriorizedObjectStore alloc] init];
     }
     
     return self->_privateRoutingOptionServiceProviders;
