@@ -109,7 +109,23 @@
          controller:(UIViewController*)viewController
         andWireframe:(NSObject<IVISPERWireframe>*)wireframe{
    
-    if([event.name isEqualToString:@"willPushController"]){
+    if([event.name isEqualToString:@"willRouteToController"]){
+        [self willRouteToViewController:viewController
+                            onWireframe:event.sender
+                           routePattern:[event.info objectForKey:@"routePattern"]
+                               priority:[[event.info objectForKey:@"priority"] longValue]
+                                options:(NSObject<IVISPERRoutingOption>*)[event.info objectForKey:@"options"]
+                             parameters:(NSDictionary*)[event.info objectForKey:@"parameters"]
+         ];
+    }else if([event.name isEqualToString:@"didRouteToController"]){
+        [self    didRouteToViewController:viewController
+                          onWireframe:event.sender
+                         routePattern:[event.info objectForKey:@"routePattern"]
+                             priority:[[event.info objectForKey:@"priority"] longValue]
+                              options:(NSObject<IVISPERRoutingOption>*)[event.info objectForKey:@"options"]
+                           parameters:(NSDictionary*)[event.info objectForKey:@"parameters"]
+         ];
+    }else if([event.name isEqualToString:@"willPushController"]){
         [self willPushViewController:viewController
                          onWireframe:event.sender
                         routePattern:[event.info objectForKey:@"routePattern"]
@@ -226,6 +242,31 @@
                  withController:(UIViewController*)controller
                         onEvent:(NSObject<IVISPERViewEvent>*)event {
 
+}
+
+
+/**
+ * Called before pushing a controller of this presenter
+ **/
+-(void)willRouteToViewController:(UIViewController*)viewController
+                     onWireframe:(NSObject<IVISPERWireframe>*)wireframe
+                    routePattern:(NSString*)routePattern
+                        priority:(NSInteger)priority
+                         options:(NSObject<IVISPERRoutingOption>*)options
+                      parameters:(NSDictionary *)parameters{
+    
+}
+
+/**
+ * Called before pushing a controller of this presenter
+ **/
+-(void)didRouteToViewController:(UIViewController*)viewController
+                  onWireframe:(NSObject<IVISPERWireframe>*)wireframe
+                 routePattern:(NSString*)routePattern
+                     priority:(NSInteger)priority
+                      options:(NSObject<IVISPERRoutingOption>*)options
+                   parameters:(NSDictionary *)parameters{
+    
 }
 
 
