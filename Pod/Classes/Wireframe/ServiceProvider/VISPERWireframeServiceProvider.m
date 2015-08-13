@@ -6,10 +6,8 @@
 #import "VISPERPresentationType.h"
 #import "VISPERPresentationTypePush.h"
 #import "VISPERPresentationTypeModal.h"
-#import "VISPERPushRoutingPresenter.h"
-#import "VISPERModalRoutingPresenter.h"
-#import "VISPERRootVCRoutingPresenter.h"
 #import "VISPERPresentationTypeRootVC.h"
+#import "VISPERPresententationTypeDoNotPresentVC.h"
 #import "VISPERWireframe.h"
 #import "VISPERRoutingEvent.h"
 
@@ -51,6 +49,17 @@
     
     return [[VISPERRoutingOption alloc] initWithPresentationType:type];
 
+}
+
+-(NSObject<IVISPERRoutingOption> *)doNotPresentVCOption:(void(^)(NSString *routePattern,
+                                                                 UIViewController *controller,
+                                                                 NSObject<IVISPERRoutingOption>*options,
+                                                                 NSDictionary *parameters,
+                                                                 NSObject<IVISPERWireframe>*wireframe))completion{
+    NSObject <IVISPERWireframePresentationType> *type =
+            [[VISPERPresententationTypeDoNotPresentVC alloc] initWithCompletion:completion];
+
+    return [[VISPERRoutingOption alloc] initWithPresentationType:type];
 }
 
 -(NSObject<IVISPERWireframe>*)emptyWireframeFromWireframe:(NSObject<IVISPERWireframe>*)existingWireframe{

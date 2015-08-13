@@ -38,6 +38,12 @@
 - (BOOL)routeURL:(NSURL *)URL withParameters:(NSDictionary *)parameters;
 - (BOOL)routeURL:(NSURL *)URL withParameters:(NSDictionary *)parameters options:(NSObject<IVISPERRoutingOption>*)options;
 
+
+/**
+* Returns the controller presented by the wireframe when routing this URL
+*/
+-(UIViewController*)controllerForURL:(NSURL*)URL withParameters:(NSDictionary *)parameters;
+
 /**
  * Returns whether a route exists for a URL
  **/

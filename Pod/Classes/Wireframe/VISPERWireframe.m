@@ -8,8 +8,9 @@
 
 #import "VISPERWireframe.h"
 #import "VISPERWireframeServiceProvider.h"
-#import "VISPERPriorizedObjectStore.h"
 #import "UIViewController+VISPER.h"
+#import "VISPERDoNotPresentRoutingPresenter.h"
+#import "IVISPERWireframePresentationTypeDoNotPresentVC.h"
 
 @interface VISPERWireframe()
 
@@ -54,6 +55,9 @@
     if(self){
         self->_routes = routes;
         self->_serviceProvider = serviceProvider;
+        
+        VISPERDoNotPresentRoutingPresenter *doNotRoutePresenter = [[VISPERDoNotPresentRoutingPresenter alloc] init];
+        [self addRoutingPresenter:doNotRoutePresenter withPriority:0];
     }
     return self;
 }
@@ -109,8 +113,10 @@
             options = [parameters objectForKey:@"routingOption"];
         }
         
+        BOOL replacingOptionsAllowed = (!options) || ![options.wireframePresentationType conformsToProtocol:@protocol(IVISPERWireframePresentationTypeDoNotPresentVC)];
+        
         //replace or create options from routing option service provider
-        if(blockWireframe.routingOptionsServiceProviders){
+        if(blockWireframe.routingOptionsServiceProviders && replacingOptionsAllowed){
             for (NSObject<IVISPERWireframeRoutingOptionsServiceProvider> *provider in blockWireframe.routingOptionsServiceProviders) {
                 
                 NSObject<IVISPERRoutingOption> *tempOptions = nil;
@@ -257,6 +263,30 @@
     [tempParameters setObject:options forKey:@"routingOption"];
     parameters = [NSDictionary dictionaryWithDictionary:tempParameters];
     return [self routeURL:URL withParameters:parameters];
+}
+
+/**
+* Returns the controller presented by the wireframe when routing this URL
+*/
+-(UIViewController*)controllerForURL:(NSURL*)URL withParameters:(NSDictionary *)parameters{
+    __block UIViewController *blockVC  = nil;
+    
+    dispatch_semaphore_t sem = dispatch_semaphore_create(0);
+    
+    NSObject<IVISPERRoutingOption> *doNotPresentVCOption = [self.serviceProvider doNotPresentVCOption:^(NSString *routePattern,
+                                                                                                        UIViewController *controller,
+                                                                                                        NSObject<IVISPERRoutingOption> *options,
+                                                                                                        NSDictionary *parameters,
+                                                                                                        NSObject<IVISPERWireframe> *wireframe) {
+        blockVC = controller;
+        dispatch_semaphore_signal(sem);
+    }];
+
+    [self routeURL:URL withParameters:parameters options:doNotPresentVCOption];
+    
+    dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
+    
+    return blockVC;
 }
 
 

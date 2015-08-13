@@ -23,6 +23,11 @@
 -(NSObject<IVISPERRoutingOption> *)pushRoutingOption:(BOOL)animated;
 -(NSObject<IVISPERRoutingOption> *)modalRoutingOption:(BOOL)animated;
 -(NSObject<IVISPERRoutingOption> *)presentRootVCRoutingOption:(BOOL)animated;
+-(NSObject<IVISPERRoutingOption> *)doNotPresentVCOption:(void(^)(NSString *routePattern,
+                                                                 UIViewController *controller,
+                                                                 NSObject<IVISPERRoutingOption>*options,
+                                                                 NSDictionary *parameters,
+                                                                 NSObject<IVISPERWireframe>*wireframe))completion;
 
 /**
  * Generate a new empty wireframe
