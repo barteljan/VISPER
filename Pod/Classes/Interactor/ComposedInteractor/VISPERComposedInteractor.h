@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IVISPERComposedInteractor.h"
 #import "VISPERInteractor.h"
 
-@interface VISPERComposedInteractor : VISPERInteractor
+@interface VISPERComposedInteractor : VISPERInteractor<IVISPERComposedInteractor>
 
 @property(nonatomic,strong)IBOutletCollection(NSObject<IVISPERInteractor>) NSArray *interactors;
 
