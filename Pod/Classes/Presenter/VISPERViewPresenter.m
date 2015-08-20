@@ -23,9 +23,6 @@
         withView:(UIView*)view
    andController:(UIViewController*)viewController{
     
-    @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                   reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
-                                 userInfo:nil];
     
 }
 
@@ -44,7 +41,6 @@
 -(void)routingEvent:(NSObject<IVISPERRoutingEvent>*)event
          controller:(UIViewController*)viewController
        andWireframe:(NSObject<IVISPERWireframe>*)wireframe{
-    
 }
 
 @end

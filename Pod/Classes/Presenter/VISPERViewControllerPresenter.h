@@ -87,4 +87,61 @@
 withController:(UIViewController*)controller
                         onEvent:(NSObject<IVISPERViewEvent>*)event;
 
+
+-(void)willRouteToViewController:(UIViewController*)viewController
+                 onWireframe:(NSObject<IVISPERWireframe>*)wireframe
+                routePattern:(NSString*)routePattern
+                    priority:(NSInteger)priority
+                     options:(NSObject<IVISPERRoutingOption>*)options
+                  parameters:(NSDictionary *)parameters;
+
+-(void)didRouteToViewController:(UIViewController*)viewController
+                  onWireframe:(NSObject<IVISPERWireframe>*)wireframe
+                 routePattern:(NSString*)routePattern
+                     priority:(NSInteger)priority
+                      options:(NSObject<IVISPERRoutingOption>*)options
+                   parameters:(NSDictionary *)parameters;
+
+/**
+ * Called before pushing a controller of this presenter
+ **/
+-(void)willPushViewController:(UIViewController*)viewController
+                  onWireframe:(NSObject<IVISPERWireframe>*)wireframe
+                 routePattern:(NSString*)routePattern
+                     priority:(NSInteger)priority
+                      options:(NSObject<IVISPERRoutingOption>*)options
+                   parameters:(NSDictionary *)parameters;
+
+/**
+ * Called after pushing a controller of this presenter
+ **/
+-(void)didPushViewController:(UIViewController*)viewController
+                 onWireframe:(NSObject<IVISPERWireframe>*)wireframe
+                routePattern:(NSString*)routePattern
+                    priority:(NSInteger)priority
+                     options:(NSObject<IVISPERRoutingOption>*)options
+                  parameters:(NSDictionary *)parameters;
+
+/**
+ * Called before modal presenting a controller of this presenter
+ **/
+-(void)willPresentViewController:(UIViewController*)viewController
+                     onWireframe:(NSObject<IVISPERWireframe>*)wireframe
+                    routePattern:(NSString*)routePattern
+                        priority:(NSInteger)priority
+                         options:(NSObject<IVISPERRoutingOption>*)options
+                      parameters:(NSDictionary *)parameters;
+
+
+/**
+ * Called after modal presenting a controller of this presenter
+ **/
+-(void)didPresentViewController:(UIViewController*)viewController
+                    onWireframe:(NSObject<IVISPERWireframe>*)wireframe
+                   routePattern:(NSString*)routePattern
+                       priority:(NSInteger)priority
+                        options:(NSObject<IVISPERRoutingOption>*)options
+                     parameters:(NSDictionary *)parameters;
+
+
 @end

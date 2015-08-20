@@ -53,6 +53,9 @@
               withParameters:nil
                      options:[self.wireframe presentRootVCRoutingOption:NO]];
     
+    
+    UIViewController *controller = [self.wireframe controllerForURL:[NSURL URLWithString:@"/example1"] withParameters:nil];
+    NSLog(@"Controller: %@",controller);
     return YES;
 }
 
@@ -95,6 +98,9 @@
         return viewController;
     }
 
+    
+    
+    
     return nil;
 }
 
