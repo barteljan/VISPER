@@ -15,21 +15,6 @@
 @protocol IVISPERWireframeServiceProvider <NSObject>
 
 /**
- *
- * Provide some convienience RoutingOptions
- *
- */
--(NSObject<IVISPERRoutingOption> *)routingOption:(BOOL)animated;
--(NSObject<IVISPERRoutingOption> *)pushRoutingOption:(BOOL)animated;
--(NSObject<IVISPERRoutingOption> *)modalRoutingOption:(BOOL)animated;
--(NSObject<IVISPERRoutingOption> *)presentRootVCRoutingOption:(BOOL)animated;
--(NSObject<IVISPERRoutingOption> *)doNotPresentVCOption:(void(^)(NSString *routePattern,
-                                                                 UIViewController *controller,
-                                                                 NSObject<IVISPERRoutingOption>*options,
-                                                                 NSDictionary *parameters,
-                                                                 NSObject<IVISPERWireframe>*wireframe))completion;
-
-/**
  * Generate a new empty wireframe
  */
 -(NSObject<IVISPERWireframe>*)emptyWireframeFromWireframe:(NSObject<IVISPERWireframe>*)existingWireframe;

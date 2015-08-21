@@ -13,6 +13,7 @@
 #import "IVISPERRoutingOption.h"
 #import "IVISPERWireframeViewControllerServiceProvider.h"
 #import "IVISPERWireframeRoutingOptionsServiceProvider.h"
+#import "IVISPERRoutingOptionsFactory.h"
 
 @protocol IVISPERWireframe <NSObject>
 
@@ -34,7 +35,7 @@
  * Routes a URL, calling handler blocks (for patterns that match URL) until 
  * one returns YES, optionally specifying add'l parameters
  **/
-- (BOOL)routeURL:(NSURL *)URL; // instance method
+- (BOOL)routeURL:(NSURL *)URL;
 - (BOOL)routeURL:(NSURL *)URL withParameters:(NSDictionary *)parameters;
 - (BOOL)routeURL:(NSURL *)URL withParameters:(NSDictionary *)parameters options:(NSObject<IVISPERRoutingOption>*)options;
 
@@ -151,18 +152,8 @@
 -(NSObject<IVISPERWireframe>*)emptyWireframe;
 
 /**
- * GENERATING CONVINIENCE ROUTING OPTIONS
- **/
--(NSObject<IVISPERRoutingOption> *)routingOption;
--(NSObject<IVISPERRoutingOption> *)routingOption:(BOOL)animated;
-
--(NSObject<IVISPERRoutingOption> *)pushRoutingOption;
--(NSObject<IVISPERRoutingOption> *)pushRoutingOption:(BOOL)animated;
-
--(NSObject<IVISPERRoutingOption> *)modalRoutingOption;
--(NSObject<IVISPERRoutingOption> *)modalRoutingOption:(BOOL)animated;
-
--(NSObject<IVISPERRoutingOption> *)presentRootVCRoutingOption;
--(NSObject<IVISPERRoutingOption> *)presentRootVCRoutingOption:(BOOL)animated;
-
+ * Factory for generating routing options internally
+ */
+-(void)setRoutingOptionsFactory:(NSObject<IVISPERRoutingOptionsFactory>*)factory;
+-(NSObject<IVISPERRoutingOptionsFactory>*)routingOptionsFactory;
 @end

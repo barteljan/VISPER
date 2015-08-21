@@ -9,6 +9,7 @@
 #import "Example1Feature.h"
 #import "Example1VisperViewController.h"
 #import "Example1VisperViewControllerPresenter.h"
+#import <VISPER/VISPER.h>
 
 @implementation Example1Feature
 
@@ -49,7 +50,7 @@
     }
     
     if ([routePattern isEqualToString:@"/example1"]) {
-        return [self.wireframe presentRootVCRoutingOption];
+        return [VISPER routingOptionPresentRootVC:NO];
     }
     
     return nil;

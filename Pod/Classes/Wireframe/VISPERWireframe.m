@@ -11,6 +11,7 @@
 #import "UIViewController+VISPER.h"
 #import "VISPERDoNotPresentRoutingPresenter.h"
 #import "IVISPERWireframePresentationTypeDoNotPresentVC.h"
+#import "VISPER.h"
 
 @interface VISPERWireframe()
 
@@ -268,7 +269,7 @@
     
     dispatch_semaphore_t sem = dispatch_semaphore_create(0);
     
-    NSObject<IVISPERRoutingOption> *doNotPresentVCOption = [self.serviceProvider doNotPresentVCOption:^(NSString *routePattern,
+    NSObject<IVISPERRoutingOption> *doNotPresentVCOption = [self.routingOptionsFactory routingOptionDoNotPresentVC:^(NSString *routePattern,
                                                                                                         UIViewController *controller,
                                                                                                         NSObject<IVISPERRoutingOption> *options,
                                                                                                         NSDictionary *parameters,
@@ -478,36 +479,12 @@
 /**
 * GENERATING ROUTING OPTIONS
 **/
--(NSObject<IVISPERRoutingOption> *)routingOption{
-    return [self routingOption:YES];
-}
-
--(NSObject<IVISPERRoutingOption> *)pushRoutingOption{
-    return [self pushRoutingOption:YES];
-}
-
--(NSObject<IVISPERRoutingOption> *)modalRoutingOption{
-    return [self modalRoutingOption:YES];
-}
-
--(NSObject<IVISPERRoutingOption> *)routingOption:(BOOL)animated{
-    return [self.serviceProvider routingOption:animated];
-}
-
--(NSObject<IVISPERRoutingOption> *)pushRoutingOption:(BOOL)animated{
-    return [self.serviceProvider pushRoutingOption:animated];
-}
-
--(NSObject<IVISPERRoutingOption> *)modalRoutingOption:(BOOL)animated{
-    return [self.serviceProvider modalRoutingOption:animated];
-}
-
--(NSObject<IVISPERRoutingOption> *)presentRootVCRoutingOption{
-    return [self.serviceProvider presentRootVCRoutingOption:YES];
-}
-
--(NSObject<IVISPERRoutingOption> *)presentRootVCRoutingOption:(BOOL)animated{
-    return [self.serviceProvider presentRootVCRoutingOption:animated];
+-(NSObject<IVISPERRoutingOptionsFactory> *)routingOptionsFactory{
+    if(!self->_routingOptionsFactory){
+        self->_routingOptionsFactory = [VISPER sharedRoutingOptionsFactory];
+    }
+    
+    return self->_routingOptionsFactory;
 }
 
 @end

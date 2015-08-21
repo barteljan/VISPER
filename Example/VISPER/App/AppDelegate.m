@@ -11,6 +11,7 @@
 #import "Example1Feature.h"
 #import "ExampleFeature2.h"
 #import "ExampleFeature3.h"
+#import <VISPER/VISPER.h>
 
 
 @interface AppDelegate ()
@@ -31,7 +32,7 @@
     
     [self.visperApplication routeURL:[NSURL URLWithString:@"/example1"]
                       withParameters:nil
-                             options:[self.visperApplication.wireframe presentRootVCRoutingOption:NO]];
+                             options:[VISPER routingOptionPresentRootVC:NO]];
     
     return YES;
 }

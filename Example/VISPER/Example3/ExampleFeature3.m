@@ -9,6 +9,7 @@
 #import "ExampleFeature3.h"
 #import "Example3VisperViewController.h"
 #import "Example3VisperViewControllerPresenter.h"
+#import <VISPER/VISPER.h>
 
 @implementation ExampleFeature3
 
@@ -50,7 +51,7 @@
     }
     
     if ([routePattern isEqualToString:@"/example3"]) {
-        return [self.wireframe modalRoutingOption:YES];
+        return [VISPER routingOptionModal:YES];
     }
     
     return nil;

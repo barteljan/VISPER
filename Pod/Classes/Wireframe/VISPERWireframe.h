@@ -37,6 +37,11 @@
 @property (nonatomic, copy) void (^unmatchedURLHandler)(NSObject<IVISPERWireframe> *routes, NSURL *URL, NSDictionary *parameters);
 
 /**
+ * Factory for generating routing options internally
+ */
+@property (nonatomic,strong) NSObject<IVISPERRoutingOptionsFactory> *routingOptionsFactory;
+
+/**
  * init functions
  **/
 -(instancetype)initWithRoutes:(JLRoutes*)routes;
