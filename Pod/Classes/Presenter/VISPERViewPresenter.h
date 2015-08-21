@@ -11,6 +11,7 @@
 
 #import "IVISPERPresenter.h"
 #import "IVISPERViewEvent.h"
+#import "IVISPERWireframe.h"
 
 @interface VISPERViewPresenter : NSObject<IVISPERPresenter>
 

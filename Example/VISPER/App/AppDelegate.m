@@ -18,6 +18,7 @@
 #import <VISPER/VISPERModalRoutingPresenter.h>
 #import <VISPER/VISPERPushRoutingPresenter.h>
 #import <VISPER/VISPERRootVCRoutingPresenter.h>
+#import <VISPER/VISPERWireframe.h>
 
 
 @interface AppDelegate ()
@@ -28,7 +29,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    /*
     [UIViewController enableVISPEREventsOnAllViewControllers];
+    
+    self.wireframe = [[VISPERWireframe alloc] init];
     
     [self.wireframe addControllerServiceProvider:self withPriority:0];
     [self.wireframe addRoutingOptionsServiceProvider:self withPriority:0];
@@ -56,9 +60,11 @@
     
     UIViewController *controller = [self.wireframe controllerForURL:[NSURL URLWithString:@"/example1"] withParameters:nil];
     NSLog(@"Controller: %@",controller);
+     */
     return YES;
 }
 
+/*
 -(UIViewController*)controllerForRoute:(NSString*)routePattern
                         routingOptions:(NSObject<IVISPERRoutingOption>*)options
                         withParameters:(NSDictionary*)parameters{
@@ -103,7 +109,9 @@
     
     return nil;
 }
+ */
 
+/*
 -(NSObject<IVISPERRoutingOption> *)optionForRoutePattern:(NSString *)routePattern
                                               parameters:(NSDictionary*)parameters
                                           currentOptions:(NSObject<IVISPERRoutingOption>*)currentOptions{
@@ -119,5 +127,6 @@
 
     return nil;
 }
+ */
 
 @end

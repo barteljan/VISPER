@@ -12,9 +12,8 @@
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <customObject id="bYg-Ix-Cfg" userLabel="App Delegate" customClass="AppDelegate">
             <connections>
-                <outlet property="navigationController" destination="CIG-O0-I37" id="FLx-Ty-eag"/>
-                <outlet property="window" destination="Na2-4i-xf1" id="dKf-QP-AH2"/>
-                <outlet property="wireframe" destination="7Pk-aq-aF5" id="sO2-Jr-xdt"/>
+                <outlet property="navigationController" destination="5Wu-Kn-6pc" id="UaY-Kg-W3J"/>
+                <outlet property="window" destination="Na2-4i-xf1" id="hia-tP-B5r"/>
             </connections>
         </customObject>
         <window opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Na2-4i-xf1">
@@ -22,15 +21,14 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
-                <outlet property="rootViewController" destination="CIG-O0-I37" id="lrZ-so-6RF"/>
+                <outlet property="rootViewController" destination="5Wu-Kn-6pc" id="I9Y-CA-eTo"/>
             </connections>
         </window>
-        <navigationController id="CIG-O0-I37">
-            <navigationBar key="navigationBar" contentMode="scaleToFill" id="AMf-Fk-icx">
+        <navigationController id="5Wu-Kn-6pc">
+            <navigationBar key="navigationBar" contentMode="scaleToFill" id="oep-Zl-Qzr">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
             </navigationBar>
         </navigationController>
-        <customObject id="7Pk-aq-aF5" customClass="VISPERWireframe"/>
     </objects>
 </document>
