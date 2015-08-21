@@ -7,6 +7,8 @@
 //
 
 #import "ExampleFeature2.h"
+#import "Example2VisperViewController.h"
+#import "Example2VisperViewControllerPresenter.h"
 
 @implementation ExampleFeature2
 

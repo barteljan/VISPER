@@ -12,7 +12,6 @@
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <customObject id="bYg-Ix-Cfg" userLabel="App Delegate" customClass="AppDelegate">
             <connections>
-                <outlet property="navigationController" destination="5Wu-Kn-6pc" id="UaY-Kg-W3J"/>
                 <outlet property="window" destination="Na2-4i-xf1" id="hia-tP-B5r"/>
             </connections>
         </customObject>
@@ -20,15 +19,6 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-            <connections>
-                <outlet property="rootViewController" destination="5Wu-Kn-6pc" id="I9Y-CA-eTo"/>
-            </connections>
         </window>
-        <navigationController id="5Wu-Kn-6pc">
-            <navigationBar key="navigationBar" contentMode="scaleToFill" id="oep-Zl-Qzr">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                <autoresizingMask key="autoresizingMask"/>
-            </navigationBar>
-        </navigationController>
     </objects>
 </document>

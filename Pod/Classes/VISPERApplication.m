@@ -9,6 +9,10 @@
 #import "VISPERApplication.h"
 #import "VISPERWireframe.h"
 #import "VISPERComposedInteractor.h"
+#import "VISPERPushRoutingPresenter.h"
+#import "VISPERModalRoutingPresenter.h"
+#import "VISPERRootVCRoutingPresenter.h"
+
 @interface VISPERApplication()
 @property(nonatomic,strong)UINavigationController *navigationController;
 @property(nonatomic,strong)NSObject<IVISPERWireframe> *wireframe;
@@ -55,6 +59,13 @@
         self->_navigationController = controller;
         self->_wireframe = wireframe;
         self->_interactor = interactor;
+        
+        [self addRoutingPresenter:[[VISPERPushRoutingPresenter alloc] initWithNavigationController:self.navigationController]
+                     withPriority:0];
+        [self addRoutingPresenter:[[VISPERModalRoutingPresenter alloc] initWithNavigationController:self.navigationController]
+                     withPriority:0];
+        [self addRoutingPresenter:[[VISPERRootVCRoutingPresenter alloc] initWithNavigationController:self.navigationController]
+                     withPriority:0];
     }
     return self;
 
@@ -62,7 +73,7 @@
 
 
 -(UIViewController*)rootViewController{
-    return self.rootViewController;
+    return self.navigationController;
 }
 
 -(void)addRoutingPresenter:(NSObject<IVISPERRoutingPresenter> *)routingPresenter

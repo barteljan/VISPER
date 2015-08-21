@@ -9,11 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "IVISPERFeature.h"
 #import "IVISPERRoutingPresenter.h"
+#import "IVISPERWireframe.h"
 
 @protocol IVISPERApplication <NSObject>
 
 //the root view controller to add to your view hierarchie
 -(UIViewController*)rootViewController;
+
+//the wireframe of this application
+-(NSObject<IVISPERWireframe>*)wireframe;
 
 //add a feature
 -(void)addFeature:(NSObject<IVISPERFeature>*)feature;

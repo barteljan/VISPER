@@ -7,6 +7,8 @@
 //
 
 #import "ExampleFeature3.h"
+#import "Example3VisperViewController.h"
+#import "Example3VisperViewControllerPresenter.h"
 
 @implementation ExampleFeature3
 
@@ -47,8 +49,8 @@
         return currentOptions;
     }
     
-    if ([routePattern isEqualToString:@"/example2"]) {
-        return [self.wireframe pushRoutingOption:YES];
+    if ([routePattern isEqualToString:@"/example3"]) {
+        return [self.wireframe modalRoutingOption:YES];
     }
     
     return nil;
