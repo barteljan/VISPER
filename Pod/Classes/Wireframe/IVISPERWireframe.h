@@ -116,8 +116,6 @@
  * Child wireframe instances
  *
  */
-
-
 /**
  * Add child wireframe
  **/
