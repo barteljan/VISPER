@@ -120,9 +120,11 @@
         if(blockWireframe.routingOptionsServiceProviders && replacingOptionsAllowed){
             for (NSObject<IVISPERWireframeRoutingOptionsServiceProvider> *provider in blockWireframe.routingOptionsServiceProviders) {
                 
-                options = [provider optionForRoutePattern:routePattern
-                                               parameters:parameters
-                                           currentOptions:options];
+                if(provider){
+                    options = [provider optionForRoutePattern:routePattern
+                                                   parameters:parameters
+                                               currentOptions:options];
+                }
             }
         }
         
@@ -148,6 +150,16 @@
                                                     @"routePattern"  :routePattern,
                                                     @"routingOptions":options,
                                                     @"parameters"     :parameters
+                                                    }];
+        }
+        
+        if(!options){
+            @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                           reason:[NSString stringWithFormat:@"No Routingoptions for routePattern:%@ and parameters:%@ found", routePattern,parameters]
+                                         userInfo:@{
+                                                    @"routePattern"  :routePattern,
+                                                    @"controller"    :controller,
+                                                    @"parameters"    :parameters
                                                     }];
         }
         
