@@ -268,7 +268,9 @@
 
 - (BOOL)routeURL:(NSURL *)URL withParameters:(NSDictionary *)parameters options:(NSObject<IVISPERRoutingOption>*)options{
     NSMutableDictionary *tempParameters = [NSMutableDictionary dictionaryWithDictionary:parameters];
-    [tempParameters setObject:options forKey:@"routingOption"];
+    if(options){
+        [tempParameters setObject:options forKey:@"routingOption"];
+    }
     parameters = [NSDictionary dictionaryWithDictionary:tempParameters];
     return [self routeURL:URL withParameters:parameters];
 }
