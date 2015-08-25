@@ -112,4 +112,16 @@
     return [self.wireframe controllerForURL:URL withParameters:parameters];
 }
 
+
+-(void)setNavigationController:(UINavigationController *)navigationController{
+    self->_navigationController = navigationController;
+    
+    NSArray *routingPresenters = self.wireframe.routingPresenters;
+    
+    for(NSObject <IVISPERRoutingPresenter> *routingPresenter in routingPresenters){
+        if([routingPresenter respondsToSelector:@selector(setNavigationController:)]){
+            [routingPresenter performSelector:@selector(setNavigationController:) withObject:navigationController];
+        }
+    }
+}
 @end

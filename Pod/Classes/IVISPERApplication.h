@@ -23,13 +23,17 @@
 //the composed interactor of this application
 -(NSObject<IVISPERComposedInteractor>*)interactor;
 
+//get and set navigation view controller
+-(UINavigationController*)navigationController;
+-(void)setNavigationController:(UINavigationController*)navigationController;
+
 //add a feature
 -(void)addFeature:(NSObject<IVISPERFeature>*)feature;
 -(void)addRoutingPresenter:(NSObject<IVISPERRoutingPresenter>*)routingPresenter withPriority:(NSInteger)priority;
 
 - (BOOL)routeURL:(NSURL *)URL withParameters:(NSDictionary *)parameters options:(NSObject<IVISPERRoutingOption>*)options;
 - (BOOL)canRouteURL:(NSURL *)URL withParameters:(NSDictionary *)parameters;
--(UIViewController*)controllerForURL:(NSURL*)URL withParameters:(NSDictionary *)parameters;
+- (UIViewController*)controllerForURL:(NSURL*)URL withParameters:(NSDictionary *)parameters;
 
 
 @end
