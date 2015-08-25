@@ -10,6 +10,7 @@
 #import "IVISPERFeature.h"
 #import "IVISPERRoutingPresenter.h"
 #import "IVISPERWireframe.h"
+#import "IVISPERComposedInteractor.h"
 
 @protocol IVISPERApplication <NSObject>
 
@@ -18,6 +19,9 @@
 
 //the wireframe of this application
 -(NSObject<IVISPERWireframe>*)wireframe;
+
+//the composed interactor of this application
+-(NSObject<IVISPERComposedInteractor>*)interactor;
 
 //add a feature
 -(void)addFeature:(NSObject<IVISPERFeature>*)feature;
