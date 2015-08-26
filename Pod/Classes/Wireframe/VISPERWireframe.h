@@ -34,7 +34,7 @@
 /**
  * Called any time routeURL returns NO. Respects shouldFallbackToGlobalRoutes.
  **/
-@property (nonatomic, copy) void (^unmatchedURLHandler)(NSObject<IVISPERWireframe> *routes, NSURL *URL, NSDictionary *parameters);
+@property (nonatomic, copy) BOOL (^unmatchedURLHandler)(NSObject<IVISPERWireframe> *routes, NSURL *URL, NSDictionary *parameters);
 
 /**
  * Factory for generating routing options internally

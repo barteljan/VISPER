@@ -57,8 +57,20 @@
         self->_routes = routes;
         self->_serviceProvider = serviceProvider;
         
+        
         VISPERDoNotPresentRoutingPresenter *doNotRoutePresenter = [[VISPERDoNotPresentRoutingPresenter alloc] init];
         [self addRoutingPresenter:doNotRoutePresenter withPriority:0];
+        
+        VISPERWireframe *wireframe = self;
+        self.routes.unmatchedURLHandler = ^(JLRoutes *routes,NSURL *url,NSDictionary *dict){
+            if(wireframe.unmatchedURLHandler && wireframe.unmatchedURLHandler(wireframe,url,dict)){
+                NSLog(@"Route for URL:%@ not found",url);
+            }else{
+                @throw [NSException exceptionWithName:@"VISPERRouteNotFoundException"
+                                               reason:[NSString stringWithFormat:@"Route for URL:%@ not found", url]
+                                             userInfo:nil];
+            }
+        };
     }
     return self;
 }
