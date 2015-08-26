@@ -14,6 +14,11 @@
 @implementation UIViewController (VISPER)
 @dynamic visperPresenters;
 @dynamic visperServiceProvider;
+@dynamic routePattern;
+@dynamic routeParameters;
+@dynamic routingOptions;
+@dynamic wireframe;
+
 
 static BOOL areVISPEREventsOnAllViewControllersEnabledVar;
 
@@ -29,6 +34,46 @@ static BOOL areVISPEREventsOnAllViewControllersEnabledVar;
 
 -(void)setVisperServiceProvider:(NSObject<IVISPERViewControllerServiceProvider> *)visperServiceProvider{
     objc_setAssociatedObject(self, @selector(visperServiceProvider), visperServiceProvider , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+#pragma mark route pattern
+-(NSString*)routePattern{
+    NSString *routePattern = objc_getAssociatedObject(self, @selector(routePattern));
+    return routePattern;
+}
+
+-(void)setRoutePattern:(NSString *)myRoutePattern{
+    objc_setAssociatedObject(self, @selector(routePattern), myRoutePattern , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+#pragma mark routeParameters
+-(NSDictionary*)routeParameters{
+    NSDictionary *params = objc_getAssociatedObject(self, @selector(routeParameters));
+    return params;
+}
+
+-(void)setRouteParameters:(NSDictionary *)myRouteParameters{
+    objc_setAssociatedObject(self, @selector(routeParameters), myRouteParameters , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+#pragma mark routing options
+-(NSObject<IVISPERRoutingOption> *)routingOptions{
+    NSObject<IVISPERRoutingOption> *routingOption =  objc_getAssociatedObject(self, @selector(routingOptions));
+    return routingOption;
+}
+
+-(void)setRoutingOptions:(NSObject<IVISPERRoutingOption> *)myRoutingOptions{
+    objc_setAssociatedObject(self, @selector(routingOptions), myRoutingOptions , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+#pragma mark wireframe
+-(NSObject<IVISPERWireframe> *)wireframe{
+    NSObject<IVISPERWireframe> *myWireframe = objc_getAssociatedObject(self, @selector(wireframe));
+    return myWireframe;
+}
+
+-(void)setWireframe:(NSObject<IVISPERWireframe> *)myWireframe{
+    objc_setAssociatedObject(self, @selector(wireframe), myWireframe , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 
@@ -76,6 +121,11 @@ static BOOL areVISPEREventsOnAllViewControllersEnabledVar;
     }
     
     if([event.name isEqualToString:@"willRouteToController"]){
+        self.routePattern    = [event.info objectForKey:@"routePattern"];
+        self.routeParameters = [event.info objectForKey:@"parameters"];
+        self.routingOptions  = (NSObject<IVISPERRoutingOption>*)[event.info objectForKey:@"options"];
+        self.wireframe       = wireframe;
+        
         [self willRouteToViewControllerOnWireframe:event.sender
                                    routePattern:[event.info objectForKey:@"routePattern"]
                                         options:(NSObject<IVISPERRoutingOption>*)[event.info objectForKey:@"options"]
