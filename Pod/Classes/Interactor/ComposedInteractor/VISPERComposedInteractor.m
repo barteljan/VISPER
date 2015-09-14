@@ -82,7 +82,7 @@
 }
 
 -(void)setStrictMode:(BOOL)isInStrictMode{
-    self.strictMode = isInStrictMode;
+    self->_strictMode = isInStrictMode;
 }
 
 @end
