@@ -14,4 +14,7 @@
 -(void)addInteractor:(NSObject<IVISPERInteractor>*)interactor;
 -(void)removeInteractor:(NSObject<IVISPERInteractor>*)interactor;
 
+-(BOOL)isInStrictMode;
+-(void)setStrictMode:(BOOL)isInStrictMode
+
 @end

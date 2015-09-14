@@ -7,6 +7,10 @@
 //
 
 #import "VISPERComposedInteractor.h"
+@interface VISPERComposedInteractor()
+@property (nonatomic) BOOL strictMode;
+@end
+
 
 @implementation VISPERComposedInteractor
 
@@ -39,6 +43,7 @@
             break;
         }
     }
+    
 
     return responsible;
 }
@@ -46,20 +51,38 @@
 -(void)processCommand:(NSObject*)command
                 completion:(BOOL(^)(NSString *identifier,NSObject *object,NSError **error))completion{
 
+    BOOL foundResponsibleCommand = FALSE;
+    
     for(NSObject<IVISPERInteractor>*interactor in self.interactors){
         NSError *error = nil;
         if([interactor isResponsibleForCommand:command error:&error] &&
            [self canCallInteractor:interactor]){
+                foundResponsibleCommand = TRUE;
                 [interactor processCommand:command
                                 completion:completion];
         }
     }
     
-
+    
+    if(self.strictMode && !foundResponsibleCommand){
+        @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                       reason:[NSString stringWithFormat:@"Did not found interactor for command %@",command]
+                                     userInfo:@{
+                                                @"command":command
+                                                }];
+    }
 }
 
 -(BOOL)canCallInteractor:(NSObject<IVISPERInteractor>*)interactor{
     return [interactor respondsToSelector:@selector(processCommand:completion:)];
+}
+
+-(BOOL)isInStrictMode{
+    return self.strictMode;
+}
+
+-(void)setStrictMode:(BOOL)isInStrictMode{
+    self.strictMode = isInStrictMode;
 }
 
 @end
