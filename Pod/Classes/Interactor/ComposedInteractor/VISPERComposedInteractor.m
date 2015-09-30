@@ -34,17 +34,16 @@
     }
 }
 
--(BOOL)isResponsibleForCommand:(NSObject*)command error:(NSError **)error{
+-(BOOL)isResponsibleForCommand:(NSObject*)command{
     BOOL responsible = FALSE;
     
     for(NSObject<IVISPERInteractor>*interactor in self.interactors){
-        if([interactor isResponsibleForCommand:command error:error]){
+        if([interactor isResponsibleForCommand:command]){
             responsible = TRUE;
             break;
         }
     }
     
-
     return responsible;
 }
 
@@ -54,8 +53,7 @@
     BOOL foundResponsibleCommand = FALSE;
     
     for(NSObject<IVISPERInteractor>*interactor in self.interactors){
-        NSError *error = nil;
-        if([interactor isResponsibleForCommand:command error:&error] &&
+        if([interactor isResponsibleForCommand:command] &&
            [self canCallInteractor:interactor]){
                 foundResponsibleCommand = TRUE;
                 [interactor processCommand:command

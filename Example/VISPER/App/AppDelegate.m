@@ -34,8 +34,7 @@
                       withParameters:nil
                              options:[VISPER routingOptionPresentRootVC:NO]];
     
-    
-    UIViewController *controller = [self.visperApplication controllerForURL:[NSURL URLWithString:@"/test_test"] withParameters:nil];
+
     
     return YES;
 }
