@@ -23,6 +23,7 @@
 @property(nonatomic,strong) VISPERPriorizedObjectStore *privateControllerServiceProviders;
 @property(nonatomic,strong) VISPERPriorizedObjectStore *privateRoutingOptionServiceProviders;
 @property(nonatomic,strong) VISPERPriorizedObjectStore *privateRoutingPresenters;
+@property(nonatomic,strong) VISPERPriorizedObjectStore *privateRoutingObservers;
 @end
 
 
@@ -190,6 +191,17 @@
                                                                       @"parameters": parameters
                                                                       }];
                 [controller routingEvent:willRouteToControllerEvent withWireframe:blockWireframe];
+                
+                for (NSObject<IVISPERRoutingObserver> *observer in blockWireframe.routingObservers) {
+                    
+                    [observer routeToController:controller
+                                   routePattern:routePattern
+                                        options:options
+                                     parameters:parameters
+                               routingPresenter:presenter
+                                      wireframe:blockWireframe];
+                    
+                }
                 
                 
                 
@@ -425,6 +437,31 @@
 -(NSArray*)routingOptionsServiceProviders{
     return [self.privateRoutingOptionServiceProviders allObjects];
 }
+
+/**
+ * add routing observer for observing controller routing
+ **/
+-(VISPERPriorizedObjectStore *)privateRoutingObservers{
+    if(!self->_privateRoutingObservers){
+        self->_privateRoutingObservers = [[VISPERPriorizedObjectStore alloc] init];
+    }
+    
+    return self->_privateRoutingObservers;
+}
+
+
+-(void)addRoutingObserver:(NSObject<IVISPERRoutingObserver>*)observer withPriority:(NSInteger)priority{
+    [self.privateRoutingObservers addObject:observer withPriority:priority];
+}
+
+-(void)removeRoutingObserver:(NSObject<IVISPERRoutingObserver>*)observer{
+    [self.privateRoutingObservers removeObject:observer];
+}
+
+-(NSArray*)routingObservers{
+    return [self.privateRoutingObservers allObjects];
+}
+
 
 
 /**

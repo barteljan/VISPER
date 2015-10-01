@@ -14,6 +14,7 @@
 #import "IVISPERWireframeViewControllerServiceProvider.h"
 #import "IVISPERWireframeRoutingOptionsServiceProvider.h"
 #import "IVISPERRoutingOptionsFactory.h"
+#import "IVISPERRoutingObserver.h"
 
 @protocol IVISPERWireframe <NSObject>
 
@@ -96,6 +97,14 @@
 -(void)addRoutingPresenter:(NSObject<IVISPERRoutingPresenter>*)presenter withPriority:(NSInteger)priority;
 -(void)removeRoutingPresenter:(NSObject<IVISPERRoutingPresenter>*)presenter;
 -(NSArray*)routingPresenters;
+
+
+/**
+ * add routing observer for observing controller routing
+ **/
+-(void)addRoutingObserver:(NSObject<IVISPERRoutingObserver>*)observer withPriority:(NSInteger)priority;
+-(void)removeRoutingObserver:(NSObject<IVISPERRoutingObserver>*)observer;
+-(NSArray*)routingObservers;
 
 
 /**

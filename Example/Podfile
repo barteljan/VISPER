@@ -8,5 +8,5 @@ end
 target 'VISPER_Tests', :exclusive => true do
   pod "VISPER", :path => "../"
 
-  pod 'Kiwi'
+#pod 'Kiwi'
 end
