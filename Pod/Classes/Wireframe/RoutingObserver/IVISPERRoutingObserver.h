@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "IVISPERRoutingOption.h"
-#import "IVISPERRoutingPresenter.h"
-#import "IVISPERWireframe.h"
+@import UIKit;
+@protocol IVISPERRoutingOption;
+@protocol IVISPERWireframe;
+@protocol IVISPERRoutingPresenter;
 
 @protocol IVISPERRoutingObserver <NSObject>
 

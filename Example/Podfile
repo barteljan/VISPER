@@ -5,8 +5,3 @@ target 'VISPER_Example', :exclusive => true do
   pod "VISPER", :path => "../"
 end
 
-target 'VISPER_Tests', :exclusive => true do
-  pod "VISPER", :path => "../"
-
-#pod 'Kiwi'
-end
