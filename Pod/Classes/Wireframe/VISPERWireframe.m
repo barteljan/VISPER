@@ -160,9 +160,9 @@
             @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                            reason:[NSString stringWithFormat:@"No controller for routePattern:%@ and parameters:%@ found", routePattern,parameters]
                                          userInfo:@{
-                                                    @"routePattern"  :routePattern,
-                                                    @"routingOptions":options,
-                                                    @"parameters"     :parameters
+                                                     @"routePattern"  : (routePattern)?routePattern: [NSNull null],
+                                                     @"routingOptions": (options)     ?options     : [NSNull null],
+                                                     @"parameters"    : (parameters)  ?parameters  : [NSNull null]
                                                     }];
         }
         
@@ -170,9 +170,9 @@
             @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                            reason:[NSString stringWithFormat:@"No Routingoptions for routePattern:%@ and parameters:%@ found", routePattern,parameters]
                                          userInfo:@{
-                                                    @"routePattern"  :routePattern,
-                                                    @"controller"    :controller,
-                                                    @"parameters"    :parameters
+                                                     @"routePattern"  : (routePattern)?routePattern: [NSNull null],
+                                                     @"controller"    : (controller)  ?controller:   [NSNull null],
+                                                     @"parameters"    : (parameters)  ?parameters:   [NSNull null]
                                                     }];
         }
         
