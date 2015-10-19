@@ -33,4 +33,8 @@
                                                                          NSDictionary *parameters,
                                                                          NSObject<IVISPERWireframe>*wireframe))completion;
 
+
+-(NSObject<IVISPERRoutingOption> *)routingOptionReplaceTopVC;
+-(NSObject<IVISPERRoutingOption> *)routingOptionReplaceTopVC:(BOOL)animated;
+
 @end

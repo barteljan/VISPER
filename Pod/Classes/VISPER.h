@@ -26,6 +26,9 @@
 +(NSObject<IVISPERRoutingOption> *)routingOptionPresentRootVC;
 +(NSObject<IVISPERRoutingOption> *)routingOptionPresentRootVC:(BOOL)animated;
 
++(NSObject<IVISPERRoutingOption> *)routingOptionReplaceTopVC;
++(NSObject<IVISPERRoutingOption> *)routingOptionReplaceTopVC:(BOOL)animated;
+
 +(NSObject<IVISPERRoutingOption> *)routingOptionDoNotPresentVC:( void(^)(NSString *routePattern,
                                                                          UIViewController *controller,
                                                                          NSObject<IVISPERRoutingOption>*options,

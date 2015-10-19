@@ -58,6 +58,15 @@ static NSObject<IVISPERRoutingOptionsFactory> *routingOptionsFactory = nil;
     return [[VISPER sharedRoutingOptionsFactory] routingOptionPresentRootVC:animated];
 }
 
++(NSObject<IVISPERRoutingOption> *)routingOptionReplaceTopVC{
+    return [[VISPER sharedRoutingOptionsFactory] routingOptionReplaceTopVC];
+}
+
++(NSObject<IVISPERRoutingOption> *)routingOptionReplaceTopVC:(BOOL)animated{
+    return [[VISPER sharedRoutingOptionsFactory] routingOptionReplaceTopVC:animated];
+}
+
+
 +(NSObject<IVISPERRoutingOption> *)routingOptionDoNotPresentVC:( void(^)(NSString *routePattern,
                                                                          UIViewController *controller,
                                                                          NSObject<IVISPERRoutingOption>*options,

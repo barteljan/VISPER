@@ -12,6 +12,7 @@
 #import "VISPERPushRoutingPresenter.h"
 #import "VISPERModalRoutingPresenter.h"
 #import "VISPERRootVCRoutingPresenter.h"
+#import "VISPERReplaceTopVCRoutingPresenter.h"
 
 @interface VISPERApplication()
 @property(nonatomic,strong)UINavigationController *navigationController;
@@ -65,6 +66,8 @@
         [self addRoutingPresenter:[[VISPERModalRoutingPresenter alloc] initWithNavigationController:self.navigationController]
                      withPriority:0];
         [self addRoutingPresenter:[[VISPERRootVCRoutingPresenter alloc] initWithNavigationController:self.navigationController]
+                     withPriority:0];
+        [self addRoutingPresenter:[[VISPERReplaceTopVCRoutingPresenter alloc] initWithNavigationController:self.navigationController]
                      withPriority:0];
     }
     return self;

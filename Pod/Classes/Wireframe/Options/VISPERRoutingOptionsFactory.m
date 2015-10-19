@@ -13,6 +13,7 @@
 #import "VISPERPresentationTypeModal.h"
 #import "VISPERPresentationTypeRootVC.h"
 #import "VISPERPresententationTypeDoNotPresentVC.h"
+#import "VISPERPresentationTypeReplaceTopVC.h"
 
 @implementation VISPERRoutingOptionsFactory
 
@@ -78,4 +79,18 @@
     return [[VISPERRoutingOption alloc] initWithPresentationType:type];
 }
 
+
+-(NSObject<IVISPERRoutingOption> *)routingOptionReplaceTopVC{
+    return [self routingOptionReplaceTopVC:YES];
+}
+
+
+-(NSObject<IVISPERRoutingOption> *)routingOptionReplaceTopVC:(BOOL)animated{
+    
+    NSObject <IVISPERWireframePresentationType> *type =
+    [[VISPERPresentationTypeReplaceTopVC alloc] initIsAnimated:animated];
+    
+    return [[VISPERRoutingOption alloc] initWithPresentationType:type];
+
+}
 @end
