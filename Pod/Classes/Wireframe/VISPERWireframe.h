@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <JLRoutes/JLRoutes.h>
+@import JLRoutes;
 #import "IVISPERWireframe.h"
 #import "IVISPERWireframeServiceProvider.h"
 #import "IVISPERRoutingOption.h"
