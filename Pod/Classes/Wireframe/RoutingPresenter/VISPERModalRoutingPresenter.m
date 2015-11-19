@@ -36,6 +36,11 @@
                                 NSDictionary *parameters,
                                 NSObject<IVISPERWireframe>*wireframe))completion{
     
+    if([options.wireframePresentationType respondsToSelector:@selector(presentationStyle)]){
+        UIModalPresentationStyle style = (UIModalPresentationStyle)[options.wireframePresentationType performSelector:@selector(presentationStyle)];
+        [controller setModalPresentationStyle:style];
+    }
+    
     
     NSObject <IVISPERRoutingEvent> *willPresentControllerEvent =
     [self.serviceProvider createEventWithName:@"willPresentController"

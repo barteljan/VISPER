@@ -7,4 +7,5 @@
 #import "IVISPERWireframePresentationTypeModal.h"
 
 @interface VISPERPresentationTypeModal : VISPERPresentationType<IVISPERWireframePresentationTypeModal>
+@property(nonatomic) UIModalPresentationStyle presentationStyle;
 @end
