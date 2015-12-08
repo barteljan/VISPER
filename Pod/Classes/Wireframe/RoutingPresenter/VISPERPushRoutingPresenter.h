@@ -11,4 +11,8 @@
 
 @interface VISPERPushRoutingPresenter : VISPERNavigationControllerBasedRoutingPresenter
 
+@property NSString *lastRoutePattern;
+@property NSDictionary *lastParameters;
+
+
 @end

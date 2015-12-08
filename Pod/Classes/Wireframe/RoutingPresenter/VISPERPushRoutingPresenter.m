@@ -32,6 +32,17 @@
                                 NSObject<IVISPERWireframe>*wireframe))completion{
     
     
+    NSObject<IVISPERWireframePresentationTypePush> *presentationType = (NSObject<IVISPERWireframePresentationTypePush> *)options.wireframePresentationType;
+    
+    if(!presentationType.enableMultiplePush &&
+       [self.lastRoutePattern isEqualToString:routePattern]&&
+       [self.lastParameters isEqual:parameters]){
+        return;
+    }
+    
+    self.lastRoutePattern = routePattern;
+    self.lastParameters   = parameters;
+    
     NSObject <IVISPERRoutingEvent> *willPushControllerEvent =
     
     [self.serviceProvider createEventWithName:@"willPushController"
