@@ -7,6 +7,6 @@
 #import "IVISPERWireframePresentationTypePush.h"
 @interface VISPERPresentationTypePush : VISPERPresentationType<IVISPERWireframePresentationTypePush>
 
-@property BOOL enableMultiplePush;
+
 
 @end

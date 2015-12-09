@@ -10,6 +10,9 @@
 #import "UIViewController+VISPER.h"
 #import "IVISPERWireframePresentationTypeReplaceTopVC.h"
 
+@interface VISPERReplaceTopVCRoutingPresenter()
+@end
+
 @implementation VISPERReplaceTopVCRoutingPresenter
 
 -(BOOL)isResponsibleForRoutingOption:(NSObject<IVISPERRoutingOption>*)routingOption{
@@ -29,6 +32,8 @@
                                 NSObject<IVISPERRoutingOption>*options,
                                 NSDictionary *parameters,
                                 NSObject<IVISPERWireframe>*wireframe))completion{
+    
+    
     
     
     NSObject <IVISPERRoutingEvent> *willPushControllerEvent =
