@@ -97,15 +97,15 @@
 
 -(void)addFeature:(NSObject<IVISPERFeature> *)feature{
     
-    if([feature respondsToSelector:@selector(bootstrapWireframe:commandBus:)]){
-        [feature bootstrapWireframe:self.wireframe
-                         commandBus:self.commandBus];
-    }else if([feature respondsToSelector:@selector(bootstrapWireframe:interactor:)]){
-        #pragma clang diagnostic push
+    if([feature respondsToSelector:@selector(bootstrapWireframe:interactor:)]){
+    #pragma clang diagnostic push
         #pragma clang diagnostic ignored "-Wdeprecated-declarations"
         [feature bootstrapWireframe:self.wireframe
                          interactor:self.commandBus];
         #pragma clang diagnostic pop
+    } else if([feature respondsToSelector:@selector(bootstrapWireframe:commandBus:)]){
+        [feature bootstrapWireframe:self.wireframe
+                         commandBus:self.commandBus];
     }else{
         @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                        reason:@"a feature has to implement one of the following methods: bootstrapWireframe:commandBus: or bootstrapWireframe:interactor:"

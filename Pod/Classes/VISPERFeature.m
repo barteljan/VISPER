@@ -71,8 +71,13 @@
 
 #pragma mark deprecated functions
 -(void)bootstrapWireframe:(NSObject<IVISPERWireframe> *)wireframe
-               interactor:(NSObject<IVISPERComposedInteractor> *)interactor{
+               interactor:(NSObject<IVISPERCommandBus> *)interactor{
     
     [self bootstrapWireframe:wireframe commandBus:interactor];
+}
+
+
+-(NSObject<IVISPERCommandBus> *)interactor{
+    return self->_commandBus;
 }
 @end
