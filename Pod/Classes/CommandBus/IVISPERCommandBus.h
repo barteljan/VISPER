@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "IVISPERInteractor.h"
 #import "IVISPERCommandHandler.h"
 
 @protocol IVISPERCommandBus <IVISPERCommandHandler>
@@ -21,8 +20,8 @@
 
 //deprecated
 @optional
--(void)addInteractor:(NSObject<IVISPERInteractor>*)interactor __attribute((deprecated(("use addHandler: instead"))));
--(void)removeInteractor:(NSObject<IVISPERInteractor>*)interactor  __attribute((deprecated(("use removeHandler: instead"))));
+-(void)addInteractor:(NSObject<IVISPERCommandHandler>*)interactor __attribute((deprecated(("use addHandler: instead"))));
+-(void)removeInteractor:(NSObject<IVISPERCommandHandler>*)interactor  __attribute((deprecated(("use removeHandler: instead"))));
 
 
 @end

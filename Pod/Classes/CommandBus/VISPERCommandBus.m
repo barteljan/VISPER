@@ -102,11 +102,11 @@
     self->_commandHandlers = interactors;
 }
 
--(void)addInteractor:(NSObject<IVISPERInteractor>*)interactor{
+-(void)addInteractor:(NSObject<IVISPERCommandHandler>*)interactor{
     [self addHandler:interactor];
 }
 
--(void)removeInteractor:(NSObject<IVISPERInteractor>*)interactor{
+-(void)removeInteractor:(NSObject<IVISPERCommandHandler>*)interactor{
     [self removeHandler:interactor];
 }
 

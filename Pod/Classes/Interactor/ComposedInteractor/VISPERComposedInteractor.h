@@ -11,6 +11,7 @@
 #import "IVISPERInteractor.h"
 #import "VISPERCommandBus.h"
 
+__attribute((deprecated(("Don't use VISPERComposedInteractor use VISPERCommandBus instead"))))
 @interface VISPERComposedInteractor : VISPERCommandBus<IVISPERComposedInteractor,IVISPERInteractor>
 
 @end

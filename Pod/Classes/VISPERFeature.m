@@ -11,7 +11,7 @@
 
 @property(nonatomic,strong)NSMutableArray *routePatternStrings;
 @property(nonatomic,strong)NSObject<IVISPERWireframe>*wireframe;
-@property(nonatomic,strong)NSObject<IVISPERComposedInteractor>*commandBus;
+@property(nonatomic,strong)NSObject<IVISPERCommandBus>*commandBus;
 
 @end
 

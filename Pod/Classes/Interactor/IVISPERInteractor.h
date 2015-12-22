@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "IVISPERCommandHandler.h"
 
+__attribute((deprecated(("Don't use IVISPERInteractor use IVISPERCommandHandler instead"))))
 @protocol IVISPERInteractor <IVISPERCommandHandler>
 @end
