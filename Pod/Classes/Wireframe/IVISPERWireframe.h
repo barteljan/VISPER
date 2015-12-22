@@ -11,8 +11,8 @@
 #import "IVISPERWireframeServiceProvider.h"
 #import "IVISPERRoutingPresenter.h"
 #import "IVISPERRoutingOption.h"
-#import "IVISPERWireframeViewControllerServiceProvider.h"
-#import "IVISPERWireframeRoutingOptionsServiceProvider.h"
+#import "IVISPERControllerProvider.h"
+#import "IVISPERRoutingOptionsProvider.h"
 #import "IVISPERRoutingOptionsFactory.h"
 #import "IVISPERRoutingObserver.h"
 
@@ -83,10 +83,10 @@
 /**
  *  IVISPERWireframeViewControllerServiceProvider for providing controllers when none are given
  */
--(void)addControllerServiceProvider:(NSObject<IVISPERWireframeViewControllerServiceProvider>*)controllerServiceProvider
+-(void)addControllerServiceProvider:(NSObject<IVISPERControllerProvider>*)controllerServiceProvider
                        withPriority:(NSInteger)priority;
 
--(void)removeControllerServiceProvider:(NSObject<IVISPERWireframeViewControllerServiceProvider>*)controllerServiceProvider;
+-(void)removeControllerServiceProvider:(NSObject<IVISPERControllerProvider>*)controllerServiceProvider;
 
 -(NSArray*)controllerServiceProviders;
 
@@ -111,10 +111,10 @@
  *  IVISPERWireframeViewControllerServiceProvider for providing routing options when none are given
  */
 
--(void)addRoutingOptionsServiceProvider:(NSObject<IVISPERWireframeRoutingOptionsServiceProvider>*)routingOptionsServiceProvider
+-(void)addRoutingOptionsServiceProvider:(NSObject<IVISPERRoutingOptionsProvider>*)routingOptionsServiceProvider
                            withPriority:(NSInteger)priority;
 
--(void)removeRoutingOptionsServiceProvider:(NSObject<IVISPERWireframeRoutingOptionsServiceProvider>*)routingOptionsServiceProvider;
+-(void)removeRoutingOptionsServiceProvider:(NSObject<IVISPERRoutingOptionsProvider>*)routingOptionsServiceProvider;
 
 -(NSArray*)routingOptionsServiceProviders;
 

@@ -7,17 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "IVISPERRoutingOption.h"
+#import "IVISPERControllerProvider.h"
+
 @import UIKit;
 
-@protocol IVISPERWireframeViewControllerServiceProvider <NSObject>
+__attribute((deprecated(("Don't use IVISPERWireframeViewControllerServiceProvider use IVISPERControllerProvider instead"))))
+@protocol IVISPERWireframeViewControllerServiceProvider <IVISPERControllerProvider>
 
-/**
- *
- * Provide view controller if none is given
- *
- */
--(UIViewController*)controllerForRoute:(NSString*)routePattern
-                        routingOptions:(NSObject<IVISPERRoutingOption>*)options
-                        withParameters:(NSDictionary*)parameters;
 @end

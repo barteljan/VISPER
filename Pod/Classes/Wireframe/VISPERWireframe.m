@@ -131,7 +131,7 @@
         
         //replace or create options from routing option service provider
         if(blockWireframe.routingOptionsServiceProviders && replacingOptionsAllowed){
-            for (NSObject<IVISPERWireframeRoutingOptionsServiceProvider> *provider in blockWireframe.routingOptionsServiceProviders) {
+            for (NSObject<IVISPERRoutingOptionsProvider> *provider in blockWireframe.routingOptionsServiceProviders) {
                 
                 if(provider){
                     options = [provider optionForRoutePattern:routePattern
@@ -145,7 +145,7 @@
         UIViewController *controller = nil;
         
         if(blockWireframe.controllerServiceProviders){
-            for(NSObject<IVISPERWireframeViewControllerServiceProvider> *provider in blockWireframe.controllerServiceProviders){
+            for(NSObject<IVISPERControllerProvider> *provider in blockWireframe.controllerServiceProviders){
                 controller = [provider controllerForRoute:routePattern
                                            routingOptions:options
                                            withParameters:parameters];
@@ -398,12 +398,12 @@
 }
 
 
--(void)addControllerServiceProvider:(NSObject<IVISPERWireframeViewControllerServiceProvider>*)controllerServiceProvider
+-(void)addControllerServiceProvider:(NSObject<IVISPERControllerProvider>*)controllerServiceProvider
                        withPriority:(NSInteger)priority{
     [self.privateControllerServiceProviders addObject:controllerServiceProvider withPriority:priority];
 }
 
--(void)removeControllerServiceProvider:(NSObject<IVISPERWireframeViewControllerServiceProvider>*)controllerServiceProvider{
+-(void)removeControllerServiceProvider:(NSObject<IVISPERControllerProvider>*)controllerServiceProvider{
     [self.privateControllerServiceProviders removeObject:controllerServiceProvider];
 }
 
@@ -424,13 +424,13 @@
 
 
 
--(void)addRoutingOptionsServiceProvider:(NSObject<IVISPERWireframeRoutingOptionsServiceProvider>*)routingOptionsServiceProvider
+-(void)addRoutingOptionsServiceProvider:(NSObject<IVISPERRoutingOptionsProvider>*)routingOptionsServiceProvider
                            withPriority:(NSInteger)priority{
     [self.privateRoutingOptionServiceProviders addObject:routingOptionsServiceProvider withPriority:priority];
 }
 
 
--(void)removeRoutingOptionsServiceProvider:(NSObject<IVISPERWireframeRoutingOptionsServiceProvider>*)routingOptionsServiceProvider{
+-(void)removeRoutingOptionsServiceProvider:(NSObject<IVISPERRoutingOptionsProvider>*)routingOptionsServiceProvider{
     [self.privateRoutingOptionServiceProviders removeObject:routingOptionsServiceProvider];
 }
 

@@ -11,8 +11,8 @@
 #import "IVISPERWireframe.h"
 #import "IVISPERWireframeServiceProvider.h"
 #import "IVISPERRoutingOption.h"
-#import "IVISPERWireframeViewControllerServiceProvider.h"
-#import "IVISPERWireframeRoutingOptionsServiceProvider.h"
+#import "IVISPERControllerProvider.h"
+#import "IVISPERRoutingOptionsProvider.h"
 #import "VISPERPriorizedObjectStore.h"
 
 @interface VISPERWireframe : NSObject<IVISPERWireframe>

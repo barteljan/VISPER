@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "IVISPERInteractor.h"
 
+__attribute((deprecated(("Don't use IVISPERPersistenceStore use IVISPERCommandHandler instead"))))
 @protocol IVISPERPersistenceStore <IVISPERInteractor>
 
 -(void)saveCommand:(NSObject*)command

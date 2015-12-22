@@ -11,37 +11,25 @@
 
 @property(nonatomic,strong)NSMutableArray *routePatternStrings;
 @property(nonatomic,strong)NSObject<IVISPERWireframe>*wireframe;
-@property(nonatomic,strong)NSObject<IVISPERComposedInteractor>*interactor;
+@property(nonatomic,strong)NSObject<IVISPERComposedInteractor>*commandBus;
 
 @end
 
 @implementation VISPERFeature
 
--(UIViewController*)controllerForRoute:(NSString *)routePattern
-                        routingOptions:(NSObject<IVISPERRoutingOption> *)options
-                        withParameters:(NSDictionary *)parameters{
-    return nil;
-}
-
-
--(NSObject<IVISPERRoutingOption>*)optionForRoutePattern:(NSString *)routePattern
-                                             parameters:(NSDictionary *)dictionary
-                                         currentOptions:(NSObject<IVISPERRoutingOption> *)currentOptions{
-    return currentOptions;
-}
+#pragma mark IVISPERFeature protocol
 
 -(void)bootstrapWireframe:(NSObject<IVISPERWireframe> *)wireframe
-               interactor:(NSObject<IVISPERComposedInteractor> *)interactor{
+               commandBus:(NSObject<IVISPERCommandBus> *)commandBus{
     
     self.wireframe = wireframe;
-    self.interactor = interactor;
+    self.commandBus = commandBus;
     
     [wireframe addControllerServiceProvider:self withPriority:0];
     [wireframe addRoutingOptionsServiceProvider:self withPriority:0];
-    
-    
-}
 
+
+}
 
 -(NSArray*)routePatterns{
     return [NSArray arrayWithArray:self.routePatternStrings];
@@ -52,15 +40,39 @@
 }
 
 -(void)removeRoutePattern:(NSString*)routePattern{
-    
     [self->_routePatternStrings removeObject:routePattern];
 }
 
+
+#pragma mark IVISPERWireframeViewControllerServiceProvider protocol
+-(UIViewController*)controllerForRoute:(NSString *)routePattern
+                        routingOptions:(NSObject<IVISPERRoutingOption> *)options
+                        withParameters:(NSDictionary *)parameters{
+    return nil;
+}
+
+
+#pragma mark IVISPERWireframeRoutingOptionsServiceProvider protocol
+-(NSObject<IVISPERRoutingOption>*)optionForRoutePattern:(NSString *)routePattern
+                                             parameters:(NSDictionary *)dictionary
+                                         currentOptions:(NSObject<IVISPERRoutingOption> *)currentOptions{
+    return currentOptions;
+}
+
+
+#pragma mark internal functions
 -(NSMutableArray*)routePatternStrings{
     if(!self->_routePatternStrings){
         self->_routePatternStrings = [NSMutableArray array];
     }
     
     return self->_routePatternStrings;
+}
+
+#pragma mark deprecated functions
+-(void)bootstrapWireframe:(NSObject<IVISPERWireframe> *)wireframe
+               interactor:(NSObject<IVISPERComposedInteractor> *)interactor{
+    
+    [self bootstrapWireframe:wireframe commandBus:interactor];
 }
 @end

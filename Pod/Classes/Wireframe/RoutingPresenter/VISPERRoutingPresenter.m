@@ -44,7 +44,7 @@
     UIViewController *controller = nil;
     
     if(self.controllerServiceProviders){
-        for(NSObject<IVISPERWireframeViewControllerServiceProvider> *provider in self.controllerServiceProviders){
+        for(NSObject<IVISPERControllerProvider> *provider in self.controllerServiceProviders){
             controller = [provider controllerForRoute:routePattern
                                        routingOptions:options
                                        withParameters:parameters];

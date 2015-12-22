@@ -8,13 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "IVISPERInteractor.h"
+#import "IVISPERCommandBus.h"
 
-@protocol IVISPERComposedInteractor <IVISPERInteractor>
-
--(void)addInteractor:(NSObject<IVISPERInteractor>*)interactor;
--(void)removeInteractor:(NSObject<IVISPERInteractor>*)interactor;
-
--(BOOL)isInStrictMode;
--(void)setStrictMode:(BOOL)isInStrictMode;
+@protocol IVISPERComposedInteractor <IVISPERInteractor,IVISPERCommandBus>
 
 @end

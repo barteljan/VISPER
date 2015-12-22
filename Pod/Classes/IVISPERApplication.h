@@ -10,30 +10,43 @@
 #import "IVISPERFeature.h"
 #import "IVISPERRoutingPresenter.h"
 #import "IVISPERWireframe.h"
-#import "IVISPERComposedInteractor.h"
+#import "IVISPERCommandBus.h"
+#import "IVISPERCommandHandler.h"
 
 @protocol IVISPERApplication <NSObject>
 
+#pragma mark properties
 //the root view controller to add to your view hierarchie
 -(UIViewController*)rootViewController;
 
 //the wireframe of this application
 -(NSObject<IVISPERWireframe>*)wireframe;
 
-//the composed interactor of this application
--(NSObject<IVISPERComposedInteractor>*)interactor;
+//the command bus of this application
+-(NSObject<IVISPERCommandBus>*)commandBus;
 
-//get and set navigation view controller
+
+#pragma mark root navigation controller of this application
 -(UINavigationController*)navigationController;
 -(void)setNavigationController:(UINavigationController*)navigationController;
 
-//add a feature
+#pragma mark features
 -(void)addFeature:(NSObject<IVISPERFeature>*)feature;
+
+#pragma mark command handlers
+-(void)addCommandHandler:(NSObject<IVISPERCommandHandler>*)handler;
+
+#pragma mark routing presenters
 -(void)addRoutingPresenter:(NSObject<IVISPERRoutingPresenter>*)routingPresenter withPriority:(NSInteger)priority;
 
+#pragma mark routing
 - (BOOL)routeURL:(NSURL *)URL withParameters:(NSDictionary *)parameters options:(NSObject<IVISPERRoutingOption>*)options;
 - (BOOL)canRouteURL:(NSURL *)URL withParameters:(NSDictionary *)parameters;
 - (UIViewController*)controllerForURL:(NSURL*)URL withParameters:(NSDictionary *)parameters;
 
+@optional
+#pragma mark deprecated
+//the composed interactor of this application use commandBus instead
+-(NSObject<IVISPERCommandBus>*)interactor __attribute((deprecated(("use commandBus instead"))));
 
 @end

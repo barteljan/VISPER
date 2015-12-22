@@ -8,16 +8,17 @@
 
 #import "VISPERApplication.h"
 #import "VISPERWireframe.h"
-#import "VISPERComposedInteractor.h"
+#import "VISPERCommandBus.h"
 #import "VISPERPushRoutingPresenter.h"
 #import "VISPERModalRoutingPresenter.h"
 #import "VISPERRootVCRoutingPresenter.h"
 #import "VISPERReplaceTopVCRoutingPresenter.h"
+#import "IVISPERCommandBus.h"
 
 @interface VISPERApplication()
 @property(nonatomic,strong)UINavigationController *navigationController;
 @property(nonatomic,strong)NSObject<IVISPERWireframe> *wireframe;
-@property(nonatomic,strong)NSObject<IVISPERComposedInteractor> *interactor;
+@property(nonatomic,strong)NSObject<IVISPERCommandBus> *commandBus;
 @end
 
 @implementation VISPERApplication
@@ -25,23 +26,23 @@
 -(instancetype)init{
     return [self initWithNavigationController:nil
                                     wireframe:nil
-                                   interactor:nil];
+                                   commandBus:nil];
 }
 
 -(instancetype)initWithNavigationController:(UINavigationController*)controller{
-    return [self initWithNavigationController:controller wireframe:nil];
+    return [self initWithNavigationController:controller wireframe:nil commandBus:nil];
 }
 
 -(instancetype)initWithNavigationController:(UINavigationController*)controller
                                   wireframe:(NSObject<IVISPERWireframe>*)wireframe{
     return [self initWithNavigationController:controller
                                     wireframe:wireframe
-                                   interactor:nil];
+                                   commandBus:nil];
 }
 
 -(instancetype)initWithNavigationController:(UINavigationController*)controller
                                   wireframe:(NSObject<IVISPERWireframe>*)wireframe
-                                 interactor:(NSObject<IVISPERComposedInteractor>*)interactor{
+                                 commandBus:(NSObject<IVISPERCommandBus>*)commandBus{
     self = [super init];
     if(self){
         
@@ -49,8 +50,8 @@
             wireframe = [[VISPERWireframe alloc] init];
         }
         
-        if(!interactor){
-            interactor = [[VISPERComposedInteractor alloc] initWithIdentifier:@"composedInteractor"];
+        if(!commandBus){
+            commandBus = [[VISPERCommandBus alloc] initWithIdentifier:@"commandBus"];
         }
         
         if(!controller){
@@ -59,7 +60,7 @@
         
         self->_navigationController = controller;
         self->_wireframe = wireframe;
-        self->_interactor = interactor;
+        self->_commandBus = commandBus;
         
         [self addRoutingPresenter:[[VISPERPushRoutingPresenter alloc] initWithNavigationController:self.navigationController]
                      withPriority:0];
@@ -72,6 +73,16 @@
     }
     return self;
 
+
+}
+
+
+-(instancetype)initWithNavigationController:(UINavigationController*)controller
+                                  wireframe:(NSObject<IVISPERWireframe>*)wireframe
+                                 interactor:(NSObject<IVISPERComposedInteractor>*)interactor{
+    return [self initWithNavigationController:controller
+                                    wireframe:wireframe
+                                   commandBus:interactor];
 }
 
 
@@ -85,8 +96,22 @@
 }
 
 -(void)addFeature:(NSObject<IVISPERFeature> *)feature{
-    [feature bootstrapWireframe:self.wireframe
-                     interactor:self.interactor];
+    
+    if([feature respondsToSelector:@selector(bootstrapWireframe:commandBus:)]){
+        [feature bootstrapWireframe:self.wireframe
+                         commandBus:self.commandBus];
+    }else if([feature respondsToSelector:@selector(bootstrapWireframe:interactor:)]){
+        #pragma clang diagnostic push
+        #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        [feature bootstrapWireframe:self.wireframe
+                         interactor:self.commandBus];
+        #pragma clang diagnostic pop
+    }else{
+        @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                       reason:@"a feature has to implement one of the following methods: bootstrapWireframe:commandBus: or bootstrapWireframe:interactor:"
+                                     userInfo:nil];
+    }
+    
     
     if([feature respondsToSelector:@selector(routePatterns)]){
         NSArray *routePatterns = [feature routePatterns];
@@ -95,6 +120,10 @@
             [self.wireframe addRoute:routePattern];
         }
     }
+}
+
+-(void)addCommandHandler:(NSObject<IVISPERCommandHandler> *)handler{
+    [self.commandBus addHandler:handler];
 }
 
 -(BOOL)canRouteURL:(NSURL *)URL
@@ -127,4 +156,10 @@
         }
     }
 }
+
+#pragma mark deprecated
+-(NSObject<IVISPERCommandBus> *)interactor{
+    return self->_commandBus;
+}
+
 @end

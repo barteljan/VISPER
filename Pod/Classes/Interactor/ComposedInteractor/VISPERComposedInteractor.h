@@ -8,13 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "IVISPERComposedInteractor.h"
-#import "VISPERInteractor.h"
+#import "IVISPERInteractor.h"
+#import "VISPERCommandBus.h"
 
-@interface VISPERComposedInteractor : VISPERInteractor<IVISPERComposedInteractor>
-
-@property(nonatomic,strong)IBOutletCollection(NSObject<IVISPERInteractor>) NSArray *interactors;
-
--(void)addInteractor:(NSObject<IVISPERInteractor>*)interactor;
--(void)removeInteractor:(NSObject<IVISPERInteractor>*)interactor;
+@interface VISPERComposedInteractor : VISPERCommandBus<IVISPERComposedInteractor,IVISPERInteractor>
 
 @end

@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 @import UIKit;
 #import "IVISPERRoutingPresenter.h"
-#import "IVISPERWireframeViewControllerServiceProvider.h"
 #import "IVISPERRoutingOption.h"
+#import "IVISPERControllerProvider.h"
+#import "IVISPERRoutingOptionsProvider.h"
 #import "IVISPERRoutingPresenterServiceProvider.h"
 
 

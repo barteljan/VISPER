@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "VISPERInteractor.h"
 #import "IVISPERPersistenceStore.h"
+__attribute((deprecated(("Don't use VISPERPersistenceStore use VISPERCommandHandler instead"))))
 @interface VISPERPersistenceStore : VISPERInteractor<IVISPERPersistenceStore>
 
 @end

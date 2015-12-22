@@ -8,11 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "IVISPERInteractor.h"
+#import "VISPERCommandHandler.h"
 
-@interface VISPERInteractor : NSObject<IVISPERInteractor>
-
-@property(nonatomic,strong)NSString *identifier;
-
--(id)initWithIdentifier:(NSString*)identifier;
-
+@interface VISPERInteractor : VISPERCommandHandler<IVISPERInteractor>
 @end

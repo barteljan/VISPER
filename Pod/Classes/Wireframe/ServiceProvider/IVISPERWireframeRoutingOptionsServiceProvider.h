@@ -7,15 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IVISPERRoutingOptionsProvider.h"
 
-@protocol IVISPERWireframeRoutingOptionsServiceProvider <NSObject>
-
-/**
- * Default options for routing if none are provided
- **/
--(NSObject<IVISPERRoutingOption>*)optionForRoutePattern:(NSString*)routePattern
-                                             parameters:(NSDictionary*)dictionary
-                                         currentOptions:(NSObject<IVISPERRoutingOption>*)currentOptions;
-
+__attribute((deprecated(("Don't use IVISPERWireframeRoutingOptionsServiceProvider use IVISPERRoutingOptionsProvider instead"))))
+@protocol IVISPERWireframeRoutingOptionsServiceProvider <IVISPERRoutingOptionsProvider>
 
 @end

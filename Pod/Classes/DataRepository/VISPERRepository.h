@@ -10,6 +10,7 @@
 #import "VISPERInteractor.h"
 #import "IVISPERRepository.h"
 
+__attribute((deprecated(("Don't use VISPERRepository use VISPERCommandHandler instead"))))
 @interface VISPERRepository : VISPERInteractor<IVISPERRepository>
 
 
