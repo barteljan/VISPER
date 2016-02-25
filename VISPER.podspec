@@ -25,4 +25,5 @@ DESC
   s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
   s.dependency 'JLRoutes', '~> 1.5.2'
+  s.dependency 'VISPER-S'
 end

@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "IVISPERWireframe.h"
-#import "IVISPERComposedInteractor.h"
-#import "IVISPERCommandBus.h"
+@import VISPER_S;
 
 @protocol IVISPERFeature <NSObject>
 
@@ -17,13 +16,7 @@
 -(NSArray*)routePatterns;
 
 -(void)bootstrapWireframe:(NSObject<IVISPERWireframe> *)wireframe
-               commandBus:(NSObject<IVISPERCommandBus> *)commandBus;
-
-#pragma mark deprecated
-@optional
--(void)bootstrapWireframe:(NSObject<IVISPERWireframe> *)wireframe
-               interactor:(NSObject<IVISPERCommandBus> *)interactor __attribute((deprecated(("use bootstrapWireframe:commandBus: instead"))));
-
+               commandBus:(CommandBus *)commandBus;
 
 
 @end

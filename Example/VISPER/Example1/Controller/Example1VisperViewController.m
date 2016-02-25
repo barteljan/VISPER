@@ -34,4 +34,11 @@
                                           createEventWithName:@"example3ButtonPressed" sender:sender info:nil];
     [self notifyPresentersOfView:self.view withEvent:event];
 }
+
+- (IBAction)loadDataButtonPressed:(id)sender {
+    
+    NSObject <IVISPERViewEvent> *event = [self.visperServiceProvider
+                                          createEventWithName:@"loadDataButtonPressed" sender:sender info:nil];
+    [self notifyPresentersOfView:self.view withEvent:event];
+}
 @end

@@ -10,7 +10,8 @@
 @import UIKit;
 #import "IVISPERApplication.h"
 #import "IVISPERWireframe.h"
-#import "IVISPERComposedInteractor.h"
+@import VISPER_S;
+
 
 @interface VISPERApplication : NSObject<IVISPERApplication>
 
@@ -20,11 +21,7 @@
                                   wireframe:(NSObject<IVISPERWireframe>*)wireframe;
 -(instancetype)initWithNavigationController:(UINavigationController*)controller
                                   wireframe:(NSObject<IVISPERWireframe>*)wireframe
-                                 commandBus:(NSObject<IVISPERCommandBus>*)commandBus;
+                                 commandBus:(CommandBus*)commandBus;
 
 
-#pragma mark deprecated
--(instancetype)initWithNavigationController:(UINavigationController*)controller
-                                  wireframe:(NSObject<IVISPERWireframe>*)wireframe
-                                 interactor:(NSObject<IVISPERComposedInteractor>*)interactor __attribute((deprecated(("use initWithNavigationController:wireframe:commandBus: instead"))));
 @end

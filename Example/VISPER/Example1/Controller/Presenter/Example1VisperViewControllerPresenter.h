@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <VISPER/VISPERViewControllerPresenter.h>
+@import VISPER;
 
 @interface Example1VisperViewControllerPresenter : VISPERViewControllerPresenter
+
+-(instancetype)initWithWireframe:(NSObject<IVISPERWireframe>*)wireframe
+                      commandBus:(CommandBus*)commandBus;
 
 @end

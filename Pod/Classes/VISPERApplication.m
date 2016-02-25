@@ -8,17 +8,16 @@
 
 #import "VISPERApplication.h"
 #import "VISPERWireframe.h"
-#import "VISPERCommandBus.h"
 #import "VISPERPushRoutingPresenter.h"
 #import "VISPERModalRoutingPresenter.h"
 #import "VISPERRootVCRoutingPresenter.h"
 #import "VISPERReplaceTopVCRoutingPresenter.h"
-#import "IVISPERCommandBus.h"
+@import VISPER_S;
 
 @interface VISPERApplication()
 @property(nonatomic,strong)UINavigationController *navigationController;
 @property(nonatomic,strong)NSObject<IVISPERWireframe> *wireframe;
-@property(nonatomic,strong)NSObject<IVISPERCommandBus> *commandBus;
+@property(nonatomic,strong)CommandBus *commandBus;
 @end
 
 @implementation VISPERApplication
@@ -42,7 +41,7 @@
 
 -(instancetype)initWithNavigationController:(UINavigationController*)controller
                                   wireframe:(NSObject<IVISPERWireframe>*)wireframe
-                                 commandBus:(NSObject<IVISPERCommandBus>*)commandBus{
+                                 commandBus:(CommandBus*)commandBus{
     self = [super init];
     if(self){
         
@@ -51,7 +50,7 @@
         }
         
         if(!commandBus){
-            commandBus = [[VISPERCommandBus alloc] initWithIdentifier:@"commandBus"];
+            commandBus = [[CommandBus alloc] init];
         }
         
         if(!controller){
@@ -77,13 +76,6 @@
 }
 
 
--(instancetype)initWithNavigationController:(UINavigationController*)controller
-                                  wireframe:(NSObject<IVISPERWireframe>*)wireframe
-                                 interactor:(NSObject<IVISPERComposedInteractor>*)interactor{
-    return [self initWithNavigationController:controller
-                                    wireframe:wireframe
-                                   commandBus:interactor];
-}
 
 
 -(UIViewController*)rootViewController{
@@ -97,13 +89,7 @@
 
 -(void)addFeature:(NSObject<IVISPERFeature> *)feature{
     
-    if([feature respondsToSelector:@selector(bootstrapWireframe:interactor:)]){
-    #pragma clang diagnostic push
-        #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        [feature bootstrapWireframe:self.wireframe
-                         interactor:self.commandBus];
-        #pragma clang diagnostic pop
-    } else if([feature respondsToSelector:@selector(bootstrapWireframe:commandBus:)]){
+   if([feature respondsToSelector:@selector(bootstrapWireframe:commandBus:)]){
         [feature bootstrapWireframe:self.wireframe
                          commandBus:self.commandBus];
     }else{
@@ -122,7 +108,7 @@
     }
 }
 
--(void)addCommandHandler:(NSObject<IVISPERCommandHandler> *)handler{
+-(void)addCommandHandler:(NSObject<CommandHandlerProtocol> *)handler{
     [self.commandBus addHandler:handler];
 }
 
@@ -158,7 +144,7 @@
 }
 
 #pragma mark deprecated
--(NSObject<IVISPERCommandBus> *)interactor{
+-(NSObject<CommandHandlerProtocol> *)interactor{
     return self->_commandBus;
 }
 

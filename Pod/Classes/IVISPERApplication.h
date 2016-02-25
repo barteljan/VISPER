@@ -10,8 +10,7 @@
 #import "IVISPERFeature.h"
 #import "IVISPERRoutingPresenter.h"
 #import "IVISPERWireframe.h"
-#import "IVISPERCommandBus.h"
-#import "IVISPERCommandHandler.h"
+@protocol CommandHandlerProtocol;
 
 @protocol IVISPERApplication <NSObject>
 
@@ -23,7 +22,7 @@
 -(NSObject<IVISPERWireframe>*)wireframe;
 
 //the command bus of this application
--(NSObject<IVISPERCommandBus>*)commandBus;
+-(CommandBus*)commandBus;
 
 
 #pragma mark root navigation controller of this application
@@ -34,7 +33,7 @@
 -(void)addFeature:(NSObject<IVISPERFeature>*)feature;
 
 #pragma mark command handlers
--(void)addCommandHandler:(NSObject<IVISPERCommandHandler>*)handler;
+-(void)addCommandHandler:(id<CommandHandlerProtocol>*)handler;
 
 #pragma mark routing presenters
 -(void)addRoutingPresenter:(NSObject<IVISPERRoutingPresenter>*)routingPresenter withPriority:(NSInteger)priority;
@@ -44,9 +43,5 @@
 - (BOOL)canRouteURL:(NSURL *)URL withParameters:(NSDictionary *)parameters;
 - (UIViewController*)controllerForURL:(NSURL*)URL withParameters:(NSDictionary *)parameters;
 
-@optional
-#pragma mark deprecated
-//the composed interactor of this application use commandBus instead
--(NSObject<IVISPERCommandBus>*)interactor __attribute((deprecated(("use commandBus instead"))));
 
 @end

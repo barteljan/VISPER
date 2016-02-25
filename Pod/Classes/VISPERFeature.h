@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "IVISPERFeature.h"
-#import "IVISPERCommandBus.h"
 #import "IVISPERControllerProvider.h"
 #import "IVISPERRoutingOptionsProvider.h"
 
@@ -18,13 +17,11 @@
 
 
 @property(readonly,nonatomic,strong)NSObject<IVISPERWireframe>*wireframe;
-@property(readonly,nonatomic,strong)NSObject<IVISPERCommandBus>*commandBus;
+@property(readonly,nonatomic,strong)CommandBus *commandBus;
 
 -(void)addRoutePattern:(NSString*)routePattern;
 -(void)removeRoutePattern:(NSString*)routePattern;
 -(NSMutableArray*)routePatternStrings;
 
-#pragma mark deprecated
-@property(readonly,nonatomic,strong)NSObject<IVISPERComposedInteractor>*interactor  __attribute((deprecated(("use commandBus instead"))));
 
 @end

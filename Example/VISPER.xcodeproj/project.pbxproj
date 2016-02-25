@@ -14,6 +14,7 @@
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
+		9A8463AD1C7F39EC004BDEC1 /* DataCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8463AC1C7F39EC004BDEC1 /* DataCommandHandler.swift */; };
 		9AD6E75F1B863D0100849EA1 /* Example1VisperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6E7461B863D0100849EA1 /* Example1VisperViewController.m */; };
 		9AD6E7601B863D0100849EA1 /* Example1VisperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6E7471B863D0100849EA1 /* Example1VisperViewController.xib */; };
 		9AD6E7611B863D0100849EA1 /* Example1VisperViewControllerPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6E74A1B863D0100849EA1 /* Example1VisperViewControllerPresenter.m */; };
@@ -28,6 +29,7 @@
 		9AD6E76C1B863D2200849EA1 /* Example1Feature.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6E76B1B863D2200849EA1 /* Example1Feature.m */; };
 		9AD6E76F1B863F1800849EA1 /* ExampleFeature2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6E76E1B863F1800849EA1 /* ExampleFeature2.m */; };
 		9AD6E7721B863FA300849EA1 /* ExampleFeature3.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6E7711B863FA300849EA1 /* ExampleFeature3.m */; };
+		9AEABF9C1C7F3DD100AB66DA /* Example1View.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEABF9B1C7F3DD100AB66DA /* Example1View.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6B2CD59265BF6589880C1573 /* VISPER.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = VISPER.podspec; path = ../VISPER.podspec; sourceTree = "<group>"; };
 		759AF88BAA8A5B83A989B73F /* Pods_VISPER_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VISPER_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A8463AB1C7F39EC004BDEC1 /* VISPER_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VISPER_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		9A8463AC1C7F39EC004BDEC1 /* DataCommandHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataCommandHandler.swift; path = VISPER/Example1/DataCommandHandler.swift; sourceTree = SOURCE_ROOT; };
 		9AD6E7451B863D0100849EA1 /* Example1VisperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example1VisperViewController.h; sourceTree = "<group>"; };
 		9AD6E7461B863D0100849EA1 /* Example1VisperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example1VisperViewController.m; sourceTree = "<group>"; };
 		9AD6E7471B863D0100849EA1 /* Example1VisperViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example1VisperViewController.xib; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 		9AD6E76E1B863F1800849EA1 /* ExampleFeature2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleFeature2.m; sourceTree = "<group>"; };
 		9AD6E7701B863FA300849EA1 /* ExampleFeature3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleFeature3.h; sourceTree = "<group>"; };
 		9AD6E7711B863FA300849EA1 /* ExampleFeature3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleFeature3.m; sourceTree = "<group>"; };
+		9AEABF9A1C7F3DD100AB66DA /* Example1View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example1View.h; sourceTree = "<group>"; };
+		9AEABF9B1C7F3DD100AB66DA /* Example1View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example1View.m; sourceTree = "<group>"; };
 		A556768BB39F29B0CB31A65B /* Pods-VISPER_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER_Tests/Pods-VISPER_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A8AE3CD1BB0F2452F47336B6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		CFCCE0151092EBBA3C3F4978 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -185,7 +191,10 @@
 				9AD6E7451B863D0100849EA1 /* Example1VisperViewController.h */,
 				9AD6E7461B863D0100849EA1 /* Example1VisperViewController.m */,
 				9AD6E7471B863D0100849EA1 /* Example1VisperViewController.xib */,
+				9AEABF991C7F3DD100AB66DA /* View */,
 				9AD6E7481B863D0100849EA1 /* Presenter */,
+				9A8463AC1C7F39EC004BDEC1 /* DataCommandHandler.swift */,
+				9A8463AB1C7F39EC004BDEC1 /* VISPER_Example-Bridging-Header.h */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -269,6 +278,15 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		9AEABF991C7F3DD100AB66DA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9AEABF9A1C7F3DD100AB66DA /* Example1View.h */,
+				9AEABF9B1C7F3DD100AB66DA /* Example1View.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -299,6 +317,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = VISPERExample;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Jan Bartel";
 			};
@@ -399,6 +418,8 @@
 				9AD6E75F1B863D0100849EA1 /* Example1VisperViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				9AD6E7621B863D0100849EA1 /* Example2VisperViewController.m in Sources */,
+				9A8463AD1C7F39EC004BDEC1 /* DataCommandHandler.swift in Sources */,
+				9AEABF9C1C7F3DD100AB66DA /* Example1View.m in Sources */,
 				9AD6E76C1B863D2200849EA1 /* Example1Feature.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,16 +517,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VISPER/VISPER-Prefix.pch";
 				INFOPLIST_FILE = "VISPER/VISPER-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRINGS_FILE_OUTPUT_ENCODING = binary;
+				SWIFT_OBJC_BRIDGING_HEADER = "VISPER/Example1/Controller/VISPER_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -516,15 +541,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VISPER/VISPER-Prefix.pch";
 				INFOPLIST_FILE = "VISPER/VISPER-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRINGS_FILE_OUTPUT_ENCODING = binary;
+				SWIFT_OBJC_BRIDGING_HEADER = "VISPER/Example1/Controller/VISPER_Example-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

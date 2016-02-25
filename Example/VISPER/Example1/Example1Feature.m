@@ -10,6 +10,7 @@
 #import "Example1VisperViewController.h"
 #import "Example1VisperViewControllerPresenter.h"
 #import <VISPER/VISPER.h>
+#import "VISPER_Example-swift.h"
 
 @implementation Example1Feature
 
@@ -21,6 +22,17 @@
     return self;
 }
 
+
+-(void)bootstrapWireframe:(NSObject<IVISPERWireframe> *)wireframe commandBus:(CommandBus *)commandBus{
+    [super bootstrapWireframe:wireframe commandBus:commandBus];
+    
+    DataCommandHandler *dataHandler = [[DataCommandHandler alloc] init];
+    
+    [commandBus addHandler:dataHandler];
+
+}
+
+
 -(UIViewController*)controllerForRoute:(NSString*)routePattern
                         routingOptions:(NSObject<IVISPERRoutingOption>*)options
                         withParameters:(NSDictionary*)parameters{
@@ -28,7 +40,7 @@
     //create controller 1
     if ([routePattern isEqualToString:@"/example1"]){
         Example1VisperViewControllerPresenter *example1VCPresenter =
-        [[Example1VisperViewControllerPresenter alloc] initWithWireframe:self.wireframe];
+        [[Example1VisperViewControllerPresenter alloc] initWithWireframe:self.wireframe commandBus:self.commandBus];
         
         Example1VisperViewController *example1VC =
         [[Example1VisperViewController alloc] initWithNibName:@"Example1VisperViewController"

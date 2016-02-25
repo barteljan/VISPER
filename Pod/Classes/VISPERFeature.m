@@ -7,11 +7,12 @@
 //
 
 #import "VISPERFeature.h"
+
 @interface VISPERFeature()
 
 @property(nonatomic,strong)NSMutableArray *routePatternStrings;
 @property(nonatomic,strong)NSObject<IVISPERWireframe>*wireframe;
-@property(nonatomic,strong)NSObject<IVISPERCommandBus>*commandBus;
+@property(nonatomic,strong)CommandBus *commandBus;
 
 @end
 
@@ -20,7 +21,7 @@
 #pragma mark IVISPERFeature protocol
 
 -(void)bootstrapWireframe:(NSObject<IVISPERWireframe> *)wireframe
-               commandBus:(NSObject<IVISPERCommandBus> *)commandBus{
+               commandBus:(CommandBus*)commandBus{
     
     self.wireframe = wireframe;
     self.commandBus = commandBus;
@@ -71,13 +72,9 @@
 
 #pragma mark deprecated functions
 -(void)bootstrapWireframe:(NSObject<IVISPERWireframe> *)wireframe
-               interactor:(NSObject<IVISPERCommandBus> *)interactor{
+               interactor:(CommandBus*)interactor{
     
     [self bootstrapWireframe:wireframe commandBus:interactor];
 }
 
-
--(NSObject<IVISPERCommandBus> *)interactor{
-    return self->_commandBus;
-}
 @end
