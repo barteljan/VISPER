@@ -19,6 +19,15 @@
 }
 
 -(BOOL)isResponsibleForCommand:(NSObject *)command{
+    
+    if([self respondsToSelector:@selector(isResponsibleForCommand:error:)]){
+        NSError *error = nil;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        return [self isResponsibleForCommand:command error:&error];
+#pragma clang diagnostic pop
+    }
+    
     return NO;
 }
 
