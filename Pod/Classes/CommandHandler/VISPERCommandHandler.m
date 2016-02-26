@@ -31,6 +31,10 @@
     return NO;
 }
 
+-(BOOL)isResponsibleForCommand:(NSObject *)command error:(NSError**)error{
+    return NO;
+}
+
 -(void)processCommand:(NSObject*)command
            completion:(BOOL(^)(NSString *identifier,NSObject *object,NSError **error))completion{
 }
