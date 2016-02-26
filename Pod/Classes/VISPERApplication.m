@@ -12,12 +12,12 @@
 #import "VISPERModalRoutingPresenter.h"
 #import "VISPERRootVCRoutingPresenter.h"
 #import "VISPERReplaceTopVCRoutingPresenter.h"
-@import VISPER_S;
+@import VISPER_CommandBus;
 
 @interface VISPERApplication()
 @property(nonatomic,strong)UINavigationController *navigationController;
 @property(nonatomic,strong)NSObject<IVISPERWireframe> *wireframe;
-@property(nonatomic,strong)CommandBus *commandBus;
+@property(nonatomic,strong)VISPERCommandBus *commandBus;
 @end
 
 @implementation VISPERApplication
@@ -41,7 +41,7 @@
 
 -(instancetype)initWithNavigationController:(UINavigationController*)controller
                                   wireframe:(NSObject<IVISPERWireframe>*)wireframe
-                                 commandBus:(CommandBus*)commandBus{
+                                 commandBus:(VISPERCommandBus*)commandBus{
     self = [super init];
     if(self){
         
@@ -50,7 +50,7 @@
         }
         
         if(!commandBus){
-            commandBus = [[CommandBus alloc] init];
+            commandBus = [[VISPERCommandBus alloc] init];
         }
         
         if(!controller){
@@ -108,7 +108,7 @@
     }
 }
 
--(void)addCommandHandler:(NSObject<CommandHandlerProtocol> *)handler{
+-(void)addCommandHandler:(id)handler{
     [self.commandBus addHandler:handler];
 }
 
@@ -141,11 +141,6 @@
             [routingPresenter performSelector:@selector(setNavigationController:) withObject:navigationController];
         }
     }
-}
-
-#pragma mark deprecated
--(NSObject<CommandHandlerProtocol> *)interactor{
-    return self->_commandBus;
 }
 
 @end

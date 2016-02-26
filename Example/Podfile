@@ -3,6 +3,6 @@ use_frameworks!
 
 target 'VISPER_Example', :exclusive => true do
   pod "VISPER", :path => "../"
-  pod 'VISPER-S', :path => '../../VISPER-S'
+  #pod 'VISPER-CommandBus', :path => '../../VISPER-CommandBus'
 end
 

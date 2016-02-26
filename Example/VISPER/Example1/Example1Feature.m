@@ -23,7 +23,7 @@
 }
 
 
--(void)bootstrapWireframe:(NSObject<IVISPERWireframe> *)wireframe commandBus:(CommandBus *)commandBus{
+-(void)bootstrapWireframe:(NSObject<IVISPERWireframe> *)wireframe commandBus:(VISPERCommandBus *)commandBus{
     [super bootstrapWireframe:wireframe commandBus:commandBus];
     
     DataCommandHandler *dataHandler = [[DataCommandHandler alloc] init];

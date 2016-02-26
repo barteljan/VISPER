@@ -17,7 +17,7 @@
 
 
 @property(readonly,nonatomic,strong)NSObject<IVISPERWireframe>*wireframe;
-@property(readonly,nonatomic,strong)CommandBus *commandBus;
+@property(readonly,nonatomic,strong)VISPERCommandBus *commandBus;
 
 -(void)addRoutePattern:(NSString*)routePattern;
 -(void)removeRoutePattern:(NSString*)routePattern;

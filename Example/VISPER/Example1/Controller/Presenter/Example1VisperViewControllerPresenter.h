@@ -13,6 +13,6 @@
 @interface Example1VisperViewControllerPresenter : VISPERViewControllerPresenter
 
 -(instancetype)initWithWireframe:(NSObject<IVISPERWireframe>*)wireframe
-                      commandBus:(CommandBus*)commandBus;
+                      commandBus:(VISPERCommandBus*)commandBus;
 
 @end

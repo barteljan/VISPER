@@ -12,7 +12,7 @@
 
 @interface Example1VisperViewControllerPresenter()
 
-@property(nonatomic)CommandBus* commandBus;
+@property(nonatomic)VISPERCommandBus* commandBus;
 
 @end
 
@@ -20,7 +20,7 @@
 
 
 -(instancetype)initWithWireframe:(NSObject<IVISPERWireframe>*)wireframe
-                      commandBus:(CommandBus*)commandBus{
+                      commandBus:(VISPERCommandBus*)commandBus{
     self = [super initWithWireframe:wireframe];
     if(self){
         self.commandBus = commandBus;
@@ -71,7 +71,7 @@
                         view:(UIView *)view
               viewController:(UIViewController*)viewController{
     
-    [self.commandBus processCommand:@"loadData" completion:^(id _Nullable result, id _Nullable error) {
+    [self.commandBus process:@"loadData" completion:^(id _Nullable result, id _Nullable error) {
         
         
         Example1View *exampleView = (Example1View *)view;

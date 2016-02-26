@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "IVISPERWireframe.h"
-@import VISPER_S;
+@import VISPER_CommandBus;
 
 @protocol IVISPERFeature <NSObject>
 
@@ -16,7 +16,7 @@
 -(NSArray*)routePatterns;
 
 -(void)bootstrapWireframe:(NSObject<IVISPERWireframe> *)wireframe
-               commandBus:(CommandBus *)commandBus;
+               commandBus:(VISPERCommandBus *)commandBus;
 
 
 @end

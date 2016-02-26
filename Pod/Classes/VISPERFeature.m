@@ -12,7 +12,7 @@
 
 @property(nonatomic,strong)NSMutableArray *routePatternStrings;
 @property(nonatomic,strong)NSObject<IVISPERWireframe>*wireframe;
-@property(nonatomic,strong)CommandBus *commandBus;
+@property(nonatomic,strong)VISPERCommandBus *commandBus;
 
 @end
 
@@ -21,7 +21,7 @@
 #pragma mark IVISPERFeature protocol
 
 -(void)bootstrapWireframe:(NSObject<IVISPERWireframe> *)wireframe
-               commandBus:(CommandBus*)commandBus{
+               commandBus:(VISPERCommandBus*)commandBus{
     
     self.wireframe = wireframe;
     self.commandBus = commandBus;
@@ -70,11 +70,5 @@
     return self->_routePatternStrings;
 }
 
-#pragma mark deprecated functions
--(void)bootstrapWireframe:(NSObject<IVISPERWireframe> *)wireframe
-               interactor:(CommandBus*)interactor{
-    
-    [self bootstrapWireframe:wireframe commandBus:interactor];
-}
 
 @end

@@ -22,7 +22,7 @@
 -(NSObject<IVISPERWireframe>*)wireframe;
 
 //the command bus of this application
--(CommandBus*)commandBus;
+-(VISPERCommandBus*)commandBus;
 
 
 #pragma mark root navigation controller of this application
@@ -33,7 +33,7 @@
 -(void)addFeature:(NSObject<IVISPERFeature>*)feature;
 
 #pragma mark command handlers
--(void)addCommandHandler:(id<CommandHandlerProtocol>*)handler;
+-(void)addCommandHandler:(id)handler;
 
 #pragma mark routing presenters
 -(void)addRoutingPresenter:(NSObject<IVISPERRoutingPresenter>*)routingPresenter withPriority:(NSInteger)priority;

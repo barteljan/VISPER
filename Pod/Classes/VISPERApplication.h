@@ -10,7 +10,7 @@
 @import UIKit;
 #import "IVISPERApplication.h"
 #import "IVISPERWireframe.h"
-@import VISPER_S;
+@import VISPER_CommandBus;
 
 
 @interface VISPERApplication : NSObject<IVISPERApplication>
@@ -21,7 +21,7 @@
                                   wireframe:(NSObject<IVISPERWireframe>*)wireframe;
 -(instancetype)initWithNavigationController:(UINavigationController*)controller
                                   wireframe:(NSObject<IVISPERWireframe>*)wireframe
-                                 commandBus:(CommandBus*)commandBus;
+                                 commandBus:(VISPERCommandBus*)commandBus;
 
 
 @end
