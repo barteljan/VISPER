@@ -11,7 +11,14 @@ import VISPER
 class DataCommandHandler: NSObject,CommandHandlerProtocol {
     
     func isResponsible(command: Any!) -> Bool {
-        return true
+        
+        if let stringCommand = command as? String{
+            if(stringCommand == "loadData"){
+                return true
+            }
+        }
+        
+        return false
     }
     
     func process<ResultType>(command: Any!, completion: ((result: ResultType?, error: ErrorType?) -> Void)?) throws {

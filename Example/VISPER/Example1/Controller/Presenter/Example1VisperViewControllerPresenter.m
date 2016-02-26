@@ -72,12 +72,8 @@
               viewController:(UIViewController*)viewController{
     
     [self.commandBus process:@"loadData" completion:^(id _Nullable result, id _Nullable error) {
-        
-        
         Example1View *exampleView = (Example1View *)view;
         exampleView.text = (NSString*)result;
-        
-        
     }];
     
     
