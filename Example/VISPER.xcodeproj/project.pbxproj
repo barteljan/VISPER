@@ -15,20 +15,21 @@
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		9A8463AD1C7F39EC004BDEC1 /* DataCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8463AC1C7F39EC004BDEC1 /* DataCommandHandler.swift */; };
+		9A8E07AD1C8FF7350085CAD7 /* Example3VisperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8E07AC1C8FF7350085CAD7 /* Example3VisperViewController.swift */; };
+		9A8E07AF1C8FF8D00085CAD7 /* Example3VisperViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8E07AE1C8FF8D00085CAD7 /* Example3VisperViewControllerPresenter.swift */; };
+		9A8E07B11C8FFD270085CAD7 /* ExampleFeature3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8E07B01C8FFD270085CAD7 /* ExampleFeature3.swift */; };
+		9A8E07B31C8FFFA50085CAD7 /* Example3CommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8E07B21C8FFFA50085CAD7 /* Example3CommandHandler.swift */; };
 		9AD6E75F1B863D0100849EA1 /* Example1VisperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6E7461B863D0100849EA1 /* Example1VisperViewController.m */; };
 		9AD6E7601B863D0100849EA1 /* Example1VisperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6E7471B863D0100849EA1 /* Example1VisperViewController.xib */; };
 		9AD6E7611B863D0100849EA1 /* Example1VisperViewControllerPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6E74A1B863D0100849EA1 /* Example1VisperViewControllerPresenter.m */; };
 		9AD6E7621B863D0100849EA1 /* Example2VisperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6E74E1B863D0100849EA1 /* Example2VisperViewController.m */; };
 		9AD6E7631B863D0100849EA1 /* Example2VisperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6E74F1B863D0100849EA1 /* Example2VisperViewController.xib */; };
 		9AD6E7641B863D0100849EA1 /* Example2VisperViewControllerPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6E7521B863D0100849EA1 /* Example2VisperViewControllerPresenter.m */; };
-		9AD6E7651B863D0100849EA1 /* Example3VisperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6E7561B863D0100849EA1 /* Example3VisperViewController.m */; };
 		9AD6E7661B863D0100849EA1 /* Example3VisperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6E7571B863D0100849EA1 /* Example3VisperViewController.xib */; };
-		9AD6E7671B863D0100849EA1 /* Example3VisperViewControllerPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6E75A1B863D0100849EA1 /* Example3VisperViewControllerPresenter.m */; };
 		9AD6E7681B863D0100849EA1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6E75D1B863D0100849EA1 /* AppDelegate.m */; };
 		9AD6E7691B863D0100849EA1 /* Application.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6E75E1B863D0100849EA1 /* Application.xib */; };
 		9AD6E76C1B863D2200849EA1 /* Example1Feature.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6E76B1B863D2200849EA1 /* Example1Feature.m */; };
 		9AD6E76F1B863F1800849EA1 /* ExampleFeature2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6E76E1B863F1800849EA1 /* ExampleFeature2.m */; };
-		9AD6E7721B863FA300849EA1 /* ExampleFeature3.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6E7711B863FA300849EA1 /* ExampleFeature3.m */; };
 		9AEABF9C1C7F3DD100AB66DA /* Example1View.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEABF9B1C7F3DD100AB66DA /* Example1View.m */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,10 @@
 		759AF88BAA8A5B83A989B73F /* Pods_VISPER_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VISPER_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8463AB1C7F39EC004BDEC1 /* VISPER_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VISPER_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		9A8463AC1C7F39EC004BDEC1 /* DataCommandHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataCommandHandler.swift; path = VISPER/Example1/DataCommandHandler.swift; sourceTree = SOURCE_ROOT; };
+		9A8E07AC1C8FF7350085CAD7 /* Example3VisperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example3VisperViewController.swift; sourceTree = "<group>"; };
+		9A8E07AE1C8FF8D00085CAD7 /* Example3VisperViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example3VisperViewControllerPresenter.swift; sourceTree = "<group>"; };
+		9A8E07B01C8FFD270085CAD7 /* ExampleFeature3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleFeature3.swift; sourceTree = "<group>"; };
+		9A8E07B21C8FFFA50085CAD7 /* Example3CommandHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example3CommandHandler.swift; sourceTree = "<group>"; };
 		9AD6E7451B863D0100849EA1 /* Example1VisperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example1VisperViewController.h; sourceTree = "<group>"; };
 		9AD6E7461B863D0100849EA1 /* Example1VisperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example1VisperViewController.m; sourceTree = "<group>"; };
 		9AD6E7471B863D0100849EA1 /* Example1VisperViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example1VisperViewController.xib; sourceTree = "<group>"; };
@@ -60,11 +65,7 @@
 		9AD6E74F1B863D0100849EA1 /* Example2VisperViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example2VisperViewController.xib; sourceTree = "<group>"; };
 		9AD6E7511B863D0100849EA1 /* Example2VisperViewControllerPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example2VisperViewControllerPresenter.h; sourceTree = "<group>"; };
 		9AD6E7521B863D0100849EA1 /* Example2VisperViewControllerPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example2VisperViewControllerPresenter.m; sourceTree = "<group>"; };
-		9AD6E7551B863D0100849EA1 /* Example3VisperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example3VisperViewController.h; sourceTree = "<group>"; };
-		9AD6E7561B863D0100849EA1 /* Example3VisperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example3VisperViewController.m; sourceTree = "<group>"; };
 		9AD6E7571B863D0100849EA1 /* Example3VisperViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example3VisperViewController.xib; sourceTree = "<group>"; };
-		9AD6E7591B863D0100849EA1 /* Example3VisperViewControllerPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example3VisperViewControllerPresenter.h; sourceTree = "<group>"; };
-		9AD6E75A1B863D0100849EA1 /* Example3VisperViewControllerPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example3VisperViewControllerPresenter.m; sourceTree = "<group>"; };
 		9AD6E75C1B863D0100849EA1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9AD6E75D1B863D0100849EA1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9AD6E75E1B863D0100849EA1 /* Application.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Application.xib; sourceTree = "<group>"; };
@@ -72,8 +73,6 @@
 		9AD6E76B1B863D2200849EA1 /* Example1Feature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example1Feature.m; sourceTree = "<group>"; };
 		9AD6E76D1B863F1800849EA1 /* ExampleFeature2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleFeature2.h; sourceTree = "<group>"; };
 		9AD6E76E1B863F1800849EA1 /* ExampleFeature2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleFeature2.m; sourceTree = "<group>"; };
-		9AD6E7701B863FA300849EA1 /* ExampleFeature3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleFeature3.h; sourceTree = "<group>"; };
-		9AD6E7711B863FA300849EA1 /* ExampleFeature3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleFeature3.m; sourceTree = "<group>"; };
 		9AEABF9A1C7F3DD100AB66DA /* Example1View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example1View.h; sourceTree = "<group>"; };
 		9AEABF9B1C7F3DD100AB66DA /* Example1View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example1View.m; sourceTree = "<group>"; };
 		A556768BB39F29B0CB31A65B /* Pods-VISPER_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER_Tests/Pods-VISPER_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -242,8 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				9AD6E7541B863D0100849EA1 /* Controller */,
-				9AD6E7701B863FA300849EA1 /* ExampleFeature3.h */,
-				9AD6E7711B863FA300849EA1 /* ExampleFeature3.m */,
+				9A8E07B01C8FFD270085CAD7 /* ExampleFeature3.swift */,
+				9A8E07B21C8FFFA50085CAD7 /* Example3CommandHandler.swift */,
 			);
 			path = Example3;
 			sourceTree = "<group>";
@@ -251,8 +250,7 @@
 		9AD6E7541B863D0100849EA1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9AD6E7551B863D0100849EA1 /* Example3VisperViewController.h */,
-				9AD6E7561B863D0100849EA1 /* Example3VisperViewController.m */,
+				9A8E07AC1C8FF7350085CAD7 /* Example3VisperViewController.swift */,
 				9AD6E7571B863D0100849EA1 /* Example3VisperViewController.xib */,
 				9AD6E7581B863D0100849EA1 /* presenter */,
 			);
@@ -262,8 +260,7 @@
 		9AD6E7581B863D0100849EA1 /* presenter */ = {
 			isa = PBXGroup;
 			children = (
-				9AD6E7591B863D0100849EA1 /* Example3VisperViewControllerPresenter.h */,
-				9AD6E75A1B863D0100849EA1 /* Example3VisperViewControllerPresenter.m */,
+				9A8E07AE1C8FF8D00085CAD7 /* Example3VisperViewControllerPresenter.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -409,18 +406,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AD6E76F1B863F1800849EA1 /* ExampleFeature2.m in Sources */,
-				9AD6E7721B863FA300849EA1 /* ExampleFeature3.m in Sources */,
 				9AD6E7611B863D0100849EA1 /* Example1VisperViewControllerPresenter.m in Sources */,
 				9AD6E7641B863D0100849EA1 /* Example2VisperViewControllerPresenter.m in Sources */,
-				9AD6E7651B863D0100849EA1 /* Example3VisperViewController.m in Sources */,
-				9AD6E7671B863D0100849EA1 /* Example3VisperViewControllerPresenter.m in Sources */,
+				9A8E07B31C8FFFA50085CAD7 /* Example3CommandHandler.swift in Sources */,
 				9AD6E7681B863D0100849EA1 /* AppDelegate.m in Sources */,
 				9AD6E75F1B863D0100849EA1 /* Example1VisperViewController.m in Sources */,
+				9A8E07AF1C8FF8D00085CAD7 /* Example3VisperViewControllerPresenter.swift in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				9AD6E7621B863D0100849EA1 /* Example2VisperViewController.m in Sources */,
+				9A8E07AD1C8FF7350085CAD7 /* Example3VisperViewController.swift in Sources */,
 				9A8463AD1C7F39EC004BDEC1 /* DataCommandHandler.swift in Sources */,
 				9AEABF9C1C7F3DD100AB66DA /* Example1View.m in Sources */,
 				9AD6E76C1B863D2200849EA1 /* Example1Feature.m in Sources */,
+				9A8E07B11C8FFD270085CAD7 /* ExampleFeature3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

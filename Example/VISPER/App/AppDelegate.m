@@ -10,8 +10,8 @@
 #import "AppDelegate.h"
 #import "Example1Feature.h"
 #import "ExampleFeature2.h"
-#import "ExampleFeature3.h"
 #import <VISPER/VISPER.h>
+#import "VISPER_Example-swift.h"
 
 
 @interface AppDelegate ()

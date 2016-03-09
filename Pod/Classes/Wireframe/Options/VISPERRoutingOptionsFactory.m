@@ -46,7 +46,7 @@
 
 
 -(NSObject<IVISPERRoutingOption> *)routingOptionModal{
-    return [self routingOptionModal];
+    return [self routingOptionModal:YES];
 }
 
 -(NSObject<IVISPERRoutingOption> *)routingOptionModal:(BOOL)animated{

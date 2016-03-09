@@ -21,8 +21,8 @@ class DataCommandHandler: NSObject,CommandHandlerProtocol {
         return false
     }
     
-    func process<ResultType>(command: Any!, completion: ((result: ResultType?, error: ErrorType?) -> Void)?) throws {
-        completion?(result: "Meine Daten sind geladen" as? ResultType,error: nil)
-    }
     
+    func process(command: Any!, completion: ((result: Any?, error: ErrorType?) -> Void)?) throws {
+        completion?(result:"Meine Daten sind geladen",error: nil)
+    }
 }
