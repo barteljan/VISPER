@@ -75,4 +75,13 @@ static NSObject<IVISPERRoutingOptionsFactory> *routingOptionsFactory = nil;
     return [[VISPER sharedRoutingOptionsFactory] routingOptionDoNotPresentVC:completion];
 }
 
++(NSObject<IVISPERRoutingOption> *)routingOptionShow{
+    return [[VISPER sharedRoutingOptionsFactory] routingOptionShow];
+}
+
++(NSObject<IVISPERRoutingOption> *)routingOptionShow:(BOOL)animated{
+    return [[VISPER sharedRoutingOptionsFactory] routingOptionShow:animated];
+}
+
+
 @end

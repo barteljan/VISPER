@@ -35,4 +35,9 @@
                                                                          NSDictionary *parameters,
                                                                          NSObject<IVISPERWireframe>*wireframe))completion;
 
++(NSObject<IVISPERRoutingOption> *)routingOptionShow;
++(NSObject<IVISPERRoutingOption> *)routingOptionShow:(BOOL)animated;
+
+
+
 @end

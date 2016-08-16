@@ -14,6 +14,7 @@
 #import "VISPERPresentationTypeRootVC.h"
 #import "VISPERPresententationTypeDoNotPresentVC.h"
 #import "VISPERPresentationTypeReplaceTopVC.h"
+#import "VISPERPresentationTypeShow.h"
 
 @implementation VISPERRoutingOptionsFactory
 
@@ -93,4 +94,16 @@
     return [[VISPERRoutingOption alloc] initWithPresentationType:type];
 
 }
+
+-(NSObject<IVISPERRoutingOption> *)routingOptionShow{
+    return [self routingOptionShow:YES];
+}
+
+-(NSObject<IVISPERRoutingOption> *)routingOptionShow:(BOOL)animated;{
+    NSObject <IVISPERWireframePresentationType> *type =
+    [[VISPERPresentationTypeShow alloc] initIsAnimated:animated];
+    
+    return [[VISPERRoutingOption alloc] initWithPresentationType:type];
+}
+
 @end

@@ -37,4 +37,8 @@
 -(NSObject<IVISPERRoutingOption> *)routingOptionReplaceTopVC;
 -(NSObject<IVISPERRoutingOption> *)routingOptionReplaceTopVC:(BOOL)animated;
 
+-(NSObject<IVISPERRoutingOption> *)routingOptionShow;
+-(NSObject<IVISPERRoutingOption> *)routingOptionShow:(BOOL)animated;
+
+
 @end

@@ -48,7 +48,7 @@
     }
     
     if ([routePattern isEqualToString:@"/example2"]) {
-        return [VISPER routingOptionPush:YES];
+        return [VISPER routingOptionShow:YES];
     }
     
     return nil;
