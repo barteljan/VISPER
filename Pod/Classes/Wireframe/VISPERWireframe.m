@@ -329,35 +329,28 @@
  **/
 - (BOOL)canRouteURL:(NSURL *)URL{
     
-    BOOL success = [self.routes canRouteURL:URL];
+    return [self canRouteURL:URL withParameters:nil];
     
-    if(success){
-        return TRUE;
-    }
-    
-    for(NSObject<IVISPERWireframe>*wireframe in self.childWireframes){
-        success = [wireframe canRouteURL:URL];
-        if(success){
-            return TRUE;
-        }
-    }
-    
-    return FALSE;
 }
 
 - (BOOL)canRouteURL:(NSURL *)URL withParameters:(NSDictionary *)parameters{
     
-    BOOL success = [self.routes canRouteURL:URL withParameters:parameters];
-    
-    if(success){
-        return TRUE;
-    }
-    
-    for(NSObject<IVISPERWireframe>*wireframe in self.childWireframes){
-        success = [wireframe canRouteURL:URL withParameters:parameters];
+    @try {
+        BOOL success = [self.routes canRouteURL:URL withParameters:parameters];
+        
         if(success){
             return TRUE;
         }
+        
+        for(NSObject<IVISPERWireframe>*wireframe in self.childWireframes){
+            success = [wireframe canRouteURL:URL withParameters:parameters];
+            if(success){
+                return TRUE;
+            }
+        }
+    }
+    @catch(NSException *e){
+        return FALSE;
     }
     
     return FALSE;
