@@ -11,15 +11,15 @@ import VISPER
 
 class Example3CommandHandler: CommandHandlerProtocol {
 
-    func isResponsible(command: Any!) -> Bool {
+    func isResponsible(_ command: Any!) -> Bool {
         if(command is String && (command as! String)=="loadDataWithSwift"){
             return true
         }
         return false
     }
     
-    func process<T>(command: Any!, completion: ((result: T?, error: ErrorType?) -> Void)?) throws {
-        completion?(result:("Data loaded by swift" as! T),error:nil)
+    func process<T>(_ command: Any!, completion: ((_ result: T?, _ error: Error?) -> Void)?) throws {
+        completion?(("Data loaded by swift" as! T),nil)
     }
     
 }

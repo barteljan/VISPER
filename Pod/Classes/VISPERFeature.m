@@ -46,17 +46,17 @@
 
 
 #pragma mark IVISPERWireframeViewControllerServiceProvider protocol
--(UIViewController*)controllerForRoute:(NSString *)routePattern
-                        routingOptions:(NSObject<IVISPERRoutingOption> *)options
-                        withParameters:(NSDictionary *)parameters{
+-(UIViewController* _Nullable )controllerForRoute:(NSString * _Nonnull)routePattern
+                        routingOptions:(NSObject<IVISPERRoutingOption> * _Nonnull)options
+                        withParameters:(NSDictionary * _Nonnull ) parameters{
     return nil;
 }
 
 
 #pragma mark IVISPERWireframeRoutingOptionsServiceProvider protocol
--(NSObject<IVISPERRoutingOption>*)optionForRoutePattern:(NSString *)routePattern
-                                             parameters:(NSDictionary *)dictionary
-                                         currentOptions:(NSObject<IVISPERRoutingOption> *)currentOptions{
+-(NSObject<IVISPERRoutingOption>* _Nullable)optionForRoutePattern:(NSString * _Nonnull )routePattern
+                                             parameters:(NSDictionary * _Nonnull) dictionary
+                                         currentOptions:(NSObject<IVISPERRoutingOption> * _Nullable)currentOptions{
     return currentOptions;
 }
 

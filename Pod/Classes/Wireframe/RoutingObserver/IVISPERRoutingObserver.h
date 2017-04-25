@@ -14,12 +14,12 @@
 
 @protocol IVISPERRoutingObserver <NSObject>
 
--(void) routeToController:(UIViewController*)controller
-             routePattern:(NSString*)routePattern
-                  options:(NSObject<IVISPERRoutingOption>*)option
-               parameters:(NSDictionary*)parameters
-         routingPresenter:(NSObject<IVISPERRoutingPresenter>*)presenter
-                wireframe:(NSObject<IVISPERWireframe>*)wireframe;
+-(void) routeToController:(UIViewController* _Nonnull)controller
+             routePattern:(NSString* _Nonnull)routePattern
+                  options:(NSObject<IVISPERRoutingOption>* _Nonnull)option
+               parameters:(NSDictionary* _Nonnull)parameters
+         routingPresenter:(NSObject<IVISPERRoutingPresenter>* _Nonnull)presenter
+                wireframe:(NSObject<IVISPERWireframe>* _Nonnull)wireframe;
 
 
 @end

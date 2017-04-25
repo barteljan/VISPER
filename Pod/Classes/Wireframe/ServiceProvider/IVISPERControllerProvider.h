@@ -15,9 +15,9 @@
  * Provide view controller if none is given
  *
  */
--(UIViewController*)controllerForRoute:(NSString*)routePattern
-                        routingOptions:(NSObject<IVISPERRoutingOption>*)options
-                        withParameters:(NSDictionary*)parameters;
+-(UIViewController* _Nullable)controllerForRoute:(NSString* _Nonnull )routePattern
+                        routingOptions:(NSObject<IVISPERRoutingOption>* _Nonnull)options
+                        withParameters:(NSDictionary* _Nonnull)parameters;
 
 
 @end

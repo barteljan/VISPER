@@ -13,8 +13,8 @@
 /**
  * Default options for routing if none are provided
  **/
--(NSObject<IVISPERRoutingOption>*)optionForRoutePattern:(NSString*)routePattern
-                                             parameters:(NSDictionary*)dictionary
-                                         currentOptions:(NSObject<IVISPERRoutingOption>*)currentOptions;
+-( NSObject<IVISPERRoutingOption>* _Nullable )optionForRoutePattern:(NSString* _Nonnull)routePattern
+                                                         parameters:(NSDictionary* _Nonnull)dictionary
+                                                     currentOptions:(NSObject<IVISPERRoutingOption>* _Nullable)currentOptions;
 
 @end

@@ -14,7 +14,7 @@ class Example3VisperViewController: UIViewController {
     
     @IBOutlet weak var textLabel: UILabel!
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
@@ -29,21 +29,21 @@ class Example3VisperViewController: UIViewController {
     }
     
     
-    @IBAction func closeViewController(sender: AnyObject) {
+    @IBAction func closeViewController(_ sender: AnyObject) {
         
-        let event = self.visperServiceProvider.createEventWithName("shouldCloseViewController", sender: self, info: [NSObject : AnyObject]())
+        let event = self.visperServiceProvider.createEvent(withName: "shouldCloseViewController", sender: self, info: [AnyHashable: Any]())
        
-        self.notifyPresentersOfView(self.view, withEvent: event)
+        self.notifyPresenters(of: self.view, with: event)
         
     }
     
-    @IBAction func loadDataWithSwift(sender: AnyObject) {
-        let event = self.visperServiceProvider.createEventWithName("loadDataWithSwift", sender: self, info: [NSObject : AnyObject]())
+    @IBAction func loadDataWithSwift(_ sender: AnyObject) {
+        let event = self.visperServiceProvider.createEvent(withName: "loadDataWithSwift", sender: self, info: [AnyHashable: Any]())
         
-        self.notifyPresentersOfView(self.view, withEvent: event)
+        self.notifyPresenters(of: self.view, with: event)
     }
     
-    func setText(text:String){
+    func setText(_ text:String){
         self.textLabel.text = text
     }
 }

@@ -17,7 +17,7 @@ class ExampleFeature3: VISPERFeature {
     }
     
     
-    override func bootstrapWireframe(wireframe: IVISPERWireframe!, commandBus: VISPERCommandBus!) {
+    override func bootstrapWireframe(_ wireframe: IVISPERWireframe, commandBus: VISPERCommandBus) {
         super.bootstrapWireframe(wireframe, commandBus: commandBus)
         
         let handler = Example3CommandHandler()
@@ -25,7 +25,7 @@ class ExampleFeature3: VISPERFeature {
         
     }
     
-    override func controllerForRoute(routePattern: String!, routingOptions options: IVISPERRoutingOption!, withParameters parameters: [NSObject : AnyObject]!) -> UIViewController! {
+    override func controller(forRoute routePattern: String, routingOptions options: IVISPERRoutingOption, withParameters parameters: [AnyHashable: Any]) -> UIViewController? {
         
         if(routePattern == "/example3"){
             
@@ -33,7 +33,7 @@ class ExampleFeature3: VISPERFeature {
             
             let controller = Example3VisperViewController(nibName: "Example3VisperViewController", bundle: nil)
             
-            controller.addVisperPresenter(presenter)
+            controller.add(presenter)
             
             return controller
         }
@@ -42,7 +42,7 @@ class ExampleFeature3: VISPERFeature {
     }
     
     
-    override func optionForRoutePattern(routePattern: String!, parameters dictionary: [NSObject : AnyObject]?, currentOptions: IVISPERRoutingOption!) -> IVISPERRoutingOption? {
+    override func option(forRoutePattern routePattern: String, parameters dictionary: [AnyHashable: Any]?, currentOptions: IVISPERRoutingOption!) -> IVISPERRoutingOption? {
         
         if(currentOptions == nil && routePattern == "/example3"){
             return VISPER.routingOptionModal()

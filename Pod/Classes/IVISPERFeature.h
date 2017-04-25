@@ -13,10 +13,10 @@
 @protocol IVISPERFeature <NSObject>
 
 @optional
--(NSArray*)routePatterns;
+-(NSArray* _Nonnull)routePatterns;
 
--(void)bootstrapWireframe:(NSObject<IVISPERWireframe> *)wireframe
-               commandBus:(VISPERCommandBus *)commandBus;
+-(void)bootstrapWireframe:(NSObject<IVISPERWireframe> * _Nonnull)wireframe
+               commandBus:(VISPERCommandBus * _Nonnull)commandBus;
 
 
 @end

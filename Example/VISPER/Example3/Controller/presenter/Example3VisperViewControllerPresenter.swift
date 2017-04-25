@@ -19,8 +19,8 @@ class Example3VisperViewControllerPresenter: VISPERViewControllerPresenter {
     }
     
     
-    override func viewEvent(event: IVISPERViewEvent!, withView view: UIView!, andController viewController: UIViewController!) {
-       super.viewEvent(event, withView: view, andController: viewController)
+    override func viewEvent(_ event: IVISPERViewEvent!, with view: UIView!, andController viewController: UIViewController!) {
+       super.viewEvent(event, with: view, andController: viewController)
         
         if(event.name()=="shouldCloseViewController"){
             self.closeViewController(viewController)
@@ -30,17 +30,15 @@ class Example3VisperViewControllerPresenter: VISPERViewControllerPresenter {
     }
     
     
-    func closeViewController(controller: UIViewController){
-        controller.dismissThisViewControllerAnimated(true) { () -> Void in
+    func closeViewController(_ controller: UIViewController){
+        controller.dismissThisViewController(animated: true) { () -> Void in
             print("dissmissed vc")
         }
     }
     
     
-    func loadData(controller: Example3VisperViewController){
-        try! self.commandBus.process("loadDataWithSwift") { (result: Any!, error: ErrorType?) -> Void in
-            let myResult = result
-            
+    func loadData(_ controller: Example3VisperViewController){
+        try! self.commandBus.process("loadDataWithSwift") { (result: Any!, error: Error?) -> Void in
             controller.setText(result as! String)
         }
     }
