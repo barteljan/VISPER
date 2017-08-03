@@ -24,7 +24,6 @@
 		9AD6E7611B863D0100849EA1 /* Example1VisperViewControllerPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6E74A1B863D0100849EA1 /* Example1VisperViewControllerPresenter.m */; };
 		9AD6E7621B863D0100849EA1 /* Example2VisperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6E74E1B863D0100849EA1 /* Example2VisperViewController.m */; };
 		9AD6E7631B863D0100849EA1 /* Example2VisperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6E74F1B863D0100849EA1 /* Example2VisperViewController.xib */; };
-		9AD6E7641B863D0100849EA1 /* Example2VisperViewControllerPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6E7521B863D0100849EA1 /* Example2VisperViewControllerPresenter.m */; };
 		9AD6E7661B863D0100849EA1 /* Example3VisperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6E7571B863D0100849EA1 /* Example3VisperViewController.xib */; };
 		9AD6E7681B863D0100849EA1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6E75D1B863D0100849EA1 /* AppDelegate.m */; };
 		9AD6E7691B863D0100849EA1 /* Application.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6E75E1B863D0100849EA1 /* Application.xib */; };
@@ -62,8 +61,6 @@
 		9AD6E74D1B863D0100849EA1 /* Example2VisperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example2VisperViewController.h; sourceTree = "<group>"; };
 		9AD6E74E1B863D0100849EA1 /* Example2VisperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example2VisperViewController.m; sourceTree = "<group>"; };
 		9AD6E74F1B863D0100849EA1 /* Example2VisperViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example2VisperViewController.xib; sourceTree = "<group>"; };
-		9AD6E7511B863D0100849EA1 /* Example2VisperViewControllerPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example2VisperViewControllerPresenter.h; sourceTree = "<group>"; };
-		9AD6E7521B863D0100849EA1 /* Example2VisperViewControllerPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example2VisperViewControllerPresenter.m; sourceTree = "<group>"; };
 		9AD6E7571B863D0100849EA1 /* Example3VisperViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Example3VisperViewController.xib; sourceTree = "<group>"; };
 		9AD6E75C1B863D0100849EA1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9AD6E75D1B863D0100849EA1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -208,18 +205,8 @@
 				9AD6E74D1B863D0100849EA1 /* Example2VisperViewController.h */,
 				9AD6E74E1B863D0100849EA1 /* Example2VisperViewController.m */,
 				9AD6E74F1B863D0100849EA1 /* Example2VisperViewController.xib */,
-				9AD6E7501B863D0100849EA1 /* Presenter */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		9AD6E7501B863D0100849EA1 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				9AD6E7511B863D0100849EA1 /* Example2VisperViewControllerPresenter.h */,
-				9AD6E7521B863D0100849EA1 /* Example2VisperViewControllerPresenter.m */,
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		9AD6E7531B863D0100849EA1 /* Example3 */ = {
@@ -394,7 +381,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -406,7 +393,6 @@
 			files = (
 				9AD6E76F1B863F1800849EA1 /* ExampleFeature2.m in Sources */,
 				9AD6E7611B863D0100849EA1 /* Example1VisperViewControllerPresenter.m in Sources */,
-				9AD6E7641B863D0100849EA1 /* Example2VisperViewControllerPresenter.m in Sources */,
 				9A8E07B31C8FFFA50085CAD7 /* Example3CommandHandler.swift in Sources */,
 				9AD6E7681B863D0100849EA1 /* AppDelegate.m in Sources */,
 				9AD6E75F1B863D0100849EA1 /* Example1VisperViewController.m in Sources */,

@@ -67,6 +67,12 @@
         }
     }
     [CATransaction setCompletionBlock:^{
+        if(controllerToPopTo) {
+            [wireframe setCurrentViewController:controllerToPopTo];
+        }else {
+            [wireframe setCurrentViewController:controller];
+        }
+        
         NSObject <IVISPERRoutingEvent> *didPushControllerEvent =
         [self.serviceProvider createEventWithName:@"didPushController"
                                            sender:wireframe
@@ -83,5 +89,7 @@
     
     
 }
+
+
 
 @end

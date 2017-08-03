@@ -72,14 +72,13 @@
                      withPriority:0];
         [self addRoutingPresenter:[[VISPERShowRoutingPresenter alloc] initWithNavigationController:self.navigationController]
                      withPriority:0];
+        
+        [self setNavigationController:controller];
     }
     return self;
 
 
 }
-
-
-
 
 -(UIViewController*)rootViewController{
     return self.navigationController;
@@ -144,6 +143,8 @@
             [routingPresenter performSelector:@selector(setNavigationController:) withObject:navigationController];
         }
     }
+    
+    [self.wireframe setCurrentViewController:self.navigationController.topViewController];
 }
 
 @end

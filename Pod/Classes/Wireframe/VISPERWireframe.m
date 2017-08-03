@@ -12,6 +12,7 @@
 #import "VISPERDoNotPresentRoutingPresenter.h"
 #import "IVISPERWireframePresentationTypeDoNotPresentVC.h"
 #import "VISPER.h"
+#import "VISPERWireframeBackPresenter.h"
 
 @interface VISPERWireframe()
 
@@ -24,6 +25,7 @@
 @property(nonatomic,strong) VISPERPriorizedObjectStore *privateRoutingOptionServiceProviders;
 @property(nonatomic,strong) VISPERPriorizedObjectStore *privateRoutingPresenters;
 @property(nonatomic,strong) VISPERPriorizedObjectStore *privateRoutingObservers;
+@property(nonatomic,strong) UIViewController *_currentVC;
 @end
 
 
@@ -156,6 +158,9 @@
             
         }
         
+        VISPERWireframeBackPresenter *backPresenter = [[VISPERWireframeBackPresenter alloc] initWithWireframe:blockWireframe];
+        [controller addVisperPresenter:backPresenter];
+        
         if(!controller){
             @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                            reason:[NSString stringWithFormat:@"No controller for routePattern:%@ and parameters:%@ found", routePattern,parameters]
@@ -202,8 +207,6 @@
                                       wireframe:blockWireframe];
                     
                 }
-                
-                
                 
                 [presenter routeForPattern:routePattern
                                 controller:controller
@@ -541,6 +544,48 @@
     }
     
     return self->_routingOptionsFactory;
+}
+
+/**
+ * ViewController management
+ **/
+-(UIViewController*)currentViewController {
+    return self._currentVC;
+}
+
+
+-(void)setCurrentViewController:(UIViewController*)controller{
+    self._currentVC = controller;
+}
+
+
+-(void)back:(BOOL)animated completion:(void(^)())completion{
+    
+    UIViewController *currentVC = self.currentViewController;
+    
+    NSObject<IVISPERRoutingOption> *option = currentVC.routingOptions;
+    
+    BOOL didFindPresenter = FALSE;
+    
+    for(NSObject<IVISPERRoutingPresenter> *presenter in self.routingPresenters){
+        if([presenter isResponsibleForRoutingOption:option]){
+            [presenter dismissViewController: currentVC
+                                    animated: animated
+                                 onWireframe: self
+                                  completion: completion];
+            
+            didFindPresenter = TRUE;
+            break;
+        }
+    }
+    
+    if(!didFindPresenter){
+        
+        NSString *reason = [NSString stringWithFormat: @"Did not find a presenter for dismissing a controller with routingOptions: %@", option];
+        NSException *exception = [NSException exceptionWithName:NSInternalInconsistencyException reason:reason userInfo:nil];
+        @throw exception;
+    }
+    
 }
 
 @end

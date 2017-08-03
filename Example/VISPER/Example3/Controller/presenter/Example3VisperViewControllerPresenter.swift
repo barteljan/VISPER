@@ -31,7 +31,7 @@ class Example3VisperViewControllerPresenter: VISPERViewControllerPresenter {
     
     
     func closeViewController(_ controller: UIViewController){
-        controller.dismissThisViewController(animated: true) { () -> Void in
+        self.wireframe.back(true) { 
             print("dissmissed vc")
         }
     }

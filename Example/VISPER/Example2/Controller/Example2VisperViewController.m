@@ -23,5 +23,11 @@
     [super didReceiveMemoryWarning];
 }
 
+- (IBAction)backAction:(id)sender {
+    
+    [self.wireframe back:true completion:^{
+        NSLog(@"dismissed vc");
+    }];
+}
 
 @end

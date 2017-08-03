@@ -55,6 +55,7 @@
     }
     
     [CATransaction setCompletionBlock:^{
+        [wireframe setCurrentViewController:controller];
         NSObject <IVISPERRoutingEvent> *didPushControllerEvent =
         [self.serviceProvider createEventWithName:@"didPushController"
                                            sender:wireframe
@@ -69,5 +70,43 @@
     [CATransaction commit];
 
 }
+
+-(void)dismissViewController:(UIViewController*) controller
+                    animated:(BOOL)animated
+                 onWireframe:(NSObject<IVISPERWireframe>*)wireframe
+                  completion:(void(^)())completion{
+    if(controller.navigationController){
+        
+        if(self.navigationController != controller.navigationController){
+            @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                           reason:@"controller could not be popped since it doesn't live in it's wireframes navigation controller" userInfo:nil];
+        }else {
+            
+            if(animated){
+                
+                [CATransaction begin];
+                [CATransaction setCompletionBlock:^{
+                    completion();
+                }];
+                
+                [self.navigationController popViewControllerAnimated:YES];
+                
+                [CATransaction commit];
+            
+            }else {
+                [self.navigationController popViewControllerAnimated:FALSE];
+                completion();
+            }
+            
+            
+        }
+        
+    
+    }else {
+        @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                       reason:@"controller could not be popped since it has no navigation controller" userInfo:nil];
+    }
+}
+
 
 @end

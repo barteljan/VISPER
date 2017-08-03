@@ -49,6 +49,7 @@
                                                    animated:options.wireframePresentationType.animated];
     
     [CATransaction setCompletionBlock:^{
+        [wireframe setCurrentViewController:controller];
         NSObject <IVISPERRoutingEvent> *didPresentControllerEvent =
         [self.serviceProvider createEventWithName:@"didPresentRootViewController"
                                            sender:wireframe
@@ -63,6 +64,13 @@
     [CATransaction commit];
 
 
+}
+
+-(void)dismissViewController:(UIViewController*) controller
+                    animated:(BOOL)animated
+                 onWireframe:(NSObject<IVISPERWireframe>*)wireframe
+                  completion:(void(^)())completion{
+    NSLog(@"ERROR: there is no way to dismiss a rootViewController");
 }
 
 @end

@@ -23,6 +23,9 @@
 +(NSObject<IVISPERRoutingOption> *)routingOptionModal;
 +(NSObject<IVISPERRoutingOption> *)routingOptionModal:(BOOL)animated;
 
++(NSObject<IVISPERRoutingOption> *)routingOptionPopover;
++(NSObject<IVISPERRoutingOption> *)routingOptionPopover:(BOOL)animated;
+
 +(NSObject<IVISPERRoutingOption> *)routingOptionPresentRootVC;
 +(NSObject<IVISPERRoutingOption> *)routingOptionPresentRootVC:(BOOL)animated;
 

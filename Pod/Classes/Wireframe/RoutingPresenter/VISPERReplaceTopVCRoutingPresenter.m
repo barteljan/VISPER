@@ -56,6 +56,7 @@
     
     
     [CATransaction setCompletionBlock:^{
+        [wireframe setCurrentViewController:controller];
         NSObject <IVISPERRoutingEvent> *didPushControllerEvent =
         [self.serviceProvider createEventWithName:@"didPushController"
                                            sender:wireframe
@@ -70,6 +71,7 @@
     [CATransaction commit];
     
 }
+
 
 
 @end

@@ -163,4 +163,12 @@
  */
 -(void)setRoutingOptionsFactory:(NSObject<IVISPERRoutingOptionsFactory>*)factory;
 -(NSObject<IVISPERRoutingOptionsFactory>*)routingOptionsFactory;
+
+/**
+ * ViewController management
+ **/
+-(UIViewController*)currentViewController;
+-(void)setCurrentViewController:(UIViewController*)controller;
+-(void)back:(BOOL)animated completion:(void(^)())completion;
+
 @end

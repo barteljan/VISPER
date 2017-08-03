@@ -6,9 +6,9 @@
 //
 //
 
-#import "VISPERNavigationControllerBasedRoutingPresenter.h"
+#import "VISPERPushRoutingPresenter.h"
 
-@interface VISPERShowRoutingPresenter : VISPERNavigationControllerBasedRoutingPresenter
+@interface VISPERShowRoutingPresenter : VISPERPushRoutingPresenter
 
 
 

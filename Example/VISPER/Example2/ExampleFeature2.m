@@ -8,7 +8,6 @@
 
 #import "ExampleFeature2.h"
 #import "Example2VisperViewController.h"
-#import "Example2VisperViewControllerPresenter.h"
 #import <VISPER/VISPER.h>
 
 @implementation ExampleFeature2
@@ -26,12 +25,11 @@
                         withParameters:(NSDictionary*)parameters{
     
     if ([routePattern isEqualToString:@"/example2"]) {
-        Example2VisperViewControllerPresenter *example2VCPresenter =
-        [[Example2VisperViewControllerPresenter alloc] initWithWireframe:self.wireframe];
+
         
         Example2VisperViewController *example2VC = [[Example2VisperViewController alloc] initWithNibName:@"Example2VisperViewController"
                                                                                                   bundle:nil];
-        [example2VC addVisperPresenter:example2VCPresenter];
+        
         return example2VC;
     }
 
@@ -48,7 +46,7 @@
     }
     
     if ([routePattern isEqualToString:@"/example2"]) {
-        return [VISPER routingOptionShow:YES];
+        return [VISPER routingOptionShow];
     }
     
     return nil;

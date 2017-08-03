@@ -52,27 +52,59 @@
                                                 }];
     [controller routingEvent:willPresentControllerEvent withWireframe:wireframe];
     
-    [self.navigationController presentViewController:controller
-                                                      animated:options.wireframePresentationType.animated
-                                                    completion:^{
-                                                        NSObject <IVISPERRoutingEvent> *didPresentControllerEvent =
-                                                        [self.serviceProvider createEventWithName:@"didPresentController"
-                                                                                           sender:wireframe
-                                                                                             info:@{
-                                                                                                    @"routePattern":routePattern,
-                                                                                                    @"options" : options,
-                                                                                                    @"parameters": parameters
-                                                                                                    }];
-                                                        [controller routingEvent:didPresentControllerEvent withWireframe:wireframe];
-                                                        completion(routePattern,
-                                                                   controller,
-                                                                   options,
-                                                                   parameters,
-                                                                   wireframe);
-                                                    }];
+    UIViewController *presentingController = wireframe.currentViewController;
+    if(!presentingController){
+        presentingController = self.navigationController;
+    }
+    
+    
+    [presentingController presentViewController:controller
+                                       animated:options.wireframePresentationType.animated
+                                     completion:^{
+                                         [wireframe setCurrentViewController:controller];
+                                         NSObject <IVISPERRoutingEvent> *didPresentControllerEvent =
+                                         [self.serviceProvider createEventWithName:@"didPresentController"
+                                                                           sender:wireframe
+                                                                             info:@{
+                                                                                    @"routePattern":routePattern,
+                                                                                    @"options" : options,
+                                                                                    @"parameters": parameters
+                                                                                    }];
+                                         [controller routingEvent:didPresentControllerEvent withWireframe:wireframe];
+                                         completion(routePattern,
+                                                    controller,
+                                                    options,
+                                                    parameters,
+                                                    wireframe);
+                                    }];
 
 }
 
+
+-(void)dismissViewController:(UIViewController*) controller
+                    animated:(BOOL)animated
+                 onWireframe:(NSObject<IVISPERWireframe>*)wireframe
+                  completion:(void(^)())completion{
+    
+    // check if it is the first view controller pushed modally
+    // we assume in that case that the current view controller
+    // of the wireframe has to be the top vc in it's current navigation controller
+    if(controller.presentingViewController != nil && controller.presentingViewController.presentingViewController == nil){
+        [wireframe setCurrentViewController:self.navigationController.topViewController];
+        [controller dismissThisViewControllerAnimated:animated completion:^{
+            completion();
+        }];
+       
+    } else if(controller.presentingViewController != nil) {
+        [wireframe setCurrentViewController:controller.presentingViewController];
+        [controller dismissThisViewControllerAnimated:animated completion:^{
+            completion();
+        }];
+    } else {
+        @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"This controller was not presented modally" userInfo:nil];
+    }
+    
+}
 
 
 

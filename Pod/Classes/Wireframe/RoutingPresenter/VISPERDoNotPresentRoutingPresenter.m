@@ -40,4 +40,12 @@
     }
 }
 
+-(void)dismissViewController:(UIViewController*) controller
+                 onWireframe:(NSObject<IVISPERWireframe>*)wireframe
+                  completion:(void(^)())completion{
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                   reason:@"controller could not be dismissed, since it wasn't presented by VISPER"
+                                 userInfo:nil];
+}
+
 @end
