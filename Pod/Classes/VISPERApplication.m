@@ -13,6 +13,7 @@
 #import "VISPERRootVCRoutingPresenter.h"
 #import "VISPERReplaceTopVCRoutingPresenter.h"
 #import "VISPERShowRoutingPresenter.h"
+#import "VISPERBackToRouteRoutingPresenter.h"
 @import VISPER_CommandBus;
 
 @interface VISPERApplication()
@@ -71,6 +72,8 @@
         [self addRoutingPresenter:[[VISPERReplaceTopVCRoutingPresenter alloc] initWithNavigationController:self.navigationController]
                      withPriority:0];
         [self addRoutingPresenter:[[VISPERShowRoutingPresenter alloc] initWithNavigationController:self.navigationController]
+                     withPriority:0];
+        [self addRoutingPresenter:[[VISPERBackToRouteRoutingPresenter alloc] initWithNavigationController:self.navigationController]
                      withPriority:0];
         
         [self setNavigationController:controller];

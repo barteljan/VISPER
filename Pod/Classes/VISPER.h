@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IVISPERRoutingOption.h"
 #import "IVISPERRoutingOptionsFactory.h"
 
 @interface VISPER : NSObject
@@ -25,6 +26,9 @@
 
 +(NSObject<IVISPERRoutingOption> *)routingOptionPopover;
 +(NSObject<IVISPERRoutingOption> *)routingOptionPopover:(BOOL)animated;
+
++(NSObject<IVISPERRoutingOption> *)backToRoute;
++(NSObject<IVISPERRoutingOption> *)backToRoute:(BOOL)animated;
 
 +(NSObject<IVISPERRoutingOption> *)routingOptionPresentRootVC;
 +(NSObject<IVISPERRoutingOption> *)routingOptionPresentRootVC:(BOOL)animated;

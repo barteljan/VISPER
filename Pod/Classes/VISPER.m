@@ -11,6 +11,8 @@
 #import "UIViewController+VISPER.h"
 #import "VISPERPresentationTypeModal.h"
 #import "VISPERRoutingOption.h"
+#import "IVISPERRoutingOptionsFactory.h"
+#import "IVISPERWireframePresentationType.h"
 
 @implementation VISPER
 
@@ -63,14 +65,20 @@ static NSObject<IVISPERRoutingOptionsFactory> *routingOptionsFactory = nil;
 
 +(NSObject<IVISPERRoutingOption> *)routingOptionPopover:(BOOL)animated {
     
-    VISPERPresentationTypeModal  *type = [[VISPERPresentationTypeModal alloc] initIsAnimated:animated];
-    
-    type.presentationStyle = UIModalPresentationOverCurrentContext;
-    
-    VISPERRoutingOption *option = [[VISPERRoutingOption alloc] initWithPresentationType:type];
-    
+    NSObject<IVISPERRoutingOption> *option = [[VISPER sharedRoutingOptionsFactory] routingOptionModal:true];
+    VISPERPresentationTypeModal *modalType = (VISPERPresentationTypeModal *)option.wireframePresentationType;
+    modalType.presentationStyle = UIModalPresentationOverCurrentContext;
     return option;
 }
+
++(NSObject<IVISPERRoutingOption> *)backToRoute {
+    return [VISPER backToRoute:true];
+}
+
++(NSObject<IVISPERRoutingOption> *)backToRoute:(BOOL)animated {
+    return  [[VISPER sharedRoutingOptionsFactory] backToRoute: animated];
+}
+
 
 +(NSObject<IVISPERRoutingOption> *)routingOptionPresentRootVC{
     return [[VISPER sharedRoutingOptionsFactory] routingOptionPresentRootVC];

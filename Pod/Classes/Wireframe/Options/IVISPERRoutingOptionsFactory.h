@@ -24,6 +24,9 @@
 -(NSObject<IVISPERRoutingOption> *)routingOptionModal;
 -(NSObject<IVISPERRoutingOption> *)routingOptionModal:(BOOL)animated;
 
+-(NSObject<IVISPERRoutingOption> *)backToRoute;
+-(NSObject<IVISPERRoutingOption> *)backToRoute:(BOOL)animated;
+
 -(NSObject<IVISPERRoutingOption> *)routingOptionPresentRootVC;
 -(NSObject<IVISPERRoutingOption> *)routingOptionPresentRootVC:(BOOL)animated;
 

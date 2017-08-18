@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B04A65A03DDEFD7B6F15170 /* Pods_VISPER_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4783FCD3A02B08545232ED7E /* Pods_VISPER_Example.framework */; };
+		464D44D9DB808AFCD075086C /* Pods_VISPER_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1C3DDEF7524A413ED97A57 /* Pods_VISPER_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -33,7 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4783FCD3A02B08545232ED7E /* Pods_VISPER_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VISPER_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F092648C0AA95984D719E4F /* Pods-VISPER_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER_Example/Pods-VISPER_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* VISPER_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VISPER_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,8 +45,6 @@
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6B2CD59265BF6589880C1573 /* VISPER.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = VISPER.podspec; path = ../VISPER.podspec; sourceTree = "<group>"; };
-		7BBF5129EFC723A18D99FA47 /* Pods-VISPER_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER_Example/Pods-VISPER_Example.release.xcconfig"; sourceTree = "<group>"; };
-		8C37196A68049AE817A0FA7D /* Pods-VISPER_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER_Example/Pods-VISPER_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9A8463AB1C7F39EC004BDEC1 /* VISPER_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VISPER_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		9A8463AC1C7F39EC004BDEC1 /* DataCommandHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataCommandHandler.swift; path = VISPER/Example1/DataCommandHandler.swift; sourceTree = SOURCE_ROOT; };
 		9A8E07AC1C8FF7350085CAD7 /* Example3VisperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example3VisperViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +71,8 @@
 		9AEABF9B1C7F3DD100AB66DA /* Example1View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example1View.m; sourceTree = "<group>"; };
 		A8AE3CD1BB0F2452F47336B6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		CFCCE0151092EBBA3C3F4978 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		DC1C3DDEF7524A413ED97A57 /* Pods_VISPER_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VISPER_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF6EB135E6E9D5BC095E4516 /* Pods-VISPER_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER_Example/Pods-VISPER_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				1B04A65A03DDEFD7B6F15170 /* Pods_VISPER_Example.framework in Frameworks */,
+				464D44D9DB808AFCD075086C /* Pods_VISPER_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +97,7 @@
 				6003F593195388D20070C39A /* Example */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
-				F6BCAB48C6EC5FDFDC755842 /* Pods */,
+				9F78C9CB1DFD14B55744D270 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,7 +116,7 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				4783FCD3A02B08545232ED7E /* Pods_VISPER_Example.framework */,
+				DC1C3DDEF7524A413ED97A57 /* Pods_VISPER_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -256,11 +256,11 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		F6BCAB48C6EC5FDFDC755842 /* Pods */ = {
+		9F78C9CB1DFD14B55744D270 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8C37196A68049AE817A0FA7D /* Pods-VISPER_Example.debug.xcconfig */,
-				7BBF5129EFC723A18D99FA47 /* Pods-VISPER_Example.release.xcconfig */,
+				FF6EB135E6E9D5BC095E4516 /* Pods-VISPER_Example.debug.xcconfig */,
+				1F092648C0AA95984D719E4F /* Pods-VISPER_Example.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -272,12 +272,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "VISPER_Example" */;
 			buildPhases = (
-				903A820EFF6BE3B007E6E58F /* [CP] Check Pods Manifest.lock */,
+				CBB4811EC228469B2AD793AE /* [CP] Check Pods Manifest.lock */,
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				65F001D3DD717E539B5A3E0E /* [CP] Embed Pods Frameworks */,
-				35F45BAFB0BF3DFE50580979 /* [CP] Copy Pods Resources */,
+				AA9C82EF11F51E9EBA038CF8 /* [CP] Embed Pods Frameworks */,
+				5404B95493ECC23FA4322AE2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -339,7 +339,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		35F45BAFB0BF3DFE50580979 /* [CP] Copy Pods Resources */ = {
+		5404B95493ECC23FA4322AE2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -354,34 +354,44 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER_Example/Pods-VISPER_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		65F001D3DD717E539B5A3E0E /* [CP] Embed Pods Frameworks */ = {
+		AA9C82EF11F51E9EBA038CF8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VISPER_Example/Pods-VISPER_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/JLRoutes/JLRoutes.framework",
+				"${BUILT_PRODUCTS_DIR}/VISPER/VISPER.framework",
+				"${BUILT_PRODUCTS_DIR}/VISPER-CommandBus/VISPER_CommandBus.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JLRoutes.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_CommandBus.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER_Example/Pods-VISPER_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		903A820EFF6BE3B007E6E58F /* [CP] Check Pods Manifest.lock */ = {
+		CBB4811EC228469B2AD793AE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VISPER_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -509,7 +519,7 @@
 		};
 		6003F5C0195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C37196A68049AE817A0FA7D /* Pods-VISPER_Example.debug.xcconfig */;
+			baseConfigurationReference = FF6EB135E6E9D5BC095E4516 /* Pods-VISPER_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -535,7 +545,7 @@
 		};
 		6003F5C1195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BBF5129EFC723A18D99FA47 /* Pods-VISPER_Example.release.xcconfig */;
+			baseConfigurationReference = 1F092648C0AA95984D719E4F /* Pods-VISPER_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

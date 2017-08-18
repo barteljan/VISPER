@@ -15,6 +15,7 @@
 #import "VISPERPresententationTypeDoNotPresentVC.h"
 #import "VISPERPresentationTypeReplaceTopVC.h"
 #import "VISPERPresentationTypeShow.h"
+#import "VISPERPresentationTypeBackToRoute.h"
 
 @implementation VISPERRoutingOptionsFactory
 
@@ -56,6 +57,19 @@
     
     return [[VISPERRoutingOption alloc] initWithPresentationType:type];
 }
+
+
+-(NSObject<IVISPERRoutingOption> *)backToRoute {
+    return [self backToRoute:true];
+}
+
+-(NSObject<IVISPERRoutingOption> *)backToRoute:(BOOL)animated {
+    NSObject <IVISPERWireframePresentationType> *type =
+    [[VISPERPresentationTypeBackToRoute alloc] initIsAnimated:animated];
+    
+    return [[VISPERRoutingOption alloc] initWithPresentationType:type];
+}
+
 
 -(NSObject<IVISPERRoutingOption> *)routingOptionPresentRootVC{
     return [self routingOptionPresentRootVC:YES];
