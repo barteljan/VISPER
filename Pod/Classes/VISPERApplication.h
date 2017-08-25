@@ -23,5 +23,6 @@
                                   wireframe:(NSObject<IVISPERWireframe>*)wireframe
                                  commandBus:(VISPERCommandBus*)commandBus;
 
+@property (nonatomic) BOOL isInDebugMode;
 
 @end

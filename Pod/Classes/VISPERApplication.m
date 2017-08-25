@@ -83,6 +83,16 @@
 
 }
 
+-(void)setIsInDebugMode:(BOOL)isInDebugMode {
+    VISPERWireframe *wireframe = (VISPERWireframe*)self.wireframe;
+    wireframe.isInDebugMode = isInDebugMode;
+}
+
+-(BOOL)isIsInDebugMode{
+    VISPERWireframe *wireframe = (VISPERWireframe*)self.wireframe;
+    return wireframe.isInDebugMode;
+}
+
 -(UIViewController*)rootViewController{
     return self.navigationController;
 }

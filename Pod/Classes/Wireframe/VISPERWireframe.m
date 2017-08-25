@@ -555,6 +555,20 @@
 
 
 -(void)setCurrentViewController:(UIViewController*)controller{
+    if(self.isInDebugMode){
+        if(controller){
+            NSLog(@"*************************************************");
+            NSLog(@"set CurrentController: %@",controller);
+            NSLog(@"\t withNavController: %@",controller.navigationController);
+            NSLog(@"\t route: %@",controller.routePattern);
+            NSLog(@"************************************************");
+        } else {
+            NSLog(@"*************************************************");
+            NSLog(@"set CurrentController: nil");
+            NSLog(@"*************************************************");
+        }
+    
+    }
     self._currentVC = controller;
 }
 
@@ -562,6 +576,21 @@
 -(void)back:(BOOL)animated completion:(void(^)())completion{
     
     UIViewController *currentVC = self.currentViewController;
+    
+    if(self.isInDebugMode){
+        if(currentVC){
+            NSLog(@"*************************************************");
+            NSLog(@"back from  CurrentController: %@",currentVC);
+            NSLog(@"\t withNavController: %@",currentVC.navigationController);
+            NSLog(@"\t route: %@",currentVC.routePattern);
+            NSLog(@"************************************************");
+        } else {
+            NSLog(@"*************************************************");
+            NSLog(@"back from CurrentController: nil");
+            NSLog(@"*************************************************");
+        }
+        
+    }
     
     NSObject<IVISPERRoutingOption> *option = currentVC.routingOptions;
     

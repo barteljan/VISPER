@@ -17,7 +17,10 @@
 
 @interface VISPERWireframe : NSObject<IVISPERWireframe>
 
-
+/**
+ * Activate debug mode
+ **/
+@property (nonatomic) BOOL isInDebugMode;
 
 /**
  *  Service Provider
@@ -40,6 +43,8 @@
  * Factory for generating routing options internally
  */
 @property (nonatomic,strong) NSObject<IVISPERRoutingOptionsFactory> *routingOptionsFactory;
+
+
 
 /**
  * init functions

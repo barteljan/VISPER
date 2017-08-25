@@ -75,13 +75,56 @@
                     animated:(BOOL)animated
                  onWireframe:(NSObject<IVISPERWireframe>*)wireframe
                   completion:(void(^)())completion{
+    
+    
+    if(controller != wireframe.currentViewController){
+        @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                       reason:@"controller is not the wireframes current vc" userInfo:nil];
+    }else if(!controller.routingOptions || ![self isResponsibleForRoutingOption:controller.routingOptions]) {
+        
+        NSString *message = [NSString stringWithFormat:@"presenter: %@ is not responsible for controller %@",NSStringFromClass(self.class), controller ];
+        
+        @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                       reason:message
+                                     userInfo:nil];
+        
+    } else {
+        
+        if(animated){
+            
+            [CATransaction begin];
+            [CATransaction setCompletionBlock:^{
+                completion();
+            }];
+            
+            [self.navigationController popViewControllerAnimated:YES];
+            
+            [CATransaction commit];
+            
+        }else {
+            [self.navigationController popViewControllerAnimated:FALSE];
+            completion();
+        }
+        
+    }
+
+}
+/*
+ //
+ // Raus genommen da es controller gibt die mysteriöser weise ihre navigationController property verlieren
+ //
+-(void)dismissViewController:(UIViewController*) controller
+                    animated:(BOOL)animated
+                 onWireframe:(NSObject<IVISPERWireframe>*)wireframe
+                  completion:(void(^)())completion{
+    
     if(controller.navigationController){
         
         if(self.navigationController != controller.navigationController){
             @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                            reason:@"controller could not be popped since it doesn't live in it's wireframes navigation controller" userInfo:nil];
         }else {
-            
+          
             if(animated){
                 
                 [CATransaction begin];
@@ -98,7 +141,7 @@
                 completion();
             }
             
-            
+    
         }
         
     
@@ -106,7 +149,8 @@
         @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                        reason:@"controller could not be popped since it has no navigation controller" userInfo:nil];
     }
+    
 }
-
+*/
 
 @end
