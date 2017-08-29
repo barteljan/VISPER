@@ -30,4 +30,7 @@
     }];
 }
 
+- (IBAction)nextAction:(id)sender {
+    [self.wireframe routeURL:[NSURL URLWithString:@"/example3"]];
+}
 @end

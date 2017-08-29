@@ -101,7 +101,10 @@ static BOOL areVISPEREventsOnAllViewControllersEnabledVar;
 
 -(void)notifyPresentersOfView:(UIView*)view
                     withEvent:(NSObject<IVISPERViewEvent>*)event{
-    for(NSObject<IVISPERPresenter>*presenter in [self privatePresentersArray] ){
+    
+    NSArray *presenters = [NSArray arrayWithArray:[self privatePresentersArray]];
+    
+    for(NSObject<IVISPERPresenter>*presenter in presenters ){
         if([presenter isResponsibleForView:view withController:self onEvent:event]){
             [presenter viewEvent:event withView:view andController:self];
         }
