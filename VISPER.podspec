@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "VISPER"
-  s.version          = "0.5.3"
+  s.version          = "0.5.4"
   s.summary          = "A iOS library to support the VIPER architecture in iOS-Apps"
   s.description      = <<-DESC
                        A iOS library to support the VIPER architecture in iOS-Apps.
@@ -22,5 +22,5 @@ DESC
   s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
   s.dependency 'JLRoutes', '~> 1.5.2'
-  s.dependency 'VISPER-CommandBus'
+  s.dependency 'VISPER-CommandBus', '~> 0.3.6'
 end
