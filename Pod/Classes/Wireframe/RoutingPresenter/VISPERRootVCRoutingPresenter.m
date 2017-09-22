@@ -71,6 +71,7 @@
                  onWireframe:(NSObject<IVISPERWireframe>*)wireframe
                   completion:(void(^)())completion{
     NSLog(@"ERROR: there is no way to dismiss a rootViewController");
+    completion();
 }
 
 @end
