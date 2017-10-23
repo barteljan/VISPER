@@ -2,21 +2,21 @@
   "warnings": [
     {
       "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/CommandHandler/VISPERCommandHandler.h",
-      "line": 12,
+      "line": 14,
       "symbol": "VISPERCommandHandler",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/CommandHandler/VISPERCommandHandler.h",
-      "line": 14,
+      "line": 16,
       "symbol": "VISPERCommandHandler.identifier",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/CommandHandler/VISPERCommandHandler.h",
-      "line": 15,
+      "line": 17,
       "symbol": "VISPERCommandHandler.-initWithIdentifier:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
