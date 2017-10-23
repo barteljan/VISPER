@@ -1,6 +1,6 @@
 # VISPER
 
-VISPER is al library to develop modular apps based on the VIPER Pattern.
+VISPER is a library to develop modular apps based on the VIPER Pattern.
 
 [![Version](https://img.shields.io/cocoapods/v/VISPER.svg?style=flat)](http://cocoapods.org/pods/VISPER)
 [![License](https://img.shields.io/cocoapods/l/VISPER.svg?style=flat)](http://cocoapods.org/pods/VISPER)
