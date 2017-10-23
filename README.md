@@ -1,15 +1,15 @@
-#VISPER#
+# VISPER
 
 VISPER is al library to develop modular apps based on the VIPER Pattern.
 
-[![CI Status](http://img.shields.io/travis/Jan Bartel/VISPER.svg?style=flat)](https://travis-ci.org/Jan Bartel/VISPER)
 [![Version](https://img.shields.io/cocoapods/v/VISPER.svg?style=flat)](http://cocoapods.org/pods/VISPER)
 [![License](https://img.shields.io/cocoapods/l/VISPER.svg?style=flat)](http://cocoapods.org/pods/VISPER)
 [![Platform](https://img.shields.io/cocoapods/p/VISPER.svg?style=flat)](http://cocoapods.org/pods/VISPER)
 
 ---------------------------------------------------------------------------------------------------------
 
-#API-DOCS#
+## API-DOCS
+
 The api docs can be found [here](http://htmlpreview.github.io/?https://github.com/barteljan/VISPER/blob/master/docs/index.html)
 
 <!--
