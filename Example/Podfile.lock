@@ -1,9 +1,9 @@
 PODS:
   - JLRoutes (1.5.5)
-  - VISPER (0.5.2):
+  - VISPER (1.0.1):
     - JLRoutes (~> 1.5.2)
     - VISPER-CommandBus
-  - VISPER-CommandBus (0.3.6)
+  - VISPER-CommandBus (1.0.0)
 
 DEPENDENCIES:
   - VISPER (from `../`)
@@ -15,8 +15,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   JLRoutes: d191a496b820f60d70225202d04289582da962df
-  VISPER: c03a90d01fde01083163b84a7a1fc3b491bd0a37
-  VISPER-CommandBus: 2362b3de84a28927804e34f71c187b0ea1cda805
+  VISPER: 2d352c41b17d000e4ce1c8e701ab9fcd93cfe92b
+  VISPER-CommandBus: b422cb6b8c7b895cc7ecd206adc7fe265e2407b9
 
 PODFILE CHECKSUM: 73dcbfa1edd3dfd8264ba24a2247cf0e3f38bc58
 

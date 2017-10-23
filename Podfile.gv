@@ -1,0 +1,24 @@
+digraph Podfile {
+	graph [bb="0,0,293.64,180"];
+	node [label="\N"];
+	Podfile	 [height=0.5,
+		label=Podfile,
+		pos="128.13,162",
+		width=0.97692];
+	VISPER	 [height=0.5,
+		label=VISPER,
+		pos="163.13,90",
+		width=1.1271];
+	Podfile -> VISPER	 [pos="e,154.45,107.84 136.78,144.2 140.78,135.98 145.61,126.04 150.04,116.93"];
+	"VISPER-CommandBus"	 [height=0.5,
+		label="VISPER-CommandBus",
+		pos="94.128,18",
+		width=2.6147];
+	Podfile -> "VISPER-CommandBus"	 [pos="e,97.583,36.005 122.84,144.07 119.83,133.6 116.08,120.1 113.13,108 108.09,87.348 103.15,63.837 99.573,46.025"];
+	VISPER -> "VISPER-CommandBus"	 [pos="e,111.25,35.867 147.12,73.301 138.56,64.363 127.83,53.171 118.28,43.198"];
+	JLRoutes	 [height=0.5,
+		label=JLRoutes,
+		pos="250.13,18",
+		width=1.2088];
+	VISPER -> JLRoutes	 [pos="e,230.57,34.183 182.44,74.021 194.29,64.209 209.67,51.487 222.76,40.647"];
+}

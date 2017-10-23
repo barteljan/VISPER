@@ -1,0 +1,1552 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/CommandHandler/VISPERCommandHandler.h",
+      "line": 12,
+      "symbol": "VISPERCommandHandler",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/CommandHandler/VISPERCommandHandler.h",
+      "line": 14,
+      "symbol": "VISPERCommandHandler.identifier",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/CommandHandler/VISPERCommandHandler.h",
+      "line": 15,
+      "symbol": "VISPERCommandHandler.-initWithIdentifier:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/IVISPERViewController.h",
+      "line": 14,
+      "symbol": "IVISPERViewController",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/ServiceProvider/IVISPERViewControllerServiceProvider.h",
+      "line": 12,
+      "symbol": "IVISPERViewControllerServiceProvider",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/ServiceProvider/IVISPERViewControllerServiceProvider.h",
+      "line": 14,
+      "symbol": "IVISPERViewControllerServiceProvider.-createEventWithName:sender:info:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/ServiceProvider/VISPERViewControllerServiceProvider.h",
+      "line": 12,
+      "symbol": "VISPERViewControllerServiceProvider",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/ServiceProvider/VISPERViewControllerServiceProvider.h",
+      "line": 14,
+      "symbol": "VISPERViewControllerServiceProvider.-createEventWithName:sender:info:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 15,
+      "symbol": "UIViewController(VISPER)",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.category",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 17,
+      "symbol": "UIViewController(VISPER).+areVISPEREventsOnAllViewControllersEnabled",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 18,
+      "symbol": "UIViewController(VISPER).+enableVISPEREventsOnAllViewControllers",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 20,
+      "symbol": "UIViewController(VISPER).visperServiceProvider",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 22,
+      "symbol": "UIViewController(VISPER).routePattern",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 23,
+      "symbol": "UIViewController(VISPER).routeParameters",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 24,
+      "symbol": "UIViewController(VISPER).routingOptions",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 25,
+      "symbol": "UIViewController(VISPER).wireframe",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 29,
+      "symbol": "UIViewController(VISPER).visperPresenters",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 31,
+      "symbol": "UIViewController(VISPER).-addVisperPresenter:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 32,
+      "symbol": "UIViewController(VISPER).-removeVisperPresenter:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 33,
+      "symbol": "UIViewController(VISPER).-notifyPresentersOfView:withEvent:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 36,
+      "symbol": "UIViewController(VISPER).-routingEvent:withWireframe:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 39,
+      "symbol": "UIViewController(VISPER).-willRouteToViewControllerOnWireframe:routePattern:options:parameters:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 44,
+      "symbol": "UIViewController(VISPER).-didRouteToViewControllerOnWireframe:routePattern:options:parameters:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 49,
+      "symbol": "UIViewController(VISPER).-willPushViewControllerOnWireframe:routePattern:options:parameters:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 54,
+      "symbol": "UIViewController(VISPER).-didPushViewControllerOnWireframe:routePattern:options:parameters:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 59,
+      "symbol": "UIViewController(VISPER).-willPresentViewControllerOnWireframe:routePattern:options:parameters:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 64,
+      "symbol": "UIViewController(VISPER).-didPresentViewControllerOnWireframe:routePattern:options:parameters:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 69,
+      "symbol": "UIViewController(VISPER).-willPresentRootViewControllerOnWireframe:routePattern:options:parameters:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 74,
+      "symbol": "UIViewController(VISPER).-didPresentRootViewControllerOnWireframe:routePattern:options:parameters:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 79,
+      "symbol": "UIViewController(VISPER).-willDismissViewController",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 80,
+      "symbol": "UIViewController(VISPER).-didDismissViewController",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/UIViewController+VISPER.h",
+      "line": 82,
+      "symbol": "UIViewController(VISPER).-dismissThisViewControllerAnimated:completion:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/VISPERViewController.h",
+      "line": 15,
+      "symbol": "VISPERViewController",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/VISPERViewController.h",
+      "line": 17,
+      "symbol": "VISPERViewController.-initWithServiceProvider:presenter:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/VISPERViewController.h",
+      "line": 20,
+      "symbol": "VISPERViewController.-initWithCoder:serviceProvider:presenter:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Controller/VISPERViewController.h",
+      "line": 24,
+      "symbol": "VISPERViewController.-initWithNibName:bundle:serviceProvider:presenter:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Events/IVISPEREvent.h",
+      "line": 11,
+      "symbol": "IVISPEREvent",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Events/IVISPEREvent.h",
+      "line": 12,
+      "symbol": "IVISPEREvent.-name",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Events/IVISPEREvent.h",
+      "line": 13,
+      "symbol": "IVISPEREvent.-sender",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Events/IVISPEREvent.h",
+      "line": 14,
+      "symbol": "IVISPEREvent.-info",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Events/VISPEREvent.h",
+      "line": 12,
+      "symbol": "VISPEREvent",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Events/VISPEREvent.h",
+      "line": 14,
+      "symbol": "VISPEREvent.-initWithName:sender:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Events/VISPEREvent.h",
+      "line": 17,
+      "symbol": "VISPEREvent.-initWithName:sender:info:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Events/VISPEREvent.h",
+      "line": 21,
+      "symbol": "VISPEREvent.name",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Events/VISPEREvent.h",
+      "line": 22,
+      "symbol": "VISPEREvent.sender",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Events/VISPEREvent.h",
+      "line": 23,
+      "symbol": "VISPEREvent.info",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Events/View/IVISPERViewEvent.h",
+      "line": 12,
+      "symbol": "IVISPERViewEvent",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Events/View/VISPERViewEvent.h",
+      "line": 13,
+      "symbol": "VISPERViewEvent",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Events/Wireframe/IVISPERRoutingEvent.h",
+      "line": 12,
+      "symbol": "IVISPERRoutingEvent",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Events/Wireframe/VISPERRoutingEvent.h",
+      "line": 13,
+      "symbol": "VISPERRoutingEvent",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Helper/IVISPERPriorizedObjectStore.h",
+      "line": 7,
+      "symbol": "IVISPERPriorizedObjectStore",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Helper/IVISPERPriorizedObjectStore.h",
+      "line": 9,
+      "symbol": "IVISPERPriorizedObjectStore.-addObject:withPriority:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Helper/IVISPERPriorizedObjectStore.h",
+      "line": 10,
+      "symbol": "IVISPERPriorizedObjectStore.-removeObject:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Helper/IVISPERPriorizedObjectStore.h",
+      "line": 11,
+      "symbol": "IVISPERPriorizedObjectStore.-allObjects",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Helper/IVISPERPriorizedObjectStore.h",
+      "line": 12,
+      "symbol": "IVISPERPriorizedObjectStore.-priorityForObject:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Helper/VISPERPriorizedObjectStore.h",
+      "line": 12,
+      "symbol": "VISPERPriorizedObjectStore",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Helper/VISPERPriorizedObjectStoreItem.h",
+      "line": 11,
+      "symbol": "VISPERPriorizedObjectStoreItem",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Helper/VISPERPriorizedObjectStoreItem.h",
+      "line": 13,
+      "symbol": "VISPERPriorizedObjectStoreItem.priority",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Helper/VISPERPriorizedObjectStoreItem.h",
+      "line": 14,
+      "symbol": "VISPERPriorizedObjectStoreItem.object",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Helper/VISPERPriorizedObjectStoreItem.h",
+      "line": 16,
+      "symbol": "VISPERPriorizedObjectStoreItem.-initWithObject:priority:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/IVISPERApplication.h",
+      "line": 15,
+      "symbol": "IVISPERApplication",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/IVISPERApplication.h",
+      "line": 19,
+      "symbol": "IVISPERApplication.-rootViewController",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/IVISPERApplication.h",
+      "line": 22,
+      "symbol": "IVISPERApplication.-wireframe",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/IVISPERApplication.h",
+      "line": 25,
+      "symbol": "IVISPERApplication.-commandBus",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/IVISPERApplication.h",
+      "line": 29,
+      "symbol": "IVISPERApplication.-navigationController",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/IVISPERApplication.h",
+      "line": 30,
+      "symbol": "IVISPERApplication.-setNavigationController:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/IVISPERApplication.h",
+      "line": 33,
+      "symbol": "IVISPERApplication.-addFeature:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/IVISPERApplication.h",
+      "line": 36,
+      "symbol": "IVISPERApplication.-addCommandHandler:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/IVISPERApplication.h",
+      "line": 39,
+      "symbol": "IVISPERApplication.-addRoutingPresenter:withPriority:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/IVISPERApplication.h",
+      "line": 42,
+      "symbol": "IVISPERApplication.-routeURL:withParameters:options:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/IVISPERApplication.h",
+      "line": 43,
+      "symbol": "IVISPERApplication.-canRouteURL:withParameters:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/IVISPERApplication.h",
+      "line": 44,
+      "symbol": "IVISPERApplication.-controllerForURL:withParameters:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/IVISPERFeature.h",
+      "line": 13,
+      "symbol": "IVISPERFeature",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/IVISPERFeature.h",
+      "line": 16,
+      "symbol": "IVISPERFeature.-routePatterns",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/IVISPERFeature.h",
+      "line": 18,
+      "symbol": "IVISPERFeature.-bootstrapWireframe:commandBus:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Presenter/IVISPERPresenter.h",
+      "line": 15,
+      "symbol": "IVISPERPresenter",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Presenter/IVISPERPresenter.h",
+      "line": 17,
+      "symbol": "IVISPERPresenter.-wireframe",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Presenter/IVISPERPresenter.h",
+      "line": 18,
+      "symbol": "IVISPERPresenter.-setWireframe:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Presenter/IVISPERPresenter.h",
+      "line": 20,
+      "symbol": "IVISPERPresenter.-isResponsibleForView:withController:onEvent:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Presenter/IVISPERPresenter.h",
+      "line": 24,
+      "symbol": "IVISPERPresenter.-viewEvent:withView:andController:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Presenter/IVISPERPresenter.h",
+      "line": 28,
+      "symbol": "IVISPERPresenter.-isResponsibleForController:onEvent:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Presenter/IVISPERPresenter.h",
+      "line": 31,
+      "symbol": "IVISPERPresenter.-routingEvent:controller:andWireframe:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Presenter/IVISPERViewControllerPresenter.h",
+      "line": 11,
+      "symbol": "IVISPERViewControllerPresenter",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Presenter/VISPERViewControllerPresenter.h",
+      "line": 10,
+      "symbol": "VISPERViewControllerPresenter",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Presenter/VISPERViewControllerPresenter.h",
+      "line": 91,
+      "symbol": "VISPERViewControllerPresenter.-willRouteToViewController:onWireframe:routePattern:priority:options:parameters:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Presenter/VISPERViewControllerPresenter.h",
+      "line": 98,
+      "symbol": "VISPERViewControllerPresenter.-didRouteToViewController:onWireframe:routePattern:priority:options:parameters:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Presenter/VISPERViewPresenter.h",
+      "line": 16,
+      "symbol": "VISPERViewPresenter",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Presenter/VISPERViewPresenter.h",
+      "line": 18,
+      "symbol": "VISPERViewPresenter.wireframe",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Presenter/VISPERViewPresenter.h",
+      "line": 20,
+      "symbol": "VISPERViewPresenter.-initWithWireframe:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/ServiceProvider/IVISPERServiceProvider.h",
+      "line": 12,
+      "symbol": "IVISPERServiceProvider",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/ServiceProvider/VISPERServiceProvider.h",
+      "line": 12,
+      "symbol": "VISPERServiceProvider",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPER.h",
+      "line": 78,
+      "symbol": "VISPER",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPER.h",
+      "line": 80,
+      "symbol": "VISPER.+sharedRoutingOptionsFactory",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPER.h",
+      "line": 81,
+      "symbol": "VISPER.+setSharedRoutingOptionsFactory:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPER.h",
+      "line": 83,
+      "symbol": "VISPER.+routingOption",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPER.h",
+      "line": 84,
+      "symbol": "VISPER.+routingOption:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPER.h",
+      "line": 86,
+      "symbol": "VISPER.+routingOptionPush",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPER.h",
+      "line": 87,
+      "symbol": "VISPER.+routingOptionPush:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPER.h",
+      "line": 89,
+      "symbol": "VISPER.+routingOptionModal",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPER.h",
+      "line": 90,
+      "symbol": "VISPER.+routingOptionModal:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPER.h",
+      "line": 92,
+      "symbol": "VISPER.+routingOptionPopover",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPER.h",
+      "line": 93,
+      "symbol": "VISPER.+routingOptionPopover:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPER.h",
+      "line": 95,
+      "symbol": "VISPER.+backToRoute",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPER.h",
+      "line": 96,
+      "symbol": "VISPER.+backToRoute:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPER.h",
+      "line": 98,
+      "symbol": "VISPER.+routingOptionPresentRootVC",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPER.h",
+      "line": 99,
+      "symbol": "VISPER.+routingOptionPresentRootVC:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPER.h",
+      "line": 101,
+      "symbol": "VISPER.+routingOptionReplaceTopVC",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPER.h",
+      "line": 102,
+      "symbol": "VISPER.+routingOptionReplaceTopVC:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPER.h",
+      "line": 104,
+      "symbol": "VISPER.+routingOptionDoNotPresentVC:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPER.h",
+      "line": 110,
+      "symbol": "VISPER.+routingOptionShow",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPER.h",
+      "line": 111,
+      "symbol": "VISPER.+routingOptionShow:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPERApplication.h",
+      "line": 16,
+      "symbol": "VISPERApplication",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPERApplication.h",
+      "line": 19,
+      "symbol": "VISPERApplication.-initWithNavigationController:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPERApplication.h",
+      "line": 20,
+      "symbol": "VISPERApplication.-initWithNavigationController:wireframe:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPERApplication.h",
+      "line": 22,
+      "symbol": "VISPERApplication.-initWithNavigationController:wireframe:commandBus:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPERApplication.h",
+      "line": 26,
+      "symbol": "VISPERApplication.isInDebugMode",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPERFeature.h",
+      "line": 14,
+      "symbol": "VISPERFeature",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPERFeature.h",
+      "line": 19,
+      "symbol": "VISPERFeature.wireframe",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPERFeature.h",
+      "line": 20,
+      "symbol": "VISPERFeature.commandBus",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPERFeature.h",
+      "line": 22,
+      "symbol": "VISPERFeature.-addRoutePattern:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPERFeature.h",
+      "line": 23,
+      "symbol": "VISPERFeature.-removeRoutePattern:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/VISPERFeature.h",
+      "line": 24,
+      "symbol": "VISPERFeature.-routePatternStrings",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/IVISPERWireframe.h",
+      "line": 19,
+      "symbol": "IVISPERWireframe",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/IVISPERWireframe.h",
+      "line": 31,
+      "symbol": "IVISPERWireframe.-addRoute:priority:handler:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/IVISPERWireframe.h",
+      "line": 40,
+      "symbol": "IVISPERWireframe.-routeURL:withParameters:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/IVISPERWireframe.h",
+      "line": 41,
+      "symbol": "IVISPERWireframe.-routeURL:withParameters:options:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/IVISPERWireframe.h",
+      "line": 53,
+      "symbol": "IVISPERWireframe.-canRouteURL:withParameters:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/IVISPERWireframe.h",
+      "line": 80,
+      "symbol": "IVISPERWireframe.-setServiceProvider:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/IVISPERWireframe.h",
+      "line": 89,
+      "symbol": "IVISPERWireframe.-removeControllerServiceProvider:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/IVISPERWireframe.h",
+      "line": 91,
+      "symbol": "IVISPERWireframe.-controllerServiceProviders",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/IVISPERWireframe.h",
+      "line": 98,
+      "symbol": "IVISPERWireframe.-removeRoutingPresenter:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/IVISPERWireframe.h",
+      "line": 99,
+      "symbol": "IVISPERWireframe.-routingPresenters",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/IVISPERWireframe.h",
+      "line": 106,
+      "symbol": "IVISPERWireframe.-removeRoutingObserver:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/IVISPERWireframe.h",
+      "line": 107,
+      "symbol": "IVISPERWireframe.-routingObservers",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/IVISPERWireframe.h",
+      "line": 117,
+      "symbol": "IVISPERWireframe.-removeRoutingOptionsServiceProvider:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/IVISPERWireframe.h",
+      "line": 119,
+      "symbol": "IVISPERWireframe.-routingOptionsServiceProviders",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/IVISPERWireframe.h",
+      "line": 165,
+      "symbol": "IVISPERWireframe.-routingOptionsFactory",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/IVISPERWireframe.h",
+      "line": 171,
+      "symbol": "IVISPERWireframe.-setCurrentViewController:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/IVISPERWireframe.h",
+      "line": 172,
+      "symbol": "IVISPERWireframe.-back:completion:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/IVISPERRoutingOption.h",
+      "line": 12,
+      "symbol": "IVISPERRoutingOption",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/IVISPERRoutingOption.h",
+      "line": 13,
+      "symbol": "IVISPERRoutingOption.-wireframePresentationType",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/IVISPERRoutingOptionsFactory.h",
+      "line": 13,
+      "symbol": "IVISPERRoutingOptionsFactory",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/IVISPERRoutingOptionsFactory.h",
+      "line": 19,
+      "symbol": "IVISPERRoutingOptionsFactory.-routingOption:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/IVISPERRoutingOptionsFactory.h",
+      "line": 21,
+      "symbol": "IVISPERRoutingOptionsFactory.-routingOptionPush",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/IVISPERRoutingOptionsFactory.h",
+      "line": 22,
+      "symbol": "IVISPERRoutingOptionsFactory.-routingOptionPush:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/IVISPERRoutingOptionsFactory.h",
+      "line": 24,
+      "symbol": "IVISPERRoutingOptionsFactory.-routingOptionModal",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/IVISPERRoutingOptionsFactory.h",
+      "line": 25,
+      "symbol": "IVISPERRoutingOptionsFactory.-routingOptionModal:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/IVISPERRoutingOptionsFactory.h",
+      "line": 27,
+      "symbol": "IVISPERRoutingOptionsFactory.-backToRoute",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/IVISPERRoutingOptionsFactory.h",
+      "line": 28,
+      "symbol": "IVISPERRoutingOptionsFactory.-backToRoute:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/IVISPERRoutingOptionsFactory.h",
+      "line": 30,
+      "symbol": "IVISPERRoutingOptionsFactory.-routingOptionPresentRootVC",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/IVISPERRoutingOptionsFactory.h",
+      "line": 31,
+      "symbol": "IVISPERRoutingOptionsFactory.-routingOptionPresentRootVC:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/IVISPERRoutingOptionsFactory.h",
+      "line": 33,
+      "symbol": "IVISPERRoutingOptionsFactory.-routingOptionDoNotPresentVC:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/IVISPERRoutingOptionsFactory.h",
+      "line": 40,
+      "symbol": "IVISPERRoutingOptionsFactory.-routingOptionReplaceTopVC",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/IVISPERRoutingOptionsFactory.h",
+      "line": 41,
+      "symbol": "IVISPERRoutingOptionsFactory.-routingOptionReplaceTopVC:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/IVISPERRoutingOptionsFactory.h",
+      "line": 43,
+      "symbol": "IVISPERRoutingOptionsFactory.-routingOptionShow",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/IVISPERRoutingOptionsFactory.h",
+      "line": 44,
+      "symbol": "IVISPERRoutingOptionsFactory.-routingOptionShow:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/IVISPERWireframePresentationType.h",
+      "line": 11,
+      "symbol": "IVISPERWireframePresentationType",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/IVISPERWireframePresentationType.h",
+      "line": 12,
+      "symbol": "IVISPERWireframePresentationType.-animated",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/IVISPERWireframePresentationTypeBackToRoute.h",
+      "line": 11,
+      "symbol": "IVISPERWireframePresentationTypeBackToRoute",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/IVISPERWireframePresentationTypeDoNotPresentVC.h",
+      "line": 11,
+      "symbol": "IVISPERWireframePresentationTypeDoNotPresentVC",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/IVISPERWireframePresentationTypeDoNotPresentVC.h",
+      "line": 13,
+      "symbol": "IVISPERWireframePresentationTypeDoNotPresentVC.completionBlock",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/IVISPERWireframePresentationTypeModal.h",
+      "line": 8,
+      "symbol": "IVISPERWireframePresentationTypeModal",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/IVISPERWireframePresentationTypeModal.h",
+      "line": 9,
+      "symbol": "IVISPERWireframePresentationTypeModal.-presentationStyle",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/IVISPERWireframePresentationTypeModal.h",
+      "line": 10,
+      "symbol": "IVISPERWireframePresentationTypeModal.-setPresentationStyle:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/IVISPERWireframePresentationTypePush.h",
+      "line": 8,
+      "symbol": "IVISPERWireframePresentationTypePush",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/IVISPERWireframePresentationTypeReplaceTopVC.h",
+      "line": 12,
+      "symbol": "IVISPERWireframePresentationTypeReplaceTopVC",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/IVISPERWireframePresentationTypeRootVC.h",
+      "line": 12,
+      "symbol": "IVISPERWireframePresentationTypeRootVC",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/IVISPERWireframePresentationTypeShow.h",
+      "line": 12,
+      "symbol": "IVISPERWireframePresentationTypeShow",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/VISPERPresentationType.h",
+      "line": 8,
+      "symbol": "VISPERPresentationType",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/VISPERPresentationType.h",
+      "line": 9,
+      "symbol": "VISPERPresentationType.animated",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/VISPERPresentationType.h",
+      "line": 11,
+      "symbol": "VISPERPresentationType.-initIsAnimated:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/VISPERPresentationTypeBackToRoute.h",
+      "line": 13,
+      "symbol": "VISPERPresentationTypeBackToRoute",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/VISPERPresentationTypeModal.h",
+      "line": 9,
+      "symbol": "VISPERPresentationTypeModal",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/VISPERPresentationTypeModal.h",
+      "line": 10,
+      "symbol": "VISPERPresentationTypeModal.presentationStyle",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/VISPERPresentationTypePush.h",
+      "line": 8,
+      "symbol": "VISPERPresentationTypePush",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/VISPERPresentationTypeReplaceTopVC.h",
+      "line": 13,
+      "symbol": "VISPERPresentationTypeReplaceTopVC",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/VISPERPresentationTypeRootVC.h",
+      "line": 11,
+      "symbol": "VISPERPresentationTypeRootVC",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/VISPERPresentationTypeShow.h",
+      "line": 12,
+      "symbol": "VISPERPresentationTypeShow",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/VISPERPresententationTypeDoNotPresentVC.h",
+      "line": 9,
+      "symbol": "VISPERPresententationTypeDoNotPresentVC",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/VISPERPresententationTypeDoNotPresentVC.h",
+      "line": 12,
+      "symbol": "VISPERPresententationTypeDoNotPresentVC.-initWithCompletion:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/PresentationType/VISPERPresententationTypeDoNotPresentVC.h",
+      "line": 18,
+      "symbol": "VISPERPresententationTypeDoNotPresentVC.completionBlock",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/VISPERRoutingOption.h",
+      "line": 13,
+      "symbol": "VISPERRoutingOption",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/VISPERRoutingOption.h",
+      "line": 15,
+      "symbol": "VISPERRoutingOption.wireframePresentationType",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/VISPERRoutingOption.h",
+      "line": 17,
+      "symbol": "VISPERRoutingOption.-initWithPresentationType:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/Options/VISPERRoutingOptionsFactory.h",
+      "line": 12,
+      "symbol": "VISPERRoutingOptionsFactory",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingObserver/IVISPERRoutingObserver.h",
+      "line": 15,
+      "symbol": "IVISPERRoutingObserver",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingObserver/IVISPERRoutingObserver.h",
+      "line": 17,
+      "symbol": "IVISPERRoutingObserver.-routeToController:routePattern:options:parameters:routingPresenter:wireframe:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/IVISPERRoutingPresenter.h",
+      "line": 16,
+      "symbol": "IVISPERRoutingPresenter",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/IVISPERRoutingPresenter.h",
+      "line": 18,
+      "symbol": "IVISPERRoutingPresenter.-setControllerServiceProviders:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/IVISPERRoutingPresenter.h",
+      "line": 20,
+      "symbol": "IVISPERRoutingPresenter.-isResponsibleForRoutingOption:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/IVISPERRoutingPresenter.h",
+      "line": 22,
+      "symbol": "IVISPERRoutingPresenter.-routeForPattern:controller:options:parameters:onWireframe:completion:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/IVISPERRoutingPresenter.h",
+      "line": 33,
+      "symbol": "IVISPERRoutingPresenter.-dismissViewController:animated:onWireframe:completion:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/ServiceProvider/IVISPERRoutingPresenterServiceProvider.h",
+      "line": 12,
+      "symbol": "IVISPERRoutingPresenterServiceProvider",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/ServiceProvider/IVISPERRoutingPresenterServiceProvider.h",
+      "line": 13,
+      "symbol": "IVISPERRoutingPresenterServiceProvider.-createEventWithName:sender:info:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/ServiceProvider/VISPERRoutingPresenterServiceProvider.h",
+      "line": 12,
+      "symbol": "VISPERRoutingPresenterServiceProvider",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/VISPERBackToRouteRoutingPresenter.h",
+      "line": 12,
+      "symbol": "VISPERBackToRouteRoutingPresenter",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/VISPERDoNotPresentRoutingPresenter.h",
+      "line": 13,
+      "symbol": "VISPERDoNotPresentRoutingPresenter",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/VISPERModalRoutingPresenter.h",
+      "line": 12,
+      "symbol": "VISPERModalRoutingPresenter",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/VISPERNavigationControllerBasedRoutingPresenter.h",
+      "line": 12,
+      "symbol": "VISPERNavigationControllerBasedRoutingPresenter",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/VISPERNavigationControllerBasedRoutingPresenter.h",
+      "line": 14,
+      "symbol": "VISPERNavigationControllerBasedRoutingPresenter.navigationController",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/VISPERNavigationControllerBasedRoutingPresenter.h",
+      "line": 16,
+      "symbol": "VISPERNavigationControllerBasedRoutingPresenter.-initWithNavigationController:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/VISPERNavigationControllerBasedRoutingPresenter.h",
+      "line": 17,
+      "symbol": "VISPERNavigationControllerBasedRoutingPresenter.-initWithNavigationController:serviceProvider:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/VISPERPushRoutingPresenter.h",
+      "line": 12,
+      "symbol": "VISPERPushRoutingPresenter",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/VISPERReplaceTopVCRoutingPresenter.h",
+      "line": 12,
+      "symbol": "VISPERReplaceTopVCRoutingPresenter",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/VISPERRootVCRoutingPresenter.h",
+      "line": 12,
+      "symbol": "VISPERRootVCRoutingPresenter",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/VISPERRoutingPresenter.h",
+      "line": 18,
+      "symbol": "VISPERRoutingPresenter",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/VISPERRoutingPresenter.h",
+      "line": 20,
+      "symbol": "VISPERRoutingPresenter.controllerServiceProviders",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/VISPERRoutingPresenter.h",
+      "line": 21,
+      "symbol": "VISPERRoutingPresenter.serviceProvider",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/VISPERRoutingPresenter.h",
+      "line": 24,
+      "symbol": "VISPERRoutingPresenter.-initWithServiceProvider:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/VISPERRoutingPresenter.h",
+      "line": 26,
+      "symbol": "VISPERRoutingPresenter.-controllerForRoute:routingOptions:withParameters:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/VISPERRoutingPresenter.h",
+      "line": 31,
+      "symbol": "VISPERRoutingPresenter.-sendWillRouteToControllerEventForController:wireframe:routePattern:priority:options:parameters:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/VISPERRoutingPresenter.h",
+      "line": 38,
+      "symbol": "VISPERRoutingPresenter.-sendDidRouteToControllerEventForController:wireframe:routePattern:priority:options:parameters:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/RoutingPresenter/VISPERShowRoutingPresenter.h",
+      "line": 11,
+      "symbol": "VISPERShowRoutingPresenter",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/ServiceProvider/IVISPERWireframeRoutingOptionsServiceProvider.h",
+      "line": 13,
+      "symbol": "IVISPERWireframeRoutingOptionsServiceProvider",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/ServiceProvider/IVISPERWireframeServiceProvider.h",
+      "line": 15,
+      "symbol": "IVISPERWireframeServiceProvider",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/ServiceProvider/IVISPERWireframeViewControllerServiceProvider.h",
+      "line": 15,
+      "symbol": "IVISPERWireframeViewControllerServiceProvider",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/ServiceProvider/VISPERWireframeServiceProvider.h",
+      "line": 8,
+      "symbol": "VISPERWireframeServiceProvider",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/VISPERWireframe.h",
+      "line": 18,
+      "symbol": "VISPERWireframe",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/VISPERWireframe.h",
+      "line": 54,
+      "symbol": "VISPERWireframe.-initWithServiceProvider:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/VISPERWireframe.h",
+      "line": 56,
+      "symbol": "VISPERWireframe.-initWithRoutes:serviceProvider:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/Pod/Classes/Wireframe/VISPERWireframeBackPresenter.h",
+      "line": 13,
+      "symbol": "VISPERWireframeBackPresenter",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/bartel/Documents/lib/VISPER"
+}
