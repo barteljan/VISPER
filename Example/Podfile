@@ -1,8 +1,38 @@
-source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 target 'VISPER_Example' do
   pod "VISPER", :path => "../"
-  pod 'VISPER-CommandBus'#, :path => '../../VISPER-CommandBus'
+  pod 'VISPER-CommandBus'
 end
+
+target 'VISPER-Wireframe-Example' do
+    pod 'VISPER-Wireframe', :path => '../'
+    pod 'VISPER-Wireframe-Core', :path => '../'
+    pod 'VISPER-Wireframe-UIViewController', :path => '../'
+    pod 'VISPER-Wireframe-Objc', :path => '../'
+end
+
+target 'VISPER-Wireframe-Tests' do
+    pod 'VISPER-Wireframe', :path => '../'
+    pod 'VISPER-Wireframe-Core', :path => '../'
+    pod 'VISPER-Wireframe-UIViewController', :path => '../'
+    pod 'VISPER-Wireframe-Objc', :path => '../'
+end
+
+target 'VISPER-Swift-Example' do
+    pod 'VISPER-Swift', :path => '../'
+    pod 'VISPER-Wireframe', :path => '../'
+    pod 'VISPER-Wireframe-Core', :path => '../'
+    pod 'VISPER-Wireframe-UIViewController', :path => '../'
+    pod 'VISPER-Wireframe-Objc', :path => '../'
+end
+
+target 'VISPER-Redux-Example' do
+    pod 'VISPER-Redux', :path => '../'
+end
+
+target 'VISPER-Redux-Tests' do
+    pod 'VISPER-Redux', :path => '../'
+end
+
 

@@ -40,6 +40,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
@@ -49,6 +50,26 @@
                BlueprintIdentifier = "6003F5AD195388D20070C39A"
                BuildableName = "VISPER_Tests.xctest"
                BlueprintName = "VISPER_Tests"
+               ReferencedContainer = "container:VISPER.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9A8C5BBF1FDC08A600C401AF"
+               BuildableName = "VISPER-Wireframe-Tests.xctest"
+               BlueprintName = "VISPER-Wireframe-Tests"
+               ReferencedContainer = "container:VISPER.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9A8C5C5F1FDC0FE400C401AF"
+               BuildableName = "VISPER-Redux-Tests.xctest"
+               BlueprintName = "VISPER-Redux-Tests"
                ReferencedContainer = "container:VISPER.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -69,6 +90,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
