@@ -17,9 +17,9 @@ DESC
   s.platform     = :ios, '8.0'
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes/**/*'
+  s.source_files = 'VISPER/Classes/**/*'
 
-  s.public_header_files = 'Pod/Classes/**/*.h'
+  s.public_header_files = 'VISPER/Classes/**/*.h'
   s.frameworks = 'UIKit'
   s.dependency 'JLRoutes', '~> 1.5.2'
   s.dependency 'VISPER-CommandBus'
