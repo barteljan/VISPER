@@ -15,6 +15,16 @@ VISPER-Redux is an implementation of the redux-architecture in swift. It's a cor
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'VISPER-Reactive/Classes/*.swift'
+  s.default_subspec = 'Standard'
+
+  s.subspec 'Standard' do |standard|
+    standard.source_files = 'VISPER-Reactive/Classes/Standard/*.swift','VISPER-Reactive/Classes/Core/*.swift'
+  end
+
+  s.subspec 'RxSwift' do |rxswift|
+    rxswift.source_files = 'VISPER-Reactive/Classes/RxSwift/*.swift','VISPER-Reactive/Classes/Core/*.swift'
+    rxswift.dependency 'RxSwift', '~> 4.0.0'
+  end
 
 end
+

@@ -1,7 +1,9 @@
 use_frameworks!
 
+platform :ios, '8.0'
+
 target 'VISPER_Example' do
-  pod "VISPER", :path => "../"
+  pod 'VISPER', :path => '../'
   pod 'VISPER-CommandBus'
 end
 
@@ -20,7 +22,7 @@ target 'VISPER-Wireframe-Tests' do
 end
 
 target 'VISPER-Swift-Example' do
-    pod 'VISPER-Swift', :path => '../'
+    pod 'VISPER-Swift/RxSwift', :path => '../'
     pod 'VISPER-Wireframe', :path => '../'
     pod 'VISPER-Wireframe-Core', :path => '../'
     pod 'VISPER-Wireframe-UIViewController', :path => '../'
@@ -47,4 +49,8 @@ target 'VISPER-Reactive-Tests' do
     pod 'VISPER-Reactive', :path => '../'
 end
 
+target 'VISPER-Reactive-RxSwift-Tests' do
+    pod 'RxSwift'
+    pod 'VISPER-Reactive/RxSwift', :path => '../'
+end
 
