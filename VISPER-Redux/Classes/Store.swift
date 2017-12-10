@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import VISPER_Reactive
 
 open class Store<ObservableProperty: ObservablePropertyType> : ActionDispatcher {
     

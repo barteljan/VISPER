@@ -69,7 +69,7 @@
 -(void)dismissViewController:(UIViewController*) controller
                     animated:(BOOL)animated
                  onWireframe:(NSObject<IVISPERWireframe>*)wireframe
-                  completion:(void(^)())completion{
+                  completion:(void(^)(void))completion{
     NSLog(@"ERROR: there is no way to dismiss a rootViewController");
     completion();
 }

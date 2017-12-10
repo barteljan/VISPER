@@ -8,6 +8,7 @@
 
 import Foundation
 import XCTest
+import VISPER_Reactive
 @testable import VISPER_Redux
 
 class TestStore: XCTestCase {

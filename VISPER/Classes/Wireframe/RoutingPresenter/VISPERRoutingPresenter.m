@@ -129,7 +129,7 @@
 -(void)dismissViewController:(UIViewController*) controller
                     animated:(BOOL)animated
                  onWireframe:(NSObject<IVISPERWireframe>*)wireframe
-                  completion:(void(^)())completion{
+                  completion:(void(^)(void))completion{
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
                                  userInfo:nil];

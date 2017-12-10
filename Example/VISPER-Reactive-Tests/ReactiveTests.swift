@@ -8,7 +8,8 @@
 
 
 import XCTest
-@testable import VISPER_Redux
+@testable import VISPER_Reactive
+
 /*
  The MIT License (MIT)
  Copyright (c) 2016 ReSwift Contributors

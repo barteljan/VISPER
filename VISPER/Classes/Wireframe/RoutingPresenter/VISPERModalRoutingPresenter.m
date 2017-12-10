@@ -84,7 +84,7 @@
 -(void)dismissViewController:(UIViewController*) controller
                     animated:(BOOL)animated
                  onWireframe:(NSObject<IVISPERWireframe>*)wireframe
-                  completion:(void(^)())completion{
+                  completion:(void(^)(void))completion{
     
     // check if it is the first view controller pushed modally
     // we assume in that case that the current view controller

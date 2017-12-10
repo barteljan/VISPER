@@ -169,6 +169,6 @@
  **/
 -(UIViewController*)currentViewController;
 -(void)setCurrentViewController:(UIViewController*)controller;
--(void)back:(BOOL)animated completion:(void(^)())completion;
+-(void)back:(BOOL)animated completion:(void(^)(void))completion;
 
 @end

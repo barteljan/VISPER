@@ -102,7 +102,7 @@
         return;
     }
 
-    ((void(^)())eventBlocks[event.name])();
+    ((void(^)(void))eventBlocks[event.name])();
 }
 
 -(void)routingEvent:(NSObject<IVISPERRoutingEvent>*)event

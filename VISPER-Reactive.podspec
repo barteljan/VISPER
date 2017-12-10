@@ -1,6 +1,6 @@
 # Be sure to run `pod lib lint VISPER-Redux.podspec' to ensure this is a
 Pod::Spec.new do |s|
-  s.name             = 'VISPER-Redux'
+  s.name             = 'VISPER-Reactive'
   s.version          = '0.1.2'
   s.summary          = 'VISPER-Redux is an implementation of the redux-architecture in swift.'
   s.description      = <<-DESC
@@ -15,6 +15,6 @@ VISPER-Redux is an implementation of the redux-architecture in swift. It's a cor
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'VISPER-Redux/Classes/*.swift'
-  s.dependency 'VISPER-Reactive'
+  s.source_files = 'VISPER-Reactive/Classes/*.swift'
+
 end

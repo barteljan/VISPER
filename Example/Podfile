@@ -25,14 +25,26 @@ target 'VISPER-Swift-Example' do
     pod 'VISPER-Wireframe-Core', :path => '../'
     pod 'VISPER-Wireframe-UIViewController', :path => '../'
     pod 'VISPER-Wireframe-Objc', :path => '../'
+    pod 'VISPER-Redux', :path => '../'
+    pod 'VISPER-Reactive', :path => '../'
 end
 
 target 'VISPER-Redux-Example' do
     pod 'VISPER-Redux', :path => '../'
+    pod 'VISPER-Reactive', :path => '../'
 end
 
 target 'VISPER-Redux-Tests' do
     pod 'VISPER-Redux', :path => '../'
+    pod 'VISPER-Reactive', :path => '../'
+end
+
+target 'VISPER-Reactive-Example' do
+    pod 'VISPER-Reactive', :path => '../'
+end
+
+target 'VISPER-Reactive-Tests' do
+    pod 'VISPER-Reactive', :path => '../'
 end
 
 

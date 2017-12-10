@@ -4,7 +4,9 @@ PODS:
     - JLRoutes (~> 1.5.2)
     - VISPER-CommandBus
   - VISPER-CommandBus (1.0.0)
-  - VISPER-Redux (0.1.2)
+  - VISPER-Reactive (0.1.2)
+  - VISPER-Redux (0.1.2):
+    - VISPER-Reactive
   - VISPER-Swift (0.1.0):
     - VISPER-Redux
     - VISPER-Wireframe
@@ -21,6 +23,7 @@ PODS:
 DEPENDENCIES:
   - VISPER (from `../`)
   - VISPER-CommandBus
+  - VISPER-Reactive (from `../`)
   - VISPER-Redux (from `../`)
   - VISPER-Swift (from `../`)
   - VISPER-Wireframe (from `../`)
@@ -30,6 +33,8 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   VISPER:
+    :path: ../
+  VISPER-Reactive:
     :path: ../
   VISPER-Redux:
     :path: ../
@@ -48,13 +53,14 @@ SPEC CHECKSUMS:
   JLRoutes: d191a496b820f60d70225202d04289582da962df
   VISPER: 2bc4f3684fdae00dd4a9bd92d57d283cc095aced
   VISPER-CommandBus: b422cb6b8c7b895cc7ecd206adc7fe265e2407b9
-  VISPER-Redux: 448476ac450800b8408aa2b8294b143998b08b8b
-  VISPER-Swift: 08f09b06d792ab9630082810d6279da20293415a
-  VISPER-Wireframe: c6d0143dcec0ebe972830fad622965665c05d9ee
-  VISPER-Wireframe-Core: 693a4493ff5229a51e565369e37a2199ca8250a6
-  VISPER-Wireframe-Objc: 2ae77dc6f64fb3ef60e0ac538191e2d0b37036e9
-  VISPER-Wireframe-UIViewController: 9a9ed0186090be4c3cf985211c642967c838b47a
+  VISPER-Reactive: 70fa324fbd0b448a2b5e53ab0ca2fbf6646aeadd
+  VISPER-Redux: ca4be13c2d40c2dc7e0e5f2ab59e07e4886206ad
+  VISPER-Swift: 4a41ea040d6088e851fc415da6d35ba29948ff94
+  VISPER-Wireframe: 29a49c32c91739339b6b702f237dba9950c2e879
+  VISPER-Wireframe-Core: f6521c5745d06b77aab7db8c2edfe23597a7022d
+  VISPER-Wireframe-Objc: e3f999cef7473fa2df9d8870b37fb9cdf977ae51
+  VISPER-Wireframe-UIViewController: de279b4ba733bf23171702569595ba8c86f1f96d
 
-PODFILE CHECKSUM: 593aa7290b2e16d8c792a509144b4458b42bddbe
+PODFILE CHECKSUM: 0d84db2f71f560e4f1afc2a0c8090ad977ab803d
 
 COCOAPODS: 1.3.1

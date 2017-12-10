@@ -73,6 +73,16 @@
                ReferencedContainer = "container:VISPER.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9A8C5C991FDCFF1100C401AF"
+               BuildableName = "VISPER-Reactive-Tests.xctest"
+               BlueprintName = "VISPER-Reactive-Tests"
+               ReferencedContainer = "container:VISPER.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

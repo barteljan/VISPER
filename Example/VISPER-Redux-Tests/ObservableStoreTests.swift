@@ -1,4 +1,5 @@
 import XCTest
+import VISPER_Reactive
 @testable import VISPER_Redux
 /*
  The MIT License (MIT)

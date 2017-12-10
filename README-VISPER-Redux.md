@@ -174,7 +174,7 @@ pod 'VISPER-Redux'
 
 ## Author
 
-barteljan, jan.bartel@atino.net
+barteljan, barteljan@yahoo.de
 
 ## License
 

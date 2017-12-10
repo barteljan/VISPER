@@ -12,7 +12,7 @@ TODO: Add long description of the pod here.
 
   s.homepage         = 'https://github.com/barteljan/VISPER-Wireframe'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'barteljan' => 'jan.bartel@atino.net' }
+  s.author           = { 'Jan Bartel' => 'barteljan@yahoo.de' }
   s.source           = { :git => 'https://github.com/barteljan/VISPER-Wireframe.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/janbartel'
 
