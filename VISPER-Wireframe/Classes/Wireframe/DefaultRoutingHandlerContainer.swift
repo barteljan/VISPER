@@ -1,12 +1,12 @@
 //
 //  DefaultRoutingHandlerContainer.swift
-//  VISPER-Wireframe-Core
+//  VISPER-Core
 //
 //  Created by bartel on 25.11.17.
 //
 
 import Foundation
-import VISPER_Wireframe_Core
+import VISPER_Core
 
 open class DefaultRoutingHandlerContainer : RoutingHandlerContainer {
     

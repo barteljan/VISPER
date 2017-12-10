@@ -8,4 +8,4 @@
 import Foundation
 import VISPER_Reactive
 
-public typealias DefaultRedux<AppState> = Redux<AppState,ObservablePropertySubscriptionReference<AppState>>
+public typealias DefaultRedux<AppState> = Redux<DefaultObservableProperty<AppState>>

@@ -9,9 +9,10 @@ import Foundation
 import VISPER_Reactive
 
 
-open class Redux<AppState,DisposableType: SubscriptionReferenceType> {
+//open class Redux<AppState,DisposableType: SubscriptionReferenceType> {
+open class Redux<ObservableProperty: ObservablePropertyType> {
     
-    open let store : Store<AnyObservableProperty <AppState,DisposableType> >
+    open let store : Store<ObservableProperty>
     
     open let reducerContainer : ReducerContainer
     
@@ -27,11 +28,11 @@ open class Redux<AppState,DisposableType: SubscriptionReferenceType> {
         }
     }
     
-    public convenience init(initialState: AnyObservableProperty<AppState,DisposableType>,
-                middleware: Middleware<AppState> = Middleware<AppState>(),
+    public convenience init(initialState: ObservableProperty,
+                middleware: Middleware<ObservableProperty.ValueType> = Middleware<ObservableProperty.ValueType>(),
                 reducerContainer: ReducerContainer = ReducerContainerImpl()){
         
-        let appReducer : AppReducer<AppState> = {(provider, action, state) in
+        let appReducer : AppReducer<ObservableProperty.ValueType> = {(provider, action, state) in
             return provider.reduce(action: action, state: state)
         }
         
@@ -41,9 +42,9 @@ open class Redux<AppState,DisposableType: SubscriptionReferenceType> {
                 reducerContainer: reducerContainer)
     }
     
-    public init(appReducer: @escaping AppReducer<AppState>,
-               initialState: AnyObservableProperty<AppState,DisposableType>,
-                 middleware: Middleware<AppState> = Middleware<AppState>(),
+    public init(appReducer: @escaping AppReducer<ObservableProperty.ValueType>,
+               initialState: ObservableProperty,
+                 middleware: Middleware<ObservableProperty.ValueType> = Middleware<ObservableProperty.ValueType>(),
                  reducerContainer: ReducerContainer = ReducerContainerImpl()){
         
         self.reducerContainer = reducerContainer

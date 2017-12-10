@@ -8,7 +8,7 @@
 
 import XCTest
 @testable import VISPER_Wireframe
-import VISPER_Wireframe_Core
+import VISPER_Core
 
 class DefaultWireframeTests: XCTestCase {
     

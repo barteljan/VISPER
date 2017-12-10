@@ -10,14 +10,13 @@ import VISPER_Redux
 import VISPER_Reactive
 
 /// Add this FeatureObserver to your Application to configure your Redux for LogicFeatures providing reducers
-public struct LogicFeatureObserver<AppState,DisposableT: SubscriptionReferenceType>: FeatureObserverType {
+public struct LogicFeatureObserver<ObservableStateProperty: ObservablePropertyType>: FeatureObserverType {
     
-    public typealias ApplicationState = AppState
-    public typealias DisposableType = DisposableT
+    public typealias ObservableProperty = ObservableStateProperty
 
     public init() {}
     
-    public func featureAdded(application: Application<AppState,DisposableType>,feature: Feature) throws {
+    public func featureAdded(application: Application<ObservableProperty>,feature: Feature) throws {
         
         if let feature = feature as? LogicFeature {
             feature.injectReducers(container: application.redux.reducerContainer)

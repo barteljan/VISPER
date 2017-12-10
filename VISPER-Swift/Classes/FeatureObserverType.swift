@@ -10,9 +10,6 @@ import VISPER_Reactive
 
 /// A observer observing all added features and configuring your application
 public protocol FeatureObserverType {
-    
-    associatedtype ApplicationState
-    associatedtype DisposableType: SubscriptionReferenceType
-    
-    func featureAdded(application: Application<ApplicationState,DisposableType>, feature: Feature) throws
+    associatedtype ObservableProperty: ObservablePropertyType
+    func featureAdded(application: Application<ObservableProperty>, feature: Feature) throws
 }

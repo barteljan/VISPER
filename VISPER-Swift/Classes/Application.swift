@@ -8,20 +8,20 @@
 import Foundation
 import VISPER_Redux
 import VISPER_Reactive
-import VISPER_Wireframe_Core
+import VISPER_Core
 
 /// A SwiftyVisper application, containing all dependencies which should be configured by features
-open class Application<AppState, DisposableType: SubscriptionReferenceType> : ApplicationType {
+open class Application<ObservableProperty: ObservablePropertyType> : ApplicationType {
     
-    public typealias ApplicationState = AppState
+    public typealias ApplicationObservableProperty = ObservableProperty
     
-    public init(wireframe: Wireframe, redux: Redux<AppState,DisposableType>){
+    public init(wireframe: Wireframe, redux: Redux<ObservableProperty>){
         self.wireframe = wireframe
         self.redux = redux
     }
     
     /// observable app state property
-    open var state: AnyObservableProperty<AppState,DisposableType> {
+    open var state: ObservableProperty {
         return redux.store.observable
     }
     
@@ -29,9 +29,9 @@ open class Application<AppState, DisposableType: SubscriptionReferenceType> : Ap
     public let wireframe: Wireframe
     
     //redux architecture of your project
-    public let redux: Redux<AppState,DisposableType>
+    public let redux: Redux<ObservableProperty>
     
-    internal var featureObserver: [AnyFeatureObserver<AppState,DisposableType>] = [AnyFeatureObserver<AppState,DisposableType>]()
+    internal var featureObserver: [AnyFeatureObserver<ObservableProperty>] = [AnyFeatureObserver<ObservableProperty>]()
     
     /// Add a feature to your application
     ///
@@ -53,8 +53,8 @@ open class Application<AppState, DisposableType: SubscriptionReferenceType> : Ap
     /// Have look at LogicFeature and LogicFeatureObserver for an example.
     ///
     /// - Parameter featureObserver: an object observing feature addition
-    open func add<T : FeatureObserverType>(featureObserver: T) where T.ApplicationState == AppState, T.DisposableType == DisposableType {
-        let anyObserver = AnyFeatureObserver<AppState,DisposableType>(featureObserver)
+    open func add<T : FeatureObserverType>(featureObserver: T) where T.ObservableProperty == ObservableProperty{
+        let anyObserver = AnyFeatureObserver<ObservableProperty>(featureObserver)
         self.featureObserver.append(anyObserver)
     }
     

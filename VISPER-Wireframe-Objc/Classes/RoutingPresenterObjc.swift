@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import VISPER_Wireframe_Core
+import VISPER_Core
 
 @objc public protocol RoutingPresenterObjcType {
     func isResponsible(routeResult: RouteResultObjc) -> Bool

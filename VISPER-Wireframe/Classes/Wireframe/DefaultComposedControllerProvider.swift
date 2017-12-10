@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import VISPER_Wireframe_Core
+import VISPER_Core
 
 public enum DefaultComposedControllerProviderError : Error {
     case noControllerFoundFor(routeResult: RouteResult)

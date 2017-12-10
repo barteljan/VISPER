@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import VISPER_Wireframe_Core
+import VISPER_Core
 
 /// An instance resolving urls to route patterns returning RouteResults
 public protocol Router {

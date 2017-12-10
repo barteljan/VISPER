@@ -1,6 +1,6 @@
 import UIKit
 import XCTest
-@testable import VISPER_Wireframe_Core
+@testable import VISPER_Core
 @testable import VISPER_Wireframe
 
 class DefaultRouterTests: XCTestCase {

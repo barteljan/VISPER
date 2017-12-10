@@ -5,7 +5,7 @@
 //  Created by bartel on 18.11.17.
 //
 import Foundation
-import VISPER_Wireframe_Core
+import VISPER_Core
 
 /// A feature providing a view controller and routing options for a specific route pattern
 ///  - Note: Routing options specify how your controller will be presented

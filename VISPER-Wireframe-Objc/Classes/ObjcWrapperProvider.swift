@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import VISPER_Wireframe_Core
+import VISPER_Core
 
 public class ObjcWrapper {
     public static var wrapperProvider : ObjcWrapperProvider = DefaultObjcWrapperProvider()

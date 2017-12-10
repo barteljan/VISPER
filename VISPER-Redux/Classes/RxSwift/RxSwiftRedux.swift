@@ -8,4 +8,4 @@
 import Foundation
 import VISPER_Reactive
 
-public typealias RxSwiftRedux<AppState> = Redux<AppState,DisposableWrapper>
+public typealias RxSwiftRedux<AppState> = Redux<ObservablePropertyRxSwift<AppState>>

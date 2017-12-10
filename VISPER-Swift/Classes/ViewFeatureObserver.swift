@@ -8,14 +8,13 @@ import Foundation
 import VISPER_Reactive
 
 /// Add this FeatureObserver to your Application to configure your wireframe for ViewFeatures
-public struct ViewFeatureObserver<AppState, DisposableT: SubscriptionReferenceType> : FeatureObserverType {
+public struct ViewFeatureObserver<ObservableStateProperty: ObservablePropertyType> : FeatureObserverType {
     
-    public typealias ApplicationState = AppState
-    public typealias DisposableType = DisposableT
+    public typealias ObservableProperty = ObservableStateProperty
     
     public init() {}
     
-    public func featureAdded(application: Application<AppState,DisposableType>,feature: Feature) throws {
+    public func featureAdded(application: Application<ObservableProperty>,feature: Feature) throws {
         
         if let feature = feature as? ViewFeature {
             application.wireframe.add(controllerProvider: feature, priority: feature.priority)

@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window : UIWindow?
     var redux  : DefaultRedux<AppState>!
     
+    var disposeBag = SubscriptionReferenceBag()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -35,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             )
         }
         
-        let observableProperty = AnyObservableProperty(observableProperty: ObservableProperty(initialState))
+        let observableProperty = DefaultObservableProperty(initialState)
         
         // create a Redux-Container (to have all components on one place)
         self.redux = DefaultRedux<AppState>(   appReducer: appReducer,
@@ -51,9 +53,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = controller
         
         //register the callback to update your vc
-        self.redux.store.observable.subscribe { appState in
+        let subscription = self.redux.store.observable.subscribe { appState in
             controller.state = appState.counterState
         }
+        self.disposeBag.addReference(reference: subscription)
         
         self.window?.makeKeyAndVisible()
         return true

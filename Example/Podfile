@@ -9,14 +9,14 @@ end
 
 target 'VISPER-Wireframe-Example' do
     pod 'VISPER-Wireframe', :path => '../'
-    pod 'VISPER-Wireframe-Core', :path => '../'
+    pod 'VISPER-Core', :path => '../'
     pod 'VISPER-Wireframe-UIViewController', :path => '../'
     pod 'VISPER-Wireframe-Objc', :path => '../'
 end
 
 target 'VISPER-Wireframe-Tests' do
     pod 'VISPER-Wireframe', :path => '../'
-    pod 'VISPER-Wireframe-Core', :path => '../'
+    pod 'VISPER-Core', :path => '../'
     pod 'VISPER-Wireframe-UIViewController', :path => '../'
     pod 'VISPER-Wireframe-Objc', :path => '../'
 end
@@ -24,7 +24,7 @@ end
 target 'VISPER-Swift-Example' do
     pod 'VISPER-Swift/RxSwift', :path => '../'
     pod 'VISPER-Wireframe', :path => '../'
-    pod 'VISPER-Wireframe-Core', :path => '../'
+    pod 'VISPER-Core', :path => '../'
     pod 'VISPER-Wireframe-UIViewController', :path => '../'
     pod 'VISPER-Wireframe-Objc', :path => '../'
     pod 'VISPER-Redux', :path => '../'

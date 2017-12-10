@@ -7,23 +7,22 @@
 
 import Foundation
 import VISPER_Redux
-import VISPER_Wireframe_Core
+import VISPER_Core
 import VISPER_Reactive
 
 /// A SwiftyVisper application type, containing all dependencies which should be configured by features
 public protocol ApplicationType {
     
-    associatedtype ApplicationState
-    associatedtype ApplicationDisposableType: SubscriptionReferenceType
+    associatedtype ApplicationObservableProperty: ObservablePropertyType
     
     /// observable app state property
-    var state: AnyObservableProperty<ApplicationState,ApplicationDisposableType> {get}
+    var state: ApplicationObservableProperty {get}
     
     /// the wireframe responsible for routing between your view controllers
     var wireframe : Wireframe {get}
     
     //redux architecture of your project
-    var redux : Redux<ApplicationState,ApplicationDisposableType> {get}
+    var redux : Redux<ApplicationObservableProperty> {get}
     
     /// Add a feature to your application
     ///
@@ -39,5 +38,5 @@ public protocol ApplicationType {
     /// Have look at LogicFeature and LogicFeatureObserver for an example.
     ///
     /// - Parameter featureObserver: an object observing feature addition
-    func add<T : FeatureObserverType>(featureObserver: T) where T.ApplicationState == ApplicationState, T.DisposableType == ApplicationDisposableType
+    func add<T : FeatureObserverType>(featureObserver: T) where T.ObservableProperty == ApplicationObservableProperty
 }

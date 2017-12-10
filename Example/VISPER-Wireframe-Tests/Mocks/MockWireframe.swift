@@ -8,7 +8,7 @@
 
 import Foundation
 
-import VISPER_Wireframe_Core
+import VISPER_Core
 import VISPER_Wireframe
 
 class MockWireframe: NSObject, Wireframe {

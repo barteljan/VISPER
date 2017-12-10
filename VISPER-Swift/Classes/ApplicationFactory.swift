@@ -7,17 +7,17 @@
 
 import Foundation
 import VISPER_Redux
-import VISPER_Wireframe_Core
+import VISPER_Core
 import VISPER_Wireframe
 import VISPER_Reactive
 
 /// a factory to create a default SwiftyVISPER application
-public class ApplicationFactory<AppState, DisposableType: SubscriptionReferenceType> {
+public class ApplicationFactory<ObservableProperty: ObservablePropertyType> {
     
     
     /// create a default application
     open func makeApplication( wireframe: Wireframe,
-                                   redux: Redux<AppState,DisposableType>) -> AnyApplication<AppState,DisposableType> {
+                                   redux: Redux<ObservableProperty>) -> AnyApplication<ObservableProperty> {
         
         let application = Application(wireframe: wireframe, redux: redux)
         self.configure(application: application)
@@ -26,8 +26,8 @@ public class ApplicationFactory<AppState, DisposableType: SubscriptionReferenceT
     }
     
     /// create a default application
-    open func makeApplication(initialState : AnyObservableProperty<AppState,DisposableType>,
-                                  wireframe: Wireframe = DefaultWireframe()) -> AnyApplication<AppState,DisposableType>{
+    open func makeApplication(initialState : ObservableProperty,
+                                  wireframe: Wireframe = DefaultWireframe()) -> AnyApplication<ObservableProperty>{
 
         let redux = Redux(initialState: initialState)
         return self.makeApplication(wireframe: wireframe, redux: redux)
@@ -35,12 +35,12 @@ public class ApplicationFactory<AppState, DisposableType: SubscriptionReferenceT
     }
     
     /// configure an application
-    open func configure(application: Application<AppState,DisposableType>) {
+    open func configure(application: Application<ObservableProperty>) {
         
-        let viewFeatureObserver = ViewFeatureObserver<AppState,DisposableType>()
+        let viewFeatureObserver = ViewFeatureObserver<ObservableProperty>()
         application.add(featureObserver: viewFeatureObserver)
         
-        let logicFeatureObserver = LogicFeatureObserver<AppState,DisposableType>()
+        let logicFeatureObserver = LogicFeatureObserver<ObservableProperty>()
         application.add(featureObserver: logicFeatureObserver)
         
     }

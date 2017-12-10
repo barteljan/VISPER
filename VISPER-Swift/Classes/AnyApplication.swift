@@ -8,14 +8,14 @@
 import Foundation
 import VISPER_Redux
 import VISPER_Reactive
-import VISPER_Wireframe_Core
+import VISPER_Core
 
 // some base class needed for type erasure, ignore it if possible
-class _AnyApplication<AppState,DisposableType: SubscriptionReferenceType> : ApplicationType{
+class _AnyApplication<ObservableProperty: ObservablePropertyType> : ApplicationType{
     
-    typealias ApplicationState = AppState
+    typealias ApplicationState = ObservableProperty.ValueType
     
-    var state: AnyObservableProperty<ApplicationState,DisposableType> {
+    var state: ObservableProperty {
         fatalError("override me")
     }
     
@@ -23,7 +23,7 @@ class _AnyApplication<AppState,DisposableType: SubscriptionReferenceType> : Appl
         fatalError("override me")
     }
     
-    var redux : Redux<ApplicationState,DisposableType> {
+    var redux : Redux<ObservableProperty> {
         fatalError("override me")
     }
 
@@ -31,20 +31,20 @@ class _AnyApplication<AppState,DisposableType: SubscriptionReferenceType> : Appl
         fatalError("override me")
     }
     
-    func add<T: FeatureObserverType>(featureObserver: T) where T.ApplicationState == ApplicationState, T.DisposableType == DisposableType {
+    func add<T: FeatureObserverType>(featureObserver: T) where T.ObservableProperty == ObservableProperty {
         fatalError("override me")
     }
     
 }
 
 // some box class needed for type erasure, ignore it if possible
-final class _AnyApplicationBox<Base: ApplicationType>: _AnyApplication<Base.ApplicationState,Base.ApplicationDisposableType> {
+final class _AnyApplicationBox<Base: ApplicationType>: _AnyApplication<Base.ApplicationObservableProperty> {
     
     var base: Base
     
     init(_ base: Base) { self.base = base }
     
-    override var state: AnyObservableProperty<Base.ApplicationState,Base.ApplicationDisposableType> {
+    override var state: Base.ApplicationObservableProperty {
         return self.base.state
     }
     
@@ -52,7 +52,7 @@ final class _AnyApplicationBox<Base: ApplicationType>: _AnyApplication<Base.Appl
         return self.base.wireframe
     }
     
-    override var redux: Redux<Base.ApplicationState,Base.ApplicationDisposableType> {
+    override var redux: Redux<Base.ApplicationObservableProperty> {
         return self.base.redux
     }
     
@@ -60,7 +60,7 @@ final class _AnyApplicationBox<Base: ApplicationType>: _AnyApplication<Base.Appl
         try self.base.add(feature: feature)
     }
     
-    override func add<T: FeatureObserverType>(featureObserver: T) where Base.ApplicationState == T.ApplicationState, Base.ApplicationDisposableType == T.DisposableType {
+    override func add<T: FeatureObserverType>(featureObserver: T) where Base.ApplicationObservableProperty == T.ObservableProperty {
         self.base.add(featureObserver: featureObserver)
     }
     
@@ -70,17 +70,17 @@ final class _AnyApplicationBox<Base: ApplicationType>: _AnyApplication<Base.Appl
 /// Type erasure for the generic ApplicationType protocol
 /// (you need this to reference it as a full type, to use it in arrays or variable definitions,
 /// since generic protocols can only be used in generic definitions)
-open class AnyApplication<AppState, DisposableState: SubscriptionReferenceType> : ApplicationType {
+open class AnyApplication<ObservableProperty: ObservablePropertyType> : ApplicationType {
     
-    public typealias ApplicationState = AppState
+    public typealias ApplicationObservableProperty = ObservableProperty
     
-    private let box: _AnyApplication<AppState,DisposableState>
+    private let box: _AnyApplication<ObservableProperty>
     
-    public init<Base: ApplicationType>(_ base: Base) where Base.ApplicationState == AppState, Base.ApplicationDisposableType == DisposableState {
+    public init<Base: ApplicationType>(_ base: Base) where Base.ApplicationObservableProperty == ObservableProperty {
         box = _AnyApplicationBox(base)
     }
     
-    open var state: AnyObservableProperty<AppState,DisposableState> {
+    open var state: ObservableProperty {
         return self.box.state
     }
     
@@ -88,7 +88,7 @@ open class AnyApplication<AppState, DisposableState: SubscriptionReferenceType> 
         return self.box.wireframe
     }
     
-    open var redux: Redux<AppState,DisposableState> {
+    open var redux: Redux<ObservableProperty> {
         return self.box.redux
     }
     
@@ -96,7 +96,7 @@ open class AnyApplication<AppState, DisposableState: SubscriptionReferenceType> 
         try self.box.add(feature: feature)
     }
     
-    open func add<T: FeatureObserverType>(featureObserver: T) where AppState == T.ApplicationState, DisposableState == T.DisposableType {
+    open func add<T: FeatureObserverType>(featureObserver: T) where T.ObservableProperty == ObservableProperty {
         self.box.add(featureObserver: featureObserver)
     }
     

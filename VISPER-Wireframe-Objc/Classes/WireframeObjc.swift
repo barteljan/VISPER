@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import VISPER_Wireframe_Core
+import VISPER_Core
 
 @objc open class WireframeObjc : NSObject, Wireframe {
     

@@ -1,5 +1,5 @@
 //
-//  ObservableProperty.swift
+//  DefaultObservableProperty.swift
 //  ReactiveReSwift
 //
 //  Created by Charlotte Tortorella on 29/11/16.
@@ -17,17 +17,17 @@
  */
 
 /**
- This class is the default implementation of the `ObservablePropertyType` protocol. It is recommended
+ This class is the default implementation of the `DefaultObservablePropertyType` protocol. It is recommended
  that you do not use this observable and instead use an observable from a full FRP library.
  The existence of this class is to make ReactiveReSwift fully functional without third party libararies.
  */
 
-public class ObservableProperty<ValueType>: ObservablePropertyType {
+public class DefaultObservableProperty<ValueType>: ObservablePropertyType {
     public typealias DisposableType = ObservablePropertySubscriptionReferenceType
     public typealias ObservablePropertySubscriptionReferenceType = ObservablePropertySubscriptionReference<ValueType>
     internal var subscriptions = [ObservablePropertySubscriptionReferenceType : (ValueType) -> ()]()
     private var subscriptionToken: Int = 0
-    private var retainReference: ObservableProperty<ValueType>?
+    private var retainReference: DefaultObservableProperty<ValueType>?
     internal var disposeBag = SubscriptionReferenceBag()
     private var queue: DispatchQueue?
     public var value: ValueType {
@@ -53,16 +53,16 @@ public class ObservableProperty<ValueType>: ObservablePropertyType {
         return reference
     }
     
-    public func map<U>(_ transform: @escaping (ValueType) -> U) -> ObservableProperty<U> {
-        let property = ObservableProperty<U>(transform(value))
+    public func map<U>(_ transform: @escaping (ValueType) -> U) -> DefaultObservableProperty<U> {
+        let property = DefaultObservableProperty<U>(transform(value))
         property.disposeBag += subscribe { value in
             property.value = transform(value)
         }
         return property
     }
     
-    public func distinct(_ equal: @escaping (ValueType, ValueType) -> Bool) -> ObservableProperty<ValueType> {
-        let property = ObservableProperty(value)
+    public func distinct(_ equal: @escaping (ValueType, ValueType) -> Bool) -> DefaultObservableProperty<ValueType> {
+        let property = DefaultObservableProperty(value)
         property.disposeBag += subscribe { value in
             if !equal(value, property.value) {
                 property.value = value
@@ -71,7 +71,7 @@ public class ObservableProperty<ValueType>: ObservablePropertyType {
         return property
     }
     
-    public func deliveredOn(_ queue: DispatchQueue) -> ObservableProperty<ValueType> {
+    public func deliveredOn(_ queue: DispatchQueue) -> DefaultObservableProperty<ValueType> {
         let property = map({ $0 })
         property.queue = queue
         return property
@@ -86,18 +86,18 @@ public class ObservableProperty<ValueType>: ObservablePropertyType {
     
 }
 
-extension ObservableProperty where ValueType: Equatable {
-    public func distinct() -> ObservableProperty<ValueType> {
+extension DefaultObservableProperty where ValueType: Equatable {
+    public func distinct() -> DefaultObservableProperty<ValueType> {
         return distinct(==)
     }
 }
 
-/// The subscription reference type of `ObservableProperty`.
+/// The subscription reference type of `DefaultObservableProperty`.
 public struct ObservablePropertySubscriptionReference<T> {
     internal let key: String
-    internal weak var stream: ObservableProperty<T>?
+    internal weak var stream: DefaultObservableProperty<T>?
     
-    internal init(key: String, stream: ObservableProperty<T>) {
+    internal init(key: String, stream: DefaultObservableProperty<T>) {
         self.key = key
         self.stream = stream
     }
@@ -116,7 +116,7 @@ extension ObservablePropertySubscriptionReference: Equatable, Hashable {
         return key.hash
     }
     
-    /// Compare two `ObservablePropertySubscriptionReference`s.
+    /// Compare two `DefaultObservablePropertySubscriptionReference`s.
     public static func == <T>(lhs: ObservablePropertySubscriptionReference<T>, rhs: ObservablePropertySubscriptionReference<T>) -> Bool {
         return lhs.key == rhs.key
     }

@@ -1,12 +1,12 @@
 //
 //  File.swift
-//  VISPER-Wireframe-Core
+//  VISPER-Core
 //
 //  Created by bartel on 07.12.17.
 //
 
 import Foundation
-import VISPER_Wireframe_Core
+import VISPER_Core
 
 public protocol PushRoutingOption : AnimatedRoutingOption{
     

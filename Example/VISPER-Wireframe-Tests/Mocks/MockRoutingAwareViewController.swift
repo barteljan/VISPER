@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import VISPER_Wireframe_Core
+import VISPER_Core
 
 class MockRoutingAwareViewController: UIViewController, RoutingAwareViewController {
 

@@ -20,7 +20,7 @@ class TestStore: XCTestCase {
         let store = Store(appReducer: { (container, action, state) in
                                             return state
                           },
-                          observable: ObservableProperty(testState),
+                          observable: DefaultObservableProperty(testState),
                      reducerProvider: ReducerProvider)
         XCTAssertNotNil(store)
         
@@ -43,7 +43,7 @@ class TestStore: XCTestCase {
             
                                             return newState
                                         },
-                          observable: ObservableProperty(testState),
+                          observable: DefaultObservableProperty(testState),
                           reducerProvider: reducerProvider)
         
         store.dispatch(newTitleAction)
@@ -63,7 +63,7 @@ class TestStore: XCTestCase {
                               didCallAppReducer = true
                               return state
                           },
-                       observable: ObservableProperty(testState),
+                       observable: DefaultObservableProperty(testState),
                  reducerProvider: ReducerProvider)
         
         store.dispatch(newTitleAction)
@@ -82,7 +82,7 @@ class TestStore: XCTestCase {
                             didCallAppReducer = true
                             return state
                            },
-                          observable: ObservableProperty(testState),
+                          observable: DefaultObservableProperty(testState),
                           reducerProvider: ReducerProvider)
         
         store.dispatch(newTitleAction)
@@ -98,7 +98,7 @@ class TestStore: XCTestCase {
         let store = Store(appReducer: { (container, action, state) in
                             return TestState(title:"DerStateIstNeu")
                           },
-                          observable: ObservableProperty(testState),
+                          observable: DefaultObservableProperty(testState),
                           reducerProvider: ReducerProvider)
         
         store.dispatch(newTitleAction)

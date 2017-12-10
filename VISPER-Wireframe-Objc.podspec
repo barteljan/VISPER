@@ -19,6 +19,6 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'VISPER-Wireframe-Objc/Classes/**/*'
-  s.dependency 'VISPER-Wireframe-Core'
+  s.dependency 'VISPER-Core'
 
 end

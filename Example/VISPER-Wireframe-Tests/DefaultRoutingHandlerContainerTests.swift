@@ -8,7 +8,7 @@
 
 import XCTest
 @testable import VISPER_Wireframe
-@testable import VISPER_Wireframe_Core
+@testable import VISPER_Core
 
 class DefaultRoutingHandlerContainerTests: XCTestCase {
     

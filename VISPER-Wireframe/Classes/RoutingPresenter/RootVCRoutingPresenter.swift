@@ -7,7 +7,7 @@
 
 import Foundation
 
-import VISPER_Wireframe_Core
+import VISPER_Core
 
 public enum RootVCRoutingPresenterError : Error {
     case didNotReceiveRootVCRoutingOptionFor(controller: UIViewController, routeResult: RouteResult, wireframe: Wireframe, delegate: RoutingDelegate)
