@@ -9,14 +9,15 @@ import Foundation
 import VISPER_Redux
 import VISPER_Wireframe_Core
 import VISPER_Wireframe
+import VISPER_Reactive
 
 /// a factory to create a default SwiftyVISPER application
-public class ApplicationFactory<AppState> {
+public class ApplicationFactory<AppState, DisposableType: SubscriptionReferenceType> {
     
     
     /// create a default application
     open func makeApplication( wireframe: Wireframe,
-                                   redux: Redux<AppState>) -> AnyApplication<AppState> {
+                                   redux: Redux<AppState,DisposableType>) -> AnyApplication<AppState,DisposableType> {
         
         let application = Application(wireframe: wireframe, redux: redux)
         self.configure(application: application)
@@ -25,8 +26,8 @@ public class ApplicationFactory<AppState> {
     }
     
     /// create a default application
-    open func makeApplication(initialState : AppState,
-                                  wireframe: Wireframe = DefaultWireframe()) -> AnyApplication<AppState>{
+    open func makeApplication(initialState : AnyObservableProperty<AppState,DisposableType>,
+                                  wireframe: Wireframe = DefaultWireframe()) -> AnyApplication<AppState,DisposableType>{
 
         let redux = Redux(initialState: initialState)
         return self.makeApplication(wireframe: wireframe, redux: redux)
@@ -34,12 +35,12 @@ public class ApplicationFactory<AppState> {
     }
     
     /// configure an application
-    open func configure(application: Application<AppState>) {
+    open func configure(application: Application<AppState,DisposableType>) {
         
-        let viewFeatureObserver = ViewFeatureObserver<AppState>()
+        let viewFeatureObserver = ViewFeatureObserver<AppState,DisposableType>()
         application.add(featureObserver: viewFeatureObserver)
         
-        let logicFeatureObserver = LogicFeatureObserver<AppState>()
+        let logicFeatureObserver = LogicFeatureObserver<AppState,DisposableType>()
         application.add(featureObserver: logicFeatureObserver)
         
     }

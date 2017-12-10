@@ -8,12 +8,13 @@
 
 import UIKit
 import VISPER_Redux
+import VISPER_Reactive
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window : UIWindow?
-    var redux  : Redux<AppState>!
+    var redux  : DefaultRedux<AppState>!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
@@ -34,10 +35,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             )
         }
         
+        let observableProperty = AnyObservableProperty(observableProperty: ObservableProperty(initialState))
+        
         // create a Redux-Container (to have all components on one place)
-        self.redux = Redux<AppState>(   appReducer: appReducer,
-                                      initialState: initialState,
-                                        middleware: middleware)
+        self.redux = DefaultRedux<AppState>(   appReducer: appReducer,
+                                             initialState: observableProperty,
+                                               middleware: middleware)
         
         // add your reducers
         self.redux.reducerContainer.addReduceFunction(reduceFunction: incrementReducer)

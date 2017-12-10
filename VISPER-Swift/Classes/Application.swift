@@ -11,17 +11,17 @@ import VISPER_Reactive
 import VISPER_Wireframe_Core
 
 /// A SwiftyVisper application, containing all dependencies which should be configured by features
-open class Application<AppState> : ApplicationType {
+open class Application<AppState, DisposableType: SubscriptionReferenceType> : ApplicationType {
     
     public typealias ApplicationState = AppState
     
-    public init(wireframe: Wireframe, redux: Redux<AppState>){
+    public init(wireframe: Wireframe, redux: Redux<AppState,DisposableType>){
         self.wireframe = wireframe
         self.redux = redux
     }
     
     /// observable app state property
-    open var state: ObservableProperty<AppState> {
+    open var state: AnyObservableProperty<AppState,DisposableType> {
         return redux.store.observable
     }
     
@@ -29,9 +29,9 @@ open class Application<AppState> : ApplicationType {
     public let wireframe: Wireframe
     
     //redux architecture of your project
-    public let redux: Redux<AppState>
+    public let redux: Redux<AppState,DisposableType>
     
-    internal var featureObserver: [AnyFeatureObserver<AppState>] = [AnyFeatureObserver<AppState>]()
+    internal var featureObserver: [AnyFeatureObserver<AppState,DisposableType>] = [AnyFeatureObserver<AppState,DisposableType>]()
     
     /// Add a feature to your application
     ///
@@ -53,8 +53,8 @@ open class Application<AppState> : ApplicationType {
     /// Have look at LogicFeature and LogicFeatureObserver for an example.
     ///
     /// - Parameter featureObserver: an object observing feature addition
-    open func add<T : FeatureObserverType>(featureObserver: T) where T.ApplicationState == AppState {
-        let anyObserver = AnyFeatureObserver<AppState>(featureObserver)
+    open func add<T : FeatureObserverType>(featureObserver: T) where T.ApplicationState == AppState, T.DisposableType == DisposableType {
+        let anyObserver = AnyFeatureObserver<AppState,DisposableType>(featureObserver)
         self.featureObserver.append(anyObserver)
     }
     

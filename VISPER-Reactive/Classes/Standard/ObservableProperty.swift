@@ -21,7 +21,7 @@
  that you do not use this observable and instead use an observable from a full FRP library.
  The existence of this class is to make ReactiveReSwift fully functional without third party libararies.
  */
-/*
+
 public class ObservableProperty<ValueType>: ObservablePropertyType {
     public typealias DisposableType = ObservablePropertySubscriptionReferenceType
     public typealias ObservablePropertySubscriptionReferenceType = ObservablePropertySubscriptionReference<ValueType>
@@ -121,4 +121,3 @@ extension ObservablePropertySubscriptionReference: Equatable, Hashable {
         return lhs.key == rhs.key
     }
 }
-*/

@@ -14,15 +14,16 @@ import VISPER_Reactive
 public protocol ApplicationType {
     
     associatedtype ApplicationState
+    associatedtype ApplicationDisposableType: SubscriptionReferenceType
     
     /// observable app state property
-    var state: ObservableProperty<ApplicationState> {get}
+    var state: AnyObservableProperty<ApplicationState,ApplicationDisposableType> {get}
     
     /// the wireframe responsible for routing between your view controllers
     var wireframe : Wireframe {get}
     
     //redux architecture of your project
-    var redux : Redux<ApplicationState> {get}
+    var redux : Redux<ApplicationState,ApplicationDisposableType> {get}
     
     /// Add a feature to your application
     ///
@@ -38,5 +39,5 @@ public protocol ApplicationType {
     /// Have look at LogicFeature and LogicFeatureObserver for an example.
     ///
     /// - Parameter featureObserver: an object observing feature addition
-    func add<T : FeatureObserverType>(featureObserver: T) where T.ApplicationState == ApplicationState
+    func add<T : FeatureObserverType>(featureObserver: T) where T.ApplicationState == ApplicationState, T.DisposableType == ApplicationDisposableType
 }
