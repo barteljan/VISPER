@@ -14,7 +14,7 @@ class MockViewController : UIViewController {
     var invokedWillRoute = false
     var invokedWillRouteTime : Date?
     var invokedWillRouteParameters : (wireframe: WireframeObjc,routeResult: RouteResultObjc)?
-    override func willRoute(_ wireframe: WireframeObjc!, routeResult: RouteResultObjc) {
+    override func willRoute(_ wireframe: WireframeObjc, routeResult: RouteResultObjc) {
         super.willRoute(wireframe, routeResult: routeResult)
         invokedWillRoute = true
         invokedWillRouteTime = Date()

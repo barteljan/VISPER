@@ -7,7 +7,7 @@
 
 import Foundation
 import VISPER_Redux
-import VISPER_Reactive
+import VISPER_Core
 
 /// Add this FeatureObserver to your Application to configure your Redux for LogicFeatures providing reducers
 public struct LogicFeatureObserver<ObservableStateProperty: ObservablePropertyType>: FeatureObserverType {

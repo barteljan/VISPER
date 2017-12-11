@@ -8,6 +8,7 @@
 
 import Foundation
 import VISPER_Redux
+import VISPER_Core
 
 struct IncrementAction : Action {}
 

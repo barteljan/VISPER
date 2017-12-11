@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import VISPER_Core
 
 
 /// An FunctionReducer, uses a function to take a given action and a given state and return a new state

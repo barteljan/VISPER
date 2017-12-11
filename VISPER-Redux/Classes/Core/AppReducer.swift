@@ -6,5 +6,6 @@
 //
 
 import Foundation
+import VISPER_Core
 
 public typealias AppReducer<State> = (_ ReducerProvider: ReducerProvider,_ action: Action, _ state: State) -> State

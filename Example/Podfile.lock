@@ -7,15 +7,21 @@ PODS:
   - VISPER-CommandBus (1.0.0)
   - VISPER-Core (0.1.0)
   - VISPER-Reactive (0.1.2):
+    - VISPER-Core
     - VISPER-Reactive/Standard (= 0.1.2)
   - VISPER-Reactive/RxSwift (0.1.2):
     - RxSwift (~> 4.0.0)
-  - VISPER-Reactive/Standard (0.1.2)
+    - VISPER-Core
+  - VISPER-Reactive/Standard (0.1.2):
+    - VISPER-Core
   - VISPER-Redux (0.1.2):
+    - VISPER-Core
     - VISPER-Redux/Standard (= 0.1.2)
   - VISPER-Redux/RxSwift (0.1.2):
+    - VISPER-Core
     - VISPER-Reactive/RxSwift
   - VISPER-Redux/Standard (0.1.2):
+    - VISPER-Core
     - VISPER-Reactive/Standard
   - VISPER-Swift/RxSwift (0.1.0):
     - VISPER-Redux/RxSwift
@@ -66,8 +72,8 @@ SPEC CHECKSUMS:
   VISPER: 2bc4f3684fdae00dd4a9bd92d57d283cc095aced
   VISPER-CommandBus: b422cb6b8c7b895cc7ecd206adc7fe265e2407b9
   VISPER-Core: e7283fd202158e9d77ea0382b7079ea8d7b4bc0b
-  VISPER-Reactive: cd56ab4ba5b730e6a24431384eb71467e0dc9f64
-  VISPER-Redux: 1deed8615308b3fdae079c04f9a72563b210d355
+  VISPER-Reactive: f577ac18b77a2f1827aaf749db857a456b24ad9e
+  VISPER-Redux: ac518cab1193b1d30b5b9006029f1a791d520dc5
   VISPER-Swift: 34fa23f9557b3aea2dbc85ade3f5d5b95e34d116
   VISPER-Wireframe: 8fe84e50c144430f29eee711402da490a91806ad
   VISPER-Wireframe-Objc: 983d0e7221e3b91c3361edaad3dfc2d45d508b08

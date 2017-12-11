@@ -5,7 +5,7 @@
 //  Created by bartel on 18.11.17.
 //
 import Foundation
-import VISPER_Reactive
+import VISPER_Core
 
 /// Add this FeatureObserver to your Application to configure your wireframe for ViewFeatures
 public struct ViewFeatureObserver<ObservableStateProperty: ObservablePropertyType> : FeatureObserverType {

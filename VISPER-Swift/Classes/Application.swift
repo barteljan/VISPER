@@ -7,7 +7,6 @@
 
 import Foundation
 import VISPER_Redux
-import VISPER_Reactive
 import VISPER_Core
 
 /// A SwiftyVisper application, containing all dependencies which should be configured by features

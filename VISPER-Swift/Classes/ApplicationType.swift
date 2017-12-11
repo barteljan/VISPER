@@ -8,7 +8,6 @@
 import Foundation
 import VISPER_Redux
 import VISPER_Core
-import VISPER_Reactive
 
 /// A SwiftyVisper application type, containing all dependencies which should be configured by features
 public protocol ApplicationType {

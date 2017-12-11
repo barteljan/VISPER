@@ -6,6 +6,7 @@
 //
 import Foundation
 import RxSwift
+import VISPER_Core
 
 public struct DisposableWrapper: SubscriptionReferenceType {
     let disposable: Disposable
@@ -34,7 +35,6 @@ public class ObservablePropertyRxSwift<PropertyType>: ObservablePropertyType {
     
     
     public typealias OnDisposeFunction = () -> Void
-    
     
     private var _lock = NSRecursiveLock()
     
@@ -70,11 +70,14 @@ public class ObservablePropertyRxSwift<PropertyType>: ObservablePropertyType {
         _subject.on(.next(value))
     }
     
+    
+    /// Subscribe to value changes
     public func subscribe(_ function: @escaping (PropertyType) -> Void) -> DisposableWrapper? {
         let disposable = self._subject.subscribe(onNext: function)
         return DisposableWrapper(disposable: disposable, disposeFunction: nil)
     }
     
+    /// Subscribe to value changes, get a message when subscription is disposed
     public func subscribe(_ function: @escaping (PropertyType) -> Void, onDisposed: @escaping OnDisposeFunction) -> DisposableWrapper? {
         let disposable = self._subject.subscribe(onNext: function)
         return DisposableWrapper(disposable: disposable, disposeFunction: onDisposed)

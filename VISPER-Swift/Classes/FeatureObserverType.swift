@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import VISPER_Reactive
+import VISPER_Core
 
 /// A observer observing all added features and configuring your application
 public protocol FeatureObserverType {

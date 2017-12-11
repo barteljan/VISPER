@@ -9,7 +9,6 @@ import Foundation
 import VISPER_Redux
 import VISPER_Core
 import VISPER_Wireframe
-import VISPER_Reactive
 
 /// a factory to create a default SwiftyVISPER application
 public class ApplicationFactory<ObservableProperty: ObservablePropertyType> {

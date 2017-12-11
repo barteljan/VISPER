@@ -7,7 +7,6 @@
 
 import Foundation
 import VISPER_Redux
-import VISPER_Reactive
 import VISPER_Core
 
 // some base class needed for type erasure, ignore it if possible

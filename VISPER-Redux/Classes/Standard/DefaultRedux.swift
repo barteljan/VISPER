@@ -7,5 +7,6 @@
 
 import Foundation
 import VISPER_Reactive
+import VISPER_Core
 
 public typealias DefaultRedux<AppState> = Redux<DefaultObservableProperty<AppState>>

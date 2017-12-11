@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import VISPER_Core
 
 /// An struct wrapping a implementation of ActionReducerType
 public struct ActionReducer<StateType,ActionType: Action>: ActionReducerType {

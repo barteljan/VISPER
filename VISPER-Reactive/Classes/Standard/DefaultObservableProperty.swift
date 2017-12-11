@@ -1,3 +1,4 @@
+import VISPER_Core
 //
 //  DefaultObservableProperty.swift
 //  ReactiveReSwift
@@ -21,6 +22,10 @@
  that you do not use this observable and instead use an observable from a full FRP library.
  The existence of this class is to make ReactiveReSwift fully functional without third party libararies.
  */
+/**
+  * This class was renamed to DefaultObservableProperty and modified by Jan Bartel.
+ **/
+
 
 public class DefaultObservableProperty<ValueType>: ObservablePropertyType {
     public typealias DisposableType = ObservablePropertySubscriptionReferenceType
@@ -30,8 +35,21 @@ public class DefaultObservableProperty<ValueType>: ObservablePropertyType {
     private var retainReference: DefaultObservableProperty<ValueType>?
     internal var disposeBag = SubscriptionReferenceBag()
     private var queue: DispatchQueue?
+    
+    private var _lock = NSRecursiveLock()
+    private var _value: ValueType
+    
     public var value: ValueType {
-        didSet {
+        
+        get {
+            _lock.lock(); defer { _lock.unlock() }
+            return _value
+        }
+        set(newValue) {
+            _lock.lock()
+            _value = newValue
+            _lock.unlock()
+        
             let closure = {
                 self.subscriptions.forEach { $0.value(self.value) }
             }
@@ -40,7 +58,7 @@ public class DefaultObservableProperty<ValueType>: ObservablePropertyType {
     }
     
     public init(_ value: ValueType) {
-        self.value = value
+        self._value = value
     }
     
     @discardableResult

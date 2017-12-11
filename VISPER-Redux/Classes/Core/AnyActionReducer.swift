@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import VISPER_Core
 
 /// A substitution wrapper for an instance of ActionReducerType
 public struct AnyActionReducer {

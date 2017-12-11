@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import VISPER_Reactive
+import VISPER_Core
 
 // some base class needed for type erasure, ignore it if possible
 class _AnyFeatureObserver<ObserverObservableProperty: ObservablePropertyType> : FeatureObserverType{

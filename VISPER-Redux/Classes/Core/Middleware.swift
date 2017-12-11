@@ -1,3 +1,4 @@
+import VISPER_Core
 //
 //  Middleware.swift
 //  ReactiveReSwift

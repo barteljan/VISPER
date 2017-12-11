@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import VISPER_Core
 
 public class AnyObservableProperty<PropertyValueType,PropertyDisposableType : SubscriptionReferenceType> : ObservablePropertyType {
     

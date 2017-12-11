@@ -9,6 +9,7 @@
 import UIKit
 import VISPER_Redux
 import VISPER_Reactive
+import VISPER_Core
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

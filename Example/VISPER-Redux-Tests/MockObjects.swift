@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import VISPER_Core
 @testable import VISPER_Redux
 
 struct TestState {

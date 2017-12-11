@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import VISPER_Core
 
 /// An ActionReducer, takes a given action and a given state and returns a new state
 public protocol ActionReducerType {

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import VISPER_Core
 
 /// An object which stores reducers and gives you all responsible reducers for a given action and state
 public protocol ReducerContainer : ReducerProvider{

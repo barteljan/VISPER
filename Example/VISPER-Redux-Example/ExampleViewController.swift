@@ -8,6 +8,7 @@
 
 import UIKit
 import VISPER_Redux
+import VISPER_Core
 
 class ExampleViewController: UIViewController {
 
