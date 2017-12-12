@@ -30,8 +30,15 @@ import VISPER_Core
     }
     
     public init(routingPresenter : RoutingPresenterObjcType){
-        self.routingPresenter = nil
-        self.routingPresenterObjc = routingPresenter
+       
+        if let routingPresenter = routingPresenter as? RoutingPresenterObjc {
+            self.routingPresenter = routingPresenter.routingPresenter
+            self.routingPresenterObjc = nil
+        } else {
+            self.routingPresenter = nil
+            self.routingPresenterObjc = routingPresenter
+        }
+        
     }
     
     open func isResponsible(routeResult: RouteResultObjc) -> Bool {

@@ -27,8 +27,15 @@ import VISPER_Core
     }
     
     @objc public init(controllerProvider : ControllerProviderObjcType) {
-        self.controllerProviderObjc = controllerProvider
-        self.controllerProvider = nil
+        
+        if let controllerProvider = controllerProvider as? ControllerProviderObjc {
+            self.controllerProvider = controllerProvider.controllerProvider
+            self.controllerProviderObjc = nil
+        } else {
+            self.controllerProviderObjc = controllerProvider
+            self.controllerProvider = nil
+        }
+        
         super.init()
     }
     

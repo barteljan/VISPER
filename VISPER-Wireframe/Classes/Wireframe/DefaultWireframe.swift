@@ -25,22 +25,26 @@ open class DefaultWireframe : Wireframe {
     let composedOptionProvider: ComposedRoutingOptionProvider
     let composedRoutingPresenter: ComposedRoutingPresenter
     let composedControllerProvider: ComposedControllerProvider
+    let composedPresenterProvider: ComposedPresenterProvider
     let routingPresenterDelegate: RoutingDelegate
     let routingHandlerContainer: RoutingHandlerContainer
     
     //MARK: Initializer
     public init(       router : Router = DefaultRouter(),
         composedOptionProvider: ComposedRoutingOptionProvider = DefaultComposedRoutingOptionProvider(),
+        routingHandlerContainer: RoutingHandlerContainer = DefaultRoutingHandlerContainer(),
+        composedControllerProvider: ComposedControllerProvider = DefaultComposedControllerProvider(),
+        composedPresenterProvider: ComposedPresenterProvider = DefaultComposedPresenterProvider(),
       composedRoutingPresenter: ComposedRoutingPresenter = DefaultComposedRoutingPresenter(),
-               routingDelegate: RoutingDelegate = DefaultRoutingDelegate(),
-       routingHandlerContainer: RoutingHandlerContainer = DefaultRoutingHandlerContainer(),
-    composedControllerProvider: ComposedControllerProvider = DefaultComposedControllerProvider()){
+               routingDelegate: RoutingDelegate = DefaultRoutingDelegate()
+      ){
         
         self.routingHandlerContainer = routingHandlerContainer
         self.composedOptionProvider = composedOptionProvider
         self.composedRoutingPresenter = composedRoutingPresenter
         self.routingPresenterDelegate = routingDelegate
         self.composedControllerProvider = composedControllerProvider
+        self.composedPresenterProvider = composedPresenterProvider
         self.router = router
     }
     
@@ -112,6 +116,11 @@ open class DefaultWireframe : Wireframe {
         }
         
         let controller = try self.composedControllerProvider.makeController(routeResult: routeResult)
+        
+        //get all presenters responsible for this route pattern / controller combination
+        for presenter in try self.composedPresenterProvider.makePresenters(routeResult: routeResult, controller: controller) {
+            try presenter.addPresentationLogic(routeResult: routeResult, controller: controller)
+        }
         
         //check if we have a presenter responsible for this option
         guard self.composedRoutingPresenter.isResponsible(routeResult: routeResult) else {
@@ -208,6 +217,15 @@ open class DefaultWireframe : Wireframe {
     ///   - priority: The priority for calling your provider, higher priorities are called first. (Defaults to 0)
     open func add(controllerProvider: ControllerProvider, priority: Int = 0) {
         self.composedControllerProvider.add(controllerProvider: controllerProvider, priority: priority)
+    }
+    
+    /// Add an instance providing a presenter for a route
+    ///
+    /// - Parameters:
+    ///   - provider: instance providing a presenter
+    ///   - priority: The priority for calling your provider, higher priorities are called first. (Defaults to 0)
+    open func add(presenterProvider: PresenterProvider, priority: Int = 0) {
+        self.composedPresenterProvider.add(provider: presenterProvider, priority: priority)
     }
     
     /// Add an instance providing routing options for a route

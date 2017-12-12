@@ -87,6 +87,15 @@ import VISPER_Core
         self.wireframe.add(optionProvider: optionProvider)
     }
     
+    public func add(presenterProvider: PresenterProvider, priority: Int) {
+        self.wireframe.add(presenterProvider: presenterProvider, priority: priority)
+    }
+    
+    public func add(presenterProvider: PresenterProviderObjcType, priority: Int) {
+        let presenterProviderObjc = PresenterProviderObjc(presenterProvider:presenterProvider)
+        self.wireframe.add(presenterProvider: presenterProviderObjc, priority: priority)
+    }
+    
     @objc open func add(optionProvider: RoutingOptionProviderObjcType, priority: Int) {
         let wrapper = RoutingOptionProviderObjc(optionProvider: optionProvider)
         self.wireframe.add(optionProvider: wrapper)

@@ -31,8 +31,15 @@ import VISPER_Core
     open let routingObserverObjc : RoutingObserverObjcType?
     
     public init(routingObserver : RoutingObserverObjcType){
-        self.routingObserverObjc = routingObserver
-        self.routingObserver = nil
+        
+        if let routingObserver = routingObserver as? RoutingObserverObjc {
+            self.routingObserver = routingObserver.routingObserver
+            self.routingObserverObjc = nil
+        } else {
+            self.routingObserver = nil
+            self.routingObserverObjc = routingObserver
+        }
+        
         super.init()
     }
     

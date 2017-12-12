@@ -12,7 +12,7 @@ import VISPER_Core
 import VISPER_Wireframe
 
 class MockWireframe: NSObject, Wireframe {
-
+    
     var invokedCanRoute = false
     var invokedCanRouteCount = 0
     var invokedCanRouteParameters: (url: URL, parameters: [String: Any], option: RoutingOption?)?
@@ -108,6 +108,18 @@ class MockWireframe: NSObject, Wireframe {
         invokedAddOptionProviderCount += 1
         invokedAddOptionProviderParameters = (optionProvider, priority)
         invokedAddOptionProviderParametersList.append((optionProvider, priority))
+    }
+
+    var invokedAddProvider = false
+    var invokedAddProviderCount = 0
+    var invokedAddProviderParameters: (presenterProvider: PresenterProvider, priority: Int)?
+    var invokedAddProviderParametersList = [(presenterProvider: PresenterProvider, priority: Int)]()
+
+    func add(presenterProvider: PresenterProvider, priority: Int) {
+        invokedAddProvider = true
+        invokedAddProviderCount += 1
+        invokedAddProviderParameters = (presenterProvider, priority)
+        invokedAddProviderParametersList.append((presenterProvider, priority))
     }
 
     var invokedAddRoutingObserver = false

@@ -26,6 +26,17 @@ import VISPER_Core
         
     }
     
+    public init(routeResult: RouteResultObjcType) {
+    
+        if let routeResult = routeResult as? RouteResultObjc {
+            self.routeResult = routeResult.routeResult
+            self.routeResultObjc = nil
+        } else {
+            self.routeResult = nil
+            self.routeResultObjc = routeResult
+        }
+    }
+    
     @objc public var routePattern: String {
         if let pattern = self.routeResult?.routePattern {
             return pattern

@@ -76,6 +76,13 @@ public protocol Wireframe {
     ///   - priority: The priority for calling your provider, higher priorities are called last. (Defaults to 0)
     func add(optionProvider: RoutingOptionProvider, priority: Int)
     
+    /// Add an instance providing a presenter for a route
+    ///
+    /// - Parameters:
+    ///   - provider: instance providing a presenter
+    ///   - priority: The priority for calling your provider, higher priorities are called first. (Defaults to 0)
+    func add(presenterProvider: PresenterProvider, priority: Int) 
+    
     /// Add an instance observing controllers before they are presented
     ///
     /// - Parameters:

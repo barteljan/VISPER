@@ -93,6 +93,7 @@
 		9A8C5C911FDCFEE400C401AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C5C8F1FDCFEE400C401AF /* LaunchScreen.storyboard */; };
 		9A8C5CA71FDD022000C401AF /* ReactiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5CA61FDD022000C401AF /* ReactiveTests.swift */; };
 		9A8C5CAF1FDD08DF00C401AF /* TestObservableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5CAE1FDD08DF00C401AF /* TestObservableProperty.swift */; };
+		9AE247A01FDF98D80008C24A /* MockComposedPresenterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2479F1FDF98D80008C24A /* MockComposedPresenterProvider.swift */; };
 		DCA057FCD447009E597E4422 /* Pods_VISPER_Reactive_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B3EA2FC8D44496886D70E02 /* Pods_VISPER_Reactive_Tests.framework */; };
 		EF662D3940D7D9DD868E650D /* Pods_VISPER_Redux_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6705CA016DAD8A780BB5C63E /* Pods_VISPER_Redux_Example.framework */; };
 		F2063762A22AA281CAD9E72B /* Pods_VISPER_Swift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10C4D8630711452FBF96B3AF /* Pods_VISPER_Swift_Example.framework */; };
@@ -299,6 +300,7 @@
 		9A8C5CAC1FDD08DF00C401AF /* VISPER-Reactive-RxSwift-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VISPER-Reactive-RxSwift-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8C5CAE1FDD08DF00C401AF /* TestObservableProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestObservableProperty.swift; sourceTree = "<group>"; };
 		9A8C5CB01FDD08DF00C401AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AE2479F1FDF98D80008C24A /* MockComposedPresenterProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockComposedPresenterProvider.swift; sourceTree = "<group>"; };
 		A8AE3CD1BB0F2452F47336B6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		B14CF03005FAD188E2B3A642 /* Pods-VISPER-Redux-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Redux-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Redux-Example/Pods-VISPER-Redux-Example.release.xcconfig"; sourceTree = "<group>"; };
 		CFCCE0151092EBBA3C3F4978 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -633,6 +635,7 @@
 				9A8C5BDA1FDC090E00C401AF /* MockComposedControllerProvider.swift */,
 				9A26AB041FDE89DF008BB68C /* MockPresenterProvider.swift */,
 				9A26AB061FDE8DD4008BB68C /* MockPresenter.swift */,
+				9AE2479F1FDF98D80008C24A /* MockComposedPresenterProvider.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -1665,6 +1668,7 @@
 				9A8C5BED1FDC090E00C401AF /* MockRoutingPresenter.swift in Sources */,
 				9A8C5BF51FDC090E00C401AF /* AssertHelper.swift in Sources */,
 				9A8C5BFB1FDC090E00C401AF /* DefaultRoutingDelegateTests.swift in Sources */,
+				9AE247A01FDF98D80008C24A /* MockComposedPresenterProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

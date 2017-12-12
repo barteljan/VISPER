@@ -615,6 +615,49 @@ class DefaultWireframeTests: XCTestCase {
         
     }
     
+    func testRouteDoesCallComposedPresenterProviderIfItIsResponsible(){
+        
+        //Arrange
+        let url = URL(string: "/a/nice/path")!
+        let parameters = ["id" : "42"]
+        let option = MockRoutingOption()
+        
+        //configure router to return a result
+        let router = MockRouter()
+        let stubbedRouteResult = DefaultRouteResult(routePattern: "/a/nice/path",
+                                                    parameters: parameters,
+                                                    routingOption: option)
+        router.stubbedRouteUrlRoutingOptionParametersResult = stubbedRouteResult
+        
+        //configure mock controller provider
+        let composedControllerProvider = MockComposedControllerProvider()
+        composedControllerProvider.stubbedIsResponsibleResult = true
+        let controller = UIViewController()
+        composedControllerProvider.stubbedMakeControllerResult = controller
+        
+        //configure mock presenter provider
+        let composedPresenterProvider = MockComposedPresenterProvider()
+        let mockPresenter = MockPresenter()
+        composedPresenterProvider.stubbedMakePresentersResult = [mockPresenter]
+        
+        let wireframe = DefaultWireframe(router: router,composedControllerProvider:composedControllerProvider, composedPresenterProvider: composedPresenterProvider)
+        
+        
+        
+        
+        // Act
+        // throws error since no routing presenter is responsible
+        XCTAssertThrowsError(try wireframe.route(url: url,
+                                                 parameters: parameters,
+                                                 option: option,
+                                                 completion: {}))
+        
+        //Assert
+        XCTAssertTrue(composedPresenterProvider.invokedMakePresenters)
+        AssertThat(composedPresenterProvider.invokedMakePresentersParameters?.routeResult, isOfType: DefaultRouteResult.self, andEquals: stubbedRouteResult)
+        XCTAssertEqual(composedPresenterProvider.invokedMakePresentersParameters?.controller, controller)
+    }
+    
     func testRouteChecksIfComposedRoutingPresenterIsResponsible(){
         
         //Arrange
@@ -638,7 +681,7 @@ class DefaultWireframeTests: XCTestCase {
         let composedRoutingPresenter = MockComposedRoutingPresenter()
         
         let wireframe = DefaultWireframe(router: router,
-                                         composedRoutingPresenter: composedRoutingPresenter, composedControllerProvider:composedControllerProvider)
+                                         composedControllerProvider:composedControllerProvider, composedRoutingPresenter: composedRoutingPresenter)
         
         
         // Act
@@ -677,7 +720,7 @@ class DefaultWireframeTests: XCTestCase {
         composedRoutingPresenter.stubbedIsResponsibleResult = false
         
         let wireframe = DefaultWireframe(router: router,
-                                         composedRoutingPresenter: composedRoutingPresenter, composedControllerProvider:composedControllerProvider)
+                                         composedControllerProvider:composedControllerProvider, composedRoutingPresenter: composedRoutingPresenter)
         
         
         // Act
@@ -728,9 +771,8 @@ class DefaultWireframeTests: XCTestCase {
         let routingDelegate = MockRoutingDelegate()
         
         let wireframe = DefaultWireframe(router: router,
-                       composedRoutingPresenter: composedRoutingPresenter,
-                                routingDelegate: routingDelegate,
-                     composedControllerProvider: composedControllerProvider)
+                                         composedControllerProvider: composedControllerProvider, composedRoutingPresenter: composedRoutingPresenter,
+                                         routingDelegate: routingDelegate)
         
         var didCallCompletion = false
         let completion = {

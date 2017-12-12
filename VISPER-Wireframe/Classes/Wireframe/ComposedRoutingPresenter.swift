@@ -10,7 +10,7 @@ import VISPER_Core
 
 public protocol ComposedRoutingPresenter : RoutingPresenter{
     
-    /// Add an instance responsible for presenting view controllers.
+    /// Add an instance responsible for handling the presenter layer on a view controller
     /// It will be triggert after the wireframe resolves a route
     ///
     /// - Parameters:

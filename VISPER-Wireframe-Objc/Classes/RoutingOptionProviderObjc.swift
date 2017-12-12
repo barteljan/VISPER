@@ -25,8 +25,15 @@ import VISPER_Core
     }
     
     public init(optionProvider : RoutingOptionProviderObjcType) {
-        self.optionProviderObjc = optionProvider
-        self.optionProvider = nil
+       
+        if let optionProvider = optionProvider as? RoutingOptionProviderObjc {
+            self.optionProvider = optionProvider.optionProvider
+            self.optionProviderObjc = nil
+        } else {
+            self.optionProvider = nil
+            self.optionProviderObjc = optionProvider
+        }
+        
         super.init()
     }
 
