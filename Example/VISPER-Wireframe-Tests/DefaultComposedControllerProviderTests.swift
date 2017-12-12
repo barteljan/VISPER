@@ -21,9 +21,9 @@ class DefaultComposedControllerProviderTests: XCTestCase {
         let priority = 10
         composedProvider.add(controllerProvider: mockProvider, priority: priority)
         
-        if composedProvider.routingProviders.count == 1 {
+        if composedProvider.controllerProviders.count == 1 {
             
-            let wrapper = composedProvider.routingProviders[0]
+            let wrapper = composedProvider.controllerProviders[0]
             
             guard let controllerProvider = wrapper.controllerProvider as? MockControllerProvider else {
                 XCTFail("wrapper should contain our controller provider")
@@ -53,15 +53,15 @@ class DefaultComposedControllerProviderTests: XCTestCase {
         composedProvider.add(controllerProvider: mockProvider1, priority: priority1)
         composedProvider.add(controllerProvider: mockProvider2, priority: priority2)
         
-        if composedProvider.routingProviders.count == 2 {
+        if composedProvider.controllerProviders.count == 2 {
             
-            let wrapper1 = composedProvider.routingProviders[0]
+            let wrapper1 = composedProvider.controllerProviders[0]
             guard let controllerProvider1 = wrapper1.controllerProvider as? MockControllerProvider else {
                 XCTFail("wrapper should contain our controller provider")
                 return
             }
             
-            let wrapper2 = composedProvider.routingProviders[1]
+            let wrapper2 = composedProvider.controllerProviders[1]
             guard let controllerProvider2 = wrapper2.controllerProvider as? MockControllerProvider else {
                 XCTFail("wrapper should contain our controller provider")
                 return

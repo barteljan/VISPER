@@ -15,6 +15,9 @@
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		814D62E6A8A276B78949B503 /* Pods_VISPER_Redux_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8995FD8307EFBCB9A178F561 /* Pods_VISPER_Redux_Tests.framework */; };
 		818C1E040A76CC09FC083494 /* Pods_VISPER_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC9846AE2D5D92550565A36 /* Pods_VISPER_Example.framework */; };
+		9A26AAE51FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AAE41FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift */; };
+		9A26AB051FDE89DF008BB68C /* MockPresenterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AB041FDE89DF008BB68C /* MockPresenterProvider.swift */; };
+		9A26AB071FDE8DD4008BB68C /* MockPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AB061FDE8DD4008BB68C /* MockPresenter.swift */; };
 		9A8C5B921FDC04E700C401AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C5B6A1FDC04E700C401AF /* InfoPlist.strings */; };
 		9A8C5B931FDC04E700C401AF /* Example2VisperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C5B701FDC04E700C401AF /* Example2VisperViewController.xib */; };
 		9A8C5B941FDC04E700C401AF /* Example2VisperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5B711FDC04E700C401AF /* Example2VisperViewController.m */; };
@@ -179,6 +182,9 @@
 		9150AE5471F2A681AB546872 /* Pods-VISPER-Wireframe-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Wireframe-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Wireframe-Tests/Pods-VISPER-Wireframe-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		95483925F88F5672F7CA74F3 /* Pods-VISPER-Redux-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Redux-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Redux-Tests/Pods-VISPER-Redux-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9A1D7EC71FDDC1550003AAD9 /* VISPER-Core.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Core.podspec"; path = "../VISPER-Core.podspec"; sourceTree = "<group>"; };
+		9A26AAE41FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultComposedPresenterProviderTests.swift; sourceTree = "<group>"; };
+		9A26AB041FDE89DF008BB68C /* MockPresenterProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenterProvider.swift; sourceTree = "<group>"; };
+		9A26AB061FDE8DD4008BB68C /* MockPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenter.swift; sourceTree = "<group>"; };
 		9A8C5B6B1FDC04E700C401AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9A8C5B6D1FDC04E700C401AF /* ExampleFeature2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleFeature2.h; sourceTree = "<group>"; };
 		9A8C5B6F1FDC04E700C401AF /* Example2VisperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example2VisperViewController.h; sourceTree = "<group>"; };
@@ -593,6 +599,7 @@
 				9A8C5BCB1FDC090E00C401AF /* Mocks */,
 				9A8C5BDB1FDC090E00C401AF /* AssertHelper.swift */,
 				9A8C5BDC1FDC090E00C401AF /* DefaultComposedControllerProviderTests.swift */,
+				9A26AAE41FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift */,
 				9A8C5BDD1FDC090E00C401AF /* DefaultRoutingHandlerContainerTests.swift */,
 				9A8C5BDE1FDC090E00C401AF /* DefaultComposedRoutingObserverTests.swift */,
 				9A8C5BDF1FDC090E00C401AF /* DefaultWireframeTests.swift */,
@@ -624,6 +631,8 @@
 				9A8C5BD81FDC090E00C401AF /* MockRoutingObserver.swift */,
 				9A8C5BD91FDC090E00C401AF /* MockRoutingOptionProvider.swift */,
 				9A8C5BDA1FDC090E00C401AF /* MockComposedControllerProvider.swift */,
+				9A26AB041FDE89DF008BB68C /* MockPresenterProvider.swift */,
+				9A26AB061FDE8DD4008BB68C /* MockPresenter.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -1631,6 +1640,7 @@
 				9A8C5BEA1FDC090E00C401AF /* MockRoutingOption.swift in Sources */,
 				9A8C5BEF1FDC090E00C401AF /* MockRoutingDelegate.swift in Sources */,
 				9A8C5BF41FDC090E00C401AF /* MockComposedControllerProvider.swift in Sources */,
+				9A26AAE51FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift in Sources */,
 				9A8C5BF31FDC090E00C401AF /* MockRoutingOptionProvider.swift in Sources */,
 				9A8C5BFD1FDC090E00C401AF /* DefaultRouterTests.swift in Sources */,
 				9A8C5BF91FDC090E00C401AF /* DefaultWireframeTests.swift in Sources */,
@@ -1643,8 +1653,10 @@
 				9A8C5BFC1FDC090E00C401AF /* DefaultComposedRoutingOptionProviderTests.swift in Sources */,
 				9A8C5BF71FDC090E00C401AF /* DefaultRoutingHandlerContainerTests.swift in Sources */,
 				9A8C5BF11FDC090E00C401AF /* MockRouter.swift in Sources */,
+				9A26AB071FDE8DD4008BB68C /* MockPresenter.swift in Sources */,
 				9A8C5BF01FDC090E00C401AF /* MockControllerProvider.swift in Sources */,
 				9A8C5BF81FDC090E00C401AF /* DefaultComposedRoutingObserverTests.swift in Sources */,
+				9A26AB051FDE89DF008BB68C /* MockPresenterProvider.swift in Sources */,
 				9A8C5BE61FDC090E00C401AF /* MockViewController.swift in Sources */,
 				9A8C5BEE1FDC090E00C401AF /* MockRoutingHandlerContainer.swift in Sources */,
 				9A8C5BEC1FDC090E00C401AF /* MockRoutingAwareViewController.swift in Sources */,

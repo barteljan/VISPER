@@ -15,10 +15,10 @@ public enum DefaultComposedControllerProviderError : Error {
 
 public class DefaultComposedControllerProvider : ComposedControllerProvider {
     
-    var routingProviders: [ProviderWrapper]
+    var controllerProviders: [ProviderWrapper]
 
     public init(){
-        self.routingProviders = [ProviderWrapper]()
+        self.controllerProviders = [ProviderWrapper]()
     }
     
     public func add(controllerProvider: ControllerProvider, priority: Int) {
@@ -27,7 +27,7 @@ public class DefaultComposedControllerProvider : ComposedControllerProvider {
     }
     
     public func isResponsible(routeResult: RouteResult) -> Bool {
-        for wrapper in self.routingProviders {
+        for wrapper in self.controllerProviders {
             if wrapper.controllerProvider.isResponsible(routeResult: routeResult) {
                 return true
             }
@@ -37,7 +37,7 @@ public class DefaultComposedControllerProvider : ComposedControllerProvider {
     
     public func priorityOfHighestResponsibleProvider(routeResult: RouteResult) -> Int? {
         
-        for wrapper in self.routingProviders {
+        for wrapper in self.controllerProviders {
             if wrapper.controllerProvider.isResponsible(routeResult: routeResult) {
                 return wrapper.priority
             }
@@ -48,7 +48,7 @@ public class DefaultComposedControllerProvider : ComposedControllerProvider {
     
     public func makeController(routeResult: RouteResult) throws -> UIViewController {
         
-        for wrapper in self.routingProviders {
+        for wrapper in self.controllerProviders {
             
             let controllerProvider = wrapper.controllerProvider
             
@@ -70,8 +70,8 @@ public class DefaultComposedControllerProvider : ComposedControllerProvider {
     
     //MARK: some helper functions
     func addRoutingProviderWrapper(wrapper: ProviderWrapper) {
-        self.routingProviders.append(wrapper)
-        self.routingProviders.sort { (wrapper1, wrapper2) -> Bool in
+        self.controllerProviders.append(wrapper)
+        self.controllerProviders.sort { (wrapper1, wrapper2) -> Bool in
             return wrapper1.priority > wrapper2.priority
         }
     }
