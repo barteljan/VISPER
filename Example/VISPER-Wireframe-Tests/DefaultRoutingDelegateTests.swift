@@ -9,7 +9,7 @@
 import XCTest
 @testable import VISPER_Wireframe
 import VISPER_Core
-import VISPER_Wireframe_Objc
+import VISPER_Objc
 
 class DefaultRoutingDelegateTests: XCTestCase {
     

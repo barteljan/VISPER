@@ -21,7 +21,7 @@ TODO: Add long description of the pod here.
   s.source_files = 'VISPER-Wireframe/Classes/**/*'
 
   s.dependency 'VISPER-Core'
-  s.dependency 'VISPER-Wireframe-Objc'
-  s.dependency 'VISPER-Wireframe-UIViewController'
+  s.dependency 'VISPER-Objc'
+  s.dependency 'VISPER-UIViewController'
 
 end

@@ -30,7 +30,7 @@
 
 -(void)routingEvent:(NSObject<IVISPERRoutingEvent>*)event
          controller:(UIViewController*)viewController
-      andWireframe:(NSObject<IVISPERWireframe>*)wireframe;
+       andWireframe:(NSObject<IVISPERWireframe>*)wireframe;
 
 
 @end

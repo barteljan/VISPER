@@ -1,5 +1,5 @@
 //
-//  VISPER-Wireframe-UIViewController-Tests.swift
+//  VISPER-UIViewController-Tests.swift
 //  VISPER-Wireframe_Tests
 //
 //  Created by bartel on 09.12.17.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import VISPER_Wireframe
 import VISPER_Core
-import VISPER_Wireframe_Objc
+import VISPER_Objc
 
 class VISPER_Wireframe_UIViewController_Tests: XCTestCase {
     

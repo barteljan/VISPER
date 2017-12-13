@@ -7,7 +7,7 @@
 
 import Foundation
 import VISPER_Core
-import VISPER_Wireframe_Objc
+import VISPER_Objc
 
 open class DefaultRoutingDelegate : RoutingDelegate {
     

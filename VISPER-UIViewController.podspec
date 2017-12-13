@@ -2,7 +2,7 @@
 # Be sure to run `pod lib lint VISPER-Wireframe.podspec' to ensure this is a
 
 Pod::Spec.new do |s|
-  s.name             = 'VISPER-Wireframe-UIViewController'
+  s.name             = 'VISPER-UIViewController'
   s.version          = '0.1.0'
   s.summary          = 'A short description of VISPER-Wireframe.'
 
@@ -18,6 +18,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'VISPER-Wireframe-UIViewController/Classes/**/*'
-  s.dependency 'VISPER-Wireframe-Objc'
+  s.source_files = 'VISPER-UIViewController/Classes/**/*'
+  s.dependency 'VISPER-Objc'
+  s.dependency 'VISPER-Presenter'
 end

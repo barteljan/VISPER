@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import VISPER_Wireframe_UIViewController
+import VISPER_UIViewController
 
 class MockViewController : UIViewController {
     

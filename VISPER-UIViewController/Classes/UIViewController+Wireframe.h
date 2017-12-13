@@ -7,14 +7,13 @@
 
 
 #import <UIKit/UIKit.h>
-@import VISPER_Wireframe_Objc;
+@import VISPER_Objc;
 
 @interface UIViewController (Wireframe)
 
-
 @property (nonatomic,strong,nullable) RouteResultObjc *routeResultObjc;
-@property (nonatomic,strong,nullable) NSString *routePattern;
-@property (nonatomic,strong,nullable) NSDictionary *routeParameters;
+@property (nonatomic,readonly,nullable) NSString *routePattern;
+@property (nonatomic,readonly,nullable) NSDictionary *routeParameters;
 
 -(void)willRoute: (WireframeObjc* _Nonnull) wireframe
      routeResult: (RouteResultObjc* _Nonnull) routeResult;

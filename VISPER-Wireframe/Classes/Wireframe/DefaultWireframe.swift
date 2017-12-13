@@ -7,7 +7,7 @@
 
 import Foundation
 import VISPER_Core
-import VISPER_Wireframe_UIViewController
+import VISPER_UIViewController
 
 public enum DefaultWireframeError : Error {
     case noRoutingOptionFoundFor(routeResult: RouteResult)

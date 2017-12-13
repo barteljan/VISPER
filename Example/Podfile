@@ -10,25 +10,27 @@ end
 target 'VISPER-Wireframe-Example' do
     pod 'VISPER-Wireframe', :path => '../'
     pod 'VISPER-Core', :path => '../'
-    pod 'VISPER-Wireframe-UIViewController', :path => '../'
-    pod 'VISPER-Wireframe-Objc', :path => '../'
+    pod 'VISPER-UIViewController', :path => '../'
+    pod 'VISPER-Objc', :path => '../'
 end
 
 target 'VISPER-Wireframe-Tests' do
     pod 'VISPER-Wireframe', :path => '../'
     pod 'VISPER-Core', :path => '../'
-    pod 'VISPER-Wireframe-UIViewController', :path => '../'
-    pod 'VISPER-Wireframe-Objc', :path => '../'
+    pod 'VISPER-UIViewController', :path => '../'
+    pod 'VISPER-Objc', :path => '../'
+    pod 'VISPER-Presenter', :path => '../'
 end
 
 target 'VISPER-Swift-Example' do
     pod 'VISPER-Swift/RxSwift', :path => '../'
     pod 'VISPER-Wireframe', :path => '../'
     pod 'VISPER-Core', :path => '../'
-    pod 'VISPER-Wireframe-UIViewController', :path => '../'
-    pod 'VISPER-Wireframe-Objc', :path => '../'
+    pod 'VISPER-UIViewController', :path => '../'
+    pod 'VISPER-Objc', :path => '../'
     pod 'VISPER-Redux', :path => '../'
     pod 'VISPER-Reactive', :path => '../'
+    pod 'VISPER-Presenter', :path => '../'
 end
 
 target 'VISPER-Redux-Example' do
@@ -52,5 +54,10 @@ end
 target 'VISPER-Reactive-RxSwift-Tests' do
     pod 'RxSwift'
     pod 'VISPER-Reactive/RxSwift', :path => '../'
+end
+
+target 'VISPER-UIViewController-Tests' do
+      pod 'VISPER-UIViewController', :path => '../'
+      pod 'VISPER-Presenter', :path => '../'
 end
 

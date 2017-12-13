@@ -7,7 +7,7 @@
 
 
 #import "UIViewController+Wireframe.h"
-@import VISPER_Wireframe_Objc;
+@import VISPER_Objc;
 #import <objc/runtime.h>
 
 @implementation UIViewController (Wireframe)
@@ -27,31 +27,20 @@
 
 #pragma mark route pattern
 -(NSString*)routePattern{
-    NSString *routePattern = objc_getAssociatedObject(self, @selector(routePattern));
-    return routePattern;
+    return self.routeResultObjc.routePattern;
 }
 
--(void)setRoutePattern:(NSString *)myRoutePattern{
-    objc_setAssociatedObject(self, @selector(routePattern), myRoutePattern , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
+
 
 #pragma mark routeParameters
 -(NSDictionary*)routeParameters{
-    NSDictionary *params = objc_getAssociatedObject(self, @selector(routeParameters));
-    return params;
-}
-
-
--(void)setRouteParameters:(NSDictionary *)myRouteParameters{
-    objc_setAssociatedObject(self, @selector(routeParameters), myRouteParameters , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    return self.routeResultObjc.parameters;
 }
 
 #pragma mark routing events
 -(void)willRoute: (WireframeObjc*) wireframe
      routeResult: (RouteResultObjc*) routeResult {
     self.routeResultObjc = routeResult;
-    self.routePattern = routeResult.routePattern;
-    self.routeParameters = routeResult.parameters;
 }
     
 -(void) didRoute: (WireframeObjc*) wireframe
