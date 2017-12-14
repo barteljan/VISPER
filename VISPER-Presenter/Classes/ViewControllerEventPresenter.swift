@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import VISPER_Objc
 
 @objc public protocol ViewControllerEventPresenter {
     func isResponsibleFor(event: NSObject,view: UIView?,controller: UIViewController) -> Bool

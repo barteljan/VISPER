@@ -14,6 +14,7 @@
 @property (readonly,nonatomic, strong) NSArray  * _Nonnull visperPresenters;
 
 -(void)addVisperPresenter:(NSObject<ViewControllerEventPresenter> * __nonnull)presenter;
+-(void)addVisperPresenter:(NSObject<ViewControllerEventPresenter> * __nonnull)presenter priority:(NSInteger)priority;
 -(void)removeVisperPresenter:(NSObject<ViewControllerEventPresenter> *__nonnull)presenter;
 -(void)notifyPresentersOfView:(UIView* __nonnull)view
                     withEvent:(NSObject* __nonnull)event;

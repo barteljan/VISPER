@@ -20,5 +20,6 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'VISPER-Objc/Classes/**/*'
   s.dependency 'VISPER-Core'
+  s.dependency 'VISPER-Presenter'
 
 end

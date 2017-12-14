@@ -9,18 +9,36 @@
 #import "UIViewController+Presenter.h"
 #import <objc/runtime.h>
 
+@interface VISPERPresenterWrapper: NSObject
+@property NSObject<ViewControllerEventPresenter> *presenter;
+@property NSInteger priority;
+-(instancetype)initWith:(NSObject<ViewControllerEventPresenter> *)presenter priority:(NSInteger)priority;
+@end
+@implementation VISPERPresenterWrapper
+-(instancetype)initWith:(NSObject<ViewControllerEventPresenter> *)presenter priority:(NSInteger)priority{
+    self = [super init];
+    if(self){
+        self->_presenter = presenter;
+        self->_priority = priority;
+    }
+    return self;
+}
+@end
+
 @implementation UIViewController (Presenter)
 
 @dynamic visperPresenters;
 
 -(NSArray*)visperPresenters{
-    NSArray *result = objc_getAssociatedObject(self, @selector(visperPresenters));
+    NSArray *wrappers = objc_getAssociatedObject(self, @selector(visperPresenters));
     
-    if(result == nil) {
-        [self setVisperPresenters:[NSArray array]];
+    NSMutableArray *results = [NSMutableArray array];
+    
+    for(VISPERPresenterWrapper *wrapper in wrappers){
+        [results addObject:wrapper.presenter];
     }
     
-    return result;
+    return [NSArray arrayWithArray:results];
 }
 
 -(void)setVisperPresenters:(NSArray *)myVisperPresenters{
@@ -28,12 +46,35 @@
 }
 
 -(void)addVisperPresenter:(NSObject<ViewControllerEventPresenter> * __nonnull)presenter {
+    [self addVisperPresenter:presenter priority: 0];
+}
+
+-(void)addVisperPresenter:(NSObject<ViewControllerEventPresenter> * __nonnull)presenter priority:(NSInteger)priority{
     
     NSMutableArray *presenters = [NSMutableArray arrayWithArray:self.visperPresenters];
-    [presenters addObject:presenter];
+    VISPERPresenterWrapper *wrapper = [[VISPERPresenterWrapper alloc] initWith:presenter priority:priority];
+    [presenters addObject:wrapper];
+    
+    [presenters sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        
+        VISPERPresenterWrapper *wrapper1 = (VISPERPresenterWrapper*)obj1;
+        VISPERPresenterWrapper *wrapper2 = (VISPERPresenterWrapper*)obj2;
+        
+        if(wrapper1.priority > wrapper2.priority){
+            return (NSComparisonResult)NSOrderedDescending;
+        }
+        
+        if(wrapper1.priority < wrapper2.priority){
+            return (NSComparisonResult)NSOrderedAscending;
+        }
+        
+        return (NSComparisonResult)NSOrderedSame;
+    }];
+    
     [self setVisperPresenters:presenters];
     
 }
+
 
 -(void)removeVisperPresenter:(NSObject<ViewControllerEventPresenter> *__nonnull)presenter {
     

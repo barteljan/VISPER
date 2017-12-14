@@ -7,9 +7,13 @@
 
 import Foundation
 import UIKit
-import VISPER_Objc
+import VISPER_Core
 
-open class ViewControllerLifecycleEventPresenter: NSObject, ViewControllerEventPresenter{
+@objc open class ViewControllerLifecycleEventPresenter: NSObject, ViewControllerEventPresenter,ControllerPresenter{
+    
+    open func addPresentationLogic(routeResult: RouteResult, controller: UIViewController) throws {
+        
+    }
     
     @objc open func isResponsibleFor(event: NSObject,view: UIView?,controller: UIViewController) -> Bool{
         return true
@@ -17,42 +21,46 @@ open class ViewControllerLifecycleEventPresenter: NSObject, ViewControllerEventP
     
     @objc open func receivedEvent(event: NSObject, view: UIView?, controller: UIViewController) {
         
-        if let event = event as? LoadViewEvent {
-            self.load(view, with: controller, event: event)
-        } else if let event = event as? ViewDidLoadEvent {
-            self.viewDidLoad(view, with: controller, event: event)
-        } else if let event = event as? ViewWillAppearEvent {
-            self.viewWillAppear(event.animated, view: view, with: controller, on: event)
-        } else if let event = event as? ViewDidAppearEvent {
-            self.viewDidAppear(event.animated, view: view, with: controller, on: event)
-        } else if let event = event as? ViewWillDisappearEvent {
-            self.viewWillDisappear(event.animated, view: view, with: controller, on: event)
-        } else if let event = event as? ViewDidDisappearEvent {
-            self.viewDidDisappear(event.animated, view: view, with: controller, on: event)
+        if event is LoadViewEvent {
+            self.load(view:view, controller: controller)
+        }
+        
+        if let view = view {
+            if event is ViewDidLoadEvent {
+                self.viewDidLoad(view:view, controller: controller)
+            } else if let event = event as? ViewWillAppearEvent {
+                self.viewWillAppear(animated:event.animated, view: view, controller: controller)
+            } else if let event = event as? ViewDidAppearEvent {
+                self.viewDidAppear(animated:event.animated, view: view, controller: controller)
+            } else if let event = event as? ViewWillDisappearEvent {
+                self.viewWillDisappear(animated:event.animated, view: view, controller: controller)
+            } else if let event = event as? ViewDidDisappearEvent {
+                self.viewDidDisappear(animated:event.animated, view: view, controller: controller)
+            }
         }
     }
     
-    @objc open func load(_ view: UIView?, with viewController: UIViewController, event: LoadViewEvent) {
+    @objc open func load(view: UIView?, controller: UIViewController) {
     
     }
     
-    @objc open func viewDidLoad(_ view: UIView?, with viewController: UIViewController, event: ViewDidLoadEvent) {
+    @objc open func viewDidLoad(view: UIView, controller: UIViewController) {
         
     }
     
-    @objc open func viewWillAppear(_ animated: Bool, view: UIView?, with viewController: UIViewController, on event: ViewWillAppearEvent) {
+    @objc open func viewWillAppear(animated: Bool, view: UIView, controller: UIViewController) {
         
     }
     
-    @objc open func viewDidAppear(_ animated: Bool, view: UIView?, with viewController: UIViewController, on event: ViewDidAppearEvent) {
+    @objc open func viewDidAppear(animated: Bool, view: UIView, controller: UIViewController) {
         
     }
     
-    @objc open func viewWillDisappear(_ animated: Bool, view: UIView?, with viewController: UIViewController, on event: ViewWillDisappearEvent) {
+    @objc open func viewWillDisappear(animated: Bool, view: UIView, controller: UIViewController) {
        
     }
     
-    @objc open func viewDidDisappear(_ animated: Bool, view: UIView?, with viewController: UIViewController, on event: ViewDidDisappearEvent) {
+    @objc open func viewDidDisappear(animated: Bool, view: UIView, controller: UIViewController) {
       
     }
 }

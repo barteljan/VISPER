@@ -8,8 +8,9 @@ PODS:
   - VISPER-Core (0.1.0)
   - VISPER-Objc (0.1.0):
     - VISPER-Core
+    - VISPER-Presenter
   - VISPER-Presenter (0.1.0):
-    - VISPER-Objc
+    - VISPER-Core
   - VISPER-Reactive (0.1.2):
     - VISPER-Core
     - VISPER-Reactive/Standard (= 0.1.2)
@@ -78,8 +79,8 @@ SPEC CHECKSUMS:
   VISPER: 2bc4f3684fdae00dd4a9bd92d57d283cc095aced
   VISPER-CommandBus: b422cb6b8c7b895cc7ecd206adc7fe265e2407b9
   VISPER-Core: e7283fd202158e9d77ea0382b7079ea8d7b4bc0b
-  VISPER-Objc: 35c4c44ba36ff2790b40190cb0f36234665e784e
-  VISPER-Presenter: 766c34bc5ffa7961da7278755d772f379f732609
+  VISPER-Objc: 58cc6f24182dd2f31cbd70be37786b1c2ed8f819
+  VISPER-Presenter: 65f484081c39b3ec509efc5785057010c731cbd0
   VISPER-Reactive: f577ac18b77a2f1827aaf749db857a456b24ad9e
   VISPER-Redux: ac518cab1193b1d30b5b9006029f1a791d520dc5
   VISPER-Swift: 34fa23f9557b3aea2dbc85ade3f5d5b95e34d116
