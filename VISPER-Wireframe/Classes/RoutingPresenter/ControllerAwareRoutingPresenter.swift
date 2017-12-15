@@ -8,14 +8,19 @@
 import Foundation
 import UIKit
 import VISPER_Core
+import VISPER_UIViewController
 
-protocol NavigationControllerBasedRoutingPresenter : RoutingPresenter {
-    var navigationController : UINavigationController? {get set}
+protocol ControllerContainerAwareRoutingPresenter : RoutingPresenter {
+    var controllerContainer : ControllerContainer {get}
 }
 
-open class DefaultNavigationControllerBasedRoutingPresenter : NavigationControllerBasedRoutingPresenter {
+open class DefaultControllerContainerAwareRoutingPresenter : ControllerContainerAwareRoutingPresenter {
     
-    open var navigationController : UINavigationController?
+    open let controllerContainer : ControllerContainer
+    
+    public init(controllerContainer : ControllerContainer){
+        self.controllerContainer = controllerContainer
+    }
     
     /// Is this presenter responsible for presenting a given routing option
     ///

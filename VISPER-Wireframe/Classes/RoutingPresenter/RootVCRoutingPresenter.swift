@@ -11,9 +11,10 @@ import VISPER_Core
 
 public enum RootVCRoutingPresenterError : Error {
     case didNotReceiveRootVCRoutingOptionFor(controller: UIViewController, routeResult: RouteResult, wireframe: Wireframe, delegate: RoutingDelegate)
+    case noNavigationControllerFound
 }
 
-public class RootVCRoutingPresenter : DefaultNavigationControllerBasedRoutingPresenter {
+public class RootVCRoutingPresenter : DefaultControllerContainerAwareRoutingPresenter {
     
     /// Is this presenter responsible for presenting a given routing option
     ///
@@ -37,6 +38,13 @@ public class RootVCRoutingPresenter : DefaultNavigationControllerBasedRoutingPre
                                wireframe: Wireframe,
                                delegate: RoutingDelegate,
                                completion: @escaping () -> ()) throws {
+        
+        guard let navigationController = self.controllerContainer.getController(matches: { controller in
+            return controller is UINavigationController
+        }) as? UINavigationController else {
+            throw RootVCRoutingPresenterError.noNavigationControllerFound
+        }
+    
         guard let routingOption = routeResult.routingOption as? RootVCRoutingOption else {
             throw RootVCRoutingPresenterError.didNotReceiveRootVCRoutingOptionFor(controller: controller,
                                                                                  routeResult: routeResult,
@@ -54,7 +62,7 @@ public class RootVCRoutingPresenter : DefaultNavigationControllerBasedRoutingPre
         }
         
         let controllers = [controller]
-        self.navigationController?.setViewControllers(controllers, animated: false)
+        navigationController.setViewControllers(controllers, animated: false)
         
         if routingOption.animated {
             CATransaction.setCompletionBlock {

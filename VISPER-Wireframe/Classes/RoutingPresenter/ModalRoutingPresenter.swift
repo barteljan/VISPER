@@ -10,10 +10,11 @@ import VISPER_Core
 
 public enum ModalRoutingPresenterError : Error {
     case didNotReceiveModalRoutingOptionFor(controller: UIViewController, routeResult: RouteResult, wireframe: Wireframe, delegate: RoutingDelegate)
+    case noNavigationControllerFound
 }
 
 
-open class ModalRoutingPresenter : DefaultNavigationControllerBasedRoutingPresenter {
+open class ModalRoutingPresenter : DefaultControllerContainerAwareRoutingPresenter {
     
     /// Is this presenter responsible for presenting a given routing option
     ///
@@ -37,6 +38,13 @@ open class ModalRoutingPresenter : DefaultNavigationControllerBasedRoutingPresen
                                wireframe: Wireframe,
                                delegate: RoutingDelegate,
                                completion: @escaping () -> ()) throws {
+        
+        guard let navigationController = self.controllerContainer.getController(matches: { controller in
+            return controller is UINavigationController
+        }) as? UINavigationController else {
+            throw ModalRoutingPresenterError.noNavigationControllerFound
+        }
+        
         guard let routingOption = routeResult.routingOption as? ModalRoutingOption else {
             throw ModalRoutingPresenterError.didNotReceiveModalRoutingOptionFor(controller: controller,
                                                                                routeResult: routeResult,
@@ -57,10 +65,10 @@ open class ModalRoutingPresenter : DefaultNavigationControllerBasedRoutingPresen
                                  routingPresenter: self,
                                  wireframe: wireframe)
         
-        let presentingController = self.navigationController
+        let presentingController = navigationController
         
-        presentingController?.present(controller,
-                                      animated: true,
+        presentingController.present(controller,
+                                        animated: true,
                                       completion: {
                                         delegate.didPresent(controller: controller,
                                                            routeResult: routeResult,

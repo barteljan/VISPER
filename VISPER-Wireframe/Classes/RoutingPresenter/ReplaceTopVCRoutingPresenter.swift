@@ -10,9 +10,10 @@ import VISPER_Core
 
 public enum ReplaceTopVCRoutingPresenterError : Error {
     case didNotReceiveReplaceTopVCRoutingOptionFor(controller: UIViewController, routeResult: RouteResult, wireframe: Wireframe, delegate: RoutingDelegate)
+    case noNavigationControllerFound
 }
 
-public class ReplaceTopVCRoutingPresenter : DefaultNavigationControllerBasedRoutingPresenter {
+public class ReplaceTopVCRoutingPresenter : DefaultControllerContainerAwareRoutingPresenter {
     
     /// Is this presenter responsible for presenting a given routing option
     ///
@@ -36,6 +37,13 @@ public class ReplaceTopVCRoutingPresenter : DefaultNavigationControllerBasedRout
                                wireframe: Wireframe,
                                delegate: RoutingDelegate,
                                completion: @escaping () -> ()) throws {
+        
+        guard let navigationController = self.controllerContainer.getController(matches: { controller in
+            return controller is UINavigationController
+        }) as? UINavigationController else {
+            throw ReplaceTopVCRoutingPresenterError.noNavigationControllerFound
+        }
+        
         guard let routingOption = routeResult.routingOption as? ReplaceTopVCRoutingOption else {
             throw ReplaceTopVCRoutingPresenterError.didNotReceiveReplaceTopVCRoutingOptionFor(controller: controller,
                                                                                              routeResult: routeResult,
@@ -61,16 +69,12 @@ public class ReplaceTopVCRoutingPresenter : DefaultNavigationControllerBasedRout
             CATransaction.begin()
         }
         
-        var controllers = self.navigationController?.viewControllers
-        controllers?.removeLast()
+        var controllers = navigationController.viewControllers
+        controllers.removeLast()
+    
+        controllers.append(controller)
         
-        if controllers == nil {
-            controllers = [UIViewController]()
-        }
-        
-        controllers!.append(controller)
-        
-        self.navigationController?.setViewControllers(controllers!, animated: false)
+        navigationController.setViewControllers(controllers, animated: false)
         
         if routingOption.animated {
             CATransaction.setCompletionBlock {

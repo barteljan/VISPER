@@ -10,9 +10,10 @@ import VISPER_Core
 
 public enum PushRoutingPresenterError : Error {
     case didNotReceivePushRoutingOptionFor(controller: UIViewController, routeResult: RouteResult, wireframe: Wireframe, delegate: RoutingDelegate)
+    case noNavigationControllerFound
 }
 
-open class PushRoutingPresenter : DefaultNavigationControllerBasedRoutingPresenter {
+open class PushRoutingPresenter : DefaultControllerContainerAwareRoutingPresenter {
     
     /// Is this presenter responsible for presenting a given routing option
     ///
@@ -36,6 +37,13 @@ open class PushRoutingPresenter : DefaultNavigationControllerBasedRoutingPresent
                                 wireframe: Wireframe,
                                  delegate: RoutingDelegate,
                                completion: @escaping () -> ()) throws {
+        
+        guard let navigationController = self.controllerContainer.getController(matches: { controller in
+            return controller is UINavigationController
+        }) as? UINavigationController else {
+            throw PushRoutingPresenterError.noNavigationControllerFound
+        }
+        
         guard let routingOption = routeResult.routingOption as? PushRoutingOption else {
             throw PushRoutingPresenterError.didNotReceivePushRoutingOptionFor(controller: controller,
                                                                              routeResult: routeResult,
@@ -52,7 +60,7 @@ open class PushRoutingPresenter : DefaultNavigationControllerBasedRoutingPresent
             CATransaction.begin()
         }
         
-        self.navigationController?.show(controller, sender: self)
+        navigationController.show(controller, sender: self)
         
         if routingOption.animated {
             CATransaction.setCompletionBlock {
