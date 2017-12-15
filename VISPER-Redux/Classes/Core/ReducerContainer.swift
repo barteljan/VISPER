@@ -45,7 +45,7 @@ open class ReducerContainerImpl : ReducerContainer {
     ///
     /// - Parameter reduceFunction: a reduce function
     open func addReduceFunction<StateType, ActionType: Action>(reduceFunction:  @escaping (_ provider: ReducerProvider,_ action: ActionType, _ state: StateType) -> StateType){
-        let funcReducer = FunctionReducer(reduceFunction: reduceFunction)
+        let funcReducer = FunctionalReducer(reduceFunction: reduceFunction)
         self.addReducer(reducer: funcReducer)
     }
     

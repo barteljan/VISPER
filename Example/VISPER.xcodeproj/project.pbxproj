@@ -25,6 +25,8 @@
 		9A26AAE51FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AAE41FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift */; };
 		9A26AB051FDE89DF008BB68C /* MockPresenterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AB041FDE89DF008BB68C /* MockPresenterProvider.swift */; };
 		9A26AB071FDE8DD4008BB68C /* MockPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AB061FDE8DD4008BB68C /* MockPresenter.swift */; };
+		9A408D631FE4027D008048AB /* MockControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A408D621FE4027D008048AB /* MockControllerPresenter.swift */; };
+		9A408D651FE402F9008048AB /* ControllerPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A408D641FE402F9008048AB /* ControllerPresenterTests.swift */; };
 		9A8C5B921FDC04E700C401AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C5B6A1FDC04E700C401AF /* InfoPlist.strings */; };
 		9A8C5B931FDC04E700C401AF /* Example2VisperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C5B701FDC04E700C401AF /* Example2VisperViewController.xib */; };
 		9A8C5B941FDC04E700C401AF /* Example2VisperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5B711FDC04E700C401AF /* Example2VisperViewController.m */; };
@@ -200,6 +202,8 @@
 		9A26AAE41FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultComposedPresenterProviderTests.swift; sourceTree = "<group>"; };
 		9A26AB041FDE89DF008BB68C /* MockPresenterProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenterProvider.swift; sourceTree = "<group>"; };
 		9A26AB061FDE8DD4008BB68C /* MockPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenter.swift; sourceTree = "<group>"; };
+		9A408D621FE4027D008048AB /* MockControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockControllerPresenter.swift; sourceTree = "<group>"; };
+		9A408D641FE402F9008048AB /* ControllerPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerPresenterTests.swift; sourceTree = "<group>"; };
 		9A67425D1FE1A034001BE7BC /* VISPER-Presenter.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Presenter.podspec"; path = "../VISPER-Presenter.podspec"; sourceTree = "<group>"; };
 		9A8C5B6B1FDC04E700C401AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9A8C5B6D1FDC04E700C401AF /* ExampleFeature2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleFeature2.h; sourceTree = "<group>"; };
@@ -540,6 +544,8 @@
 				9A0D1A081FE10A2100567A88 /* MockViewControllerEventPresenter.swift */,
 				9A0D1A141FE13C7100567A88 /* MockViewControllerLifecycleEventPresenter.swift */,
 				9A0D1A161FE13FD900567A88 /* ViewControllerLifecycleEventPresenterTests.swift */,
+				9A408D621FE4027D008048AB /* MockControllerPresenter.swift */,
+				9A408D641FE402F9008048AB /* ControllerPresenterTests.swift */,
 			);
 			path = "VISPER-UIViewController-Tests";
 			sourceTree = "<group>";
@@ -1265,6 +1271,7 @@
 				"${BUILT_PRODUCTS_DIR}/VISPER-Objc/VISPER_Objc.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Presenter/VISPER_Presenter.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-UIViewController/VISPER_UIViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/VISPER-Wireframe/VISPER_Wireframe.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1272,6 +1279,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Objc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Presenter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_UIViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Wireframe.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1782,8 +1790,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A408D631FE4027D008048AB /* MockControllerPresenter.swift in Sources */,
 				9A0D1A111FE12D9000567A88 /* AssertHelper.swift in Sources */,
 				9A0D1A091FE10A2100567A88 /* MockViewControllerEventPresenter.swift in Sources */,
+				9A408D651FE402F9008048AB /* ControllerPresenterTests.swift in Sources */,
 				9A0D19E91FE0F67E00567A88 /* ViewControllerEventPresenterTests.swift in Sources */,
 				9A0D1A171FE13FD900567A88 /* ViewControllerLifecycleEventPresenterTests.swift in Sources */,
 				9A0D1A151FE13C7100567A88 /* MockViewControllerLifecycleEventPresenter.swift in Sources */,

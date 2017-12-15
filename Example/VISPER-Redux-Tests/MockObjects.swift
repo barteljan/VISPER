@@ -36,7 +36,7 @@ let newTitleReducer = { (provider: ReducerProvider,action: NewTitleAction, state
 
 }
 
-let newTitleFunctionReducer = FunctionReducer(reduceFunction: newTitleReducer)
+let newTitleFunctionReducer = FunctionalReducer(reduceFunction: newTitleReducer)
 
 let deleteTitleReducer = { (provider: ReducerProvider,action: DeleteTitleAction, state: TestState) -> TestState in
     
@@ -46,7 +46,7 @@ let deleteTitleReducer = { (provider: ReducerProvider,action: DeleteTitleAction,
     
 }
 
-let deleteTitleFunctionReducer = FunctionReducer(reduceFunction: deleteTitleReducer)
+let deleteTitleFunctionReducer = FunctionalReducer(reduceFunction: deleteTitleReducer)
 
 class MockReducerContainer: ReducerContainer {
     

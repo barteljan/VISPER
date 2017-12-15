@@ -59,5 +59,6 @@ end
 target 'VISPER-UIViewController-Tests' do
       pod 'VISPER-UIViewController', :path => '../'
       pod 'VISPER-Presenter', :path => '../'
+      pod 'VISPER-Wireframe', :path => '../'
 end
 

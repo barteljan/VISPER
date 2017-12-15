@@ -1,5 +1,5 @@
 //
-//  FunctionReducer.swift
+//  FunctionalReducer.swift
 //  VISPER_Redux
 //
 //  Created by Jan Bartel on 31.10.17.
@@ -9,8 +9,8 @@ import Foundation
 import VISPER_Core
 
 
-/// An FunctionReducer, uses a function to take a given action and a given state and return a new state
-public struct FunctionReducer<StateType,ActionType : Action> : ActionReducerType{
+/// An FunctionalReducer, uses a function to take a given action and a given state and return a new state
+public struct FunctionalReducer<StateType,ActionType : Action> : ActionReducerType{
     
     public typealias ReducerActionType = ActionType
     public typealias ReducerStateType = StateType

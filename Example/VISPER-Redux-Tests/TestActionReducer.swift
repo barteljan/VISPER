@@ -14,7 +14,7 @@ class TestActionReducer: XCTestCase {
 
     func testReducerCreation() {
         
-        let reducer = FunctionReducer<TestState,NewTitleAction> { container,action,state in
+        let reducer = FunctionalReducer<TestState,NewTitleAction> { container,action,state in
             return state
         }
         
@@ -26,7 +26,7 @@ class TestActionReducer: XCTestCase {
     
     func testIsResponsibleForCorrectActionStatePair() {
         
-        let reducer = FunctionReducer<TestState,NewTitleAction> { container,action,state in
+        let reducer = FunctionalReducer<TestState,NewTitleAction> { container,action,state in
             return state
         }
         
@@ -40,7 +40,7 @@ class TestActionReducer: XCTestCase {
     
     func testIsNotResponsibleForFalseActionStatePair() {
         
-        let reducer = FunctionReducer<TestState,NewTitleAction> { container,action,state in
+        let reducer = FunctionalReducer<TestState,NewTitleAction> { container,action,state in
             return state
         }
         
@@ -60,7 +60,7 @@ class TestActionReducer: XCTestCase {
         
         var didCallReduceFunction = false
         
-        let reducer = FunctionReducer<TestState,NewTitleAction> { container,action,state in
+        let reducer = FunctionalReducer<TestState,NewTitleAction> { container,action,state in
             didCallReduceFunction = true
             return state
         }
