@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import VISPER_UIViewController
+import VISPER_Presenter
 
 class ViewControllerLifecycleEventPresenterTests: XCTestCase {
     

@@ -29,8 +29,13 @@ import VISPER_Core
     public init(routeResult: RouteResultObjcType) {
     
         if let routeResult = routeResult as? RouteResultObjc {
-            self.routeResult = routeResult.routeResult
-            self.routeResultObjc = nil
+            if let result = routeResult.routeResult {
+                self.routeResult = result
+                self.routeResultObjc = nil
+            } else {
+                self.routeResult = nil
+                self.routeResultObjc = routeResult
+            }
         } else {
             self.routeResult = nil
             self.routeResultObjc = routeResult

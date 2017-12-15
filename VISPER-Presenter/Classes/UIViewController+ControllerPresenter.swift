@@ -7,12 +7,11 @@
 
 import Foundation
 import VISPER_Core
-import VISPER_Objc
 
 public extension UIViewController {
     
     public func add(controllerPresenter: ControllerPresenter, priority: Int) {
-        let presenter = ControllerPresenterObjc(presenter: controllerPresenter)
+        let presenter = ControllerPresenterWrapper(presenter: controllerPresenter)
         self.addVisperPresenter(presenter, priority: priority)
     }
     

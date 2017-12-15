@@ -10,6 +10,12 @@ import Foundation
 import VISPER_Core
 
 class MockPresenter: NSObject,Presenter {
+    
+    var stubbedIsResponsibleResult = false
+    func isResponsible(routeResult: RouteResult, controller: UIViewController) -> Bool {
+        return stubbedIsResponsibleResult
+    }
+    
 
     var invokedAddPresentationLogic = false
     var invokedAddPresentationLogicCount = 0

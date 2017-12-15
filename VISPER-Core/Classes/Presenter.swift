@@ -10,6 +10,9 @@ import Foundation
 public protocol Presenter {
     
     
+    func isResponsible(routeResult: RouteResult,
+                       controller: UIViewController) -> Bool
+    
     /// Add presentation logic to a controller
     ///
     /// - Parameters:

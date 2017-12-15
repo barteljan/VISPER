@@ -11,14 +11,14 @@ import VISPER_Presenter
 
 class MockViewControllerEventPresenter: NSObject, ViewControllerEventPresenter {
 
-
     var invokedIsResponsibleFor = false
     var invokedIsResponsibleForCount = 0
     var invokedIsResponsibleForParameters: (event: NSObject, view: UIView?, controller: UIViewController)?
     var invokedIsResponsibleForParametersList = [(event: NSObject, view: UIView?, controller: UIViewController)]()
     var stubbedIsResponsibleForResult: Bool! = false
 
-    func isResponsibleFor(event: NSObject, view: UIView?, controller: UIViewController) -> Bool {
+
+    func isResponsible(_ event: NSObject!, view: UIView!, controller: UIViewController!) -> Bool{
         invokedIsResponsibleFor = true
         invokedIsResponsibleForCount += 1
         invokedIsResponsibleForParameters = (event, view, controller)
@@ -31,7 +31,7 @@ class MockViewControllerEventPresenter: NSObject, ViewControllerEventPresenter {
     var invokedReceivedEventParameters: (event: NSObject, view: UIView?, controller: UIViewController)?
     var invokedReceivedEventParametersList = [(event: NSObject, view: UIView?, controller: UIViewController)]()
 
-    func receivedEvent(event: NSObject, view: UIView?, controller: UIViewController) {
+    func receivedEvent(_ event: NSObject, view: UIView?, controller: UIViewController) {
         invokedReceivedEvent = true
         invokedReceivedEventCount += 1
         invokedReceivedEventParameters = (event, view, controller)

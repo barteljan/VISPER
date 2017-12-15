@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@import VISPER_Presenter;
+#import "ViewControllerEventPresenter.h"
 
 @interface UIViewController (Presenter)
 

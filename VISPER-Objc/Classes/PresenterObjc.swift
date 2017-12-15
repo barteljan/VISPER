@@ -9,6 +9,7 @@ import Foundation
 import VISPER_Core
 
 @objc public protocol PresenterObjcType {
+    func isResponsible(routeResult: RouteResultObjc, controller: UIViewController) -> Bool
     func addPresentationLogic(routeResult: RouteResultObjc, controller: UIViewController) throws
 }
 
@@ -29,6 +30,27 @@ import VISPER_Core
         } else {
             self.presenter = nil
             self.presenterObjc = presenter
+        }
+    }
+    
+    public func isResponsible(routeResult: RouteResult, controller: UIViewController) -> Bool {
+        if let presenter = self.presenter {
+            return presenter.isResponsible(routeResult:routeResult,controller:controller)
+        } else if let presenterObjc = self.presenterObjc {
+            let routeResultObjc = RouteResultObjc(routeResult: routeResult)
+            return presenterObjc.isResponsible(routeResult: routeResultObjc, controller: controller)
+        } else {
+            fatalError("presenter or presenterObjc should be set")
+        }
+    }
+    
+    open func isResponsible(routeResult: RouteResultObjc, controller: UIViewController) -> Bool {
+        if let presenter = self.presenter {
+            return presenter.isResponsible(routeResult:routeResult,controller:controller)
+        } else if let presenterObjc = self.presenterObjc {
+            return presenterObjc.isResponsible(routeResult: routeResult, controller: controller)
+        } else {
+            fatalError("presenter or presenterObjc should be set")
         }
     }
     

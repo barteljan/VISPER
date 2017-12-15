@@ -6,6 +6,7 @@
 //
 
 @import VISPER_Objc;
+@import VISPER_Presenter;
 #import "UIViewController+Lifecycle.h"
 #import "UIViewController+Presenter.h"
 #import <objc/runtime.h>

@@ -11,15 +11,21 @@ import VISPER_Core
 
 @objc open class ViewControllerLifecycleEventPresenter: NSObject, ViewControllerEventPresenter,ControllerPresenter{
     
-    open func addPresentationLogic(routeResult: RouteResult, controller: UIViewController) throws {
-        
+    
+    open func isResponsible(_ event: NSObject!, view: UIView!, controller: UIViewController!) -> Bool {
+        return true
+    }
+    
+    open func isResponsible(routeResult: RouteResult,
+                       controller: UIViewController) -> Bool{
+        return true
     }
     
     @objc open func isResponsibleFor(event: NSObject,view: UIView?,controller: UIViewController) -> Bool{
         return true
     }
     
-    @objc open func receivedEvent(event: NSObject, view: UIView?, controller: UIViewController) {
+    @objc open func receivedEvent(_ event: NSObject!, view: UIView!, controller: UIViewController!) {
         
         if event is LoadViewEvent {
             self.load(view:view, controller: controller)

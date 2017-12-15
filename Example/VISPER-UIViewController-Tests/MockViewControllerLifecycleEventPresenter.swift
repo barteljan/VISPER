@@ -8,6 +8,7 @@
 
 import Foundation
 import VISPER_UIViewController
+import VISPER_Presenter
 
 class MockViewControllerLifecycleEventPresenter: ViewControllerLifecycleEventPresenter {
     
@@ -32,8 +33,8 @@ class MockViewControllerLifecycleEventPresenter: ViewControllerLifecycleEventPre
     var invokedReceivedEventParameters: (event: NSObject, view: UIView?, controller: UIViewController)?
     var invokedReceivedEventParametersList = [(event: NSObject, view: UIView?, controller: UIViewController)]()
     
-    override func receivedEvent(event: NSObject, view: UIView?, controller: UIViewController) {
-        super.receivedEvent(event: event, view: view, controller: controller)
+    override func receivedEvent(_ event: NSObject, view: UIView?, controller: UIViewController) {
+        super.receivedEvent(event, view: view, controller: controller)
         invokedReceivedEvent = true
         invokedReceivedEventCount += 1
         invokedReceivedEventParameters = (event, view, controller)
@@ -47,44 +48,32 @@ class MockViewControllerLifecycleEventPresenter: ViewControllerLifecycleEventPre
     }
     
     var invokedLoad = false
-    var invokedLoadEvent: LoadViewEvent?
-    override func load(_ view: UIView!, with viewController: UIViewController, event: LoadViewEvent) {
+    override func load(view: UIView?, controller: UIViewController) {
         self.invokedLoad = true
-        self.invokedLoadEvent = event
     }
     
     var invokedViewDidLoad = false
-    var invokedViewDidLoadEvent: ViewDidLoadEvent?
-    override func viewDidLoad(_ view: UIView!, with viewController: UIViewController, event: ViewDidLoadEvent) {
+    override func viewDidLoad(view: UIView, controller: UIViewController){
         self.invokedViewDidLoad = true
-        self.invokedViewDidLoadEvent = event
     }
     
     var invokedViewWillAppear = false
-    var invokedViewWillAppearEvent: ViewWillAppearEvent?
-    override func viewWillAppear(_ animated: Bool, view: UIView!, with viewController: UIViewController, on event: ViewWillAppearEvent) {
+    override func viewWillAppear(animated: Bool, view: UIView, controller: UIViewController) {
         self.invokedViewWillAppear = true
-        self.invokedViewWillAppearEvent = event
     }
     
     var invokedViewDidAppear = false
-    var invokedViewDidAppearEvent: ViewDidAppearEvent?
-    override func viewDidAppear(_ animated: Bool, view: UIView!, with viewController: UIViewController, on event: ViewDidAppearEvent) {
+    override func viewDidAppear(animated: Bool, view: UIView, controller: UIViewController) {
         self.invokedViewDidAppear = true
-        self.invokedViewDidAppearEvent = event
     }
     
     var invokedViewWillDisappear = false
-    var invokedViewWillDisappearEvent: ViewWillDisappearEvent?
-    override func viewWillDisappear(_ animated: Bool, view: UIView!, with viewController: UIViewController, on event: ViewWillDisappearEvent) {
+    override func viewWillDisappear(animated: Bool, view: UIView, controller: UIViewController) {
         self.invokedViewWillDisappear = true
-        self.invokedViewWillDisappearEvent = event
     }
     
     var invokedViewDidDisappear = false
-    var invokedViewDidDisappearEvent: ViewDidDisappearEvent?
-    override func viewDidDisappear(_ animated: Bool, view: UIView!, with viewController: (UIViewController!), on event: ViewDidDisappearEvent) {
+    override  open func viewDidDisappear(animated: Bool, view: UIView, controller: UIViewController){
         self.invokedViewDidDisappear = true
-        self.invokedViewDidDisappearEvent = event
     }
 }

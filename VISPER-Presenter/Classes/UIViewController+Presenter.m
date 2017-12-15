@@ -5,7 +5,6 @@
 //  Created by bartel on 13.12.17.
 //
 
-@import VISPER_Presenter;
 #import "UIViewController+Presenter.h"
 #import <objc/runtime.h>
 
@@ -91,8 +90,8 @@
     
     for(NSObject<ViewControllerEventPresenter>*presenter in presenters ){
         
-        if([presenter isResponsibleForEvent:event view:view controller:self]){
-            [presenter receivedEventWithEvent:event view:view controller:self];
+        if([presenter isResponsible:event view:view controller:self]) {
+            [presenter receivedEvent:event view:view controller:self];
         }
         
     }

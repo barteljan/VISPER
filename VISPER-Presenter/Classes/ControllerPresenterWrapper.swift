@@ -1,15 +1,14 @@
 //
-//  ControllerPresenterObjc.swift
-//  VISPER-Objc
+//  ControllerPresenterWrapper.swift
+//  VISPER-Presenter
 //
-//  Created by bartel on 14.12.17.
+//  Created by bartel on 15.12.17.
 //
 
 import Foundation
-import VISPER_Presenter
 import VISPER_Core
 
-@objc open class ControllerPresenterObjc : ViewControllerLifecycleEventPresenter {
+class ControllerPresenterWrapper : ViewControllerLifecycleEventPresenter {
     
     open let presenter: ControllerPresenter
     
@@ -39,16 +38,15 @@ import VISPER_Core
     }
     
     @objc override open func viewDidAppear(animated: Bool, view: UIView, controller: UIViewController) {
-       self.presenter.viewDidAppear(animated: animated, view: view, controller: controller)
+        self.presenter.viewDidAppear(animated: animated, view: view, controller: controller)
     }
     
     @objc override open func viewWillDisappear(animated: Bool, view: UIView, controller: UIViewController) {
-       self.presenter.viewWillDisappear(animated: animated, view: view, controller: controller)
+        self.presenter.viewWillDisappear(animated: animated, view: view, controller: controller)
     }
     
     @objc override open func viewDidDisappear(animated: Bool, view: UIView, controller: UIViewController) {
         self.presenter.viewDidDisappear(animated: animated, view: view, controller: controller)
     }
-    
     
 }
