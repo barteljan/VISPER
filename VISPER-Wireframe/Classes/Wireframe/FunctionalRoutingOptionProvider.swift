@@ -10,15 +10,15 @@ import VISPER_Core
 
 open class FunctionalRoutingOptionProvider : RoutingOptionProvider {
     
-    typealias OptionCallback = (_ routeResult: RouteResult) -> RoutingOption?
+    public typealias OptionCallback = (_ routeResult: RouteResult) -> RoutingOption?
     
-    let optionCallback: OptionCallback
+    public let optionCallback: OptionCallback
     
-    public init(optionCallback: OptionCallback){
+    public init(optionCallback:@escaping OptionCallback){
         self.optionCallback = optionCallback
     }
     
-    public func option(routeResult: RouteResult) -> RoutingOption? {
+    open func option(routeResult: RouteResult) -> RoutingOption? {
         return self.optionCallback(routeResult)
     }
 
