@@ -8,15 +8,20 @@
 import Foundation
 import VISPER_Redux
 import VISPER_Core
+import VISPER_Wireframe
+import VISPER_UIViewController
 
 /// A SwiftyVisper application, containing all dependencies which should be configured by features
 open class Application<ObservableProperty: ObservablePropertyType> : ApplicationType {
     
     public typealias ApplicationObservableProperty = ObservableProperty
     
-    public init(wireframe: Wireframe, redux: Redux<ObservableProperty>){
+    public init(redux: Redux<ObservableProperty>,
+          wireframe: Wireframe,
+controllerContainer: ControllerContainer){
         self.wireframe = wireframe
         self.redux = redux
+        self.controllerContainer = controllerContainer
     }
     
     /// observable app state property
@@ -29,6 +34,8 @@ open class Application<ObservableProperty: ObservablePropertyType> : Application
     
     //redux architecture of your project
     public let redux: Redux<ObservableProperty>
+    
+    public let controllerContainer: ControllerContainer
     
     internal var featureObserver: [AnyFeatureObserver<ObservableProperty>] = [AnyFeatureObserver<ObservableProperty>]()
     
@@ -55,6 +62,20 @@ open class Application<ObservableProperty: ObservablePropertyType> : Application
     open func add<T : FeatureObserverType>(featureObserver: T) where T.ObservableProperty == ObservableProperty{
         let anyObserver = AnyFeatureObserver<ObservableProperty>(featureObserver)
         self.featureObserver.append(anyObserver)
+    }
+    
+    
+    /// Add a controller that can be used to navigate in your app.
+    /// Typically this will be a UINavigationController, but it could also be a UITabbarController if
+    /// you have a routing presenter that can handle it.
+    /// Be careful you can add more than one viewControllers if your RoutingPresenters can handle different
+    /// controller types or when the active 'rootController' changes.
+    /// The last added controller will be used first.
+    /// The controller will not be retained by the application (it is weakly stored), you need to store a
+    /// link to them elsewhere (if you don't want them to be removed from memory).
+    /// - Parameter controllerToNavigate: a controller that can be used to navigte in your app
+    open func add(controllerToNavigate: UIViewController) {
+        self.controllerContainer.add(controller: controllerToNavigate)
     }
     
 }

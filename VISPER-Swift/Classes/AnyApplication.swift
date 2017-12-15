@@ -11,7 +11,7 @@ import VISPER_Core
 
 // some base class needed for type erasure, ignore it if possible
 class _AnyApplication<ObservableProperty: ObservablePropertyType> : ApplicationType{
-    
+
     typealias ApplicationState = ObservableProperty.ValueType
     
     var state: ObservableProperty {
@@ -31,6 +31,10 @@ class _AnyApplication<ObservableProperty: ObservablePropertyType> : ApplicationT
     }
     
     func add<T: FeatureObserverType>(featureObserver: T) where T.ObservableProperty == ObservableProperty {
+        fatalError("override me")
+    }
+    
+    func add(controllerToNavigate: UIViewController) {
         fatalError("override me")
     }
     
@@ -61,6 +65,10 @@ final class _AnyApplicationBox<Base: ApplicationType>: _AnyApplication<Base.Appl
     
     override func add<T: FeatureObserverType>(featureObserver: T) where Base.ApplicationObservableProperty == T.ObservableProperty {
         self.base.add(featureObserver: featureObserver)
+    }
+    
+    override func add(controllerToNavigate: UIViewController) {
+        self.base.add(controllerToNavigate: controllerToNavigate)
     }
     
 }
@@ -97,6 +105,10 @@ open class AnyApplication<ObservableProperty: ObservablePropertyType> : Applicat
     
     open func add<T: FeatureObserverType>(featureObserver: T) where T.ObservableProperty == ObservableProperty {
         self.box.add(featureObserver: featureObserver)
+    }
+    
+    public func add(controllerToNavigate: UIViewController) {
+        self.box.add(controllerToNavigate: controllerToNavigate)
     }
     
 }

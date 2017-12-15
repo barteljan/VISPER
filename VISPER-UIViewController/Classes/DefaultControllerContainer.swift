@@ -13,6 +13,10 @@ open class DefaultControllerContainer: ControllerContainer {
     
     var controllers = [ControllerWrapper]()
     
+    public init(){
+        
+    }
+
     open func add(controller: UIViewController) {
         self.clean()
         let wrapper = ControllerWrapper(controller: controller)
