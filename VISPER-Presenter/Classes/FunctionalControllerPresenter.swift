@@ -21,28 +21,28 @@ open class FunctionalControllerPresenter: ControllerPresenter {
     public typealias WillRouteCallback = (_ wireframe: Wireframe, _ routeResult: RouteResult, _ controller: UIViewController) -> Void
     public typealias DidRouteCallback = (_ wireframe: Wireframe, _ routeResult: RouteResult, _ controller: UIViewController) -> Void
     
-    public let isResponsibleCallback: (IsResponsibleCallback)?
-    public let addPresentationLogicCallback: (AddPresentationLogicCallback)?
-    public let loadViewCallback: (LoadViewCallback)?
-    public let viewDidLoadCallback: (ViewDidLoadCallback)?
-    public let viewWillAppearCallback: (ViewWillAppearCallback)?
-    public let viewDidAppearCallback: (ViewDidAppearCallback)?
-    public let viewWillDisappearCallback: (ViewWillDisappearCallback)?
-    public let viewDidDisappearCallback: (ViewDidDisappearCallback)?
-    public let willRouteCallback: (WillRouteCallback)?
-    public let didRouteCallback: (DidRouteCallback)?
+    public let isResponsibleCallback: IsResponsibleCallback?
+    public let addPresentationLogicCallback: AddPresentationLogicCallback?
+    public let loadViewCallback: LoadViewCallback?
+    public let viewDidLoadCallback: ViewDidLoadCallback?
+    public let viewWillAppearCallback: ViewWillAppearCallback?
+    public let viewDidAppearCallback: ViewDidAppearCallback?
+    public let viewWillDisappearCallback: ViewWillDisappearCallback?
+    public let viewDidDisappearCallback: ViewDidDisappearCallback?
+    public let willRouteCallback: WillRouteCallback?
+    public let didRouteCallback: DidRouteCallback?
     
     
-    public init(isResponsibleCallback: (IsResponsibleCallback)? = nil,
-       addPresentationLogicCallback: (AddPresentationLogicCallback)? = nil,
-                   loadViewCallback: (LoadViewCallback)? = nil,
-                viewDidLoadCallback: (ViewDidLoadCallback)? = nil,
-             viewWillAppearCallback: (ViewWillAppearCallback)? = nil,
-              viewDidAppearCallback: (ViewDidAppearCallback)? = nil,
-          viewWillDisappearCallback: (ViewWillDisappearCallback)? = nil,
-           viewDidDisappearCallback: (ViewDidDisappearCallback)? = nil,
-                  willRouteCallback: (WillRouteCallback)? = nil,
-                   didRouteCallback: (DidRouteCallback)? = nil
+    public init(isResponsibleCallback: IsResponsibleCallback? = nil,
+       addPresentationLogicCallback: AddPresentationLogicCallback? = nil,
+                   loadViewCallback: LoadViewCallback? = nil,
+                viewDidLoadCallback: ViewDidLoadCallback? = nil,
+             viewWillAppearCallback: ViewWillAppearCallback? = nil,
+              viewDidAppearCallback: ViewDidAppearCallback? = nil,
+          viewWillDisappearCallback: ViewWillDisappearCallback? = nil,
+           viewDidDisappearCallback: ViewDidDisappearCallback? = nil,
+                  willRouteCallback: WillRouteCallback? = nil,
+                   didRouteCallback: DidRouteCallback? = nil
         ) {
         
         self.isResponsibleCallback = isResponsibleCallback
@@ -62,7 +62,7 @@ open class FunctionalControllerPresenter: ControllerPresenter {
         if let callback = self.isResponsibleCallback {
             return callback(routeResult,controller)
         }
-        return false
+        return true
     }
     
     open func addPresentationLogic(routeResult: RouteResult, controller: UIViewController) throws {

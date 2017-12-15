@@ -13,11 +13,11 @@ open class FunctionalPresenter : Presenter {
     public typealias IsResponsibleCallback = (_ routeResult: RouteResult, _ controller: UIViewController) -> Bool
     public typealias AddPresentationLogicCallback = (_ routeResult: RouteResult, _ controller: UIViewController) throws -> Void
     
-    public let isResponsibleCallback: (IsResponsibleCallback)?
-    public let addPresentationLogic: (AddPresentationLogicCallback)?
+    public let isResponsibleCallback: IsResponsibleCallback?
+    public let addPresentationLogic: AddPresentationLogicCallback?
     
-    public init(isResponsibleCallback: (IsResponsibleCallback)? = nil,
-              addPresentationLogic: (AddPresentationLogicCallback)? = nil){
+    public init(isResponsibleCallback: IsResponsibleCallback? = nil,
+              addPresentationLogic: AddPresentationLogicCallback? = nil){
         self.isResponsibleCallback = isResponsibleCallback
         self.addPresentationLogic = addPresentationLogic
     }
@@ -28,7 +28,7 @@ open class FunctionalPresenter : Presenter {
             return callback(routeResult,controller)
         }
         
-        return false
+        return true
     }
     
     open func addPresentationLogic(routeResult: RouteResult, controller: UIViewController) throws {

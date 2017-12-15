@@ -14,6 +14,7 @@ public enum DefaultWireframeError : Error {
     case canNotHandleRoute(routeResult: RouteResult)
     case noRoutingPresenterFoundFor(result: RouteResult)
     case noRoutePatternFoundFor(url: URL, parameters: [String : Any])
+    case noControllerFor(routeResult: RouteResult)
 }
 
 
