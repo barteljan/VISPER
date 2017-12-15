@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 import VISPER_Core
-import VISPER_UIViewController
 
 protocol ControllerContainerAwareRoutingPresenter : RoutingPresenter {
     var controllerContainer : ControllerContainer {get}

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import VISPER_Core
 
 open class DefaultControllerContainer: ControllerContainer {
     
