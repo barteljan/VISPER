@@ -59,6 +59,14 @@
         VISPERPresenterWrapper *wrapper1 = (VISPERPresenterWrapper*)obj1;
         VISPERPresenterWrapper *wrapper2 = (VISPERPresenterWrapper*)obj2;
         
+        if(!wrapper1){
+            return (NSComparisonResult)NSOrderedDescending;
+        }
+        
+        if(!wrapper2){
+            return (NSComparisonResult)NSOrderedAscending;
+        }
+
         if(wrapper1.priority > wrapper2.priority){
             return (NSComparisonResult)NSOrderedDescending;
         }

@@ -112,14 +112,18 @@ public extension Wireframe {
         return try self.canRoute(url: url, parameters: [:], option: option)
     }
     
+    public func route(url: URL) throws {
+        try self.route(url: url, parameters: [:], option: nil, completion: {})
+    }
+    
     public func route(url: URL,
-                      option: RoutingOption? = nil,
+                      option: RoutingOption?,
                       completion: @escaping () -> Void = {}) throws {
         try self.route(url: url, parameters: [:], option: option, completion: completion)
     }
     
     public func route(url: URL,
-                      parameters: [String : Any] = [:],
+                      parameters: [String : Any],
                       completion: @escaping () -> Void = {}) throws {
         try self.route(url: url, parameters: parameters, option: nil, completion: completion)
     }

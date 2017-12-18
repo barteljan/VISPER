@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModule="VISPER_Swift_Example" customModuleProvider="target">
+            <connections>
+                <outlet property="modalButton" destination="73f-Bd-yZh" id="f5r-tS-wTr"/>
+                <outlet property="pushButton" destination="WuG-sg-DpS" id="bhg-ng-mCR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuG-sg-DpS">
+                    <rect key="frame" x="0.0" y="607" width="188" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="gdN-bT-vtA"/>
+                    </constraints>
+                    <state key="normal" title="Push"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73f-Bd-yZh">
+                    <rect key="frame" x="187.5" y="613" width="187.5" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="ylu-XT-WUo"/>
+                    </constraints>
+                    <state key="normal" title="Show Modal"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="73f-Bd-yZh" secondAttribute="trailing" id="3F8-IY-V05"/>
+                <constraint firstItem="WuG-sg-DpS" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.5" id="Jim-Oy-Afa"/>
+                <constraint firstItem="WuG-sg-DpS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QSL-n4-FMX"/>
+                <constraint firstItem="73f-Bd-yZh" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="YoY-p2-UGp"/>
+                <constraint firstItem="73f-Bd-yZh" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="phU-9s-1zg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WuG-sg-DpS" secondAttribute="bottom" id="zJS-u2-Rft"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

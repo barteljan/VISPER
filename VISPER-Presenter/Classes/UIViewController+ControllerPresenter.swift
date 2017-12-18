@@ -11,8 +11,9 @@ import VISPER_Core
 public extension UIViewController {
     
     public func add(controllerPresenter: ControllerPresenter, priority: Int) {
-        let presenter = ControllerPresenterWrapper(presenter: controllerPresenter)
-        self.addVisperPresenter(presenter, priority: priority)
+        let presenter = ControllerPresenterWrapper(presenter: controllerPresenter);
+        let wrapper = VISPERPresenterWrapper(presenter: presenter, priority: priority)
+        self.addVisperPresenter(wrapper, priority: priority)
     }
     
     public func add(controllerPresenter: ControllerPresenter){

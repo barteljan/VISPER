@@ -20,7 +20,8 @@ open class PushRoutingPresenter : DefaultControllerContainerAwareRoutingPresente
     /// - Parameter option: a given routing option
     /// - Returns: true if it is responsible, false if not
     open override func isResponsible(routeResult: RouteResult) -> Bool {
-        return routeResult.routingOption is PushRoutingOption
+        let result = routeResult.routingOption is PushRoutingOption
+        return result
     }
     
     /// Present a view controller

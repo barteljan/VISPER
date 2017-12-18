@@ -22,6 +22,7 @@ controllerContainer: ControllerContainer){
         self.wireframe = wireframe
         self.redux = redux
         self.controllerContainer = controllerContainer
+        UIViewController.enableLifecycleEvents()
     }
     
     /// observable app state property

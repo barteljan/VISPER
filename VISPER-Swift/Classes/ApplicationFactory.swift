@@ -14,6 +14,8 @@ import VISPER_UIViewController
 /// a factory to create a default SwiftyVISPER application
 public class ApplicationFactory<ObservableProperty: ObservablePropertyType> {
     
+    public init(){}
+    
     /// create a default application
     open func makeApplication(  redux: Redux<ObservableProperty>,
                            wireframe: Wireframe,

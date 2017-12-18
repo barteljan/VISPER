@@ -18,59 +18,36 @@ public protocol ViewFeature: Feature, RoutingOptionProvider, ControllerProvider 
     /// eg. high priority features might block low priority features
     var priority : Int {get}
     
-    /// Create a controller for your route pattern
-    ///
-    /// - Parameters:
-    ///   - routingOption: the routing option for your controller
-    ///   - parameters: all parameters given to your controller
-    /// - Returns: A UIViewController if you can create a controller for this input parameter combination, nil otherwise
-    func makeController(routingOption: RoutingOption,
-                           parameters: [String : Any]) -> UIViewController?
-    
     /// Create a default routing option for your route pattern
     ///
     /// - Parameters:
     ///   - routePattern: a route pattern
     ///   - parameters: the routing option for your controller
     /// - Returns: A default routing option if you can provide one for this input parameter combination, nil otherwise
-    func makeOption(routePattern: String,
-                      parameters: [String : Any]) -> RoutingOption?
+    func makeOption(routeResult: RouteResult) -> RoutingOption
     
     
 }
 
 public extension ViewFeature {
     
-    public var priority : Int {
-        return 0
-    }
-    
-    public func controller(routePattern: String,
-                          routingOption: RoutingOption,
-                             parameters: [String : Any]) -> UIViewController? {
-       
+    public func option(routeResult: RouteResult) -> RoutingOption? {
+        
+        guard routeResult.routingOption == nil else {
+            return routeResult.routingOption
+        }
+        
         if self.routePattern == routePattern {
-            return self.makeController(routingOption: routingOption,
-                                          parameters: parameters)
+            return self.makeOption(routeResult: routeResult)
         }
         
         return nil
     }
     
     
-    public func option(routePattern: String,
-                         parameters: [String : Any],
-                      currentOption: RoutingOption?) -> RoutingOption? {
-        
-        guard currentOption == nil else {
-            return currentOption
-        }
-        
-        if self.routePattern == routePattern {
-            return self.makeOption(routePattern: routePattern,
-                                     parameters: parameters)
-        }
-        
-        return nil
+    func isResponsible(routeResult: RouteResult) -> Bool {
+        return routeResult.routePattern == self.routePattern
     }
+    
+
 }

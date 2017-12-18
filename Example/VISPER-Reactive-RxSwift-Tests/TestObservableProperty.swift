@@ -26,7 +26,7 @@ class TestObservableProperty: XCTestCase {
         let firstState = TestState(title: "startingTitle")
         let stateToChange = TestState(title: "newTitle")
         
-        let property = ObservablePropertyRxSwift(firstState)
+        let property = RxSwiftObservableProperty(firstState)
         
         let observable = property.asObservable()
         
@@ -57,7 +57,7 @@ class TestObservableProperty: XCTestCase {
             let firstState = TestState(title: "startingTitle")
             let stateToChange = TestState(title: "newTitle")
             
-            let property = ObservablePropertyRxSwift(firstState)
+            let property = RxSwiftObservableProperty(firstState)
             
             let observable = property.asObservable()
             
@@ -91,7 +91,7 @@ class TestObservableProperty: XCTestCase {
             let firstState = TestState(title: "startingTitle")
             let stateToChange = TestState(title: "newTitle")
             
-            let property = ObservablePropertyRxSwift(firstState)
+            let property = RxSwiftObservableProperty(firstState)
             var count = 0
             let subscription = property.subscribe({ (state) in
                 count += 1

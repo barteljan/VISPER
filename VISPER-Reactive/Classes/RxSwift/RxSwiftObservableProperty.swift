@@ -15,7 +15,7 @@ public struct DisposableWrapper: SubscriptionReferenceType {
     public var disposeFunction : OnDisposeFunction?
     
     public func dispose() {
-        if let onDisposed = self.disposeFunction {
+        if let onDisposed = self.disposeFunction {  
             onDisposed()
         }
         disposable.dispose()
@@ -23,7 +23,7 @@ public struct DisposableWrapper: SubscriptionReferenceType {
 }
 
 
-public class ObservablePropertyRxSwift<PropertyType>: ObservablePropertyType {
+public class RxSwiftObservableProperty<PropertyType>: ObservablePropertyType {
     
     public typealias ValueType = PropertyType
     

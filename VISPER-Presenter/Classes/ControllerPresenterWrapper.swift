@@ -8,7 +8,30 @@
 import Foundation
 import VISPER_Core
 
-class ControllerPresenterWrapper : ViewControllerLifecycleEventPresenter {
+
+
+@objc class VISPERPresenterWrapper : NSObject, ViewControllerEventPresenter {
+   
+    @objc let presenter: ViewControllerLifecycleEventPresenter
+    @objc let priority: NSInteger
+    
+    init(presenter: ViewControllerLifecycleEventPresenter, priority: NSInteger){
+        self.presenter = presenter
+        self.priority = priority
+    }
+    
+    @objc func isResponsible(_ event: NSObject!, view: UIView!, controller: UIViewController!) -> Bool {
+        return self.presenter.isResponsible(event,view:view,controller:controller)
+    }
+    
+    @objc func receivedEvent(_ event: NSObject!, view: UIView!, controller: UIViewController!) {
+        self.presenter.receivedEvent(event, view: view, controller: controller)
+    }
+    
+}
+
+
+@objc class ControllerPresenterWrapper : ViewControllerLifecycleEventPresenter {
     
     open let presenter: ControllerPresenter
     
