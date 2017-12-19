@@ -32,6 +32,8 @@
 		9A408D851FE6FF59008048AB /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A408D821FE6FF59008048AB /* StartViewController.swift */; };
 		9A408D8C1FE702C0008048AB /* PushedFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A408D8B1FE702BF008048AB /* PushedFeature.swift */; };
 		9A408D911FE7A132008048AB /* ModalFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A408D901FE7A131008048AB /* ModalFeature.swift */; };
+		9A408D971FE8E9A1008048AB /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A408D951FE8E9A1008048AB /* ModalViewController.swift */; };
+		9A408D981FE8E9A1008048AB /* ModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A408D961FE8E9A1008048AB /* ModalViewController.xib */; };
 		9A8C5B921FDC04E700C401AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C5B6A1FDC04E700C401AF /* InfoPlist.strings */; };
 		9A8C5B931FDC04E700C401AF /* Example2VisperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C5B701FDC04E700C401AF /* Example2VisperViewController.xib */; };
 		9A8C5B941FDC04E700C401AF /* Example2VisperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5B711FDC04E700C401AF /* Example2VisperViewController.m */; };
@@ -212,6 +214,8 @@
 		9A408D821FE6FF59008048AB /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		9A408D8B1FE702BF008048AB /* PushedFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushedFeature.swift; sourceTree = "<group>"; };
 		9A408D901FE7A131008048AB /* ModalFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalFeature.swift; sourceTree = "<group>"; };
+		9A408D951FE8E9A1008048AB /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		9A408D961FE8E9A1008048AB /* ModalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalViewController.xib; sourceTree = "<group>"; };
 		9A67425D1FE1A034001BE7BC /* VISPER-Presenter.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Presenter.podspec"; path = "../VISPER-Presenter.podspec"; sourceTree = "<group>"; };
 		9A8C5B6B1FDC04E700C401AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9A8C5B6D1FDC04E700C401AF /* ExampleFeature2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleFeature2.h; sourceTree = "<group>"; };
@@ -577,6 +581,8 @@
 			isa = PBXGroup;
 			children = (
 				9A408D901FE7A131008048AB /* ModalFeature.swift */,
+				9A408D951FE8E9A1008048AB /* ModalViewController.swift */,
+				9A408D961FE8E9A1008048AB /* ModalViewController.xib */,
 			);
 			path = ModalController;
 			sourceTree = "<group>";
@@ -1175,6 +1181,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A408D981FE8E9A1008048AB /* ModalViewController.xib in Resources */,
 				9A8C5C1F1FDC0C1D00C401AF /* LaunchScreen.storyboard in Resources */,
 				9A8C5C1C1FDC0C1D00C401AF /* Assets.xcassets in Resources */,
 				9A408D831FE6FF59008048AB /* StartViewController.xib in Resources */,
@@ -1884,6 +1891,7 @@
 				9A408D911FE7A132008048AB /* ModalFeature.swift in Sources */,
 				9A408D841FE6FF59008048AB /* StartFeature.swift in Sources */,
 				9A408D851FE6FF59008048AB /* StartViewController.swift in Sources */,
+				9A408D971FE8E9A1008048AB /* ModalViewController.swift in Sources */,
 				9A408D8C1FE702C0008048AB /* PushedFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

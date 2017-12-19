@@ -37,8 +37,9 @@ public extension ViewFeature {
             return routeResult.routingOption
         }
         
-        if self.routePattern == routePattern {
-            return self.makeOption(routeResult: routeResult)
+        if self.routePattern == routeResult.routePattern {
+            let result = self.makeOption(routeResult: routeResult)
+            return result
         }
         
         return nil

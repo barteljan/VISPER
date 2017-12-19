@@ -38,13 +38,19 @@ open class DefaultComposedRoutingOptionProvider : ComposedRoutingOptionProvider 
     /// - Returns: A default routing option if you are responsible for this route, nil otherwise
     open func option(routeResult: RouteResult) -> RoutingOption? {
         
-        var routingOption : RoutingOption? = routeResult.routingOption
+        var currentResult = routeResult
+        //print("\nresolve routing option:\(routingOption)")
         
         for optionProviderWrapper in self.optionProviders.reversed() {
-            routingOption = optionProviderWrapper.optionProvider.option(routeResult: routeResult)
+            //print("routingOption before:\(routingOption)")
+            let routingOption = optionProviderWrapper.optionProvider.option(routeResult: currentResult)
+            currentResult.routingOption = routingOption
+            //print("routingOption after:\(routingOption)")
         }
         
-        return routingOption
+        //print("\nrouting option resolved:\(routingOption)\n")
+        
+        return currentResult.routingOption
         
     }
     

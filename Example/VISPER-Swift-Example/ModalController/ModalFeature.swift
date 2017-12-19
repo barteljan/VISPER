@@ -28,20 +28,23 @@ public class ModalFeature: ViewFeature, PresenterFeature {
     }
     
     public func makeController(routeResult: RouteResult) throws -> UIViewController {
-        return UIViewController()
+        return ModalViewController(nibName: "ModalViewController", bundle: nil)
     }
     
     public func makePresenters(routeResult: RouteResult, controller: UIViewController) throws -> [Presenter] {
         
-        let presenter = FunctionalControllerPresenter(isResponsibleCallback: { (routeResult, controller) -> Bool in
+        let actionPresenter = FunctionalPresenter(isResponsibleCallback: { (routeResult, controller) -> Bool in
             return routeResult.routePattern == self.routePattern
-        },  viewWillAppearCallback: { (animated, view, controller) in
-            view.backgroundColor = UIColor.blue
-        })
+        }) { (routeResult, controller) in
+            guard let controller = controller as? ModalViewController else {
+                fatalError("should use only a ModalViewController")
+            }
+            controller.exitCallBack = {
+                controller.dismiss(animated: true, completion: nil)
+            }
+        }
         
-        controller.add(controllerPresenter: presenter, priority: 0)
-        
-        return [presenter]
+        return [actionPresenter]
     }
     
 }
