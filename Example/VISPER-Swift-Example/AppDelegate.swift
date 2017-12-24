@@ -22,26 +22,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        //create root view controller
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        
         let navigationController = UINavigationController()
         self.window?.rootViewController = navigationController
     
-        let startViewState = StartViewState(timesOpendAController: 0)
-        let appState = AppState(startViewState: startViewState)
+        //create visper application
+        self.visperApplication = self.makeVISPERApplication()
+        
+        //add root view controller to visper application
+        self.visperApplication?.add(controllerToNavigate: navigationController)
+        
+        //add all features to visper application
+        self.addFeatures()
+        
+        //route to start view
+        try! self.visperApplication.wireframe.route(url: URL(string: "/start")!)
+        
+        self.window?.makeKeyAndVisible()
+        return true
+    }
+    
+    func makeVISPERApplication() -> AnyApplication<RxSwiftObservableProperty<AppState>>!{
+        
+        let appState = AppState(startViewState: StartViewState(timesOpendAController: 0))
         let initialState = RxSwiftObservableProperty<AppState>(appState)
         
         let appReducer: AppReducer<AppState> = { (reducerProvider:ReducerProvider, action: Action, state: AppState) -> AppState in
-            let startViewState = reducerProvider.reduce(action: action, state: state.startViewState)
-            let newState = AppState(startViewState: startViewState)
-            return newState
+            return AppState(startViewState: reducerProvider.reduce(action: action, state: state.startViewState))
         }
         
         let applicationFactory = ApplicationFactory<AppState,RxSwiftObservableProperty<AppState>>()
         
-        self.visperApplication = applicationFactory.makeApplication(initialState: initialState, appReducer: appReducer)
+        let visperApplication = applicationFactory.makeApplication(initialState: initialState, appReducer: appReducer)
         
-        self.visperApplication?.add(controllerToNavigate: navigationController)
+        return visperApplication
+    }
+    
+    func addFeatures(){
         
         let appStateObservable = self.visperApplication.redux.store.observable.asObservable()
         
@@ -59,10 +77,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let modalFeature = ModalFeature(routePattern: "/modal/controller")
         try! self.visperApplication.add(feature: modalFeature)
         
-        try! self.visperApplication.wireframe.route(url: URL(string: "/start")!)
-        
-        self.window?.makeKeyAndVisible()
-        return true
     }
 
 
