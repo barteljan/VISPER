@@ -12,7 +12,8 @@ import VISPER_Core
 import VISPER_Wireframe
 import VISPER_Presenter
 import VISPER_Redux
-import VISPER_Reactive
+
+import RxSwift
 
 struct StartViewState {
     let timesOpendAController : Int
@@ -27,19 +28,18 @@ class StartFeature: ViewFeature,PresenterFeature, LogicFeature{
     let priority: Int = 0
     let routePattern: String
     let wireframe : Wireframe
-
-    let stateObservableProperty: DefaultObservableProperty<StartViewState>
     
+    let stateObservable : Observable<StartViewState>
     let actionDispatcher: ActionDispatcher
-    let disposeBag = SubscriptionReferenceBag()
+    let disposeBag = DisposeBag()
     
     init(routePattern: String,
            wireframe: Wireframe,
-stateObservableProperty: DefaultObservableProperty<StartViewState>,
+     stateObservable: Observable<StartViewState>,
     actionDispatcher: ActionDispatcher) {
         self.routePattern = routePattern
         self.wireframe = wireframe
-        self.stateObservableProperty = stateObservableProperty
+        self.stateObservable = stateObservable
         self.actionDispatcher = actionDispatcher
     }
     
@@ -64,12 +64,11 @@ stateObservableProperty: DefaultObservableProperty<StartViewState>,
                }
                 
                controller.state = StartViewState(timesOpendAController: 0)
-        
-               let reference = self.stateObservableProperty.subscribe({ (state) in
-                    controller.state = state
-               })
-               self.disposeBag.addReference(reference: reference)
                 
+               self.stateObservable.subscribe(onNext: { (state) in
+                   controller.state = state
+               }).disposed(by: self.disposeBag)
+ 
                controller.modalButtonPressed = {
                    try! self.wireframe.route(url: URL(string:"/modal/controller")!)
                    self.actionDispatcher.dispatch(IncrementTimesOpendAControllerAction())

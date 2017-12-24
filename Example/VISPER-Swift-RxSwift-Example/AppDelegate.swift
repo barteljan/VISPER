@@ -11,13 +11,14 @@ import VISPER_Swift
 import VISPER_Reactive
 import VISPER_Core
 import VISPER_Redux
+import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var visperApplication: AnyApplication<DefaultObservableProperty<AppState>>!
-    var disposeBag = SubscriptionReferenceBag()
+    var visperApplication: AnyApplication<RxSwiftObservableProperty<AppState>>!
+    var disposeBag = DisposeBag()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -42,16 +43,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func makeVISPERApplication() -> AnyApplication<DefaultObservableProperty<AppState>>!{
+    func makeVISPERApplication() -> AnyApplication<RxSwiftObservableProperty<AppState>>!{
         
         let appState = AppState(startViewState: StartViewState(timesOpendAController: 0))
-        let initialState = DefaultObservableProperty<AppState>(appState)
+        let initialState = RxSwiftObservableProperty<AppState>(appState)
         
         let appReducer: AppReducer<AppState> = { (reducerProvider:ReducerProvider, action: Action, state: AppState) -> AppState in
             return AppState(startViewState: reducerProvider.reduce(action: action, state: state.startViewState))
         }
         
-        let applicationFactory = ApplicationFactory<AppState,DefaultObservableProperty<AppState>>()
+        let applicationFactory = ApplicationFactory<AppState,RxSwiftObservableProperty<AppState>>()
         
         let visperApplication = applicationFactory.makeApplication(initialState: initialState, appReducer: appReducer)
         
@@ -60,15 +61,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func addFeatures(){
         
-        let appStateObservableProperty = self.visperApplication.redux.store.observable
+        let appStateObservable = self.visperApplication.redux.store.observable.asObservable()
         
-        let startViewStateObservableProperty = appStateObservableProperty.map { (appstate) -> StartViewState in
+        let startViewStateObservable = appStateObservable.map { (appstate) -> StartViewState in
             return appstate.startViewState
         }
         
         let startFeature = StartFeature(routePattern: "/start",
                                            wireframe: self.visperApplication.wireframe,
-                             stateObservableProperty: startViewStateObservableProperty,
+                                     stateObservable: startViewStateObservable,
                                     actionDispatcher: self.visperApplication.redux.actionDispatcher)
         
         try! self.visperApplication.add(feature: startFeature)

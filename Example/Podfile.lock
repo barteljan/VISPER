@@ -28,8 +28,14 @@ PODS:
   - VISPER-Redux/Standard (0.1.2):
     - VISPER-Core
     - VISPER-Reactive/Standard
+  - VISPER-Swift (0.1.0):
+    - VISPER-Swift/Standard (= 0.1.0)
+    - VISPER-Wireframe
   - VISPER-Swift/RxSwift (0.1.0):
     - VISPER-Redux/RxSwift
+    - VISPER-Wireframe
+  - VISPER-Swift/Standard (0.1.0):
+    - VISPER-Redux/Standard
     - VISPER-Wireframe
   - VISPER-UIViewController (0.1.0):
     - VISPER-Objc
@@ -49,6 +55,7 @@ DEPENDENCIES:
   - VISPER-Reactive (from `../`)
   - VISPER-Reactive/RxSwift (from `../`)
   - VISPER-Redux (from `../`)
+  - VISPER-Swift (from `../`)
   - VISPER-Swift/RxSwift (from `../`)
   - VISPER-UIViewController (from `../`)
   - VISPER-Wireframe (from `../`)
@@ -87,6 +94,6 @@ SPEC CHECKSUMS:
   VISPER-UIViewController: 4bf805f054b3c8125a90fcb7da401112b4c849d8
   VISPER-Wireframe: 137883de5da1f9fa7c3faaed7cf757d90929ef13
 
-PODFILE CHECKSUM: 81e724df3fa573125200aaf546d3a514bb582eea
+PODFILE CHECKSUM: 5bef37722a1395157dd9b6f2b7466bb7dda377a3
 
 COCOAPODS: 1.3.1
