@@ -67,7 +67,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return appstate.startViewState
         }
         
-        let startFeature = StartFeature(routePattern: "/start",wireframe: self.visperApplication.wireframe,stateObservable:startViewStateObservable, actionDispatcher: self.visperApplication.redux.actionDispatcher)
+        let startFeature = StartFeature(routePattern: "/start",
+                                           wireframe: self.visperApplication.wireframe,
+                                     stateObservable: startViewStateObservable,
+                                    actionDispatcher: self.visperApplication.redux.actionDispatcher)
         
         try! self.visperApplication.add(feature: startFeature)
         
