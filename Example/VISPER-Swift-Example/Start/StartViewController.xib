@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModule="VISPER_Swift_Example" customModuleProvider="target">
             <connections>
+                <outlet property="counterLabel" destination="o48-YC-yk2" id="RqD-XM-mLg"/>
                 <outlet property="modalButton" destination="73f-Bd-yZh" id="f5r-tS-wTr"/>
                 <outlet property="pushButton" destination="WuG-sg-DpS" id="bhg-ng-mCR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -37,6 +38,12 @@
                     </constraints>
                     <state key="normal" title="Show Modal"/>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o48-YC-yk2">
+                    <rect key="frame" x="166" y="333" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -44,7 +51,9 @@
                 <constraint firstItem="WuG-sg-DpS" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.5" id="Jim-Oy-Afa"/>
                 <constraint firstItem="WuG-sg-DpS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QSL-n4-FMX"/>
                 <constraint firstItem="73f-Bd-yZh" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="YoY-p2-UGp"/>
+                <constraint firstItem="o48-YC-yk2" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="jCM-XV-sS1"/>
                 <constraint firstItem="73f-Bd-yZh" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="phU-9s-1zg"/>
+                <constraint firstItem="o48-YC-yk2" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="vE9-Ge-GZm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WuG-sg-DpS" secondAttribute="bottom" id="zJS-u2-Rft"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

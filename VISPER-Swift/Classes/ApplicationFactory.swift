@@ -12,7 +12,7 @@ import VISPER_Wireframe
 import VISPER_UIViewController
 
 /// a factory to create a default SwiftyVISPER application
-public class ApplicationFactory<ObservableProperty: ObservablePropertyType> {
+public class ApplicationFactory<AppState,ObservableProperty: ObservablePropertyType> where ObservableProperty.ValueType == AppState {
     
     public init(){}
     
@@ -31,12 +31,14 @@ public class ApplicationFactory<ObservableProperty: ObservablePropertyType> {
     }
     
     /// create a default application
-    open func makeApplication(initialState : ObservableProperty,
+    open func makeApplication(initialState: ObservableProperty,
+                                appReducer: @escaping AppReducer<AppState>,
                                  wireframe: Wireframe = DefaultWireframe(),
                        controllerContainer: ControllerContainer = DefaultControllerContainer()
         ) -> AnyApplication<ObservableProperty>{
 
-        let redux = Redux(initialState: initialState)
+        let redux = Redux( appReducer: appReducer,
+                         initialState: initialState)
         return self.makeApplication(redux: redux,
                             wireframe: wireframe,
                   controllerContainer:controllerContainer)

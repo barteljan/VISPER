@@ -56,7 +56,7 @@ public class RxSwiftObservableProperty<PropertyType>: ObservablePropertyType {
             _lock.lock()
             _value = newValue
             _lock.unlock()
-            
+            print(newValue)
             _subject.on(.next(newValue))
         }
     }
@@ -70,7 +70,6 @@ public class RxSwiftObservableProperty<PropertyType>: ObservablePropertyType {
         _subject.on(.next(value))
     }
     
-    
     /// Subscribe to value changes
     public func subscribe(_ function: @escaping (PropertyType) -> Void) -> DisposableWrapper? {
         let disposable = self._subject.subscribe(onNext: function)
@@ -82,7 +81,6 @@ public class RxSwiftObservableProperty<PropertyType>: ObservablePropertyType {
         let disposable = self._subject.subscribe(onNext: function)
         return DisposableWrapper(disposable: disposable, disposeFunction: onDisposed)
     }
-    
     
     /// - returns: Canonical interface for push style sequence
     public func asObservable() -> Observable<E> {

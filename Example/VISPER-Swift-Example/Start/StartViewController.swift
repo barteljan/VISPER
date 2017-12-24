@@ -8,10 +8,24 @@
 
 import UIKit
 
+
+
 class StartViewController: UIViewController {
 
     @IBOutlet weak var modalButton: UIButton!
     @IBOutlet weak var pushButton: UIButton!
+    
+    @IBOutlet weak var counterLabel: UILabel! {
+        didSet {
+            self.update()
+        }
+    }
+    
+    var state : StartViewState! {
+        didSet{
+            self.update()
+        }
+    }
     
     var modalButtonPressed : (() -> Void)?
     var pushedButtonPressed : (() -> Void)?
@@ -31,6 +45,13 @@ class StartViewController: UIViewController {
     @objc func onPush(){
         if let callback = self.pushedButtonPressed {
             callback()
+        }
+    }
+    
+    func update(){
+        if let state = self.state, let counterLabel = self.counterLabel {
+            let timesOpened = "Opend an other controller " + String(state.timesOpendAController) + " times"
+            counterLabel.text = timesOpened
         }
     }
 }
