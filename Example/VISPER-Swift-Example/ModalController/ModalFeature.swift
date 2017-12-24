@@ -33,16 +33,21 @@ public class ModalFeature: ViewFeature, PresenterFeature {
     
     public func makePresenters(routeResult: RouteResult, controller: UIViewController) throws -> [Presenter] {
         
-        let actionPresenter = FunctionalPresenter(isResponsibleCallback: { (routeResult, controller) -> Bool in
-            return routeResult.routePattern == self.routePattern
-        }) { (routeResult, controller) in
-            guard let controller = controller as? ModalViewController else {
-                fatalError("should use only a ModalViewController")
+        let actionPresenter = FunctionalPresenter(
+            
+            isResponsibleCallback: { (routeResult, controller) -> Bool in
+                return routeResult.routePattern == self.routePattern
+            },
+            
+            addPresentationLogic: { (routeResult, controller) in
+                guard let controller = controller as? ModalViewController else {
+                    fatalError("should use only a ModalViewController")
+                }
+                controller.exitCallBack = {
+                    controller.dismiss(animated: true, completion: nil)
+                }
             }
-            controller.exitCallBack = {
-                controller.dismiss(animated: true, completion: nil)
-            }
-        }
+        )
         
         return [actionPresenter]
     }

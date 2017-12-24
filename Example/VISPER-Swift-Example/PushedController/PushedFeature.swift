@@ -14,8 +14,6 @@ import VISPER_Presenter
 
 public class PushedFeature: ViewFeature, PresenterFeature {
    
-    
-    
     public var routePattern: String
     public var priority: Int = 0
     

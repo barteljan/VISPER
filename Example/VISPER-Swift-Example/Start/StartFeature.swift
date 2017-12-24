@@ -31,6 +31,7 @@ class StartFeature: ViewFeature,PresenterFeature, LogicFeature{
     
     let stateObservable : Observable<StartViewState>
     let actionDispatcher: ActionDispatcher
+    let disposeBag = DisposeBag()
     
     init(routePattern: String,
            wireframe: Wireframe,
@@ -49,9 +50,6 @@ class StartFeature: ViewFeature,PresenterFeature, LogicFeature{
     func makeController(routeResult: RouteResult) throws -> UIViewController {
         return StartViewController(nibName: "StartViewController", bundle: nil)
     }
-    
-    let disposeBag = DisposeBag()
-    
     
     func makePresenters(routeResult: RouteResult, controller: UIViewController) throws -> [Presenter] {
         
@@ -74,7 +72,6 @@ class StartFeature: ViewFeature,PresenterFeature, LogicFeature{
                controller.modalButtonPressed = {
                    try! self.wireframe.route(url: URL(string:"/modal/controller")!)
                    self.actionDispatcher.dispatch(IncrementTimesOpendAControllerAction())
-                
                }
                 
                controller.pushedButtonPressed = {
