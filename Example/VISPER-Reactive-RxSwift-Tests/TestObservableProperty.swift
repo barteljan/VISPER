@@ -24,7 +24,7 @@ class TestObservableProperty: XCTestCase {
         let firstState = TestState(title: "startingTitle")
         let stateToChange = TestState(title: "newTitle")
         
-        let property = DefaultObservableProperty(firstState)
+        let property = ObservableProperty(firstState)
         
         let observable = property.asObservable()
         
@@ -55,7 +55,7 @@ class TestObservableProperty: XCTestCase {
             let firstState = TestState(title: "startingTitle")
             let stateToChange = TestState(title: "newTitle")
             
-            let property = DefaultObservableProperty(firstState)
+            let property = ObservableProperty(firstState)
             
             let observable = property.asObservable()
             
@@ -74,36 +74,4 @@ class TestObservableProperty: XCTestCase {
         XCTAssertTrue(disposeCalled)
     }
     
-    
-    func testDisposedWithSubscriptionReferenceBag() {
-        
-        var disposeCalled = false
-        let dispose = { () -> Void in
-            disposeCalled = true
-        }
-        
-        autoreleasepool {
-            
-            let disposeBag = DisposeBag()
-            
-            let firstState = TestState(title: "startingTitle")
-            let stateToChange = TestState(title: "newTitle")
-            
-            let property = DefaultObservableProperty(firstState)
-                
-            let observable = property.asObservable()
-            var count = 0
-            
-            observable.subscribe(onNext: { (state) in
-                count += 1
-                print("\(count) \(state)")
-                XCTAssertEqual(state.title, stateToChange.title)
-            }, onDisposed: dispose).disposed(by: disposeBag)
-
-            property.value = stateToChange
-            XCTAssertEqual(count,1)
-        }
-        
-        XCTAssertTrue(disposeCalled)
-    }
 }

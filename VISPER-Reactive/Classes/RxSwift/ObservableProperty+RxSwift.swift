@@ -1,5 +1,5 @@
 //
-//  DefaultObservableProperty+RxSwift.swift
+//  ObservableProperty+RxSwift.swift
 //  JLRoutes
 //
 //  Created by bartel on 25.12.17.
@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import VISPER_Core
 
-public extension DefaultObservableProperty {
+public extension ObservableProperty {
     
     public func asObservable() -> Observable<ValueType> {
         

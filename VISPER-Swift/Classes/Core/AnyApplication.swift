@@ -15,7 +15,7 @@ class _AnyApplication<AppState> : ApplicationType{
 
     typealias ApplicationState = AppState
     
-    var state: DefaultObservableProperty<AppState> {
+    var state: ObservableProperty<AppState> {
         fatalError("override me")
     }
     
@@ -48,7 +48,7 @@ final class _AnyApplicationBox<Base: ApplicationType>: _AnyApplication<Base.Appl
     
     init(_ base: Base) { self.base = base }
     
-    override var state: DefaultObservableProperty<Base.ApplicationState> {
+    override var state: ObservableProperty<Base.ApplicationState> {
         return self.base.state
     }
     
@@ -88,7 +88,7 @@ open class AnyApplication<AppState> : ApplicationType {
         box = _AnyApplicationBox(base)
     }
     
-    open var state: DefaultObservableProperty<AppState> {
+    open var state: ObservableProperty<AppState> {
         return self.box.state
     }
     

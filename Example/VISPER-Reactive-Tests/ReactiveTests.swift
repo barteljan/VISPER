@@ -26,7 +26,7 @@ class ReactiveTests: XCTestCase {
     func testObservablePropertySendsNewValues() {
         let values = (10, 20, 30)
         var receivedValue: Int?
-        let property = DefaultObservableProperty(values.0)
+        let property = ObservableProperty(values.0)
         property.subscribe {
             receivedValue = $0
         }
@@ -40,7 +40,7 @@ class ReactiveTests: XCTestCase {
     func testObservablePropertyMapsValues() {
         let values = (10, 20, 30)
         var receivedValue: Int?
-        let property = DefaultObservableProperty(values.0)
+        let property = ObservableProperty(values.0)
         property.map { $0 * 10 }.subscribe {
             receivedValue = $0
         }
@@ -55,7 +55,7 @@ class ReactiveTests: XCTestCase {
         let values = [10, 10, 20, 20, 30, 30, 30]
         var lastReceivedValue: Int?
         var receivedValues: [Int] = []
-        let property = DefaultObservableProperty(10)
+        let property = ObservableProperty(10)
         property.distinct().subscribe {
             XCTAssertNotEqual(lastReceivedValue, $0)
             lastReceivedValue = $0
@@ -66,7 +66,7 @@ class ReactiveTests: XCTestCase {
     }
 
     func testObservablePropertyDisposesOfReferences() {
-        let property = DefaultObservableProperty(())
+        let property = ObservableProperty(())
         let reference = property.subscribe({})
         XCTAssertEqual(property.subscriptions.count, 1)
         reference?.dispose()
@@ -74,7 +74,7 @@ class ReactiveTests: XCTestCase {
     }
 
     func testSubscriptionBagDisposesOfReferences() {
-        let property = DefaultObservableProperty(()).deliveredOn(DispatchQueue.global())
+        let property = ObservableProperty(()).deliveredOn(DispatchQueue.global())
         let bag = SubscriptionReferenceBag(property.subscribe({}))
         bag += property.subscribe({})
         XCTAssertEqual(property.subscriptions.count, 2)
@@ -83,7 +83,7 @@ class ReactiveTests: XCTestCase {
     }
 
     func testThatDisposingOfAReferenceTwiceIsOkay() {
-        let property = DefaultObservableProperty(())
+        let property = ObservableProperty(())
         let reference = property.subscribe({})
         reference?.dispose()
         reference?.dispose()

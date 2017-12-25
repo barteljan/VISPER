@@ -28,14 +28,14 @@ class StartFeature: ViewFeature,PresenterFeature, LogicFeature{
     let routePattern: String
     let wireframe : Wireframe
 
-    let stateObservableProperty: DefaultObservableProperty<StartViewState>
+    let stateObservableProperty: ObservableProperty<StartViewState>
     
     let actionDispatcher: ActionDispatcher
     let disposeBag = SubscriptionReferenceBag()
     
     init(routePattern: String,
            wireframe: Wireframe,
-stateObservableProperty: DefaultObservableProperty<StartViewState>,
+stateObservableProperty: ObservableProperty<StartViewState>,
     actionDispatcher: ActionDispatcher) {
         self.routePattern = routePattern
         self.wireframe = wireframe

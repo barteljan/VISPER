@@ -8,8 +8,6 @@
 import Foundation
 import VISPER_Core
 
-
-//open class Redux<AppState,DisposableType: SubscriptionReferenceType> {
 open class Redux<State> {
     
     open let store : Store<State>

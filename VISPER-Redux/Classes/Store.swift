@@ -14,7 +14,7 @@ open class Store<State> : ActionDispatcher {
     public typealias StoreMiddleware = Middleware<State>
     public typealias StoreReducer = AppReducer<State>
     
-    open private(set) var observable: DefaultObservableProperty<State>
+    open private(set) var observable: ObservableProperty<State>
     private let middleware: StoreMiddleware
     private let appReducer: StoreReducer
     private let reducerProvider: ReducerProvider
@@ -27,7 +27,7 @@ open class Store<State> : ActionDispatcher {
         
         self.appReducer = appReducer
         
-        let observableProperty = DefaultObservableProperty(intialState)
+        let observableProperty = ObservableProperty(intialState)
         self.observable = observableProperty
         self.middleware = middleware
         self.reducerProvider = reducerProvider

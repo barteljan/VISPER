@@ -15,7 +15,7 @@ import VISPER_Reactive
 /// A SwiftyVisper application, containing all dependencies which should be configured by features
 open class Application<AppState> : ApplicationType {
     
-    public typealias ApplicationObservableProperty = DefaultObservableProperty<AppState>
+    public typealias ApplicationObservableProperty = ObservableProperty<AppState>
     
     public init(redux: Redux<AppState>,
           wireframe: Wireframe,
@@ -27,7 +27,7 @@ controllerContainer: ControllerContainer){
     }
     
     /// observable app state property
-    open var state: DefaultObservableProperty<AppState> {
+    open var state: ObservableProperty<AppState> {
         return redux.store.observable
     }
     

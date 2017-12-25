@@ -19,7 +19,7 @@ public protocol ApplicationType {
     associatedtype ApplicationState
     
     /// observable app state property
-    var state: DefaultObservableProperty<ApplicationState> {get}
+    var state: ObservableProperty<ApplicationState> {get}
     
     /// the wireframe responsible for routing between your view controllers
     var wireframe: Wireframe {get}
