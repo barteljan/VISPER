@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func addFeatures(){
         
-        let appStateObservable = self.visperApplication.redux.store.observable.asObservable()
+        let appStateObservable = self.visperApplication.redux.store.observableState.asObservable()
         
         let startViewStateObservable = appStateObservable.map { (appstate) -> StartViewState in
             return appstate.startViewState

@@ -14,7 +14,7 @@ open class Store<State> : ActionDispatcher {
     public typealias StoreMiddleware = Middleware<State>
     public typealias StoreReducer = AppReducer<State>
     
-    open private(set) var observable: ObservableProperty<State>
+    open private(set) var observableState: ObservableProperty<State>
     private let middleware: StoreMiddleware
     private let appReducer: StoreReducer
     private let reducerProvider: ReducerProvider
@@ -28,7 +28,7 @@ open class Store<State> : ActionDispatcher {
         self.appReducer = appReducer
         
         let observableProperty = ObservableProperty(intialState)
-        self.observable = observableProperty
+        self.observableState = observableProperty
         self.middleware = middleware
         self.reducerProvider = reducerProvider
     }
@@ -38,8 +38,8 @@ open class Store<State> : ActionDispatcher {
             let dispatchFunction: (Action...) -> Void = { [weak self] (actions: Action...) in
                 actions.forEach { self?.dispatch($0) }
             }
-            middleware.transform({ self.observable.value }, dispatchFunction, action).forEach { action in
-                observable.value = appReducer(self.reducerProvider,action, observable.value)
+            middleware.transform({ self.observableState.value }, dispatchFunction, action).forEach { action in
+                observableState.value = appReducer(self.reducerProvider,action, observableState.value)
             }
         }
     }

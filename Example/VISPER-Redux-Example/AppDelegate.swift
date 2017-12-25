@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = controller
         
         //register the callback to update your vc
-        let subscription = self.redux.store.observable.subscribe { appState in
+        let subscription = self.redux.store.observableState.subscribe { appState in
             controller.state = appState.counterState
         }
         self.disposeBag.addReference(reference: subscription)

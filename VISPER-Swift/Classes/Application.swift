@@ -28,7 +28,7 @@ controllerContainer: ControllerContainer){
     
     /// observable app state property
     open var state: ObservableProperty<AppState> {
-        return redux.store.observable
+        return redux.store.observableState
     }
     
     /// the wireframe responsible for routing between your view controllers

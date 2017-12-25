@@ -47,7 +47,7 @@ class TestStore: XCTestCase {
                           reducerProvider: reducerProvider)
         
         store.dispatch(newTitleAction)
-        let newState = store.observable.value
+        let newState = store.observableState.value
         XCTAssert(newState.title == newTitleAction.newTitle)
         
         
@@ -102,7 +102,7 @@ class TestStore: XCTestCase {
                           reducerProvider: ReducerProvider)
         
         store.dispatch(newTitleAction)
-        let newState = store.observable.value
+        let newState = store.observableState.value
         XCTAssert(newState.title == "DerStateIstNeu")
         
         
