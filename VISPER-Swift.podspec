@@ -19,16 +19,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '8.0'
 
   s.dependency 'VISPER-Wireframe'
-  s.default_subspec = 'Standard'
+  s.dependency 'VISPER-Redux'
 
-  s.subspec 'Standard' do |standard|
-    standard.source_files = 'VISPER-Swift/Classes/Core/*','VISPER-Swift/Classes/Standard/*'
-    standard.dependency 'VISPER-Redux/Standard'
-  end
-
-  s.subspec 'RxSwift' do |rxswift|
-    rxswift.source_files = 'VISPER-Swift/Classes/Core/*','VISPER-Swift/Classes/Standard/*','VISPER-Swift/Classes/RxSwift/*'
-    rxswift.dependency 'VISPER-Redux/RxSwift'
-  end
-
+  s.source_files = 'VISPER-Swift/Classes/*.swift'
 end

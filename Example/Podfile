@@ -34,13 +34,13 @@ target 'VISPER-Swift-Example' do
 end
 
 target 'VISPER-Swift-RxSwift-Example' do
-    pod 'VISPER-Swift/RxSwift', :path => '../'
+    pod 'VISPER-Swift', :path => '../'
     pod 'VISPER-Wireframe', :path => '../'
     pod 'VISPER-Core', :path => '../'
     pod 'VISPER-UIViewController', :path => '../'
     pod 'VISPER-Objc', :path => '../'
     pod 'VISPER-Redux', :path => '../'
-    pod 'VISPER-Reactive', :path => '../'
+    pod 'VISPER-Reactive/RxSwift', :path => '../'
     pod 'VISPER-Presenter', :path => '../'
 end
 
