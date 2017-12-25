@@ -12,16 +12,14 @@ import VISPER_Wireframe
 import VISPER_UIViewController
 import VISPER_Redux
 
-open class DefaultApplicationFactory<AppState>: ApplicationFactory<AppState,DefaultObservableProperty<AppState>> {
+open class DefaultApplicationFactory<AppState>: ApplicationFactory<AppState> {
     
      open func makeApplication(_ initialState: AppState,
                                    appReducer: @escaping (ReducerProvider, Action, AppState) -> AppState,
                                     wireframe: Wireframe = DefaultWireframe(),
-                          controllerContainer: ControllerContainer = DefaultControllerContainer()) -> DefaultApplication<AppState> {
+                          controllerContainer: ControllerContainer = DefaultControllerContainer()) -> AnyApplication<AppState> {
         
-        let observableProperty = DefaultObservableProperty(initialState)
-        
-        return super.makeApplication(initialState: observableProperty,
+        return super.makeApplication(initialState: initialState,
                                        appReducer: appReducer,
                                         wireframe: wireframe,
                               controllerContainer: controllerContainer)

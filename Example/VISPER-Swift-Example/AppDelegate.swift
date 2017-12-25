@@ -16,7 +16,7 @@ import VISPER_Redux
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var visperApplication: DefaultApplication<AppState>!
+    var visperApplication: AnyApplication<AppState>!
     var disposeBag = SubscriptionReferenceBag()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func makeVISPERApplication() -> DefaultApplication<AppState>!{
+    func makeVISPERApplication() -> AnyApplication<AppState>!{
         
         let appState = AppState(startViewState: StartViewState(timesOpendAController: 0))
         
@@ -54,9 +54,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         
-        let applicationFactory = DefaultApplicationFactory<AppState>()
+        let applicationFactory = ApplicationFactory<AppState>()
         
-        let visperApplication = applicationFactory.makeApplication(appState, appReducer: appReducer)
+        let visperApplication = applicationFactory.makeApplication(initialState: appState,
+                                                                     appReducer: appReducer)
         
         return visperApplication
     }

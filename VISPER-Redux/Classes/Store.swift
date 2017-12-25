@@ -7,25 +7,28 @@
 
 import Foundation
 import VISPER_Core
+import VISPER_Reactive
 
-open class Store<ObservableProperty: ObservablePropertyType> : ActionDispatcher {
+open class Store<State> : ActionDispatcher {
     
-    public typealias StoreMiddleware = Middleware<ObservableProperty.ValueType>
-    public typealias StoreReducer = AppReducer<ObservableProperty.ValueType>
+    public typealias StoreMiddleware = Middleware<State>
+    public typealias StoreReducer = AppReducer<State>
     
-    open private(set) var observable: ObservableProperty
+    open private(set) var observable: DefaultObservableProperty<State>
     private let middleware: StoreMiddleware
     private let appReducer: StoreReducer
     private let reducerProvider: ReducerProvider
     private let disposeBag = SubscriptionReferenceBag()
     
     public init(appReducer: @escaping StoreReducer,
-                 observable: ObservableProperty,
-            reducerProvider: ReducerProvider,
-                 middleware: StoreMiddleware = Middleware()) {
+               intialState: State,
+           reducerProvider: ReducerProvider,
+                middleware: StoreMiddleware = Middleware()) {
         
         self.appReducer = appReducer
-        self.observable = observable
+        
+        let observableProperty = DefaultObservableProperty(intialState)
+        self.observable = observableProperty
         self.middleware = middleware
         self.reducerProvider = reducerProvider
     }

@@ -10,13 +10,14 @@ import VISPER_Redux
 import VISPER_Core
 import VISPER_Wireframe
 import VISPER_UIViewController
+import VISPER_Reactive
 
 /// A SwiftyVisper application, containing all dependencies which should be configured by features
-open class Application<ObservableProperty: ObservablePropertyType> : ApplicationType {
+open class Application<AppState> : ApplicationType {
     
-    public typealias ApplicationObservableProperty = ObservableProperty
+    public typealias ApplicationObservableProperty = DefaultObservableProperty<AppState>
     
-    public init(redux: Redux<ObservableProperty>,
+    public init(redux: Redux<AppState>,
           wireframe: Wireframe,
 controllerContainer: ControllerContainer){
         self.wireframe = wireframe
@@ -26,7 +27,7 @@ controllerContainer: ControllerContainer){
     }
     
     /// observable app state property
-    open var state: ObservableProperty {
+    open var state: DefaultObservableProperty<AppState> {
         return redux.store.observable
     }
     
@@ -34,11 +35,11 @@ controllerContainer: ControllerContainer){
     public let wireframe: Wireframe
     
     //redux architecture of your project
-    public let redux: Redux<ObservableProperty>
+    public let redux: Redux<AppState>
     
     public let controllerContainer: ControllerContainer
     
-    internal var featureObserver: [AnyFeatureObserver<ObservableProperty>] = [AnyFeatureObserver<ObservableProperty>]()
+    internal var featureObserver: [AnyFeatureObserver<AppState>] = [AnyFeatureObserver<AppState>]()
     
     /// Add a feature to your application
     ///
@@ -60,8 +61,8 @@ controllerContainer: ControllerContainer){
     /// Have look at LogicFeature and LogicFeatureObserver for an example.
     ///
     /// - Parameter featureObserver: an object observing feature addition
-    open func add<T : FeatureObserverType>(featureObserver: T) where T.ObservableProperty == ObservableProperty{
-        let anyObserver = AnyFeatureObserver<ObservableProperty>(featureObserver)
+    open func add<T : FeatureObserverType>(featureObserver: T) where T.AppState == AppState{
+        let anyObserver = AnyFeatureObserver<AppState>(featureObserver)
         self.featureObserver.append(anyObserver)
     }
     

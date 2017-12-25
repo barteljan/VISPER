@@ -15,7 +15,7 @@ import VISPER_Core
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window : UIWindow?
-    var redux  : DefaultRedux<AppState>!
+    var redux  : Redux<AppState>!
     
     var disposeBag = SubscriptionReferenceBag()
     
@@ -38,12 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             )
         }
         
-        let observableProperty = DefaultObservableProperty(initialState)
-        
         // create a Redux-Container (to have all components on one place)
-        self.redux = DefaultRedux<AppState>(   appReducer: appReducer,
-                                             initialState: observableProperty,
-                                               middleware: middleware)
+        self.redux = Redux<AppState>(   appReducer: appReducer,
+                                      initialState: initialState,
+                                        middleware: middleware)
         
         // add your reducers
         self.redux.reducerContainer.addReduceFunction(reduceFunction: incrementReducer)

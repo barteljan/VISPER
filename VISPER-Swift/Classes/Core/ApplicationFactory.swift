@@ -12,14 +12,14 @@ import VISPER_Wireframe
 import VISPER_UIViewController
 
 /// a factory to create a default SwiftyVISPER application
-open class ApplicationFactory<AppState,ObservableProperty: ObservablePropertyType> where ObservableProperty.ValueType == AppState {
+open class ApplicationFactory<AppState> {
     
     public init(){}
     
     /// create a default application
-    open func makeApplication(  redux: Redux<ObservableProperty>,
+    open func makeApplication(  redux: Redux<AppState>,
                            wireframe: Wireframe,
-                 controllerContainer: ControllerContainer) -> AnyApplication<ObservableProperty> {
+                 controllerContainer: ControllerContainer) -> AnyApplication<AppState> {
         
         let application = Application(redux: redux,
                                 wireframe: wireframe,
@@ -31,11 +31,11 @@ open class ApplicationFactory<AppState,ObservableProperty: ObservablePropertyTyp
     }
     
     /// create a default application
-    open func makeApplication(initialState: ObservableProperty,
+    open func makeApplication(initialState: AppState,
                                 appReducer: @escaping AppReducer<AppState>,
                                  wireframe: Wireframe = DefaultWireframe(),
                        controllerContainer: ControllerContainer = DefaultControllerContainer()
-        ) -> AnyApplication<ObservableProperty>{
+        ) -> AnyApplication<AppState>{
 
         let redux = Redux( appReducer: appReducer,
                          initialState: initialState)
@@ -46,25 +46,25 @@ open class ApplicationFactory<AppState,ObservableProperty: ObservablePropertyTyp
     }
     
     /// configure an application
-    open func configure(application: AnyApplication<ObservableProperty>,
+    open func configure(application: AnyApplication<AppState>,
                controllerContainer: ControllerContainer) {
         self.addDefaultFeatureObserver(application: application, controllerContainer: controllerContainer)
         self.addDefaultRoutingPresenters(application: application, controllerContainer: controllerContainer)
     }
     
-    open func addDefaultFeatureObserver(application: AnyApplication<ObservableProperty>,
+    open func addDefaultFeatureObserver(application: AnyApplication<AppState>,
                                controllerContainer: ControllerContainer){
-        let viewFeatureObserver = ViewFeatureObserver<ObservableProperty>()
+        let viewFeatureObserver = ViewFeatureObserver<AppState>()
         application.add(featureObserver: viewFeatureObserver)
         
-        let presenterFeatureObserver = PresenterFeatureObserver<ObservableProperty>()
+        let presenterFeatureObserver = PresenterFeatureObserver<AppState>()
         application.add(featureObserver: presenterFeatureObserver)
         
-        let logicFeatureObserver = LogicFeatureObserver<ObservableProperty>()
+        let logicFeatureObserver = LogicFeatureObserver<AppState>()
         application.add(featureObserver: logicFeatureObserver)
     }
     
-    open func addDefaultRoutingPresenters(application: AnyApplication<ObservableProperty>,
+    open func addDefaultRoutingPresenters(application: AnyApplication<AppState>,
                                  controllerContainer: ControllerContainer) {
         
         let modalRoutingPresenter = ModalRoutingPresenter(controllerContainer: controllerContainer)

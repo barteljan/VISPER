@@ -17,7 +17,7 @@ import RxSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var visperApplication: RxSwiftApplication<AppState>!
+    var visperApplication: AnyApplication<AppState>!
     var disposeBag = DisposeBag()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func makeVISPERApplication() -> RxSwiftApplication<AppState>!{
+    func makeVISPERApplication() -> AnyApplication<AppState>!{
         
         let appState = AppState(startViewState: StartViewState(timesOpendAController: 0))
         
@@ -51,11 +51,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return AppState(startViewState: reducerProvider.reduce(action: action, state: state.startViewState))
         }
         
-        let applicationFactory = RxSwiftApplicationFactory<AppState>()
+        let applicationFactory = ApplicationFactory<AppState>()
         
-        let visperApplication = applicationFactory.makeApplication(appState, appReducer: appReducer)
+        let application = applicationFactory.makeApplication(initialState: appState,
+                                                               appReducer: appReducer)
         
-        return visperApplication
+        return application
     }
     
     func addFeatures(){

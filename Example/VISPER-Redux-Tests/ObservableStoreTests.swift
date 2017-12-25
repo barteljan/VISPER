@@ -22,7 +22,7 @@ class ObservableStoreTests: XCTestCase {
         autoreleasepool {
             let container = MockReducerContainer()
             _ = DeInitStore( appReducer: {container,action,store in return store },
-                            observable: DefaultObservableProperty(TestState(title: "test")),
+                             intialState: TestState(title: "test"),
                             reducerProvider: container,
                             deInitAction: { deInitCount += 1 })
         }
@@ -33,7 +33,7 @@ class ObservableStoreTests: XCTestCase {
 }
 
 // Used for deinitialization test
-class DeInitStore<State>: Store<DefaultObservableProperty<State>> {
+class DeInitStore<State>: Store<State> {
     var deInitAction: (() -> Void)?
     
     deinit {
@@ -41,15 +41,16 @@ class DeInitStore<State>: Store<DefaultObservableProperty<State>> {
     }
     
     
-    public required init(appReducer: @escaping StoreReducer,
-                         observable: DefaultObservableProperty<State>,
-                         reducerProvider: ReducerProvider,
-                         middleware: StoreMiddleware = Middleware(),
+    public required init( appReducer: @escaping StoreReducer,
+                         intialState: State,
+                     reducerProvider: ReducerProvider,
+                          middleware: StoreMiddleware = Middleware(),
                          deInitAction: @escaping () -> Void) {
         
         super.init(appReducer: appReducer,
-                    observable: observable,
-              reducerProvider: reducerProvider)
+                  intialState: intialState,
+              reducerProvider: reducerProvider,
+                   middleware: middleware)
         self.deInitAction = deInitAction
     }
 

@@ -10,9 +10,9 @@ import VISPER_Core
 
 
 //open class Redux<AppState,DisposableType: SubscriptionReferenceType> {
-open class Redux<ObservableProperty: ObservablePropertyType> {
+open class Redux<State> {
     
-    open let store : Store<ObservableProperty>
+    open let store : Store<State>
     
     open let reducerContainer : ReducerContainer
     
@@ -28,11 +28,11 @@ open class Redux<ObservableProperty: ObservablePropertyType> {
         }
     }
     
-    public convenience init(initialState: ObservableProperty,
-                middleware: Middleware<ObservableProperty.ValueType> = Middleware<ObservableProperty.ValueType>(),
+    public convenience init(initialState: State,
+                middleware: Middleware<State> = Middleware<State>(),
                 reducerContainer: ReducerContainer = ReducerContainerImpl()){
         
-        let appReducer : AppReducer<ObservableProperty.ValueType> = {(provider, action, state) in
+        let appReducer : AppReducer<State> = {(provider, action, state) in
             return provider.reduce(action: action, state: state)
         }
         
@@ -42,14 +42,14 @@ open class Redux<ObservableProperty: ObservablePropertyType> {
                 reducerContainer: reducerContainer)
     }
     
-    public init(appReducer: @escaping AppReducer<ObservableProperty.ValueType>,
-               initialState: ObservableProperty,
-                 middleware: Middleware<ObservableProperty.ValueType> = Middleware<ObservableProperty.ValueType>(),
+    public init(appReducer: @escaping AppReducer<State>,
+               initialState: State,
+                 middleware: Middleware<State> = Middleware<State>(),
                  reducerContainer: ReducerContainer = ReducerContainerImpl()){
         
         self.reducerContainer = reducerContainer
         self.store = Store(appReducer: appReducer,
-                            observable: initialState,
+                           intialState: initialState,
                        reducerProvider: reducerContainer,
                             middleware: middleware)
     }

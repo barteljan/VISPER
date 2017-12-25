@@ -8,13 +8,13 @@ import Foundation
 import VISPER_Core
 
 /// Add this FeatureObserver to your Application to configure your wireframe for ViewFeatures
-public struct ViewFeatureObserver<ObservableStateProperty: ObservablePropertyType> : FeatureObserverType {
+public struct ViewFeatureObserver<ApplicationState> : FeatureObserverType {
     
-    public typealias ObservableProperty = ObservableStateProperty
+    public typealias AppState = ApplicationState
     
     public init() {}
     
-    public func featureAdded(application: Application<ObservableProperty>,feature: Feature) throws {
+    public func featureAdded(application: Application<AppState>,feature: Feature) throws {
         
         if let feature = feature as? ViewFeature {
             application.wireframe.add(controllerProvider: feature, priority: feature.priority)

@@ -10,21 +10,22 @@ import UIKit
 import VISPER_Redux
 import VISPER_Core
 import VISPER_UIViewController
+import VISPER_Reactive
 
 
 /// A SwiftyVisper application type, containing all dependencies which should be configured by features
 public protocol ApplicationType {
     
-    associatedtype ApplicationObservableProperty: ObservablePropertyType
+    associatedtype ApplicationState
     
     /// observable app state property
-    var state: ApplicationObservableProperty {get}
+    var state: DefaultObservableProperty<ApplicationState> {get}
     
     /// the wireframe responsible for routing between your view controllers
     var wireframe: Wireframe {get}
     
     //redux architecture of your project
-    var redux : Redux<ApplicationObservableProperty> {get}
+    var redux : Redux<ApplicationState> {get}
     
     /// Add a feature to your application
     ///
@@ -40,7 +41,7 @@ public protocol ApplicationType {
     /// Have look at LogicFeature and LogicFeatureObserver for an example.
     ///
     /// - Parameter featureObserver: an object observing feature addition
-    func add<T : FeatureObserverType>(featureObserver: T) where T.ObservableProperty == ApplicationObservableProperty
+    func add<T : FeatureObserverType>(featureObserver: T) where T.AppState == ApplicationState
     
     
     /// Add a controller that can be used to navigate in your app.

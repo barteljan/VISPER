@@ -17,8 +17,6 @@ struct TestState {
 
 class TestObservableProperty: XCTestCase {
     
-   
-    
     func testAsObservable() {
         
         let disposeBag = DisposeBag()
@@ -26,7 +24,7 @@ class TestObservableProperty: XCTestCase {
         let firstState = TestState(title: "startingTitle")
         let stateToChange = TestState(title: "newTitle")
         
-        let property = RxSwiftObservableProperty(firstState)
+        let property = DefaultObservableProperty(firstState)
         
         let observable = property.asObservable()
         
@@ -57,7 +55,7 @@ class TestObservableProperty: XCTestCase {
             let firstState = TestState(title: "startingTitle")
             let stateToChange = TestState(title: "newTitle")
             
-            let property = RxSwiftObservableProperty(firstState)
+            let property = DefaultObservableProperty(firstState)
             
             let observable = property.asObservable()
             
@@ -86,22 +84,22 @@ class TestObservableProperty: XCTestCase {
         
         autoreleasepool {
             
-            let disposeBag = SubscriptionReferenceBag()
+            let disposeBag = DisposeBag()
             
             let firstState = TestState(title: "startingTitle")
             let stateToChange = TestState(title: "newTitle")
             
-            let property = RxSwiftObservableProperty(firstState)
+            let property = DefaultObservableProperty(firstState)
+                
+            let observable = property.asObservable()
             var count = 0
-            let subscription = property.subscribe({ (state) in
+            
+            observable.subscribe(onNext: { (state) in
                 count += 1
                 print("\(count) \(state)")
                 XCTAssertEqual(state.title, stateToChange.title)
-                
-            }, onDisposed:dispose)
-            
-            disposeBag.addReference(reference: subscription)
-            
+            }, onDisposed: dispose).disposed(by: disposeBag)
+
             property.value = stateToChange
             XCTAssertEqual(count,1)
         }
