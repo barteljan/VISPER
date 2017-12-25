@@ -12,7 +12,7 @@ import VISPER_Wireframe
 import VISPER_UIViewController
 
 /// a factory to create a default SwiftyVISPER application
-public class ApplicationFactory<AppState,ObservableProperty: ObservablePropertyType> where ObservableProperty.ValueType == AppState {
+open class ApplicationFactory<AppState,ObservableProperty: ObservablePropertyType> where ObservableProperty.ValueType == AppState {
     
     public init(){}
     

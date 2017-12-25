@@ -15,7 +15,7 @@ PODS:
     - VISPER-Core
     - VISPER-Reactive/Standard (= 0.1.2)
   - VISPER-Reactive/RxSwift (0.1.2):
-    - RxSwift (~> 4.0.0)
+    - RxSwift (~> 4.0)
     - VISPER-Core
   - VISPER-Reactive/Standard (0.1.2):
     - VISPER-Core
@@ -88,9 +88,9 @@ SPEC CHECKSUMS:
   VISPER-Core: e7283fd202158e9d77ea0382b7079ea8d7b4bc0b
   VISPER-Objc: 58cc6f24182dd2f31cbd70be37786b1c2ed8f819
   VISPER-Presenter: 65f484081c39b3ec509efc5785057010c731cbd0
-  VISPER-Reactive: f577ac18b77a2f1827aaf749db857a456b24ad9e
-  VISPER-Redux: ac518cab1193b1d30b5b9006029f1a791d520dc5
-  VISPER-Swift: 34fa23f9557b3aea2dbc85ade3f5d5b95e34d116
+  VISPER-Reactive: 9542e2cf368da1da04b8d2cdbdda32b0be02c617
+  VISPER-Redux: 099bc91e0a01b2fa24a5410e199c01061e7a8863
+  VISPER-Swift: 4c8d4e9203edefb753ce9f3d00c53fc4eb023b75
   VISPER-UIViewController: 4bf805f054b3c8125a90fcb7da401112b4c849d8
   VISPER-Wireframe: 137883de5da1f9fa7c3faaed7cf757d90929ef13
 

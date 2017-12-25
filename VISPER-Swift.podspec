@@ -22,12 +22,12 @@ TODO: Add long description of the pod here.
   s.default_subspec = 'Standard'
 
   s.subspec 'Standard' do |standard|
-    standard.source_files = 'VISPER-Swift/Classes/**/*'
+    standard.source_files = 'VISPER-Swift/Classes/Core/*','VISPER-Swift/Classes/Standard/*'
     standard.dependency 'VISPER-Redux/Standard'
   end
 
   s.subspec 'RxSwift' do |rxswift|
-    rxswift.source_files = 'VISPER-Swift/Classes/**/*'
+    rxswift.source_files = 'VISPER-Swift/Classes/Core/*','VISPER-Swift/Classes/Standard/*','VISPER-Swift/Classes/RxSwift/*'
     rxswift.dependency 'VISPER-Redux/RxSwift'
   end
 

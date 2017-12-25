@@ -16,7 +16,7 @@ import VISPER_Redux
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var visperApplication: AnyApplication<DefaultObservableProperty<AppState>>!
+    var visperApplication: DefaultApplication<AppState>!
     var disposeBag = SubscriptionReferenceBag()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -42,18 +42,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func makeVISPERApplication() -> AnyApplication<DefaultObservableProperty<AppState>>!{
+    func makeVISPERApplication() -> DefaultApplication<AppState>!{
         
         let appState = AppState(startViewState: StartViewState(timesOpendAController: 0))
-        let initialState = DefaultObservableProperty<AppState>(appState)
         
-        let appReducer: AppReducer<AppState> = { (reducerProvider:ReducerProvider, action: Action, state: AppState) -> AppState in
+        let appReducer: AppReducer<AppState> = { (reducerProvider: ReducerProvider,
+                                                           action: Action,
+                                                            state: AppState) -> AppState in
+            
             return AppState(startViewState: reducerProvider.reduce(action: action, state: state.startViewState))
+            
         }
         
-        let applicationFactory = ApplicationFactory<AppState,DefaultObservableProperty<AppState>>()
+        let applicationFactory = DefaultApplicationFactory<AppState>()
         
-        let visperApplication = applicationFactory.makeApplication(initialState: initialState, appReducer: appReducer)
+        let visperApplication = applicationFactory.makeApplication(appState, appReducer: appReducer)
         
         return visperApplication
     }
