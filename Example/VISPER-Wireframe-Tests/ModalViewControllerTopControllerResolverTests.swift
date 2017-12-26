@@ -79,7 +79,6 @@ class ModalViewControllerTopControllerResolverTests: XCTestCase {
         let topController = topControllerResolver.topController(of: controller)
         
         XCTAssertEqual(topController, controller)
-        
     }
     
 }
