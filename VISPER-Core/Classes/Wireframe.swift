@@ -9,6 +9,9 @@ import Foundation
 
 public protocol Wireframe {
     
+    /// The top view controller currently used in your application
+    var topViewController: UIViewController?{get}
+    
     /// Check if a route pattern matching this url was added to the wireframe.
     /// Be careful, if you don't route to a handler (but to a controller),
     /// it's possible that no ControllerProvider or RoutingOptionProvider for this controller exists.
@@ -97,7 +100,15 @@ public protocol Wireframe {
     /// - Parameters:
     ///    - routingPresenter: An instance responsible for presenting view controllers
     ///    - priority: The priority for calling your provider, higher priorities are called first. (Defaults to 0)
-     func add(routingPresenter: RoutingPresenter,priority: Int)
+    func add(routingPresenter: RoutingPresenter,priority: Int)
+    
+    
+    /// Add a instance responsible for finding the top view controller on an other vc
+    ///
+    /// - Parameters:
+    ///   - topControllerResolver: instance responsible for finding the top view controller on an other vc
+    ///   - priority: The priority for calling your provider, higher priorities are called first. (Defaults to 0)
+    func add(topControllerResolver: TopControllerResolver, priority: Int)
 }
 
 public extension Wireframe {

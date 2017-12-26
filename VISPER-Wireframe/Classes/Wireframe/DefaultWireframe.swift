@@ -31,6 +31,21 @@ open class DefaultWireframe : Wireframe {
     let routingHandlerContainer: RoutingHandlerContainer
     let composedRoutingObserver: ComposedRoutingObserver
     let routeResultHandler: RouteResultHandler
+    let topControllerResolver: ComposedTopControllerResolver
+    
+    /// The top view controller currently used in your application
+    open var topViewController: UIViewController? {
+        
+        guard let controller = UIApplication.shared.keyWindow?.rootViewController else {
+            return nil
+        }
+        
+        guard self.topControllerResolver.isResponsible(controller: controller) else {
+            return nil
+        }
+        
+        return self.topControllerResolver.topController(of: controller)
+    }
     
     //MARK: Initializer
     public init(       router : Router = DefaultRouter(),
@@ -41,7 +56,8 @@ open class DefaultWireframe : Wireframe {
       composedRoutingPresenter: ComposedRoutingPresenter = DefaultComposedRoutingPresenter(),
                routingDelegate: RoutingDelegate = DefaultRoutingDelegate(),
        composedRoutingObserver: ComposedRoutingObserver = DefaultComposedRoutingObserver(),
-            routeResultHandler: RouteResultHandler = DefaultRouteResultHandler()
+            routeResultHandler: RouteResultHandler = DefaultRouteResultHandler(),
+            topControllerResolver: ComposedTopControllerResolver = DefaultComposedTopControllerResolver()
       ){
         
         self.routingHandlerContainer = routingHandlerContainer
@@ -53,6 +69,7 @@ open class DefaultWireframe : Wireframe {
         self.composedRoutingObserver = composedRoutingObserver
         self.routeResultHandler = routeResultHandler
         self.router = router
+        self.topControllerResolver = topControllerResolver
     }
     
     //MARK: route
@@ -205,6 +222,16 @@ open class DefaultWireframe : Wireframe {
         self.composedRoutingPresenter.add(routingPresenter: routingPresenter, priority: priority)
     }
     
+    
+    
+    /// Add a instance responsible for finding the top view controller on an other vc
+    ///
+    /// - Parameters:
+    ///   - topControllerResolver: instance responsible for finding the top view controller on an other vc
+    ///   - priority: The priority for calling your provider, higher priorities are called first. (Defaults to 0)
+    open func add(topControllerResolver: TopControllerResolver, priority: Int){
+        self.topControllerResolver.add(resolver: topControllerResolver, priority: priority)
+    }
     
     
 }

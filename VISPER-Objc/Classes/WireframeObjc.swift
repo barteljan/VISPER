@@ -10,8 +10,14 @@ import VISPER_Core
 
 @objc open class WireframeObjc : NSObject, Wireframe {
     
+    
+    
     public let wireframe : Wireframe
     public var error : Error? = nil
+    
+    public var topViewController: UIViewController?{
+        return self.wireframe.topViewController
+    }
     
     public init(wireframe : Wireframe) {
         self.wireframe = wireframe
@@ -117,6 +123,10 @@ import VISPER_Core
     @objc open func add(routingPresenter: RoutingPresenterObjcType, priority: Int) {
         let wrapper = RoutingPresenterObjc(routingPresenter: routingPresenter)
         self.wireframe.add(routingPresenter: wrapper, priority: priority)
+    }
+    
+    public func add(topControllerResolver: TopControllerResolver, priority: Int) {
+        self.wireframe.add(topControllerResolver: topControllerResolver, priority: priority)
     }
 }
 

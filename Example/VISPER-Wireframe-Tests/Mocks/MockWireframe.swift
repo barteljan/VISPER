@@ -13,6 +13,10 @@ import VISPER_Wireframe
 
 class MockWireframe: NSObject, Wireframe {
     
+    
+    
+    var topViewController: UIViewController?
+
     var invokedCanRoute = false
     var invokedCanRouteCount = 0
     var invokedCanRouteParameters: (url: URL, parameters: [String: Any], option: RoutingOption?)?
@@ -144,5 +148,18 @@ class MockWireframe: NSObject, Wireframe {
         invokedAddRoutingPresenterCount += 1
         invokedAddRoutingPresenterParameters = (routingPresenter, priority)
         invokedAddRoutingPresenterParametersList.append((routingPresenter, priority))
+    }
+    
+    
+    var invokedAddTopControllerResolver = false
+    var invokedAddTopControllerResolverCount = 0
+    var invokedAddTopControllerResolverParameters: (topControllerResolver: TopControllerResolver, priority: Int)?
+    var invokedAddTopControllerResolverParametersList = [(topControllerResolver: TopControllerResolver, priority: Int)]()
+    
+    func add(topControllerResolver: TopControllerResolver, priority: Int) {
+        invokedAddTopControllerResolver = true
+        invokedAddTopControllerResolverCount += 1
+        invokedAddTopControllerResolverParameters = (topControllerResolver, priority)
+        invokedAddTopControllerResolverParametersList.append((topControllerResolver, priority))
     }
 }

@@ -42,6 +42,12 @@
 		9A4DEB801FF0F4B5004D88C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A4DEB7F1FF0F4B5004D88C0 /* Assets.xcassets */; };
 		9A4DEB831FF0F4B5004D88C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4DEB811FF0F4B5004D88C0 /* LaunchScreen.storyboard */; };
 		9A84F61E1FF1ADFE0066CCAA /* DefaultRouteResultHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84F61D1FF1ADFE0066CCAA /* DefaultRouteResultHandlerTests.swift */; };
+		9A84F62F1FF253AF0066CCAA /* NavigationControllerTopControllerResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84F62E1FF253AF0066CCAA /* NavigationControllerTopControllerResolverTests.swift */; };
+		9A84F6311FF255B40066CCAA /* TabbarControllerTopControllerResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84F6301FF255B40066CCAA /* TabbarControllerTopControllerResolverTests.swift */; };
+		9A84F6331FF256940066CCAA /* ChildViewControllerTopControllerResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84F6321FF256940066CCAA /* ChildViewControllerTopControllerResolverTests.swift */; };
+		9A84F6351FF25AFA0066CCAA /* DefaultComposedTopControllerResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84F6341FF25AFA0066CCAA /* DefaultComposedTopControllerResolverTests.swift */; };
+		9A84F6371FF25CB50066CCAA /* MockTopControllerResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84F6361FF25CB50066CCAA /* MockTopControllerResolver.swift */; };
+		9A84F63C1FF2B0840066CCAA /* ModalViewControllerTopControllerResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84F63B1FF2B0840066CCAA /* ModalViewControllerTopControllerResolverTests.swift */; };
 		9A8C5B921FDC04E700C401AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C5B6A1FDC04E700C401AF /* InfoPlist.strings */; };
 		9A8C5B931FDC04E700C401AF /* Example2VisperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C5B701FDC04E700C401AF /* Example2VisperViewController.xib */; };
 		9A8C5B941FDC04E700C401AF /* Example2VisperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5B711FDC04E700C401AF /* Example2VisperViewController.m */; };
@@ -245,6 +251,12 @@
 		9A4DEB841FF0F4B5004D88C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A67425D1FE1A034001BE7BC /* VISPER-Presenter.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Presenter.podspec"; path = "../VISPER-Presenter.podspec"; sourceTree = "<group>"; };
 		9A84F61D1FF1ADFE0066CCAA /* DefaultRouteResultHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouteResultHandlerTests.swift; sourceTree = "<group>"; };
+		9A84F62E1FF253AF0066CCAA /* NavigationControllerTopControllerResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerTopControllerResolverTests.swift; sourceTree = "<group>"; };
+		9A84F6301FF255B40066CCAA /* TabbarControllerTopControllerResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarControllerTopControllerResolverTests.swift; sourceTree = "<group>"; };
+		9A84F6321FF256940066CCAA /* ChildViewControllerTopControllerResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewControllerTopControllerResolverTests.swift; sourceTree = "<group>"; };
+		9A84F6341FF25AFA0066CCAA /* DefaultComposedTopControllerResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultComposedTopControllerResolverTests.swift; sourceTree = "<group>"; };
+		9A84F6361FF25CB50066CCAA /* MockTopControllerResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTopControllerResolver.swift; sourceTree = "<group>"; };
+		9A84F63B1FF2B0840066CCAA /* ModalViewControllerTopControllerResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewControllerTopControllerResolverTests.swift; sourceTree = "<group>"; };
 		9A8C5B6B1FDC04E700C401AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9A8C5B6D1FDC04E700C401AF /* ExampleFeature2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleFeature2.h; sourceTree = "<group>"; };
 		9A8C5B6F1FDC04E700C401AF /* Example2VisperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example2VisperViewController.h; sourceTree = "<group>"; };
@@ -804,6 +816,11 @@
 				9A8C5BE41FDC090E00C401AF /* Info.plist */,
 				9A8C5BE51FDC090E00C401AF /* VISPER-Wireframe-UIViewController-Tests.swift */,
 				9A84F61D1FF1ADFE0066CCAA /* DefaultRouteResultHandlerTests.swift */,
+				9A84F62E1FF253AF0066CCAA /* NavigationControllerTopControllerResolverTests.swift */,
+				9A84F6301FF255B40066CCAA /* TabbarControllerTopControllerResolverTests.swift */,
+				9A84F6321FF256940066CCAA /* ChildViewControllerTopControllerResolverTests.swift */,
+				9A84F63B1FF2B0840066CCAA /* ModalViewControllerTopControllerResolverTests.swift */,
+				9A84F6341FF25AFA0066CCAA /* DefaultComposedTopControllerResolverTests.swift */,
 			);
 			path = "VISPER-Wireframe-Tests";
 			sourceTree = "<group>";
@@ -829,6 +846,7 @@
 				9A26AB041FDE89DF008BB68C /* MockPresenterProvider.swift */,
 				9A26AB061FDE8DD4008BB68C /* MockPresenter.swift */,
 				9AE2479F1FDF98D80008C24A /* MockComposedPresenterProvider.swift */,
+				9A84F6361FF25CB50066CCAA /* MockTopControllerResolver.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -1233,6 +1251,7 @@
 						CreatedOnToolsVersion = 9.1;
 						DevelopmentTeam = 5M2T33LA2N;
 						ProvisioningStyle = Automatic;
+						TestTargetID = 9A8C5BA91FDC07B500C401AF;
 					};
 					9A8C5C111FDC0C1C00C401AF = {
 						CreatedOnToolsVersion = 9.1;
@@ -2115,6 +2134,7 @@
 				9A8C5BF41FDC090E00C401AF /* MockComposedControllerProvider.swift in Sources */,
 				9A26AAE51FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift in Sources */,
 				9A8C5BF31FDC090E00C401AF /* MockRoutingOptionProvider.swift in Sources */,
+				9A84F6351FF25AFA0066CCAA /* DefaultComposedTopControllerResolverTests.swift in Sources */,
 				9A8C5BFD1FDC090E00C401AF /* DefaultRouterTests.swift in Sources */,
 				9A8C5BF91FDC090E00C401AF /* DefaultWireframeTests.swift in Sources */,
 				9A8C5BE81FDC090E00C401AF /* MockWireframe.swift in Sources */,
@@ -2123,6 +2143,8 @@
 				9A8C5BE71FDC090E00C401AF /* MockComposedOptionProvider.swift in Sources */,
 				9A8C5BF61FDC090E00C401AF /* DefaultComposedControllerProviderTests.swift in Sources */,
 				9A8C5BEB1FDC090E00C401AF /* MockComposedRoutingObserver.swift in Sources */,
+				9A84F6331FF256940066CCAA /* ChildViewControllerTopControllerResolverTests.swift in Sources */,
+				9A84F62F1FF253AF0066CCAA /* NavigationControllerTopControllerResolverTests.swift in Sources */,
 				9A8C5BFC1FDC090E00C401AF /* DefaultComposedRoutingOptionProviderTests.swift in Sources */,
 				9A8C5BF71FDC090E00C401AF /* DefaultRoutingHandlerContainerTests.swift in Sources */,
 				9A8C5BF11FDC090E00C401AF /* MockRouter.swift in Sources */,
@@ -2132,8 +2154,11 @@
 				9A26AB051FDE89DF008BB68C /* MockPresenterProvider.swift in Sources */,
 				9A8C5BE61FDC090E00C401AF /* MockViewController.swift in Sources */,
 				9A8C5BEE1FDC090E00C401AF /* MockRoutingHandlerContainer.swift in Sources */,
+				9A84F6311FF255B40066CCAA /* TabbarControllerTopControllerResolverTests.swift in Sources */,
+				9A84F63C1FF2B0840066CCAA /* ModalViewControllerTopControllerResolverTests.swift in Sources */,
 				9A8C5BEC1FDC090E00C401AF /* MockRoutingAwareViewController.swift in Sources */,
 				9A8C5BFA1FDC090E00C401AF /* DefaultComposedRoutingPresenterTests.swift in Sources */,
+				9A84F6371FF25CB50066CCAA /* MockTopControllerResolver.swift in Sources */,
 				9A8C5BF21FDC090E00C401AF /* MockRoutingObserver.swift in Sources */,
 				9A8C5BED1FDC090E00C401AF /* MockRoutingPresenter.swift in Sources */,
 				9A8C5BF51FDC090E00C401AF /* AssertHelper.swift in Sources */,
@@ -2709,6 +2734,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VISPER-Wireframe-Example.app/VISPER-Wireframe-Example";
 			};
 			name = Debug;
 		};
@@ -2741,6 +2767,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VISPER-Wireframe-Example.app/VISPER-Wireframe-Example";
 			};
 			name = Release;
 		};
