@@ -115,13 +115,12 @@ class DefaultWireframeTests: XCTestCase {
         
     }
     
-    func testAddRoutingObserverCallsRoutingDelegate() {
+    func testAddRoutingObserverCallsComposedRoutingObserver() {
         
         //Arrange
-        let mockObserver = MockRoutingObserver()
+        let mockObserver = MockComposedRoutingObserver()
         
-        let routingDelegate = MockRoutingDelegate()
-        let wireframe = DefaultWireframe(routingDelegate: routingDelegate)
+        let wireframe = DefaultWireframe(composedRoutingObserver: mockObserver)
         
         let priority = 10
         let routePattern = "/test/pattern"
@@ -130,9 +129,9 @@ class DefaultWireframeTests: XCTestCase {
         wireframe.add(routingObserver: mockObserver, priority: priority, routePattern: routePattern)
         
         //Assert
-        AssertThat(routingDelegate.invokedAddParameters?.routingObserver, isOfType: MockRoutingObserver.self, andEquals: mockObserver)
-        XCTAssertEqual(routingDelegate.invokedAddParameters?.routePattern, routePattern)
-        XCTAssertEqual(routingDelegate.invokedAddParameters?.priority, priority)
+        AssertThat(mockObserver.invokedAddParameters?.routingObserver, isOfType: MockComposedRoutingObserver.self, andEquals: mockObserver)
+        XCTAssertEqual(mockObserver.invokedAddParameters?.routePattern, routePattern)
+        XCTAssertEqual(mockObserver.invokedAddParameters?.priority, priority)
         
     }
     

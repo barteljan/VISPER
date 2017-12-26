@@ -13,41 +13,16 @@ import VISPER_Objc
 
 class DefaultRoutingDelegateTests: XCTestCase {
     
-   
-    func testAddsRoutingObserverToComposedRoutingObserver() {
-        
-        //Arrange
-        let composedObserver = MockComposedRoutingObserver()
-        
-        let delegate = DefaultRoutingDelegate(composedRoutingObserver: composedObserver)
-        
-        let routingObserver = MockRoutingObserver()
-        let priority = 42
-        let routePattern = "/this/is/a/route/pattern"
-        
-        //Act
-        delegate.add(routingObserver: routingObserver, priority: priority, routePattern: routePattern)
-        
-        //Assert
-        XCTAssertTrue(composedObserver.invokedAdd)
-        AssertThat(composedObserver.invokedAddParameters?.routingObserver, isOfType: MockRoutingObserver.self, andEquals: routingObserver)
-        XCTAssertEqual(composedObserver.invokedAddParameters?.priority, priority)
-        XCTAssertEqual(composedObserver.invokedAddParameters?.routePattern, routePattern)
-        
-    }
     
     func testCallsWillPresentOnComposedRoutingObserver() throws{
         
         //Arrange
         let composedObserver = MockComposedRoutingObserver()
         
-        let delegate = DefaultRoutingDelegate(composedRoutingObserver: composedObserver)
+        let delegate = DefaultRoutingDelegate()
+        delegate.routingObserver = composedObserver
         
-        let routingObserver = MockRoutingObserver()
-        let priority = 42
-        let routePattern = "/this/is/a/route/pattern"
-        
-        delegate.add(routingObserver: routingObserver, priority: priority, routePattern: routePattern)
+        let routePattern = "/a/route/pattern"
         
         let controller = UIViewController()
         let routeResult = DefaultRouteResult(routePattern: routePattern, parameters: [:], routingOption: MockRoutingOption())
@@ -73,13 +48,10 @@ class DefaultRoutingDelegateTests: XCTestCase {
         //Arrange
         let composedObserver = MockComposedRoutingObserver()
         
-        let delegate = DefaultRoutingDelegate(composedRoutingObserver: composedObserver)
+        let delegate = DefaultRoutingDelegate()
+        delegate.routingObserver = composedObserver
         
-        let routingObserver = MockRoutingObserver()
-        let priority = 42
         let routePattern = "/this/is/a/route/pattern"
-        
-        delegate.add(routingObserver: routingObserver, priority: priority, routePattern: routePattern)
         
         let controller = UIViewController()
         let routeResult = DefaultRouteResult(routePattern: routePattern, parameters: [:], routingOption: MockRoutingOption())
@@ -105,13 +77,10 @@ class DefaultRoutingDelegateTests: XCTestCase {
         //Arrange
         let composedObserver = MockComposedRoutingObserver()
         
-        let delegate = DefaultRoutingDelegate(composedRoutingObserver: composedObserver)
+        let delegate = DefaultRoutingDelegate()
+        delegate.routingObserver = composedObserver
         
-        let routingObserver = MockRoutingObserver()
-        let priority = 42
         let routePattern = "/this/is/a/route/pattern"
-        
-        delegate.add(routingObserver: routingObserver, priority: priority, routePattern: routePattern)
         
         let controller = MockRoutingAwareViewController()
         let routeResult = DefaultRouteResult(routePattern: routePattern, parameters: [:], routingOption: MockRoutingOption())
@@ -133,15 +102,12 @@ class DefaultRoutingDelegateTests: XCTestCase {
     func testCallsDidRouteOnRoutingAwareController() {
         
         //Arrange
-        let composedObserver = MockComposedRoutingObserver()
-        
-        let delegate = DefaultRoutingDelegate(composedRoutingObserver: composedObserver)
+        let delegate = DefaultRoutingDelegate()
         
         let routingObserver = MockRoutingObserver()
-        let priority = 42
         let routePattern = "/this/is/a/route/pattern"
         
-        delegate.add(routingObserver: routingObserver, priority: priority, routePattern: routePattern)
+        delegate.routingObserver = routingObserver
         
         let controller = MockRoutingAwareViewController()
         let routeResult = DefaultRouteResult(routePattern: routePattern, parameters: [:], routingOption: MockRoutingOption())
@@ -163,15 +129,12 @@ class DefaultRoutingDelegateTests: XCTestCase {
     func testCallsObjcWillRouteOnController() throws{
         
         //Arrange
-        let composedObserver = MockComposedRoutingObserver()
-        
-        let delegate = DefaultRoutingDelegate(composedRoutingObserver: composedObserver)
+        let delegate = DefaultRoutingDelegate()
         
         let routingObserver = MockRoutingObserver()
-        let priority = 42
         let routePattern = "/this/is/a/route/pattern"
         
-        delegate.add(routingObserver: routingObserver, priority: priority, routePattern: routePattern)
+        delegate.routingObserver = routingObserver
         
         let controller = MockViewController()
         let routeResult = DefaultRouteResult(routePattern: routePattern, parameters: [:], routingOption: MockRoutingOption())
@@ -193,15 +156,12 @@ class DefaultRoutingDelegateTests: XCTestCase {
     func testCallsObjcDidRouteController() {
         
         //Arrange
-        let composedObserver = MockComposedRoutingObserver()
-        
-        let delegate = DefaultRoutingDelegate(composedRoutingObserver: composedObserver)
+        let delegate = DefaultRoutingDelegate()
         
         let routingObserver = MockRoutingObserver()
-        let priority = 42
         let routePattern = "/this/is/a/route/pattern"
         
-        delegate.add(routingObserver: routingObserver, priority: priority, routePattern: routePattern)
+        delegate.routingObserver = routingObserver
         
         let controller = MockViewController()
         let routeResult = DefaultRouteResult(routePattern: routePattern, parameters: [:], routingOption: MockRoutingOption())

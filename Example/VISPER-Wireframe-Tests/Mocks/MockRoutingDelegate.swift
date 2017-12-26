@@ -10,18 +10,12 @@ import Foundation
 import VISPER_Core
 
 class MockRoutingDelegate: NSObject, RoutingDelegate {
-
-
-    var invokedAdd = false
-    var invokedAddCount = 0
-    var invokedAddParameters: (routingObserver: RoutingObserver, priority: Int, routePattern: String?)?
-    var invokedAddParametersList = [(routingObserver: RoutingObserver, priority: Int, routePattern: String?)]()
-
-    func add(routingObserver: RoutingObserver, priority: Int, routePattern: String?) {
-        invokedAdd = true
-        invokedAddCount += 1
-        invokedAddParameters = (routingObserver, priority, routePattern)
-        invokedAddParametersList.append((routingObserver, priority, routePattern))
+    
+    var invokedSetRoutingObserver = false
+    var routingObserver: RoutingObserver? {
+        didSet {
+            invokedSetRoutingObserver = true
+        }
     }
 
     var invokedWillPresent = false

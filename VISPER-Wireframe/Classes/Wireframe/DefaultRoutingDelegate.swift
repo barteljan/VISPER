@@ -11,25 +11,10 @@ import VISPER_Objc
 
 open class DefaultRoutingDelegate : RoutingDelegate {
     
-    
-    let composedRoutingObserver : ComposedRoutingObserver
-    
-    public init(composedRoutingObserver : ComposedRoutingObserver = DefaultComposedRoutingObserver()) {
-        self.composedRoutingObserver = composedRoutingObserver
-    }
-    
-    /// Add an instance observing controllers before they are presented
-    ///
-    /// - Parameters:
-    ///   - routingObserver: An instance observing controllers before they are presented
-    ///   - priority: The priority for calling your provider, higher priorities are called first. (Defaults to 0)
-    ///   - routePattern: The route pattern to call this observer, the observer is called for every route if this pattern is nil
-    open func add(routingObserver: RoutingObserver, priority: Int, routePattern: String?){
-        self.composedRoutingObserver.add(routingObserver: routingObserver,
-                                                priority: priority,
-                                            routePattern: routePattern)
-    }
-    
+    public init(){}
+
+    /// An instance observing controllers before they are presented
+    open var routingObserver: RoutingObserver?
     
     /// Event that indicates that a view controller will be presented
     ///
@@ -45,10 +30,12 @@ open class DefaultRoutingDelegate : RoutingDelegate {
                     routingPresenter: RoutingPresenter?,
                            wireframe: Wireframe) throws {
         
-        try self.composedRoutingObserver.willPresent(controller: controller,
-                                                     routeResult: routeResult,
-                                                     routingPresenter: routingPresenter,
-                                                     wireframe: wireframe)
+        if let routingObserver = self.routingObserver {
+            try routingObserver.willPresent(controller: controller,
+                                           routeResult: routeResult,
+                                      routingPresenter: routingPresenter,
+                                             wireframe: wireframe)
+        }
         
         controller.willRoute(ObjcWrapper.wrapperProvider.wireframe(wireframe: wireframe),
                              routeResult: ObjcWrapper.wrapperProvider.routeResult(routeResult: routeResult))
@@ -75,10 +62,14 @@ open class DefaultRoutingDelegate : RoutingDelegate {
                    routingPresenter: RoutingPresenter?,
                           wireframe: Wireframe) {
         
-        self.composedRoutingObserver.didPresent(controller: controller,
-                                                routeResult: routeResult,
-                                                routingPresenter: routingPresenter,
-                                                wireframe: wireframe)
+        if let routingObserver = self.routingObserver {
+
+            routingObserver.didPresent(controller: controller,
+                                      routeResult: routeResult,
+                                 routingPresenter: routingPresenter,
+                                        wireframe: wireframe)
+            
+        }
         
         controller.didRoute(ObjcWrapper.wrapperProvider.wireframe(wireframe: wireframe),
                             routeResult: ObjcWrapper.wrapperProvider.routeResult(routeResult: routeResult))

@@ -11,18 +11,23 @@ import VISPER_Core
 
 @objc open class RoutingDelegateObjc : NSObject, RoutingDelegate {
     
-    public let routingDelegate : RoutingDelegate
+    public var routingDelegate : RoutingDelegate
+    
+    /// An instance observing controllers before they are presented
+    open var routingObserver: RoutingObserver? {
+        set {
+            self.routingDelegate.routingObserver = newValue
+        }
+        get {
+            return self.routingDelegate.routingObserver
+        }
+    }
     
     public init(routingDelegate : RoutingDelegate) {
         self.routingDelegate = routingDelegate
         super.init()
     }
     
-    open func add(routingObserver: RoutingObserver, priority: Int, routePattern: String?) {
-        self.routingDelegate.add(routingObserver: routingObserver,
-                                        priority: priority,
-                                    routePattern: routePattern)
-    }
     
     open func willPresent(controller: UIViewController,
                          routeResult:  RouteResult,
