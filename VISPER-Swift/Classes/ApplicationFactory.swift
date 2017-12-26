@@ -97,7 +97,7 @@ open class ApplicationFactory<AppState> {
         
         //add modal resolver with higher than default priority (modal presented controller are nearly always the top vc's)
         let modalVCControllerResolver = ModalViewControllerTopControllerResolver()
-        application.wireframe.add(topControllerResolver: childVCControllerResolver, priority: 1000)
+        application.wireframe.add(topControllerResolver: modalVCControllerResolver, priority: 1000)
         
     }
     

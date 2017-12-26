@@ -208,6 +208,9 @@ class DefaultComposedTopControllerResolverTests: XCTestCase {
         let childVCControllerResolver = ChildViewControllerTopControllerResolver()
         topControllerResolver.add(resolver: childVCControllerResolver, priority: -5000)
         
+        //add modal resolver with higher than default priority (modal presented controller are nearly always the top vc's)
+        let modalVCControllerResolver = ModalViewControllerTopControllerResolver()
+        topControllerResolver.add(resolver: modalVCControllerResolver, priority: 1000)
         
         let tabbarController = UITabBarController()
         
