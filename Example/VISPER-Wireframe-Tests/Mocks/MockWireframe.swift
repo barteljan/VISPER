@@ -13,10 +13,17 @@ import VISPER_Wireframe
 
 class MockWireframe: NSObject, Wireframe {
     
-    
-    
-    var topViewController: UIViewController?
+    var invokedAddControllerDimisser = false
+    func add(controllerDimisser: ControllerDismisser, priority: Int) {
+        invokedAddControllerDimisser = true
+    }
 
+    var invokedDismissTopViewController = false
+    func dismissTopViewController(animated: Bool, completion: @escaping () -> Void) {
+        invokedDismissTopViewController = true
+    }
+
+    var topViewController: UIViewController?
     var invokedCanRoute = false
     var invokedCanRouteCount = 0
     var invokedCanRouteParameters: (url: URL, parameters: [String: Any], option: RoutingOption?)?
