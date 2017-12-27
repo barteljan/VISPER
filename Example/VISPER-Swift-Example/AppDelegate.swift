@@ -80,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let pushedFeature = PushedFeature(routePattern: "/pushed/controller")
         try! self.visperApplication.add(feature: pushedFeature)
         
-        let modalFeature = ModalFeature(routePattern: "/modal/controller")
+        let modalFeature = ModalFeature(routePattern: "/modal/controller", wireframe: self.visperApplication.wireframe)
         try! self.visperApplication.add(feature: modalFeature)
         
     }

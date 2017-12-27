@@ -32,7 +32,37 @@ open class DefaultWireframe : Wireframe {
     let composedRoutingObserver: ComposedRoutingObserver
     let routeResultHandler: RouteResultHandler
     let topControllerResolver: ComposedTopControllerResolver
+    let controllerDismisser: ComposedControllerDimisser
+   
     
+    //MARK: Initializer
+    public init(       router : Router = DefaultRouter(),
+        composedOptionProvider: ComposedRoutingOptionProvider = DefaultComposedRoutingOptionProvider(),
+       routingHandlerContainer: RoutingHandlerContainer = DefaultRoutingHandlerContainer(),
+    composedControllerProvider: ComposedControllerProvider = DefaultComposedControllerProvider(),
+     composedPresenterProvider: ComposedPresenterProvider = DefaultComposedPresenterProvider(),
+      composedRoutingPresenter: ComposedRoutingPresenter = DefaultComposedRoutingPresenter(),
+               routingDelegate: RoutingDelegate = DefaultRoutingDelegate(),
+       composedRoutingObserver: ComposedRoutingObserver = DefaultComposedRoutingObserver(),
+            routeResultHandler: RouteResultHandler = DefaultRouteResultHandler(),
+            topControllerResolver: ComposedTopControllerResolver = DefaultComposedTopControllerResolver(),
+            controllerDismisser: ComposedControllerDimisser = DefaultComposedControllerDismisser()
+      ){
+        
+        self.routingHandlerContainer = routingHandlerContainer
+        self.composedOptionProvider = composedOptionProvider
+        self.composedRoutingPresenter = composedRoutingPresenter
+        self.routingDelegate = routingDelegate
+        self.composedControllerProvider = composedControllerProvider
+        self.composedPresenterProvider = composedPresenterProvider
+        self.composedRoutingObserver = composedRoutingObserver
+        self.routeResultHandler = routeResultHandler
+        self.router = router
+        self.topControllerResolver = topControllerResolver
+        self.controllerDismisser = controllerDismisser
+    }
+    
+    //MARK: topViewController
     /// The top view controller currently used in your application
     open var topViewController: UIViewController? {
         
@@ -47,29 +77,16 @@ open class DefaultWireframe : Wireframe {
         return self.topControllerResolver.topController(of: controller)
     }
     
-    //MARK: Initializer
-    public init(       router : Router = DefaultRouter(),
-        composedOptionProvider: ComposedRoutingOptionProvider = DefaultComposedRoutingOptionProvider(),
-       routingHandlerContainer: RoutingHandlerContainer = DefaultRoutingHandlerContainer(),
-    composedControllerProvider: ComposedControllerProvider = DefaultComposedControllerProvider(),
-     composedPresenterProvider: ComposedPresenterProvider = DefaultComposedPresenterProvider(),
-      composedRoutingPresenter: ComposedRoutingPresenter = DefaultComposedRoutingPresenter(),
-               routingDelegate: RoutingDelegate = DefaultRoutingDelegate(),
-       composedRoutingObserver: ComposedRoutingObserver = DefaultComposedRoutingObserver(),
-            routeResultHandler: RouteResultHandler = DefaultRouteResultHandler(),
-            topControllerResolver: ComposedTopControllerResolver = DefaultComposedTopControllerResolver()
-      ){
+    open func dismissTopViewController(animated:Bool,completion: @escaping ()->Void){
+        guard let topController = self.topViewController else {
+            return
+        }
         
-        self.routingHandlerContainer = routingHandlerContainer
-        self.composedOptionProvider = composedOptionProvider
-        self.composedRoutingPresenter = composedRoutingPresenter
-        self.routingDelegate = routingDelegate
-        self.composedControllerProvider = composedControllerProvider
-        self.composedPresenterProvider = composedPresenterProvider
-        self.composedRoutingObserver = composedRoutingObserver
-        self.routeResultHandler = routeResultHandler
-        self.router = router
-        self.topControllerResolver = topControllerResolver
+        if self.controllerDismisser.isResponsible(animated: animated, controller: topController) {
+            self.controllerDismisser.dismiss(animated: animated,
+                                           controller: topController,
+                                           completion: completion)
+        }
     }
     
     //MARK: route
@@ -233,5 +250,12 @@ open class DefaultWireframe : Wireframe {
         self.topControllerResolver.add(resolver: topControllerResolver, priority: priority)
     }
     
-    
+    /// Add an instance responsible for dismissing controllers
+    ///
+    /// - Parameters:
+    ///   - controllerDimisser: an instance responsible for dismissing controllers
+    ///   - priority: The priority for calling your dismisser, higher priorities are called first. (Defaults to 0)
+    open func add(controllerDimisser: ControllerDismisser, priority: Int) {
+        self.controllerDismisser.add(controllerDimisser: controllerDimisser, priority: priority)
+    }
 }

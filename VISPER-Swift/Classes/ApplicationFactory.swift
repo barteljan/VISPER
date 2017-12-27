@@ -50,6 +50,8 @@ open class ApplicationFactory<AppState> {
                controllerContainer: ControllerContainer) {
         self.addDefaultFeatureObserver(application: application, controllerContainer: controllerContainer)
         self.addDefaultRoutingPresenters(application: application, controllerContainer: controllerContainer)
+        self.addDefaultTopControllerResolvers(application: application)
+        self.addDefaultControllerDismisser(application: application)
     }
     
     open func addDefaultFeatureObserver(application: AnyApplication<AppState>,
@@ -99,6 +101,15 @@ open class ApplicationFactory<AppState> {
         let modalVCControllerResolver = ModalViewControllerTopControllerResolver()
         application.wireframe.add(topControllerResolver: modalVCControllerResolver, priority: 1000)
         
+    }
+    
+    open func addDefaultControllerDismisser(application: AnyApplication<AppState>) {
+        
+        let modalDismisser = ModalControllerDismisser()
+        application.wireframe.add(controllerDimisser: modalDismisser, priority: 0)
+        
+        let navigationControllerDismisser = NavigationControllerDismisser()
+        application.wireframe.add(controllerDimisser: navigationControllerDismisser, priority: 0)
     }
     
 }

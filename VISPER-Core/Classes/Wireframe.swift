@@ -12,6 +12,12 @@ public protocol Wireframe {
     /// The top view controller currently used in your application
     var topViewController: UIViewController?{get}
     
+    
+    /// dismiss the top view controller of your application
+    ///
+    /// - Parameter completion: completion called after controller was dismissed
+    func dismissTopViewController(animated:Bool, completion: @escaping ()->Void)
+    
     /// Check if a route pattern matching this url was added to the wireframe.
     /// Be careful, if you don't route to a handler (but to a controller),
     /// it's possible that no ControllerProvider or RoutingOptionProvider for this controller exists.
@@ -107,8 +113,17 @@ public protocol Wireframe {
     ///
     /// - Parameters:
     ///   - topControllerResolver: instance responsible for finding the top view controller on an other vc
-    ///   - priority: The priority for calling your provider, higher priorities are called first. (Defaults to 0)
+    ///   - priority: The priority for calling your resolver, higher priorities are called first. (Defaults to 0)
     func add(topControllerResolver: TopControllerResolver, priority: Int)
+    
+    
+    
+    /// Add an instance responsible for dismissing controllers
+    ///
+    /// - Parameters:
+    ///   - controllerDimisser: an instance responsible for dismissing controllers
+    ///   - priority: The priority for calling your dismisser, higher priorities are called first. (Defaults to 0)
+    func add(controllerDimisser: ControllerDismisser, priority: Int)
 }
 
 public extension Wireframe {

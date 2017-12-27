@@ -10,6 +10,8 @@ import VISPER_Core
 
 open class ModalViewControllerTopControllerResolver: TopControllerResolver {
     
+    public init(){}
+    
     open func isResponsible(controller: UIViewController) -> Bool {
         return controller.presentedViewController != nil
     }

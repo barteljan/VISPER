@@ -18,9 +18,11 @@ public class ModalFeature: ViewFeature, PresenterFeature {
 
     public var routePattern: String
     public var priority: Int = 0
+    let wireframe: Wireframe
     
-    public init(routePattern: String) {
+    public init(routePattern: String,wireframe: Wireframe) {
         self.routePattern = routePattern
+        self.wireframe = wireframe
     }
     
     public func makeOption(routeResult: RouteResult) -> RoutingOption {
@@ -44,7 +46,7 @@ public class ModalFeature: ViewFeature, PresenterFeature {
                     fatalError("should use only a ModalViewController")
                 }
                 controller.exitCallBack = {
-                    controller.dismiss(animated: true, completion: nil)
+                    self.wireframe.dismissTopViewController(animated: true, completion: {})
                 }
             }
         )
