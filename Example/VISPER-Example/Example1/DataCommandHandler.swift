@@ -10,7 +10,7 @@ import VISPER
 
 class DataCommandHandler: NSObject,CommandHandlerProtocol {
     
-    func isResponsible(_ command: Any!) -> Bool {
+    @objc func isResponsible(_ command: Any!) -> Bool {
         
         if let stringCommand = command as? String{
             if(stringCommand == "loadData"){
@@ -22,7 +22,7 @@ class DataCommandHandler: NSObject,CommandHandlerProtocol {
     }
     
     
-    func process(_ command: Any!, completion: ((_ result: Any?, _ error: Error?) -> Void)?) throws {
+    @objc func process(_ command: Any!, completion: ((_ result: Any?, _ error: Error?) -> Void)?) throws {
         completion?("Meine Daten sind geladen",nil)
     }
 }

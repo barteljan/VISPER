@@ -26,5 +26,9 @@
                         routingOptions:(NSObject<IVISPERRoutingOption>* _Nonnull)options
                         withParameters:(NSDictionary* _Nonnull)parameters;
 
+@optional
+-(BOOL)isResponsibleForRoute:(NSString* _Nonnull )routePattern
+              routingOptions:(NSObject<IVISPERRoutingOption>* _Nullable)options
+              withParameters:(NSDictionary* _Nonnull)parameters;
 
 @end

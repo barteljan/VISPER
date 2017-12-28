@@ -95,6 +95,10 @@ static BOOL areVISPEREventsOnAllViewControllersEnabledVar;
     [[self privatePresentersArray] addObject:presenter];
 }
 
+-(void)add:(NSObject<IVISPERPresenter> *)presenter {
+    [self addVisperPresenter:presenter];
+}
+
 -(void)removeVisperPresenter:(NSObject<IVISPERPresenter> *)presenter{
     [[self privatePresentersArray] removeObject:presenter];
 }

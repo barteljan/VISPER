@@ -13,7 +13,7 @@
 @import VISPER_CommandBus;
 
 
-@interface VISPERApplication : NSObject<IVISPERApplication>
+@interface VISPERApplication2 : NSObject<IVISPERApplication>
 
 #pragma mark initializer
 -(instancetype)initWithNavigationController:(UINavigationController*)controller;
@@ -23,6 +23,6 @@
                                   wireframe:(NSObject<IVISPERWireframe>*)wireframe
                                  commandBus:(VISPERCommandBus*)commandBus;
 
-@property (nonatomic) BOOL isInDebugMode;
+//@property (nonatomic) BOOL isInDebugMode;
 
 @end

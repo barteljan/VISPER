@@ -30,14 +30,14 @@ class Example3VisperViewControllerPresenter: VISPERViewControllerPresenter {
     }
     
     
-    func closeViewController(_ controller: UIViewController){
+    @objc func closeViewController(_ controller: UIViewController){
         self.wireframe.back(true) {
             print("dissmissed vc")
         }
     }
     
     
-    func loadData(_ controller: Example3VisperViewController){
+    @objc func loadData(_ controller: Example3VisperViewController){
         try! self.commandBus.process("loadDataWithSwift") { (result: Any!, error: Error?) -> Void in
             controller.setText(result as! String)
         }

@@ -15,7 +15,7 @@
 
 @protocol IVISPERRoutingPresenter <NSObject>
 
--(void)setControllerServiceProviders:(NSArray*)controllerServiceProviders;
+//-(void)setControllerServiceProviders:(NSArray*)controllerServiceProviders;
 
 -(BOOL)isResponsibleForRoutingOption:(NSObject<IVISPERRoutingOption>*)routingOption;
 
@@ -30,11 +30,12 @@
                                 NSDictionary *parameters,
                                 NSObject<IVISPERWireframe>*wireframe))completion;
 
+/*
 -(void)dismissViewController:(UIViewController*) controller
                     animated:(BOOL)animated
                  onWireframe:(NSObject<IVISPERWireframe>*)wireframe
                   completion:(void(^)(void))completion;
-
+*/
 
 
 @end

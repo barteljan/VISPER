@@ -71,7 +71,6 @@
 #import "IVISPERWireframeRoutingOptionsServiceProvider.h"
 #import "IVISPERWireframeServiceProvider.h"
 #import "IVISPERWireframeViewControllerServiceProvider.h"
-#import "VISPERWireframeServiceProvider.h"
 #import "VISPERWireframe.h"
 #import "VISPERWireframeBackPresenter.h"
 

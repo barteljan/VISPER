@@ -29,6 +29,7 @@
 @property (readonly,nonatomic, strong) NSArray *visperPresenters;
 
 -(void)addVisperPresenter:(NSObject<IVISPERPresenter> *)presenter;
+-(void)add:(NSObject<IVISPERPresenter> *)presenter;
 -(void)removeVisperPresenter:(NSObject<IVISPERPresenter> *)presenter;
 -(void)notifyPresentersOfView:(UIView*)view
                     withEvent:(NSObject<IVISPERViewEvent>*)event;

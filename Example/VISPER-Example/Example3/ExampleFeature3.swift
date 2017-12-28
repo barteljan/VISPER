@@ -34,7 +34,7 @@ class ExampleFeature3: VISPERFeature {
             let controller = Example3VisperViewController(nibName: "Example3VisperViewController", bundle: nil)
             
             controller.add(presenter)
-            
+        
             return controller
         }
         

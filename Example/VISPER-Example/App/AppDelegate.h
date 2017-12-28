@@ -8,7 +8,7 @@
 
 
 #import <UIKit/UIKit.h>
-#import <VISPER/VISPERApplication.h>
+@import VISPER;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

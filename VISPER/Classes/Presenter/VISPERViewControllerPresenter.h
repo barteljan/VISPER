@@ -9,7 +9,6 @@
 
 @interface VISPERViewControllerPresenter : VISPERViewPresenter <IVISPERViewControllerPresenter>
 
-
 /**
  * called when a view event happens
  */

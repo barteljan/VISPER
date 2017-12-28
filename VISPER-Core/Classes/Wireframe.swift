@@ -9,9 +9,9 @@ import Foundation
 
 public protocol Wireframe {
     
+    
     /// The top view controller currently used in your application
     var topViewController: UIViewController?{get}
-    
     
     /// dismiss the top view controller of your application
     ///
@@ -124,17 +124,22 @@ public protocol Wireframe {
     ///   - controllerDimisser: an instance responsible for dismissing controllers
     ///   - priority: The priority for calling your dismisser, higher priorities are called first. (Defaults to 0)
     func add(controllerDimisser: ControllerDismisser, priority: Int)
+    
 }
 
 public extension Wireframe {
     
+    public func canRoute(url: URL) throws -> Bool {
+        return try self.canRoute(url: url, parameters: [:], option: nil)
+    }
+    
     public func canRoute(   url: URL,
-                     parameters: [String : Any] = [:]) throws -> Bool {
+                     parameters: [String : Any]) throws -> Bool {
         return try self.canRoute(url: url, parameters: parameters, option: nil)
     }
     
     public func canRoute(   url: URL,
-                            option: RoutingOption? = nil) throws -> Bool {
+                            option: RoutingOption?) throws -> Bool {
         return try self.canRoute(url: url, parameters: [:], option: option)
     }
     

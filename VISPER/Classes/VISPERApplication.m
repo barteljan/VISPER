@@ -14,15 +14,16 @@
 #import "VISPERReplaceTopVCRoutingPresenter.h"
 #import "VISPERShowRoutingPresenter.h"
 #import "VISPERBackToRouteRoutingPresenter.h"
+#import <VISPER/VISPER-Swift.h>
 @import VISPER_CommandBus;
 
-@interface VISPERApplication()
+@interface VISPERApplication2()
 @property(nonatomic,strong)UINavigationController *navigationController;
 @property(nonatomic,strong)NSObject<IVISPERWireframe> *wireframe;
 @property(nonatomic,strong)VISPERCommandBus *commandBus;
 @end
 
-@implementation VISPERApplication
+@implementation VISPERApplication2
 
 -(instancetype)init{
     return [self initWithNavigationController:nil
@@ -48,7 +49,7 @@
     if(self){
         
         if(!wireframe){
-            wireframe = [[VISPERWireframe alloc] init];
+            //wireframe = [[VISPERWireframe alloc] init];
         }
         
         if(!commandBus){
@@ -83,6 +84,7 @@
 
 }
 
+/*
 -(void)setIsInDebugMode:(BOOL)isInDebugMode {
     VISPERWireframe *wireframe = (VISPERWireframe*)self.wireframe;
     wireframe.isInDebugMode = isInDebugMode;
@@ -92,7 +94,7 @@
     VISPERWireframe *wireframe = (VISPERWireframe*)self.wireframe;
     return wireframe.isInDebugMode;
 }
-
+*/
 -(UIViewController*)rootViewController{
     return self.navigationController;
 }

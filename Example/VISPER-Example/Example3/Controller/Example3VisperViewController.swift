@@ -33,17 +33,17 @@ class Example3VisperViewController: UIViewController {
         
         let event = self.visperServiceProvider.createEvent(withName: "shouldCloseViewController", sender: self, info: [AnyHashable: Any]())
        
-        self.notifyPresenters(of: self.view, with: event)
+        self.notifyPresenters(of: self.view, withEvent: event as! NSObject)
         
     }
     
     @IBAction func loadDataWithSwift(_ sender: AnyObject) {
         let event = self.visperServiceProvider.createEvent(withName: "loadDataWithSwift", sender: self, info: [AnyHashable: Any]())
         
-        self.notifyPresenters(of: self.view, with: event)
+        self.notifyPresenters(of: self.view, withEvent: event as! NSObject)
     }
     
-    func setText(_ text:String){
+    @objc func setText(_ text:String){
         self.textLabel.text = text
     }
 }
