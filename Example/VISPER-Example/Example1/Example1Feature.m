@@ -10,7 +10,7 @@
 #import "Example1VisperViewController.h"
 #import "Example1VisperViewControllerPresenter.h"
 #import <VISPER/VISPER.h>
-#import "VISPER_Example-swift.h"
+#import "VISPER_Example-Swift.h"
 
 @implementation Example1Feature
 

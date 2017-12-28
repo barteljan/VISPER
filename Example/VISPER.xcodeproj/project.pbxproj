@@ -66,7 +66,6 @@
 		9A8C5BA21FDC04E700C401AF /* Example1Feature.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5B8E1FDC04E700C401AF /* Example1Feature.m */; };
 		9A8C5BA31FDC04E700C401AF /* DataCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5B8F1FDC04E700C401AF /* DataCommandHandler.swift */; };
 		9A8C5BA41FDC04E700C401AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C5B901FDC04E700C401AF /* Images.xcassets */; };
-		9A8C5BA51FDC04E700C401AF /* VISPER-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C5B911FDC04E700C401AF /* VISPER-Info.plist */; };
 		9A8C5BAD1FDC07B500C401AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5BAC1FDC07B500C401AF /* AppDelegate.swift */; };
 		9A8C5BAF1FDC07B500C401AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5BAE1FDC07B500C401AF /* ViewController.swift */; };
 		9A8C5BB21FDC07B500C401AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C5BB01FDC07B500C401AF /* Main.storyboard */; };
@@ -1331,7 +1330,6 @@
 				9A8C5B9B1FDC04E700C401AF /* Example3VisperViewController.xib in Resources */,
 				9A8C5B931FDC04E700C401AF /* Example2VisperViewController.xib in Resources */,
 				9A8C5B921FDC04E700C401AF /* InfoPlist.strings in Resources */,
-				9A8C5BA51FDC04E700C401AF /* VISPER-Info.plist in Resources */,
 				9A8C5BA41FDC04E700C401AF /* Images.xcassets in Resources */,
 				9A8C5B9F1FDC04E700C401AF /* Example1VisperViewController.xib in Resources */,
 			);
