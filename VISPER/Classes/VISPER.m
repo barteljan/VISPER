@@ -35,14 +35,6 @@ static NSObject<IVISPERRoutingOptionsFactory> *routingOptionsFactory = nil;
     routingOptionsFactory = factory;
 }
 
-+(NSObject<IVISPERRoutingOption> *)routingOption{
-    return [[VISPER sharedRoutingOptionsFactory] routingOption];
-}
-
-+(NSObject<IVISPERRoutingOption> *)routingOption:(BOOL)animated{
-    return [[VISPER sharedRoutingOptionsFactory] routingOption:animated];
-}
-
 +(NSObject<IVISPERRoutingOption> *)routingOptionPush{
     return [[VISPER sharedRoutingOptionsFactory] routingOptionPush];
 }
@@ -94,15 +86,6 @@ static NSObject<IVISPERRoutingOptionsFactory> *routingOptionsFactory = nil;
 
 +(NSObject<IVISPERRoutingOption> *)routingOptionReplaceTopVC:(BOOL)animated{
     return [[VISPER sharedRoutingOptionsFactory] routingOptionReplaceTopVC:animated];
-}
-
-
-+(NSObject<IVISPERRoutingOption> *)routingOptionDoNotPresentVC:( void(^)(NSString *routePattern,
-                                                                         UIViewController *controller,
-                                                                         NSObject<IVISPERRoutingOption>*options,
-                                                                         NSDictionary *parameters,
-                                                                         NSObject<IVISPERWireframe>*wireframe))completion{
-    return [[VISPER sharedRoutingOptionsFactory] routingOptionDoNotPresentVC:completion];
 }
 
 +(NSObject<IVISPERRoutingOption> *)routingOptionShow{

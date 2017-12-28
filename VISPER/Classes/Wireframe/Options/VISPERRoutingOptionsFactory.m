@@ -83,16 +83,6 @@
     
 }
 
--(NSObject<IVISPERRoutingOption> *)routingOptionDoNotPresentVC:( void(^)(NSString *routePattern,
-                                                                 UIViewController *controller,
-                                                                 NSObject<IVISPERRoutingOption>*options,
-                                                                 NSDictionary *parameters,
-                                                                 NSObject<IVISPERWireframe>*wireframe))completion{
-    NSObject <IVISPERWireframePresentationType> *type =
-    [[VISPERPresententationTypeDoNotPresentVC alloc] initWithCompletion:completion];
-    
-    return [[VISPERRoutingOption alloc] initWithPresentationType:type];
-}
 
 
 -(NSObject<IVISPERRoutingOption> *)routingOptionReplaceTopVC{

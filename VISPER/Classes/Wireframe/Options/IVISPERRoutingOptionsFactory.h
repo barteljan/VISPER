@@ -15,9 +15,6 @@
 /**
  * GENERATING CONVINIENCE ROUTING OPTIONS
  **/
--(NSObject<IVISPERRoutingOption> *)routingOption;
--(NSObject<IVISPERRoutingOption> *)routingOption:(BOOL)animated;
-
 -(NSObject<IVISPERRoutingOption> *)routingOptionPush;
 -(NSObject<IVISPERRoutingOption> *)routingOptionPush:(BOOL)animated;
 
@@ -29,13 +26,6 @@
 
 -(NSObject<IVISPERRoutingOption> *)routingOptionPresentRootVC;
 -(NSObject<IVISPERRoutingOption> *)routingOptionPresentRootVC:(BOOL)animated;
-
--(NSObject<IVISPERRoutingOption> *)routingOptionDoNotPresentVC:( void(^)(NSString *routePattern,
-                                                                         UIViewController *controller,
-                                                                         NSObject<IVISPERRoutingOption>*options,
-                                                                         NSDictionary *parameters,
-                                                                         NSObject<IVISPERWireframe>*wireframe))completion;
-
 
 -(NSObject<IVISPERRoutingOption> *)routingOptionReplaceTopVC;
 -(NSObject<IVISPERRoutingOption> *)routingOptionReplaceTopVC:(BOOL)animated;
