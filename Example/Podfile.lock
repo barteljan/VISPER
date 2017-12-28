@@ -1,6 +1,6 @@
 PODS:
   - JLRoutes (1.5.5)
-  - RxSwift (4.0.0)
+  - RxSwift (4.1.0)
   - VISPER (1.0.1):
     - JLRoutes (~> 1.5.2)
     - VISPER-CommandBus
@@ -20,7 +20,6 @@ PODS:
   - VISPER-Reactive/Standard (0.1.2):
     - VISPER-Core
   - VISPER-Redux (0.1.2):
-    - VISPER-Core
     - VISPER-Reactive
   - VISPER-Swift (0.1.0):
     - VISPER-Redux
@@ -69,14 +68,14 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   JLRoutes: d191a496b820f60d70225202d04289582da962df
-  RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
+  RxSwift: 4219941c1244c88002901bd87a69d3aea9ae71f0
   VISPER: 2bc4f3684fdae00dd4a9bd92d57d283cc095aced
   VISPER-CommandBus: b422cb6b8c7b895cc7ecd206adc7fe265e2407b9
   VISPER-Core: e7283fd202158e9d77ea0382b7079ea8d7b4bc0b
   VISPER-Objc: 58cc6f24182dd2f31cbd70be37786b1c2ed8f819
   VISPER-Presenter: 65f484081c39b3ec509efc5785057010c731cbd0
   VISPER-Reactive: 1af4f328b8c3aedcac63c8baa31700dfcde30047
-  VISPER-Redux: 9507f1840d2f857fc6fb6e295048583d5f442a95
+  VISPER-Redux: 5f52dfa991ca78ed4a780e812208bf357c8ff1a8
   VISPER-Swift: aaf25db6524c719190cf51b426d82845d3846544
   VISPER-UIViewController: 4bf805f054b3c8125a90fcb7da401112b4c849d8
   VISPER-Wireframe: 137883de5da1f9fa7c3faaed7cf757d90929ef13
