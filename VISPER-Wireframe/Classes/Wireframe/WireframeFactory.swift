@@ -43,6 +43,9 @@ open class WireframeFactory {
         
         let showRoutingPresenter = ShowRoutingPresenter(controllerContainer: controllerContainer)
         wireframe.add(routingPresenter: showRoutingPresenter, priority: -1000)
+        
+        let backToRoutingPresenter = BackToRoutingPresenter(controllerContainer: controllerContainer)
+        wireframe.add(routingPresenter: backToRoutingPresenter, priority: -1000)
     }
     
     open func addDefaultTopControllerResolvers(wireframe: Wireframe) {

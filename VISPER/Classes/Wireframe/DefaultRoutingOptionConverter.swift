@@ -29,8 +29,8 @@ open class DefaultRoutingOptionConverter: RoutingOptionConverter {
             return nil
         }
         
-        if let _ = presentationType as? IVISPERWireframePresentationTypeBackToRoute {
-            throw DefaultRoutingOptionConverterError.couldNotConvertIVISPERRoutingOption(option: visperRoutingOption)
+        if let type = presentationType as? IVISPERWireframePresentationTypeBackToRoute {
+            return DefaultRoutingBackTo(animated: type.animated())
         }
         
         if let type = presentationType as? IVISPERWireframePresentationTypeModal {
@@ -91,6 +91,10 @@ open class DefaultRoutingOptionConverter: RoutingOptionConverter {
         
         if let routingOption = routingOption as? RoutingOptionShow {
             presentationType = VISPERPresentationTypeShow(isAnimated: routingOption.animated)
+        }
+        
+        if let routingOption = routingOption as? RoutingOptionBackTo {
+            presentationType = VISPERPresentationTypeBackToRoute(isAnimated: routingOption.animated)
         }
 
         if let type = presentationType {

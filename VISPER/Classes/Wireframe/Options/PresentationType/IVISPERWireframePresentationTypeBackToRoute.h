@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IVISPERWireframePresentationType.h"
 
-@protocol IVISPERWireframePresentationTypeBackToRoute <NSObject>
+@protocol IVISPERWireframePresentationTypeBackToRoute <IVISPERWireframePresentationType>
 
 @end
