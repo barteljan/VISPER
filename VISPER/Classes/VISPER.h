@@ -25,8 +25,6 @@
 #import "IVISPERViewControllerPresenter.h"
 #import "VISPERViewControllerPresenter.h"
 #import "VISPERViewPresenter.h"
-#import "IVISPERServiceProvider.h"
-#import "VISPERServiceProvider.h"
 #import "VISPERFeature.h"
 #import "IVISPERWireframe.h"
 #import "IVISPERRoutingOption.h"
@@ -54,7 +52,6 @@
 #import "IVISPERControllerProvider.h"
 #import "IVISPERRoutingOptionsProvider.h"
 #import "IVISPERWireframeRoutingOptionsServiceProvider.h"
-#import "IVISPERWireframeServiceProvider.h"
 #import "IVISPERWireframeViewControllerServiceProvider.h"
 
 @interface VISPER : NSObject
