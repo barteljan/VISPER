@@ -1,6 +1,5 @@
 //
 //  VISPERWireframe.swift
-//  JLRoutes
 //
 //  Created by bartel on 28.12.17.
 //
@@ -18,10 +17,6 @@ import VISPER_Core
      routingOptionConverter: RoutingOptionConverter = DefaultRoutingOptionConverter()) {
         self.wireframe = wireframe
         self.routingOptionConverter = routingOptionConverter
-    }
-    
-    @objc public func removeRoute(_ routePattern: String!) {
-        fatalError("Cannot call removeRoute(routePattern:) in this visper version")
     }
     
     @objc public func addRoute(_ routePattern: String!) {
@@ -127,42 +122,10 @@ import VISPER_Core
         }
     }
     
-    @objc public func printRoutingTable() -> String! {
-        return "Cannot print routing table in this visper version"
-    }
-    
-    @objc public func globalRoutes() -> IVISPERWireframe! {
-        fatalError("Cannot call globalRoutes in this visper version")
-    }
-    
-    @objc public func routes(forScheme scheme: String!) -> IVISPERWireframe! {
-        fatalError("Cannot call routes(forScheme:) in this visper version")
-    }
-    
-    @objc public func unregisterRouteScheme(_ scheme: String!) {
-        fatalError("Cannot call unregisterRouteScheme(scheme:) in this visper version")
-    }
-    
-    @objc public func serviceProvider() -> IVISPERWireframeServiceProvider! {
-        fatalError("Cannot call serviceProvider in this visper version")
-    }
-    
-    @objc public func setServiceProvider(_ serviceProvider: IVISPERWireframeServiceProvider!) {
-        
-    }
-    
     @objc public func addControllerServiceProvider(_ controllerServiceProvider: IVISPERControllerProvider!, withPriority priority: Int) {
         let wrapper = IVISPERControllerProviderWrapper(controllerProvider: controllerServiceProvider,
                                                        routingOptionConverter: self.routingOptionConverter)
         self.wireframe.add(controllerProvider: wrapper, priority: priority)
-    }
-    
-    @objc public func removeControllerServiceProvider(_ controllerServiceProvider: IVISPERControllerProvider!) {
-        fatalError("Cannot call removeControllerServiceProvider(controllerServiceProvider:) in this visper version")
-    }
-    
-    @objc public func controllerServiceProviders() -> [Any]! {
-        fatalError("Cannot call controllerServiceProviders() in this visper version")
     }
     
     @objc public func add(_ presenter: IVISPERRoutingPresenter!, withPriority priority: Int) {
@@ -172,14 +135,6 @@ import VISPER_Core
         self.wireframe.add(routingPresenter: wrapper, priority: priority)
     }
     
-    @objc public func remove(_ presenter: IVISPERRoutingPresenter!) {
-        fatalError("Cannot call remove(presenter:) in this visper version")
-    }
-    
-    @objc public func routingPresenters() -> [Any]! {
-        fatalError("Cannot call routingPresenters() in this visper version")
-    }
-    
     @objc public func add(_ observer: IVISPERRoutingObserver!, withPriority priority: Int) {
         let wrapper = IVISPERRoutingObserverWrapper(observer: observer,
                                                     routingOptionConverter: self.routingOptionConverter,
@@ -187,63 +142,13 @@ import VISPER_Core
         self.wireframe.add(routingObserver: wrapper, priority: priority, routePattern: nil)
     }
     
-    @objc public func remove(_ observer: IVISPERRoutingObserver!) {
-        fatalError("Cannot call remove(observer:) in this visper version")
-    }
-    
-    @objc public func routingObservers() -> [Any]! {
-        fatalError("Cannot call routingObservers() in this visper version")
-    }
-    
     @objc public func addRoutingOptionsServiceProvider(_ routingOptionsServiceProvider: IVISPERRoutingOptionsProvider!, withPriority priority: Int) {
         let wrapper = IVISPERRoutingOptionsProviderWrapper(provider: routingOptionsServiceProvider, routingOptionConverter: self.routingOptionConverter)
         self.wireframe.add(optionProvider: wrapper)
     }
     
-    @objc public func removeRoutingOptionsServiceProvider(_ routingOptionsServiceProvider: IVISPERRoutingOptionsProvider!) {
-        fatalError("Cannot call removeRoutingOptionsServiceProvider(routingOptionsServiceProvider:) in this visper version")
-    }
-    
-    @objc public func routingOptionsServiceProviders() -> [Any]! {
-        fatalError("Cannot call routingOptionsServiceProviders() in this visper version")
-    }
-    
-    @objc public func addChildWireframe(_ wireframe: IVISPERWireframe!) {
-        fatalError("Cannot call addChildWireframe(wireframe:) in this visper version")
-    }
-    
-    @objc public func removeChildWireframe(_ wireframe: IVISPERWireframe!) {
-        fatalError("Cannot call removeChildWireframe(wireframe:) in this visper version")
-    }
-    
-    @objc public func hasChildWireframe(_ wireframe: IVISPERWireframe!) -> Bool {
-        return false
-    }
-    
-    @objc public func hasDescendantWireframe(_ wireframe: IVISPERWireframe!) -> Bool {
-        return false
-    }
-    
-    @objc public var unmatchedURLHandler: ((IVISPERWireframe?, URL?, [AnyHashable : Any]?) -> Bool)!
-    
-    @objc public func empty() -> IVISPERWireframe! {
-        fatalError("Cannot call empty() in this visper version")
-    }
-    
-    @objc public func setRoutingOptionsFactory(_ factory: IVISPERRoutingOptionsFactory!) {
-        fatalError("Cannot call setRoutingOptionsFactory(factory:) in this visper version")
-    }
-    
-    @objc public func routingOptionsFactory() -> IVISPERRoutingOptionsFactory! {
-        fatalError("Cannot call routingOptionsFactory() in this visper version")
-    }
-    
     @objc public func currentViewController() -> UIViewController? {
         return self.wireframe.topViewController
-    }
-    
-    @objc public func setCurrentViewController(_ controller: UIViewController!) {
-        fatalError("Cannot call setCurrentViewController in this visper version")
     }
     
     @objc public func back(_ animated: Bool, completion: (() -> Void)!) {

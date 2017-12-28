@@ -21,7 +21,7 @@ DESC
 
   s.public_header_files = 'VISPER/Classes/**/*.h'
   s.frameworks = 'UIKit'
-  s.dependency 'JLRoutes', '~> 1.5.2'
+#s.dependency 'JLRoutes', '~> 1.5.2'
   s.dependency 'VISPER-Core'
   s.dependency 'VISPER-Objc'
   s.dependency 'VISPER-Swift'

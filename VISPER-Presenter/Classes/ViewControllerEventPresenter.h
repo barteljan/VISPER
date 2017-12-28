@@ -1,6 +1,5 @@
 //
 //  ViewControllerEventPresenter.h
-//  JLRoutes
 //
 //  Created by bartel on 15.12.17.
 //

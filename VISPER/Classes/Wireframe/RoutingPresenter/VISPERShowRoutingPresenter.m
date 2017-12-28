@@ -10,6 +10,7 @@
 #import "IVISPERWireframePresentationTypeShow.h"
 #import "IVISPERWireframe.h"
 #import "UIViewController+VISPER.h"
+/*
 @interface VISPERShowRoutingPresenter()
 
 @end
@@ -68,9 +69,9 @@
     }
     [CATransaction setCompletionBlock:^{
         if(controllerToPopTo) {
-            [wireframe setCurrentViewController:controllerToPopTo];
+            //[wireframe setCurrentViewController:controllerToPopTo];
         }else {
-            [wireframe setCurrentViewController:controller];
+            //[wireframe setCurrentViewController:controller];
         }
         
         NSObject <IVISPERRoutingEvent> *didPushControllerEvent =
@@ -93,3 +94,4 @@
 
 
 @end
+ */

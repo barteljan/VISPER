@@ -1,6 +1,5 @@
 //
 //  UIViewController+Wireframe.swift
-//  JLRoutes
 //
 //  Created by bartel on 13.12.17.
 //

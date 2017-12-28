@@ -1,8 +1,6 @@
 PODS:
-  - JLRoutes (1.5.5)
   - RxSwift (4.1.0)
   - VISPER (1.0.1):
-    - JLRoutes (~> 1.5.2)
     - VISPER-CommandBus
     - VISPER-Core
     - VISPER-Objc
@@ -72,9 +70,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  JLRoutes: d191a496b820f60d70225202d04289582da962df
   RxSwift: 4219941c1244c88002901bd87a69d3aea9ae71f0
-  VISPER: 467e8da634a0a2b8838a85c22360419373257511
+  VISPER: 3aa0395899867daee76f11115539f3ab7c871c19
   VISPER-CommandBus: b422cb6b8c7b895cc7ecd206adc7fe265e2407b9
   VISPER-Core: e7283fd202158e9d77ea0382b7079ea8d7b4bc0b
   VISPER-Objc: 58cc6f24182dd2f31cbd70be37786b1c2ed8f819
