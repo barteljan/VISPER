@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <VISPER/VISPERViewController.h>
+
+@import VISPER;
 
 @interface Example2VisperViewController : VISPERViewController<IVISPERViewController>
+
+@property NSObject<IVISPERWireframe>* visperWireframe;
+
 - (IBAction)nextAction:(id)sender;
+
 
 @end

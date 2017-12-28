@@ -22,7 +22,7 @@ public class PushedFeature: ViewFeature, PresenterFeature {
     }
     
     public func makeOption(routeResult: RouteResult) -> RoutingOption {
-        return DefaultPushRoutingOption()
+        return DefaultRoutingOptionPush()
     }
     
     public func makeController(routeResult: RouteResult) throws -> UIViewController {

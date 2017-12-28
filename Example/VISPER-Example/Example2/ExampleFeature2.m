@@ -29,7 +29,7 @@
         
         Example2VisperViewController *example2VC = [[Example2VisperViewController alloc] initWithNibName:@"Example2VisperViewController"
                                                                                                   bundle:nil];
-        
+        example2VC.visperWireframe = self.wireframe;
         return example2VC;
     }
 

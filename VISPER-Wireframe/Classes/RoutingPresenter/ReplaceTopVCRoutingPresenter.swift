@@ -20,7 +20,7 @@ public class ReplaceTopVCRoutingPresenter : DefaultControllerContainerAwareRouti
     /// - Parameter option: a given routing option
     /// - Returns: true if it is responsible, false if not
     open override func isResponsible(routeResult: RouteResult) -> Bool {
-        return routeResult.routingOption is ReplaceTopVCRoutingOption
+        return routeResult.routingOption is RoutingOptionReplaceTopVC
     }
     
     /// Present a view controller
@@ -44,7 +44,7 @@ public class ReplaceTopVCRoutingPresenter : DefaultControllerContainerAwareRouti
             throw ReplaceTopVCRoutingPresenterError.noNavigationControllerFound
         }
         
-        guard let routingOption = routeResult.routingOption as? ReplaceTopVCRoutingOption else {
+        guard let routingOption = routeResult.routingOption as? RoutingOptionReplaceTopVC else {
             throw ReplaceTopVCRoutingPresenterError.didNotReceiveReplaceTopVCRoutingOptionFor(controller: controller,
                                                                                              routeResult: routeResult,
                                                                                                wireframe: wireframe,

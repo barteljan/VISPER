@@ -8,12 +8,12 @@
 import Foundation
 import VISPER_Core
 
-public protocol GetControllerRoutingOption : RoutingOption{}
+public protocol RoutingOptionGetController : RoutingOption{}
 
-public struct DefaultGetControllerRoutingOption : GetControllerRoutingOption {
+public struct DefaultRoutingOptionGetController : RoutingOptionGetController {
     
     public func isEqual(otherOption: RoutingOption?) -> Bool {
-        return otherOption is DefaultGetControllerRoutingOption
+        return otherOption is DefaultRoutingOptionGetController
     }
     
     public init(){}

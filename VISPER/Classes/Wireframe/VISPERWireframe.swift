@@ -42,6 +42,7 @@ import VISPER_Core
         }
     }
     
+    @discardableResult
     @objc public func routeURL(_ URL: URL!) -> Bool {
         do {
             try self.wireframe.route(url: URL)
@@ -52,6 +53,7 @@ import VISPER_Core
         return true
     }
     
+    @discardableResult
     @objc public func routeURL(_ URL: URL!, withParameters parameters: [AnyHashable : Any]!) -> Bool {
         do {
             try self.wireframe.route(url: URL,
@@ -84,6 +86,7 @@ import VISPER_Core
         return result
     }
     
+    @discardableResult
     @objc public func routeURL(_ URL: URL!, withParameters parameters: [AnyHashable : Any]!, options: IVISPERRoutingOption!) -> Bool {
         
         let option = try! self.routingOptionConverter.routingOption(visperRoutingOption: options)

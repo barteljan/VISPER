@@ -21,7 +21,7 @@ open class ModalRoutingPresenter : DefaultControllerContainerAwareRoutingPresent
     /// - Parameter option: a given routing option
     /// - Returns: true if it is responsible, false if not
     open override func isResponsible(routeResult: RouteResult) -> Bool {
-        return routeResult.routingOption is ModalRoutingOption
+        return routeResult.routingOption is RoutingOptionModal
     }
     
     /// Present a view controller
@@ -45,7 +45,7 @@ open class ModalRoutingPresenter : DefaultControllerContainerAwareRoutingPresent
             throw ModalRoutingPresenterError.noNavigationControllerFound
         }
         
-        guard let routingOption = routeResult.routingOption as? ModalRoutingOption else {
+        guard let routingOption = routeResult.routingOption as? RoutingOptionModal else {
             throw ModalRoutingPresenterError.didNotReceiveModalRoutingOptionFor(controller: controller,
                                                                                routeResult: routeResult,
                                                                                  wireframe: wireframe,

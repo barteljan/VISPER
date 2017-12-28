@@ -44,7 +44,7 @@ stateObservableProperty: ObservableProperty<StartViewState>,
     }
     
     func makeOption(routeResult: RouteResult) -> RoutingOption {
-        return DefaultPushRoutingOption()
+        return DefaultRoutingOptionPush()
     }
     
     func makeController(routeResult: RouteResult) throws -> UIViewController {

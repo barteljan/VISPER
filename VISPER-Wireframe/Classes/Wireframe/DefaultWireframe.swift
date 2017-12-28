@@ -151,7 +151,7 @@ open class DefaultWireframe : Wireframe {
     /// - Returns: nil if no controller was found, the found controller otherwise
     open func controller(url: URL, parameters: [String : Any]) throws -> UIViewController? {
         
-        let routingOption = DefaultGetControllerRoutingOption()
+        let routingOption = DefaultRoutingOptionGetController()
         
         guard let routeResult = try self.router.route(url: url, parameters: parameters, routingOption: routingOption) else {
             throw DefaultWireframeError.noRoutePatternFoundFor(url: url, parameters: parameters)

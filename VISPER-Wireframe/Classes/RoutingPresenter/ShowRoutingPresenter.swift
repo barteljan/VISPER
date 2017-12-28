@@ -1,27 +1,27 @@
 //
-//  RootVCRoutingPresenter.swift
+//  ShowRoutingPresenter.swift
 //  VISPER-Wireframe
 //
-//  Created by bartel on 08.12.17.
+//  Created by bartel on 28.12.17.
 //
 
 import Foundation
-
 import VISPER_Core
 
-public enum RootVCRoutingPresenterError : Error {
-    case didNotReceiveRootVCRoutingOptionFor(controller: UIViewController, routeResult: RouteResult, wireframe: Wireframe, delegate: RoutingDelegate)
+public enum ShowRoutingPresenterError : Error {
+    case didNotReceiveShowRoutingOptionFor(controller: UIViewController, routeResult: RouteResult, wireframe: Wireframe, delegate: RoutingDelegate)
     case noNavigationControllerFound
 }
 
-public class RootVCRoutingPresenter : DefaultControllerContainerAwareRoutingPresenter {
+open class ShowRoutingPresenter : DefaultControllerContainerAwareRoutingPresenter {
     
     /// Is this presenter responsible for presenting a given routing option
     ///
     /// - Parameter option: a given routing option
     /// - Returns: true if it is responsible, false if not
     open override func isResponsible(routeResult: RouteResult) -> Bool {
-        return routeResult.routingOption is RoutingOptionRootVC
+        let result = routeResult.routingOption is RoutingOptionShow
+        return result
     }
     
     /// Present a view controller
@@ -42,14 +42,14 @@ public class RootVCRoutingPresenter : DefaultControllerContainerAwareRoutingPres
         guard let navigationController = self.controllerContainer.getController(matches: { controller in
             return controller is UINavigationController
         }) as? UINavigationController else {
-            throw RootVCRoutingPresenterError.noNavigationControllerFound
+            throw PushRoutingPresenterError.noNavigationControllerFound
         }
-    
-        guard let routingOption = routeResult.routingOption as? RoutingOptionRootVC else {
-            throw RootVCRoutingPresenterError.didNotReceiveRootVCRoutingOptionFor(controller: controller,
-                                                                                 routeResult: routeResult,
-                                                                                   wireframe: wireframe,
-                                                                                    delegate: delegate)
+        
+        guard let routingOption = routeResult.routingOption as? RoutingOptionShow else {
+            throw ShowRoutingPresenterError.didNotReceiveShowRoutingOptionFor(controller: controller,
+                                                                              routeResult: routeResult,
+                                                                              wireframe: wireframe,
+                                                                              delegate: delegate)
         }
         
         try delegate.willPresent(controller: controller,
@@ -61,8 +61,7 @@ public class RootVCRoutingPresenter : DefaultControllerContainerAwareRoutingPres
             CATransaction.begin()
         }
         
-        let controllers = [controller]
-        navigationController.setViewControllers(controllers, animated: false)
+        navigationController.show(controller, sender: self)
         
         if routingOption.animated {
             CATransaction.setCompletionBlock {

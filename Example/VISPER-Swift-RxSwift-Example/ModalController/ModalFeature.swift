@@ -26,7 +26,7 @@ public class ModalFeature: ViewFeature, PresenterFeature {
     }
     
     public func makeOption(routeResult: RouteResult) -> RoutingOption {
-        return DefaultModalRoutingOption()
+        return DefaultRoutingOptionModal()
     }
     
     public func makeController(routeResult: RouteResult) throws -> UIViewController {

@@ -25,12 +25,12 @@
 
 - (IBAction)backAction:(id)sender {
     
-    [self.wireframe back:true completion:^{
+    [self.visperWireframe back:true completion:^{
         NSLog(@"dismissed vc");
     }];
 }
 
 - (IBAction)nextAction:(id)sender {
-    [self.wireframe routeURL:[NSURL URLWithString:@"/example3"]];
+    [self.visperWireframe routeURL:[NSURL URLWithString:@"/example3"]];
 }
 @end

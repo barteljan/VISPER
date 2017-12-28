@@ -20,7 +20,7 @@ open class PushRoutingPresenter : DefaultControllerContainerAwareRoutingPresente
     /// - Parameter option: a given routing option
     /// - Returns: true if it is responsible, false if not
     open override func isResponsible(routeResult: RouteResult) -> Bool {
-        let result = routeResult.routingOption is PushRoutingOption
+        let result = routeResult.routingOption is RoutingOptionPush
         return result
     }
     
@@ -45,7 +45,7 @@ open class PushRoutingPresenter : DefaultControllerContainerAwareRoutingPresente
             throw PushRoutingPresenterError.noNavigationControllerFound
         }
         
-        guard let routingOption = routeResult.routingOption as? PushRoutingOption else {
+        guard let routingOption = routeResult.routingOption as? RoutingOptionPush else {
             throw PushRoutingPresenterError.didNotReceivePushRoutingOptionFor(controller: controller,
                                                                              routeResult: routeResult,
                                                                                wireframe: wireframe,
@@ -61,7 +61,7 @@ open class PushRoutingPresenter : DefaultControllerContainerAwareRoutingPresente
             CATransaction.begin()
         }
         
-        navigationController.show(controller, sender: self)
+        navigationController.pushViewController(controller, animated: routingOption.animated)
         
         if routingOption.animated {
             CATransaction.setCompletionBlock {

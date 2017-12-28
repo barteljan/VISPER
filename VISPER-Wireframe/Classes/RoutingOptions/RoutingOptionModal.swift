@@ -1,5 +1,5 @@
 //
-//  ModalRoutingOption.swift
+//  RoutingOptionModal.swift
 //  Pods-VISPER-Wireframe_Example
 //
 //  Created by bartel on 08.12.17.
@@ -8,12 +8,12 @@
 import Foundation
 import VISPER_Core
 
-public protocol ModalRoutingOption : AnimatedRoutingOption{
+public protocol RoutingOptionModal : AnimatedRoutingOption{
     var presentationStyle: UIModalPresentationStyle? {get}
     var transitionStyle: UIModalTransitionStyle? {get}
 }
 
-public struct DefaultModalRoutingOption: ModalRoutingOption{
+public struct DefaultRoutingOptionModal: RoutingOptionModal{
     
     public let animated: Bool
     public let presentationStyle : UIModalPresentationStyle?
@@ -29,7 +29,7 @@ public struct DefaultModalRoutingOption: ModalRoutingOption{
     
     public func isEqual(otherOption: RoutingOption?) -> Bool {
         
-        guard let otherOption = otherOption as? ModalRoutingOption else {
+        guard let otherOption = otherOption as? RoutingOptionModal else {
             return false
         }
         

@@ -44,7 +44,7 @@ class StartFeature: ViewFeature,PresenterFeature, LogicFeature{
     }
     
     func makeOption(routeResult: RouteResult) -> RoutingOption {
-        return DefaultPushRoutingOption()
+        return DefaultRoutingOptionPush()
     }
     
     func makeController(routeResult: RouteResult) throws -> UIViewController {
