@@ -8,6 +8,8 @@
 
 #import "UIViewController+VISPER.h"
 #import "VISPERViewControllerServiceProvider.h"
+#import <VISPER/VISPER-Swift.h>
+@import VISPER_UIViewController;
 
 #import <objc/runtime.h>
 
@@ -78,112 +80,27 @@ static BOOL areVISPEREventsOnAllViewControllersEnabledVar;
 
 
 #pragma mark presenter management
--(NSMutableArray*)privatePresentersArray{
-    NSMutableArray *presenters = objc_getAssociatedObject(self, @selector(visperPresenters));
-    if(!presenters){
-        presenters = [NSMutableArray array];
-        objc_setAssociatedObject(self, @selector(visperPresenters), presenters , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
-    return presenters;
-}
-
--(NSArray*)visperPresenters{
-    return [NSArray arrayWithArray:[self privatePresentersArray]];
-}
-
--(void)addVisperPresenter:(NSObject<IVISPERPresenter> *)presenter{
-    [[self privatePresentersArray] addObject:presenter];
-}
-
 -(void)add:(NSObject<IVISPERPresenter> *)presenter {
     [self addVisperPresenter:presenter];
 }
 
--(void)removeVisperPresenter:(NSObject<IVISPERPresenter> *)presenter{
-    [[self privatePresentersArray] removeObject:presenter];
-}
-
--(void)notifyPresentersOfView:(UIView*)view
-                    withEvent:(NSObject<IVISPERViewEvent>*)event{
-    
-    NSArray *presenters = [NSArray arrayWithArray:[self privatePresentersArray]];
-    
-    for(NSObject<IVISPERPresenter>*presenter in presenters ){
-        if([presenter isResponsibleForView:view withController:self onEvent:event]){
-            [presenter viewEvent:event withView:view andController:self];
-        }
-    }
-}
-
 #pragma mark routing events
-
 -(void)routingEvent:(NSObject<IVISPERRoutingEvent>*)event
       withWireframe:(NSObject<IVISPERWireframe>*)wireframe{
-    for(NSObject<IVISPERPresenter>*presenter in [self privatePresentersArray] ){
-        if([presenter isResponsibleForController:self onEvent:event]){
-            [presenter routingEvent:event
-                         controller:self
-                       andWireframe:wireframe];
+    
+    
+    for(NSObject<IVISPERPresenter>*somePresenter in [self visperPresenters] ){
+        if([somePresenter conformsToProtocol:@protocol(IVISPERPresenter)]){
+            NSObject<IVISPERPresenter> *presenter = (NSObject<IVISPERPresenter> *)somePresenter;
+            if([presenter isResponsibleForController:self onEvent:event]){
+                [presenter routingEvent:event
+                             controller:self
+                           andWireframe:wireframe];
+            }
         }
     }
-    
-    if([event.name isEqualToString:@"willRouteToController"]){
-        self.routePattern    = [event.info objectForKey:@"routePattern"];
-        self.routeParameters = [event.info objectForKey:@"parameters"];
-        self.routingOptions  = (NSObject<IVISPERRoutingOption>*)[event.info objectForKey:@"options"];
-        self.wireframe       = wireframe;
-        
-        [self willRouteToViewControllerOnWireframe:event.sender
-                                   routePattern:[event.info objectForKey:@"routePattern"]
-                                        options:(NSObject<IVISPERRoutingOption>*)[event.info objectForKey:@"options"]
-                                     parameters:(NSDictionary*)[event.info objectForKey:@"parameters"]
-         ];
-    }else if([event.name isEqualToString:@"didRouteToController"]){
-        [self didRouteToViewControllerOnWireframe:event.sender
-                                     routePattern:[event.info objectForKey:@"routePattern"]
-                                          options:(NSObject<IVISPERRoutingOption>*)[event.info objectForKey:@"options"]
-                                       parameters:(NSDictionary*)[event.info objectForKey:@"parameters"]
-         ];
-    }else if([event.name isEqualToString:@"willPushController"]){
-        [self willPushViewControllerOnWireframe:event.sender
-                       routePattern:[event.info objectForKey:@"routePattern"]
-                            options:(NSObject<IVISPERRoutingOption>*)[event.info objectForKey:@"options"]
-                         parameters:(NSDictionary*)[event.info objectForKey:@"parameters"]
-         ];
-    }else if([event.name isEqualToString:@"didPushController"]){
-        [self didPushViewControllerOnWireframe:event.sender
-                                   routePattern:[event.info objectForKey:@"routePattern"]
-                                        options:(NSObject<IVISPERRoutingOption>*)[event.info objectForKey:@"options"]
-                                     parameters:(NSDictionary*)[event.info objectForKey:@"parameters"]
-         ];
-    }else if([event.name isEqualToString:@"willPresentController"]){
-        [self willPresentViewControllerOnWireframe:event.sender
-                                  routePattern:[event.info objectForKey:@"routePattern"]
-                                       options:(NSObject<IVISPERRoutingOption>*)[event.info objectForKey:@"options"]
-                                    parameters:(NSDictionary*)[event.info objectForKey:@"parameters"]
-         ];
-    }else if([event.name isEqualToString:@"didPresentController"]){
-        [self didPresentViewControllerOnWireframe:event.sender
-                                      routePattern:[event.info objectForKey:@"routePattern"]
-                                           options:(NSObject<IVISPERRoutingOption>*)[event.info objectForKey:@"options"]
-                                        parameters:(NSDictionary*)[event.info objectForKey:@"parameters"]
-         ];
-    }else if([event.name isEqualToString:@"willPresentRootViewController"]){
-        [self willPresentRootViewControllerOnWireframe:event.sender
-                                          routePattern:[event.info objectForKey:@"routePattern"]
-                                               options:(NSObject<IVISPERRoutingOption>*)[event.info objectForKey:@"options"]
-                                            parameters:(NSDictionary*)[event.info objectForKey:@"parameters"]
-         ];
-    }else if([event.name isEqualToString:@"didPresentRootViewController"]){
-        [self didPresentRootViewControllerOnWireframe:event.sender
-                                         routePattern:[event.info objectForKey:@"routePattern"]
-                                              options:(NSObject<IVISPERRoutingOption>*)[event.info objectForKey:@"options"]
-                                           parameters:(NSDictionary*)[event.info objectForKey:@"parameters"]
-         ];
-    }
-
-
 }
+
 
 -(void)willRouteToViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
                                routePattern:(NSString*)routePattern
@@ -199,48 +116,25 @@ static BOOL areVISPEREventsOnAllViewControllersEnabledVar;
     
 }
 
-
--(void)willPushViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
-                            routePattern:(NSString*)routePattern
-                                 options:(NSObject<IVISPERRoutingOption>*)options
-                              parameters:(NSDictionary *)parameters{
-
-}
-
-
--(void)didPushViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
-                           routePattern:(NSString*)routePattern
-                                options:(NSObject<IVISPERRoutingOption>*)options
-                                parameters:(NSDictionary *)parameters{
+-(void)willRoute:(WireframeObjc *)wireframe routeResult:(RouteResultObjc *)routeResult{
+    
+    VISPERWireframe *visperWireframe = [[VISPERWireframe alloc] initWithWireframe:wireframe];
+    
+    [self willRouteToViewControllerOnWireframe:visperWireframe
+                                  routePattern:routeResult.routePattern
+                                       options:routeResult.routingOptionObjc
+                                    parameters:routeResult.parameters];
     
 }
 
--(void)willPresentViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
-                               routePattern:(NSString*)routePattern
-                                    options:(NSObject<IVISPERRoutingOption>*)options
-                                 parameters:(NSDictionary *)parameters{
+-(void)didRoute:(WireframeObjc *)wireframe routeResult:(RouteResultObjc *)routeResult{
     
-}
-
--(void)didPresentViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
-                               routePattern:(NSString*)routePattern
-                                    options:(NSObject<IVISPERRoutingOption>*)options
-                                 parameters:(NSDictionary *)parameters{
+    VISPERWireframe *visperWireframe = [[VISPERWireframe alloc] initWithWireframe:wireframe];
     
-}
-
--(void)willPresentRootViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
-                                   routePattern:(NSString*)routePattern
-                                        options:(NSObject<IVISPERRoutingOption>*)options
-                                     parameters:(NSDictionary *)parameters{
-    
-}
-
--(void)didPresentRootViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
-                                  routePattern:(NSString*)routePattern
-                                       options:(NSObject<IVISPERRoutingOption>*)options
-                                    parameters:(NSDictionary *)parameters{
-    
+    [self didRouteToViewControllerOnWireframe:visperWireframe
+                                  routePattern:routeResult.routePattern
+                                       options:routeResult.routingOptionObjc
+                                    parameters:routeResult.parameters];
 }
 
 -(void)willDismissViewController{
@@ -277,138 +171,12 @@ static BOOL areVISPEREventsOnAllViewControllersEnabledVar;
 
 
 + (void)enableVISPEREventsOnAllViewControllers {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [self swizzleReplaceSelector:@selector(loadView) with:@selector(visper_loadView)];
-        [self swizzleReplaceSelector:@selector(viewDidLoad) with:@selector(visper_viewDidLoad)];
-        [self swizzleReplaceSelector:@selector(viewWillAppear:) with:@selector(visper_viewWillAppear:)];
-        [self swizzleReplaceSelector:@selector(viewDidAppear:) with:@selector(visper_viewDidAppear:)];
-        [self swizzleReplaceSelector:@selector(viewWillDisappear:) with:@selector(visper_viewWillDisappear:)];
-        [self swizzleReplaceSelector:@selector(viewDidDisappear:) with:@selector(visper_viewDidDisappear:)];
-        [self swizzleReplaceSelector:@selector(viewWillTransitionToSize:withTransitionCoordinator:) with:@selector(visper_viewWillTransitionToSize:withTransitionCoordinator:)];
-        [self swizzleReplaceSelector:@selector(didReceiveMemoryWarning) with:@selector(visper_didReceiveMemoryWarning)];
-        
-        areVISPEREventsOnAllViewControllersEnabledVar = TRUE;
-    });
+    [self enableLifecycleEvents];
+    areVISPEREventsOnAllViewControllersEnabledVar = TRUE;
 }
 
 + (BOOL)areVISPEREventsOnAllViewControllersEnabled{
     return areVISPEREventsOnAllViewControllersEnabledVar;
 }
-
--(void)visper_loadView{
-    [self visper_loadView];
-    
-    NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:NSStringFromSelector(_cmd)
-                                                                           sender:self
-                                                                             info:nil];
-    [self notifyPresentersOfView:self.view withEvent:event];
-}
-
-
-- (void)visper_viewDidLoad {
-    [self visper_viewDidLoad];
-    NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:NSStringFromSelector(_cmd)
-                                                                           sender:self
-                                                                             info:nil];
-    [self notifyPresentersOfView:self.view withEvent:event];
-}
-
-
-- (void)visper_viewWillAppear:(BOOL)animated {
-    [self visper_viewWillAppear:animated];
-    
-    NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:NSStringFromSelector(_cmd)
-                                                                                 sender:self
-                                                                                   info:@{@"animated":(animated)?@TRUE:@FALSE}];
-    [self notifyPresentersOfView:self.view withEvent:event];
-}
-
-
--(void)visper_viewDidAppear:(BOOL)animated{
-    [self visper_viewDidAppear:animated];
-    NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:NSStringFromSelector(_cmd)
-                                                                                 sender:self
-                                                                                   info:@{@"animated":(animated)?@TRUE:@FALSE}];
-    
-    [self notifyPresentersOfView:self.view withEvent:event];
-}
-
-
--(void)visper_viewWillDisappear:(BOOL)animated{
-    [self visper_viewWillDisappear:animated];
-    
-    NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:NSStringFromSelector(_cmd)
-                                                                                 sender:self
-                                                                                   info:@{@"animated":(animated)?@TRUE:@FALSE}];
-    [self notifyPresentersOfView:self.view withEvent:event];
-}
-
-
--(void)visper_viewDidDisappear:(BOOL)animated{
-    [self visper_viewDidDisappear:animated];
-    
-    NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:NSStringFromSelector(_cmd)
-                                                                                 sender:self
-                                                                                   info:@{@"animated":(animated)?@TRUE:@FALSE}];
-    [self notifyPresentersOfView:self.view withEvent:event];
-    
-}
-
--(void)visper_viewWillTransitionToSize:(CGSize)size
-      withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
-    [self visper_viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-    NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:NSStringFromSelector(_cmd)
-                                                                                 sender:self
-                                                                                   info:@{
-                                                                                        @"width"       :[NSNumber numberWithFloat:size.width],
-                                                                                        @"height"      :[NSNumber numberWithFloat:size.height],
-                                                                                        @"coordinator" : coordinator
-                                                                                    }];
-    [self notifyPresentersOfView:self.view withEvent:event];
-    
-}
-
-- (void)visper_didReceiveMemoryWarning {
-    [self visper_didReceiveMemoryWarning];
-    NSObject<IVISPERViewEvent> *event = [self.visperServiceProvider createEventWithName:NSStringFromSelector(_cmd)
-                                                                                 sender:self
-                                                                                   info:nil
-                                             ];
-    [self notifyPresentersOfView:self.view withEvent:event];
-    
-}
-
--(void)dismissThisViewControllerAnimated:(BOOL)animated completion:(void (^)(void))completion {
-
-    void(^eventCompletionBlock)(void) = ^{
-        [self didDismissViewController];
-        if(completion){
-            completion();
-        }
-    };
-    
-    [completion copy];
-    
-    if(self.navigationController){
-
-        [CATransaction begin];
-        [self.navigationController popViewControllerAnimated:animated];
-        [CATransaction setCompletionBlock:eventCompletionBlock];
-        [CATransaction commit];
-
-    }else{
-        [self dismissViewControllerAnimated:animated completion:eventCompletionBlock];
-    }
-    
-
-
-}
-
-
-
-
-
-
 
 @end

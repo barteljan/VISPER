@@ -18,7 +18,6 @@
 #import "VISPERViewEvent.h"
 #import "VISPEREvent.h"
 #import "IVISPERRoutingEvent.h"
-#import "VISPERRoutingEvent.h"
 #import "IVISPERApplication.h"
 #import "IVISPERFeature.h"
 #import "IVISPERPresenter.h"

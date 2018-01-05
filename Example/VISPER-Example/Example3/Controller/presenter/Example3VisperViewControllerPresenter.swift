@@ -19,6 +19,10 @@ class Example3VisperViewControllerPresenter: VISPERViewControllerPresenter {
     }
     
     
+    override func viewWillAppear(_ animated: Bool, view: UIView!, with viewController: UIViewController!, on event: IVISPERViewEvent!) {
+        super.viewWillAppear(animated, view: view, with: viewController, on: event)
+    }
+    
     override func viewEvent(_ event: IVISPERViewEvent!, with view: UIView!, andController viewController: UIViewController!) {
        super.viewEvent(event, with: view, andController: viewController)
         

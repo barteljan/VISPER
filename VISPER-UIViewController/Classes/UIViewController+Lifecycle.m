@@ -70,7 +70,6 @@
     [self visper_viewWillAppear:animated];
     
     ViewWillAppearEvent *event = [[ViewWillAppearEvent alloc] initWithSender:self animated:animated];
-    
     [self notifyPresentersOfView:self.view withEvent:event];
 }
 
@@ -78,7 +77,6 @@
     [self visper_viewDidAppear:animated];
     
     ViewDidAppearEvent *event = [[ViewDidAppearEvent alloc] initWithSender:self animated:animated];
-    
     [self notifyPresentersOfView:self.view withEvent:event];
 }
 
@@ -86,7 +84,6 @@
     [self visper_viewWillDisappear:animated];
     
     ViewWillDisappearEvent *event = [[ViewWillDisappearEvent alloc] initWithSender:self animated:animated];
-    
     [self notifyPresentersOfView:self.view withEvent:event];
 }
 
@@ -94,7 +91,6 @@
     [self visper_viewDidDisappear:animated];
     
     ViewDidDisappearEvent *event = [[ViewDidDisappearEvent alloc] initWithSender:self animated:animated];
-    
     [self notifyPresentersOfView:self.view withEvent:event];
 }
 

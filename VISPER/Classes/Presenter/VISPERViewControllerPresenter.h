@@ -6,6 +6,7 @@
 #import <Foundation/Foundation.h>
 #import "IVISPERViewControllerPresenter.h"
 #import "VISPERViewPresenter.h"
+@import VISPER_Presenter;
 
 @interface VISPERViewControllerPresenter : VISPERViewPresenter <IVISPERViewControllerPresenter>
 
@@ -68,24 +69,6 @@
           withController:(UIViewController*)viewController
                  onEvent:(NSObject<IVISPERViewEvent>*)event;
 
-/**
- * Called on orientation change
- **/
--(void)viewWillTransitionToSize:(CGSize)size
-      withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
-                           view:(UIView*)view
-                 withController:(UIViewController*)controller
-                        onEvent:(NSObject<IVISPERViewEvent>*)event;
-
-
-
-/**
- * Called on memory warning
- **/
-- (void)didReceiveMemoryWarning:(UIView*)view
-withController:(UIViewController*)controller
-                        onEvent:(NSObject<IVISPERViewEvent>*)event;
-
 
 -(void)willRouteToViewController:(UIViewController*)viewController
                  onWireframe:(NSObject<IVISPERWireframe>*)wireframe
@@ -100,47 +83,5 @@ withController:(UIViewController*)controller
                      priority:(NSInteger)priority
                       options:(NSObject<IVISPERRoutingOption>*)options
                    parameters:(NSDictionary *)parameters;
-
-/**
- * Called before pushing a controller of this presenter
- **/
--(void)willPushViewController:(UIViewController*)viewController
-                  onWireframe:(NSObject<IVISPERWireframe>*)wireframe
-                 routePattern:(NSString*)routePattern
-                     priority:(NSInteger)priority
-                      options:(NSObject<IVISPERRoutingOption>*)options
-                   parameters:(NSDictionary *)parameters;
-
-/**
- * Called after pushing a controller of this presenter
- **/
--(void)didPushViewController:(UIViewController*)viewController
-                 onWireframe:(NSObject<IVISPERWireframe>*)wireframe
-                routePattern:(NSString*)routePattern
-                    priority:(NSInteger)priority
-                     options:(NSObject<IVISPERRoutingOption>*)options
-                  parameters:(NSDictionary *)parameters;
-
-/**
- * Called before modal presenting a controller of this presenter
- **/
--(void)willPresentViewController:(UIViewController*)viewController
-                     onWireframe:(NSObject<IVISPERWireframe>*)wireframe
-                    routePattern:(NSString*)routePattern
-                        priority:(NSInteger)priority
-                         options:(NSObject<IVISPERRoutingOption>*)options
-                      parameters:(NSDictionary *)parameters;
-
-
-/**
- * Called after modal presenting a controller of this presenter
- **/
--(void)didPresentViewController:(UIViewController*)viewController
-                    onWireframe:(NSObject<IVISPERWireframe>*)wireframe
-                   routePattern:(NSString*)routePattern
-                       priority:(NSInteger)priority
-                        options:(NSObject<IVISPERRoutingOption>*)options
-                     parameters:(NSDictionary *)parameters;
-
 
 @end

@@ -7,13 +7,15 @@
 //
 
 #import "VISPERViewPresenter.h"
+#import "UIViewController+VISPER.h"
 
 @implementation VISPERViewPresenter
+@synthesize wireframe=_wireframe;
 
 -(instancetype)initWithWireframe:(NSObject<IVISPERWireframe>*)wireframe{
     self = [super init];
     if(self){
-        self->_wireframe = wireframe;
+        self.wireframe = wireframe;
     }
     return self;
 }
@@ -41,6 +43,39 @@
 -(void)routingEvent:(NSObject<IVISPERRoutingEvent>*)event
          controller:(UIViewController*)viewController
        andWireframe:(NSObject<IVISPERWireframe>*)wireframe{
+}
+
+- (void)setWireframe:(NSObject<IVISPERWireframe> *)wireframe {
+    self->_wireframe = wireframe;
+}
+
+
+- (NSObject<IVISPERWireframe> *)wireframe {
+    return self->_wireframe;
+}
+
+
+- (BOOL)isResponsible:(NSObject *)event view:(UIView *)view controller:(UIViewController *)controller {
+    
+    if([event conformsToProtocol:@protocol(IVISPERRoutingEvent)]){
+        return [self isResponsibleForController:controller onEvent:(NSObject<IVISPERRoutingEvent>*)event];
+    }
+    if([event conformsToProtocol:@protocol(IVISPERViewEvent)]){
+        return [self isResponsibleForView:view withController:controller onEvent:(NSObject<IVISPERViewEvent> *)event];
+    }
+    return FALSE;
+}
+
+- (void)receivedEvent:(NSObject *)event view:(UIView *)view controller:(UIViewController *)controller {
+    
+    if([event conformsToProtocol:@protocol(IVISPERViewEvent)]){
+        [self viewEvent:(NSObject<IVISPERViewEvent> *)event withView:view andController:controller];
+    }
+    
+    if([event conformsToProtocol:@protocol(IVISPERRoutingEvent)]){
+        [self routingEvent:(NSObject<IVISPERRoutingEvent> *)event controller:controller andWireframe:controller.wireframe];
+    }
+    
 }
 
 @end

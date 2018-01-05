@@ -5,11 +5,11 @@
 
 @import Foundation;
 @import UIKit;
+@import VISPER_Presenter;
 #import "IVISPERViewEvent.h"
 #import "IVISPERPresenter.h"
 
-@protocol IVISPERViewControllerPresenter <IVISPERPresenter>
-
+@protocol IVISPERViewControllerPresenter <IVISPERPresenter,ViewControllerEventPresenter>
 
 /**
  * Called when view controller loads the view

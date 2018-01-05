@@ -28,11 +28,7 @@
 #pragma mark presenter management
 @property (readonly,nonatomic, strong) NSArray *visperPresenters;
 
--(void)addVisperPresenter:(NSObject<IVISPERPresenter> *)presenter;
 -(void)add:(NSObject<IVISPERPresenter> *)presenter;
--(void)removeVisperPresenter:(NSObject<IVISPERPresenter> *)presenter;
--(void)notifyPresentersOfView:(UIView*)view
-                    withEvent:(NSObject<IVISPERViewEvent>*)event;
 
 -(void)routingEvent:(NSObject<IVISPERRoutingEvent>*)event
       withWireframe:(NSObject<IVISPERWireframe>*)wireframe;
@@ -46,36 +42,6 @@
                               routePattern:(NSString*)routePattern
                                    options:(NSObject<IVISPERRoutingOption>*)options
                                 parameters:(NSDictionary *)parameters;
-
--(void)willPushViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
-                            routePattern:(NSString*)routePattern
-                                 options:(NSObject<IVISPERRoutingOption>*)options
-                              parameters:(NSDictionary *)parameters;
-
--(void)didPushViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
-                           routePattern:(NSString*)routePattern
-                                options:(NSObject<IVISPERRoutingOption>*)options
-                             parameters:(NSDictionary *)parameters;
-
--(void)willPresentViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
-                               routePattern:(NSString*)routePattern
-                                    options:(NSObject<IVISPERRoutingOption>*)options
-                                 parameters:(NSDictionary *)parameters;
-
--(void)didPresentViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
-                              routePattern:(NSString*)routePattern
-                                   options:(NSObject<IVISPERRoutingOption>*)options
-                                parameters:(NSDictionary *)parameters;
-
--(void)willPresentRootViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
-                                   routePattern:(NSString*)routePattern
-                                        options:(NSObject<IVISPERRoutingOption>*)options
-                                     parameters:(NSDictionary *)parameters;
-
--(void)didPresentRootViewControllerOnWireframe:(NSObject<IVISPERWireframe>*)wireframe
-                                  routePattern:(NSString*)routePattern
-                                       options:(NSObject<IVISPERRoutingOption>*)options
-                                    parameters:(NSDictionary *)parameters;
 
 -(void)willDismissViewController;
 -(void)didDismissViewController;

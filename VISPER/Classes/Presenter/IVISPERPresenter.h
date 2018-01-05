@@ -11,8 +11,9 @@
 #import "IVISPERViewEvent.h"
 #import "IVISPERWireframe.h"
 #import "IVISPERRoutingEvent.h"
+@import VISPER_Presenter;
 
-@protocol IVISPERPresenter <NSObject>
+@protocol IVISPERPresenter <ViewControllerEventPresenter>
 
 -(NSObject<IVISPERWireframe>*)wireframe;
 -(void)setWireframe:(NSObject<IVISPERWireframe>*)wireframe;

@@ -18,19 +18,19 @@ import Foundation
     }
 }
 
-open class LoadViewEvent: LifecycleEvent {
+@objc open class LoadViewEvent: LifecycleEvent {
     @objc public init(sender: UIViewController) {
         super.init(name: "LoadViewEvent", sender: sender)
     }
 }
 
-open class ViewDidLoadEvent: LifecycleEvent {
+@objc open class ViewDidLoadEvent: LifecycleEvent {
     @objc public init(sender: UIViewController) {
         super.init(name: "ViewDidLoadEvent", sender: sender)
     }
 }
 
-open class ViewWillAppearEvent: LifecycleEvent {
+@objc open class ViewWillAppearEvent: LifecycleEvent {
     @objc open let animated: Bool
     
     @objc public init(sender: UIViewController,animated: Bool) {
@@ -39,7 +39,7 @@ open class ViewWillAppearEvent: LifecycleEvent {
     }
 }
 
-open class ViewDidAppearEvent: LifecycleEvent {
+@objc open class ViewDidAppearEvent: LifecycleEvent {
     @objc open let animated: Bool
     
     @objc public init(sender: UIViewController,animated: Bool) {
@@ -48,7 +48,7 @@ open class ViewDidAppearEvent: LifecycleEvent {
     }
 }
 
-open class ViewWillDisappearEvent: LifecycleEvent {
+@objc open class ViewWillDisappearEvent: LifecycleEvent {
     @objc open let animated: Bool
     
     @objc public init(sender: UIViewController,animated: Bool) {
@@ -57,7 +57,7 @@ open class ViewWillDisappearEvent: LifecycleEvent {
     }
 }
 
-open class ViewDidDisappearEvent: LifecycleEvent {
+@objc open class ViewDidDisappearEvent: LifecycleEvent {
     @objc open let animated: Bool
     
     @objc public init(sender: UIViewController,animated: Bool) {

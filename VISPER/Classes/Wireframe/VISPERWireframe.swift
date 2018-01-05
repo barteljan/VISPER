@@ -13,6 +13,11 @@ import VISPER_Core
     open let wireframe: WireframeObjc
     let routingOptionConverter: RoutingOptionConverter
     
+    @objc public init(wireframe: WireframeObjc) {
+        self.wireframe = wireframe
+        self.routingOptionConverter = DefaultRoutingOptionConverter()
+    }
+    
     public init(  wireframe: WireframeObjc,
      routingOptionConverter: RoutingOptionConverter = DefaultRoutingOptionConverter()) {
         self.wireframe = wireframe

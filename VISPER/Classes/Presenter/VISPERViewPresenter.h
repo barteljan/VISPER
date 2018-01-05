@@ -8,12 +8,13 @@
 
 @import Foundation;
 @import UIKit;
+@import VISPER_Presenter;
 
 #import "IVISPERPresenter.h"
 #import "IVISPERViewEvent.h"
 #import "IVISPERWireframe.h"
 
-@interface VISPERViewPresenter : NSObject<IVISPERPresenter>
+@interface VISPERViewPresenter : NSObject<IVISPERPresenter,ViewControllerEventPresenter>
 
 @property(nonatomic) IBOutlet NSObject<IVISPERWireframe> *wireframe;
 
