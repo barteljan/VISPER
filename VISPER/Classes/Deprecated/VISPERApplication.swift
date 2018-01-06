@@ -64,28 +64,28 @@ open class VISPERApplication: NSObject,IVISPERApplication {
         
     }
     
-    public func rootViewController() -> UIViewController! {
+    open func rootViewController() -> UIViewController! {
         return self._navigationController
     }
     
-    public func wireframe() -> IVISPERWireframe! {
+    open func wireframe() -> IVISPERWireframe! {
         return self._wireframe
     }
     
-    public func commandBus() -> VISPERCommandBus! {
+    open func commandBus() -> VISPERCommandBus! {
         return self._commandBus
     }
     
-    public func navigationController() -> UINavigationController! {
+    open func navigationController() -> UINavigationController! {
         return self._navigationController
     }
     
-    public func setNavigationController(_ navigationController: UINavigationController!) {
+    open func setNavigationController(_ navigationController: UINavigationController!) {
         self._navigationController = navigationController
         
     }
     
-    public func add(_ feature: IVISPERFeature!) {
+    open func add(_ feature: IVISPERFeature!) {
         let wrapper = DeprecatedVISPERFeatureWrapper(visperFeature: feature)
         do {
             try self.application.add(feature: wrapper)
@@ -94,26 +94,26 @@ open class VISPERApplication: NSObject,IVISPERApplication {
         }
     }
     
-    public func addCommandHandler(_ handler: Any!) {
+    open func addCommandHandler(_ handler: Any!) {
         self.commandBus().addHandler(handler as AnyObject)
     }
     
-    public func add(_ routingPresenter: IVISPERRoutingPresenter!, withPriority priority: Int) {
+    open func add(_ routingPresenter: IVISPERRoutingPresenter!, withPriority priority: Int) {
         self.wireframe().add(routingPresenter, withPriority: priority)
     }
     
     @discardableResult
-    public func routeURL(_ URL: URL!, withParameters parameters: [AnyHashable : Any]!, options: IVISPERRoutingOption!) -> Bool {
+    open func routeURL(_ URL: URL!, withParameters parameters: [AnyHashable : Any]!, options: IVISPERRoutingOption!) -> Bool {
         return self.wireframe().routeURL(URL,
                                          withParameters: parameters,
                                          options: options)
     }
     
-    public func canRouteURL(_ URL: URL!, withParameters parameters: [AnyHashable : Any]!) -> Bool {
+    open func canRouteURL(_ URL: URL!, withParameters parameters: [AnyHashable : Any]!) -> Bool {
         return self.wireframe().canRouteURL(URL, withParameters: parameters)
     }
     
-    public func controller(for URL: URL!, withParameters parameters: [AnyHashable : Any]!) -> UIViewController! {
+    open func controller(for URL: URL!, withParameters parameters: [AnyHashable : Any]!) -> UIViewController! {
         return self.wireframe().controller(for: URL, withParameters: parameters)
     }
     
