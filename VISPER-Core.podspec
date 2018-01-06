@@ -3,17 +3,18 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VISPER-Core'
-  s.version          = '0.1.0'
-  s.summary          = 'The core protocols of a VISPER-Wireframe'
+  s.version          = '2.0.0'
+  s.summary          = 'The core protocols and classes used in the VISPER Framework.'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+The core protocols and classes used in the VISPER Framework.
+(VISPER is a framework for building component based apps with the viper architecture).
                        DESC
 
   s.homepage         = 'https://github.com/barteljan/VISPER-Wireframe'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Jan Bartel' => 'barteljan@yahoo.de' }
-  s.source           = { :git => 'https://github.com/barteljan/VISPER-Wireframe.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/barteljan/VISPER.git', :tag => 'VISPER-Core-'+String(s.version) }
   s.social_media_url = 'https://twitter.com/janbartel'
 
   s.ios.deployment_target = '8.0'

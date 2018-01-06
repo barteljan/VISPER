@@ -7,10 +7,7 @@
 //
 
 import UIKit
-import VISPER_Swift
-import VISPER_Reactive
-import VISPER_Core
-import VISPER_Redux
+import VISPER
 import RxSwift
 
 @UIApplicationMain

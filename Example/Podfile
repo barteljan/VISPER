@@ -22,6 +22,7 @@ target 'VISPER-Wireframe-Tests' do
 end
 
 target 'VISPER-Swift-Example' do
+    pod 'VISPER', :path => '../'
     pod 'VISPER-Swift', :path => '../'
     pod 'VISPER-Wireframe', :path => '../'
     pod 'VISPER-Core', :path => '../'
@@ -33,6 +34,7 @@ target 'VISPER-Swift-Example' do
 end
 
 target 'VISPER-Swift-RxSwift-Example' do
+    pod 'VISPER', :path => '../'
     pod 'VISPER-Swift', :path => '../'
     pod 'VISPER-Wireframe', :path => '../'
     pod 'VISPER-Core', :path => '../'

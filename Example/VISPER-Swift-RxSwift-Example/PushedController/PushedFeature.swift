@@ -7,10 +7,7 @@
 //
 
 import Foundation
-import VISPER_Swift
-import VISPER_Core
-import VISPER_Wireframe
-import VISPER_Presenter
+import VISPER
 
 public class PushedFeature: ViewFeature, PresenterFeature {
    

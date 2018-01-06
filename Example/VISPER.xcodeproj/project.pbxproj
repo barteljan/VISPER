@@ -338,7 +338,6 @@
 		9A8C5C471FDC0E0C00C401AF /* Reducers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducers.swift; sourceTree = "<group>"; };
 		9A8C5C481FDC0E0C00C401AF /* States.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
 		9A8C5C541FDC0F5B00C401AF /* README-VISPER-Redux.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = "README-VISPER-Redux.md"; path = "../README-VISPER-Redux.md"; sourceTree = "<group>"; };
-		9A8C5C551FDC0F5B00C401AF /* Podfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Podfile.png; path = ../Podfile.png; sourceTree = "<group>"; };
 		9A8C5C561FDC0F5B00C401AF /* VISPER-Redux.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Redux.podspec"; path = "../VISPER-Redux.podspec"; sourceTree = "<group>"; };
 		9A8C5C571FDC0F5B00C401AF /* VISPER-Swift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Swift.podspec"; path = "../VISPER-Swift.podspec"; sourceTree = "<group>"; };
 		9A8C5C591FDC0F5C00C401AF /* VISPER-UIViewController.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-UIViewController.podspec"; path = "../VISPER-UIViewController.podspec"; sourceTree = "<group>"; };
@@ -601,7 +600,6 @@
 			children = (
 				9A67425D1FE1A034001BE7BC /* VISPER-Presenter.podspec */,
 				9A1D7EC71FDDC1550003AAD9 /* VISPER-Core.podspec */,
-				9A8C5C551FDC0F5B00C401AF /* Podfile.png */,
 				A8AE3CD1BB0F2452F47336B6 /* README.md */,
 				9A8C5C541FDC0F5B00C401AF /* README-VISPER-Redux.md */,
 				9A8C5C571FDC0F5B00C401AF /* VISPER-Swift.podspec */,
@@ -1547,6 +1545,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Swift-RxSwift-Example/Pods-VISPER-Swift-RxSwift-Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/VISPER/VISPER.framework",
+				"${BUILT_PRODUCTS_DIR}/VISPER-CommandBus/VISPER_CommandBus.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Core/VISPER_Core.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Objc/VISPER_Objc.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Presenter/VISPER_Presenter.framework",
@@ -1559,6 +1559,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_CommandBus.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Core.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Objc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Presenter.framework",
@@ -2035,6 +2037,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Swift-Example/Pods-VISPER-Swift-Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/VISPER/VISPER.framework",
+				"${BUILT_PRODUCTS_DIR}/VISPER-CommandBus/VISPER_CommandBus.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Core/VISPER_Core.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Objc/VISPER_Objc.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Presenter/VISPER_Presenter.framework",
@@ -2046,6 +2050,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_CommandBus.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Core.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Objc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Presenter.framework",

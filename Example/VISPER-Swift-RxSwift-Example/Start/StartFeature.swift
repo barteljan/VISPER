@@ -7,12 +7,7 @@
 //
 
 import Foundation
-import VISPER_Swift
-import VISPER_Core
-import VISPER_Wireframe
-import VISPER_Presenter
-import VISPER_Redux
-
+import VISPER
 import RxSwift
 
 struct StartViewState {

@@ -7,6 +7,6 @@
 
 #ifndef VISPER_Presenter_h
 #define VISPER_Presenter_h
-
-
+#import "UIViewController+Presenter.h"
+#import "ViewControllerEventPresenter.h"
 #endif /* VISPER_Presenter_h */

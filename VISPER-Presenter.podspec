@@ -3,17 +3,19 @@
 # valid spec before submitting.
 Pod::Spec.new do |s|
   s.name             = 'VISPER-Presenter'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of SwiftyVISPER.'
+  s.version          = '2.0.0'
+  s.summary          = 'Presenter layer of the VISPER Application Framework'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Implementation of the presenter layer of the VISPER Application Framework.
+(VISPER is a framework for building component based apps with the viper architecture). 
                        DESC
 
-  s.homepage         = 'https://github.com/barteljan/SwiftyVISPER'
+  s.homepage         = 'https://github.com/barteljan/VISPER'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Jan Bartel' => 'barteljan@yahoo.de' }
-  s.source           = { :git => 'https://github.com/barteljan/SwiftyVISPER.git', :tag => s.version.to_s }
+
+  s.source           = { :git => 'https://github.com/barteljan/VISPER.git', :tag => 'VISPER-Presenter-'+String(s.version) }
   s.social_media_url = 'https://twitter.com/janbartel'
 
   s.ios.deployment_target = '8.0'
