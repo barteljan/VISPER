@@ -30,6 +30,9 @@ open class DefaultRoutingDelegate : RoutingDelegate {
                     routingPresenter: RoutingPresenter?,
                            wireframe: Wireframe) throws {
         
+        let routeResultObjc = ObjcWrapper.wrapperProvider.routeResult(routeResult: routeResult)
+        controller.routeResultObjc = routeResultObjc
+        
         if let routingObserver = self.routingObserver {
             try routingObserver.willPresent(controller: controller,
                                            routeResult: routeResult,
@@ -37,8 +40,9 @@ open class DefaultRoutingDelegate : RoutingDelegate {
                                              wireframe: wireframe)
         }
         
+        
         controller.willRoute(ObjcWrapper.wrapperProvider.wireframe(wireframe: wireframe),
-                             routeResult: ObjcWrapper.wrapperProvider.routeResult(routeResult: routeResult))
+                             routeResult: routeResultObjc)
         
         //notify vc if it should be aware of it
         if let viewController = controller as? RoutingAwareViewController {

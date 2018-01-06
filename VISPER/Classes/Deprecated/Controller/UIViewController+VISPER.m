@@ -16,8 +16,8 @@
 @implementation UIViewController (VISPER)
 @dynamic visperPresenters;
 @dynamic visperServiceProvider;
-@dynamic routePattern;
-@dynamic routeParameters;
+//@dynamic routePattern;
+//@dynamic routeParameters;
 @dynamic routingOptions;
 @dynamic wireframe;
 
@@ -38,6 +38,7 @@ static BOOL areVISPEREventsOnAllViewControllersEnabledVar;
     objc_setAssociatedObject(self, @selector(visperServiceProvider), visperServiceProvider , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+/*
 #pragma mark route pattern
 -(NSString*)routePattern{
     NSString *routePattern = objc_getAssociatedObject(self, @selector(routePattern));
@@ -57,7 +58,7 @@ static BOOL areVISPEREventsOnAllViewControllersEnabledVar;
 -(void)setRouteParameters:(NSDictionary *)myRouteParameters{
     objc_setAssociatedObject(self, @selector(routeParameters), myRouteParameters , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
+*/
 #pragma mark routing options
 -(NSObject<IVISPERRoutingOption> *)routingOptions{
     NSObject<IVISPERRoutingOption> *routingOption =  objc_getAssociatedObject(self, @selector(routingOptions));
