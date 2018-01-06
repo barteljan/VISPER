@@ -20,5 +20,5 @@ Implementation of the presenter layer of the VISPER Application Framework.
 
   s.ios.deployment_target = '8.0'
   s.source_files = 'VISPER-Presenter/Classes/**/*'
-  s.dependency 'VISPER-Core'
+  s.dependency 'VISPER-Core','~> 2.0.0'
 end

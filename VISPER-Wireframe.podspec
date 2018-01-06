@@ -21,8 +21,8 @@ VISPER is a framework for building component based apps with the viper architect
 
   s.source_files = 'VISPER-Wireframe/Classes/**/*'
 
-  s.dependency 'VISPER-Core'
-  s.dependency 'VISPER-Objc'
-  s.dependency 'VISPER-UIViewController'
+  s.dependency 'VISPER-Core','~> 2.0.0'
+  s.dependency 'VISPER-Objc','~> 2.0.0'
+  s.dependency 'VISPER-UIViewController','~> 2.0.0'
 
 end

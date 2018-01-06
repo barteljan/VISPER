@@ -20,7 +20,7 @@ Objc Wrapper of all public VISPER-Wireframe classes.
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'VISPER-Objc/Classes/**/*'
-  s.dependency 'VISPER-Core'
-  s.dependency 'VISPER-Presenter'
+  s.dependency 'VISPER-Core','~> 2.0.0'
+  s.dependency 'VISPER-Presenter','~> 2.0.0'
 
 end

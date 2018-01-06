@@ -18,11 +18,11 @@ DESC
   s.requires_arc = true
 
   s.frameworks = 'UIKit'
-  s.dependency 'VISPER-Core'
-  s.dependency 'VISPER-Objc'
-  s.dependency 'VISPER-Swift'
-  s.dependency 'VISPER-Presenter'
-  s.dependency 'VISPER-Wireframe'
+  s.dependency 'VISPER-Core','~> 2.0.0'
+  s.dependency 'VISPER-Objc','~> 2.0.0'
+  s.dependency 'VISPER-Swift','~> 2.0.0'
+  s.dependency 'VISPER-Presenter','~> 2.0.0'
+  s.dependency 'VISPER-Wireframe','~> 2.0.0'
 
   s.default_subspec = 'Standard'
 
