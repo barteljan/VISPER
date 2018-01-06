@@ -59,11 +59,11 @@
         VISPERPresenterWrapper *wrapper1 = (VISPERPresenterWrapper*)obj1;
         VISPERPresenterWrapper *wrapper2 = (VISPERPresenterWrapper*)obj2;
         
-        if(!wrapper1){
+        if(!wrapper1 || ![wrapper1 isKindOfClass:[VISPERPresenterWrapper class]]){
             return (NSComparisonResult)NSOrderedDescending;
         }
         
-        if(!wrapper2){
+        if(!wrapper2 || ![wrapper2 isKindOfClass:[VISPERPresenterWrapper class]]){
             return (NSComparisonResult)NSOrderedAscending;
         }
 
