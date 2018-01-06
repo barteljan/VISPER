@@ -18,9 +18,6 @@
 + (void)enableVISPEREventsOnAllViewControllers;
 
 @property (nonatomic,strong) IBOutlet NSObject<IVISPERViewControllerServiceProvider> *visperServiceProvider;
-
-//@property (nonatomic,strong) NSString *routePattern;
-//@property (nonatomic,strong) NSDictionary *routeParameters;
 @property (nonatomic,strong) NSObject<IVISPERRoutingOption> *routingOptions;
 @property (nonatomic,strong) NSObject<IVISPERWireframe> *wireframe;
 

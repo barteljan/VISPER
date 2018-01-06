@@ -38,27 +38,6 @@ static BOOL areVISPEREventsOnAllViewControllersEnabledVar;
     objc_setAssociatedObject(self, @selector(visperServiceProvider), visperServiceProvider , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-/*
-#pragma mark route pattern
--(NSString*)routePattern{
-    NSString *routePattern = objc_getAssociatedObject(self, @selector(routePattern));
-    return routePattern;
-}
-
--(void)setRoutePattern:(NSString *)myRoutePattern{
-    objc_setAssociatedObject(self, @selector(routePattern), myRoutePattern , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-#pragma mark routeParameters
--(NSDictionary*)routeParameters{
-    NSDictionary *params = objc_getAssociatedObject(self, @selector(routeParameters));
-    return params;
-}
-
--(void)setRouteParameters:(NSDictionary *)myRouteParameters{
-    objc_setAssociatedObject(self, @selector(routeParameters), myRouteParameters , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-*/
 #pragma mark routing options
 -(NSObject<IVISPERRoutingOption> *)routingOptions{
     NSObject<IVISPERRoutingOption> *routingOption =  objc_getAssociatedObject(self, @selector(routingOptions));
@@ -119,9 +98,12 @@ static BOOL areVISPEREventsOnAllViewControllersEnabledVar;
 
 -(void)willRoute:(WireframeObjc *)wireframe routeResult:(RouteResultObjc *)routeResult{
     
+    
     VISPERWireframe *visperWireframe = [[VISPERWireframe alloc] initWithWireframe:wireframe];
+    [self setWireframe:visperWireframe];
     
     NSObject<IVISPERRoutingOption> *option = [VISPERWireframe routingOptionWithRoutingOptionObjc:routeResult.routingOptionObjc error:nil];
+    [self setRoutingOptions:option];
     
     [self willRouteToViewControllerOnWireframe:visperWireframe
                                   routePattern:routeResult.routePattern
