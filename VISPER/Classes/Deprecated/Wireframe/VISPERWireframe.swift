@@ -18,11 +18,11 @@ public enum VISPERWireframeError: Error {
     //MARK: convert options
     static var optionConverters = [RoutingOptionConverter]()
     
-    public static func addRoutingOptionConverter(converter:RoutingOptionConverter){
+    open static func addRoutingOptionConverter(converter:RoutingOptionConverter){
         VISPERWireframe.optionConverters.append(converter)
     }
     
-    public static func routingOption(visperRoutingOption: IVISPERRoutingOption?) throws -> RoutingOption? {
+    open static func routingOption(visperRoutingOption: IVISPERRoutingOption?) throws -> RoutingOption? {
         
         guard let visperRoutingOption = visperRoutingOption else {
             return nil
@@ -37,7 +37,7 @@ public enum VISPERWireframeError: Error {
         return nil
     }
     
-    public static func routingOption(routingOption: RoutingOption?) throws -> IVISPERRoutingOption? {
+    open static func routingOption(routingOption: RoutingOption?) throws -> IVISPERRoutingOption? {
         
         guard let routingOption = routingOption else {
             return nil
@@ -52,7 +52,7 @@ public enum VISPERWireframeError: Error {
         return nil
     }
     
-    @objc public static func routingOption(routingOptionObjc: RoutingOptionObjc?) throws -> IVISPERRoutingOption {
+    @objc open static func routingOption(routingOptionObjc: RoutingOptionObjc?) throws -> IVISPERRoutingOption {
         
         let routingOptionObjcCopy = routingOptionObjc
         
@@ -78,7 +78,7 @@ public enum VISPERWireframeError: Error {
         self.wireframe = wireframe
     }
     
-    @objc public func addRoute(_ routePattern: String!) {
+    @objc open func addRoute(_ routePattern: String!) {
         do {
             try self.wireframe.add(routePattern: routePattern)
         } catch let error {
@@ -86,7 +86,7 @@ public enum VISPERWireframeError: Error {
         }
     }
     
-    @objc public func addRoute(_ routePattern: String!, priority: UInt, handler handlerBlock: (([AnyHashable : Any]?) -> Bool)!) {
+    @objc open func addRoute(_ routePattern: String!, priority: UInt, handler handlerBlock: (([AnyHashable : Any]?) -> Bool)!) {
         
         do {
             try self.wireframe.add(priority: Int(priority),
@@ -102,7 +102,7 @@ public enum VISPERWireframeError: Error {
     }
     
     @discardableResult
-    @objc public func routeURL(_ URL: URL!) -> Bool {
+    @objc open func routeURL(_ URL: URL!) -> Bool {
         do {
             try self.wireframe.route(url: URL)
         } catch let error {
@@ -113,7 +113,7 @@ public enum VISPERWireframeError: Error {
     }
     
     @discardableResult
-    @objc public func routeURL(_ URL: URL!, withParameters parameters: [AnyHashable : Any]!) -> Bool {
+    @objc open func routeURL(_ URL: URL!, withParameters parameters: [AnyHashable : Any]!) -> Bool {
         do {
             try self.wireframe.route(url: URL,
                               parameters: self.convert(dict: parameters) ?? [:],
@@ -146,7 +146,7 @@ public enum VISPERWireframeError: Error {
     }
     
     @discardableResult
-    @objc public func routeURL(_ URL: URL!, withParameters parameters: [AnyHashable : Any]!, options: IVISPERRoutingOption!) -> Bool {
+    @objc open func routeURL(_ URL: URL!, withParameters parameters: [AnyHashable : Any]!, options: IVISPERRoutingOption!) -> Bool {
         
         let option = try! VISPERWireframe.routingOption(visperRoutingOption: options)
         
@@ -162,11 +162,11 @@ public enum VISPERWireframeError: Error {
         return true
     }
     
-    @objc public func controller(for URL: URL!, withParameters parameters: [AnyHashable : Any]!) -> UIViewController? {
+    @objc open func controller(for URL: URL!, withParameters parameters: [AnyHashable : Any]!) -> UIViewController? {
         return self.wireframe.controller(url: URL, parameters: self.convert(dict: parameters) ?? [:])
     }
     
-    @objc public func canRouteURL(_ URL: URL!) -> Bool {
+    @objc open func canRouteURL(_ URL: URL!) -> Bool {
         do {
             return try self.wireframe.canRoute(url: URL!)
         } catch let error {
@@ -175,7 +175,7 @@ public enum VISPERWireframeError: Error {
         }
     }
     
-    @objc public func canRouteURL(_ URL: URL!, withParameters parameters: [AnyHashable : Any]!) -> Bool {
+    @objc open func canRouteURL(_ URL: URL!, withParameters parameters: [AnyHashable : Any]!) -> Bool {
         do {
             return try self.wireframe.canRoute(url: URL, parameters: self.convert(dict: parameters) ?? [:])
         } catch let error {
@@ -184,33 +184,33 @@ public enum VISPERWireframeError: Error {
         }
     }
     
-    @objc public func addControllerServiceProvider(_ controllerServiceProvider: IVISPERControllerProvider!, withPriority priority: Int) {
+    @objc open func addControllerServiceProvider(_ controllerServiceProvider: IVISPERControllerProvider!, withPriority priority: Int) {
         let wrapper = IVISPERControllerProviderWrapper(controllerProvider: controllerServiceProvider)
         self.wireframe.add(controllerProvider: wrapper, priority: priority)
     }
     
-    @objc public func add(_ presenter: IVISPERRoutingPresenter!, withPriority priority: Int) {
+    @objc open func add(_ presenter: IVISPERRoutingPresenter!, withPriority priority: Int) {
         let wrapper = IVISPERRoutingPresenterWrapper(presenter: presenter,
                                                      wireframe: self)
         self.wireframe.add(routingPresenter: wrapper, priority: priority)
     }
     
-    @objc public func add(_ observer: IVISPERRoutingObserver!, withPriority priority: Int) {
+    @objc open func add(_ observer: IVISPERRoutingObserver!, withPriority priority: Int) {
         let wrapper = IVISPERRoutingObserverWrapper(observer: observer,
                                                     wireframe: self)
         self.wireframe.add(routingObserver: wrapper, priority: priority, routePattern: nil)
     }
     
-    @objc public func addRoutingOptionsServiceProvider(_ routingOptionsServiceProvider: IVISPERRoutingOptionsProvider!, withPriority priority: Int) {
+    @objc open func addRoutingOptionsServiceProvider(_ routingOptionsServiceProvider: IVISPERRoutingOptionsProvider!, withPriority priority: Int) {
         let wrapper = IVISPERRoutingOptionsProviderWrapper(provider: routingOptionsServiceProvider)
         self.wireframe.add(optionProvider: wrapper)
     }
     
-    @objc public func currentViewController() -> UIViewController? {
+    @objc open func currentViewController() -> UIViewController? {
         return self.wireframe.topViewController
     }
     
-    @objc public func back(_ animated: Bool, completion: (() -> Void)!) {
+    @objc open func back(_ animated: Bool, completion: (() -> Void)!) {
         self.wireframe.dismissTopViewController(animated: animated, completion: completion)
     }
     
