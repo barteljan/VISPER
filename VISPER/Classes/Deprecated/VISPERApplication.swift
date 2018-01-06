@@ -82,7 +82,7 @@ open class VISPERApplication: NSObject,IVISPERApplication {
     
     open func setNavigationController(_ navigationController: UINavigationController!) {
         self._navigationController = navigationController
-        
+        self.application.add(controllerToNavigate: navigationController)
     }
     
     open func add(_ feature: IVISPERFeature!) {
