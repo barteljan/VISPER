@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import VISPER_Core
 import VISPER_Reactive
+import VISPER_Core
 
 open class Store<State> : ActionDispatcher {
     

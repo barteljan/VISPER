@@ -17,7 +17,6 @@ Base implementation of reactive properties for the VISPER Framework.
   s.ios.deployment_target = '8.0'
 
   s.default_subspec = 'Standard'
-  s.dependency 'VISPER-Core'
 
   s.subspec 'Standard' do |standard|
     standard.source_files = 'VISPER-Reactive/Classes/Core/*.swift'

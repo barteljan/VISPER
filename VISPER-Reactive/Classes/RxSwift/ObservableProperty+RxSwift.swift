@@ -6,7 +6,6 @@
 
 import Foundation
 import RxSwift
-import VISPER_Core
 
 public extension ObservableProperty {
     

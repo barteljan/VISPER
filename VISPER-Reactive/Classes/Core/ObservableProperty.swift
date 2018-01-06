@@ -1,4 +1,3 @@
-import VISPER_Core
 //
 //  ObservableProperty.swift
 //  ReactiveReSwift
