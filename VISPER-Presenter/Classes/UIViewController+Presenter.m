@@ -27,9 +27,13 @@
 @implementation UIViewController (Presenter)
 
 @dynamic visperPresenters;
+    
+-(NSArray*)visperPresenterWrappers {
+    return objc_getAssociatedObject(self, @selector(visperPresenters));
+}
 
 -(NSArray*)visperPresenters{
-    NSArray *wrappers = objc_getAssociatedObject(self, @selector(visperPresenters));
+    NSArray *wrappers = [self visperPresenterWrappers];
     
     NSMutableArray *results = [NSMutableArray array];
     
@@ -50,7 +54,7 @@
 
 -(void)addVisperPresenter:(NSObject<ViewControllerEventPresenter> * __nonnull)presenter priority:(NSInteger)priority{
     
-    NSMutableArray *presenters = [NSMutableArray arrayWithArray:self.visperPresenters];
+    NSMutableArray *presenters = [NSMutableArray arrayWithArray:[self visperPresenterWrappers]];
     VISPERPresenterWrapper *wrapper = [[VISPERPresenterWrapper alloc] initWith:presenter priority:priority];
     [presenters addObject:wrapper];
     
@@ -59,11 +63,11 @@
         VISPERPresenterWrapper *wrapper1 = (VISPERPresenterWrapper*)obj1;
         VISPERPresenterWrapper *wrapper2 = (VISPERPresenterWrapper*)obj2;
         
-        if(!wrapper1 || ![wrapper1 isKindOfClass:[VISPERPresenterWrapper class]]){
+        if(!wrapper1){
             return (NSComparisonResult)NSOrderedDescending;
         }
         
-        if(!wrapper2 || ![wrapper2 isKindOfClass:[VISPERPresenterWrapper class]]){
+        if(!wrapper2){
             return (NSComparisonResult)NSOrderedAscending;
         }
 
