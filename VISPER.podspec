@@ -23,13 +23,13 @@ DESC
   s.dependency 'VISPER-Swift'
   s.dependency 'VISPER-Presenter'
   s.dependency 'VISPER-Wireframe'
-  s.dependency 'VISPER-CommandBus'
 
   s.default_subspec = 'Standard'
 
   s.subspec 'Standard' do |standard|
      standard.source_files = 'VISPER/Classes/Bridge/**/*','VISPER/Classes/Deprecated/**/*'
      standard.public_header_files = 'VISPER/Classes/**/*.h'
+     standard.dependency 'VISPER-CommandBus'
   end
 
   s.subspec 'NoDeprecated' do |standard|
