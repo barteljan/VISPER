@@ -12,6 +12,8 @@ import VISPER_Reactive
 
 // some base class needed for type erasure, ignore it if possible
 class _AnyApplication<AppState> : ApplicationType{
+   
+    
 
     typealias ApplicationState = AppState
     
@@ -36,6 +38,10 @@ class _AnyApplication<AppState> : ApplicationType{
     }
     
     func add(controllerToNavigate: UIViewController) {
+        fatalError("override me")
+    }
+    
+    func controllerToNavigate(matches: (UIViewController?) -> Bool) -> UIViewController? {
         fatalError("override me")
     }
     
@@ -72,6 +78,10 @@ final class _AnyApplicationBox<Base: ApplicationType>: _AnyApplication<Base.Appl
         self.base.add(controllerToNavigate: controllerToNavigate)
     }
     
+    override func controllerToNavigate(matches: (UIViewController?) -> Bool) -> UIViewController? {
+        return self.base.controllerToNavigate(matches: matches)
+    }
+    
 }
 
 
@@ -79,6 +89,8 @@ final class _AnyApplicationBox<Base: ApplicationType>: _AnyApplication<Base.Appl
 /// (you need this to reference it as a full type, to use it in arrays or variable definitions,
 /// since generic protocols can only be used in generic definitions)
 open class AnyApplication<AppState> : ApplicationType {
+    
+    
     
     public typealias ApplicationState = AppState
     
@@ -110,6 +122,10 @@ open class AnyApplication<AppState> : ApplicationType {
     
     public func add(controllerToNavigate: UIViewController) {
         self.box.add(controllerToNavigate: controllerToNavigate)
+    }
+    
+    public func controllerToNavigate(matches: (UIViewController?) -> Bool) -> UIViewController? {
+        return self.box.controllerToNavigate(matches: matches)
     }
     
 }

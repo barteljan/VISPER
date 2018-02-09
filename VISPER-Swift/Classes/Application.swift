@@ -15,6 +15,8 @@ import VISPER_Reactive
 /// A SwiftyVisper application, containing all dependencies which should be configured by features
 open class Application<AppState> : ApplicationType {
     
+    
+    
     public typealias ApplicationObservableProperty = ObservableProperty<AppState>
     
     public init(redux: Redux<AppState>,
@@ -78,6 +80,12 @@ controllerContainer: ControllerContainer){
     /// - Parameter controllerToNavigate: a controller that can be used to navigte in your app
     open func add(controllerToNavigate: UIViewController) {
         self.controllerContainer.add(controller: controllerToNavigate)
+    }
+    
+    
+    /// return the first navigatableController that matches in a block
+    public func controllerToNavigate(matches: (UIViewController?) -> Bool) -> UIViewController? {
+        return self.controllerContainer.getController(matches: matches)
     }
     
 }

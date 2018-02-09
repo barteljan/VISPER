@@ -54,4 +54,8 @@ public protocol ApplicationType {
     /// link to them elsewhere (if you don't want them to be removed from memory).
     /// - Parameter controllerToNavigate: a controller that can be used to navigte in your app
     func add(controllerToNavigate: UIViewController)
+    
+    /// return the first navigatableController that matches in a block
+    func controllerToNavigate(matches: (_ controller: UIViewController?) -> Bool) -> UIViewController?
+    
 }
