@@ -19,6 +19,7 @@ open class Store<State> : ActionDispatcher {
     private let appReducer: StoreReducer
     private let reducerProvider: ReducerProvider
     private let disposeBag = SubscriptionReferenceBag()
+    private let dispatchQueue = DispatchQueue(label: "ActionDispatcher.Queue")
     
     public init(appReducer: @escaping StoreReducer,
                intialState: State,
@@ -36,10 +37,21 @@ open class Store<State> : ActionDispatcher {
     open func dispatch(_ actions: Action...) {
         actions.forEach { action in
             let dispatchFunction: (Action...) -> Void = { [weak self] (actions: Action...) in
-                actions.forEach { self?.dispatch($0) }
+                actions.forEach {
+                    self?.dispatch($0)
+                }
             }
             middleware.transform({ self.observableState.value }, dispatchFunction, action).forEach { action in
-                observableState.value = appReducer(self.reducerProvider,action, observableState.value)
+                
+                self.dispatchQueue.async(execute: {
+                    let value = self.appReducer(self.reducerProvider,action, self.observableState.value)
+                   
+                    DispatchQueue.main.sync {
+                        self.observableState.value = value
+                    }
+                })
+                
+                
             }
         }
     }

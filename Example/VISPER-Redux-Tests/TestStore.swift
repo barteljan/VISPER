@@ -46,9 +46,20 @@ class TestStore: XCTestCase {
                               intialState: testState,
                           reducerProvider: reducerProvider)
         
+        let expect = self.expectation(description: "didCallSubscription")
+        
+        var secondCall = false
+        store.observableState.subscribe { (newState) in
+            if secondCall {
+                XCTAssert(newState.title == newTitleAction.newTitle)
+                expect.fulfill()
+            }
+            secondCall = true
+        }
+        
         store.dispatch(newTitleAction)
-        let newState = store.observableState.value
-        XCTAssert(newState.title == newTitleAction.newTitle)
+        
+        self.wait(for: [expect], timeout: 1.0)
         
         
     }
@@ -66,10 +77,22 @@ class TestStore: XCTestCase {
                          intialState: testState,
                  reducerProvider: ReducerProvider)
         
+        
+        
+        let expect = self.expectation(description: "didCallSubscription")
+        
+        var secondCall = false
+        store.observableState.subscribe { (newState) in
+            if secondCall {
+                XCTAssertTrue(didCallAppReducer)
+                expect.fulfill()
+            }
+            secondCall = true
+        }
+        
         store.dispatch(newTitleAction)
         
-        XCTAssertTrue(didCallAppReducer)
-        
+        self.wait(for: [expect], timeout: 1.0)
     }
     
     func testIfCorrectContainerIsCalled() {
@@ -85,9 +108,20 @@ class TestStore: XCTestCase {
                         intialState: testState,
                           reducerProvider: ReducerProvider)
         
+        let expect = self.expectation(description: "didCallSubscription")
+        
+        var secondCall = false
+        store.observableState.subscribe { (newState) in
+            if secondCall {
+                XCTAssertTrue(didCallAppReducer)
+                expect.fulfill()
+            }
+            secondCall = true
+        }
+        
         store.dispatch(newTitleAction)
         
-        XCTAssertTrue(didCallAppReducer)
+        self.wait(for: [expect], timeout: 1.0)
         
     }
     
@@ -101,10 +135,20 @@ class TestStore: XCTestCase {
                            intialState: testState,
                           reducerProvider: ReducerProvider)
         
-        store.dispatch(newTitleAction)
-        let newState = store.observableState.value
-        XCTAssert(newState.title == "DerStateIstNeu")
+        let expect = self.expectation(description: "didCallSubscription")
         
+        var secondCall = false
+        store.observableState.subscribe { (newState) in
+            if secondCall {
+                XCTAssert(newState.title == "DerStateIstNeu")
+                expect.fulfill()
+            }
+            secondCall = true
+        }
+        
+        store.dispatch(newTitleAction)
+        
+        self.wait(for: [expect], timeout: 1.0)
         
     }
 }

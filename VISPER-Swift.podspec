@@ -1,9 +1,9 @@
-#
+ #
 # Be sure to run `pod lib lint SwiftyVISPER.podspec' to ensure this is a
 # valid spec before submitting.
 Pod::Spec.new do |s|
   s.name             = 'VISPER-Swift'
-  s.version          = '2.0.1'
+  s.version          = '2.1.0'
   s.summary          = 'VISPER is a framework for building component based apps with the viper architecture'
 
   s.description      = <<-DESC
@@ -19,7 +19,7 @@ VISPER is a framework for building component based apps with the viper architect
   s.ios.deployment_target = '8.0'
 
   s.dependency 'VISPER-Wireframe','~> 2.0.0'
-  s.dependency 'VISPER-Redux','~> 2.0.0'
+  s.dependency 'VISPER-Redux','~> 2.1.0'
 
   s.source_files = 'VISPER-Swift/Classes/*.swift'
 end
