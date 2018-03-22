@@ -63,7 +63,9 @@ open class DefaultRouteResultHandler: RouteResultHandler {
         
         //get all presenters responsible for this route pattern / controller combination
         for presenter in try presenterProvider.makePresenters(routeResult: modifiedRouteResult, controller: controller) {
-            try presenter.addPresentationLogic(routeResult: modifiedRouteResult, controller: controller)
+            if presenter.isResponsible(routeResult:modifiedRouteResult, controller: controller) {
+                try presenter.addPresentationLogic(routeResult: modifiedRouteResult, controller: controller)
+            }
         }
         
         routingDelegate.routingObserver = routingObserver
