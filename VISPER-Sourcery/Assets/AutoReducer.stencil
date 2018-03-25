@@ -1,0 +1,52 @@
+import VISPER_Redux
+import VISPER_Core
+
+
+{% for type in types.implementing.AutoReducer %}
+
+//
+//
+// {{type.name}}
+//
+//
+{% for property in type.storedVariables|!annotated:"skipAutoStateInitializers" %}
+
+//
+// Set {{type.name}} {{property.name}}
+//
+
+// Set {{type.name}} {{property.name}} Action
+{{ type.accessLevel }} struct {{type.name}}Set{{property.name|capitalize}}Action: Action {
+    let {{property.name}}: {{property.typeName}}
+    
+    {{ type.accessLevel }} init({{property.name}}: {{property.typeName}}) {
+        self.{{property.name}} = {{property.name}}
+    }
+}
+
+// Set {{type.name}} {{property.name}} Action Reducer
+{{ type.accessLevel }} class {{type.name}}Set{{property.name|capitalize}}Reducer: ActionReducerType {
+    
+    public typealias ReducerStateType = {{type.name}}
+    public typealias ReducerActionType = {{type.name}}Set{{property.name|capitalize}}Action
+    
+    public func reduce(provider: ReducerProvider,
+                         action: {{type.name}}Set{{property.name|capitalize}}Action,
+                          state: {{type.name}}) -> {{type.name}} {
+        if let newState = {{type.name}}(state: state, {{property.name}}: action.{{property.name}}) {
+            return newState
+        } else {
+            return state
+        }
+    }
+}
+
+{% endfor %}
+{% endfor %}
+
+
+
+
+
+
+

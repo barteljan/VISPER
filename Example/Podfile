@@ -55,6 +55,11 @@ target 'VISPER-Redux-Tests' do
     pod 'VISPER-Reactive', :path => '../'
 end
 
+target 'VISPER-Redux-Sourcery-Example' do
+    pod 'VISPER-Redux', :path => '../'
+    pod 'VISPER-Sourcery', :path => '../'
+end
+
 target 'VISPER-Reactive-Example' do
     pod 'VISPER-Reactive', :path => '../'
 end

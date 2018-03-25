@@ -1,0 +1,20 @@
+import VISPER_Redux
+import VISPER_Core
+
+{% for type in types.implementing.AutoAppReducer %}
+//
+// AppReducer for {{type.name}}
+//
+let appReducerFor{{type.name}}: AppReducer<{{type.name}}> = { (reducerProvider: ReducerProvider,
+                                                              action: Action,
+                                                               state: {{type.name}}) -> {{type.name}} in
+    
+    return {{type.name}}(
+                         {% for property in type.storedVariables|!annotated:"skipGeneralInitializer" %}
+                    {{property.name}}: reducerProvider.reduce(action: action, state: state.{{property.name}}){% if not forloop.last %}, {% endif %}
+                         
+                         {% endfor %}
+                    )
+    
+}
+{% endfor %}

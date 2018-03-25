@@ -1,0 +1,53 @@
+import UIKit
+
+{% for type in types.implementing.WithAutoStateInitializers|!annotated:"skipGeneralInitializer" %}
+//
+//
+// {{type.name}}
+//
+//
+extension {{type.name}} {
+
+    // stored properties of {{type.name}}
+    {{ type.accessLevel }} enum Properties: String {
+        {% for property in type.storedVariables|!annotated:"skipAutoStateInitializers" %}
+        case {{property.name}}
+        {% endfor %}
+    }
+
+    // init to modify one property value of a {{type.name}}
+    {{ type.accessLevel }} init?(state: {{ type.name }}, property: Properties, value: Any) {
+            switch property {
+                {% for switchCaseProp in type.storedVariables|!annotated:"skipAutoStateInitializers" %}
+            case .{{switchCaseProp.name}}:
+                self.init({% for generalInitializerVar in type.storedVariables|!annotated:"skipGeneralInitializer" %}
+                          {{generalInitializerVar.name}}: {% if switchCaseProp.name == generalInitializerVar.name %} value as! {{generalInitializerVar.typeName}}{% else %}state.{{generalInitializerVar.name}}{% endif %}{% if not forloop.last %}, {% endif %}
+                    {% endfor %})
+                {% endfor %}
+            }
+    }
+    
+    {% for property in type.storedVariables|!annotated:"skipAutoStateInitializers" %}
+
+    // init to modify the value the property {{property.name}} of a {{type.name}}
+    {{ type.accessLevel }} init?(state: {{ type.name }}, {{property.name}}: {{property.typeName}}) {
+        self.init(state: state,
+               property: .{{property.name}},
+                  value: {{property.name}})
+    }
+    {% endfor %}
+
+}
+
+{% endfor %}
+
+{% for type in types.implementing.WithAutoGeneralInitializer|!annotated:"skipGeneralInitializer"  %}
+// sourcery:inline:auto:{{ type.name }}.GenerateInitializers
+    // auto generated init function for {{ type.name }}
+    {{ type.accessLevel }} init({% for property in type.storedVariables|!annotated:"skipGeneralInitializer" %}{{property.name}}: {{property.typeName}}{% if not forloop.last %}, {% endif %}{% endfor %}){
+        {% for property in type.storedVariables|!annotated:"skipGeneralInitializer" %}
+            self.{{property.name}} = {{property.name}}
+        {% endfor %}
+    }
+// sourcery:end
+{% endfor %}

@@ -1,0 +1,17 @@
+import VISPER_Swift
+import VISPER_Redux
+//
+//
+// Feature to add all auto generated reducers
+//
+//
+class AutoReducerFeature: LogicFeature {
+    func injectReducers(container: ReducerContainer) {
+        {% for type in types.implementing.AutoReducer %}
+        // {{type.name}}
+        {% for property in type.storedVariables|!annotated:"skipAutoStateInitializers" %}
+        container.addReducer(reducer: {{type.name}}Set{{property.name|capitalize}}Reducer())
+        {% endfor %}
+        {% endfor %}
+    }
+}
