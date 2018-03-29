@@ -9,6 +9,9 @@ PODS:
     - VISPER/Standard (= 2.1.0)
   - VISPER-CommandBus (1.0.0)
   - VISPER-Core (2.0.0)
+  - VISPER-Entity (0.1.0):
+    - VISPER-Core (~> 2.0.0)
+    - VISPER-Reactive (~> 2.0.0)
   - VISPER-Objc (2.0.0):
     - VISPER-Core (~> 2.0.0)
     - VISPER-Presenter (~> 2.0.0)
@@ -22,9 +25,7 @@ PODS:
   - VISPER-Redux (2.1.0):
     - VISPER-Core (~> 2.0.0)
     - VISPER-Reactive (~> 2.0.0)
-  - VISPER-Sourcery (0.1.0):
-    - VISPER-Core (~> 2.0.0)
-    - VISPER-Redux (~> 2.1.0)
+  - VISPER-Sourcery (0.3.0):
     - VISPER-Swift (~> 2.1.0)
   - VISPER-Swift (2.1.0):
     - VISPER-Redux (~> 2.1.0)
@@ -49,6 +50,7 @@ DEPENDENCIES:
   - VISPER (from `../`)
   - VISPER-CommandBus
   - VISPER-Core (from `../`)
+  - VISPER-Entity (from `../`)
   - VISPER-Objc (from `../`)
   - VISPER-Presenter (from `../`)
   - VISPER-Reactive (from `../`)
@@ -63,6 +65,8 @@ EXTERNAL SOURCES:
   VISPER:
     :path: ../
   VISPER-Core:
+    :path: ../
+  VISPER-Entity:
     :path: ../
   VISPER-Objc:
     :path: ../
@@ -86,15 +90,16 @@ SPEC CHECKSUMS:
   VISPER: f557331d9e2872f78883e4f78b303bee81f69646
   VISPER-CommandBus: b422cb6b8c7b895cc7ecd206adc7fe265e2407b9
   VISPER-Core: 2308151ac2269a52341bec71b4414cd877fd807d
+  VISPER-Entity: 8907ce00a5539936d97c73259c6dcf34db80ff2c
   VISPER-Objc: a0aff9404cb7ba515f75082314d666a88b80739b
   VISPER-Presenter: 837345a8274c4d9deb1416b46f9c9414625d01f5
   VISPER-Reactive: e962e22e99644a94e8cf38ffaa067ac3c3c9da2c
   VISPER-Redux: 23462d6c3b985172e094554861ff21d1fe116786
-  VISPER-Sourcery: 065e4c84e2647a706b649945f55a6fe5b95ecedf
+  VISPER-Sourcery: 31c379439aaf2d42fafede60b3f6e61e5c0bd09a
   VISPER-Swift: 8f1cb32e8e8181cc1f216d62b934156fc48b6da4
   VISPER-UIViewController: 3d26f4307e25e537204bba12d6a12a0a52bc8c3f
   VISPER-Wireframe: 95ede69ada6d1ae74367e5bc862249780a2e2e1e
 
-PODFILE CHECKSUM: 92a17f10d72392b535c56a15710474baf579b563
+PODFILE CHECKSUM: a4cbc42507f9a07fd728b4f1ebbd300004d786ac
 
 COCOAPODS: 1.4.0
