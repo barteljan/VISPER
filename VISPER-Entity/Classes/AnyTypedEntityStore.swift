@@ -1,6 +1,6 @@
 
 //
-//  AnyTypedEntityStore.swift
+//  AnyTypedPersistenceStore.swift
 //  Pods
 //
 //  Created by Jan Bartel on 09.05.17.
@@ -15,7 +15,7 @@ class _AnyTypedEntityStoreBase<PersistedType> : TypedEntityStoreProtocol{
     
     init() {
         guard type(of: self) != _AnyTypedEntityStoreBase.self else {
-            fatalError("_AnyTypedEntityStoreBase<PersistedType> instances can not be created; create a subclass instance instead")
+            fatalError("_AnyTypedPersistenceStoreBase<PersistedType> instances can not be created; create a subclass instance instead")
         }
     }
     
