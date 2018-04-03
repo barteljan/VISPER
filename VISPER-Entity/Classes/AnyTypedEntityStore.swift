@@ -9,12 +9,12 @@
 
 import Foundation
 
-class _AnyTypedEntityStoreBase<PersistedType> : TypedEntityStoreProtocol{
+class _AnyEntityStoreBase<PersistedType> : EntityStoreType{
     
-    typealias PersistableType = PersistedType
+    typealias EntityType = PersistedType
     
     init() {
-        guard type(of: self) != _AnyTypedEntityStoreBase.self else {
+        guard type(of: self) != _AnyEntityStoreBase.self else {
             fatalError("_AnyTypedPersistenceStoreBase<PersistedType> instances can not be created; create a subclass instance instead")
         }
     }
@@ -112,13 +112,13 @@ class _AnyTypedEntityStoreBase<PersistedType> : TypedEntityStoreProtocol{
         fatalError("override me")
     }
     
-    func transaction(transaction: @escaping (_ transactionStore: AnyTypedEntityStore<PersistableType>) throws -> Void) throws {
+    func transaction(transaction: @escaping (_ transactionStore: AnyTypedEntityStore<EntityType>) throws -> Void) throws {
         fatalError("override me")
     }
     
 }
 
-final class _AnyTypedEntityStoreBox<Base: TypedEntityStoreProtocol>: _AnyTypedEntityStoreBase<Base.PersistableType> {
+final class _AnyTypedEntityStoreBox<Base: EntityStoreType>: _AnyEntityStoreBase<Base.EntityType> {
     
     var base: Base
     
@@ -227,7 +227,7 @@ final class _AnyTypedEntityStoreBox<Base: TypedEntityStoreProtocol>: _AnyTypedEn
     }
     
     
-    override func transaction(transaction: @escaping (_ transactionStore: AnyTypedEntityStore<PersistableType>) throws -> Void) throws {
+    override func transaction(transaction: @escaping (_ transactionStore: AnyTypedEntityStore<EntityType>) throws -> Void) throws {
         try self.base.transaction(transaction: transaction)
     }
     
@@ -235,13 +235,13 @@ final class _AnyTypedEntityStoreBox<Base: TypedEntityStoreProtocol>: _AnyTypedEn
 
 
 
-open class AnyTypedEntityStore<PersistedType> : TypedEntityStoreProtocol{
+open class AnyTypedEntityStore<PersistedType> : EntityStoreType{
     
-    private let box: _AnyTypedEntityStoreBase<PersistedType>
+    private let box: _AnyEntityStoreBase<PersistedType>
     
-    public typealias PersistableType = PersistedType
+    public typealias EntityType = PersistedType
     
-    public init<Base: TypedEntityStoreProtocol>(_ base: Base) where Base.PersistableType == PersistedType {
+    public init<Base: EntityStoreType>(_ base: Base) where Base.EntityType == PersistedType {
         box = _AnyTypedEntityStoreBox(base)
     }
     
@@ -345,7 +345,7 @@ open class AnyTypedEntityStore<PersistedType> : TypedEntityStoreProtocol{
         try self.box.addView(viewName, groupingBlock: groupingBlock, sortingBlock: sortingBlock)
     }
     
-    public func transaction(transaction: @escaping (_ transactionStore: AnyTypedEntityStore<PersistableType>) throws -> Void) throws {
+    public func transaction(transaction: @escaping (_ transactionStore: AnyTypedEntityStore<EntityType>) throws -> Void) throws {
         try self.box.transaction(transaction: transaction)
     }
     

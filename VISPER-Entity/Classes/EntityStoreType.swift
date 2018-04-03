@@ -8,11 +8,10 @@
 
 import Foundation
 
-
-
-public protocol TypedEntityStoreProtocol {
+public protocol EntityStoreType {
     
-    associatedtype PersistableType
+    //associatedtype PersistableType
+    associatedtype EntityType
     
     func version() -> Int
     
@@ -61,22 +60,22 @@ public protocol TypedEntityStoreProtocol {
         _ object2: T) -> ComparisonResult)) throws
     
     
-    func transaction(transaction: @escaping (_ transactionStore: AnyTypedEntityStore<PersistableType>) throws -> Void) throws
+    func transaction(transaction: @escaping (_ transactionStore: AnyTypedEntityStore<EntityType>) throws -> Void) throws
     
 }
 
-public extension TypedEntityStoreProtocol {
+public extension EntityStoreType {
     
     public func version() -> Int {
         return 0;
     }
     
     public func isResponsible(for object: Any) -> Bool{
-        return object is PersistableType
+        return object is EntityType
     }
     
     func isResponsible(forType type: Any.Type) -> Bool{
-        let isType = type.self is PersistableType
+        let isType = type.self is EntityType
         return isType
     }
  

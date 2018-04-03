@@ -15,6 +15,7 @@
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		667B24D0CCF34F2440EFD401 /* Pods_VISPER_UIViewController_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91ACB4A436EE0DF5B0354C21 /* Pods_VISPER_UIViewController_Tests.framework */; };
 		6C222EAE7AEB7A6887FFF728 /* Pods_VISPER_Swift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EC37A9F27F14952DB563CD6 /* Pods_VISPER_Swift_Example.framework */; };
+		7D1A1F4A3D4AB6B6DEFD98F1 /* Pods_VISPER_Entity_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB7CC1C7840D087C38E3B5B /* Pods_VISPER_Entity_ExampleTests.framework */; };
 		7FAA23FA13881EA5394466C7 /* Pods_VISPER_Wireframe_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56BC0FFD08946817ED6D6162 /* Pods_VISPER_Wireframe_Example.framework */; };
 		7FCBB73BA6FDC0B0DD587678 /* Pods_VISPER_Reactive_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 120267EE0B311D7024DF9BA3 /* Pods_VISPER_Reactive_Tests.framework */; };
 		9A0D19E91FE0F67E00567A88 /* ViewControllerEventPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D19E81FE0F67E00567A88 /* ViewControllerEventPresenterTests.swift */; };
@@ -47,6 +48,10 @@
 		9A4DEB7E1FF0F4B5004D88C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4DEB7C1FF0F4B5004D88C0 /* Main.storyboard */; };
 		9A4DEB801FF0F4B5004D88C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A4DEB7F1FF0F4B5004D88C0 /* Assets.xcassets */; };
 		9A4DEB831FF0F4B5004D88C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4DEB811FF0F4B5004D88C0 /* LaunchScreen.storyboard */; };
+		9A5CB7CB20736C4D00F99456 /* MockNSCodingEntityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CB7CA20736C4D00F99456 /* MockNSCodingEntityStore.swift */; };
+		9A5CB7CD2073729400F99456 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CB7CC2073729400F99456 /* User.swift */; };
+		9A5CB7CF2073739200F99456 /* MockUserEntityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CB7CE2073739200F99456 /* MockUserEntityStore.swift */; };
+		9A5CB7D12073743D00F99456 /* ComposedStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CB7D02073743D00F99456 /* ComposedStoreTests.swift */; };
 		9A83A497206621590056A309 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A83A496206621590056A309 /* AppDelegate.swift */; };
 		9A83A499206621590056A309 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A83A498206621590056A309 /* ViewController.swift */; };
 		9A83A49E206621590056A309 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A83A49D206621590056A309 /* Assets.xcassets */; };
@@ -164,6 +169,13 @@
 			remoteGlobalIDString = 9A8C5BA91FDC07B500C401AF;
 			remoteInfo = "VISPER-Wireframe-Example";
 		};
+		9A5CB7C520736A5600F99456 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6003F582195388D10070C39A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A38DB3F206D0EDC00F0C602;
+			remoteInfo = "VISPER-Entity-Example";
+		};
 		9A8C5C001FDC094200C401AF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6003F582195388D10070C39A /* Project object */;
@@ -216,6 +228,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		014E823E3B2E266FBD65EF69 /* Pods-VISPER-Entity-ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Entity-ExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Entity-ExampleTests/Pods-VISPER-Entity-ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0BB7CC1C7840D087C38E3B5B /* Pods_VISPER_Entity_ExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VISPER_Entity_ExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11BEA87EC0CDED1C077E67C9 /* Pods-VISPER-UIViewController-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-UIViewController-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-UIViewController-Tests/Pods-VISPER-UIViewController-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		120267EE0B311D7024DF9BA3 /* Pods_VISPER_Reactive_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VISPER_Reactive_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A3158E14019F507CEACBF4 /* Pods-VISPER-Redux-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Redux-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Redux-Example/Pods-VISPER-Redux-Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -279,6 +293,12 @@
 		9A4DEB7F1FF0F4B5004D88C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A4DEB821FF0F4B5004D88C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A4DEB841FF0F4B5004D88C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A5CB7C020736A5600F99456 /* VISPER-Entity-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VISPER-Entity-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A5CB7C420736A5600F99456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A5CB7CA20736C4D00F99456 /* MockNSCodingEntityStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNSCodingEntityStore.swift; sourceTree = "<group>"; };
+		9A5CB7CC2073729400F99456 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9A5CB7CE2073739200F99456 /* MockUserEntityStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserEntityStore.swift; sourceTree = "<group>"; };
+		9A5CB7D02073743D00F99456 /* ComposedStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposedStoreTests.swift; sourceTree = "<group>"; };
 		9A67425D1FE1A034001BE7BC /* VISPER-Presenter.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Presenter.podspec"; path = "../VISPER-Presenter.podspec"; sourceTree = "<group>"; };
 		9A83A494206621590056A309 /* VISPER-Sourcery-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VISPER-Sourcery-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A83A496206621590056A309 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -443,6 +463,7 @@
 		E9B53F7012CB04FD7EFCB183 /* Pods-VISPER-Wireframe-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Wireframe-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Wireframe-Tests/Pods-VISPER-Wireframe-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		EF870287E814E3BDE867135F /* Pods-VISPER-Reactive-RxSwift-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Reactive-RxSwift-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Reactive-RxSwift-Tests/Pods-VISPER-Reactive-RxSwift-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F4AF8AE35B2FA7B4DEDA26A1 /* Pods-VISPER-Redux-Sourcery-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Redux-Sourcery-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Redux-Sourcery-Example/Pods-VISPER-Redux-Sourcery-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		F635BFE045BFB35460DB1117 /* Pods-VISPER-Entity-ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Entity-ExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Entity-ExampleTests/Pods-VISPER-Entity-ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		F91FFEBE4C36DBA25F98744C /* Pods_VISPER_Reactive_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VISPER_Reactive_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -478,6 +499,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A5CB7BD20736A5600F99456 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D1A1F4A3D4AB6B6DEFD98F1 /* Pods_VISPER_Entity_ExampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +611,7 @@
 				9A4DEB771FF0F4B5004D88C0 /* VISPER-Swift-Task-Example */,
 				9A83A495206621590056A309 /* VISPER-Sourcery-Example */,
 				9A38DB41206D0EDD00F0C602 /* VISPER-Entity-Example */,
+				9A5CB7C120736A5600F99456 /* VISPER-Entity-ExampleTests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
 				60DDC52A448C474EBD227B4E /* Pods */,
@@ -605,6 +635,7 @@
 				9A4DEB761FF0F4B5004D88C0 /* VISPER-Swift-Task-Example.app */,
 				9A83A494206621590056A309 /* VISPER-Sourcery-Example.app */,
 				9A38DB40206D0EDC00F0C602 /* VISPER-Entity-Example.app */,
+				9A5CB7C020736A5600F99456 /* VISPER-Entity-ExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -635,6 +666,7 @@
 				2425FFDE539939BE388A3D82 /* Pods_VISPER_Redux_Sourcery_Example.framework */,
 				52E521DCA3474C7FF14C0B18 /* Pods_VISPER_Entity_Example.framework */,
 				DF6CC891D2A0A5B840313EC9 /* Pods_VISPER_Sourcery_Example.framework */,
+				0BB7CC1C7840D087C38E3B5B /* Pods_VISPER_Entity_ExampleTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -670,6 +702,8 @@
 				62A8B40D02EC0FB562346577 /* Pods-VISPER-Entity-Example.release.xcconfig */,
 				B6953741A195F5D9522709C7 /* Pods-VISPER-Sourcery-Example.debug.xcconfig */,
 				75871E098A27ECB3AB1731E1 /* Pods-VISPER-Sourcery-Example.release.xcconfig */,
+				014E823E3B2E266FBD65EF69 /* Pods-VISPER-Entity-ExampleTests.debug.xcconfig */,
+				F635BFE045BFB35460DB1117 /* Pods-VISPER-Entity-ExampleTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -761,6 +795,18 @@
 				9A4DEB841FF0F4B5004D88C0 /* Info.plist */,
 			);
 			path = "VISPER-Swift-Task-Example";
+			sourceTree = "<group>";
+		};
+		9A5CB7C120736A5600F99456 /* VISPER-Entity-ExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A5CB7C420736A5600F99456 /* Info.plist */,
+				9A5CB7CA20736C4D00F99456 /* MockNSCodingEntityStore.swift */,
+				9A5CB7CC2073729400F99456 /* User.swift */,
+				9A5CB7CE2073739200F99456 /* MockUserEntityStore.swift */,
+				9A5CB7D02073743D00F99456 /* ComposedStoreTests.swift */,
+			);
+			path = "VISPER-Entity-ExampleTests";
 			sourceTree = "<group>";
 		};
 		9A83A495206621590056A309 /* VISPER-Sourcery-Example */ = {
@@ -1184,6 +1230,27 @@
 			productReference = 9A4DEB761FF0F4B5004D88C0 /* VISPER-Swift-Task-Example.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9A5CB7BF20736A5600F99456 /* VISPER-Entity-ExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A5CB7C920736A5600F99456 /* Build configuration list for PBXNativeTarget "VISPER-Entity-ExampleTests" */;
+			buildPhases = (
+				75CB0D14A6C042144070AA4E /* [CP] Check Pods Manifest.lock */,
+				9A5CB7BC20736A5600F99456 /* Sources */,
+				9A5CB7BD20736A5600F99456 /* Frameworks */,
+				9A5CB7BE20736A5600F99456 /* Resources */,
+				D7455162E41AB1A722215580 /* [CP] Embed Pods Frameworks */,
+				4A5B8CEE400169B81BD1FD56 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A5CB7C620736A5600F99456 /* PBXTargetDependency */,
+			);
+			name = "VISPER-Entity-ExampleTests";
+			productName = "VISPER-Entity-ExampleTests";
+			productReference = 9A5CB7C020736A5600F99456 /* VISPER-Entity-ExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		9A83A493206621590056A309 /* VISPER-Sourcery-Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A83A4A5206621590056A309 /* Build configuration list for PBXNativeTarget "VISPER-Sourcery-Example" */;
@@ -1423,6 +1490,12 @@
 						DevelopmentTeam = 5M2T33LA2N;
 						ProvisioningStyle = Automatic;
 					};
+					9A5CB7BF20736A5600F99456 = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = 5M2T33LA2N;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9A38DB3F206D0EDC00F0C602;
+					};
 					9A83A493206621590056A309 = {
 						CreatedOnToolsVersion = 9.2;
 						DevelopmentTeam = 5M2T33LA2N;
@@ -1507,6 +1580,7 @@
 				9A8C5CAB1FDD08DF00C401AF /* VISPER-Reactive-RxSwift-Tests */,
 				9A0D19E51FE0F67E00567A88 /* VISPER-UIViewController-Tests */,
 				9A38DB3F206D0EDC00F0C602 /* VISPER-Entity-Example */,
+				9A5CB7BF20736A5600F99456 /* VISPER-Entity-ExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1548,6 +1622,13 @@
 				9A4DEB831FF0F4B5004D88C0 /* LaunchScreen.storyboard in Resources */,
 				9A4DEB801FF0F4B5004D88C0 /* Assets.xcassets in Resources */,
 				9A4DEB7E1FF0F4B5004D88C0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A5CB7BE20736A5600F99456 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1870,6 +1951,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4A5B8CEE400169B81BD1FD56 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Entity-ExampleTests/Pods-VISPER-Entity-ExampleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4F06E44AE426063F28B3F059 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1880,12 +1976,14 @@
 				"${BUILT_PRODUCTS_DIR}/VISPER-Core/VISPER_Core.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Reactive/VISPER_Reactive.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Entity/VISPER_Entity.framework",
+				"${BUILT_PRODUCTS_DIR}/VISPER-Entity-Redux/VISPER_Entity_Redux.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Core.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Reactive.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Entity.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Entity_Redux.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1977,6 +2075,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER_Example/Pods-VISPER_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75CB0D14A6C042144070AA4E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VISPER-Entity-ExampleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7B2C71BCE7A80F0E4EAB0439 /* [CP] Check Pods Manifest.lock */ = {
@@ -2259,6 +2375,30 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Reactive-RxSwift-Tests/Pods-VISPER-Reactive-RxSwift-Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D7455162E41AB1A722215580 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Entity-ExampleTests/Pods-VISPER-Entity-ExampleTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/VISPER-Core/VISPER_Core.framework",
+				"${BUILT_PRODUCTS_DIR}/VISPER-Reactive/VISPER_Reactive.framework",
+				"${BUILT_PRODUCTS_DIR}/VISPER-Entity/VISPER_Entity.framework",
+				"${BUILT_PRODUCTS_DIR}/VISPER-Entity-Redux/VISPER_Entity_Redux.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Core.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Reactive.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Entity.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Entity_Redux.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Entity-ExampleTests/Pods-VISPER-Entity-ExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DBF416CF69C620423AE18CB6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2482,6 +2622,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9A5CB7BC20736A5600F99456 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A5CB7CB20736C4D00F99456 /* MockNSCodingEntityStore.swift in Sources */,
+				9A5CB7D12073743D00F99456 /* ComposedStoreTests.swift in Sources */,
+				9A5CB7CF2073739200F99456 /* MockUserEntityStore.swift in Sources */,
+				9A5CB7CD2073729400F99456 /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A83A490206621590056A309 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2637,6 +2788,11 @@
 			isa = PBXTargetDependency;
 			target = 9A8C5BA91FDC07B500C401AF /* VISPER-Wireframe-Example */;
 			targetProxy = 9A0D19EB1FE0F67E00567A88 /* PBXContainerItemProxy */;
+		};
+		9A5CB7C620736A5600F99456 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A38DB3F206D0EDC00F0C602 /* VISPER-Entity-Example */;
+			targetProxy = 9A5CB7C520736A5600F99456 /* PBXContainerItemProxy */;
 		};
 		9A8C5C011FDC094200C401AF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3107,6 +3263,75 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9A5CB7C720736A5600F99456 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 014E823E3B2E266FBD65EF69 /* Pods-VISPER-Entity-ExampleTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5M2T33LA2N;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "VISPER-Entity-ExampleTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.barteljan.VISPER-Entity-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VISPER-Entity-Example.app/VISPER-Entity-Example";
+			};
+			name = Debug;
+		};
+		9A5CB7C820736A5600F99456 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F635BFE045BFB35460DB1117 /* Pods-VISPER-Entity-ExampleTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5M2T33LA2N;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "VISPER-Entity-ExampleTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.barteljan.VISPER-Entity-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VISPER-Entity-Example.app/VISPER-Entity-Example";
 			};
 			name = Release;
 		};
@@ -3834,6 +4059,15 @@
 			buildConfigurations = (
 				9A4DEB851FF0F4B5004D88C0 /* Debug */,
 				9A4DEB861FF0F4B5004D88C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A5CB7C920736A5600F99456 /* Build configuration list for PBXNativeTarget "VISPER-Entity-ExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A5CB7C720736A5600F99456 /* Debug */,
+				9A5CB7C820736A5600F99456 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
