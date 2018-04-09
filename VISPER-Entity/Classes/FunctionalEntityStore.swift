@@ -57,6 +57,15 @@ open class FunctionalEntityStore<EntityType: CanBeIdentified>: EntityStore {
         }
     }
     
+    public func delete<T>(_ items: [T]) throws {
+        
+        if T.self is EntityType.Type  {
+            let convertedItems = items.map({ return $0 as! EntityType})
+            try self.deleteEntites(convertedItems)
+        }
+
+    }
+    
     public func delete<T>(_ item: T!,
                       completion: @escaping () -> ()) throws {
         try self.delete(item)
@@ -83,6 +92,13 @@ open class FunctionalEntityStore<EntityType: CanBeIdentified>: EntityStore {
                        completion: @escaping () -> ()) throws {
         try self.persist(item)
         completion()
+    }
+    
+    public func persist<T>(_ items: [T]) throws {
+        if T.self is EntityType.Type {
+            let convertedItems = items.map({ return $0 as! EntityType})
+            try self.persistEntites(convertedItems)
+        }
     }
     
     public func getAll<T>(_ type: T.Type) throws -> [T] {
@@ -123,7 +139,7 @@ open class FunctionalEntityStore<EntityType: CanBeIdentified>: EntityStore {
     
     public func exists<T>(_ item: T!) throws -> Bool {
         
-        guard T.self is EntityType else {
+        guard T.self is EntityType.Type else {
             return false
         }
         
@@ -148,7 +164,7 @@ open class FunctionalEntityStore<EntityType: CanBeIdentified>: EntityStore {
     public func exists<T>(_ identifier: String,
                                   type: T.Type) throws -> Bool {
         
-        guard T.self is EntityType else {
+        guard T.self is EntityType.Type else {
             return false
         }
         

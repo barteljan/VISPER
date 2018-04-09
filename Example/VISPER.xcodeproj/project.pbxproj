@@ -27,6 +27,7 @@
 		9A0D1A151FE13C7100567A88 /* MockViewControllerLifecycleEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D1A141FE13C7100567A88 /* MockViewControllerLifecycleEventPresenter.swift */; };
 		9A0D1A171FE13FD900567A88 /* ViewControllerLifecycleEventPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D1A161FE13FD900567A88 /* ViewControllerLifecycleEventPresenterTests.swift */; };
 		9A15DBCA2078C197006C786D /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15DBC92078C197006C786D /* StringTests.swift */; };
+		9A15DBD4207B8519006C786D /* FunctionalEntityStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15DBD3207B8519006C786D /* FunctionalEntityStoreTests.swift */; };
 		9A26AAE51FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AAE41FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift */; };
 		9A26AB051FDE89DF008BB68C /* MockPresenterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AB041FDE89DF008BB68C /* MockPresenterProvider.swift */; };
 		9A26AB071FDE8DD4008BB68C /* MockPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AB061FDE8DD4008BB68C /* MockPresenter.swift */; };
@@ -269,6 +270,7 @@
 		9A0D1A141FE13C7100567A88 /* MockViewControllerLifecycleEventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewControllerLifecycleEventPresenter.swift; sourceTree = "<group>"; };
 		9A0D1A161FE13FD900567A88 /* ViewControllerLifecycleEventPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLifecycleEventPresenterTests.swift; sourceTree = "<group>"; };
 		9A15DBC92078C197006C786D /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
+		9A15DBD3207B8519006C786D /* FunctionalEntityStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FunctionalEntityStoreTests.swift; path = "/Users/bartel/Documents/lib/VISPER/Example/VISPER-Entity-ExampleTests/FunctionalEntityStoreTests.swift"; sourceTree = "<absolute>"; };
 		9A1D7EC71FDDC1550003AAD9 /* VISPER-Core.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Core.podspec"; path = "../VISPER-Core.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9A26AAE41FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultComposedPresenterProviderTests.swift; sourceTree = "<group>"; };
 		9A26AB041FDE89DF008BB68C /* MockPresenterProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenterProvider.swift; sourceTree = "<group>"; };
@@ -811,6 +813,7 @@
 				9A57E33A20776D5C00B7F956 /* ComposedEntityStoreTests.swift */,
 				9A5CB7D4207384E000F99456 /* MockEntityStore.swift */,
 				9A15DBC92078C197006C786D /* StringTests.swift */,
+				9A15DBD3207B8519006C786D /* FunctionalEntityStoreTests.swift */,
 			);
 			path = "VISPER-Entity-ExampleTests";
 			sourceTree = "<group>";
@@ -1845,6 +1848,7 @@
 				"${BUILT_PRODUCTS_DIR}/VISPER/VISPER.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-CommandBus/VISPER_CommandBus.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Core/VISPER_Core.framework",
+				"${BUILT_PRODUCTS_DIR}/VISPER-Entity/VISPER_Entity.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Objc/VISPER_Objc.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Presenter/VISPER_Presenter.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Reactive.default-RxSwift/VISPER_Reactive.framework",
@@ -1859,6 +1863,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_CommandBus.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Core.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Entity.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Objc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Presenter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Reactive.framework",
@@ -2051,6 +2056,7 @@
 				"${BUILT_PRODUCTS_DIR}/VISPER/VISPER.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-CommandBus/VISPER_CommandBus.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Core/VISPER_Core.framework",
+				"${BUILT_PRODUCTS_DIR}/VISPER-Entity/VISPER_Entity.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Objc/VISPER_Objc.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Presenter/VISPER_Presenter.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Reactive/VISPER_Reactive.framework",
@@ -2064,6 +2070,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_CommandBus.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Core.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Entity.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Objc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Presenter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Reactive.framework",
@@ -2495,6 +2502,7 @@
 				"${BUILT_PRODUCTS_DIR}/VISPER/VISPER.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-CommandBus/VISPER_CommandBus.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Core/VISPER_Core.framework",
+				"${BUILT_PRODUCTS_DIR}/VISPER-Entity/VISPER_Entity.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Objc/VISPER_Objc.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Presenter/VISPER_Presenter.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Reactive/VISPER_Reactive.framework",
@@ -2508,6 +2516,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_CommandBus.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Core.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Entity.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Objc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Presenter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Reactive.framework",
@@ -2623,6 +2632,7 @@
 				9A57E33B20776D5C00B7F956 /* ComposedEntityStoreTests.swift in Sources */,
 				9A5CB7D32073846500F99456 /* TypedEntityStoreTests.swift in Sources */,
 				9A5CB7CD2073729400F99456 /* User.swift in Sources */,
+				9A15DBD4207B8519006C786D /* FunctionalEntityStoreTests.swift in Sources */,
 				9A5CB7D5207384E000F99456 /* MockEntityStore.swift in Sources */,
 				9A15DBCA2078C197006C786D /* StringTests.swift in Sources */,
 				9A57E3452077B42E00B7F956 /* MemoryStoreTests.swift in Sources */,

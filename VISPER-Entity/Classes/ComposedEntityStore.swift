@@ -55,9 +55,32 @@ open class ComposedEntityStore: EntityStore {
         try store.delete(item, completion: completion)
     }
     
+    public func delete<T>(_ items: [T]) throws {
+        guard items.count != 0 else {
+            return
+        }
+        
+        let firstItem = items.first
+        
+        let store = try self.responsibleStore(type: type(of: firstItem!))
+        try store.delete(items)
+    }
+    
     public func persist<T>(_ item: T!) throws {
         let store = try self.responsibleStore(type: type(of: item!))
         try store.persist(item)
+    }
+    
+    public func persist<T>(_ items: [T]) throws {
+        
+        guard items.count != 0 else {
+            return
+        }
+        
+        let firstItem = items.first
+        
+        let store = try self.responsibleStore(type: type(of: firstItem!))
+        try store.persist(items)
     }
     
     public func persist<T>(_ item: T!, completion: @escaping () -> ()) throws {
@@ -228,21 +251,21 @@ open class ComposedEntityStore: EntityStore {
             
             self.deleteItems = { (fromStore: MemoryEntityStore, inStore: EntityStore) throws -> Void in
                 
+                print(T.self)
+               
                 let items: [T] = fromStore.deletedEntities(type: T.self)
                 
-                for item in items {
-                    try inStore.delete(item)
-                }
+                print(items)
+                
+                try inStore.delete(items)
                 
             }
             
             self.persistUpdatedItems = { (fromStore: MemoryEntityStore, inStore: EntityStore) throws -> Void in
                 
                 let items: [T] = fromStore.updatedEntities(type: T.self)
+                try inStore.persist(items)
                 
-                for item in items {
-                    try inStore.persist(item)
-                }
                 
             }
         }

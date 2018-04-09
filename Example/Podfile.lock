@@ -2,6 +2,7 @@ PODS:
   - RxSwift (4.1.2)
   - VISPER (2.1.0):
     - VISPER-Core (~> 2.0.0)
+    - VISPER-Entity (~> 1.0.0)
     - VISPER-Objc (~> 2.0.0)
     - VISPER-Presenter (~> 2.0.0)
     - VISPER-Swift (~> 2.1.0)
@@ -9,7 +10,7 @@ PODS:
     - VISPER/Standard (= 2.1.0)
   - VISPER-CommandBus (1.0.0)
   - VISPER-Core (2.0.0)
-  - VISPER-Entity (0.3.0)
+  - VISPER-Entity (1.0.0)
   - VISPER-Objc (2.0.0):
     - VISPER-Core (~> 2.0.0)
     - VISPER-Presenter (~> 2.0.0)
@@ -38,6 +39,7 @@ PODS:
   - VISPER/Standard (2.1.0):
     - VISPER-CommandBus
     - VISPER-Core (~> 2.0.0)
+    - VISPER-Entity (~> 1.0.0)
     - VISPER-Objc (~> 2.0.0)
     - VISPER-Presenter (~> 2.0.0)
     - VISPER-Swift (~> 2.1.0)
@@ -85,10 +87,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   RxSwift: e49536837d9901277638493ea537394d4b55f570
-  VISPER: f557331d9e2872f78883e4f78b303bee81f69646
+  VISPER: b6dc611cf17a14ae5618f70559523f9e0bd07cbf
   VISPER-CommandBus: b422cb6b8c7b895cc7ecd206adc7fe265e2407b9
   VISPER-Core: 2308151ac2269a52341bec71b4414cd877fd807d
-  VISPER-Entity: 7828b47b87319f689d7c04a74be48ef7bce298c9
+  VISPER-Entity: d9460bf11b0196b26d987cbaac54fbf4e69754bf
   VISPER-Objc: a0aff9404cb7ba515f75082314d666a88b80739b
   VISPER-Presenter: 837345a8274c4d9deb1416b46f9c9414625d01f5
   VISPER-Reactive: e962e22e99644a94e8cf38ffaa067ac3c3c9da2c

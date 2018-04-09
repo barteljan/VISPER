@@ -23,6 +23,7 @@ DESC
   s.dependency 'VISPER-Swift','~> 2.1.0'
   s.dependency 'VISPER-Presenter','~> 2.0.0'
   s.dependency 'VISPER-Wireframe','~> 2.0.0'
+  s.dependency 'VISPER-Entity','~> 1.0.0'
 
   s.default_subspec = 'Standard'
 

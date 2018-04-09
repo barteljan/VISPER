@@ -16,9 +16,11 @@ public protocol EntityStore {
     func isResponsible<T>(forType type: T.Type) -> Bool
 
     func persist<T>(_ item: T!) throws
+    func persist<T>(_ items: [T]) throws
     func persist<T>(_ item: T!,completion: @escaping () -> ()) throws
     
     func delete<T>(_ item: T!) throws
+    func delete<T>(_ items: [T]) throws
     func delete<T>(_ item: T!, completion: @escaping () -> ()) throws
     
     func get<T>(_ identifier: String) throws -> T?
@@ -66,7 +68,19 @@ public extension EntityStore {
     public func version() -> Int {
         return 0;
     }
+    
+    public func persist<T>(_ items: [T]) throws {
+        for item in items {
+            try self.persist(item)
+        }
+    }
 
+    
+    func delete<T>(_ items: [T]) throws {
+        for item in items {
+            try self.delete(item)
+        }
+    }
     
     public func delete<T>(_ identifier: String, type: T.Type, completion: @escaping () -> ())  throws {
         try self.get(identifier) { (item: T?) in
