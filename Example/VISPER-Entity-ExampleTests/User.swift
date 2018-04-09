@@ -9,8 +9,14 @@
 import Foundation
 import VISPER_Entity
 
-class User: NSCoding {
+protocol BaseProtocol{}
 
+protocol UserProtocol: NSCoding,BaseProtocol {
+    var name: String {get}
+}
+
+class User: NSObject,NSCoding, UserProtocol,Entity, CanBeIdentified {
+    
     let name: String
     
     init(name: String) {
@@ -27,6 +33,11 @@ class User: NSCoding {
         }
         return nil
     }
+    
+    func identifier() -> String {
+        return name
+    }
+    
     
 }
 

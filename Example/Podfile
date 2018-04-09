@@ -62,12 +62,10 @@ end
 
 target 'VISPER-Entity-Example' do
     pod 'VISPER-Entity', :path => '../'
-    pod 'VISPER-Entity-Redux', :path => '../'
 end
 
 target 'VISPER-Entity-ExampleTests' do
     pod 'VISPER-Entity', :path => '../'
-    pod 'VISPER-Entity-Redux', :path => '../'
 end
 
 target 'VISPER-Reactive-Example' do

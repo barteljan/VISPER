@@ -26,6 +26,7 @@
 		9A0D1A111FE12D9000567A88 /* AssertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5BDB1FDC090E00C401AF /* AssertHelper.swift */; };
 		9A0D1A151FE13C7100567A88 /* MockViewControllerLifecycleEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D1A141FE13C7100567A88 /* MockViewControllerLifecycleEventPresenter.swift */; };
 		9A0D1A171FE13FD900567A88 /* ViewControllerLifecycleEventPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D1A161FE13FD900567A88 /* ViewControllerLifecycleEventPresenterTests.swift */; };
+		9A15DBCA2078C197006C786D /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15DBC92078C197006C786D /* StringTests.swift */; };
 		9A26AAE51FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AAE41FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift */; };
 		9A26AB051FDE89DF008BB68C /* MockPresenterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AB041FDE89DF008BB68C /* MockPresenterProvider.swift */; };
 		9A26AB071FDE8DD4008BB68C /* MockPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AB061FDE8DD4008BB68C /* MockPresenter.swift */; };
@@ -48,10 +49,11 @@
 		9A4DEB7E1FF0F4B5004D88C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4DEB7C1FF0F4B5004D88C0 /* Main.storyboard */; };
 		9A4DEB801FF0F4B5004D88C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A4DEB7F1FF0F4B5004D88C0 /* Assets.xcassets */; };
 		9A4DEB831FF0F4B5004D88C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4DEB811FF0F4B5004D88C0 /* LaunchScreen.storyboard */; };
-		9A5CB7CB20736C4D00F99456 /* MockNSCodingEntityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CB7CA20736C4D00F99456 /* MockNSCodingEntityStore.swift */; };
+		9A57E33B20776D5C00B7F956 /* ComposedEntityStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57E33A20776D5C00B7F956 /* ComposedEntityStoreTests.swift */; };
+		9A57E3452077B42E00B7F956 /* MemoryStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57E3442077B42E00B7F956 /* MemoryStoreTests.swift */; };
 		9A5CB7CD2073729400F99456 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CB7CC2073729400F99456 /* User.swift */; };
-		9A5CB7CF2073739200F99456 /* MockUserEntityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CB7CE2073739200F99456 /* MockUserEntityStore.swift */; };
-		9A5CB7D12073743D00F99456 /* ComposedStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CB7D02073743D00F99456 /* ComposedStoreTests.swift */; };
+		9A5CB7D32073846500F99456 /* TypedEntityStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CB7D22073846500F99456 /* TypedEntityStoreTests.swift */; };
+		9A5CB7D5207384E000F99456 /* MockEntityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CB7D4207384E000F99456 /* MockEntityStore.swift */; };
 		9A83A497206621590056A309 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A83A496206621590056A309 /* AppDelegate.swift */; };
 		9A83A499206621590056A309 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A83A498206621590056A309 /* ViewController.swift */; };
 		9A83A49E206621590056A309 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A83A49D206621590056A309 /* Assets.xcassets */; };
@@ -266,6 +268,7 @@
 		9A0D1A081FE10A2100567A88 /* MockViewControllerEventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewControllerEventPresenter.swift; sourceTree = "<group>"; };
 		9A0D1A141FE13C7100567A88 /* MockViewControllerLifecycleEventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewControllerLifecycleEventPresenter.swift; sourceTree = "<group>"; };
 		9A0D1A161FE13FD900567A88 /* ViewControllerLifecycleEventPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLifecycleEventPresenterTests.swift; sourceTree = "<group>"; };
+		9A15DBC92078C197006C786D /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		9A1D7EC71FDDC1550003AAD9 /* VISPER-Core.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Core.podspec"; path = "../VISPER-Core.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9A26AAE41FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultComposedPresenterProviderTests.swift; sourceTree = "<group>"; };
 		9A26AB041FDE89DF008BB68C /* MockPresenterProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenterProvider.swift; sourceTree = "<group>"; };
@@ -293,12 +296,13 @@
 		9A4DEB7F1FF0F4B5004D88C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A4DEB821FF0F4B5004D88C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A4DEB841FF0F4B5004D88C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A57E33A20776D5C00B7F956 /* ComposedEntityStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposedEntityStoreTests.swift; sourceTree = "<group>"; };
+		9A57E3442077B42E00B7F956 /* MemoryStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStoreTests.swift; sourceTree = "<group>"; };
 		9A5CB7C020736A5600F99456 /* VISPER-Entity-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VISPER-Entity-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A5CB7C420736A5600F99456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A5CB7CA20736C4D00F99456 /* MockNSCodingEntityStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNSCodingEntityStore.swift; sourceTree = "<group>"; };
 		9A5CB7CC2073729400F99456 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		9A5CB7CE2073739200F99456 /* MockUserEntityStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserEntityStore.swift; sourceTree = "<group>"; };
-		9A5CB7D02073743D00F99456 /* ComposedStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposedStoreTests.swift; sourceTree = "<group>"; };
+		9A5CB7D22073846500F99456 /* TypedEntityStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypedEntityStoreTests.swift; sourceTree = "<group>"; };
+		9A5CB7D4207384E000F99456 /* MockEntityStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEntityStore.swift; sourceTree = "<group>"; };
 		9A67425D1FE1A034001BE7BC /* VISPER-Presenter.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Presenter.podspec"; path = "../VISPER-Presenter.podspec"; sourceTree = "<group>"; };
 		9A83A494206621590056A309 /* VISPER-Sourcery-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VISPER-Sourcery-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A83A496206621590056A309 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -801,10 +805,12 @@
 			isa = PBXGroup;
 			children = (
 				9A5CB7C420736A5600F99456 /* Info.plist */,
-				9A5CB7CA20736C4D00F99456 /* MockNSCodingEntityStore.swift */,
 				9A5CB7CC2073729400F99456 /* User.swift */,
-				9A5CB7CE2073739200F99456 /* MockUserEntityStore.swift */,
-				9A5CB7D02073743D00F99456 /* ComposedStoreTests.swift */,
+				9A5CB7D22073846500F99456 /* TypedEntityStoreTests.swift */,
+				9A57E3442077B42E00B7F956 /* MemoryStoreTests.swift */,
+				9A57E33A20776D5C00B7F956 /* ComposedEntityStoreTests.swift */,
+				9A5CB7D4207384E000F99456 /* MockEntityStore.swift */,
+				9A15DBC92078C197006C786D /* StringTests.swift */,
 			);
 			path = "VISPER-Entity-ExampleTests";
 			sourceTree = "<group>";
@@ -1973,17 +1979,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Entity-Example/Pods-VISPER-Entity-Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/VISPER-Core/VISPER_Core.framework",
-				"${BUILT_PRODUCTS_DIR}/VISPER-Reactive/VISPER_Reactive.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Entity/VISPER_Entity.framework",
-				"${BUILT_PRODUCTS_DIR}/VISPER-Entity-Redux/VISPER_Entity_Redux.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Core.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Reactive.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Entity.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Entity_Redux.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2382,17 +2382,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Entity-ExampleTests/Pods-VISPER-Entity-ExampleTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/VISPER-Core/VISPER_Core.framework",
-				"${BUILT_PRODUCTS_DIR}/VISPER-Reactive/VISPER_Reactive.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Entity/VISPER_Entity.framework",
-				"${BUILT_PRODUCTS_DIR}/VISPER-Entity-Redux/VISPER_Entity_Redux.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Core.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Reactive.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Entity.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Entity_Redux.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2626,10 +2620,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A5CB7CB20736C4D00F99456 /* MockNSCodingEntityStore.swift in Sources */,
-				9A5CB7D12073743D00F99456 /* ComposedStoreTests.swift in Sources */,
-				9A5CB7CF2073739200F99456 /* MockUserEntityStore.swift in Sources */,
+				9A57E33B20776D5C00B7F956 /* ComposedEntityStoreTests.swift in Sources */,
+				9A5CB7D32073846500F99456 /* TypedEntityStoreTests.swift in Sources */,
 				9A5CB7CD2073729400F99456 /* User.swift in Sources */,
+				9A5CB7D5207384E000F99456 /* MockEntityStore.swift in Sources */,
+				9A15DBCA2078C197006C786D /* StringTests.swift in Sources */,
+				9A57E3452077B42E00B7F956 /* MemoryStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2964,7 +2960,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -3003,7 +2999,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

@@ -8,15 +8,12 @@
 
 import Foundation
 
-public protocol EntityStoreType {
-    
-    //associatedtype PersistableType
-    associatedtype EntityType
-    
+public protocol EntityStore {
+
     func version() -> Int
     
-    func isResponsible(for object: Any) -> Bool
-    func isResponsible(forType type: Any.Type) -> Bool
+    func isResponsible<T>(for object: T) -> Bool
+    func isResponsible<T>(forType type: T.Type) -> Bool
 
     func persist<T>(_ item: T!) throws
     func persist<T>(_ item: T!,completion: @escaping () -> ()) throws
@@ -36,12 +33,12 @@ public protocol EntityStoreType {
     func getAll<T>(_ viewName:String,groupName:String) throws ->[T]
     func getAll<T>(_ viewName:String,groupName:String, completion: @escaping (_ items: [T]) -> Void) throws
     
-    func exists(_ item : Any!) throws -> Bool
-    func exists(_ item : Any!, completion: @escaping (_ exists: Bool) -> Void) throws
+    func exists<T>(_ item : T!) throws -> Bool
+    func exists<T>(_ item : T!, completion: @escaping (_ exists: Bool) -> Void) throws
     
     
-    func exists(_ identifier : String,type : Any.Type) throws -> Bool
-    func exists(_ identifier : String,type : Any.Type,  completion: @escaping (_ exists: Bool) -> Void) throws
+    func exists<T>(_ identifier : String,type : T.Type) throws -> Bool
+    func exists<T>(_ identifier : String,type : T.Type,  completion: @escaping (_ exists: Bool) -> Void) throws
     
     func filter<T>(_ type: T.Type, includeElement: @escaping (T) -> Bool) throws -> [T]
     func filter<T>(_ type: T.Type, includeElement: @escaping (T) -> Bool, completion: @escaping (_ items: [T]) -> Void) throws
@@ -60,29 +57,22 @@ public protocol EntityStoreType {
         _ object2: T) -> ComparisonResult)) throws
     
     
-    func transaction(transaction: @escaping (_ transactionStore: AnyTypedEntityStore<EntityType>) throws -> Void) throws
+    func transaction(transaction: @escaping (_ transactionStore: EntityStore) throws -> Void) throws
     
 }
 
-public extension EntityStoreType {
+public extension EntityStore {
     
     public func version() -> Int {
         return 0;
     }
+
     
-    public func isResponsible(for object: Any) -> Bool{
-        return object is EntityType
-    }
-    
-    func isResponsible(forType type: Any.Type) -> Bool{
-        let isType = type.self is EntityType
-        return isType
-    }
- 
-    public func delete<T>(_ identifier: String, type: T.Type, completion: @escaping () -> ()) throws {
+    public func delete<T>(_ identifier: String, type: T.Type, completion: @escaping () -> ())  throws {
         try self.get(identifier) { (item: T?) in
+            
             if let item = item {
-                try! self.delete(item, completion: completion)
+                try? self.delete(item, completion: completion)
             } else {
                 completion()
             }
