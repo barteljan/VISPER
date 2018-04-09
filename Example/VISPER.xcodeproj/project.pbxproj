@@ -404,7 +404,7 @@
 		9A8C5C471FDC0E0C00C401AF /* Reducers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducers.swift; sourceTree = "<group>"; };
 		9A8C5C481FDC0E0C00C401AF /* States.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
 		9A8C5C541FDC0F5B00C401AF /* README-VISPER-Redux.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = "README-VISPER-Redux.md"; path = "../README-VISPER-Redux.md"; sourceTree = "<group>"; };
-		9A8C5C561FDC0F5B00C401AF /* VISPER-Redux.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Redux.podspec"; path = "../VISPER-Redux.podspec"; sourceTree = "<group>"; };
+		9A8C5C561FDC0F5B00C401AF /* VISPER-Redux.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Redux.podspec"; path = "../VISPER-Redux.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9A8C5C571FDC0F5B00C401AF /* VISPER-Swift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Swift.podspec"; path = "../VISPER-Swift.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9A8C5C591FDC0F5C00C401AF /* VISPER-UIViewController.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-UIViewController.podspec"; path = "../VISPER-UIViewController.podspec"; sourceTree = "<group>"; };
 		9A8C5C5A1FDC0F5C00C401AF /* VISPER-Wireframe.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Wireframe.podspec"; path = "../VISPER-Wireframe.podspec"; sourceTree = "<group>"; };
@@ -418,7 +418,7 @@
 		9A8C5C711FDC101C00C401AF /* MockObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockObjects.swift; sourceTree = "<group>"; };
 		9A8C5C721FDC101C00C401AF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A8C5C731FDC101C00C401AF /* TestAnyActionReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnyActionReducer.swift; sourceTree = "<group>"; };
-		9A8C5C7F1FDCFD8300C401AF /* VISPER-Reactive.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Reactive.podspec"; path = "../VISPER-Reactive.podspec"; sourceTree = "<group>"; };
+		9A8C5C7F1FDCFD8300C401AF /* VISPER-Reactive.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Reactive.podspec"; path = "../VISPER-Reactive.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9A8C5C841FDCFEE400C401AF /* VISPER-Reactive-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VISPER-Reactive-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8C5C861FDCFEE400C401AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A8C5C881FDCFEE400C401AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
