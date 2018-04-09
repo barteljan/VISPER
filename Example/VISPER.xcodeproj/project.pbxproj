@@ -28,6 +28,7 @@
 		9A0D1A171FE13FD900567A88 /* ViewControllerLifecycleEventPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D1A161FE13FD900567A88 /* ViewControllerLifecycleEventPresenterTests.swift */; };
 		9A15DBCA2078C197006C786D /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15DBC92078C197006C786D /* StringTests.swift */; };
 		9A15DBD4207B8519006C786D /* FunctionalEntityStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15DBD3207B8519006C786D /* FunctionalEntityStoreTests.swift */; };
+		9A15DBD6207BA276006C786D /* FunctionalEntityStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15DBD5207BA276006C786D /* FunctionalEntityStoreTests.swift */; };
 		9A26AAE51FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AAE41FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift */; };
 		9A26AB051FDE89DF008BB68C /* MockPresenterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AB041FDE89DF008BB68C /* MockPresenterProvider.swift */; };
 		9A26AB071FDE8DD4008BB68C /* MockPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AB061FDE8DD4008BB68C /* MockPresenter.swift */; };
@@ -271,6 +272,7 @@
 		9A0D1A161FE13FD900567A88 /* ViewControllerLifecycleEventPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLifecycleEventPresenterTests.swift; sourceTree = "<group>"; };
 		9A15DBC92078C197006C786D /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		9A15DBD3207B8519006C786D /* FunctionalEntityStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FunctionalEntityStoreTests.swift; path = "/Users/bartel/Documents/lib/VISPER/Example/VISPER-Entity-ExampleTests/FunctionalEntityStoreTests.swift"; sourceTree = "<absolute>"; };
+		9A15DBD5207BA276006C786D /* FunctionalEntityStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FunctionalEntityStoreTests.swift; path = "/Users/bartel/Documents/lib/VISPER/Example/VISPER-Entity-ExampleTests/FunctionalEntityStoreTests.swift"; sourceTree = "<absolute>"; };
 		9A1D7EC71FDDC1550003AAD9 /* VISPER-Core.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Core.podspec"; path = "../VISPER-Core.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9A26AAE41FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultComposedPresenterProviderTests.swift; sourceTree = "<group>"; };
 		9A26AB041FDE89DF008BB68C /* MockPresenterProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenterProvider.swift; sourceTree = "<group>"; };
@@ -807,6 +809,7 @@
 			isa = PBXGroup;
 			children = (
 				9A5CB7C420736A5600F99456 /* Info.plist */,
+				9A15DBD5207BA276006C786D /* FunctionalEntityStoreTests.swift */,
 				9A5CB7CC2073729400F99456 /* User.swift */,
 				9A5CB7D22073846500F99456 /* TypedEntityStoreTests.swift */,
 				9A57E3442077B42E00B7F956 /* MemoryStoreTests.swift */,
@@ -2635,6 +2638,7 @@
 				9A15DBD4207B8519006C786D /* FunctionalEntityStoreTests.swift in Sources */,
 				9A5CB7D5207384E000F99456 /* MockEntityStore.swift in Sources */,
 				9A15DBCA2078C197006C786D /* StringTests.swift in Sources */,
+				9A15DBD6207BA276006C786D /* FunctionalEntityStoreTests.swift in Sources */,
 				9A57E3452077B42E00B7F956 /* MemoryStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

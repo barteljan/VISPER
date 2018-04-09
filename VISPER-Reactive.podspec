@@ -1,7 +1,7 @@
 # Be sure to run `pod lib lint VISPER-Redux.podspec' to ensure this is a
 Pod::Spec.new do |s|
   s.name             = 'VISPER-Reactive'
-  s.version          = '2.0.1'
+  s.version          = '2.0.2'
   s.summary          = 'Simple implementation of observable properties used in the VISPER Framework'
   s.description      = <<-DESC
 Base implementation of reactive properties for the VISPER Framework.
