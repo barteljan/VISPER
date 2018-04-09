@@ -1,7 +1,7 @@
 # Be sure to run `pod lib lint VISPER-Redux.podspec' to ensure this is a
 Pod::Spec.new do |s|
   s.name             = 'VISPER-Entity'
-  s.version          = '0.3.0'
+  s.version          = '1.0.0'
   s.summary          = 'VISPER-Entity is the implementation of the entity layer in VISPER'
   s.description      = <<-DESC
 VISPER-Entity is the implementation of the entity layer in VISPER. (VISPER is a framework for building component based apps with the viper architecture in swift.)
@@ -16,5 +16,5 @@ VISPER-Entity is the implementation of the entity layer in VISPER. (VISPER is a 
   s.ios.deployment_target = '8.0'
   
   s.source_files = 'VISPER-Entity/Classes/*.swift'
-
+  
 end

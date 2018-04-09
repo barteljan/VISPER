@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol CanBeIdentified{
+public protocol CanBeIdentified: Entity{
     func identifier()->String
 }
 
