@@ -48,7 +48,7 @@ open class FunctionalEntityStore<EntityType: CanBeIdentified>: EntityStore {
     }
     
     public func isResponsible<T>(forType type: T.Type) -> Bool {
-        return type is EntityType
+         return type.self is EntityType.Type
     }
     
     public func delete<T>(_ item: T!) throws {
