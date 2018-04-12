@@ -33,7 +33,7 @@ extension {{type.name}} {
                 {% for switchCaseProp in type.storedVariables|!annotated:"skipAutoStateInitializers" %}
             case .{{switchCaseProp.name}}:
                 self.init({% for generalInitializerVar in type.storedVariables|!annotated:"skipGeneralInitializer" %}
-                          {{generalInitializerVar.name}}: {% if switchCaseProp.name == generalInitializerVar.name %} value as! {{generalInitializerVar.typeName}}{% else %}sourceObject.{{generalInitializerVar.name}}{% endif %}{% if not forloop.last %}, {% endif %}
+                          {{generalInitializerVar.name}}: {% if switchCaseProp.name == generalInitializerVar.name %} (value as! {{generalInitializerVar.typeName | replace:"?",""}}){% else %}sourceObject.{{generalInitializerVar.name}}{% endif %}{% if not forloop.last %}, {% endif %}
                     {% endfor %})
                 {% endfor %}
             }
@@ -46,7 +46,7 @@ extension {{type.name}} {
     {{ type.accessLevel }} init?(sourceObject: {{ type.name }}, {{property.name}}: {{property.typeName}}) {
         self.init(sourceObject: sourceObject,
                property: .{{property.name}},
-                  value: {{property.name}})
+                  value: {{property.name}} as Any) 
     }
     {% endfor %}
 

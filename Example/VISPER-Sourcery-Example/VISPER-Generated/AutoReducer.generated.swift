@@ -46,8 +46,8 @@ public class AppStateSetStylestateReducer: ActionReducerType {
 
 // Set AppState userState Action
 public struct AppStateSetUserstateAction: Action {
-    let userState: UserState
-    public init(userState: UserState) {
+    let userState: UserState?
+    public init(userState: UserState?) {
         self.userState = userState
     }
 }

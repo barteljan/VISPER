@@ -11,11 +11,11 @@ import VISPER_Sourcery
 
 public struct AppState: WithAutoInitializers, WithAutoGeneralInitializer,AutoAppReducer,AutoReducer {
     let styleState: StyleState
-    let userState: UserState
+    let userState: UserState?
 
 // sourcery:inline:auto:AppState.GenerateInitializers
     // auto generated init function for AppState
-    public init(styleState: StyleState, userState: UserState){
+    public init(styleState: StyleState, userState: UserState?){
             self.styleState = styleState
             self.userState = userState
     }
