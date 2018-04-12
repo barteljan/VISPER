@@ -9,7 +9,7 @@
 import Foundation
 import VISPER_Sourcery
 
-public struct StyleState: WithAutoStateInitializers, WithAutoGeneralInitializer, AutoReducer {
+public struct StyleState: WithAutoInitializers, WithAutoGeneralInitializer, AutoReducer {
     let backgroundColor: UIColor
     let fontColor: UIColor
 

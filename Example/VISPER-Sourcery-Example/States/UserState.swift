@@ -9,7 +9,7 @@
 import Foundation
 import VISPER_Sourcery
 
-public struct UserState: WithAutoStateInitializers, WithAutoGeneralInitializer, AutoReducer  {
+public struct UserState: WithAutoInitializers, WithAutoGeneralInitializer, AutoReducer  {
     
     var firstName: String
     var lastName: String

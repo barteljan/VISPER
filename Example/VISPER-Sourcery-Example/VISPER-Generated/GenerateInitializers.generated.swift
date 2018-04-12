@@ -15,33 +15,42 @@ extension AppState {
         case styleState
         case userState
     }
+    //init with object of same type
+    public init?(sourceObject: AppState) {
+            self.init(
+                      styleState: sourceObject.styleState, 
+                      userState: sourceObject.userState
+                      )
+    }
 
     // init to modify one property value of a AppState
-    public init?(state: AppState, property: Properties, value: Any) {
+    public init?(sourceObject: AppState, property: Properties, value: Any) {
             switch property {
             case .styleState:
                 self.init(
                           styleState:  value as! StyleState, 
-                          userState: state.userState
+                          userState: sourceObject.userState
                     )
             case .userState:
                 self.init(
-                          styleState: state.styleState, 
+                          styleState: sourceObject.styleState, 
                           userState:  value as! UserState
                     )
             }
     }
 
+
+
     // init to modify the value the property styleState of a AppState
-    public init?(state: AppState, styleState: StyleState) {
-        self.init(state: state,
+    public init?(sourceObject: AppState, styleState: StyleState) {
+        self.init(sourceObject: sourceObject,
                property: .styleState,
                   value: styleState)
     }
 
     // init to modify the value the property userState of a AppState
-    public init?(state: AppState, userState: UserState) {
-        self.init(state: state,
+    public init?(sourceObject: AppState, userState: UserState) {
+        self.init(sourceObject: sourceObject,
                property: .userState,
                   value: userState)
     }
@@ -60,33 +69,42 @@ extension StyleState {
         case backgroundColor
         case fontColor
     }
+    //init with object of same type
+    public init?(sourceObject: StyleState) {
+            self.init(
+                      backgroundColor: sourceObject.backgroundColor, 
+                      fontColor: sourceObject.fontColor
+                      )
+    }
 
     // init to modify one property value of a StyleState
-    public init?(state: StyleState, property: Properties, value: Any) {
+    public init?(sourceObject: StyleState, property: Properties, value: Any) {
             switch property {
             case .backgroundColor:
                 self.init(
                           backgroundColor:  value as! UIColor, 
-                          fontColor: state.fontColor
+                          fontColor: sourceObject.fontColor
                     )
             case .fontColor:
                 self.init(
-                          backgroundColor: state.backgroundColor, 
+                          backgroundColor: sourceObject.backgroundColor, 
                           fontColor:  value as! UIColor
                     )
             }
     }
 
+
+
     // init to modify the value the property backgroundColor of a StyleState
-    public init?(state: StyleState, backgroundColor: UIColor) {
-        self.init(state: state,
+    public init?(sourceObject: StyleState, backgroundColor: UIColor) {
+        self.init(sourceObject: sourceObject,
                property: .backgroundColor,
                   value: backgroundColor)
     }
 
     // init to modify the value the property fontColor of a StyleState
-    public init?(state: StyleState, fontColor: UIColor) {
-        self.init(state: state,
+    public init?(sourceObject: StyleState, fontColor: UIColor) {
+        self.init(sourceObject: sourceObject,
                property: .fontColor,
                   value: fontColor)
     }
@@ -107,65 +125,76 @@ extension UserState {
         case userName
         case email
     }
+    //init with object of same type
+    public init?(sourceObject: UserState) {
+            self.init(
+                      firstName: sourceObject.firstName, 
+                      lastName: sourceObject.lastName, 
+                      userName: sourceObject.userName, 
+                      email: sourceObject.email
+                      )
+    }
 
     // init to modify one property value of a UserState
-    public init?(state: UserState, property: Properties, value: Any) {
+    public init?(sourceObject: UserState, property: Properties, value: Any) {
             switch property {
             case .firstName:
                 self.init(
                           firstName:  value as! String, 
-                          lastName: state.lastName, 
-                          userName: state.userName, 
-                          email: state.email
+                          lastName: sourceObject.lastName, 
+                          userName: sourceObject.userName, 
+                          email: sourceObject.email
                     )
             case .lastName:
                 self.init(
-                          firstName: state.firstName, 
+                          firstName: sourceObject.firstName, 
                           lastName:  value as! String, 
-                          userName: state.userName, 
-                          email: state.email
+                          userName: sourceObject.userName, 
+                          email: sourceObject.email
                     )
             case .userName:
                 self.init(
-                          firstName: state.firstName, 
-                          lastName: state.lastName, 
+                          firstName: sourceObject.firstName, 
+                          lastName: sourceObject.lastName, 
                           userName:  value as! String, 
-                          email: state.email
+                          email: sourceObject.email
                     )
             case .email:
                 self.init(
-                          firstName: state.firstName, 
-                          lastName: state.lastName, 
-                          userName: state.userName, 
+                          firstName: sourceObject.firstName, 
+                          lastName: sourceObject.lastName, 
+                          userName: sourceObject.userName, 
                           email:  value as! String
                     )
             }
     }
 
+
+
     // init to modify the value the property firstName of a UserState
-    public init?(state: UserState, firstName: String) {
-        self.init(state: state,
+    public init?(sourceObject: UserState, firstName: String) {
+        self.init(sourceObject: sourceObject,
                property: .firstName,
                   value: firstName)
     }
 
     // init to modify the value the property lastName of a UserState
-    public init?(state: UserState, lastName: String) {
-        self.init(state: state,
+    public init?(sourceObject: UserState, lastName: String) {
+        self.init(sourceObject: sourceObject,
                property: .lastName,
                   value: lastName)
     }
 
     // init to modify the value the property userName of a UserState
-    public init?(state: UserState, userName: String) {
-        self.init(state: state,
+    public init?(sourceObject: UserState, userName: String) {
+        self.init(sourceObject: sourceObject,
                property: .userName,
                   value: userName)
     }
 
     // init to modify the value the property email of a UserState
-    public init?(state: UserState, email: String) {
-        self.init(state: state,
+    public init?(sourceObject: UserState, email: String) {
+        self.init(sourceObject: sourceObject,
                property: .email,
                   value: email)
     }

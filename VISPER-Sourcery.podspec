@@ -1,7 +1,7 @@
 # Be sure to run `pod lib lint VISPER-Redux.podspec' to ensure this is a
 Pod::Spec.new do |s|
   s.name             = 'VISPER-Sourcery'
-  s.version          = '0.3.0'
+  s.version          = '1.0.0'
   s.summary          = 'Sourcery templates for VISPER-REdux'
   s.description      = <<-DESC
 Added some sourcery templates to VISPER Redux to generate AppReducers and States

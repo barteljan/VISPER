@@ -33,7 +33,7 @@ import VISPER_Core
     public func reduce(provider: ReducerProvider,
                          action: {{type.name}}Set{{property.name|capitalize}}Action,
                           state: {{type.name}}) -> {{type.name}} {
-        if let newState = {{type.name}}(state: state, {{property.name}}: action.{{property.name}}) {
+        if let newState = {{type.name}}(sourceObject: state, {{property.name}}: action.{{property.name}}) {
             return newState
         } else {
             return state

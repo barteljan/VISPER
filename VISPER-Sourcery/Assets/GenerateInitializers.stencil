@@ -1,6 +1,6 @@
 import UIKit
 
-{% for type in types.implementing.WithAutoStateInitializers|!annotated:"skipGeneralInitializer" %}
+{% for type in types.implementing.WithAutoInitializers|!annotated:"skipGeneralInitializer" %}
 //
 //
 // {{type.name}}
@@ -14,24 +14,37 @@ extension {{type.name}} {
         case {{property.name}}
         {% endfor %}
     }
+    
+    //init with object of same type
+    {{ type.accessLevel }} init?(sourceObject: {{ type.name }}) {
+        
+        
+            self.init({% for generalInitializerVar in type.storedVariables|!annotated:"skipGeneralInitializer" %}
+                      {{generalInitializerVar.name}}: sourceObject.{{generalInitializerVar.name}}{% if not forloop.last %}, {% endif %}
+                      {% endfor %})
+            
+        
+    }
+    
 
     // init to modify one property value of a {{type.name}}
-    {{ type.accessLevel }} init?(state: {{ type.name }}, property: Properties, value: Any) {
+    {{ type.accessLevel }} init?(sourceObject: {{ type.name }}, property: Properties, value: Any) {
             switch property {
                 {% for switchCaseProp in type.storedVariables|!annotated:"skipAutoStateInitializers" %}
             case .{{switchCaseProp.name}}:
                 self.init({% for generalInitializerVar in type.storedVariables|!annotated:"skipGeneralInitializer" %}
-                          {{generalInitializerVar.name}}: {% if switchCaseProp.name == generalInitializerVar.name %} value as! {{generalInitializerVar.typeName}}{% else %}state.{{generalInitializerVar.name}}{% endif %}{% if not forloop.last %}, {% endif %}
+                          {{generalInitializerVar.name}}: {% if switchCaseProp.name == generalInitializerVar.name %} value as! {{generalInitializerVar.typeName}}{% else %}sourceObject.{{generalInitializerVar.name}}{% endif %}{% if not forloop.last %}, {% endif %}
                     {% endfor %})
                 {% endfor %}
             }
     }
-    
+
+
     {% for property in type.storedVariables|!annotated:"skipAutoStateInitializers" %}
 
     // init to modify the value the property {{property.name}} of a {{type.name}}
-    {{ type.accessLevel }} init?(state: {{ type.name }}, {{property.name}}: {{property.typeName}}) {
-        self.init(state: state,
+    {{ type.accessLevel }} init?(sourceObject: {{ type.name }}, {{property.name}}: {{property.typeName}}) {
+        self.init(sourceObject: sourceObject,
                property: .{{property.name}},
                   value: {{property.name}})
     }

@@ -9,7 +9,7 @@
 import Foundation
 import VISPER_Sourcery
 
-public struct AppState: WithAutoStateInitializers, WithAutoGeneralInitializer,AutoAppReducer,AutoReducer {
+public struct AppState: WithAutoInitializers, WithAutoGeneralInitializer,AutoAppReducer,AutoReducer {
     let styleState: StyleState
     let userState: UserState
 

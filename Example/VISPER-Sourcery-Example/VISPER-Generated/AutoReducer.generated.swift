@@ -31,7 +31,7 @@ public class AppStateSetStylestateReducer: ActionReducerType {
     public func reduce(provider: ReducerProvider,
                          action: AppStateSetStylestateAction,
                           state: AppState) -> AppState {
-        if let newState = AppState(state: state, styleState: action.styleState) {
+        if let newState = AppState(sourceObject: state, styleState: action.styleState) {
             return newState
         } else {
             return state
@@ -59,7 +59,7 @@ public class AppStateSetUserstateReducer: ActionReducerType {
     public func reduce(provider: ReducerProvider,
                          action: AppStateSetUserstateAction,
                           state: AppState) -> AppState {
-        if let newState = AppState(state: state, userState: action.userState) {
+        if let newState = AppState(sourceObject: state, userState: action.userState) {
             return newState
         } else {
             return state
@@ -93,7 +93,7 @@ public class StyleStateSetBackgroundcolorReducer: ActionReducerType {
     public func reduce(provider: ReducerProvider,
                          action: StyleStateSetBackgroundcolorAction,
                           state: StyleState) -> StyleState {
-        if let newState = StyleState(state: state, backgroundColor: action.backgroundColor) {
+        if let newState = StyleState(sourceObject: state, backgroundColor: action.backgroundColor) {
             return newState
         } else {
             return state
@@ -121,7 +121,7 @@ public class StyleStateSetFontcolorReducer: ActionReducerType {
     public func reduce(provider: ReducerProvider,
                          action: StyleStateSetFontcolorAction,
                           state: StyleState) -> StyleState {
-        if let newState = StyleState(state: state, fontColor: action.fontColor) {
+        if let newState = StyleState(sourceObject: state, fontColor: action.fontColor) {
             return newState
         } else {
             return state
@@ -155,7 +155,7 @@ public class UserStateSetFirstnameReducer: ActionReducerType {
     public func reduce(provider: ReducerProvider,
                          action: UserStateSetFirstnameAction,
                           state: UserState) -> UserState {
-        if let newState = UserState(state: state, firstName: action.firstName) {
+        if let newState = UserState(sourceObject: state, firstName: action.firstName) {
             return newState
         } else {
             return state
@@ -183,7 +183,7 @@ public class UserStateSetLastnameReducer: ActionReducerType {
     public func reduce(provider: ReducerProvider,
                          action: UserStateSetLastnameAction,
                           state: UserState) -> UserState {
-        if let newState = UserState(state: state, lastName: action.lastName) {
+        if let newState = UserState(sourceObject: state, lastName: action.lastName) {
             return newState
         } else {
             return state
@@ -211,7 +211,7 @@ public class UserStateSetUsernameReducer: ActionReducerType {
     public func reduce(provider: ReducerProvider,
                          action: UserStateSetUsernameAction,
                           state: UserState) -> UserState {
-        if let newState = UserState(state: state, userName: action.userName) {
+        if let newState = UserState(sourceObject: state, userName: action.userName) {
             return newState
         } else {
             return state
@@ -239,7 +239,7 @@ public class UserStateSetEmailReducer: ActionReducerType {
     public func reduce(provider: ReducerProvider,
                          action: UserStateSetEmailAction,
                           state: UserState) -> UserState {
-        if let newState = UserState(state: state, email: action.email) {
+        if let newState = UserState(sourceObject: state, email: action.email) {
             return newState
         } else {
             return state
