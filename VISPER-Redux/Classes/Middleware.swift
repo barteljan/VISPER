@@ -87,9 +87,15 @@ public struct Middleware<State> {
     /// Filters while mapping actions to new actions.
     public func flatMap(_ transform: @escaping (GetState, Action) -> Action?) -> Middleware<State> {
         return Middleware<State> { getState, dispatch, action in
-            self.transform(getState, dispatch, action).compactMap {
+            #if swift(>=4.1)
+            return self.transform(getState, dispatch, action).compactMap {
                 transform(getState, $0)
             }
+            #else
+            return self.transform(getState, dispatch, action).flatMap {
+                transform(getState, $0)
+            }
+            #endif
         }
     }
 

@@ -30,7 +30,11 @@ public class SubscriptionReferenceBag {
 
     /// Initialise the bag with an array of subscription references.
     public init(_ references: SubscriptionReferenceType?...) {
+        #if swift(>=4.1)
         self.references = references.compactMap({ $0 })
+        #else
+        self.references = references.flatMap({ $0 })
+        #endif
     }
 
     deinit {

@@ -16,7 +16,7 @@ extension AppState {
         case userState
     }
     //init with object of same type
-    public init?(sourceObject: AppState) {
+    public init(sourceObject: AppState) {
             self.init(
                       styleState: sourceObject.styleState, 
                       userState: sourceObject.userState
@@ -70,7 +70,7 @@ extension StyleState {
         case fontColor
     }
     //init with object of same type
-    public init?(sourceObject: StyleState) {
+    public init(sourceObject: StyleState) {
             self.init(
                       backgroundColor: sourceObject.backgroundColor, 
                       fontColor: sourceObject.fontColor
@@ -126,7 +126,7 @@ extension UserState {
         case email
     }
     //init with object of same type
-    public init?(sourceObject: UserState) {
+    public init(sourceObject: UserState) {
             self.init(
                       firstName: sourceObject.firstName, 
                       lastName: sourceObject.lastName, 

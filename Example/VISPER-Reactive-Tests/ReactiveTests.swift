@@ -8,7 +8,6 @@
 
 
 import XCTest
-import VISPER_Core
 @testable import VISPER_Reactive
 
 /*
