@@ -172,14 +172,14 @@ extension UserState {
 
 
     // init to modify the value the property firstName of a UserState
-    public init?(sourceObject: UserState, firstName: String) {
+    public init?(sourceObject: UserState, firstName: String?) {
         self.init(sourceObject: sourceObject,
                property: .firstName,
                   value: firstName as Any) 
     }
 
     // init to modify the value the property lastName of a UserState
-    public init?(sourceObject: UserState, lastName: String) {
+    public init?(sourceObject: UserState, lastName: String?) {
         self.init(sourceObject: sourceObject,
                property: .lastName,
                   value: lastName as Any) 
@@ -193,7 +193,7 @@ extension UserState {
     }
 
     // init to modify the value the property email of a UserState
-    public init?(sourceObject: UserState, email: String) {
+    public init?(sourceObject: UserState, email: String?) {
         self.init(sourceObject: sourceObject,
                property: .email,
                   value: email as Any) 

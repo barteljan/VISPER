@@ -15,7 +15,7 @@ public struct StyleState: WithAutoInitializers, WithAutoGeneralInitializer, Auto
 
 // sourcery:inline:auto:StyleState.GenerateInitializers
     // auto generated init function for StyleState
-    public init(backgroundColor: UIColor, fontColor: UIColor){
+public init(backgroundColor: UIColor, fontColor: UIColor){
             self.backgroundColor = backgroundColor
             self.fontColor = fontColor
     }

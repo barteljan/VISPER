@@ -11,14 +11,14 @@ import VISPER_Sourcery
 
 public struct UserState: WithAutoInitializers, WithAutoGeneralInitializer, AutoReducer  {
     
-    var firstName: String
-    var lastName: String
+    var firstName: String?
+    var lastName: String?
     var userName: String
-    var email: String
+    var email: String?
     
 // sourcery:inline:auto:UserState.GenerateInitializers
     // auto generated init function for UserState
-    public init(firstName: String, lastName: String, userName: String, email: String){
+public init(firstName: String? = nil, lastName: String? = nil, userName: String, email: String? = nil){
             self.firstName = firstName
             self.lastName = lastName
             self.userName = userName

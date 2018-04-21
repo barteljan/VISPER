@@ -56,7 +56,7 @@ extension {{type.name}} {
 {% for type in types.implementing.WithAutoGeneralInitializer|!annotated:"skipGeneralInitializer"  %}
 // sourcery:inline:auto:{{ type.name }}.GenerateInitializers
     // auto generated init function for {{ type.name }}
-    {{ type.accessLevel }} init({% for property in type.storedVariables|!annotated:"skipGeneralInitializer" %}{{property.name}}: {{property.typeName}}{% if not forloop.last %}, {% endif %}{% endfor %}){
+{{ type.accessLevel }} init({% for property in type.storedVariables|!annotated:"skipGeneralInitializer" %}{{property.name}}: {{property.typeName}}{% if property.typeName|hasSuffix:"?" %} = nil{% endif %}{% if not forloop.last %}, {% endif %}{% endfor %}){
         {% for property in type.storedVariables|!annotated:"skipGeneralInitializer" %}
             self.{{property.name}} = {{property.name}}
         {% endfor %}

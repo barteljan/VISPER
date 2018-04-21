@@ -142,8 +142,8 @@ public class StyleStateSetFontcolorReducer: ActionReducerType {
 
 // Set UserState firstName Action
 public struct UserStateSetFirstnameAction: Action {
-    let firstName: String
-    public init(firstName: String) {
+    let firstName: String?
+    public init(firstName: String?) {
         self.firstName = firstName
     }
 }
@@ -170,8 +170,8 @@ public class UserStateSetFirstnameReducer: ActionReducerType {
 
 // Set UserState lastName Action
 public struct UserStateSetLastnameAction: Action {
-    let lastName: String
-    public init(lastName: String) {
+    let lastName: String?
+    public init(lastName: String?) {
         self.lastName = lastName
     }
 }
@@ -226,8 +226,8 @@ public class UserStateSetUsernameReducer: ActionReducerType {
 
 // Set UserState email Action
 public struct UserStateSetEmailAction: Action {
-    let email: String
-    public init(email: String) {
+    let email: String?
+    public init(email: String?) {
         self.email = email
     }
 }

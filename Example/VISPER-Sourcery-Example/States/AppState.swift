@@ -15,7 +15,7 @@ public struct AppState: WithAutoInitializers, WithAutoGeneralInitializer,AutoApp
 
 // sourcery:inline:auto:AppState.GenerateInitializers
     // auto generated init function for AppState
-    public init(styleState: StyleState, userState: UserState?){
+public init(styleState: StyleState, userState: UserState? = nil){
             self.styleState = styleState
             self.userState = userState
     }
