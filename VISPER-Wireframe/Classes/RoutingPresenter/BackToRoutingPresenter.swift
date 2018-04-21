@@ -42,7 +42,7 @@ public class BackToRoutingPresenter: DefaultControllerContainerAwareRoutingPrese
             return controller is UINavigationController
         }) as? UINavigationController
         
-        guard let routingOption = routeResult.routingOption as? RoutingOptionPush else {
+        guard let routingOption = routeResult.routingOption as? RoutingOptionBackTo else {
             throw BackToRoutingPresenterError.didNotReceiveBackToRoutingOptionFor(controller: controller,
                                                                                  routeResult: routeResult,
                                                                                    wireframe: wireframe,

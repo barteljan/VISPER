@@ -12,7 +12,7 @@ public protocol RoutingOptionBackTo: AnimatedRoutingOption {
     
 }
 
-public struct DefaultRoutingBackTo: RoutingOptionShow{
+public struct DefaultRoutingBackTo: RoutingOptionBackTo {
     
     public let animated: Bool
     

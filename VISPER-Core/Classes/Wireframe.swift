@@ -159,6 +159,21 @@ public extension Wireframe {
         try self.route(url: url, parameters: parameters, option: nil, completion: completion)
     }
     
+    public func route(route: String,
+                 parameters: [String : Any] = [:],
+                     option: RoutingOption? = nil,
+                 completion: @escaping () -> Void = {}) throws {
+        
+        guard let url = URL(string: route) else {
+            throw NSError(domain: "WireframeDomain", code: 24, userInfo: [NSLocalizedDescriptionKey: "could not convert route string: \(route) to url"])
+        }
+        try self.route(url: url,
+                parameters: parameters,
+                    option: option,
+                completion: completion)
+    }
+   
+    
     public func controller(url: URL) throws -> UIViewController? {
         return try self.controller(url: url, parameters: [:])
     }
