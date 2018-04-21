@@ -110,4 +110,20 @@
     
 }
 
+-(void)retainPresenter:(NSObject*)presenter {
+    NSMutableArray *presenters = [NSMutableArray arrayWithArray:[self retainedPresenters]];
+    if(presenter){
+        [presenters addObject:presenter];
+    }
+    [self setRetainedPresenters:presenters];
+}
+
+-(NSArray*)retainedPresenters {
+    return objc_getAssociatedObject(self, @selector(retainedPresenters));
+}
+
+-(void)setRetainedPresenters:(NSArray *)myRetainedPresenters{
+    objc_setAssociatedObject(self, @selector(retainedPresenters), myRetainedPresenters , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 @end

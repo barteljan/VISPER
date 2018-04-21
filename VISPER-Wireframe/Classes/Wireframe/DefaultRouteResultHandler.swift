@@ -7,6 +7,8 @@
 
 import Foundation
 import VISPER_Core
+import VISPER_Presenter
+import VISPER_Objc
 
 open class DefaultRouteResultHandler: RouteResultHandler {
     
@@ -65,6 +67,7 @@ open class DefaultRouteResultHandler: RouteResultHandler {
         for presenter in try presenterProvider.makePresenters(routeResult: modifiedRouteResult, controller: controller) {
             if presenter.isResponsible(routeResult:modifiedRouteResult, controller: controller) {
                 try presenter.addPresentationLogic(routeResult: modifiedRouteResult, controller: controller)
+                controller.retainPresenter(PresenterObjc(presenter: presenter))
             }
         }
         

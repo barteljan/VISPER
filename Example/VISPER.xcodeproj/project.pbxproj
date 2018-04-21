@@ -286,7 +286,7 @@
 		9A5CB7CC2073729400F99456 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9A5CB7D22073846500F99456 /* TypedEntityStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypedEntityStoreTests.swift; sourceTree = "<group>"; };
 		9A5CB7D4207384E000F99456 /* MockEntityStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEntityStore.swift; sourceTree = "<group>"; };
-		9A67425D1FE1A034001BE7BC /* VISPER-Presenter.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Presenter.podspec"; path = "../VISPER-Presenter.podspec"; sourceTree = "<group>"; };
+		9A67425D1FE1A034001BE7BC /* VISPER-Presenter.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Presenter.podspec"; path = "../VISPER-Presenter.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9A83A494206621590056A309 /* VISPER-Sourcery-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VISPER-Sourcery-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A83A496206621590056A309 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A83A498206621590056A309 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };

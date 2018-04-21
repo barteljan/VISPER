@@ -23,6 +23,7 @@ VISPER is a framework for building component based apps with the viper architect
 
   s.dependency 'VISPER-Core','~> 2.0.0'
   s.dependency 'VISPER-Objc','~> 2.0.0'
+  s.dependency 'VISPER-Presenter','~> 2.0.3'
   s.dependency 'VISPER-UIViewController','~> 2.0.0'
 
 end
