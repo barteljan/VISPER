@@ -13,6 +13,7 @@
 #import "VISPERRoutingOption.h"
 #import "IVISPERRoutingOptionsFactory.h"
 #import "IVISPERWireframePresentationType.h"
+#import <VISPER/VISPER-Swift.h>
 
 @implementation VISPER
 
@@ -20,6 +21,7 @@ static NSObject<IVISPERRoutingOptionsFactory> *routingOptionsFactory = nil;
 
 + (void)load {
     [UIViewController enableVISPEREventsOnAllViewControllers];
+    [VISPERWireframe addDefaultRoutingOptionConverter];
 }
 
 + (id)sharedRoutingOptionsFactory {

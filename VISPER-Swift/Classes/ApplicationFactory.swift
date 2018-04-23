@@ -64,6 +64,9 @@ open class ApplicationFactory<AppState> {
         
         let logicFeatureObserver = LogicFeatureObserver<AppState>()
         application.add(featureObserver: logicFeatureObserver)
+        
+        let stateObservingFeatureObserver = StateObservingFeatureObserver<AppState,AppState>(state: application.state)
+        application.add(featureObserver: stateObservingFeatureObserver)
     }
     
 }

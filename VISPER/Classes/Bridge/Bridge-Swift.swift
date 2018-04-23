@@ -23,3 +23,5 @@ public typealias PresenterFeatureObserver<ApplicationState> = VISPER_Swift.Prese
 public typealias StatefulFeature = VISPER_Swift.StatefulFeature
 public typealias ViewFeature = VISPER_Swift.ViewFeature
 public typealias ViewFeatureObserver<ApplicationState> = VISPER_Swift.ViewFeatureObserver<ApplicationState>
+public typealias StateObservingFeature<ObservedStateType> = VISPER_Swift.StateObservingFeature<ObservedStateType>
+public typealias StateObservingFeatureObserver<ApplicationState,ObservedState> = VISPER_Swift.StateObservingFeatureObserver<ApplicationState,ObservedState>

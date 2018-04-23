@@ -47,7 +47,7 @@ open class VISPERApplication: NSObject,IVISPERApplication {
         self._wireframe = wireframe
         self._commandBus = commandBus
         
-        VISPERWireframe.addRoutingOptionConverter(converter: DefaultRoutingOptionConverter())
+        //VISPERWireframe.addRoutingOptionConverter(converter: DefaultRoutingOptionConverter())
         
         let applicationFactory = ApplicationFactory<NSMutableDictionary>()
         let application = applicationFactory.makeApplication(initialState: NSMutableDictionary(),

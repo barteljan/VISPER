@@ -3,7 +3,7 @@
 # valid spec before submitting.
 Pod::Spec.new do |s|
   s.name             = 'VISPER-Swift'
-  s.version          = '2.1.0'
+  s.version          = '2.1.1'
   s.summary          = 'VISPER is a framework for building component based apps with the viper architecture'
 
   s.description      = <<-DESC

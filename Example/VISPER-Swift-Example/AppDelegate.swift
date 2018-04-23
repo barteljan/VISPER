@@ -80,6 +80,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let modalFeature = ModalFeature(routePattern: "/modal/controller", wireframe: self.visperApplication.wireframe)
         try! self.visperApplication.add(feature: modalFeature)
         
+        let observingFeature = ObservingFeature()
+        try! self.visperApplication.add(feature: observingFeature)
+        
     }
 
 

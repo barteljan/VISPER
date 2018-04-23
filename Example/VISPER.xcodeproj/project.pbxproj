@@ -25,6 +25,7 @@
 		9A0D1A111FE12D9000567A88 /* AssertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5BDB1FDC090E00C401AF /* AssertHelper.swift */; };
 		9A0D1A151FE13C7100567A88 /* MockViewControllerLifecycleEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D1A141FE13C7100567A88 /* MockViewControllerLifecycleEventPresenter.swift */; };
 		9A0D1A171FE13FD900567A88 /* ViewControllerLifecycleEventPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D1A161FE13FD900567A88 /* ViewControllerLifecycleEventPresenterTests.swift */; };
+		9A0E1595208E20D3006388F2 /* ObservingFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0E1594208E20D3006388F2 /* ObservingFeature.swift */; };
 		9A15DBCA2078C197006C786D /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15DBC92078C197006C786D /* StringTests.swift */; };
 		9A15DBD4207B8519006C786D /* FunctionalEntityStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15DBD3207B8519006C786D /* FunctionalEntityStoreTests.swift */; };
 		9A15DBD6207BA276006C786D /* FunctionalEntityStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15DBD5207BA276006C786D /* FunctionalEntityStoreTests.swift */; };
@@ -249,6 +250,7 @@
 		9A0D1A081FE10A2100567A88 /* MockViewControllerEventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewControllerEventPresenter.swift; sourceTree = "<group>"; };
 		9A0D1A141FE13C7100567A88 /* MockViewControllerLifecycleEventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewControllerLifecycleEventPresenter.swift; sourceTree = "<group>"; };
 		9A0D1A161FE13FD900567A88 /* ViewControllerLifecycleEventPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLifecycleEventPresenterTests.swift; sourceTree = "<group>"; };
+		9A0E1594208E20D3006388F2 /* ObservingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservingFeature.swift; sourceTree = "<group>"; };
 		9A15DBC92078C197006C786D /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		9A15DBD3207B8519006C786D /* FunctionalEntityStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FunctionalEntityStoreTests.swift; path = "/Users/bartel/Documents/lib/VISPER/Example/VISPER-Entity-ExampleTests/FunctionalEntityStoreTests.swift"; sourceTree = "<absolute>"; };
 		9A15DBD5207BA276006C786D /* FunctionalEntityStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FunctionalEntityStoreTests.swift; path = "/Users/bartel/Documents/lib/VISPER/Example/VISPER-Entity-ExampleTests/FunctionalEntityStoreTests.swift"; sourceTree = "<absolute>"; };
@@ -970,6 +972,7 @@
 				9A8C5C1B1FDC0C1D00C401AF /* Assets.xcassets */,
 				9A8C5C1D1FDC0C1D00C401AF /* LaunchScreen.storyboard */,
 				9A8C5C201FDC0C1D00C401AF /* Info.plist */,
+				9A0E1594208E20D3006388F2 /* ObservingFeature.swift */,
 			);
 			path = "VISPER-Swift-Example";
 			sourceTree = "<group>";
@@ -1135,7 +1138,6 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				B5BE11517A19E6183582811D /* [CP] Embed Pods Frameworks */,
-				85BDDF9E650535C80D1AEF2C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1155,7 +1157,6 @@
 				9A0D19E31FE0F67E00567A88 /* Frameworks */,
 				9A0D19E41FE0F67E00567A88 /* Resources */,
 				F58AA59C6615668DF5899299 /* [CP] Embed Pods Frameworks */,
-				666BCC1FFDDB982A82CFDE39 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1176,7 +1177,6 @@
 				9A38DB3D206D0EDC00F0C602 /* Frameworks */,
 				9A38DB3E206D0EDC00F0C602 /* Resources */,
 				D29802B4A62AF13C890B3C44 /* [CP] Embed Pods Frameworks */,
-				66DBB5EF2BA8078B4EAA60C8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1213,7 +1213,6 @@
 				9A5CB7BD20736A5600F99456 /* Frameworks */,
 				9A5CB7BE20736A5600F99456 /* Resources */,
 				01CA384C1C28A8CC54389657 /* [CP] Embed Pods Frameworks */,
-				368A43B153CC800328B96BEA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1235,7 +1234,6 @@
 				9A83A491206621590056A309 /* Frameworks */,
 				9A83A492206621590056A309 /* Resources */,
 				101124EA206D0D745ED2AC25 /* [CP] Embed Pods Frameworks */,
-				B5F96A38C416DB45033FBBA9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1255,7 +1253,6 @@
 				9A8C5BA71FDC07B500C401AF /* Frameworks */,
 				9A8C5BA81FDC07B500C401AF /* Resources */,
 				59E2DD06A7D47A126E68D94D /* [CP] Embed Pods Frameworks */,
-				4050412D7FC3FC0A16C437DE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1275,7 +1272,6 @@
 				9A8C5BBD1FDC08A600C401AF /* Frameworks */,
 				9A8C5BBE1FDC08A600C401AF /* Resources */,
 				88472FF458FA599E1A2C54E1 /* [CP] Embed Pods Frameworks */,
-				5F5F71FDA148A5FC74528F46 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1296,7 +1292,6 @@
 				9A8C5C0F1FDC0C1C00C401AF /* Frameworks */,
 				9A8C5C101FDC0C1C00C401AF /* Resources */,
 				FFBA38CE315868761F4A8AE9 /* [CP] Embed Pods Frameworks */,
-				F90BE0BE4C153F91A9A6D1E3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1316,7 +1311,6 @@
 				9A8C5C251FDC0D9800C401AF /* Frameworks */,
 				9A8C5C261FDC0D9800C401AF /* Resources */,
 				28F374E9708CBC2014150F64 /* [CP] Embed Pods Frameworks */,
-				56D992F9391A15F4CDAD4340 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1336,7 +1330,6 @@
 				9A8C5C5D1FDC0FE400C401AF /* Frameworks */,
 				9A8C5C5E1FDC0FE400C401AF /* Resources */,
 				8B14F752D4B830A1140076B4 /* [CP] Embed Pods Frameworks */,
-				5B185AE634B5681371D44BF0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1358,7 +1351,6 @@
 				9A8C5C971FDCFF1100C401AF /* Frameworks */,
 				9A8C5C981FDCFF1100C401AF /* Resources */,
 				C2CAF067659B0E32D19EB94E /* [CP] Embed Pods Frameworks */,
-				C09FFA9A54B805E7F5E5F57D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1379,7 +1371,6 @@
 				9A8C5CA91FDD08DF00C401AF /* Frameworks */,
 				9A8C5CAA1FDD08DF00C401AF /* Resources */,
 				19B308E4CAF3E148622EC535 /* [CP] Embed Pods Frameworks */,
-				F68968E57FC4A95A93C3F8FB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1400,7 +1391,6 @@
 				9A97E9CE1FEFF43C006C50F3 /* Frameworks */,
 				9A97E9CF1FEFF43C006C50F3 /* Resources */,
 				2E8C7F8A922925B5DBFFC464 /* [CP] Embed Pods Frameworks */,
-				CC606DB04DC4464740FDA5EA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1863,21 +1853,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		368A43B153CC800328B96BEA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Entity-ExampleTests/Pods-VISPER-Entity-ExampleTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		381D2023608B551CE31D1562 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1894,36 +1869,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4050412D7FC3FC0A16C437DE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Wireframe-Example/Pods-VISPER-Wireframe-Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		56D992F9391A15F4CDAD4340 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Redux-Example/Pods-VISPER-Redux-Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		59E2DD06A7D47A126E68D94D /* [CP] Embed Pods Frameworks */ = {
@@ -1952,21 +1897,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Wireframe-Example/Pods-VISPER-Wireframe-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5B185AE634B5681371D44BF0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Redux-Tests/Pods-VISPER-Redux-Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5E9E81906D898072C609AAFB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1983,51 +1913,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5F5F71FDA148A5FC74528F46 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Wireframe-Tests/Pods-VISPER-Wireframe-Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		666BCC1FFDDB982A82CFDE39 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-UIViewController-Tests/Pods-VISPER-UIViewController-Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		66DBB5EF2BA8078B4EAA60C8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Entity-Example/Pods-VISPER-Entity-Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		67A37B41052BFC85C898EBCE /* [CP] Check Pods Manifest.lock */ = {
@@ -2082,21 +1967,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		85BDDF9E650535C80D1AEF2C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER_Example/Pods-VISPER_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		88472FF458FA599E1A2C54E1 /* [CP] Embed Pods Frameworks */ = {
@@ -2252,36 +2122,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER_Example/Pods-VISPER_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B5F96A38C416DB45033FBBA9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Sourcery-Example/Pods-VISPER-Sourcery-Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C09FFA9A54B805E7F5E5F57D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Reactive-Tests/Pods-VISPER-Reactive-Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C2CAF067659B0E32D19EB94E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2298,21 +2138,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Reactive-Tests/Pods-VISPER-Reactive-Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CC606DB04DC4464740FDA5EA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Swift-RxSwift-Example/Pods-VISPER-Swift-RxSwift-Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D29802B4A62AF13C890B3C44 /* [CP] Embed Pods Frameworks */ = {
@@ -2375,36 +2200,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-UIViewController-Tests/Pods-VISPER-UIViewController-Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F68968E57FC4A95A93C3F8FB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Reactive-RxSwift-Tests/Pods-VISPER-Reactive-RxSwift-Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F90BE0BE4C153F91A9A6D1E3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Swift-Example/Pods-VISPER-Swift-Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FFBA38CE315868761F4A8AE9 /* [CP] Embed Pods Frameworks */ = {
@@ -2590,6 +2385,7 @@
 				9A8C5C151FDC0C1D00C401AF /* AppDelegate.swift in Sources */,
 				9A408D911FE7A132008048AB /* ModalFeature.swift in Sources */,
 				9A408D841FE6FF59008048AB /* StartFeature.swift in Sources */,
+				9A0E1595208E20D3006388F2 /* ObservingFeature.swift in Sources */,
 				9A408D851FE6FF59008048AB /* StartViewController.swift in Sources */,
 				9A408D971FE8E9A1008048AB /* ModalViewController.swift in Sources */,
 				9A408D8C1FE702C0008048AB /* PushedFeature.swift in Sources */,

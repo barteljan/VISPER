@@ -22,6 +22,12 @@ public enum VISPERWireframeError: Error {
         VISPERWireframe.optionConverters.append(converter)
     }
     
+    @objc open static func addDefaultRoutingOptionConverter(){
+        let converter = DefaultRoutingOptionConverter()
+        VISPERWireframe.addRoutingOptionConverter(converter: converter)
+    }
+    
+    
     open static func routingOption(visperRoutingOption: IVISPERRoutingOption?) throws -> RoutingOption? {
         
         guard let visperRoutingOption = visperRoutingOption else {
