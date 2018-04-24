@@ -9,7 +9,7 @@
 import Foundation
 import VISPER_Sourcery
 
-public struct UserState: WithAutoInitializers, WithAutoGeneralInitializer, AutoReducer  {
+struct UserState: WithAutoInitializers, WithAutoGeneralInitializer, AutoReducer, Equatable  {
     
     var firstName: String?
     var lastName: String?
@@ -18,7 +18,7 @@ public struct UserState: WithAutoInitializers, WithAutoGeneralInitializer, AutoR
     
 // sourcery:inline:auto:UserState.GenerateInitializers
     // auto generated init function for UserState
-public init(firstName: String? = nil, lastName: String? = nil, userName: String, email: String? = nil){
+internal init(firstName: String? = nil, lastName: String? = nil, userName: String, email: String? = nil){
             self.firstName = firstName
             self.lastName = lastName
             self.userName = userName

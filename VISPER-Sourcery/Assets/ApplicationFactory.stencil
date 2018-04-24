@@ -1,0 +1,31 @@
+import VISPER_Swift
+
+{% for type in types.implementing.AutoAppReducer %}
+// generated application factory for {{type.name}}
+class GeneratedApplicationFactoryFor{{type.name|upperFirstLetter}} {
+    
+    func makeApplication(initialState: {{type.name}}) throws -> AnyApplication<{{type.name}}> {
+        
+        //create general application factory
+        let applicationFactory = ApplicationFactory<{{type.name}}>()
+        
+        let application = applicationFactory.makeApplication(initialState: initialState,
+                                                             appReducer: appReducerFor{{type.name}})
+        
+        // add a feature observer for every sub property of our app state
+        {% for property in type.storedVariables|!annotated:"skipGeneralInitializer" %}
+        
+        // add feature observer for {{property.name}}
+        let {{property.name}}FeatureObserver = StateObservingFeatureObserver<{{type.name}},{{property.typeName}}>(state: application.state.map({return $0.{{property.name}}}).distinct())
+        application.add(featureObserver: {{property.name}}FeatureObserver)
+        
+        {% endfor %}
+        
+        let autoReducerFeature = AutoReducerFeature()
+        try application.add(feature: autoReducerFeature)
+        
+        return application
+        
+    }
+}
+{% endfor %}

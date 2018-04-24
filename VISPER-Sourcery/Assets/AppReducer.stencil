@@ -1,6 +1,7 @@
 import VISPER_Redux
 import VISPER_Core
 
+
 {% for type in types.implementing.AutoAppReducer %}
 //
 // AppReducer for {{type.name}}

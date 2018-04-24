@@ -17,15 +17,15 @@ import VISPER_Core
 //
 
 // Set AppState styleState Action
-public struct AppStateSetStylestateAction: Action {
+internal struct AppStateSetStylestateAction: Action {
     let styleState: StyleState
-    public init(styleState: StyleState) {
+    internal init(styleState: StyleState) {
         self.styleState = styleState
     }
 }
 
 // Set AppState styleState Action Reducer
-public class AppStateSetStylestateReducer: ActionReducerType {
+internal class AppStateSetStylestateReducer: ActionReducerType {
     public typealias ReducerStateType = AppState
     public typealias ReducerActionType = AppStateSetStylestateAction
     public func reduce(provider: ReducerProvider,
@@ -45,15 +45,15 @@ public class AppStateSetStylestateReducer: ActionReducerType {
 //
 
 // Set AppState userState Action
-public struct AppStateSetUserstateAction: Action {
+internal struct AppStateSetUserstateAction: Action {
     let userState: UserState?
-    public init(userState: UserState?) {
+    internal init(userState: UserState?) {
         self.userState = userState
     }
 }
 
 // Set AppState userState Action Reducer
-public class AppStateSetUserstateReducer: ActionReducerType {
+internal class AppStateSetUserstateReducer: ActionReducerType {
     public typealias ReducerStateType = AppState
     public typealias ReducerActionType = AppStateSetUserstateAction
     public func reduce(provider: ReducerProvider,
@@ -79,15 +79,15 @@ public class AppStateSetUserstateReducer: ActionReducerType {
 //
 
 // Set StyleState backgroundColor Action
-public struct StyleStateSetBackgroundcolorAction: Action {
+internal struct StyleStateSetBackgroundcolorAction: Action {
     let backgroundColor: UIColor
-    public init(backgroundColor: UIColor) {
+    internal init(backgroundColor: UIColor) {
         self.backgroundColor = backgroundColor
     }
 }
 
 // Set StyleState backgroundColor Action Reducer
-public class StyleStateSetBackgroundcolorReducer: ActionReducerType {
+internal class StyleStateSetBackgroundcolorReducer: ActionReducerType {
     public typealias ReducerStateType = StyleState
     public typealias ReducerActionType = StyleStateSetBackgroundcolorAction
     public func reduce(provider: ReducerProvider,
@@ -107,15 +107,15 @@ public class StyleStateSetBackgroundcolorReducer: ActionReducerType {
 //
 
 // Set StyleState fontColor Action
-public struct StyleStateSetFontcolorAction: Action {
+internal struct StyleStateSetFontcolorAction: Action {
     let fontColor: UIColor
-    public init(fontColor: UIColor) {
+    internal init(fontColor: UIColor) {
         self.fontColor = fontColor
     }
 }
 
 // Set StyleState fontColor Action Reducer
-public class StyleStateSetFontcolorReducer: ActionReducerType {
+internal class StyleStateSetFontcolorReducer: ActionReducerType {
     public typealias ReducerStateType = StyleState
     public typealias ReducerActionType = StyleStateSetFontcolorAction
     public func reduce(provider: ReducerProvider,
@@ -141,15 +141,15 @@ public class StyleStateSetFontcolorReducer: ActionReducerType {
 //
 
 // Set UserState firstName Action
-public struct UserStateSetFirstnameAction: Action {
+internal struct UserStateSetFirstnameAction: Action {
     let firstName: String?
-    public init(firstName: String?) {
+    internal init(firstName: String?) {
         self.firstName = firstName
     }
 }
 
 // Set UserState firstName Action Reducer
-public class UserStateSetFirstnameReducer: ActionReducerType {
+internal class UserStateSetFirstnameReducer: ActionReducerType {
     public typealias ReducerStateType = UserState
     public typealias ReducerActionType = UserStateSetFirstnameAction
     public func reduce(provider: ReducerProvider,
@@ -169,15 +169,15 @@ public class UserStateSetFirstnameReducer: ActionReducerType {
 //
 
 // Set UserState lastName Action
-public struct UserStateSetLastnameAction: Action {
+internal struct UserStateSetLastnameAction: Action {
     let lastName: String?
-    public init(lastName: String?) {
+    internal init(lastName: String?) {
         self.lastName = lastName
     }
 }
 
 // Set UserState lastName Action Reducer
-public class UserStateSetLastnameReducer: ActionReducerType {
+internal class UserStateSetLastnameReducer: ActionReducerType {
     public typealias ReducerStateType = UserState
     public typealias ReducerActionType = UserStateSetLastnameAction
     public func reduce(provider: ReducerProvider,
@@ -197,15 +197,15 @@ public class UserStateSetLastnameReducer: ActionReducerType {
 //
 
 // Set UserState userName Action
-public struct UserStateSetUsernameAction: Action {
+internal struct UserStateSetUsernameAction: Action {
     let userName: String
-    public init(userName: String) {
+    internal init(userName: String) {
         self.userName = userName
     }
 }
 
 // Set UserState userName Action Reducer
-public class UserStateSetUsernameReducer: ActionReducerType {
+internal class UserStateSetUsernameReducer: ActionReducerType {
     public typealias ReducerStateType = UserState
     public typealias ReducerActionType = UserStateSetUsernameAction
     public func reduce(provider: ReducerProvider,
@@ -225,15 +225,15 @@ public class UserStateSetUsernameReducer: ActionReducerType {
 //
 
 // Set UserState email Action
-public struct UserStateSetEmailAction: Action {
+internal struct UserStateSetEmailAction: Action {
     let email: String?
-    public init(email: String?) {
+    internal init(email: String?) {
         self.email = email
     }
 }
 
 // Set UserState email Action Reducer
-public class UserStateSetEmailReducer: ActionReducerType {
+internal class UserStateSetEmailReducer: ActionReducerType {
     public typealias ReducerStateType = UserState
     public typealias ReducerActionType = UserStateSetEmailAction
     public func reduce(provider: ReducerProvider,

@@ -11,12 +11,12 @@ import UIKit
 extension AppState {
 
     // stored properties of AppState
-    public enum Properties: String {
+    internal enum Properties: String {
         case styleState
         case userState
     }
     //init with object of same type
-    public init(sourceObject: AppState) {
+    internal init(sourceObject: AppState) {
             self.init(
                       styleState: sourceObject.styleState, 
                       userState: sourceObject.userState
@@ -24,7 +24,7 @@ extension AppState {
     }
 
     // init to modify one property value of a AppState
-    public init?(sourceObject: AppState, property: Properties, value: Any) {
+    internal init?(sourceObject: AppState, property: Properties, value: Any) {
             switch property {
             case .styleState:
                 self.init(
@@ -42,14 +42,14 @@ extension AppState {
 
 
     // init to modify the value the property styleState of a AppState
-    public init?(sourceObject: AppState, styleState: StyleState) {
+    internal init?(sourceObject: AppState, styleState: StyleState) {
         self.init(sourceObject: sourceObject,
                property: .styleState,
                   value: styleState as Any) 
     }
 
     // init to modify the value the property userState of a AppState
-    public init?(sourceObject: AppState, userState: UserState?) {
+    internal init?(sourceObject: AppState, userState: UserState?) {
         self.init(sourceObject: sourceObject,
                property: .userState,
                   value: userState as Any) 
@@ -65,12 +65,12 @@ extension AppState {
 extension StyleState {
 
     // stored properties of StyleState
-    public enum Properties: String {
+    internal enum Properties: String {
         case backgroundColor
         case fontColor
     }
     //init with object of same type
-    public init(sourceObject: StyleState) {
+    internal init(sourceObject: StyleState) {
             self.init(
                       backgroundColor: sourceObject.backgroundColor, 
                       fontColor: sourceObject.fontColor
@@ -78,7 +78,7 @@ extension StyleState {
     }
 
     // init to modify one property value of a StyleState
-    public init?(sourceObject: StyleState, property: Properties, value: Any) {
+    internal init?(sourceObject: StyleState, property: Properties, value: Any) {
             switch property {
             case .backgroundColor:
                 self.init(
@@ -96,14 +96,14 @@ extension StyleState {
 
 
     // init to modify the value the property backgroundColor of a StyleState
-    public init?(sourceObject: StyleState, backgroundColor: UIColor) {
+    internal init?(sourceObject: StyleState, backgroundColor: UIColor) {
         self.init(sourceObject: sourceObject,
                property: .backgroundColor,
                   value: backgroundColor as Any) 
     }
 
     // init to modify the value the property fontColor of a StyleState
-    public init?(sourceObject: StyleState, fontColor: UIColor) {
+    internal init?(sourceObject: StyleState, fontColor: UIColor) {
         self.init(sourceObject: sourceObject,
                property: .fontColor,
                   value: fontColor as Any) 
@@ -119,14 +119,14 @@ extension StyleState {
 extension UserState {
 
     // stored properties of UserState
-    public enum Properties: String {
+    internal enum Properties: String {
         case firstName
         case lastName
         case userName
         case email
     }
     //init with object of same type
-    public init(sourceObject: UserState) {
+    internal init(sourceObject: UserState) {
             self.init(
                       firstName: sourceObject.firstName, 
                       lastName: sourceObject.lastName, 
@@ -136,7 +136,7 @@ extension UserState {
     }
 
     // init to modify one property value of a UserState
-    public init?(sourceObject: UserState, property: Properties, value: Any) {
+    internal init?(sourceObject: UserState, property: Properties, value: Any) {
             switch property {
             case .firstName:
                 self.init(
@@ -172,28 +172,28 @@ extension UserState {
 
 
     // init to modify the value the property firstName of a UserState
-    public init?(sourceObject: UserState, firstName: String?) {
+    internal init?(sourceObject: UserState, firstName: String?) {
         self.init(sourceObject: sourceObject,
                property: .firstName,
                   value: firstName as Any) 
     }
 
     // init to modify the value the property lastName of a UserState
-    public init?(sourceObject: UserState, lastName: String?) {
+    internal init?(sourceObject: UserState, lastName: String?) {
         self.init(sourceObject: sourceObject,
                property: .lastName,
                   value: lastName as Any) 
     }
 
     // init to modify the value the property userName of a UserState
-    public init?(sourceObject: UserState, userName: String) {
+    internal init?(sourceObject: UserState, userName: String) {
         self.init(sourceObject: sourceObject,
                property: .userName,
                   value: userName as Any) 
     }
 
     // init to modify the value the property email of a UserState
-    public init?(sourceObject: UserState, email: String?) {
+    internal init?(sourceObject: UserState, email: String?) {
         self.init(sourceObject: sourceObject,
                property: .email,
                   value: email as Any) 

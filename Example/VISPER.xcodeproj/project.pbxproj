@@ -37,6 +37,7 @@
 		9A38DB48206D0EDD00F0C602 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A38DB46206D0EDD00F0C602 /* Main.storyboard */; };
 		9A38DB4A206D0EDD00F0C602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A38DB49206D0EDD00F0C602 /* Assets.xcassets */; };
 		9A38DB4D206D0EDD00F0C602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A38DB4B206D0EDD00F0C602 /* LaunchScreen.storyboard */; };
+		9A3C72F0208F00250083E842 /* ApplicationFactory.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3C72EF208F00240083E842 /* ApplicationFactory.generated.swift */; };
 		9A408D631FE4027D008048AB /* MockControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A408D621FE4027D008048AB /* MockControllerPresenter.swift */; };
 		9A408D651FE402F9008048AB /* ControllerPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A408D641FE402F9008048AB /* ControllerPresenterTests.swift */; };
 		9A408D831FE6FF59008048AB /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A408D801FE6FF59008048AB /* StartViewController.xib */; };
@@ -265,6 +266,7 @@
 		9A38DB49206D0EDD00F0C602 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A38DB4C206D0EDD00F0C602 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A38DB4E206D0EDD00F0C602 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A3C72EF208F00240083E842 /* ApplicationFactory.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationFactory.generated.swift; sourceTree = "<group>"; };
 		9A408D621FE4027D008048AB /* MockControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockControllerPresenter.swift; sourceTree = "<group>"; };
 		9A408D641FE402F9008048AB /* ControllerPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerPresenterTests.swift; sourceTree = "<group>"; };
 		9A408D801FE6FF59008048AB /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
@@ -1083,6 +1085,7 @@
 		9AC334CE2067D668006B8F22 /* VISPER-Generated */ = {
 			isa = PBXGroup;
 			children = (
+				9A3C72EF208F00240083E842 /* ApplicationFactory.generated.swift */,
 				9AC334D72067D704006B8F22 /* AutoReducerFeature.generated.swift */,
 				9AC334CF2067D668006B8F22 /* AppReducer.generated.swift */,
 				9AC334D02067D668006B8F22 /* GenerateInitializers.generated.swift */,
@@ -1690,7 +1693,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Sourcery-Example/Pods-VISPER-Sourcery-Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/VISPER/VISPER.framework",
+				"${BUILT_PRODUCTS_DIR}/VISPER-CommandBus/VISPER_CommandBus.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Core/VISPER_Core.framework",
+				"${BUILT_PRODUCTS_DIR}/VISPER-Entity/VISPER_Entity.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Objc/VISPER_Objc.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Presenter/VISPER_Presenter.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Reactive/VISPER_Reactive.framework",
@@ -1702,7 +1708,10 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_CommandBus.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Core.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Entity.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Objc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Presenter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Reactive.framework",
@@ -2314,6 +2323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A3C72F0208F00250083E842 /* ApplicationFactory.generated.swift in Sources */,
 				9A83A4A9206623FB0056A309 /* AppState.swift in Sources */,
 				9A83A4AD206624150056A309 /* UserState.swift in Sources */,
 				9A83A4AB206624080056A309 /* StyleState.swift in Sources */,
