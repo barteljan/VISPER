@@ -10,7 +10,7 @@ import VISPER_Core
 
 public enum ModalRoutingPresenterError : Error {
     case didNotReceiveModalRoutingOptionFor(controller: UIViewController, routeResult: RouteResult, wireframe: Wireframe, delegate: RoutingDelegate)
-    case noNavigationControllerFound
+    case noPresentingViewControllerFound
 }
 
 
@@ -39,17 +39,29 @@ open class ModalRoutingPresenter : DefaultControllerContainerAwareRoutingPresent
                                delegate: RoutingDelegate,
                                completion: @escaping () -> ()) throws {
         
-        guard let navigationController = self.controllerContainer.getController(matches: { controller in
-            return controller is UINavigationController
-        }) as? UINavigationController else {
-            throw ModalRoutingPresenterError.noNavigationControllerFound
-        }
-        
         guard let routingOption = routeResult.routingOption as? RoutingOptionModal else {
             throw ModalRoutingPresenterError.didNotReceiveModalRoutingOptionFor(controller: controller,
-                                                                               routeResult: routeResult,
-                                                                                 wireframe: wireframe,
-                                                                                  delegate: delegate)
+                                                                                routeResult: routeResult,
+                                                                                wireframe: wireframe,
+                                                                                delegate: delegate)
+        }
+        
+        var presentingController: UIViewController?
+            
+        if let navigationController =  self.controllerContainer.getController(matches: { controller in
+            return controller is UINavigationController
+        }) as? UINavigationController {
+            presentingController = navigationController
+        } else if let topViewController = UIApplication.shared.keyWindow?.rootViewController {
+            presentingController = topViewController
+        }
+        
+        guard presentingController != nil else {
+            throw ModalRoutingPresenterError.noPresentingViewControllerFound
+        }
+        
+        while presentingController!.presentedViewController != nil {
+            presentingController = presentingController!.presentedViewController!
         }
         
         if let presentationStyle = routingOption.presentationStyle {
@@ -65,9 +77,8 @@ open class ModalRoutingPresenter : DefaultControllerContainerAwareRoutingPresent
                                  routingPresenter: self,
                                  wireframe: wireframe)
         
-        let presentingController = navigationController
         
-        presentingController.present(controller,
+        presentingController!.present(controller,
                                         animated: true,
                                       completion: {
                                         delegate.didPresent(controller: controller,
