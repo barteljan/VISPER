@@ -14,12 +14,9 @@ let appReducerFor{{type.name}}: AppReducer<{{type.name}}> = {
      {{type.name}}) -> {{type.name}} in
     
     var newState =  {{type.name}}(
-                                  {% for property in
-                                  type.storedVariables|!annotated:"skipGeneralInitializer" %}
+                                  {% for property in type.storedVariables|!annotated:"skipGeneralInitializer" %}
                                   {{property.name}}: reducerProvider.reduce(action:
-                                                                            action, state: state.{{property.name}}){% if not forloop.last %}, {%
-                                  endif %}
-                                  
+                                                                            action, state: state.{{property.name}}){% if not forloop.last %}, {% endif %}
                                   {% endfor %}
                                   )
     
