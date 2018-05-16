@@ -60,15 +60,6 @@ public class ReplaceTopVCRoutingPresenter : DefaultControllerContainerAwareRouti
             CATransaction.begin()
         }
         
-        try delegate.willPresent(controller: controller,
-                                 routeResult: routeResult,
-                                 routingPresenter: self,
-                                 wireframe: wireframe)
-        
-        if routingOption.animated {
-            CATransaction.begin()
-        }
-        
         var controllers = navigationController.viewControllers
         controllers.removeLast()
     
