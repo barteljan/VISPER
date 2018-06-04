@@ -78,13 +78,26 @@ open class DefaultRouteResultHandler: RouteResultHandler {
             throw DefaultWireframeError.noRoutingPresenterFoundFor(result: modifiedRouteResult)
         }
         
-        //present view controller
-        try routingPresenter.present(controller: controller,
-                                     routeResult: modifiedRouteResult,
-                                     wireframe: wireframe,
-                                     delegate: routingDelegate,
-                                     completion: completion)
         
+        try self.runOnMainThread {
+            //present view controller
+            try routingPresenter.present(controller: controller,
+                                         routeResult: modifiedRouteResult,
+                                         wireframe: wireframe,
+                                         delegate: routingDelegate,
+                                         completion: completion)
+        }
+        
+    }
+    
+    func runOnMainThread(_ completion: @escaping () throws -> Void ) throws {
+        if Thread.isMainThread {
+            try completion()
+        } else {
+            try DispatchQueue.main.sync { () -> Void in
+                try completion()
+            }
+        }
     }
     
     func callHandler(routeResult: RouteResult,

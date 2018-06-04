@@ -64,28 +64,49 @@ open class DefaultWireframe : Wireframe {
     
     //MARK: topViewController
     /// The top view controller currently used in your application
+    
+    func runOnMainThread<T>(_ completion: @escaping () throws -> T ) throws -> T {
+        if Thread.isMainThread {
+            return try completion()
+        } else {
+            
+            return try DispatchQueue.main.sync(execute: { () -> T in
+                return try completion()
+            })
+        }
+    }
+    
     open var topViewController: UIViewController? {
         
-        guard let controller = UIApplication.shared.keyWindow?.rootViewController else {
-            return nil
+        let controller: UIViewController? = try! self.runOnMainThread {
+            
+            guard let controller = UIApplication.shared.keyWindow?.rootViewController else {
+                return nil
+            }
+            
+            guard self.topControllerResolver.isResponsible(controller: controller) else {
+                return nil
+            }
+            
+            return self.topControllerResolver.topController(of: controller)
         }
         
-        guard self.topControllerResolver.isResponsible(controller: controller) else {
-            return nil
-        }
+        return controller
         
-        return self.topControllerResolver.topController(of: controller)
     }
     
     open func dismissTopViewController(animated:Bool,completion: @escaping ()->Void){
+    
         guard let topController = self.topViewController else {
             return
         }
-        
-        if self.controllerDismisser.isResponsible(animated: animated, controller: topController) {
-            self.controllerDismisser.dismiss(animated: animated,
-                                           controller: topController,
-                                           completion: completion)
+    
+        let _ : Void = try! self.runOnMainThread {
+            if self.controllerDismisser.isResponsible(animated: animated, controller: topController) {
+                self.controllerDismisser.dismiss(animated: animated,
+                                               controller: topController,
+                                               completion: completion)
+            }
         }
     }
     
@@ -249,6 +270,8 @@ open class DefaultWireframe : Wireframe {
     open func add(topControllerResolver: TopControllerResolver, priority: Int){
         self.topControllerResolver.add(resolver: topControllerResolver, priority: priority)
     }
+    
+    
     
     /// Add an instance responsible for dismissing controllers
     ///
