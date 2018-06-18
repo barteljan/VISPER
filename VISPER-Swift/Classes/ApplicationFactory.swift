@@ -42,7 +42,6 @@ open class ApplicationFactory<AppState> {
 
         let redux = Redux( appReducer: appReducer,
                          initialState: initialState)
-        redux
         return self.makeApplication(redux: redux,
                             wireframe: wireframe,
                   controllerContainer:controllerContainer)

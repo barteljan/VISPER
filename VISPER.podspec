@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "VISPER"
-  s.version          = '2.2.3'
+  s.version          = '2.3.0'
   s.summary          = "A library to support building component based apps with the VIPER architecture."
   s.description      = <<-DESC
                        A iOS library to support building component based apps with the VIPER architecture
@@ -18,11 +18,11 @@ DESC
   s.requires_arc = true
 
   s.frameworks = 'UIKit'
-  s.dependency 'VISPER-Core','~> 2.0.0'
-  s.dependency 'VISPER-Objc','~> 2.0.0'
-  s.dependency 'VISPER-Swift','~> 2.1.0'
-  s.dependency 'VISPER-Presenter','~> 2.0.0'
-  s.dependency 'VISPER-Wireframe','~> 2.0.0'
+  s.dependency 'VISPER-Core','~> 2.1.0'
+  s.dependency 'VISPER-Objc','~> 2.1.0'
+  s.dependency 'VISPER-Swift','~> 2.2.0'
+  s.dependency 'VISPER-Presenter','~> 2.1.0'
+  s.dependency 'VISPER-Wireframe','~> 2.1.0'
   s.dependency 'VISPER-Entity','~> 1.1.0'
 
   s.default_subspec = 'Standard'
