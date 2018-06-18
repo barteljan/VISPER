@@ -12,8 +12,8 @@ open class Redux<State> {
     
     open let store : Store<State>
     
-    open let reducerContainer : ReducerContainer
-    
+    open var reducerContainer : ReducerContainer
+
     open var reducerProvider : ReducerProvider {
         get {
             return self.reducerContainer
@@ -28,7 +28,9 @@ open class Redux<State> {
     
     public convenience init(initialState: State,
                 middleware: Middleware<State> = Middleware<State>(),
-                reducerContainer: ReducerContainer = ReducerContainerImpl()){
+                reducerContainer: StateChangingReducerContainer = ReducerContainerImpl()){
+        
+    
         
         let appReducer : AppReducer<State> = {(provider, action, state) in
             return provider.reduce(action: action, state: state)
@@ -43,13 +45,13 @@ open class Redux<State> {
     public init(appReducer: @escaping AppReducer<State>,
                initialState: State,
                  middleware: Middleware<State> = Middleware<State>(),
-                 reducerContainer: ReducerContainer = ReducerContainerImpl()){
+                 reducerContainer: StateChangingReducerContainer = ReducerContainerImpl()){
         
         self.reducerContainer = reducerContainer
         self.store = Store(appReducer: appReducer,
-                           intialState: initialState,
-                       reducerProvider: reducerContainer,
-                            middleware: middleware)
+                          intialState: initialState,
+                     reducerContainer: reducerContainer,
+                           middleware: middleware)
     }
     
 }

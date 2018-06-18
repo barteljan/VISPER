@@ -33,9 +33,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //create the main reducer of your app
         let appReducer : AppReducer<AppState> = { provider, action, state -> AppState in
-            return AppState(
+            var newState = AppState(
                 counterState: provider.reduce(action: action, state: state.counterState)
             )
+            newState = provider.reduce(action: action, state: newState)
+            return newState
         }
         
         // create a Redux-Container (to have all components on one place)
@@ -45,7 +47,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // add your reducers
         self.redux.reducerContainer.addReduceFunction(reduceFunction: incrementReducer)
-        self.redux.reducerContainer.addReducer(reducer: DecrementReducer())
+        
+        let decrementReducer = DecrementReducer(state: redux.store.observableState.map({ return $0.counterState }))
+        
+        self.redux.reducerContainer.addReducer(reducer: decrementReducer)
+        self.redux.reducerContainer.addReducer(reducer: CounterStateReducer())
         
         //create your view controller, give it a dependency for dispatching actions
         let controller = ExampleViewController(actionDispatcher: self.redux.actionDispatcher)

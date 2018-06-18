@@ -24,5 +24,6 @@ public protocol ActionDispatcher {
     /// - Returns: A new modified state
     /// - SeeAlso: `Action`, for the object which will be dispatched
     func dispatch(_ action: Action ...)
+    func dispatch(_ action: Action, completion: @escaping () -> Void)
     
 }

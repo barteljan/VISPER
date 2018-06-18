@@ -1,5 +1,5 @@
 PODS:
-  - RxSwift (4.1.2)
+  - RxSwift (4.2.0)
   - VISPER (2.2.3):
     - VISPER-Core (~> 2.0.0)
     - VISPER-Entity (~> 1.1.0)
@@ -32,7 +32,7 @@ PODS:
   - VISPER-UIViewController (2.0.1):
     - VISPER-Objc (~> 2.0.0)
     - VISPER-Presenter (~> 2.0.0)
-  - VISPER-Wireframe (2.0.6):
+  - VISPER-Wireframe (2.0.7):
     - VISPER-Core (~> 2.0.0)
     - VISPER-Objc (~> 2.0.0)
     - VISPER-Presenter (~> 2.0.3)
@@ -63,7 +63,7 @@ DEPENDENCIES:
   - VISPER-Wireframe (from `../`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - RxSwift
     - VISPER-CommandBus
 
@@ -92,7 +92,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   VISPER: 803ab1265e4cb7dff9396120eec1b29960de9425
   VISPER-CommandBus: b422cb6b8c7b895cc7ecd206adc7fe265e2407b9
   VISPER-Core: 6d0219c23ded7c930f1b6d4049cc6e852ddb4849
@@ -104,8 +104,8 @@ SPEC CHECKSUMS:
   VISPER-Sourcery: 684ca9aa233c40dec4adb781150336ea205bb9b1
   VISPER-Swift: 582f3ec510533ccf70fa3354aeaf603a7c6ebfee
   VISPER-UIViewController: 3d26f4307e25e537204bba12d6a12a0a52bc8c3f
-  VISPER-Wireframe: d9c507677f583c83665d8de3f16ef40ed50b72bd
+  VISPER-Wireframe: 2270b8515d5da97b476ee79bfe52e964b94b5b15
 
 PODFILE CHECKSUM: 1dfac91cbaa343ac3d9e342ac65380cbdba203ff
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

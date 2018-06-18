@@ -17,13 +17,13 @@ open class Store<State> : ActionDispatcher {
     open private(set) var observableState: ObservableProperty<State>
     private let middleware: StoreMiddleware
     private let appReducer: StoreReducer
-    private let reducerProvider: ReducerProvider
+    private var reducerContainer: StateChangingReducerContainer
     private let disposeBag = SubscriptionReferenceBag()
     private let dispatchQueue = DispatchQueue(label: "ActionDispatcher.Queue")
     
     public init(appReducer: @escaping StoreReducer,
                intialState: State,
-           reducerProvider: ReducerProvider,
+           reducerContainer: StateChangingReducerContainer,
                 middleware: StoreMiddleware = Middleware()) {
         
         self.appReducer = appReducer
@@ -31,29 +31,39 @@ open class Store<State> : ActionDispatcher {
         let observableProperty = ObservableProperty(intialState)
         self.observableState = observableProperty
         self.middleware = middleware
-        self.reducerProvider = reducerProvider
+        self.reducerContainer = reducerContainer
+        
+        self.reducerContainer.dispatchStateChangeActionCallback = {
+            self.dispatch($0)
+        }
     }
     
     open func dispatch(_ actions: Action...) {
         actions.forEach { action in
-            let dispatchFunction: (Action...) -> Void = { [weak self] (actions: Action...) in
-                actions.forEach {
-                    self?.dispatch($0)
-                }
-            }
-            middleware.transform({ self.observableState.value }, dispatchFunction, action).forEach { action in
-                
-                self.dispatchQueue.async(execute: {
-                    let value = self.appReducer(self.reducerProvider,action, self.observableState.value)
-                   
-                    DispatchQueue.main.sync {
-                        self.observableState.value = value
-                    }
-                })
-                
-                
+            self.dispatch(action, completion: {})
+        }
+    }
+    
+    open func dispatch(_ action: Action, completion: @escaping () -> Void) {
+        
+        let dispatchFunction: (Action...) -> Void = { [weak self] (actions: Action...) in
+            actions.forEach {
+                self?.dispatch($0)
             }
         }
+        
+        middleware.transform({ self.observableState.value }, dispatchFunction, action).forEach { action in
+            
+            self.dispatchQueue.async(execute: {
+                let value = self.appReducer(self.reducerContainer,action, self.observableState.value)
+                
+                DispatchQueue.main.sync {
+                    self.observableState.value = value
+                }
+            })
+            
+        }
+        
     }
     
     open func dispatch<S: StreamType>(_ stream: S) where S.ValueType: Action {
