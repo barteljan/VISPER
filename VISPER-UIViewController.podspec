@@ -3,11 +3,11 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VISPER-UIViewController'
-  s.version          = '2.1.0'
+  s.version          = '2.1.1'
   s.summary          = 'Extends UIViewController with presenters which are notified on viewDidLoad, viewWillApperar, etc'
 
   s.description      = <<-DESC
-Extends UIViewController with presenters which are notified on viewDidLoad, viewWillApperar ...
+Extends UIViewController with presenters which are notified on viewDidLoad, viewWillApperar, etc ...
                        DESC
 
   s.homepage         = 'https://github.com/barteljan/VISPER'
