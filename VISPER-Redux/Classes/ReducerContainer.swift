@@ -142,14 +142,11 @@ open class ReducerContainerImpl : StateChangingReducerContainer {
         var numberOfCompletionsCalled = 0
         var completionCalled = false
         
-        var didCallAReducerForThisAction = false
-        
         for wrapper in self.wrappers {
             //update state if it is a synchronous reducer
             if let reducer = wrapper.syncronizedReducer {
                 if reducer.isResponsible(action: action, state: state) {
                     newState = reducer.reduce(provider: self, action: action, state: state)
-                    didCallAReducerForThisAction = true
                 }
             }
             // if it is an async reducer, then call it's async reduce function,
@@ -181,7 +178,6 @@ open class ReducerContainerImpl : StateChangingReducerContainer {
                     }
                     
                     reducer.reduce(provider: self, action: action, completion: wrappedCompletion)
-                    didCallAReducerForThisAction = true
                 }
             }
         }
