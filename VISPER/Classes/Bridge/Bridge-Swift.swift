@@ -8,20 +8,20 @@
 import Foundation
 import VISPER_Swift
 
-public typealias AnyApplication<AppState> = VISPER_Swift.AnyApplication<AppState>
-public typealias AnyFeatureObserver<ApplicationState> = VISPER_Swift.AnyFeatureObserver<ApplicationState>
-public typealias Application<AppState> = VISPER_Swift.Application<AppState>
+public typealias AnyVISPERApp<AppState> = VISPER_Swift.AnyVISPERApp<AppState>
+public typealias VISPERApp<AppState> = VISPER_Swift.VISPERApp<AppState>
 public typealias ApplicationFactory<AppState> = VISPER_Swift.ApplicationFactory<AppState>
-public typealias ApplicationType = VISPER_Swift.ApplicationType
+public typealias VISPERAppType = VISPER_Swift.VISPERAppType
 public typealias DefaultStatefulFeature<State> = VISPER_Swift.DefaultStatefulFeature<State>
-public typealias Feature = VISPER_Swift.Feature
-public typealias FeatureObserverType = VISPER_Swift.FeatureObserverType
-public typealias LogicFeature = VISPER_Swift.LogicFeature
-public typealias LogicFeatureObserver<ApplicationState> = VISPER_Swift.LogicFeatureObserver<ApplicationState>
-public typealias PresenterFeature = VISPER_Swift.PresenterFeature
-public typealias PresenterFeatureObserver<ApplicationState> = VISPER_Swift.PresenterFeatureObserver<ApplicationState>
 public typealias StatefulFeature = VISPER_Swift.StatefulFeature
-public typealias ViewFeature = VISPER_Swift.ViewFeature
-public typealias ViewFeatureObserver<ApplicationState> = VISPER_Swift.ViewFeatureObserver<ApplicationState>
 public typealias StateObservingFeature<ObservedStateType> = VISPER_Swift.StateObservingFeature<ObservedStateType>
 public typealias StateObservingFeatureObserver<ApplicationState,ObservedState> = VISPER_Swift.StateObservingFeatureObserver<ApplicationState,ObservedState>
+
+@available(*, unavailable, message: "replace this class with AnyVISPERApp",renamed: "AnyVISPERApp")
+public typealias AnyApplication<AppState> = AnyVISPERApp<AppState>
+
+@available(*, unavailable, message: "replace this interface with VISPERAppType",renamed: "VISPERAppType")
+public typealias ApplicationType = VISPERAppType
+
+@available(*, unavailable, message: "replace this class with VISPERApp",renamed: "VISPERApp")
+public typealias Application<AppState> = VISPERApp<AppState>

@@ -48,43 +48,97 @@ let deleteTitleReducer = { (provider: ReducerProvider,action: DeleteTitleAction,
 
 let deleteTitleFunctionReducer = FunctionalReducer(reduceFunction: deleteTitleReducer)
 
-class MockReducerContainer: ReducerContainer {
+class MockReducerContainer: ReducerContainer, StateChangingReducerContainer {
     
-    var invokedAddReducer = false
-    var invokedAddReducerCount = 0
+    var dispatchStateChangeActionCallback: ((Action) -> Void)?
 
-    func addReducer<R : ActionReducerType>(reducer: R) {
-        invokedAddReducer = true
-        invokedAddReducerCount += 1
+    var invokedAddReducerReducerR = false
+    var invokedAddReducerReducerRCount = 0
+    var invokedAddReducerReducerRParameters: (reducer: Any, Void)?
+    var invokedAddReducerReducerRParametersList = [(reducer: Any, Void)]()
+
+    func addReducer<R: ActionReducerType>(reducer: R) {
+        invokedAddReducerReducerR = true
+        invokedAddReducerReducerRCount += 1
+        invokedAddReducerReducerRParameters = (reducer, ())
+        invokedAddReducerReducerRParametersList.append((reducer, ()))
+    }
+
+    var invokedAddReducerReducerRAsync = false
+    var invokedAddReducerReducerRAsyncCount = 0
+    var invokedAddReducerReducerRAsyncParameters: (reducer: Any, Void)?
+    var invokedAddReducerReducerRAsyncParametersList = [(reducer: Any, Void)]()
+
+    func addReducer<R: AsyncActionReducerType>(reducer: R) {
+        invokedAddReducerReducerRAsync = true
+        invokedAddReducerReducerRAsyncCount += 1
+        invokedAddReducerReducerRAsyncParameters = (reducer, ())
+        invokedAddReducerReducerRAsyncParametersList.append((reducer, ()))
     }
 
     var invokedAddReduceFunction = false
     var invokedAddReduceFunctionCount = 0
-
-    func addReduceFunction<StateType, ActionType: Action>(reduceFunction:  @escaping (_ provider: ReducerProvider,_ action: ActionType, _ state: StateType) -> StateType) {
+    func addReduceFunction<StateType, ActionType: Action>(reduceFunction: @escaping (_ provider: ReducerProvider, _ action: ActionType, _ state: StateType) -> StateType) {
         invokedAddReduceFunction = true
         invokedAddReduceFunctionCount += 1
     }
 
-    var invokedReducers = false
-    var invokedReducersCount = 0
-    var invokedReducersParameters: (action: Action, state: Any)?
-    var invokedReducersParametersList = [(action: Action, state: Any)]()
-    var stubbedReducersResult: [AnyActionReducer]! = []
+    var invokedReducersActionActionStateStateType = false
+    var invokedReducersActionActionStateStateTypeCount = 0
+    var invokedReducersActionActionStateStateTypeParameters: (action: Action, state: Any)?
+    var invokedReducersActionActionStateStateTypeParametersList = [(action: Action, state: Any)]()
+    var stubbedReducersActionActionStateStateTypeResult: [AnyActionReducer]! = []
 
     func reducers<StateType>(action: Action, state: StateType) -> [AnyActionReducer] {
-        invokedReducers = true
-        invokedReducersCount += 1
-        invokedReducersParameters = (action, state)
-        invokedReducersParametersList.append((action, state))
-        return stubbedReducersResult
+        invokedReducersActionActionStateStateType = true
+        invokedReducersActionActionStateStateTypeCount += 1
+        invokedReducersActionActionStateStateTypeParameters = (action, state)
+        invokedReducersActionActionStateStateTypeParametersList.append((action, state))
+        return stubbedReducersActionActionStateStateTypeResult
     }
-    
+
+    var invokedReducersActionActionStateStateTypeAsync = false
+    var invokedReducersActionActionStateStateTypeAsyncCount = 0
+    var invokedReducersActionActionStateStateTypeAsyncParameters: (action: Action, state: Any)?
+    var invokedReducersActionActionStateStateTypeAsyncParametersList = [(action: Action, state: Any)]()
+    var stubbedReducersActionActionStateStateTypeAsyncResult: [AnyAsyncActionReducer]! = []
+
+    func reducers<StateType>(action: Action, state: StateType) -> [AnyAsyncActionReducer] {
+        invokedReducersActionActionStateStateTypeAsync = true
+        invokedReducersActionActionStateStateTypeAsyncCount += 1
+        invokedReducersActionActionStateStateTypeAsyncParameters = (action, state)
+        invokedReducersActionActionStateStateTypeAsyncParametersList.append((action, state))
+        return stubbedReducersActionActionStateStateTypeAsyncResult
+    }
+
     var invokedReduce = false
     var invokedReduceCount = 0
+    var invokedReduceParameters: (action: Action, state: Any)?
+    var invokedReduceParametersList = [(action: Action, state: Any)]()
+    var stubbedReduceResult: Any!
+
     func reduce<StateType>(action: Action, state: StateType) -> StateType {
         invokedReduce = true
         invokedReduceCount += 1
-        return state
+        invokedReduceParameters = (action, state)
+        invokedReduceParametersList.append((action, state))
+        return stubbedReduceResult as! StateType
+    }
+
+    var invokedReduceAction = false
+    var invokedReduceActionCount = 0
+    var invokedReduceActionParameters: (action: Action, state: Any)?
+    var invokedReduceActionParametersList = [(action: Action, state: Any)]()
+    var stubbedReduceActionResult: Any!
+
+    func reduce<StateType>(action: Action, state: StateType, completion: @escaping () -> Void) -> StateType {
+        invokedReduceAction = true
+        invokedReduceActionCount += 1
+        invokedReduceActionParameters = (action, state)
+        invokedReduceActionParametersList.append((action, state))
+        completion()
+        return stubbedReduceActionResult as! StateType
     }
 }
+
+

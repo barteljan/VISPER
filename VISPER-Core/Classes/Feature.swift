@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import VISPER_Redux
 
 /// Feature represents a distinct funtionality of your application.
 /// It will be provided to all FeatureObservers after addition to configure and connect it to your application and your remaining

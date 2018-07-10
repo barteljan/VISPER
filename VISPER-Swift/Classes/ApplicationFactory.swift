@@ -22,13 +22,13 @@ open class ApplicationFactory<AppState> {
     /// create a default application
     open func makeApplication(  redux: Redux<AppState>,
                            wireframe: Wireframe,
-                 controllerContainer: ControllerContainer) -> AnyApplication<AppState> {
+                 controllerContainer: ControllerContainer) -> AnyVISPERApp<AppState> {
         
-        let application = Application(redux: redux,
+        let application = VISPERApp(redux: redux,
                                 wireframe: wireframe,
                       controllerContainer: controllerContainer)
-        let anyApplication = AnyApplication(application)
-        self.configure(application: anyApplication,controllerContainer: controllerContainer)
+        let anyApplication = AnyVISPERApp(application)
+        self.configure(application: anyApplication, controllerContainer: controllerContainer)
         return anyApplication
         
     }
@@ -36,31 +36,37 @@ open class ApplicationFactory<AppState> {
     /// create a default application
     open func makeApplication(initialState: AppState,
                                 appReducer: @escaping AppReducer<AppState>,
-                                 wireframe: Wireframe = DefaultWireframe(),
+                                 wireframe: Wireframe? = nil,
                        controllerContainer: ControllerContainer = DefaultControllerContainer()
-        ) -> AnyApplication<AppState>{
+        ) -> AnyVISPERApp<AppState>{
 
+        var shouldNotBeNilWireframe = wireframe
+        
+        if shouldNotBeNilWireframe == nil {
+            shouldNotBeNilWireframe = WireframeFactory().makeWireframe(controllerContainer: controllerContainer)
+        }
+        
         let redux = Redux( appReducer: appReducer,
                          initialState: initialState)
         return self.makeApplication(redux: redux,
-                            wireframe: wireframe,
+                            wireframe: shouldNotBeNilWireframe!,
                   controllerContainer:controllerContainer)
         
     }
     
     /// configure an application
-    open func configure(application: AnyApplication<AppState>,
+    open func configure(application: AnyVISPERApp<AppState>,
                controllerContainer: ControllerContainer) {
         self.addDefaultFeatureObserver(application: application, controllerContainer: controllerContainer)
         self.wireframeFactory.configure(wireframe: application.wireframe,controllerContainer: controllerContainer)
     }
     
-    open func addDefaultFeatureObserver(application: AnyApplication<AppState>,
+    open func addDefaultFeatureObserver(application: AnyVISPERApp<AppState>,
                                controllerContainer: ControllerContainer){
-        let viewFeatureObserver = ViewFeatureObserver<AppState>()
+        let viewFeatureObserver = ViewFeatureObserver()
         application.add(featureObserver: viewFeatureObserver)
         
-        let presenterFeatureObserver = PresenterFeatureObserver<AppState>()
+        let presenterFeatureObserver = PresenterFeatureObserver()
         application.add(featureObserver: presenterFeatureObserver)
         
         let logicFeatureObserver = LogicFeatureObserver<AppState>()

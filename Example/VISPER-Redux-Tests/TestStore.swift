@@ -10,6 +10,7 @@ import Foundation
 import XCTest
 import VISPER_Reactive
 @testable import VISPER_Redux
+import VISPER_Core
 
 class TestStore: XCTestCase {
     
@@ -21,7 +22,7 @@ class TestStore: XCTestCase {
                                             return state
                           },
                           intialState: testState,
-                     reducerProvider: ReducerProvider)
+                          reducerContainer: ReducerProvider)
         XCTAssertNotNil(store)
         
     }
@@ -32,9 +33,9 @@ class TestStore: XCTestCase {
         let reducerProvider = ReducerContainerImpl()
         reducerProvider.addReducer(reducer: newTitleFunctionReducer)
         
-        let store = Store(appReducer: { (container, action, state) in
+        let store = Store(appReducer: { (container: ReducerProvider, action: Action, state: TestState) in
             
-                                            let reducers = container.reducers(action: action, state: testState)
+                                            let reducers: [AnyActionReducer] = container.reducers(action: action, state: testState)
             
                                             var newState = state
                                             for reducer in reducers {
@@ -44,7 +45,7 @@ class TestStore: XCTestCase {
                                             return newState
                                         },
                               intialState: testState,
-                          reducerProvider: reducerProvider)
+                              reducerContainer: reducerProvider)
         
         let expect = self.expectation(description: "didCallSubscription")
         
@@ -75,7 +76,7 @@ class TestStore: XCTestCase {
                               return state
                           },
                          intialState: testState,
-                 reducerProvider: ReducerProvider)
+                         reducerContainer: ReducerProvider)
         
         
         
@@ -106,7 +107,7 @@ class TestStore: XCTestCase {
                             return state
                            },
                         intialState: testState,
-                          reducerProvider: ReducerProvider)
+                        reducerContainer: ReducerProvider)
         
         let expect = self.expectation(description: "didCallSubscription")
         
@@ -133,7 +134,7 @@ class TestStore: XCTestCase {
                             return TestState(title:"DerStateIstNeu")
                           },
                            intialState: testState,
-                          reducerProvider: ReducerProvider)
+                           reducerContainer: ReducerProvider)
         
         let expect = self.expectation(description: "didCallSubscription")
         

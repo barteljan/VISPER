@@ -40,7 +40,7 @@
 #pragma mark routing events
 -(void)willRoute: (WireframeObjc*) wireframe
      routeResult: (RouteResultObjc*) routeResult {
-    
+    [self setRouteResultObjc:routeResult];
 }
     
 -(void) didRoute: (WireframeObjc*) wireframe

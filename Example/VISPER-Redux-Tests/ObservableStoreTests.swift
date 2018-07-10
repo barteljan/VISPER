@@ -21,10 +21,11 @@ class ObservableStoreTests: XCTestCase {
         
         autoreleasepool {
             let container = MockReducerContainer()
-            _ = DeInitStore( appReducer: {container,action,store in return store },
-                             intialState: TestState(title: "test"),
-                            reducerProvider: container,
-                            deInitAction: { deInitCount += 1 })
+            let store  = DeInitStore( appReducer: {container,action,store in return store },
+                                     intialState: TestState(title: "test"),
+                                 reducerProvider: container,
+                                    deInitAction: { deInitCount += 1 })
+            print(store)
         }
         
         XCTAssertEqual(deInitCount, 1)
@@ -43,13 +44,13 @@ class DeInitStore<State>: Store<State> {
     
     public required init( appReducer: @escaping StoreReducer,
                          intialState: State,
-                     reducerProvider: ReducerProvider,
+                     reducerProvider: StateChangingReducerContainer,
                           middleware: StoreMiddleware = Middleware(),
                          deInitAction: @escaping () -> Void) {
         
         super.init(appReducer: appReducer,
                   intialState: intialState,
-              reducerProvider: reducerProvider,
+             reducerContainer: reducerProvider,
                    middleware: middleware)
         self.deInitAction = deInitAction
     }

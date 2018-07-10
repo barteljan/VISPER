@@ -6,6 +6,7 @@
 //
 import Foundation
 import VISPER_Reactive
+import VISPER_Core
 
 public enum StateObservingFeatureError: Error {
     case methodNotImplemented

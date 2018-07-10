@@ -9,7 +9,7 @@ import Foundation
 import VISPER_Core
 
 /// A observer observing all added features and configuring your application
-public protocol FeatureObserverType {
+public protocol StatefulFeatureObserver {
     associatedtype AppState
-    func featureAdded(application: Application<AppState>, feature: Feature) throws
+    func featureAdded(application: AnyReduxApp<AppState>, feature: Feature) throws
 }

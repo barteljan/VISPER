@@ -24,7 +24,7 @@ class TestReducerProvider: XCTestCase {
         let container = ReducerContainerImpl()
         container.addReducer(reducer: newTitleFunctionReducer)
         
-        let reducers = container.reducers(action: newTitleAction, state: testState)
+        let reducers: [AnyActionReducer] = container.reducers(action: newTitleAction, state: testState)
         XCTAssert(reducers.count == 1)
         
     }
@@ -35,7 +35,7 @@ class TestReducerProvider: XCTestCase {
         container.addReducer(reducer: newTitleFunctionReducer)
         container.addReducer(reducer: deleteTitleFunctionReducer)
         
-        let reducers = container.reducers(action: newTitleAction, state: testState)
+        let reducers: [AnyActionReducer] =  container.reducers(action: newTitleAction, state: testState)
         XCTAssert(reducers.count == 1)
         
     }
@@ -45,7 +45,7 @@ class TestReducerProvider: XCTestCase {
         let container = ReducerContainerImpl()
         container.addReduceFunction(reduceFunction: newTitleReducer)
         
-        let reducers = container.reducers(action: newTitleAction, state: testState)
+        let reducers: [AnyActionReducer] =  container.reducers(action: newTitleAction, state: testState)
         XCTAssert(reducers.count == 1)
         
     }
@@ -56,7 +56,7 @@ class TestReducerProvider: XCTestCase {
         container.addReduceFunction(reduceFunction: newTitleReducer)
         container.addReduceFunction(reduceFunction: deleteTitleReducer)
         
-        let reducers = container.reducers(action: newTitleAction, state: testState)
+        let reducers: [AnyActionReducer] =  container.reducers(action: newTitleAction, state: testState)
         XCTAssert(reducers.count == 1)
         
     }

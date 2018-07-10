@@ -71,25 +71,56 @@ public class ObservableProperty<ValueType> {
     }
     
     public func map<U>(_ transform: @escaping (ValueType) -> U) -> ObservableProperty<U> {
+        return self.map(referenceBag: nil, transform)
+    }
+    
+    public func map<U>(referenceBag: SubscriptionReferenceBag?,_ transform: @escaping (ValueType) -> U) -> ObservableProperty<U> {
         let property = ObservableProperty<U>(transform(value))
-        property.disposeBag += subscribe { value in
+        
+        let subscription = subscribe { value in
             property.value = transform(value)
         }
+        
+        if let referenceBag = referenceBag {
+            referenceBag.addReference(reference: subscription)
+        } else {
+            property.disposeBag.addReference(reference: subscription)
+        }
+
         return property
     }
     
     public func distinct(_ equal: @escaping (ValueType, ValueType) -> Bool) -> ObservableProperty<ValueType> {
+        return self.distinct(referenceBag: nil, equal)
+    }
+    
+    public func distinct(referenceBag: SubscriptionReferenceBag?, _ equal: @escaping (ValueType, ValueType) -> Bool) -> ObservableProperty<ValueType> {
+        
         let property = ObservableProperty(value)
-        property.disposeBag += subscribe { value in
+        
+        let subscription = subscribe { value in
             if !equal(value, property.value) {
                 property.value = value
             }
         }
+        
+        if let referenceBag = referenceBag {
+            referenceBag.addReference(reference: subscription)
+        } else {
+            property.disposeBag.addReference(reference: subscription)
+        }
+        
         return property
+        
     }
     
+    
     public func deliveredOn(_ queue: DispatchQueue) -> ObservableProperty<ValueType> {
-        let property = map({ $0 })
+        return self.deliveredOn(referenceBag: nil, queue)
+    }
+    
+    public func deliveredOn(referenceBag: SubscriptionReferenceBag?,_ queue: DispatchQueue) -> ObservableProperty<ValueType> {
+        let property = self.map(referenceBag: referenceBag, { $0 })
         property.queue = queue
         return property
     }
@@ -104,9 +135,15 @@ public class ObservableProperty<ValueType> {
 }
 
 extension ObservableProperty where ValueType: Equatable {
+    
     public func distinct() -> ObservableProperty<ValueType> {
         return distinct(==)
     }
+    
+    public func distinct(referenceBag: SubscriptionReferenceBag?) -> ObservableProperty<ValueType> {
+        return distinct(referenceBag: referenceBag,==)
+    }
+    
 }
 
 /// The subscription reference type of `ObservableProperty`.

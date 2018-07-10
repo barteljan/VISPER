@@ -19,7 +19,7 @@ open class VISPERApplication: NSObject,IVISPERApplication {
     var _wireframe: IVISPERWireframe
     var _commandBus: VISPERCommandBus
     
-    let application: AnyApplication<NSMutableDictionary>
+    let application: AnyVISPERApp<NSMutableDictionary>
     
     public override convenience init() {
         let controller = UINavigationController()
@@ -28,7 +28,8 @@ open class VISPERApplication: NSObject,IVISPERApplication {
     
     public convenience init!(navigationController controller: UINavigationController!) {
         
-        let wireframe = DefaultWireframe()
+        let wireframe = WireframeFactory().makeWireframe()
+        wireframe.add(controllerToNavigate: controller)
         let wireframeObjc = WireframeObjc(wireframe: wireframe)
         let visperWireframe = VISPERWireframe(wireframe: wireframeObjc)
         
@@ -49,15 +50,23 @@ open class VISPERApplication: NSObject,IVISPERApplication {
         
         //VISPERWireframe.addRoutingOptionConverter(converter: DefaultRoutingOptionConverter())
         
+        var controllerContainer: ControllerContainer
+        if let wireframe = wireframe.wireframe.wireframe as? HasControllerContainer {
+            controllerContainer = wireframe.controllerContainer
+        } else {
+            controllerContainer = DefaultControllerContainer()
+        }
+        
         let applicationFactory = ApplicationFactory<NSMutableDictionary>()
         let application = applicationFactory.makeApplication(initialState: NSMutableDictionary(),
                                                                appReducer: { (provider, action, state) -> NSMutableDictionary in
                                                 return provider.reduce(action: action, state: state)
                                            },
-                                           wireframe: wireframe.wireframe.wireframe)
+                                           wireframe: wireframe.wireframe.wireframe,
+                                           controllerContainer: controllerContainer)
         self.application = application
         
-        let featureObserver = DeprecatedVISPERFeatureObserver<NSMutableDictionary>(wireframe: wireframe.wireframe.wireframe, commandBus: commandBus)
+        let featureObserver = DeprecatedVISPERFeatureObserver(wireframe: wireframe.wireframe.wireframe, commandBus: commandBus)
         self.application.add(featureObserver: featureObserver)
         
         self.application.add(controllerToNavigate: controller)

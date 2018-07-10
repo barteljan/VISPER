@@ -14,7 +14,7 @@ open class WireframeFactory {
     public init(){}
     
     open func makeWireframe(controllerContainer: ControllerContainer = DefaultControllerContainer()) -> Wireframe {
-        let wireframe = DefaultWireframe()
+        let wireframe = DefaultWireframe(controllerContainer: controllerContainer)
         self.configure(wireframe: wireframe, controllerContainer: controllerContainer)
         return wireframe
     }

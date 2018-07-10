@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import VISPER_Redux
+import VISPER_Core
 
 /// A feature providing reducers for your Redux
 public protocol LogicFeature: Feature{

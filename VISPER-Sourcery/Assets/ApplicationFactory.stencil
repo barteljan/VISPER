@@ -4,7 +4,7 @@ import VISPER_Swift
 // generated application factory for {{type.name}}
 class GeneratedApplicationFactoryFor{{type.name|upperFirstLetter}} {
     
-    func makeApplication(initialState: {{type.name}}) throws -> AnyApplication<{{type.name}}> {
+    func makeApplication(initialState: {{type.name}}) throws -> AnyVISPERApp<{{type.name}}> {
         
         //create general application factory
         let applicationFactory = ApplicationFactory<{{type.name}}>()

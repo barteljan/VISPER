@@ -6,19 +6,14 @@
 //
 
 import Foundation
-
-import Foundation
-import VISPER_Redux
 import VISPER_Core
 
 /// Add this FeatureObserver to your Application to configure your Redux for LogicFeatures providing reducers
-public struct PresenterFeatureObserver<ApplicationState>: FeatureObserverType {
-    
-    public typealias AppState = ApplicationState
+public struct PresenterFeatureObserver: WireframeFeatureObserver {
     
     public init() {}
     
-    public func featureAdded(application: Application<ApplicationState>,feature: Feature) throws {
+    public func featureAdded(application: WireframeApp,feature: Feature) throws {
         
         if let feature = feature as? PresenterFeature {
             application.wireframe.add(presenterProvider: feature, priority: feature.priority)

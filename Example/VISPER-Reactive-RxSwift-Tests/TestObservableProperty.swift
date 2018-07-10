@@ -8,7 +8,7 @@
 
 import XCTest
 import RxSwift
-import VISPER_Core
+
 @testable import VISPER_Reactive
 
 struct TestState {

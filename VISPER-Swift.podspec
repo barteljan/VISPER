@@ -18,8 +18,12 @@ VISPER is a framework for building component based apps with the viper architect
 
   s.ios.deployment_target = '8.0'
 
+  s.dependency 'VISPER-Core','~> 2.1.0'
+  s.dependency 'VISPER-Objc','~> 2.1.0'
+  s.dependency 'VISPER-Presenter','~> 2.1.0'
   s.dependency 'VISPER-Wireframe','~> 2.1.0'
-  s.dependency 'VISPER-Redux','~> 2.2.0'
+  s.dependency 'VISPER-Redux','~> 2.2.2'
+  s.dependency 'VISPER-Entity','~> 1.1.0'
 
-  s.source_files = 'VISPER-Swift/Classes/*.swift'
+  s.source_files = 'VISPER-Swift/Classes/**/*.swift'
 end

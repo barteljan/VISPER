@@ -7,8 +7,10 @@
 
 import Foundation
 import VISPER_Reactive
+import VISPER_Core
+import VISPER_Redux
 
-public class StateObservingFeatureObserver<ApplicationState,ObservedState>: FeatureObserverType {
+public class StateObservingFeatureObserver<ApplicationState,ObservedState>: StatefulFeatureObserver {
     
     public typealias AppState = ApplicationState
     
@@ -19,7 +21,7 @@ public class StateObservingFeatureObserver<ApplicationState,ObservedState>: Feat
         self.state = state
     }
     
-    public func featureAdded(application: Application<ApplicationState>, feature: Feature) throws {
+    public func featureAdded(application: AnyReduxApp<ApplicationState>, feature: Feature) throws {
         if let feature = feature as? StateObservingFeature<ObservedState> {
             try feature.observe(state: self.state)
             self.observingFeatures.append(feature)

@@ -18,7 +18,9 @@ public enum DefaultWireframeError : Error {
 }
 
 
-open class DefaultWireframe : Wireframe {
+open class DefaultWireframe : Wireframe, HasControllerContainer {
+    
+    
     
     //MARK: internal properties
     
@@ -33,6 +35,7 @@ open class DefaultWireframe : Wireframe {
     let routeResultHandler: RouteResultHandler
     let topControllerResolver: ComposedTopControllerResolver
     let controllerDismisser: ComposedControllerDimisser
+    open let controllerContainer: ControllerContainer
    
     
     //MARK: Initializer
@@ -46,7 +49,8 @@ open class DefaultWireframe : Wireframe {
        composedRoutingObserver: ComposedRoutingObserver = DefaultComposedRoutingObserver(),
             routeResultHandler: RouteResultHandler = DefaultRouteResultHandler(),
             topControllerResolver: ComposedTopControllerResolver = DefaultComposedTopControllerResolver(),
-            controllerDismisser: ComposedControllerDimisser = DefaultComposedControllerDismisser()
+            controllerDismisser: ComposedControllerDimisser = DefaultComposedControllerDismisser(),
+            controllerContainer: ControllerContainer = DefaultControllerContainer()
       ){
         
         self.routingHandlerContainer = routingHandlerContainer
@@ -60,6 +64,7 @@ open class DefaultWireframe : Wireframe {
         self.router = router
         self.topControllerResolver = topControllerResolver
         self.controllerDismisser = controllerDismisser
+        self.controllerContainer = controllerContainer
     }
     
     //MARK: topViewController
@@ -281,4 +286,25 @@ open class DefaultWireframe : Wireframe {
     open func add(controllerDimisser: ControllerDismisser, priority: Int) {
         self.controllerDismisser.add(controllerDimisser: controllerDimisser, priority: priority)
     }
+    
+    
+    
+    /// Add a controller that can be used to navigate in your app.
+    /// Typically this will be a UINavigationController, but it could also be a UITabbarController if
+    /// you have a routing presenter that can handle it.
+    /// Be careful you can add more than one viewControllers if your RoutingPresenters can handle different
+    /// controller types or when the active 'rootController' changes.
+    /// The last added controller will be used first.
+    /// The controller will not be retained by the application (it is weakly stored), you need to store a
+    /// link to them elsewhere (if you don't want them to be removed from memory).
+    /// - Parameter controllerToNavigate: a controller that can be used to navigte in your app
+    public func add(controllerToNavigate: UIViewController) {
+        self.controllerContainer.add(controller: controllerToNavigate)
+    }
+    
+    /// return the first navigatableController that matches in a block
+    public func controllerToNavigate(matches: (UIViewController?) -> Bool) -> UIViewController? {
+        return self.controllerContainer.getController(matches:matches)
+    }
+    
 }

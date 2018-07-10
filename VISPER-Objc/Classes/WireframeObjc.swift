@@ -9,7 +9,7 @@ import Foundation
 import VISPER_Core
 
 @objc open class WireframeObjc : NSObject, Wireframe {
-  
+    
     public let wireframe : Wireframe
     public var error : Error? = nil
     
@@ -133,6 +133,14 @@ import VISPER_Core
     
     open func add(controllerDimisser: ControllerDismisser, priority: Int) {
         self.wireframe.add(controllerDimisser: controllerDimisser, priority: priority)
+    }
+    
+    open func add(controllerToNavigate: UIViewController) {
+        self.wireframe.add(controllerToNavigate: controllerToNavigate)
+    }
+    
+    open func controllerToNavigate(matches: (UIViewController?) -> Bool) -> UIViewController? {
+        return self.wireframe.controllerToNavigate(matches:matches)
     }
     
 }

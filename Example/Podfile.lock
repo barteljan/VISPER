@@ -1,50 +1,54 @@
 PODS:
   - RxSwift (4.2.0)
-  - VISPER (2.2.3):
-    - VISPER-Core (~> 2.0.0)
+  - VISPER (2.3.0):
+    - VISPER-Core (~> 2.1.0)
     - VISPER-Entity (~> 1.1.0)
-    - VISPER-Objc (~> 2.0.0)
-    - VISPER-Presenter (~> 2.0.0)
-    - VISPER-Swift (~> 2.1.0)
-    - VISPER-Wireframe (~> 2.0.0)
-    - VISPER/Standard (= 2.2.3)
+    - VISPER-Objc (~> 2.1.0)
+    - VISPER-Presenter (~> 2.1.0)
+    - VISPER-Swift (~> 2.2.0)
+    - VISPER-Wireframe (~> 2.1.0)
+    - VISPER/Standard (= 2.3.0)
   - VISPER-CommandBus (1.0.0)
-  - VISPER-Core (2.0.1)
+  - VISPER-Core (2.1.0)
   - VISPER-Entity (1.1.1)
-  - VISPER-Objc (2.0.0):
-    - VISPER-Core (~> 2.0.0)
-    - VISPER-Presenter (~> 2.0.0)
-  - VISPER-Presenter (2.0.3):
-    - VISPER-Core (~> 2.0.0)
+  - VISPER-Objc (2.1.0):
+    - VISPER-Core (~> 2.1.0)
+    - VISPER-Presenter (~> 2.1.0)
+  - VISPER-Presenter (2.1.0):
+    - VISPER-Core (~> 2.1.0)
   - VISPER-Reactive (2.0.4):
     - VISPER-Reactive/Standard (= 2.0.4)
   - VISPER-Reactive/RxSwift (2.0.4):
     - RxSwift (~> 4.0)
   - VISPER-Reactive/Standard (2.0.4)
-  - VISPER-Redux (2.1.3):
-    - VISPER-Core (~> 2.0.0)
+  - VISPER-Redux (2.2.2):
+    - VISPER-Core (~> 2.1.0)
     - VISPER-Reactive (~> 2.0.0)
-  - VISPER-Sourcery (1.1.2):
-    - VISPER-Swift (~> 2.1.0)
-  - VISPER-Swift (2.1.1):
-    - VISPER-Redux (~> 2.1.0)
-    - VISPER-Wireframe (~> 2.0.0)
-  - VISPER-UIViewController (2.0.1):
-    - VISPER-Objc (~> 2.0.0)
-    - VISPER-Presenter (~> 2.0.0)
-  - VISPER-Wireframe (2.0.7):
-    - VISPER-Core (~> 2.0.0)
-    - VISPER-Objc (~> 2.0.0)
-    - VISPER-Presenter (~> 2.0.3)
-    - VISPER-UIViewController (~> 2.0.0)
-  - VISPER/Standard (2.2.3):
-    - VISPER-CommandBus
-    - VISPER-Core (~> 2.0.0)
+  - VISPER-Sourcery (2.2.0):
+    - VISPER-Swift (~> 2.2.0)
+  - VISPER-Swift (2.2.1):
+    - VISPER-Core (~> 2.1.0)
     - VISPER-Entity (~> 1.1.0)
-    - VISPER-Objc (~> 2.0.0)
-    - VISPER-Presenter (~> 2.0.0)
-    - VISPER-Swift (~> 2.1.0)
-    - VISPER-Wireframe (~> 2.0.0)
+    - VISPER-Objc (~> 2.1.0)
+    - VISPER-Presenter (~> 2.1.0)
+    - VISPER-Redux (~> 2.2.2)
+    - VISPER-Wireframe (~> 2.1.0)
+  - VISPER-UIViewController (2.1.1):
+    - VISPER-Objc (~> 2.1.0)
+    - VISPER-Presenter (~> 2.1.0)
+  - VISPER-Wireframe (2.1.0):
+    - VISPER-Core (~> 2.1.0)
+    - VISPER-Objc (~> 2.1.0)
+    - VISPER-Presenter (~> 2.1.0)
+    - VISPER-UIViewController (~> 2.1.0)
+  - VISPER/Standard (2.3.0):
+    - VISPER-CommandBus
+    - VISPER-Core (~> 2.1.0)
+    - VISPER-Entity (~> 1.1.0)
+    - VISPER-Objc (~> 2.1.0)
+    - VISPER-Presenter (~> 2.1.0)
+    - VISPER-Swift (~> 2.2.0)
+    - VISPER-Wireframe (~> 2.1.0)
 
 DEPENDENCIES:
   - RxSwift
@@ -93,18 +97,18 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
-  VISPER: 803ab1265e4cb7dff9396120eec1b29960de9425
+  VISPER: bd9a26605b838ab1ce34581423316b67047072f0
   VISPER-CommandBus: b422cb6b8c7b895cc7ecd206adc7fe265e2407b9
-  VISPER-Core: 6d0219c23ded7c930f1b6d4049cc6e852ddb4849
+  VISPER-Core: 459c83e17f6369514412b087eee270c5db4a4a63
   VISPER-Entity: f55e25351b5a4b0b4c79dfb94739a571c4db2d98
-  VISPER-Objc: a0aff9404cb7ba515f75082314d666a88b80739b
-  VISPER-Presenter: abd90b2dd8c9dac6833d4db98174b99ce687c380
+  VISPER-Objc: f5c264e4b92bb58b9b3709164399c5800be4d68c
+  VISPER-Presenter: 9ace4a3c526c743af1c733092091ff64d44c185e
   VISPER-Reactive: b2e959b5c4e34f7700808272ccd5c3da913ce417
-  VISPER-Redux: 9524153e72816bfdc1a388fb23c8af42ba162b6d
-  VISPER-Sourcery: 684ca9aa233c40dec4adb781150336ea205bb9b1
-  VISPER-Swift: 582f3ec510533ccf70fa3354aeaf603a7c6ebfee
-  VISPER-UIViewController: 3d26f4307e25e537204bba12d6a12a0a52bc8c3f
-  VISPER-Wireframe: 2270b8515d5da97b476ee79bfe52e964b94b5b15
+  VISPER-Redux: 57f63b9b7a143bfac195a54f7e311e3791cc4a47
+  VISPER-Sourcery: 7db8c7553e57b98afb1f04fb92294839d805f65e
+  VISPER-Swift: a4ffce8ad14fca144359535db4f8b688d391657a
+  VISPER-UIViewController: 22fadd96f5b76d85de82c7652b4bf412f5db6bc9
+  VISPER-Wireframe: 95f7d2ff1ae33167479a14370a073b5c66281486
 
 PODFILE CHECKSUM: 1dfac91cbaa343ac3d9e342ac65380cbdba203ff
 

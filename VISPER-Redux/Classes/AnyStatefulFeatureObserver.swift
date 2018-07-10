@@ -9,23 +9,23 @@ import Foundation
 import VISPER_Core
 
 // some base class needed for type erasure, ignore it if possible
-class _AnyFeatureObserver<ApplicationState> : FeatureObserverType{
+class _AnyStatefulFeatureObserver<ApplicationState> : StatefulFeatureObserver{
     
     typealias AppState = ApplicationState
 
-    func featureAdded(application: Application<AppState>, feature: Feature) throws {
+    func featureAdded(application: AnyReduxApp<AppState>, feature: Feature) throws {
         fatalError("override me")
     }
 }
 
 // some box class needed for type erasure, ignore it if possible
-final class _AnyFeatureObserverBox<Base: FeatureObserverType>: _AnyFeatureObserver<Base.AppState> {
+final class _AnyStatefulFeatureObserverBox<Base: StatefulFeatureObserver>: _AnyStatefulFeatureObserver<Base.AppState> {
     
     var base: Base
     
     init(_ base: Base) { self.base = base }
     
-    override func featureAdded(application: Application<Base.AppState>, feature: Feature) throws {
+    override func featureAdded(application: AnyReduxApp<Base.AppState>, feature: Feature) throws {
         try self.base.featureAdded(application: application, feature: feature)
     }
 }
@@ -33,17 +33,17 @@ final class _AnyFeatureObserverBox<Base: FeatureObserverType>: _AnyFeatureObserv
 /// Type erasure for the generic FeatureObserverType protocol
 /// (you need this to reference it as a full type, to use it in arrays or variable definitions,
 /// since generic protocols can only be used in generic definitions)
-open class AnyFeatureObserver<ApplicationState> : FeatureObserverType {
+open class AnyStatefulFeatureObserver<ApplicationState> : StatefulFeatureObserver {
     
     public typealias AppState = ApplicationState
     
-    private let box: _AnyFeatureObserver<AppState>
+    private let box: _AnyStatefulFeatureObserver<AppState>
     
-    public init<Base: FeatureObserverType>(_ base: Base) where Base.AppState == ApplicationState{
-        box = _AnyFeatureObserverBox(base)
+    public init<Base: StatefulFeatureObserver>(_ base: Base) where Base.AppState == ApplicationState{
+        box = _AnyStatefulFeatureObserverBox(base)
     }
     
-    open func featureAdded(application: Application<ApplicationState>, feature: Feature) throws {
+    open func featureAdded(application: AnyReduxApp<ApplicationState>, feature: Feature) throws {
         try self.box.featureAdded(application: application, feature: feature)
     }
 }

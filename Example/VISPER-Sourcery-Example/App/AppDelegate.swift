@@ -13,7 +13,7 @@ import VISPER
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var visperApplication: AnyApplication<AppState>!
+    var visperApplication: AnyVISPERApp<AppState>!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         

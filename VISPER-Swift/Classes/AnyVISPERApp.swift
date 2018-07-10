@@ -9,12 +9,12 @@ import Foundation
 import VISPER_Redux
 import VISPER_Core
 import VISPER_Reactive
+import VISPER_Wireframe
 
 // some base class needed for type erasure, ignore it if possible
-class _AnyApplication<AppState> : ApplicationType{
-   
+class _AnyApplication<AppState> : VISPERAppType{
     
-
+    
     typealias ApplicationState = AppState
     
     var state: ObservableProperty<AppState> {
@@ -33,7 +33,15 @@ class _AnyApplication<AppState> : ApplicationType{
         fatalError("override me")
     }
     
-    func add<T: FeatureObserverType>(featureObserver: T) where T.AppState == AppState {
+    func add(featureObserver: FeatureObserver) {
+         fatalError("override me")
+    }
+
+    func add<T: StatefulFeatureObserver>(featureObserver: T) where T.AppState == AppState {
+        fatalError("override me")
+    }
+    
+    func add(featureObserver: WireframeFeatureObserver) {
         fatalError("override me")
     }
     
@@ -48,7 +56,7 @@ class _AnyApplication<AppState> : ApplicationType{
 }
 
 // some box class needed for type erasure, ignore it if possible
-final class _AnyApplicationBox<Base: ApplicationType>: _AnyApplication<Base.ApplicationState> {
+final class _AnyApplicationBox<Base: VISPERAppType>: _AnyApplication<Base.ApplicationState> {
     
     var base: Base
     
@@ -70,9 +78,19 @@ final class _AnyApplicationBox<Base: ApplicationType>: _AnyApplication<Base.Appl
         try self.base.add(feature: feature)
     }
     
-    override func add<T: FeatureObserverType>(featureObserver: T) where Base.ApplicationState == T.AppState {
+    override func add<T: StatefulFeatureObserver>(featureObserver: T) where Base.ApplicationState == T.AppState {
         self.base.add(featureObserver: featureObserver)
     }
+    
+    override func add(featureObserver: FeatureObserver) {
+        self.base.add(featureObserver: featureObserver)
+    }
+    
+    
+    override func add(featureObserver: WireframeFeatureObserver) {
+        self.base.add(featureObserver: featureObserver)
+    }
+    
     
     override func add(controllerToNavigate: UIViewController) {
         self.base.add(controllerToNavigate: controllerToNavigate)
@@ -84,19 +102,19 @@ final class _AnyApplicationBox<Base: ApplicationType>: _AnyApplication<Base.Appl
     
 }
 
+@available(*, unavailable, message: "replace this class with AnyVISPERApp",renamed: "AnyVISPERApp")
+public typealias AnyApplication<AppState> = AnyVISPERApp<AppState>
 
 /// Type erasure for the generic ApplicationType protocol
 /// (you need this to reference it as a full type, to use it in arrays or variable definitions,
 /// since generic protocols can only be used in generic definitions)
-open class AnyApplication<AppState> : ApplicationType {
-    
-    
+open class AnyVISPERApp<AppState> : VISPERAppType {
     
     public typealias ApplicationState = AppState
     
     private let box: _AnyApplication<AppState>
     
-    public init<Base: ApplicationType>(_ base: Base) where Base.ApplicationState == AppState {
+    public init<Base: VISPERAppType>(_ base: Base) where Base.ApplicationState == AppState {
         box = _AnyApplicationBox(base)
     }
     
@@ -116,7 +134,15 @@ open class AnyApplication<AppState> : ApplicationType {
         try self.box.add(feature: feature)
     }
     
-    open func add<T: FeatureObserverType>(featureObserver: T) where T.AppState == AppState {
+    public func add(featureObserver: FeatureObserver) {
+        self.box.add(featureObserver: featureObserver)
+    }
+    
+    open func add<T: StatefulFeatureObserver>(featureObserver: T) where T.AppState == AppState {
+        self.box.add(featureObserver: featureObserver)
+    }
+    
+    open func add(featureObserver: WireframeFeatureObserver) {
         self.box.add(featureObserver: featureObserver)
     }
     

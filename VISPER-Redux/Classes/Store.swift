@@ -33,8 +33,8 @@ open class Store<State> : ActionDispatcher {
         self.middleware = middleware
         self.reducerContainer = reducerContainer
         
-        self.reducerContainer.dispatchStateChangeActionCallback = {
-            self.dispatch($0)
+        self.reducerContainer.dispatchStateChangeActionCallback = { [weak self] (action) in
+            self?.dispatch(action)
         }
     }
     

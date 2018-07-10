@@ -169,4 +169,25 @@ class MockWireframe: NSObject, Wireframe {
         invokedAddTopControllerResolverParameters = (topControllerResolver, priority)
         invokedAddTopControllerResolverParametersList.append((topControllerResolver, priority))
     }
+    
+    var invokedAddControllerToNavigate = false
+    var invokedAddControllerToNavigateCount = 0
+    var invokedAddControllerToNavigateParameters: (controllerToNavigate: UIViewController, Void)?
+    var invokedAddControllerToNavigateParametersList = [(controllerToNavigate: UIViewController, Void)]()
+    func add(controllerToNavigate: UIViewController) {
+        invokedAddControllerToNavigate = true
+        invokedAddControllerToNavigateCount += 1
+        invokedAddControllerToNavigateParameters = (controllerToNavigate,())
+        invokedAddControllerToNavigateParametersList.append((controllerToNavigate,()))
+    }
+    
+    var invokedControllerToNavigateMatches = false
+    var invokedControllerToNavigateMatchesCount = 0
+    var invokedControllerToNavigateMatchesStubbedResult: UIViewController? = nil
+    func controllerToNavigate(matches: (UIViewController?) -> Bool) -> UIViewController? {
+        invokedControllerToNavigateMatches = true
+        invokedControllerToNavigateMatchesCount += 1
+        return invokedControllerToNavigateMatchesStubbedResult
+    }
+    
 }

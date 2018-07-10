@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import VISPER_Core
 
 public protocol StatefulFeature: Feature{
     associatedtype StateType

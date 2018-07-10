@@ -206,7 +206,7 @@ class DefaultWireframeTests: XCTestCase {
         let invokedParams = NSDictionary(dictionary:(router.invokedRouteUrlRoutingOptionParametersParameters?.parameters)!)
         XCTAssertEqual(invokedParams, NSDictionary(dictionary:parameters))
         
-        AssertThat(router.invokedRouteUrlRoutingOptionParametersParameters?.routingOption, isOfType: GetControllerRoutingOption.self)
+        AssertThat(router.invokedRouteUrlRoutingOptionParametersParameters?.routingOption, isOfType: RoutingOptionGetController.self)
         
     }
     

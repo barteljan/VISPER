@@ -116,24 +116,12 @@ public struct TypedEntityStore<Type> {
     
     public func exists<T>(_ identifier: String,
                                type: T.Type) throws -> Bool {
-        print(T.self)
-        print(Type.self)
-        
-        guard T.self is Type else {
-            return false
-        }
-        
         return try self.entityStore.exists(identifier, type: type)
     }
     
     public func exists<T>(_ identifier: String,
                                type: T.Type,
                          completion: @escaping (_ exists: Bool) -> Void) throws {
-        guard T.self is Type else {
-            completion(false)
-            return
-        }
-        
         return try self.entityStore.exists(identifier, type: type, completion: completion)
     }
     

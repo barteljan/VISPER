@@ -28,7 +28,6 @@
 		9A0E1595208E20D3006388F2 /* ObservingFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0E1594208E20D3006388F2 /* ObservingFeature.swift */; };
 		9A15DBCA2078C197006C786D /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15DBC92078C197006C786D /* StringTests.swift */; };
 		9A15DBD4207B8519006C786D /* FunctionalEntityStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15DBD3207B8519006C786D /* FunctionalEntityStoreTests.swift */; };
-		9A15DBD6207BA276006C786D /* FunctionalEntityStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15DBD5207BA276006C786D /* FunctionalEntityStoreTests.swift */; };
 		9A26AAE51FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AAE41FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift */; };
 		9A26AB051FDE89DF008BB68C /* MockPresenterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AB041FDE89DF008BB68C /* MockPresenterProvider.swift */; };
 		9A26AB071FDE8DD4008BB68C /* MockPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AB061FDE8DD4008BB68C /* MockPresenter.swift */; };
@@ -236,7 +235,7 @@
 		609744F2579C78443C1A006A /* Pods_VISPER_Wireframe_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VISPER_Wireframe_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66C35DE732D3E957743F5C8D /* Pods-VISPER-Wireframe-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Wireframe-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Wireframe-Example/Pods-VISPER-Wireframe-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		684904804A924248310F3E46 /* Pods-VISPER-Wireframe-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Wireframe-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Wireframe-Tests/Pods-VISPER-Wireframe-Tests.release.xcconfig"; sourceTree = "<group>"; };
-		6B2CD59265BF6589880C1573 /* VISPER.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = VISPER.podspec; path = ../VISPER.podspec; sourceTree = "<group>"; };
+		6B2CD59265BF6589880C1573 /* VISPER.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = VISPER.podspec; path = ../VISPER.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6E903195E4BDECA1906704C8 /* Pods-VISPER_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER_Example/Pods-VISPER_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6EA3FE0F4DC92D57E1FB5396 /* Pods-VISPER-Reactive-RxSwift-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Reactive-RxSwift-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Reactive-RxSwift-Tests/Pods-VISPER-Reactive-RxSwift-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		76C95562264745388DA3B4BB /* Pods-VISPER-Wireframe-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Wireframe-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Wireframe-Tests/Pods-VISPER-Wireframe-Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -2314,7 +2313,6 @@
 				9A15DBD4207B8519006C786D /* FunctionalEntityStoreTests.swift in Sources */,
 				9A5CB7D5207384E000F99456 /* MockEntityStore.swift in Sources */,
 				9A15DBCA2078C197006C786D /* StringTests.swift in Sources */,
-				9A15DBD6207BA276006C786D /* FunctionalEntityStoreTests.swift in Sources */,
 				9A57E3452077B42E00B7F956 /* MemoryStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,7 +13,7 @@ import VISPER
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var visperApplication: AnyApplication<AppState>!
+    var visperApplication: AnyVISPERApp<AppState>!
     var disposeBag = SubscriptionReferenceBag()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func makeVISPERApplication() -> AnyApplication<AppState>!{
+    func makeVISPERApplication() -> AnyVISPERApp<AppState>!{
         
         let appState = AppState(startViewState: StartViewState(timesOpendAController: 0))
         

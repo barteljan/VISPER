@@ -125,6 +125,20 @@ public protocol Wireframe {
     ///   - priority: The priority for calling your dismisser, higher priorities are called first. (Defaults to 0)
     func add(controllerDimisser: ControllerDismisser, priority: Int)
     
+    /// Add a controller that can be used to navigate in your app.
+    /// Typically this will be a UINavigationController, but it could also be a UITabbarController if
+    /// you have a routing presenter that can handle it.
+    /// Be careful you can add more than one viewControllers if your RoutingPresenters can handle different
+    /// controller types or when the active 'rootController' changes.
+    /// The last added controller will be used first.
+    /// The controller will not be retained by the application (it is weakly stored), you need to store a
+    /// link to them elsewhere (if you don't want them to be removed from memory).
+    /// - Parameter controllerToNavigate: a controller that can be used to navigte in your app
+    func add(controllerToNavigate: UIViewController)
+    
+    /// return the first navigatableController that matches in a block
+    func controllerToNavigate(matches: (_ controller: UIViewController?) -> Bool) -> UIViewController?
+    
 }
 
 public extension Wireframe {

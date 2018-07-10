@@ -9,9 +9,9 @@ import VISPER_Swift
 import VISPER_Core
 import VISPER_Objc
 
-open class DeprecatedVISPERFeatureObserver<ApplicationState>: FeatureObserverType {
+open class DeprecatedVISPERFeatureObserver: FeatureObserver {
     
-    public typealias AppState = ApplicationState
+    
     
     let wireframe: Wireframe
     let commandBus: VISPERCommandBus
@@ -21,7 +21,7 @@ open class DeprecatedVISPERFeatureObserver<ApplicationState>: FeatureObserverTyp
         self.commandBus = commandBus
     }
     
-    public func featureAdded(application: Application<ApplicationState>, feature: Feature) throws {
+    public func featureAdded(application: App, feature: Feature) throws {
         
         guard let visperFeature = feature as? DeprecatedVISPERFeatureWrapper else {
             return
