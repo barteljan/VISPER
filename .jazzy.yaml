@@ -8,5 +8,5 @@ sdk: iphonesimulator
 objc: true
 output: docs/
 module: VISPER
-umbrella_header: Pod/Classes/VISPER.h 
-framework_root: Pod/Classes
+umbrella_header: VISPER/Classes/Deprecated/VISPER.h 
+framework_root: VISPER/Classes
