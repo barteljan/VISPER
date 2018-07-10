@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VISPER-Wireframe'
-  s.version          = '2.1.0'
+  s.version          = '3.0.0'
   s.summary          = 'Implementation of viper wireframe layer in the VISPER Application Framework'
 
   s.description      = <<-DESC
@@ -21,9 +21,9 @@ VISPER is a framework for building component based apps with the viper architect
 
   s.source_files = 'VISPER-Wireframe/Classes/**/*'
 
-  s.dependency 'VISPER-Core','~> 2.1.0'
-  s.dependency 'VISPER-Objc','~> 2.1.0'
-  s.dependency 'VISPER-Presenter','~> 2.1.0'
-  s.dependency 'VISPER-UIViewController','~> 2.1.0'
+  s.dependency 'VISPER-Core','~> 3.0.0'
+  s.dependency 'VISPER-Objc','~> 3.0.0'
+  s.dependency 'VISPER-Presenter','~> 3.0.0'
+  s.dependency 'VISPER-UIViewController','~> 3.0.0'
 
 end

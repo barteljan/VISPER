@@ -21,6 +21,6 @@ Added some sourcery templates to VISPER Redux to generate AppReducers and States
       'VISPER-Redux-Sourcery' => ['VISPER-Sourcery/Assets/*.stencil']
   }
 
-  s.dependency 'VISPER-Swift','~> 2.2.0'
+  s.dependency 'VISPER-Swift','~> 3.0.0'
 
 end

@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VISPER-Core'
-  s.version          = '2.1.0'
+  s.version          = '3.0.0'
   s.summary          = 'The core protocols and classes used in the VISPER Framework.'
 
   s.description      = <<-DESC

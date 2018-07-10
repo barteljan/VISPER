@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VISPER-UIViewController'
-  s.version          = '2.1.1'
+  s.version          = '3.0.0'
   s.summary          = 'Extends UIViewController with presenters which are notified on viewDidLoad, viewWillApperar, etc'
 
   s.description      = <<-DESC
@@ -19,6 +19,6 @@ Extends UIViewController with presenters which are notified on viewDidLoad, view
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'VISPER-UIViewController/Classes/**/*'
-  s.dependency 'VISPER-Objc','~> 2.1.0'
-  s.dependency 'VISPER-Presenter','~> 2.1.0'
+  s.dependency 'VISPER-Objc','~> 3.0.0'
+  s.dependency 'VISPER-Presenter','~> 3.0.0'
 end
