@@ -1,0 +1,61 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-UIViewController/Classes/objc/UIViewController+Lifecycle.h",
+      "line": 10,
+      "symbol": "UIViewController(Lifecycle)",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.category",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-UIViewController/Classes/objc/UIViewController+Lifecycle.h",
+      "line": 11,
+      "symbol": "UIViewController(Lifecycle).+enableLifecycleEvents",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-UIViewController/Classes/objc/UIViewController+Wireframe.h",
+      "line": 12,
+      "symbol": "UIViewController(Wireframe)",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.category",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-UIViewController/Classes/objc/UIViewController+Wireframe.h",
+      "line": 14,
+      "symbol": "UIViewController(Wireframe).routeResultObjc",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-UIViewController/Classes/objc/UIViewController+Wireframe.h",
+      "line": 15,
+      "symbol": "UIViewController(Wireframe).routePattern",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-UIViewController/Classes/objc/UIViewController+Wireframe.h",
+      "line": 16,
+      "symbol": "UIViewController(Wireframe).routeParameters",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-UIViewController/Classes/objc/UIViewController+Wireframe.h",
+      "line": 18,
+      "symbol": "UIViewController(Wireframe).-willRoute:routeResult:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-UIViewController/Classes/objc/UIViewController+Wireframe.h",
+      "line": 21,
+      "symbol": "UIViewController(Wireframe).-didRoute:routeResult:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/bartel/Documents/lib/VISPER"
+}

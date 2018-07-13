@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Protocols  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Section/Protocols" class="dashAnchor"></a>
+    <a title="Protocols  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">VISPER-Core Docs</a> (38% documented)</p>
+        <p class="header-right"><a href="https://github.com/barteljan/VISPER.git"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">VISPER-Core Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Protocols  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/DefaultApp.html">DefaultApp</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:11VISPER_Core6ActionP">Action</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ActionDispatcher.html">ActionDispatcher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/App.html">App</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ControllerContainer.html">ControllerContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ControllerDismisser.html">ControllerDismisser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ControllerPresenter.html">ControllerPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ControllerProvider.html">ControllerProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:11VISPER_Core7FeatureP">Feature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/FeatureObserver.html">FeatureObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/HasControllerContainer.html">HasControllerContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Presenter.html">Presenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/PresenterProvider.html">PresenterProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/RouteResult.html">RouteResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/RoutingAwareViewController.html">RoutingAwareViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/RoutingDelegate.html">RoutingDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/RoutingObserver.html">RoutingObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/RoutingOption.html">RoutingOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/RoutingOptionProvider.html">RoutingOptionProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/RoutingPresenter.html">RoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/TopControllerResolver.html">TopControllerResolver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Wireframe.html">Wireframe</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:11VISPER_Core14RoutingHandlera">RoutingHandler</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Protocols</h1>
+            <p>The following protocols are available globally.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core6ActionP"></a>
+                    <a name="//apple_ref/swift/Protocol/Action" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core6ActionP">Action</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An action is a message object send to a <code><a href="Protocols/ActionDispatcher.html">ActionDispatcher</a></code> to change a given state</p>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    <code><a href="Protocols/ActionDispatcher.html">ActionDispatcher</a></code>, for the object which dispatches an action
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Action</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core16ActionDispatcherP"></a>
+                    <a name="//apple_ref/swift/Protocol/ActionDispatcher" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core16ActionDispatcherP">ActionDispatcher</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An ActionDispatcher is an object which takes an action to modify a given state
+    - SeeAlso: <code><a href="Protocols.html#/s:11VISPER_Core6ActionP">Action</a></code>, for the object which will be dispatched</p>
+
+                        <a href="Protocols/ActionDispatcher.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ActionDispatcher</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core3AppP"></a>
+                    <a name="//apple_ref/swift/Protocol/App" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core3AppP">App</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/App.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">App</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core19ControllerContainerP"></a>
+                    <a name="//apple_ref/swift/Protocol/ControllerContainer" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core19ControllerContainerP">ControllerContainer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/ControllerContainer.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ControllerContainer</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core19ControllerDismisserP"></a>
+                    <a name="//apple_ref/swift/Protocol/ControllerDismisser" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core19ControllerDismisserP">ControllerDismisser</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/ControllerDismisser.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ControllerDismisser</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core19ControllerPresenterP"></a>
+                    <a name="//apple_ref/swift/Protocol/ControllerPresenter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core19ControllerPresenterP">ControllerPresenter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/ControllerPresenter.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ControllerPresenter</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Presenter.html">Presenter</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core18ControllerProviderP"></a>
+                    <a name="//apple_ref/swift/Protocol/ControllerProvider" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core18ControllerProviderP">ControllerProvider</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An instance providing a controller for an specific route pattern, routing option,
+parameter combination if it is responsible for it</p>
+
+                        <a href="Protocols/ControllerProvider.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ControllerProvider</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core7FeatureP"></a>
+                    <a name="//apple_ref/swift/Protocol/Feature" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core7FeatureP">Feature</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Feature represents a distinct funtionality of your application.
+It will be provided to all FeatureObservers after addition to configure and connect it to your application and your remaining
+features. Have look at LogicFeature and LogicFeatureObserver for an example.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Feature</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core15FeatureObserverP"></a>
+                    <a name="//apple_ref/swift/Protocol/FeatureObserver" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core15FeatureObserverP">FeatureObserver</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/FeatureObserver.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">FeatureObserver</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core22HasControllerContainerP"></a>
+                    <a name="//apple_ref/swift/Protocol/HasControllerContainer" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core22HasControllerContainerP">HasControllerContainer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/HasControllerContainer.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">HasControllerContainer</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core9PresenterP"></a>
+                    <a name="//apple_ref/swift/Protocol/Presenter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core9PresenterP">Presenter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/Presenter.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Presenter</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core17PresenterProviderP"></a>
+                    <a name="//apple_ref/swift/Protocol/PresenterProvider" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core17PresenterProviderP">PresenterProvider</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/PresenterProvider.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">PresenterProvider</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core11RouteResultP"></a>
+                    <a name="//apple_ref/swift/Protocol/RouteResult" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core11RouteResultP">RouteResult</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/RouteResult.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RouteResult</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core26RoutingAwareViewControllerP"></a>
+                    <a name="//apple_ref/swift/Protocol/RoutingAwareViewController" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core26RoutingAwareViewControllerP">RoutingAwareViewController</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/RoutingAwareViewController.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RoutingAwareViewController</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core15RoutingDelegateP"></a>
+                    <a name="//apple_ref/swift/Protocol/RoutingDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core15RoutingDelegateP">RoutingDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/RoutingDelegate.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RoutingDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core15RoutingObserverP"></a>
+                    <a name="//apple_ref/swift/Protocol/RoutingObserver" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core15RoutingObserverP">RoutingObserver</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An instance observing all controllers that are presented by the wireframe</p>
+
+                        <a href="Protocols/RoutingObserver.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RoutingObserver</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core13RoutingOptionP"></a>
+                    <a name="//apple_ref/swift/Protocol/RoutingOption" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core13RoutingOptionP">RoutingOption</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A message object describing how the view controller presented after routing will be presented</p>
+
+                        <a href="Protocols/RoutingOption.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RoutingOption</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core21RoutingOptionProviderP"></a>
+                    <a name="//apple_ref/swift/Protocol/RoutingOptionProvider" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core21RoutingOptionProviderP">RoutingOptionProvider</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An instance providing a routing option, for a specific route pattern and parameter combinition.
+The default behaviour should preserve a already determined option (currentOption) for this route pattern.
+But a RoutingOptionProvider can be used to replace a given option with an other option.</p>
+
+                        <a href="Protocols/RoutingOptionProvider.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RoutingOptionProvider</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core16RoutingPresenterP"></a>
+                    <a name="//apple_ref/swift/Protocol/RoutingPresenter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core16RoutingPresenterP">RoutingPresenter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An instance responsible for presenting view controllers
+Presentation is triggerd by the wireframe after resolving a route match.</p>
+
+                        <a href="Protocols/RoutingPresenter.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RoutingPresenter</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core21TopControllerResolverP"></a>
+                    <a name="//apple_ref/swift/Protocol/TopControllerResolver" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core21TopControllerResolverP">TopControllerResolver</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/TopControllerResolver.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">TopControllerResolver</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core9WireframeP"></a>
+                    <a name="//apple_ref/swift/Protocol/Wireframe" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core9WireframeP">Wireframe</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/Wireframe.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Wireframe</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/barteljan/VISPER-Wireframe" target="_blank" rel="external">Jan Bartel</a>. All rights reserved. (Last updated: 2018-07-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

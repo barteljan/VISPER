@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VISPER-Reactive  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="VISPER-Reactive  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">VISPER-Reactive Docs</a> (59% documented)</p>
+        <p class="header-right"><a href="https://github.com/barteljan/VISPER.git"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">VISPER-Reactive Reference</a>
+        <img id="carat" src="img/carat.png" />
+        VISPER-Reactive  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/ObservableProperty.html">ObservableProperty</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/SubscriptionReferenceBag.html">SubscriptionReferenceBag</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/UIViewController.html">UIViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/StreamType.html">StreamType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/SubscriptionReferenceType.html">SubscriptionReferenceType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/ObservablePropertySubscriptionReference.html">ObservablePropertySubscriptionReference</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='visper-reactive' class='heading'>VISPER-Reactive</h1>
+
+<p>VISPER is a component based library, which helps you to develop modular apps based on the VIPER Pattern.</p>
+
+<p>VISPER-Reactive contains a simple implementation of reactive properties to allow the use of a reactive redux architecture in a VISPER-Application. It can be updated by the subspec VISPER-Rective/RxSwift to use the RxSwift framework.</p>
+
+<p><a href="http://cocoapods.org/pods/VISPER"><img src="https://img.shields.io/cocoapods/v/VISPER.svg?style=flat" alt="Version"></a>
+<a href="http://cocoapods.org/pods/VISPER"><img src="https://img.shields.io/cocoapods/l/VISPER.svg?style=flat" alt="License"></a>
+<a href="http://cocoapods.org/pods/VISPER"><img src="https://img.shields.io/cocoapods/p/VISPER.svg?style=flat" alt="Platform"></a></p>
+
+<hr>
+<h2 id='currently-available-visper-components' class='heading'>Currently available VISPER-Components</h2>
+
+<ul>
+<li><a href="http://htmlpreview.github.io/?https://github.com/barteljan/VISPER/blob/master/docs/VISPER/index.html">VISPER</a> - a convenience import wrapper to include all VISPER Components with one import. It contains some deprecated components for backwards compatibility to previous VISPER Versions.</li>
+<li><a href="http://htmlpreview.github.io/?https://github.com/barteljan/VISPER/blob/master/docs/VISPER-Swift/index.html">VISPER-Swift</a> - All swift components of the VISPER-Framework, and a convenience import wrapper for all their dependencies.</li>
+<li><a href="http://htmlpreview.github.io/?https://github.com/barteljan/VISPER/blob/master/docs/VISPER-Objc/index.html">VISPER-Objc</a> - A wrapper around the core VISPER classes to use them in an objc codebase.</li>
+<li><a href="http://htmlpreview.github.io/?https://github.com/barteljan/VISPER/blob/master/docs/VISPER-Swift/index.html">VISPER-Core</a> - Some common core protocols used to communicate between the different components of your feature. This pod should be used if you want to include VISPER Components into your own projects and components. It&rsquo;s protocols are implemented in the other VISPER component pods.</li>
+<li><a href="http://htmlpreview.github.io/?https://github.com/barteljan/VISPER/blob/master/docs/VISPER-Wireframe/index.html">VISPER-Wireframe</a> - The component containing the implementation of the wireframe layer in a VIPER-Application, it manages the presentation and the lifecycle of your ViewControllers.</li>
+<li><a href="http://htmlpreview.github.io/?https://github.com/barteljan/VISPER/blob/master/docs/VISPER-Presenter/index.html">VISPER-Presenter</a> - The component containing the implementation of the presentation layer in a VIPER-Application. It contains some Presenter classes to seperate your application logic, from your view logic.</li>
+<li><a href="http://htmlpreview.github.io/?https://github.com/barteljan/VISPER/blob/master/docs/VISPER-Redux/index.html">VISPER-Redux</a> - A component containing the implementation of an redux architecture used in many VISPER-Application to represent the interactor layer in a viper application.</li>
+<li><a href="http://htmlpreview.github.io/?https://github.com/barteljan/VISPER/blob/master/docs/VISPER-Reactive/index.html">VISPER-Reactive</a> - A simple implementation of reactive properties to allow the use of a reactive redux architecture in a VISPER-Application. It can be updated by the subspec VISPER-Rective/RxSwift to use the RxSwift framework.</li>
+<li><a href="http://htmlpreview.github.io/?https://github.com/barteljan/VISPER/blob/master/docs/VISPER-Sourcery/index.html">VISPER-Sourcery</a> - A component supporting you to create a VISPER application by creating some nessecary boilerplate code for you.</li>
+<li><a href="http://htmlpreview.github.io/?https://github.com/barteljan/VISPER/blob/master/docs/VISPER-UIViewController/index.html">VISPER-UIViewController</a> - A component extending UIViewControllers to notify a presenter about it&rsquo;s lifecycle (viewDidLoad, etc.)</li>
+<li><a href="http://htmlpreview.github.io/?https://github.com/barteljan/VISPER/blob/master/docs/VISPER-UIViewController/index.html">VISPER-Entity</a> - A component modeling the entity layer if you do not use your custom layer in your VISPER-Application.</li>
+</ul>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/barteljan/VISPER" target="_blank" rel="external">Jan Bartel</a>. All rights reserved. (Last updated: 2018-07-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Middleware Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/Middleware" class="dashAnchor"></a>
+    <a title="Middleware Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">VISPER-Redux Docs</a> (57% documented)</p>
+        <p class="header-right"><a href="https://github.com/barteljan/VISPER.git"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">VISPER-Redux Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Middleware Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AnyReduxApp.html">AnyReduxApp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyStatefulFeatureObserver.html">AnyStatefulFeatureObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultReduxApp.html">DefaultReduxApp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReducerContainerImpl.html">ReducerContainerImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Redux.html">Redux</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Store.html">Store</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/ActionReducerType.html">ActionReducerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AsyncActionReducerType.html">AsyncActionReducerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LogicFeature.html">LogicFeature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ReducerContainer.html">ReducerContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ReducerProvider.html">ReducerProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ReduxApp.html">ReduxApp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StateChangingReducerContainer.html">StateChangingReducerContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StatefulFeatureObserver.html">StatefulFeatureObserver</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/ActionReducer.html">ActionReducer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AnyActionReducer.html">AnyActionReducer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AnyAsyncActionReducer.html">AnyAsyncActionReducer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AsyncActionReducer.html">AsyncActionReducer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/FunctionalReducer.html">FunctionalReducer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LogicFeatureObserver.html">LogicFeatureObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Middleware.html">Middleware</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UpdateStateWithSubStateAction.html">UpdateStateWithSubStateAction</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12VISPER_Redux10AppReducera">AppReducer</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Middleware</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Middleware</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;</span></code></pre>
+
+                </div>
+              </div>
+            <p>Middleware is a structure that allows you to modify, filter out and dispatch more
+actions, before the action being handled reaches the store.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12VISPER_Redux10MiddlewareV16DispatchFunctiona"></a>
+                    <a name="//apple_ref/swift/Alias/DispatchFunction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12VISPER_Redux10MiddlewareV16DispatchFunctiona">DispatchFunction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">DispatchFunction</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Action</span><span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12VISPER_Redux10MiddlewareV8GetStatea"></a>
+                    <a name="//apple_ref/swift/Alias/GetState" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12VISPER_Redux10MiddlewareV8GetStatea">GetState</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">GetState</span> <span class="o">=</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">State</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12VISPER_Redux10MiddlewareVACyxGycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12VISPER_Redux10MiddlewareVACyxGycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a blank slate Middleware.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12VISPER_Redux10MiddlewareVACyxGAD_ADdtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12VISPER_Redux10MiddlewareVACyxGAD_ADdtcfc">init(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialises the middleware by concatenating the transformative functions from
+the middleware that was passed in.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">first</span><span class="p">:</span> <span class="kt">Middleware</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">_</span> <span class="nv">rest</span><span class="p">:</span> <span class="kt">Middleware</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;...</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12VISPER_Redux10MiddlewareV10sideEffectACyxGyxyc_y0A5_Core6Action_pd_tcAfG_ptcF"></a>
+                    <a name="//apple_ref/swift/Method/sideEffect(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12VISPER_Redux10MiddlewareV10sideEffectACyxGyxyc_y0A5_Core6Action_pd_tcAfG_ptcF">sideEffect(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Safe encapsulation of side effects guaranteed not to affect the action being passed through the middleware.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sideEffect</span><span class="p">(</span><span class="n">_</span> <span class="nv">effect</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Structs/Middleware.html#/s:12VISPER_Redux10MiddlewareV8GetStatea">GetState</a></span><span class="p">,</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Structs/Middleware.html#/s:12VISPER_Redux10MiddlewareV16DispatchFunctiona">DispatchFunction</a></span><span class="p">,</span> <span class="kt">Action</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Middleware</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12VISPER_Redux10MiddlewareV6concatACyxGAEF"></a>
+                    <a name="//apple_ref/swift/Method/concat(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12VISPER_Redux10MiddlewareV6concatACyxGAEF">concat(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Concatenates the transform function of the passed <code>Middleware</code> onto the callee&rsquo;s transform.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">concat</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">Middleware</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Middleware</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12VISPER_Redux10MiddlewareV3mapACyxG0A5_Core6Action_pxyc_AfG_ptcF"></a>
+                    <a name="//apple_ref/swift/Method/map(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12VISPER_Redux10MiddlewareV3mapACyxG0A5_Core6Action_pxyc_AfG_ptcF">map(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Transform the action into another action.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">map</span><span class="p">(</span><span class="n">_</span> <span class="nv">transform</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Structs/Middleware.html#/s:12VISPER_Redux10MiddlewareV8GetStatea">GetState</a></span><span class="p">,</span> <span class="kt">Action</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Action</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Middleware</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12VISPER_Redux10MiddlewareV8increaseACyxGSay0A5_Core6Action_pGxyc_AfG_ptcF"></a>
+                    <a name="//apple_ref/swift/Method/increase(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12VISPER_Redux10MiddlewareV8increaseACyxGSay0A5_Core6Action_pGxyc_AfG_ptcF">increase(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">increase</span><span class="p">(</span><span class="n">_</span> <span class="nv">transform</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Structs/Middleware.html#/s:12VISPER_Redux10MiddlewareV8GetStatea">GetState</a></span><span class="p">,</span> <span class="kt">Action</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Action</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Middleware</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12VISPER_Redux10MiddlewareV7flatMapACyxGSay0A5_Core6Action_pGxyc_AfG_ptcF"></a>
+                    <a name="//apple_ref/swift/Method/flatMap(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12VISPER_Redux10MiddlewareV7flatMapACyxGSay0A5_Core6Action_pGxyc_AfG_ptcF">flatMap(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>One to many pattern allowing one action to be turned into multiple.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">flatMap</span><span class="p">(</span><span class="n">_</span> <span class="nv">transform</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Structs/Middleware.html#/s:12VISPER_Redux10MiddlewareV8GetStatea">GetState</a></span><span class="p">,</span> <span class="kt">Action</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Action</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Middleware</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12VISPER_Redux10MiddlewareV7flatMapACyxG0A5_Core6Action_pSgxyc_AfG_ptcF"></a>
+                    <a name="//apple_ref/swift/Method/flatMap(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12VISPER_Redux10MiddlewareV7flatMapACyxG0A5_Core6Action_pSgxyc_AfG_ptcF">flatMap(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Filters while mapping actions to new actions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">flatMap</span><span class="p">(</span><span class="n">_</span> <span class="nv">transform</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Structs/Middleware.html#/s:12VISPER_Redux10MiddlewareV8GetStatea">GetState</a></span><span class="p">,</span> <span class="kt">Action</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Action</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Middleware</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12VISPER_Redux10MiddlewareV6filterACyxGSbxyc_0A5_Core6Action_ptcF"></a>
+                    <a name="//apple_ref/swift/Method/filter(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12VISPER_Redux10MiddlewareV6filterACyxGSbxyc_0A5_Core6Action_ptcF">filter(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Drop the action iff <code>isIncluded(action) != true</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">filter</span><span class="p">(</span><span class="n">_</span> <span class="nv">isIncluded</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Structs/Middleware.html#/s:12VISPER_Redux10MiddlewareV8GetStatea">GetState</a></span><span class="p">,</span> <span class="kt">Action</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Middleware</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/barteljan/VISPER/blob/master/README-VISPER-Redux.md" target="_blank" rel="external">Jan Bartel</a>. All rights reserved. (Last updated: 2018-07-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AsyncActionReducerType Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/AsyncActionReducerType" class="dashAnchor"></a>
+    <a title="AsyncActionReducerType Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">VISPER-Redux Docs</a> (57% documented)</p>
+        <p class="header-right"><a href="https://github.com/barteljan/VISPER.git"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">VISPER-Redux Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        AsyncActionReducerType Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AnyReduxApp.html">AnyReduxApp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyStatefulFeatureObserver.html">AnyStatefulFeatureObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultReduxApp.html">DefaultReduxApp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReducerContainerImpl.html">ReducerContainerImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Redux.html">Redux</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Store.html">Store</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/ActionReducerType.html">ActionReducerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AsyncActionReducerType.html">AsyncActionReducerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LogicFeature.html">LogicFeature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ReducerContainer.html">ReducerContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ReducerProvider.html">ReducerProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ReduxApp.html">ReduxApp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StateChangingReducerContainer.html">StateChangingReducerContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StatefulFeatureObserver.html">StatefulFeatureObserver</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/ActionReducer.html">ActionReducer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AnyActionReducer.html">AnyActionReducer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AnyAsyncActionReducer.html">AnyAsyncActionReducer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AsyncActionReducer.html">AsyncActionReducer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/FunctionalReducer.html">FunctionalReducer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LogicFeatureObserver.html">LogicFeatureObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Middleware.html">Middleware</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UpdateStateWithSubStateAction.html">UpdateStateWithSubStateAction</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12VISPER_Redux10AppReducera">AppReducer</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>AsyncActionReducerType</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">AsyncActionReducerType</span></code></pre>
+
+                </div>
+              </div>
+            <p>An ActionReducer, takes a given action and a given state and returns a new state</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12VISPER_Redux22AsyncActionReducerTypeP0e5StateF0"></a>
+                    <a name="//apple_ref/swift/Alias/ReducerStateType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12VISPER_Redux22AsyncActionReducerTypeP0e5StateF0">ReducerStateType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">associatedtype</span> <span class="kt">ReducerStateType</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12VISPER_Redux22AsyncActionReducerTypeP0edF0"></a>
+                    <a name="//apple_ref/swift/Alias/ReducerActionType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12VISPER_Redux22AsyncActionReducerTypeP0edF0">ReducerActionType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">associatedtype</span> <span class="kt">ReducerActionType</span> <span class="p">:</span> <span class="kt">Action</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12VISPER_Redux22AsyncActionReducerTypeP13isResponsibleSb0A5_Core0D0_p6action_yp5statetF"></a>
+                    <a name="//apple_ref/swift/Method/isResponsible(action:state:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12VISPER_Redux22AsyncActionReducerTypeP13isResponsibleSb0A5_Core0D0_p6action_yp5statetF">isResponsible(action:state:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Check if this reducer is responsible for a given action and state</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Check if this reducer is responsible for a given action and state</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    The default implementation simply checks if the given action and state conform to the reducers action and state types
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isResponsible</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="kt">Action</span><span class="p">,</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>action</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a given action</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>state</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a given state</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>returns if the reducer is responsible for this action/state pair</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12VISPER_Redux22AsyncActionReducerTypeP6reduceyAA0E8Provider_p8provider_0edF0Qz6actiony0e5StateF0Qzc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/reduce(provider:action:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12VISPER_Redux22AsyncActionReducerTypeP6reduceyAA0E8Provider_p8provider_0edF0Qz6actiony0e5StateF0Qzc10completiontF">reduce(provider:action:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Take a given action, modify a given state and return a new state</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">reduce</span><span class="p">(</span><span class="nv">provider</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ReducerProvider.html">ReducerProvider</a></span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kt"><a href="../Protocols/AsyncActionReducerType.html#/s:12VISPER_Redux22AsyncActionReducerTypeP0edF0">ReducerActionType</a></span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">newState</span><span class="p">:</span> <span class="kt"><a href="../Protocols/AsyncActionReducerType.html#/s:12VISPER_Redux22AsyncActionReducerTypeP0e5StateF0">ReducerStateType</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>provider</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the reducer container of your application</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>action</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a given action</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>state</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a given state</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the new state</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/barteljan/VISPER/blob/master/README-VISPER-Redux.md" target="_blank" rel="external">Jan Bartel</a>. All rights reserved. (Last updated: 2018-07-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

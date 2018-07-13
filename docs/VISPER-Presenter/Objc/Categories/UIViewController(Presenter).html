@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>UIViewController(Presenter) Category Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Extension/UIViewController(Presenter)" class="dashAnchor"></a>
+    <a title="UIViewController(Presenter) Category Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">VISPER-Presenter Docs</a> (0% documented)</p>
+        <p class="header-right"><a href="https://github.com/barteljan/VISPER.git"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">VISPER-Presenter Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        UIViewController(Presenter) Category Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Categories.html">Categories</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Categories/UIViewController(Presenter).html">UIViewController(Presenter)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/ViewControllerEventPresenter.html">ViewControllerEventPresenter</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>UIViewController(Presenter)</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">UIViewController</span> <span class="p">(</span><span class="nl">Presenter</span><span class="p">)</span>
+
+<span class="cp">#pragma mark presenter management
+</span><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSArray</span>  <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">visperPresenters</span><span class="p">;</span>
+
+<span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">addVisperPresenter</span><span class="p">:(</span><span class="n">NSObject</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ViewControllerEventPresenter.html">ViewControllerEventPresenter</a></span><span class="o">&gt;</span> <span class="o">*</span> <span class="n">__nonnull</span><span class="p">)</span><span class="nv">presenter</span><span class="p">;</span>
+<span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">addVisperPresenter</span><span class="p">:(</span><span class="n">NSObject</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ViewControllerEventPresenter.html">ViewControllerEventPresenter</a></span><span class="o">&gt;</span> <span class="o">*</span> <span class="n">__nonnull</span><span class="p">)</span><span class="nv">presenter</span> <span class="nf">priority</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">priority</span><span class="p">;</span>
+<span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">removeVisperPresenter</span><span class="p">:(</span><span class="n">NSObject</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ViewControllerEventPresenter.html">ViewControllerEventPresenter</a></span><span class="o">&gt;</span> <span class="o">*</span><span class="n">__nonnull</span><span class="p">)</span><span class="nv">presenter</span><span class="p">;</span>
+<span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">notifyPresentersOfView</span><span class="p">:(</span><span class="n">UIView</span><span class="o">*</span> <span class="n">__nonnull</span><span class="p">)</span><span class="nv">view</span>
+                    <span class="nf">withEvent</span><span class="p">:(</span><span class="n">NSObject</span><span class="o">*</span> <span class="n">__nonnull</span><span class="p">)</span><span class="nv">event</span><span class="p">;</span>
+<span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">retainPresenter</span><span class="p">:(</span><span class="n">NSObject</span><span class="o">*</span><span class="p">)</span><span class="nv">presenter</span><span class="p">;</span>
+<span class="k">@end</span></code></pre>
+
+                </div>
+              </div>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/presenter%20management"></a>
+                <a name="//apple_ref/objc/Section/presenter management" class="dashAnchor"></a>
+                <a href="#/presenter%20management">
+                  <h3 class="section-name">presenter management</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)UIViewController(py)visperPresenters"></a>
+                    <a name="//apple_ref/objc/Property/visperPresenters" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)UIViewController(py)visperPresenters">visperPresenters</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSArray</span>  <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">visperPresenters</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">visperPresenters</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)UIViewController(im)addVisperPresenter:"></a>
+                    <a name="//apple_ref/objc/Method/-addVisperPresenter:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)UIViewController(im)addVisperPresenter:">-addVisperPresenter:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">addVisperPresenter</span><span class="p">:(</span><span class="n">NSObject</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ViewControllerEventPresenter.html">ViewControllerEventPresenter</a></span><span class="o">&gt;</span> <span class="o">*</span> <span class="n">__nonnull</span><span class="p">)</span><span class="nv">presenter</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addVisperPresenter</span><span class="p">(</span><span class="n">_</span> <span class="nv">presenter</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ViewControllerEventPresenter.html">ViewControllerEventPresenter</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)UIViewController(im)addVisperPresenter:priority:"></a>
+                    <a name="//apple_ref/objc/Method/-addVisperPresenter:priority:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)UIViewController(im)addVisperPresenter:priority:">-addVisperPresenter:priority:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">addVisperPresenter</span><span class="p">:(</span><span class="n">NSObject</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ViewControllerEventPresenter.html">ViewControllerEventPresenter</a></span><span class="o">&gt;</span> <span class="o">*</span> <span class="n">__nonnull</span><span class="p">)</span><span class="nv">presenter</span> <span class="nf">priority</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">priority</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addVisperPresenter</span><span class="p">(</span><span class="n">_</span> <span class="nv">presenter</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ViewControllerEventPresenter.html">ViewControllerEventPresenter</a></span><span class="p">,</span> <span class="nv">priority</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)UIViewController(im)removeVisperPresenter:"></a>
+                    <a name="//apple_ref/objc/Method/-removeVisperPresenter:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)UIViewController(im)removeVisperPresenter:">-removeVisperPresenter:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">removeVisperPresenter</span><span class="p">:(</span><span class="n">NSObject</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ViewControllerEventPresenter.html">ViewControllerEventPresenter</a></span><span class="o">&gt;</span> <span class="o">*</span><span class="n">__nonnull</span><span class="p">)</span><span class="nv">presenter</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">removeVisperPresenter</span><span class="p">(</span><span class="n">_</span> <span class="nv">presenter</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ViewControllerEventPresenter.html">ViewControllerEventPresenter</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)UIViewController(im)notifyPresentersOfView:withEvent:"></a>
+                    <a name="//apple_ref/objc/Method/-notifyPresentersOfView:withEvent:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)UIViewController(im)notifyPresentersOfView:withEvent:">-notifyPresentersOfView:withEvent:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">notifyPresentersOfView</span><span class="p">:(</span><span class="n">UIView</span><span class="o">*</span> <span class="n">__nonnull</span><span class="p">)</span><span class="nv">view</span>
+                    <span class="nf">withEvent</span><span class="p">:(</span><span class="n">NSObject</span><span class="o">*</span> <span class="n">__nonnull</span><span class="p">)</span><span class="nv">event</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">notifyPresenters</span><span class="p">(</span><span class="n">of</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="n">withEvent</span> <span class="nv">event</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)UIViewController(im)retainPresenter:"></a>
+                    <a name="//apple_ref/objc/Method/-retainPresenter:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)UIViewController(im)retainPresenter:">-retainPresenter:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">retainPresenter</span><span class="p">:(</span><span class="n">NSObject</span><span class="o">*</span><span class="p">)</span><span class="nv">presenter</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">retainPresenter</span><span class="p">(</span><span class="n">_</span> <span class="nv">presenter</span><span class="p">:</span> <span class="kt">NSObject</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/barteljan/VISPER/" target="_blank" rel="external">Jan Bartel</a>. All rights reserved. (Last updated: 2018-07-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

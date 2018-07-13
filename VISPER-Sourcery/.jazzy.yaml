@@ -1,0 +1,11 @@
+---
+min_acl: public
+github_url: https://github.com/barteljan/VISPER.git
+readme: ../docs/README-Sourcery-Core.md
+author: Jan Bartel
+clean:
+sdk: iphonesimulator
+output: ../docs/VISPER-Sourcery
+module: VISPER-Sourcery
+framework_root: Classes
+podspec: "VISPER-Sourcery.podspec" 

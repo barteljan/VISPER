@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RoutingDelegate Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/RoutingDelegate" class="dashAnchor"></a>
+    <a title="RoutingDelegate Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">VISPER-Core Docs</a> (38% documented)</p>
+        <p class="header-right"><a href="https://github.com/barteljan/VISPER.git"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">VISPER-Core Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        RoutingDelegate Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultApp.html">DefaultApp</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:11VISPER_Core6ActionP">Action</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ActionDispatcher.html">ActionDispatcher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/App.html">App</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ControllerContainer.html">ControllerContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ControllerDismisser.html">ControllerDismisser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ControllerPresenter.html">ControllerPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ControllerProvider.html">ControllerProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:11VISPER_Core7FeatureP">Feature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/FeatureObserver.html">FeatureObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasControllerContainer.html">HasControllerContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Presenter.html">Presenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PresenterProvider.html">PresenterProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RouteResult.html">RouteResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RoutingAwareViewController.html">RoutingAwareViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RoutingDelegate.html">RoutingDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RoutingObserver.html">RoutingObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RoutingOption.html">RoutingOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RoutingOptionProvider.html">RoutingOptionProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RoutingPresenter.html">RoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/TopControllerResolver.html">TopControllerResolver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Wireframe.html">Wireframe</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:11VISPER_Core14RoutingHandlera">RoutingHandler</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>RoutingDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RoutingDelegate</span></code></pre>
+
+                </div>
+              </div>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core15RoutingDelegateP15routingObserverAA0cF0_pSgvp"></a>
+                    <a name="//apple_ref/swift/Property/routingObserver" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core15RoutingDelegateP15routingObserverAA0cF0_pSgvp">routingObserver</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An instance observing controllers before they are presented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">routingObserver</span><span class="p">:</span> <span class="kt"><a href="../Protocols/RoutingObserver.html">RoutingObserver</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core15RoutingDelegateP11willPresentySo16UIViewControllerC10controller_AA11RouteResult_p05routeK0AA0C9Presenter_pSg07routingM0AA9Wireframe_p9wireframetKF"></a>
+                    <a name="//apple_ref/swift/Method/willPresent(controller:routeResult:routingPresenter:wireframe:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core15RoutingDelegateP11willPresentySo16UIViewControllerC10controller_AA11RouteResult_p05routeK0AA0C9Presenter_pSg07routingM0AA9Wireframe_p9wireframetKF">willPresent(controller:routeResult:routingPresenter:wireframe:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Event that indicates that a view controller will be presented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">willPresent</span><span class="p">(</span><span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="nv">routeResult</span><span class="p">:</span> <span class="kt"><a href="../Protocols/RouteResult.html">RouteResult</a></span><span class="p">,</span> <span class="nv">routingPresenter</span><span class="p">:</span> <span class="kt"><a href="../Protocols/RoutingPresenter.html">RoutingPresenter</a></span><span class="p">?,</span> <span class="nv">wireframe</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Wireframe.html">Wireframe</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>controller</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The view controller that will be presented</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>routePattern</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The route pattern triggering the presentation</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>routingOption</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The RoutingOption describing how the controller will be presented</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>parameters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The parameters (data) extraced from the route, or given by the sender</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>routingPresenter</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The RoutingPresenter responsible for presenting the controller</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>wireframe</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The wireframe presenting the view controller</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core15RoutingDelegateP10didPresentySo16UIViewControllerC10controller_AA11RouteResult_p05routeK0AA0C9Presenter_pSg07routingM0AA9Wireframe_p9wireframetF"></a>
+                    <a name="//apple_ref/swift/Method/didPresent(controller:routeResult:routingPresenter:wireframe:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core15RoutingDelegateP10didPresentySo16UIViewControllerC10controller_AA11RouteResult_p05routeK0AA0C9Presenter_pSg07routingM0AA9Wireframe_p9wireframetF">didPresent(controller:routeResult:routingPresenter:wireframe:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Event that indicates that a view controller was presented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">didPresent</span><span class="p">(</span><span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="nv">routeResult</span><span class="p">:</span> <span class="kt"><a href="../Protocols/RouteResult.html">RouteResult</a></span><span class="p">,</span> <span class="nv">routingPresenter</span><span class="p">:</span> <span class="kt"><a href="../Protocols/RoutingPresenter.html">RoutingPresenter</a></span><span class="p">?,</span> <span class="nv">wireframe</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Wireframe.html">Wireframe</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>controller</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The view controller that will be presented</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>routePattern</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The route pattern triggering the presentation</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>routingOption</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The RoutingOption describing how the controller will be presented</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>parameters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The parameters (data) extraced from the route, or given by the sender</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>routingPresenter</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The RoutingPresenter responsible for presenting the controller</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>wireframe</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The wireframe presenting the view controller</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/barteljan/VISPER-Wireframe" target="_blank" rel="external">Jan Bartel</a>. All rights reserved. (Last updated: 2018-07-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

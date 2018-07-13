@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FunctionalControllerPresenter Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/FunctionalControllerPresenter" class="dashAnchor"></a>
+    <a title="FunctionalControllerPresenter Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">VISPER-Presenter Docs</a> (4% documented)</p>
+        <p class="header-right"><a href="https://github.com/barteljan/VISPER.git"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">VISPER-Presenter Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        FunctionalControllerPresenter Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/FunctionalControllerPresenter.html">FunctionalControllerPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FunctionalPresenter.html">FunctionalPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LifecycleEvent.html">LifecycleEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LoadViewEvent.html">LoadViewEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ViewControllerLifecycleEventPresenter.html">ViewControllerLifecycleEventPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ViewDidAppearEvent.html">ViewDidAppearEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ViewDidDisappearEvent.html">ViewDidDisappearEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ViewDidLoadEvent.html">ViewDidLoadEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ViewWillAppearEvent.html">ViewWillAppearEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ViewWillDisappearEvent.html">ViewWillDisappearEvent</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/ControllerPresenter.html">ControllerPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIViewController.html">UIViewController</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>FunctionalControllerPresenter</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">FunctionalControllerPresenter</span> <span class="p">:</span> <span class="kt">ControllerPresenter</span></code></pre>
+
+                </div>
+              </div>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C21IsResponsibleCallbacka"></a>
+                    <a name="//apple_ref/swift/Alias/IsResponsibleCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C21IsResponsibleCallbacka">IsResponsibleCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">IsResponsibleCallback</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">,</span> <span class="n">_</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C28AddPresentationLogicCallbacka"></a>
+                    <a name="//apple_ref/swift/Alias/AddPresentationLogicCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C28AddPresentationLogicCallbacka">AddPresentationLogicCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">AddPresentationLogicCallback</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">,</span> <span class="n">_</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C16LoadViewCallbacka"></a>
+                    <a name="//apple_ref/swift/Alias/LoadViewCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C16LoadViewCallbacka">LoadViewCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">LoadViewCallback</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">?,</span> <span class="n">_</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C19ViewDidLoadCallbacka"></a>
+                    <a name="//apple_ref/swift/Alias/ViewDidLoadCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C19ViewDidLoadCallbacka">ViewDidLoadCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">ViewDidLoadCallback</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="n">_</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C22ViewWillAppearCallbacka"></a>
+                    <a name="//apple_ref/swift/Alias/ViewWillAppearCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C22ViewWillAppearCallbacka">ViewWillAppearCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">ViewWillAppearCallback</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="n">_</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="n">_</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C21ViewDidAppearCallbacka"></a>
+                    <a name="//apple_ref/swift/Alias/ViewDidAppearCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C21ViewDidAppearCallbacka">ViewDidAppearCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">ViewDidAppearCallback</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="n">_</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="n">_</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C25ViewWillDisappearCallbacka"></a>
+                    <a name="//apple_ref/swift/Alias/ViewWillDisappearCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C25ViewWillDisappearCallbacka">ViewWillDisappearCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">ViewWillDisappearCallback</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="n">_</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="n">_</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C24ViewDidDisappearCallbacka"></a>
+                    <a name="//apple_ref/swift/Alias/ViewDidDisappearCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C24ViewDidDisappearCallbacka">ViewDidDisappearCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">ViewDidDisappearCallback</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="n">_</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="n">_</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C17WillRouteCallbacka"></a>
+                    <a name="//apple_ref/swift/Alias/WillRouteCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C17WillRouteCallbacka">WillRouteCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">WillRouteCallback</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">wireframe</span><span class="p">:</span> <span class="kt">Wireframe</span><span class="p">,</span> <span class="n">_</span> <span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">,</span> <span class="n">_</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C16DidRouteCallbacka"></a>
+                    <a name="//apple_ref/swift/Alias/DidRouteCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C16DidRouteCallbacka">DidRouteCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">DidRouteCallback</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">wireframe</span><span class="p">:</span> <span class="kt">Wireframe</span><span class="p">,</span> <span class="n">_</span> <span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">,</span> <span class="n">_</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C21isResponsibleCallbackSb0A5_Core11RouteResult_p_So06UIViewD0CtcSgvp"></a>
+                    <a name="//apple_ref/swift/Property/isResponsibleCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C21isResponsibleCallbackSb0A5_Core11RouteResult_p_So06UIViewD0CtcSgvp">isResponsibleCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">isResponsibleCallback</span><span class="p">:</span> <span class="kt"><a href="../Classes/FunctionalControllerPresenter.html#/s:16VISPER_Presenter020FunctionalControllerB0C21IsResponsibleCallbacka">IsResponsibleCallback</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C28addPresentationLogicCallbacky0A5_Core11RouteResult_p_So06UIViewD0CtKcSgvp"></a>
+                    <a name="//apple_ref/swift/Property/addPresentationLogicCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C28addPresentationLogicCallbacky0A5_Core11RouteResult_p_So06UIViewD0CtKcSgvp">addPresentationLogicCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">addPresentationLogicCallback</span><span class="p">:</span> <span class="kt"><a href="../Classes/FunctionalControllerPresenter.html#/s:16VISPER_Presenter020FunctionalControllerB0C28AddPresentationLogicCallbacka">AddPresentationLogicCallback</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C16loadViewCallbackySo6UIViewCSg_So0hD0CtcSgvp"></a>
+                    <a name="//apple_ref/swift/Property/loadViewCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C16loadViewCallbackySo6UIViewCSg_So0hD0CtcSgvp">loadViewCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">loadViewCallback</span><span class="p">:</span> <span class="kt"><a href="../Classes/FunctionalControllerPresenter.html#/s:16VISPER_Presenter020FunctionalControllerB0C16LoadViewCallbacka">LoadViewCallback</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C19viewDidLoadCallbackySo6UIViewC_So0iD0CtcSgvp"></a>
+                    <a name="//apple_ref/swift/Property/viewDidLoadCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C19viewDidLoadCallbackySo6UIViewC_So0iD0CtcSgvp">viewDidLoadCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">viewDidLoadCallback</span><span class="p">:</span> <span class="kt"><a href="../Classes/FunctionalControllerPresenter.html#/s:16VISPER_Presenter020FunctionalControllerB0C19ViewDidLoadCallbacka">ViewDidLoadCallback</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C22viewWillAppearCallbackySb_So6UIViewCSo0iD0CtcSgvp"></a>
+                    <a name="//apple_ref/swift/Property/viewWillAppearCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C22viewWillAppearCallbackySb_So6UIViewCSo0iD0CtcSgvp">viewWillAppearCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">viewWillAppearCallback</span><span class="p">:</span> <span class="kt"><a href="../Classes/FunctionalControllerPresenter.html#/s:16VISPER_Presenter020FunctionalControllerB0C22ViewWillAppearCallbacka">ViewWillAppearCallback</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C21viewDidAppearCallbackySb_So6UIViewCSo0iD0CtcSgvp"></a>
+                    <a name="//apple_ref/swift/Property/viewDidAppearCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C21viewDidAppearCallbackySb_So6UIViewCSo0iD0CtcSgvp">viewDidAppearCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">viewDidAppearCallback</span><span class="p">:</span> <span class="kt"><a href="../Classes/FunctionalControllerPresenter.html#/s:16VISPER_Presenter020FunctionalControllerB0C21ViewDidAppearCallbacka">ViewDidAppearCallback</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C25viewWillDisappearCallbackySb_So6UIViewCSo0iD0CtcSgvp"></a>
+                    <a name="//apple_ref/swift/Property/viewWillDisappearCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C25viewWillDisappearCallbackySb_So6UIViewCSo0iD0CtcSgvp">viewWillDisappearCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">viewWillDisappearCallback</span><span class="p">:</span> <span class="kt"><a href="../Classes/FunctionalControllerPresenter.html#/s:16VISPER_Presenter020FunctionalControllerB0C25ViewWillDisappearCallbacka">ViewWillDisappearCallback</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C24viewDidDisappearCallbackySb_So6UIViewCSo0iD0CtcSgvp"></a>
+                    <a name="//apple_ref/swift/Property/viewDidDisappearCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C24viewDidDisappearCallbackySb_So6UIViewCSo0iD0CtcSgvp">viewDidDisappearCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">viewDidDisappearCallback</span><span class="p">:</span> <span class="kt"><a href="../Classes/FunctionalControllerPresenter.html#/s:16VISPER_Presenter020FunctionalControllerB0C24ViewDidDisappearCallbacka">ViewDidDisappearCallback</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C17willRouteCallbacky0A5_Core9Wireframe_p_AE0F6Result_pSo06UIViewD0CtcSgvp"></a>
+                    <a name="//apple_ref/swift/Property/willRouteCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C17willRouteCallbacky0A5_Core9Wireframe_p_AE0F6Result_pSo06UIViewD0CtcSgvp">willRouteCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">willRouteCallback</span><span class="p">:</span> <span class="kt"><a href="../Classes/FunctionalControllerPresenter.html#/s:16VISPER_Presenter020FunctionalControllerB0C17WillRouteCallbacka">WillRouteCallback</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C16didRouteCallbacky0A5_Core9Wireframe_p_AE0F6Result_pSo06UIViewD0CtcSgvp"></a>
+                    <a name="//apple_ref/swift/Property/didRouteCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C16didRouteCallbacky0A5_Core9Wireframe_p_AE0F6Result_pSo06UIViewD0CtcSgvp">didRouteCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">didRouteCallback</span><span class="p">:</span> <span class="kt"><a href="../Classes/FunctionalControllerPresenter.html#/s:16VISPER_Presenter020FunctionalControllerB0C16DidRouteCallbacka">DidRouteCallback</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0CACSb0A5_Core11RouteResult_p_So06UIViewD0CtcSg21isResponsibleCallback_yAdE_p_AGtKcSg020addPresentationLogicK0ySo0H0CSg_AGtcSg08loadViewK0yAM_AGtcSg011viewDidLoadK0ySb_AmGtcSg0q10WillAppearK0AS0qruK0AS0qt9DisappearK0AS0qrvK0yAD9Wireframe_p_AdE_pAGtcSg04willfK0AY03didfK0tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(isResponsibleCallback:addPresentationLogicCallback:loadViewCallback:viewDidLoadCallback:viewWillAppearCallback:viewDidAppearCallback:viewWillDisappearCallback:viewDidDisappearCallback:willRouteCallback:didRouteCallback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0CACSb0A5_Core11RouteResult_p_So06UIViewD0CtcSg21isResponsibleCallback_yAdE_p_AGtKcSg020addPresentationLogicK0ySo0H0CSg_AGtcSg08loadViewK0yAM_AGtcSg011viewDidLoadK0ySb_AmGtcSg0q10WillAppearK0AS0qruK0AS0qt9DisappearK0AS0qrvK0yAD9Wireframe_p_AdE_pAGtcSg04willfK0AY03didfK0tcfc">init(isResponsibleCallback:addPresentationLogicCallback:loadViewCallback:viewDidLoadCallback:viewWillAppearCallback:viewDidAppearCallback:viewWillDisappearCallback:viewDidDisappearCallback:willRouteCallback:didRouteCallback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">isResponsibleCallback</span><span class="p">:</span> <span class="kt"><a href="../Classes/FunctionalControllerPresenter.html#/s:16VISPER_Presenter020FunctionalControllerB0C21IsResponsibleCallbacka">IsResponsibleCallback</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+   <span class="nv">addPresentationLogicCallback</span><span class="p">:</span> <span class="kt"><a href="../Classes/FunctionalControllerPresenter.html#/s:16VISPER_Presenter020FunctionalControllerB0C28AddPresentationLogicCallbacka">AddPresentationLogicCallback</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+               <span class="nv">loadViewCallback</span><span class="p">:</span> <span class="kt"><a href="../Classes/FunctionalControllerPresenter.html#/s:16VISPER_Presenter020FunctionalControllerB0C16LoadViewCallbacka">LoadViewCallback</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+            <span class="nv">viewDidLoadCallback</span><span class="p">:</span> <span class="kt"><a href="../Classes/FunctionalControllerPresenter.html#/s:16VISPER_Presenter020FunctionalControllerB0C19ViewDidLoadCallbacka">ViewDidLoadCallback</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+         <span class="nv">viewWillAppearCallback</span><span class="p">:</span> <span class="kt"><a href="../Classes/FunctionalControllerPresenter.html#/s:16VISPER_Presenter020FunctionalControllerB0C22ViewWillAppearCallbacka">ViewWillAppearCallback</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+          <span class="nv">viewDidAppearCallback</span><span class="p">:</span> <span class="kt"><a href="../Classes/FunctionalControllerPresenter.html#/s:16VISPER_Presenter020FunctionalControllerB0C21ViewDidAppearCallbacka">ViewDidAppearCallback</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+      <span class="nv">viewWillDisappearCallback</span><span class="p">:</span> <span class="kt"><a href="../Classes/FunctionalControllerPresenter.html#/s:16VISPER_Presenter020FunctionalControllerB0C25ViewWillDisappearCallbacka">ViewWillDisappearCallback</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+       <span class="nv">viewDidDisappearCallback</span><span class="p">:</span> <span class="kt"><a href="../Classes/FunctionalControllerPresenter.html#/s:16VISPER_Presenter020FunctionalControllerB0C24ViewDidDisappearCallbacka">ViewDidDisappearCallback</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+              <span class="nv">willRouteCallback</span><span class="p">:</span> <span class="kt"><a href="../Classes/FunctionalControllerPresenter.html#/s:16VISPER_Presenter020FunctionalControllerB0C17WillRouteCallbacka">WillRouteCallback</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+               <span class="nv">didRouteCallback</span><span class="p">:</span> <span class="kt"><a href="../Classes/FunctionalControllerPresenter.html#/s:16VISPER_Presenter020FunctionalControllerB0C16DidRouteCallbacka">DidRouteCallback</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+    <span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C13isResponsibleSb0A5_Core11RouteResult_p05routeI0_So06UIViewD0C10controllertF"></a>
+                    <a name="//apple_ref/swift/Method/isResponsible(routeResult:controller:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C13isResponsibleSb0A5_Core11RouteResult_p05routeI0_So06UIViewD0C10controllertF">isResponsible(routeResult:controller:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">isResponsible</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">,</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core9PresenterP20addPresentationLogicyAA11RouteResult_p05routeH0_So16UIViewControllerC10controllertKF"></a>
+                    <a name="//apple_ref/swift/Method/addPresentationLogic(routeResult:controller:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core9PresenterP20addPresentationLogicyAA11RouteResult_p05routeH0_So16UIViewControllerC10controllertKF">addPresentationLogic(routeResult:controller:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">addPresentationLogic</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">,</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C4loadySo6UIViewCSg4view_So0fD0C10controllertF"></a>
+                    <a name="//apple_ref/swift/Method/load(view:controller:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C4loadySo6UIViewCSg4view_So0fD0C10controllertF">load(view:controller:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">load</span><span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">?,</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C11viewDidLoadySo6UIViewC0E0_So0hD0C10controllertF"></a>
+                    <a name="//apple_ref/swift/Method/viewDidLoad(view:controller:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C11viewDidLoadySo6UIViewC0E0_So0hD0C10controllertF">viewDidLoad(view:controller:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C14viewWillAppearySb8animated_So6UIViewC0E0So0iD0C10controllertF"></a>
+                    <a name="//apple_ref/swift/Method/viewWillAppear(animated:view:controller:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C14viewWillAppearySb8animated_So6UIViewC0E0So0iD0C10controllertF">viewWillAppear(animated:view:controller:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">viewWillAppear</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C13viewDidAppearySb8animated_So6UIViewC0E0So0iD0C10controllertF"></a>
+                    <a name="//apple_ref/swift/Method/viewDidAppear(animated:view:controller:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C13viewDidAppearySb8animated_So6UIViewC0E0So0iD0C10controllertF">viewDidAppear(animated:view:controller:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">viewDidAppear</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C17viewWillDisappearySb8animated_So6UIViewC0E0So0iD0C10controllertF"></a>
+                    <a name="//apple_ref/swift/Method/viewWillDisappear(animated:view:controller:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C17viewWillDisappearySb8animated_So6UIViewC0E0So0iD0C10controllertF">viewWillDisappear(animated:view:controller:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">viewWillDisappear</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C16viewDidDisappearySb8animated_So6UIViewC0E0So0iD0C10controllertF"></a>
+                    <a name="//apple_ref/swift/Method/viewDidDisappear(animated:view:controller:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C16viewDidDisappearySb8animated_So6UIViewC0E0So0iD0C10controllertF">viewDidDisappear(animated:view:controller:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">viewDidDisappear</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C9willRoutey0A5_Core9Wireframe_p9wireframe_AE0F6Result_p05routeJ0So06UIViewD0C10controllertF"></a>
+                    <a name="//apple_ref/swift/Method/willRoute(wireframe:routeResult:controller:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C9willRoutey0A5_Core9Wireframe_p9wireframe_AE0F6Result_p05routeJ0So06UIViewD0C10controllertF">willRoute(wireframe:routeResult:controller:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">willRoute</span><span class="p">(</span><span class="nv">wireframe</span><span class="p">:</span> <span class="kt">Wireframe</span><span class="p">,</span> <span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">,</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Presenter020FunctionalControllerB0C8didRoutey0A5_Core9Wireframe_p9wireframe_AE0F6Result_p05routeJ0So06UIViewD0C10controllertF"></a>
+                    <a name="//apple_ref/swift/Method/didRoute(wireframe:routeResult:controller:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Presenter020FunctionalControllerB0C8didRoutey0A5_Core9Wireframe_p9wireframe_AE0F6Result_p05routeJ0So06UIViewD0C10controllertF">didRoute(wireframe:routeResult:controller:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">didRoute</span><span class="p">(</span><span class="nv">wireframe</span><span class="p">:</span> <span class="kt">Wireframe</span><span class="p">,</span> <span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">,</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/barteljan/VISPER" target="_blank" rel="external">Jan Bartel</a>. All rights reserved. (Last updated: 2018-07-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

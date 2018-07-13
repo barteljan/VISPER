@@ -1,0 +1,75 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Presenter/Classes/Objc/UIViewController+Presenter.h",
+      "line": 11,
+      "symbol": "UIViewController(Presenter)",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.category",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Presenter/Classes/Objc/UIViewController+Presenter.h",
+      "line": 14,
+      "symbol": "UIViewController(Presenter).visperPresenters",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Presenter/Classes/Objc/UIViewController+Presenter.h",
+      "line": 16,
+      "symbol": "UIViewController(Presenter).-addVisperPresenter:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Presenter/Classes/Objc/UIViewController+Presenter.h",
+      "line": 17,
+      "symbol": "UIViewController(Presenter).-addVisperPresenter:priority:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Presenter/Classes/Objc/UIViewController+Presenter.h",
+      "line": 18,
+      "symbol": "UIViewController(Presenter).-removeVisperPresenter:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Presenter/Classes/Objc/UIViewController+Presenter.h",
+      "line": 19,
+      "symbol": "UIViewController(Presenter).-notifyPresentersOfView:withEvent:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Presenter/Classes/Objc/UIViewController+Presenter.h",
+      "line": 21,
+      "symbol": "UIViewController(Presenter).-retainPresenter:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Presenter/Classes/Objc/ViewControllerEventPresenter.h",
+      "line": 10,
+      "symbol": "ViewControllerEventPresenter",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Presenter/Classes/Objc/ViewControllerEventPresenter.h",
+      "line": 12,
+      "symbol": "ViewControllerEventPresenter.-isResponsible:view:controller:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Presenter/Classes/Objc/ViewControllerEventPresenter.h",
+      "line": 13,
+      "symbol": "ViewControllerEventPresenter.-receivedEvent:view:controller:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/bartel/Documents/lib/VISPER"
+}

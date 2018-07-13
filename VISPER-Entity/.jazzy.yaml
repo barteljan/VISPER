@@ -1,0 +1,11 @@
+---
+min_acl: public
+github_url: https://github.com/barteljan/VISPER.git
+readme: ../docs/README-Entity-Core.md
+author: Jan Bartel
+clean:
+sdk: iphonesimulator
+output: ../docs/VISPER-Entity
+module: VISPER-Entity
+framework_root: Classes
+podspec: "VISPER-Entity.podspec" 

@@ -1,54 +1,54 @@
 PODS:
   - RxSwift (4.2.0)
-  - VISPER (2.3.0):
-    - VISPER-Core (~> 2.1.0)
-    - VISPER-Entity (~> 1.1.0)
-    - VISPER-Objc (~> 2.1.0)
-    - VISPER-Presenter (~> 2.1.0)
-    - VISPER-Swift (~> 2.2.0)
-    - VISPER-Wireframe (~> 2.1.0)
-    - VISPER/Standard (= 2.3.0)
+  - VISPER (3.0.0):
+    - VISPER-Core (~> 3.0.0)
+    - VISPER-Entity (~> 3.0.0)
+    - VISPER-Objc (~> 3.0.0)
+    - VISPER-Presenter (~> 3.0.0)
+    - VISPER-Swift (~> 3.0.0)
+    - VISPER-Wireframe (~> 3.0.0)
+    - VISPER/Standard (= 3.0.0)
   - VISPER-CommandBus (1.0.0)
-  - VISPER-Core (2.1.0)
-  - VISPER-Entity (1.1.1)
-  - VISPER-Objc (2.1.0):
-    - VISPER-Core (~> 2.1.0)
-    - VISPER-Presenter (~> 2.1.0)
-  - VISPER-Presenter (2.1.0):
-    - VISPER-Core (~> 2.1.0)
-  - VISPER-Reactive (2.0.4):
-    - VISPER-Reactive/Standard (= 2.0.4)
-  - VISPER-Reactive/RxSwift (2.0.4):
+  - VISPER-Core (3.0.0)
+  - VISPER-Entity (3.0.0)
+  - VISPER-Objc (3.0.0):
+    - VISPER-Core (~> 3.0.0)
+    - VISPER-Presenter (~> 3.0.0)
+  - VISPER-Presenter (3.0.0):
+    - VISPER-Core (~> 3.0.0)
+  - VISPER-Reactive (3.0.0):
+    - VISPER-Reactive/Standard (= 3.0.0)
+  - VISPER-Reactive/RxSwift (3.0.0):
     - RxSwift (~> 4.0)
-  - VISPER-Reactive/Standard (2.0.4)
-  - VISPER-Redux (2.2.2):
-    - VISPER-Core (~> 2.1.0)
-    - VISPER-Reactive (~> 2.0.0)
+  - VISPER-Reactive/Standard (3.0.0)
+  - VISPER-Redux (3.0.0):
+    - VISPER-Core (~> 3.0.0)
+    - VISPER-Reactive (~> 3.0.0)
   - VISPER-Sourcery (2.2.0):
-    - VISPER-Swift (~> 2.2.0)
-  - VISPER-Swift (2.2.1):
-    - VISPER-Core (~> 2.1.0)
-    - VISPER-Entity (~> 1.1.0)
-    - VISPER-Objc (~> 2.1.0)
-    - VISPER-Presenter (~> 2.1.0)
-    - VISPER-Redux (~> 2.2.2)
-    - VISPER-Wireframe (~> 2.1.0)
-  - VISPER-UIViewController (2.1.1):
-    - VISPER-Objc (~> 2.1.0)
-    - VISPER-Presenter (~> 2.1.0)
-  - VISPER-Wireframe (2.1.0):
-    - VISPER-Core (~> 2.1.0)
-    - VISPER-Objc (~> 2.1.0)
-    - VISPER-Presenter (~> 2.1.0)
-    - VISPER-UIViewController (~> 2.1.0)
-  - VISPER/Standard (2.3.0):
+    - VISPER-Swift (~> 3.0.0)
+  - VISPER-Swift (3.0.0):
+    - VISPER-Core (~> 3.0.0)
+    - VISPER-Entity (~> 3.0.0)
+    - VISPER-Objc (~> 3.0.0)
+    - VISPER-Presenter (~> 3.0.0)
+    - VISPER-Redux (~> 3.0.0)
+    - VISPER-Wireframe (~> 3.0.0)
+  - VISPER-UIViewController (3.0.0):
+    - VISPER-Objc (~> 3.0.0)
+    - VISPER-Presenter (~> 3.0.0)
+  - VISPER-Wireframe (3.0.0):
+    - VISPER-Core (~> 3.0.0)
+    - VISPER-Objc (~> 3.0.0)
+    - VISPER-Presenter (~> 3.0.0)
+    - VISPER-UIViewController (~> 3.0.0)
+  - VISPER/Standard (3.0.0):
     - VISPER-CommandBus
-    - VISPER-Core (~> 2.1.0)
-    - VISPER-Entity (~> 1.1.0)
-    - VISPER-Objc (~> 2.1.0)
-    - VISPER-Presenter (~> 2.1.0)
-    - VISPER-Swift (~> 2.2.0)
-    - VISPER-Wireframe (~> 2.1.0)
+    - VISPER-Core (~> 3.0.0)
+    - VISPER-Entity (~> 3.0.0)
+    - VISPER-Objc (~> 3.0.0)
+    - VISPER-Presenter (~> 3.0.0)
+    - VISPER-Swift (~> 3.0.0)
+    - VISPER-Wireframe (~> 3.0.0)
 
 DEPENDENCIES:
   - RxSwift
@@ -97,18 +97,18 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
-  VISPER: bd9a26605b838ab1ce34581423316b67047072f0
+  VISPER: a510fa76d428330b553957086041413d652ac4b7
   VISPER-CommandBus: b422cb6b8c7b895cc7ecd206adc7fe265e2407b9
-  VISPER-Core: 459c83e17f6369514412b087eee270c5db4a4a63
-  VISPER-Entity: f55e25351b5a4b0b4c79dfb94739a571c4db2d98
-  VISPER-Objc: f5c264e4b92bb58b9b3709164399c5800be4d68c
-  VISPER-Presenter: 9ace4a3c526c743af1c733092091ff64d44c185e
-  VISPER-Reactive: b2e959b5c4e34f7700808272ccd5c3da913ce417
-  VISPER-Redux: 57f63b9b7a143bfac195a54f7e311e3791cc4a47
-  VISPER-Sourcery: 7db8c7553e57b98afb1f04fb92294839d805f65e
-  VISPER-Swift: a4ffce8ad14fca144359535db4f8b688d391657a
-  VISPER-UIViewController: 22fadd96f5b76d85de82c7652b4bf412f5db6bc9
-  VISPER-Wireframe: 95f7d2ff1ae33167479a14370a073b5c66281486
+  VISPER-Core: 6955e96124a23b5c8fb03b8b264854a10891232f
+  VISPER-Entity: e124892615e5f20e86af36ca844735ec8c10f09d
+  VISPER-Objc: 946d958cc0bc90cc0aadb0c625b6becc57828a54
+  VISPER-Presenter: be1967039bc95511e0a41eaac82b40e10efdff5b
+  VISPER-Reactive: 075ea8e07e3e76f19ab054207572b5b1d55223c5
+  VISPER-Redux: 9823f2ba96a3d64fea6fa143e89ed7c42e0e3f01
+  VISPER-Sourcery: c85cfc383154c17d2c42b7649d1b3f2f5526d604
+  VISPER-Swift: 11a4510ce6807d3125b30502c46f21d0d17146e6
+  VISPER-UIViewController: 10a2689d2cb4a4c517493756c57747ea906402fe
+  VISPER-Wireframe: c65e7f3c5f0d6f2b35074990143a4ec8d98866b3
 
 PODFILE CHECKSUM: 1dfac91cbaa343ac3d9e342ac65380cbdba203ff
 

@@ -1,0 +1,12 @@
+---
+min_acl: public
+github_url: https://github.com/barteljan/VISPER.git
+readme: ../docs/README-VISPER-Presenter.md
+author: Jan Bartel
+clean:
+sdk: iphonesimulator
+objc: true
+output: ../docs/VISPER-Presenter/Objc
+module: VISPER-Presenter
+umbrella_header: Classes/Objc/VISPER_Presenter.h 
+framework_root: Classes/Objc

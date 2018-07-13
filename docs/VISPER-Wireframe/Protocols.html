@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Protocols  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Section/Protocols" class="dashAnchor"></a>
+    <a title="Protocols  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">VISPER-Wireframe Docs</a> (32% documented)</p>
+        <p class="header-right"><a href="https://github.com/barteljan/VISPER.git"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">VISPER-Wireframe Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Protocols  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/BackToRoutingPresenter.html">BackToRoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ChildViewControllerTopControllerResolver.html">ChildViewControllerTopControllerResolver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/DefaultComposedControllerDismisser.html">DefaultComposedControllerDismisser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/DefaultComposedControllerProvider.html">DefaultComposedControllerProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/DefaultComposedPresenterProvider.html">DefaultComposedPresenterProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/DefaultComposedRoutingObserver.html">DefaultComposedRoutingObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/DefaultComposedRoutingOptionProvider.html">DefaultComposedRoutingOptionProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/DefaultComposedRoutingPresenter.html">DefaultComposedRoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/DefaultComposedTopControllerResolver.html">DefaultComposedTopControllerResolver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/DefaultControllerContainerAwareRoutingPresenter.html">DefaultControllerContainerAwareRoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/DefaultRouteResultHandler.html">DefaultRouteResultHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/DefaultRouter.html">DefaultRouter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/DefaultRoutingDelegate.html">DefaultRoutingDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/DefaultRoutingHandlerContainer.html">DefaultRoutingHandlerContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/DefaultWireframe.html">DefaultWireframe</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/DefaultWireframeApp.html">DefaultWireframeApp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/FunctionalControllerProvider.html">FunctionalControllerProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/FunctionalRoutingOptionProvider.html">FunctionalRoutingOptionProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ModalControllerDismisser.html">ModalControllerDismisser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ModalRoutingPresenter.html">ModalRoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ModalViewControllerTopControllerResolver.html">ModalViewControllerTopControllerResolver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/NavigationControllerDismisser.html">NavigationControllerDismisser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/NavigationControllerTopControllerResolver.html">NavigationControllerTopControllerResolver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/PushRoutingPresenter.html">PushRoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ReplaceTopVCRoutingPresenter.html">ReplaceTopVCRoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/RootVCRoutingPresenter.html">RootVCRoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ShowRoutingPresenter.html">ShowRoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TabbarControllerTopControllerResolver.html">TabbarControllerTopControllerResolver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/WireframeFactory.html">WireframeFactory</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/BackToRoutingPresenterError.html">BackToRoutingPresenterError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/DefaultComposedControllerProviderError.html">DefaultComposedControllerProviderError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/DefaultWireframeError.html">DefaultWireframeError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/DefautRouterError.html">DefautRouterError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/ModalRoutingPresenterError.html">ModalRoutingPresenterError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/PushRoutingPresenterError.html">PushRoutingPresenterError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/ReplaceTopVCRoutingPresenterError.html">ReplaceTopVCRoutingPresenterError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/RootVCRoutingPresenterError.html">RootVCRoutingPresenterError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/ShowRoutingPresenterError.html">ShowRoutingPresenterError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/UIViewController.html">UIViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/AnimatedRoutingOption.html">AnimatedRoutingOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ComposedControllerDimisser.html">ComposedControllerDimisser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ComposedControllerProvider.html">ComposedControllerProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ComposedPresenterProvider.html">ComposedPresenterProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ComposedRoutingObserver.html">ComposedRoutingObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ComposedRoutingOptionProvider.html">ComposedRoutingOptionProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ComposedRoutingPresenter.html">ComposedRoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ComposedTopControllerResolver.html">ComposedTopControllerResolver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ControllerContainerAwareRoutingPresenter.html">ControllerContainerAwareRoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/PresenterFeature.html">PresenterFeature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/RouteResultHandler.html">RouteResultHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Router.html">Router</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/RoutingHandlerContainer.html">RoutingHandlerContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:16VISPER_Wireframe19RoutingOptionBackToP">RoutingOptionBackTo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:16VISPER_Wireframe26RoutingOptionGetControllerP">RoutingOptionGetController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/RoutingOptionModal.html">RoutingOptionModal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:16VISPER_Wireframe17RoutingOptionPushP">RoutingOptionPush</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:16VISPER_Wireframe25RoutingOptionReplaceTopVCP">RoutingOptionReplaceTopVC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:16VISPER_Wireframe19RoutingOptionRootVCP">RoutingOptionRootVC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:16VISPER_Wireframe17RoutingOptionShowP">RoutingOptionShow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ViewFeature.html">ViewFeature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/WireframeApp.html">WireframeApp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/WireframeFeatureObserver.html">WireframeFeatureObserver</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/DefaultRouteResult.html">DefaultRouteResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/DefaultRoutingBackTo.html">DefaultRoutingBackTo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/DefaultRoutingOptionGetController.html">DefaultRoutingOptionGetController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/DefaultRoutingOptionModal.html">DefaultRoutingOptionModal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/DefaultRoutingOptionPush.html">DefaultRoutingOptionPush</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/DefaultRoutingOptionReplaceTopVC.html">DefaultRoutingOptionReplaceTopVC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/DefaultRoutingOptionRootVC.html">DefaultRoutingOptionRootVC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/DefaultRoutingOptionShow.html">DefaultRoutingOptionShow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/PresenterFeatureObserver.html">PresenterFeatureObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/ViewFeatureObserver.html">ViewFeatureObserver</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Protocols</h1>
+            <p>The following protocols are available globally.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe16PresenterFeatureP"></a>
+                    <a name="//apple_ref/swift/Protocol/PresenterFeature" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe16PresenterFeatureP">PresenterFeature</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/PresenterFeature.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">PresenterFeature</span> <span class="p">:</span> <span class="kt">Feature</span><span class="p">,</span> <span class="kt">PresenterProvider</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe11ViewFeatureP"></a>
+                    <a name="//apple_ref/swift/Protocol/ViewFeature" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe11ViewFeatureP">ViewFeature</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A feature providing a view controller and routing options for a specific route pattern</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Routing options specify how your controller will be presented
+
+</div>
+
+                        <a href="Protocols/ViewFeature.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ViewFeature</span> <span class="p">:</span> <span class="kt">ControllerProvider</span><span class="p">,</span> <span class="kt">Feature</span><span class="p">,</span> <span class="kt">RoutingOptionProvider</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe0B3AppP"></a>
+                    <a name="//apple_ref/swift/Protocol/WireframeApp" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe0B3AppP">WireframeApp</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/WireframeApp.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">WireframeApp</span> <span class="p">:</span> <span class="kt">App</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe0B15FeatureObserverP"></a>
+                    <a name="//apple_ref/swift/Protocol/WireframeFeatureObserver" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe0B15FeatureObserverP">WireframeFeatureObserver</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/WireframeFeatureObserver.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">WireframeFeatureObserver</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe21AnimatedRoutingOptionP"></a>
+                    <a name="//apple_ref/swift/Protocol/AnimatedRoutingOption" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe21AnimatedRoutingOptionP">AnimatedRoutingOption</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/AnimatedRoutingOption.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">AnimatedRoutingOption</span> <span class="p">:</span> <span class="kt">RoutingOption</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe19RoutingOptionBackToP"></a>
+                    <a name="//apple_ref/swift/Protocol/RoutingOptionBackTo" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe19RoutingOptionBackToP">RoutingOptionBackTo</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RoutingOptionBackTo</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AnimatedRoutingOption.html">AnimatedRoutingOption</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe26RoutingOptionGetControllerP"></a>
+                    <a name="//apple_ref/swift/Protocol/RoutingOptionGetController" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe26RoutingOptionGetControllerP">RoutingOptionGetController</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RoutingOptionGetController</span> <span class="p">:</span> <span class="kt">RoutingOption</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe18RoutingOptionModalP"></a>
+                    <a name="//apple_ref/swift/Protocol/RoutingOptionModal" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe18RoutingOptionModalP">RoutingOptionModal</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/RoutingOptionModal.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RoutingOptionModal</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AnimatedRoutingOption.html">AnimatedRoutingOption</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe17RoutingOptionPushP"></a>
+                    <a name="//apple_ref/swift/Protocol/RoutingOptionPush" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe17RoutingOptionPushP">RoutingOptionPush</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RoutingOptionPush</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AnimatedRoutingOption.html">AnimatedRoutingOption</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe25RoutingOptionReplaceTopVCP"></a>
+                    <a name="//apple_ref/swift/Protocol/RoutingOptionReplaceTopVC" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe25RoutingOptionReplaceTopVCP">RoutingOptionReplaceTopVC</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RoutingOptionReplaceTopVC</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AnimatedRoutingOption.html">AnimatedRoutingOption</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe19RoutingOptionRootVCP"></a>
+                    <a name="//apple_ref/swift/Protocol/RoutingOptionRootVC" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe19RoutingOptionRootVCP">RoutingOptionRootVC</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RoutingOptionRootVC</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AnimatedRoutingOption.html">AnimatedRoutingOption</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe17RoutingOptionShowP"></a>
+                    <a name="//apple_ref/swift/Protocol/RoutingOptionShow" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe17RoutingOptionShowP">RoutingOptionShow</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RoutingOptionShow</span> <span class="p">:</span> <span class="kt"><a href="Protocols/AnimatedRoutingOption.html">AnimatedRoutingOption</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe40ControllerContainerAwareRoutingPresenterP"></a>
+                    <a name="//apple_ref/swift/Protocol/ControllerContainerAwareRoutingPresenter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe40ControllerContainerAwareRoutingPresenterP">ControllerContainerAwareRoutingPresenter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/ControllerContainerAwareRoutingPresenter.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ControllerContainerAwareRoutingPresenter</span> <span class="p">:</span> <span class="kt">RoutingPresenter</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe26ComposedControllerDimisserP"></a>
+                    <a name="//apple_ref/swift/Protocol/ComposedControllerDimisser" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe26ComposedControllerDimisserP">ComposedControllerDimisser</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/ComposedControllerDimisser.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ComposedControllerDimisser</span> <span class="p">:</span> <span class="kt">ControllerDismisser</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe26ComposedControllerProviderP"></a>
+                    <a name="//apple_ref/swift/Protocol/ComposedControllerProvider" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe26ComposedControllerProviderP">ComposedControllerProvider</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/ComposedControllerProvider.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ComposedControllerProvider</span> <span class="p">:</span> <span class="kt">ControllerProvider</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe25ComposedPresenterProviderP"></a>
+                    <a name="//apple_ref/swift/Protocol/ComposedPresenterProvider" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe25ComposedPresenterProviderP">ComposedPresenterProvider</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/ComposedPresenterProvider.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ComposedPresenterProvider</span> <span class="p">:</span> <span class="kt">PresenterProvider</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe23ComposedRoutingObserverP"></a>
+                    <a name="//apple_ref/swift/Protocol/ComposedRoutingObserver" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe23ComposedRoutingObserverP">ComposedRoutingObserver</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/ComposedRoutingObserver.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ComposedRoutingObserver</span> <span class="p">:</span> <span class="kt">RoutingObserver</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe29ComposedRoutingOptionProviderP"></a>
+                    <a name="//apple_ref/swift/Protocol/ComposedRoutingOptionProvider" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe29ComposedRoutingOptionProviderP">ComposedRoutingOptionProvider</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/ComposedRoutingOptionProvider.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ComposedRoutingOptionProvider</span> <span class="p">:</span> <span class="kt">RoutingOptionProvider</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe24ComposedRoutingPresenterP"></a>
+                    <a name="//apple_ref/swift/Protocol/ComposedRoutingPresenter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe24ComposedRoutingPresenterP">ComposedRoutingPresenter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/ComposedRoutingPresenter.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ComposedRoutingPresenter</span> <span class="p">:</span> <span class="kt">RoutingPresenter</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe29ComposedTopControllerResolverP"></a>
+                    <a name="//apple_ref/swift/Protocol/ComposedTopControllerResolver" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe29ComposedTopControllerResolverP">ComposedTopControllerResolver</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/ComposedTopControllerResolver.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ComposedTopControllerResolver</span> <span class="p">:</span> <span class="kt">TopControllerResolver</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe18RouteResultHandlerP"></a>
+                    <a name="//apple_ref/swift/Protocol/RouteResultHandler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe18RouteResultHandlerP">RouteResultHandler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/RouteResultHandler.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RouteResultHandler</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe6RouterP"></a>
+                    <a name="//apple_ref/swift/Protocol/Router" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe6RouterP">Router</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An instance resolving urls to route patterns returning RouteResults</p>
+
+                        <a href="Protocols/Router.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Router</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe23RoutingHandlerContainerP"></a>
+                    <a name="//apple_ref/swift/Protocol/RoutingHandlerContainer" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe23RoutingHandlerContainerP">RoutingHandlerContainer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Protocols/RoutingHandlerContainer.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RoutingHandlerContainer</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/barteljan/VISPER" target="_blank" rel="external">Jan Bartel</a>. All rights reserved. (Last updated: 2018-07-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

@@ -1,0 +1,1286 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/AnyVISPERApp.swift",
+      "line": 113,
+      "symbol": "AnyVISPERApp.ApplicationState",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/AnyVISPERApp.swift",
+      "line": 117,
+      "symbol": "AnyVISPERApp.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/ApplicationFactory.swift",
+      "line": 17,
+      "symbol": "ApplicationFactory.wireframeFactory",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/ApplicationFactory.swift",
+      "line": 18,
+      "symbol": "ApplicationFactory.strictReduxMode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/ApplicationFactory.swift",
+      "line": 20,
+      "symbol": "ApplicationFactory.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/ApplicationFactory.swift",
+      "line": 64,
+      "symbol": "ApplicationFactory.addDefaultFeatureObserver(application:controllerContainer:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/DefaultStatefulFeature.swift",
+      "line": 11,
+      "symbol": "DefaultStatefulFeature",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/DefaultStatefulFeature.swift",
+      "line": 13,
+      "symbol": "DefaultStatefulFeature.StateType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/DefaultStatefulFeature.swift",
+      "line": 15,
+      "symbol": "DefaultStatefulFeature.getState",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/DefaultStatefulFeature.swift",
+      "line": 17,
+      "symbol": "DefaultStatefulFeature.init(getState:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StateObservingFeature.swift",
+      "line": 11,
+      "symbol": "StateObservingFeatureError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StateObservingFeature.swift",
+      "line": 12,
+      "symbol": "StateObservingFeatureError.methodNotImplemented",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StateObservingFeature.swift",
+      "line": 15,
+      "symbol": "StateObservingFeature",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StateObservingFeature.swift",
+      "line": 17,
+      "symbol": "StateObservingFeature.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StateObservingFeature.swift",
+      "line": 21,
+      "symbol": "StateObservingFeature.observe(state:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StateObservingFeatureObserver.swift",
+      "line": 13,
+      "symbol": "StateObservingFeatureObserver",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StateObservingFeatureObserver.swift",
+      "line": 15,
+      "symbol": "StateObservingFeatureObserver.AppState",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StateObservingFeatureObserver.swift",
+      "line": 20,
+      "symbol": "StateObservingFeatureObserver.init(state:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StateObservingFeatureObserver.swift",
+      "line": 24,
+      "symbol": "StateObservingFeatureObserver.featureAdded(application:feature:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StatefulFeature.swift",
+      "line": 11,
+      "symbol": "StatefulFeature",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StatefulFeature.swift",
+      "line": 12,
+      "symbol": "StatefulFeature.StateType",
+      "symbol_kind": "source.lang.swift.decl.associatedtype",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StatefulFeature.swift",
+      "line": 13,
+      "symbol": "StatefulFeature.getState",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/VISPERApp.swift",
+      "line": 23,
+      "symbol": "VISPERApp.ApplicationObservableProperty",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/VISPERApp.swift",
+      "line": 28,
+      "symbol": "VISPERApp.init(reduxApp:wireframeApp:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/VISPERApp.swift",
+      "line": 35,
+      "symbol": "VISPERApp.init(reduxApp:wireframe:controllerContainer:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/VISPERApp.swift",
+      "line": 45,
+      "symbol": "VISPERApp.init(redux:wireframe:controllerContainer:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/VISPERAppType.swift",
+      "line": 22,
+      "symbol": "VISPERAppType.ApplicationState",
+      "symbol_kind": "source.lang.swift.decl.associatedtype",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/VISPERAppType.swift",
+      "line": 31,
+      "symbol": "VISPERAppType.redux",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 11,
+      "symbol": "Action",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 12,
+      "symbol": "ActionDispatcher",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 13,
+      "symbol": "App",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 14,
+      "symbol": "ControllerContainer",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 15,
+      "symbol": "ControllerDismisser",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 16,
+      "symbol": "ControllerPresenter",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 17,
+      "symbol": "ControllerProvider",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 18,
+      "symbol": "DefaultApp",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 19,
+      "symbol": "Feature",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 20,
+      "symbol": "FeatureObserver",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 21,
+      "symbol": "Presenter",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 22,
+      "symbol": "PresenterProvider",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 23,
+      "symbol": "RouteResult",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 24,
+      "symbol": "RoutingAwareViewController",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 25,
+      "symbol": "RoutingDelegate",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 26,
+      "symbol": "RoutingHandler",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 27,
+      "symbol": "RoutingObserver",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 28,
+      "symbol": "RoutingOption",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 29,
+      "symbol": "RoutingOptionProvider",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 30,
+      "symbol": "RoutingPresenter",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 31,
+      "symbol": "TopControllerResolver",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Core.swift",
+      "line": 32,
+      "symbol": "Wireframe",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Entity.swift",
+      "line": 12,
+      "symbol": "CanBeIdentified",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Entity.swift",
+      "line": 13,
+      "symbol": "ComposedEntityStore",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Entity.swift",
+      "line": 14,
+      "symbol": "Entity",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Entity.swift",
+      "line": 15,
+      "symbol": "EntityStore",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Entity.swift",
+      "line": 16,
+      "symbol": "FunctionalEntityStore",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Entity.swift",
+      "line": 17,
+      "symbol": "MemoryEntityStore",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Entity.swift",
+      "line": 18,
+      "symbol": "TypedEntityStore",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Objc.swift",
+      "line": 11,
+      "symbol": "ControllerPresenterObjc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Objc.swift",
+      "line": 12,
+      "symbol": "ControllerProviderObjcType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Objc.swift",
+      "line": 13,
+      "symbol": "ControllerProviderObjc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Objc.swift",
+      "line": 14,
+      "symbol": "PresenterObjcType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Objc.swift",
+      "line": 15,
+      "symbol": "PresenterObjc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Objc.swift",
+      "line": 16,
+      "symbol": "PresenterProviderObjcType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Objc.swift",
+      "line": 17,
+      "symbol": "PresenterProviderObjc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Objc.swift",
+      "line": 18,
+      "symbol": "RouteResultObjcType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Objc.swift",
+      "line": 19,
+      "symbol": "RouteResultObjc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Objc.swift",
+      "line": 20,
+      "symbol": "RoutingAwareViewControllerObjc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Objc.swift",
+      "line": 21,
+      "symbol": "RoutingDelegateObjc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Objc.swift",
+      "line": 22,
+      "symbol": "RoutingObserverObjcType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Objc.swift",
+      "line": 23,
+      "symbol": "RoutingObserverObjc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Objc.swift",
+      "line": 24,
+      "symbol": "RoutingOptionObjc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Objc.swift",
+      "line": 25,
+      "symbol": "RoutingOptionProviderObjcType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Objc.swift",
+      "line": 26,
+      "symbol": "RoutingOptionProviderObjc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Objc.swift",
+      "line": 27,
+      "symbol": "RoutingPresenterObjcType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Objc.swift",
+      "line": 28,
+      "symbol": "RoutingPresenterObjc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Objc.swift",
+      "line": 29,
+      "symbol": "WireframeObjc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Presenter.swift",
+      "line": 11,
+      "symbol": "FunctionalControllerPresenter",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Presenter.swift",
+      "line": 12,
+      "symbol": "FunctionalPresenter",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Presenter.swift",
+      "line": 13,
+      "symbol": "LifecycleEvent",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Presenter.swift",
+      "line": 14,
+      "symbol": "LoadViewEvent",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Presenter.swift",
+      "line": 15,
+      "symbol": "ViewDidLoadEvent",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Presenter.swift",
+      "line": 16,
+      "symbol": "ViewWillAppearEvent",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Presenter.swift",
+      "line": 17,
+      "symbol": "ViewDidAppearEvent",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Presenter.swift",
+      "line": 18,
+      "symbol": "ViewWillDisappearEvent",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Presenter.swift",
+      "line": 19,
+      "symbol": "ViewDidDisappearEvent",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Presenter.swift",
+      "line": 20,
+      "symbol": "ViewControllerEventPresenter",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Presenter.swift",
+      "line": 21,
+      "symbol": "ViewControllerLifecycleEventPresenter",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Reactive.swift",
+      "line": 11,
+      "symbol": "ObservableProperty",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Reactive.swift",
+      "line": 12,
+      "symbol": "StreamType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Reactive.swift",
+      "line": 13,
+      "symbol": "SubscriptionReferenceBag",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Reactive.swift",
+      "line": 14,
+      "symbol": "SubscriptionReferenceType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 11,
+      "symbol": "ActionReducer",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 12,
+      "symbol": "ActionReducerType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 13,
+      "symbol": "AnyActionReducer",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 14,
+      "symbol": "AnyAsyncActionReducer",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 15,
+      "symbol": "AnyReduxApp",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 16,
+      "symbol": "AnyStatefulFeatureObserver",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 17,
+      "symbol": "AppReducer",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 18,
+      "symbol": "AsyncActionReducer",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 19,
+      "symbol": "AsyncActionReducerType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 20,
+      "symbol": "DefaultReduxApp",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 21,
+      "symbol": "FunctionalReducer",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 22,
+      "symbol": "LogicFeature",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 23,
+      "symbol": "LogicFeatureObserver",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 24,
+      "symbol": "Middleware",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 25,
+      "symbol": "ReducerContainer",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 26,
+      "symbol": "ReducerProvider",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 27,
+      "symbol": "Redux",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 28,
+      "symbol": "ReduxApp",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 29,
+      "symbol": "StatefulFeatureObserver",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 30,
+      "symbol": "Store",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-UIViewController.swift",
+      "line": 11,
+      "symbol": "DefaultControllerContainer",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 11,
+      "symbol": "ModalControllerDismisser",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 12,
+      "symbol": "NavigationControllerDismisser",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 14,
+      "symbol": "AnimatedRoutingOption",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 15,
+      "symbol": "RoutingOptionBackTo",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 16,
+      "symbol": "DefaultRoutingBackTo",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 17,
+      "symbol": "RoutingOptionGetController",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 18,
+      "symbol": "DefaultRoutingOptionGetController",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 19,
+      "symbol": "RoutingOptionModal",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 20,
+      "symbol": "DefaultRoutingOptionModal",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 21,
+      "symbol": "RoutingOptionPush",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 22,
+      "symbol": "DefaultRoutingOptionPush",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 23,
+      "symbol": "RoutingOptionReplaceTopVC",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 24,
+      "symbol": "DefaultRoutingOptionReplaceTopVC",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 25,
+      "symbol": "RoutingOptionRootVC",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 26,
+      "symbol": "DefaultRoutingOptionRootVC",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 27,
+      "symbol": "RoutingOptionShow",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 28,
+      "symbol": "DefaultRoutingOptionShow",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 30,
+      "symbol": "BackToRoutingPresenterError",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 31,
+      "symbol": "BackToRoutingPresenter",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 32,
+      "symbol": "ControllerContainerAwareRoutingPresenter",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 33,
+      "symbol": "DefaultControllerContainerAwareRoutingPresenter",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 34,
+      "symbol": "ModalRoutingPresenterError",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 35,
+      "symbol": "ModalRoutingPresenter",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 36,
+      "symbol": "PushRoutingPresenterError",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 37,
+      "symbol": "PushRoutingPresenter",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 38,
+      "symbol": "ReplaceTopVCRoutingPresenterError",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 39,
+      "symbol": "ReplaceTopVCRoutingPresenter",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 40,
+      "symbol": "RootVCRoutingPresenterError",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 41,
+      "symbol": "RootVCRoutingPresenter",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 42,
+      "symbol": "ShowRoutingPresenterError",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 43,
+      "symbol": "ShowRoutingPresenter",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 45,
+      "symbol": "ChildViewControllerTopControllerResolver",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 46,
+      "symbol": "ModalViewControllerTopControllerResolver",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 47,
+      "symbol": "NavigationControllerTopControllerResolver",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 48,
+      "symbol": "TabbarControllerTopControllerResolver",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 51,
+      "symbol": "ComposedControllerDimisser",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 52,
+      "symbol": "ComposedControllerProvider",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 53,
+      "symbol": "ComposedPresenterProvider",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 54,
+      "symbol": "ComposedRoutingObserver",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 55,
+      "symbol": "ComposedRoutingOptionProvider",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 56,
+      "symbol": "ComposedRoutingPresenter",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 57,
+      "symbol": "ComposedTopControllerResolver",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 58,
+      "symbol": "DefaultComposedControllerDismisser",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 59,
+      "symbol": "DefaultComposedControllerProviderError",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 60,
+      "symbol": "DefaultComposedControllerProvider",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 61,
+      "symbol": "DefaultComposedPresenterProvider",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 62,
+      "symbol": "DefaultComposedRoutingObserver",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 63,
+      "symbol": "DefaultComposedRoutingOptionProvider",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 64,
+      "symbol": "DefaultComposedRoutingPresenter",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 65,
+      "symbol": "DefaultComposedTopControllerResolver",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 66,
+      "symbol": "DefautRouterError",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 67,
+      "symbol": "DefaultRouter",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 68,
+      "symbol": "DefaultRouteResult",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 69,
+      "symbol": "DefaultRouteResultHandler",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 70,
+      "symbol": "DefaultRoutingDelegate",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 71,
+      "symbol": "DefaultRoutingHandlerContainer",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 72,
+      "symbol": "DefaultWireframeError",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 73,
+      "symbol": "DefaultWireframe",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 74,
+      "symbol": "FunctionalControllerProvider",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 75,
+      "symbol": "FunctionalRoutingOptionProvider",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 76,
+      "symbol": "Router",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 77,
+      "symbol": "RouteResultHandler",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 78,
+      "symbol": "RoutingHandlerContainer",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 79,
+      "symbol": "WireframeFactory",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 81,
+      "symbol": "DefaultWireframeApp",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 82,
+      "symbol": "PresenterFeature",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 83,
+      "symbol": "PresenterFeatureObserver",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 84,
+      "symbol": "ViewFeature",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 85,
+      "symbol": "ViewFeatureObserver",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 86,
+      "symbol": "WireframeApp",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 87,
+      "symbol": "WireframeFeatureObserver",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/bartel/Documents/lib/VISPER"
+}

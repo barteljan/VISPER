@@ -1,0 +1,11 @@
+---
+min_acl: public
+github_url: https://github.com/barteljan/VISPER.git
+readme: ../docs/README-Wireframe-Core.md
+author: Jan Bartel
+clean:
+sdk: iphonesimulator
+output: ../docs/VISPER-Wireframe
+module: VISPER-Wireframe
+framework_root: Classes
+podspec: "VISPER-Wireframe.podspec" 

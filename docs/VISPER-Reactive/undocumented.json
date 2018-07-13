@@ -1,0 +1,313 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 30,
+      "symbol": "ObservableProperty.DisposableType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 30,
+      "symbol": "ObservableProperty.DisposableType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 30,
+      "symbol": "ObservableProperty.DisposableType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 31,
+      "symbol": "ObservableProperty.ObservablePropertySubscriptionReferenceType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 31,
+      "symbol": "ObservableProperty.ObservablePropertySubscriptionReferenceType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 31,
+      "symbol": "ObservableProperty.ObservablePropertySubscriptionReferenceType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 41,
+      "symbol": "ObservableProperty.value",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 41,
+      "symbol": "ObservableProperty.value",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 41,
+      "symbol": "ObservableProperty.value",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 59,
+      "symbol": "ObservableProperty.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 59,
+      "symbol": "ObservableProperty.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 59,
+      "symbol": "ObservableProperty.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 64,
+      "symbol": "ObservableProperty.subscribe(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 64,
+      "symbol": "ObservableProperty.subscribe(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 64,
+      "symbol": "ObservableProperty.subscribe(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 73,
+      "symbol": "ObservableProperty.map(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 73,
+      "symbol": "ObservableProperty.map(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 73,
+      "symbol": "ObservableProperty.map(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 77,
+      "symbol": "ObservableProperty.map(referenceBag:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 77,
+      "symbol": "ObservableProperty.map(referenceBag:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 77,
+      "symbol": "ObservableProperty.map(referenceBag:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 93,
+      "symbol": "ObservableProperty.distinct(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 93,
+      "symbol": "ObservableProperty.distinct(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 93,
+      "symbol": "ObservableProperty.distinct(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 97,
+      "symbol": "ObservableProperty.distinct(referenceBag:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 97,
+      "symbol": "ObservableProperty.distinct(referenceBag:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 97,
+      "symbol": "ObservableProperty.distinct(referenceBag:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 118,
+      "symbol": "ObservableProperty.deliveredOn(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 118,
+      "symbol": "ObservableProperty.deliveredOn(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 118,
+      "symbol": "ObservableProperty.deliveredOn(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 122,
+      "symbol": "ObservableProperty.deliveredOn(referenceBag:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 122,
+      "symbol": "ObservableProperty.deliveredOn(referenceBag:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 122,
+      "symbol": "ObservableProperty.deliveredOn(referenceBag:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 139,
+      "symbol": "ObservableProperty.distinct()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 139,
+      "symbol": "ObservableProperty.distinct()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 139,
+      "symbol": "ObservableProperty.distinct()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 143,
+      "symbol": "ObservableProperty.distinct(referenceBag:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 143,
+      "symbol": "ObservableProperty.distinct(referenceBag:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/ObservableProperty.swift",
+      "line": 143,
+      "symbol": "ObservableProperty.distinct(referenceBag:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/UIViewController+SubscriptionReferenceBag.swift",
+      "line": 24,
+      "symbol": "UIViewController.defaultSubscriptionReferenceBag",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/UIViewController+SubscriptionReferenceBag.swift",
+      "line": 24,
+      "symbol": "UIViewController.defaultSubscriptionReferenceBag",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/Core/UIViewController+SubscriptionReferenceBag.swift",
+      "line": 24,
+      "symbol": "UIViewController.defaultSubscriptionReferenceBag",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/RxSwift/ObservableProperty+RxSwift.swift",
+      "line": 12,
+      "symbol": "ObservableProperty.asObservable()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Reactive/Classes/RxSwift/UIViewController+DisposeBag.swift",
+      "line": 25,
+      "symbol": "UIViewController.defaultDisposeBag",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/bartel/Documents/lib/VISPER"
+}

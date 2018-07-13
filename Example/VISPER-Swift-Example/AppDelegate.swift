@@ -82,9 +82,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let observingFeature = ObservingFeature()
         try! self.visperApplication.add(feature: observingFeature)
+
         
     }
-
 
 }
 

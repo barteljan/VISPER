@@ -1,0 +1,383 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ActionReducer.swift",
+      "line": 14,
+      "symbol": "ActionReducer.ReducerActionType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ActionReducer.swift",
+      "line": 15,
+      "symbol": "ActionReducer.ReducerStateType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ActionReducer.swift",
+      "line": 20,
+      "symbol": "ActionReducer.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ActionReducerType.swift",
+      "line": 14,
+      "symbol": "ActionReducerType.ReducerStateType",
+      "symbol_kind": "source.lang.swift.decl.associatedtype",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ActionReducerType.swift",
+      "line": 15,
+      "symbol": "ActionReducerType.ReducerActionType",
+      "symbol_kind": "source.lang.swift.decl.associatedtype",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/AnyReduxApp.swift",
+      "line": 73,
+      "symbol": "AnyReduxApp.ApplicationState",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/AnyReduxApp.swift",
+      "line": 77,
+      "symbol": "AnyReduxApp.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/AnyStatefulFeatureObserver.swift",
+      "line": 38,
+      "symbol": "AnyStatefulFeatureObserver.AppState",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/AnyStatefulFeatureObserver.swift",
+      "line": 42,
+      "symbol": "AnyStatefulFeatureObserver.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/AnyStatefulFeatureObserver.swift",
+      "line": 46,
+      "symbol": "AnyStatefulFeatureObserver.featureAdded(application:feature:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/AppReducer.swift",
+      "line": 11,
+      "symbol": "AppReducer",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/AsyncActionReducer.swift",
+      "line": 14,
+      "symbol": "AsyncActionReducer.ReducerActionType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/AsyncActionReducer.swift",
+      "line": 15,
+      "symbol": "AsyncActionReducer.ReducerStateType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/AsyncActionReducer.swift",
+      "line": 21,
+      "symbol": "AsyncActionReducer.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/AsyncActionReducerType.swift",
+      "line": 16,
+      "symbol": "AsyncActionReducerType.ReducerStateType",
+      "symbol_kind": "source.lang.swift.decl.associatedtype",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/AsyncActionReducerType.swift",
+      "line": 17,
+      "symbol": "AsyncActionReducerType.ReducerActionType",
+      "symbol_kind": "source.lang.swift.decl.associatedtype",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/DefaultReduxApp.swift",
+      "line": 12,
+      "symbol": "DefaultReduxApp",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/DefaultReduxApp.swift",
+      "line": 14,
+      "symbol": "DefaultReduxApp.ApplicationObservableProperty",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/DefaultReduxApp.swift",
+      "line": 27,
+      "symbol": "DefaultReduxApp.init(redux:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/FunctionalReducer.swift",
+      "line": 14,
+      "symbol": "FunctionalReducer.ReducerActionType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/FunctionalReducer.swift",
+      "line": 15,
+      "symbol": "FunctionalReducer.ReducerStateType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/LogicFeature.swift",
+      "line": 13,
+      "symbol": "LogicFeature.injectReducers(container:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/LogicFeatureObserver.swift",
+      "line": 14,
+      "symbol": "LogicFeatureObserver.AppState",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/LogicFeatureObserver.swift",
+      "line": 16,
+      "symbol": "LogicFeatureObserver.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/LogicFeatureObserver.swift",
+      "line": 18,
+      "symbol": "LogicFeatureObserver.featureAdded(application:feature:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/Middleware.swift",
+      "line": 15,
+      "symbol": "Middleware.DispatchFunction",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/Middleware.swift",
+      "line": 16,
+      "symbol": "Middleware.GetState",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/Middleware.swift",
+      "line": 74,
+      "symbol": "Middleware.increase(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ReducerContainer.swift",
+      "line": 33,
+      "symbol": "StateChangingReducerContainer",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ReducerContainer.swift",
+      "line": 34,
+      "symbol": "StateChangingReducerContainer.dispatchStateChangeActionCallback",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ReducerContainer.swift",
+      "line": 38,
+      "symbol": "ReducerContainerImpl",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ReducerContainer.swift",
+      "line": 42,
+      "symbol": "ReducerContainerImpl.dispatchStateChangeActionCallback",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ReducerContainer.swift",
+      "line": 44,
+      "symbol": "ReducerContainerImpl.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/Redux.swift",
+      "line": 11,
+      "symbol": "Redux",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/Redux.swift",
+      "line": 13,
+      "symbol": "Redux.store",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/Redux.swift",
+      "line": 15,
+      "symbol": "Redux.reducerContainer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/Redux.swift",
+      "line": 17,
+      "symbol": "Redux.reducerProvider",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/Redux.swift",
+      "line": 23,
+      "symbol": "Redux.actionDispatcher",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/Redux.swift",
+      "line": 29,
+      "symbol": "Redux.init(initialState:middleware:reducerContainer:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/Redux.swift",
+      "line": 45,
+      "symbol": "Redux.init(appReducer:initialState:middleware:reducerContainer:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ReduxApp.swift",
+      "line": 13,
+      "symbol": "ReduxApp",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ReduxApp.swift",
+      "line": 15,
+      "symbol": "ReduxApp.ApplicationState",
+      "symbol_kind": "source.lang.swift.decl.associatedtype",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/StatefulFeatureObserver.swift",
+      "line": 13,
+      "symbol": "StatefulFeatureObserver.AppState",
+      "symbol_kind": "source.lang.swift.decl.associatedtype",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/StatefulFeatureObserver.swift",
+      "line": 14,
+      "symbol": "StatefulFeatureObserver.featureAdded(application:feature:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/Store.swift",
+      "line": 12,
+      "symbol": "Store",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/Store.swift",
+      "line": 14,
+      "symbol": "Store.StoreMiddleware",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/Store.swift",
+      "line": 15,
+      "symbol": "Store.StoreReducer",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/Store.swift",
+      "line": 17,
+      "symbol": "Store.observableState",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/Store.swift",
+      "line": 24,
+      "symbol": "Store.init(appReducer:intialState:reducerContainer:middleware:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/Store.swift",
+      "line": 47,
+      "symbol": "Store.dispatch(_:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/Store.swift",
+      "line": 69,
+      "symbol": "Store.dispatch(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/UpdateStateWithSubstateAction.swift",
+      "line": 11,
+      "symbol": "UpdateStateWithSubStateAction",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/UpdateStateWithSubstateAction.swift",
+      "line": 13,
+      "symbol": "UpdateStateWithSubStateAction.subState",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/UpdateStateWithSubstateAction.swift",
+      "line": 15,
+      "symbol": "UpdateStateWithSubStateAction.init(subState:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/bartel/Documents/lib/VISPER"
+}

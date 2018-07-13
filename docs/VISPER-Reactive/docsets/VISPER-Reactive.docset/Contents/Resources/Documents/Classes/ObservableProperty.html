@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ObservableProperty Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/ObservableProperty" class="dashAnchor"></a>
+    <a title="ObservableProperty Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">VISPER-Reactive Docs</a> (59% documented)</p>
+        <p class="header-right"><a href="https://github.com/barteljan/VISPER.git"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">VISPER-Reactive Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ObservableProperty Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ObservableProperty.html">ObservableProperty</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SubscriptionReferenceBag.html">SubscriptionReferenceBag</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/UIViewController.html">UIViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/StreamType.html">StreamType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SubscriptionReferenceType.html">SubscriptionReferenceType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/ObservablePropertySubscriptionReference.html">ObservablePropertySubscriptionReference</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ObservableProperty</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ObservableProperty</span><span class="o">&lt;</span><span class="kt">ValueType</span><span class="o">&gt;</span></code></pre>
+
+                </div>
+              </div>
+            <p>This class is the default implementation of the <code>DefaultObservablePropertyType</code> protocol. It is recommended
+that you do not use this observable and instead use an observable from a full FRP library.
+The existence of this class is to make ReactiveReSwift fully functional without third party libararies.</p>
+
+<ul>
+<li>This class was renamed to ObservableProperty and modified by Jan Bartel.
+*</li>
+</ul>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15VISPER_Reactive18ObservablePropertyC14DisposableTypea"></a>
+                    <a name="//apple_ref/swift/Alias/DisposableType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15VISPER_Reactive18ObservablePropertyC14DisposableTypea">DisposableType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">DisposableType</span> <span class="o">=</span> <span class="kt"><a href="../Classes/ObservableProperty.html#/s:15VISPER_Reactive18ObservablePropertyC0cD25SubscriptionReferenceTypea">ObservablePropertySubscriptionReferenceType</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15VISPER_Reactive18ObservablePropertyC0cD25SubscriptionReferenceTypea"></a>
+                    <a name="//apple_ref/swift/Alias/ObservablePropertySubscriptionReferenceType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15VISPER_Reactive18ObservablePropertyC0cD25SubscriptionReferenceTypea">ObservablePropertySubscriptionReferenceType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">ObservablePropertySubscriptionReferenceType</span> <span class="o">=</span> <span class="kt"><a href="../Structs/ObservablePropertySubscriptionReference.html">ObservablePropertySubscriptionReference</a></span><span class="o">&lt;</span><span class="kt">ValueType</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15VISPER_Reactive18ObservablePropertyC5valuexvp"></a>
+                    <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15VISPER_Reactive18ObservablePropertyC5valuexvp">value</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">ValueType</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15VISPER_Reactive18ObservablePropertyCACyxGxcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15VISPER_Reactive18ObservablePropertyCACyxGxcfc">init(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">ValueType</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15VISPER_Reactive18ObservablePropertyC9subscribeAA0cD21SubscriptionReferenceVyxGSgyxcF"></a>
+                    <a name="//apple_ref/swift/Method/subscribe(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15VISPER_Reactive18ObservablePropertyC9subscribeAA0cD21SubscriptionReferenceVyxGSgyxcF">subscribe(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">subscribe</span><span class="p">(</span><span class="n">_</span> <span class="nv">function</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">ValueType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/ObservableProperty.html#/s:15VISPER_Reactive18ObservablePropertyC14DisposableTypea">DisposableType</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15VISPER_Reactive18ObservablePropertyC3mapACyqd__Gqd__xclF"></a>
+                    <a name="//apple_ref/swift/Method/map(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15VISPER_Reactive18ObservablePropertyC3mapACyqd__Gqd__xclF">map(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">map</span><span class="o">&lt;</span><span class="kt">U</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">transform</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">ValueType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">U</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ObservableProperty</span><span class="o">&lt;</span><span class="kt">U</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15VISPER_Reactive18ObservablePropertyC3mapACyqd__GAA24SubscriptionReferenceBagCSg09referenceH0_qd__xctlF"></a>
+                    <a name="//apple_ref/swift/Method/map(referenceBag:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15VISPER_Reactive18ObservablePropertyC3mapACyqd__GAA24SubscriptionReferenceBagCSg09referenceH0_qd__xctlF">map(referenceBag:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">map</span><span class="o">&lt;</span><span class="kt">U</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">referenceBag</span><span class="p">:</span> <span class="kt"><a href="../Classes/SubscriptionReferenceBag.html">SubscriptionReferenceBag</a></span><span class="p">?,</span><span class="n">_</span> <span class="nv">transform</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">ValueType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">U</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ObservableProperty</span><span class="o">&lt;</span><span class="kt">U</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15VISPER_Reactive18ObservablePropertyC8distinctACyxGSbx_xtcF"></a>
+                    <a name="//apple_ref/swift/Method/distinct(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15VISPER_Reactive18ObservablePropertyC8distinctACyxGSbx_xtcF">distinct(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">distinct</span><span class="p">(</span><span class="n">_</span> <span class="nv">equal</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">ValueType</span><span class="p">,</span> <span class="kt">ValueType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ObservableProperty</span><span class="o">&lt;</span><span class="kt">ValueType</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15VISPER_Reactive18ObservablePropertyC8distinctACyxGAA24SubscriptionReferenceBagCSg09referenceH0_Sbx_xtctF"></a>
+                    <a name="//apple_ref/swift/Method/distinct(referenceBag:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15VISPER_Reactive18ObservablePropertyC8distinctACyxGAA24SubscriptionReferenceBagCSg09referenceH0_Sbx_xtctF">distinct(referenceBag:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">distinct</span><span class="p">(</span><span class="nv">referenceBag</span><span class="p">:</span> <span class="kt"><a href="../Classes/SubscriptionReferenceBag.html">SubscriptionReferenceBag</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">equal</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">ValueType</span><span class="p">,</span> <span class="kt">ValueType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ObservableProperty</span><span class="o">&lt;</span><span class="kt">ValueType</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15VISPER_Reactive18ObservablePropertyC11deliveredOnACyxGSo13DispatchQueueCF"></a>
+                    <a name="//apple_ref/swift/Method/deliveredOn(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15VISPER_Reactive18ObservablePropertyC11deliveredOnACyxGSo13DispatchQueueCF">deliveredOn(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">deliveredOn</span><span class="p">(</span><span class="n">_</span> <span class="nv">queue</span><span class="p">:</span> <span class="kt">DispatchQueue</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ObservableProperty</span><span class="o">&lt;</span><span class="kt">ValueType</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15VISPER_Reactive18ObservablePropertyC11deliveredOnACyxGAA24SubscriptionReferenceBagCSg09referenceI0_So13DispatchQueueCtF"></a>
+                    <a name="//apple_ref/swift/Method/deliveredOn(referenceBag:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15VISPER_Reactive18ObservablePropertyC11deliveredOnACyxGAA24SubscriptionReferenceBagCSg09referenceI0_So13DispatchQueueCtF">deliveredOn(referenceBag:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">deliveredOn</span><span class="p">(</span><span class="nv">referenceBag</span><span class="p">:</span> <span class="kt"><a href="../Classes/SubscriptionReferenceBag.html">SubscriptionReferenceBag</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">queue</span><span class="p">:</span> <span class="kt">DispatchQueue</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ObservableProperty</span><span class="o">&lt;</span><span class="kt">ValueType</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15VISPER_Reactive18ObservablePropertyCAAs9EquatableRzlE8distinctACyxGyF"></a>
+                    <a name="//apple_ref/swift/Method/distinct()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15VISPER_Reactive18ObservablePropertyCAAs9EquatableRzlE8distinctACyxGyF">distinct()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">distinct</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">ObservableProperty</span><span class="o">&lt;</span><span class="kt">ValueType</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15VISPER_Reactive18ObservablePropertyCAAs9EquatableRzlE8distinctACyxGAA24SubscriptionReferenceBagCSg09referenceI0_tF"></a>
+                    <a name="//apple_ref/swift/Method/distinct(referenceBag:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15VISPER_Reactive18ObservablePropertyCAAs9EquatableRzlE8distinctACyxGAA24SubscriptionReferenceBagCSg09referenceI0_tF">distinct(referenceBag:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">distinct</span><span class="p">(</span><span class="nv">referenceBag</span><span class="p">:</span> <span class="kt"><a href="../Classes/SubscriptionReferenceBag.html">SubscriptionReferenceBag</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">ObservableProperty</span><span class="o">&lt;</span><span class="kt">ValueType</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15VISPER_Reactive18ObservablePropertyC02asC07RxSwift0C0CyxGyF"></a>
+                    <a name="//apple_ref/swift/Method/asObservable()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15VISPER_Reactive18ObservablePropertyC02asC07RxSwift0C0CyxGyF">asObservable()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">asObservable</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Observable</span><span class="o">&lt;</span><span class="kt">ValueType</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/barteljan/VISPER" target="_blank" rel="external">Jan Bartel</a>. All rights reserved. (Last updated: 2018-07-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

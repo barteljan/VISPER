@@ -251,6 +251,18 @@
 		9A0D1A141FE13C7100567A88 /* MockViewControllerLifecycleEventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewControllerLifecycleEventPresenter.swift; sourceTree = "<group>"; };
 		9A0D1A161FE13FD900567A88 /* ViewControllerLifecycleEventPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLifecycleEventPresenterTests.swift; sourceTree = "<group>"; };
 		9A0E1594208E20D3006388F2 /* ObservingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservingFeature.swift; sourceTree = "<group>"; };
+		9A15018D20F885D300CDB8FC /* README-VISPER-Sourcery.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README-VISPER-Sourcery.md"; sourceTree = "<group>"; };
+		9A15018F20F885D300CDB8FC /* README-VISPER-Swift.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README-VISPER-Swift.md"; sourceTree = "<group>"; };
+		9A15019020F885D300CDB8FC /* README-VISPER-Core.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README-VISPER-Core.md"; sourceTree = "<group>"; };
+		9A1501E520F885D300CDB8FC /* README-VISPER-Reactive.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README-VISPER-Reactive.md"; sourceTree = "<group>"; };
+		9A1501E620F885D300CDB8FC /* README-VISPER-Presenter.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README-VISPER-Presenter.md"; sourceTree = "<group>"; };
+		9A1501E720F885D300CDB8FC /* README-VISPER-Wireframe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README-VISPER-Wireframe.md"; sourceTree = "<group>"; };
+		9A1501E820F885D300CDB8FC /* README-VISPER-UIViewController.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README-VISPER-UIViewController.md"; sourceTree = "<group>"; };
+		9A1501E920F885D300CDB8FC /* README-VISPER-Entity.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README-VISPER-Entity.md"; sourceTree = "<group>"; };
+		9A15027120F885D400CDB8FC /* README-VISPER-Objc.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README-VISPER-Objc.md"; sourceTree = "<group>"; };
+		9A15027220F885D400CDB8FC /* README-Deprecated.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README-Deprecated.md"; sourceTree = "<group>"; };
+		9A15027520F885D400CDB8FC /* README-VISPER-Redux.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README-VISPER-Redux.md"; sourceTree = "<group>"; };
+		9A15027620F8867A00CDB8FC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		9A15DBC92078C197006C786D /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		9A15DBD3207B8519006C786D /* FunctionalEntityStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FunctionalEntityStoreTests.swift; path = "/Users/bartel/Documents/lib/VISPER/Example/VISPER-Entity-ExampleTests/FunctionalEntityStoreTests.swift"; sourceTree = "<absolute>"; };
 		9A15DBD5207BA276006C786D /* FunctionalEntityStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FunctionalEntityStoreTests.swift; path = "/Users/bartel/Documents/lib/VISPER/Example/VISPER-Entity-ExampleTests/FunctionalEntityStoreTests.swift"; sourceTree = "<absolute>"; };
@@ -387,7 +399,6 @@
 		9A8C5C461FDC0E0B00C401AF /* ExampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExampleViewController.xib; sourceTree = "<group>"; };
 		9A8C5C471FDC0E0C00C401AF /* Reducers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducers.swift; sourceTree = "<group>"; };
 		9A8C5C481FDC0E0C00C401AF /* States.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
-		9A8C5C541FDC0F5B00C401AF /* README-VISPER-Redux.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = "README-VISPER-Redux.md"; path = "../README-VISPER-Redux.md"; sourceTree = "<group>"; };
 		9A8C5C561FDC0F5B00C401AF /* VISPER-Redux.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Redux.podspec"; path = "../VISPER-Redux.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9A8C5C571FDC0F5B00C401AF /* VISPER-Swift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Swift.podspec"; path = "../VISPER-Swift.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9A8C5C591FDC0F5C00C401AF /* VISPER-UIViewController.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-UIViewController.podspec"; path = "../VISPER-UIViewController.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -427,11 +438,11 @@
 		9A97E9FF1FEFF4EF006C50F3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A97EA081FEFF5DE006C50F3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9AC334C62067C954006B8F22 /* VISPER-Sourcery.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Sourcery.podspec"; path = "../VISPER-Sourcery.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9AC334CD2067D419006B8F22 /* README-VISPER-Sourcery.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = "README-VISPER-Sourcery.md"; path = "../README-VISPER-Sourcery.md"; sourceTree = "<group>"; };
 		9AC334CF2067D668006B8F22 /* AppReducer.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.generated.swift; sourceTree = "<group>"; };
 		9AC334D02067D668006B8F22 /* GenerateInitializers.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateInitializers.generated.swift; sourceTree = "<group>"; };
 		9AC334D12067D668006B8F22 /* AutoReducer.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoReducer.generated.swift; sourceTree = "<group>"; };
 		9AC334D72067D704006B8F22 /* AutoReducerFeature.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoReducerFeature.generated.swift; sourceTree = "<group>"; };
+		9AE128BA20F4C5E8000B4445 /* VISPER-Entity.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Entity.podspec"; path = "../VISPER-Entity.podspec"; sourceTree = "<group>"; };
 		9AE2479F1FDF98D80008C24A /* MockComposedPresenterProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockComposedPresenterProvider.swift; sourceTree = "<group>"; };
 		9AE7BEE55B48D6854D305982 /* Pods-VISPER-Swift-RxSwift-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Swift-RxSwift-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Swift-RxSwift-Example/Pods-VISPER-Swift-RxSwift-Example.release.xcconfig"; sourceTree = "<group>"; };
 		9CDA9D17FE0112F0CEF37203 /* Pods-VISPER-Sourcery-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Sourcery-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Sourcery-Example/Pods-VISPER-Sourcery-Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -440,7 +451,6 @@
 		A266FD891812930403258B37 /* Pods-VISPER-UIViewController-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-UIViewController-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-UIViewController-Tests/Pods-VISPER-UIViewController-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A2B46C9395B052B9ED8B343A /* Pods-VISPER-Reactive-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Reactive-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Reactive-Tests/Pods-VISPER-Reactive-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A32861F5A280CB9FB37F6534 /* Pods-VISPER-Entity-ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Entity-ExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Entity-ExampleTests/Pods-VISPER-Entity-ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A8AE3CD1BB0F2452F47336B6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		AC72F70D7CBCB8DF29F2A439 /* Pods-VISPER-Swift-RxSwift-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Swift-RxSwift-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Swift-RxSwift-Example/Pods-VISPER-Swift-RxSwift-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B45BF62ACA2A1145CA165209 /* Pods_VISPER_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VISPER_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70C1EC372079195E3C52812 /* Pods-VISPER-Reactive-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Reactive-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Reactive-Example/Pods-VISPER-Reactive-Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -574,6 +584,7 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
+				9A15018A20F885D200CDB8FC /* docs */,
 				9A8C5B691FDC04E700C401AF /* VISPER-Example */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				9A8C5BAB1FDC07B500C401AF /* VISPER-Wireframe-Example */,
@@ -649,14 +660,12 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				9AE128BA20F4C5E8000B4445 /* VISPER-Entity.podspec */,
 				9AC334C62067C954006B8F22 /* VISPER-Sourcery.podspec */,
 				9A67425D1FE1A034001BE7BC /* VISPER-Presenter.podspec */,
 				9A1D7EC71FDDC1550003AAD9 /* VISPER-Core.podspec */,
-				A8AE3CD1BB0F2452F47336B6 /* README.md */,
-				9A8C5C541FDC0F5B00C401AF /* README-VISPER-Redux.md */,
 				9A8C5C571FDC0F5B00C401AF /* VISPER-Swift.podspec */,
 				9A8C5C561FDC0F5B00C401AF /* VISPER-Redux.podspec */,
-				9AC334CD2067D419006B8F22 /* README-VISPER-Sourcery.md */,
 				9A8C5C7F1FDCFD8300C401AF /* VISPER-Reactive.podspec */,
 				9A8C5C5B1FDC0F5C00C401AF /* VISPER-Objc.podspec */,
 				9A8C5C591FDC0F5C00C401AF /* VISPER-UIViewController.podspec */,
@@ -679,6 +688,26 @@
 				9A408D641FE402F9008048AB /* ControllerPresenterTests.swift */,
 			);
 			path = "VISPER-UIViewController-Tests";
+			sourceTree = "<group>";
+		};
+		9A15018A20F885D200CDB8FC /* docs */ = {
+			isa = PBXGroup;
+			children = (
+				9A15027620F8867A00CDB8FC /* README.md */,
+				9A15018D20F885D300CDB8FC /* README-VISPER-Sourcery.md */,
+				9A15018F20F885D300CDB8FC /* README-VISPER-Swift.md */,
+				9A15019020F885D300CDB8FC /* README-VISPER-Core.md */,
+				9A1501E520F885D300CDB8FC /* README-VISPER-Reactive.md */,
+				9A1501E620F885D300CDB8FC /* README-VISPER-Presenter.md */,
+				9A1501E720F885D300CDB8FC /* README-VISPER-Wireframe.md */,
+				9A1501E820F885D300CDB8FC /* README-VISPER-UIViewController.md */,
+				9A1501E920F885D300CDB8FC /* README-VISPER-Entity.md */,
+				9A15027120F885D400CDB8FC /* README-VISPER-Objc.md */,
+				9A15027220F885D400CDB8FC /* README-Deprecated.md */,
+				9A15027520F885D400CDB8FC /* README-VISPER-Redux.md */,
+			);
+			name = docs;
+			path = ../docs;
 			sourceTree = "<group>";
 		};
 		9A38DB41206D0EDD00F0C602 /* VISPER-Entity-Example */ = {

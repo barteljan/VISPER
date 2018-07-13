@@ -1,0 +1,11 @@
+---
+min_acl: public
+github_url: https://github.com/barteljan/VISPER.git
+readme: ../docs/README-VISPER-Reactive.md
+author: Jan Bartel
+clean:
+sdk: iphonesimulator
+output: ../docs/VISPER-Reactive
+module: VISPER-Reactive
+framework_root: Classes
+podspec: "VISPER-Reactive.podspec"

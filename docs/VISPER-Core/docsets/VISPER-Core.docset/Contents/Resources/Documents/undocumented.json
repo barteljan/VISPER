@@ -1,0 +1,502 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ActionDispatcher.swift",
+      "line": 27,
+      "symbol": "ActionDispatcher.dispatch(_:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/App.swift",
+      "line": 10,
+      "symbol": "App",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerContainer.swift",
+      "line": 11,
+      "symbol": "ControllerContainer",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerContainer.swift",
+      "line": 12,
+      "symbol": "ControllerContainer.add(controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerContainer.swift",
+      "line": 13,
+      "symbol": "ControllerContainer.remove(controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerContainer.swift",
+      "line": 14,
+      "symbol": "ControllerContainer.getController(matches:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerDismisser.swift",
+      "line": 9,
+      "symbol": "ControllerDismisser",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerDismisser.swift",
+      "line": 10,
+      "symbol": "ControllerDismisser.isResponsible(animated:controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerDismisser.swift",
+      "line": 11,
+      "symbol": "ControllerDismisser.dismiss(animated:controller:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerPresenter.swift",
+      "line": null,
+      "symbol": "ControllerPresenter",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerPresenter.swift",
+      "line": 11,
+      "symbol": "ControllerPresenter",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerPresenter.swift",
+      "line": 13,
+      "symbol": "ControllerPresenter.load(view:controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerPresenter.swift",
+      "line": 15,
+      "symbol": "ControllerPresenter.viewDidLoad(view:controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerPresenter.swift",
+      "line": 17,
+      "symbol": "ControllerPresenter.viewWillAppear(animated:view:controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerPresenter.swift",
+      "line": 19,
+      "symbol": "ControllerPresenter.viewDidAppear(animated:view:controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerPresenter.swift",
+      "line": 21,
+      "symbol": "ControllerPresenter.viewWillDisappear(animated:view:controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerPresenter.swift",
+      "line": 23,
+      "symbol": "ControllerPresenter.viewDidDisappear(animated:view:controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerPresenter.swift",
+      "line": 25,
+      "symbol": "ControllerPresenter.willRoute(wireframe:routeResult:controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerPresenter.swift",
+      "line": 27,
+      "symbol": "ControllerPresenter.didRoute(wireframe:routeResult:controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerPresenter.swift",
+      "line": 33,
+      "symbol": "ControllerPresenter.load(view:controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerPresenter.swift",
+      "line": 35,
+      "symbol": "ControllerPresenter.viewDidLoad(view:controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerPresenter.swift",
+      "line": 37,
+      "symbol": "ControllerPresenter.viewWillAppear(animated:view:controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerPresenter.swift",
+      "line": 39,
+      "symbol": "ControllerPresenter.viewDidAppear(animated:view:controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerPresenter.swift",
+      "line": 41,
+      "symbol": "ControllerPresenter.viewWillDisappear(animated:view:controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerPresenter.swift",
+      "line": 43,
+      "symbol": "ControllerPresenter.viewDidDisappear(animated:view:controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerPresenter.swift",
+      "line": 45,
+      "symbol": "ControllerPresenter.willRoute(wireframe:routeResult:controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerPresenter.swift",
+      "line": 47,
+      "symbol": "ControllerPresenter.didRoute(wireframe:routeResult:controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/DefaultApp.swift",
+      "line": 10,
+      "symbol": "DefaultApp",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/DefaultApp.swift",
+      "line": 14,
+      "symbol": "DefaultApp.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/FeatureObserver.swift",
+      "line": 10,
+      "symbol": "FeatureObserver",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/FeatureObserver.swift",
+      "line": 11,
+      "symbol": "FeatureObserver.featureAdded(application:feature:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/HasControllerContainer.swift",
+      "line": 10,
+      "symbol": "HasControllerContainer",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/HasControllerContainer.swift",
+      "line": 11,
+      "symbol": "HasControllerContainer.controllerContainer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Presenter.swift",
+      "line": 10,
+      "symbol": "Presenter",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Presenter.swift",
+      "line": 13,
+      "symbol": "Presenter.isResponsible(routeResult:controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/PresenterProvider.swift",
+      "line": 10,
+      "symbol": "PresenterProvider",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/RouteResult.swift",
+      "line": null,
+      "symbol": "RouteResult",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/RouteResult.swift",
+      "line": 10,
+      "symbol": "RouteResult",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/RouteResult.swift",
+      "line": 11,
+      "symbol": "RouteResult.routePattern",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/RouteResult.swift",
+      "line": 12,
+      "symbol": "RouteResult.routingOption",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/RouteResult.swift",
+      "line": 13,
+      "symbol": "RouteResult.parameters",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/RouteResult.swift",
+      "line": 15,
+      "symbol": "RouteResult.isEqual(routeResult:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/RouteResult.swift",
+      "line": 20,
+      "symbol": "RouteResult.isEqual(routeResult:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/RoutingAwareViewController.swift",
+      "line": null,
+      "symbol": "RoutingAwareViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/RoutingAwareViewController.swift",
+      "line": 10,
+      "symbol": "RoutingAwareViewController",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/RoutingAwareViewController.swift",
+      "line": 12,
+      "symbol": "RoutingAwareViewController.willRoute(wireframe:routeResult:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/RoutingAwareViewController.swift",
+      "line": 14,
+      "symbol": "RoutingAwareViewController.didRoute(wireframe:routeResult:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/RoutingAwareViewController.swift",
+      "line": 20,
+      "symbol": "RoutingAwareViewController.willRoute(wireframe:routeResult:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/RoutingAwareViewController.swift",
+      "line": 22,
+      "symbol": "RoutingAwareViewController.didRoute(wireframe:routeResult:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/RoutingDelegate.swift",
+      "line": 10,
+      "symbol": "RoutingDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/RoutingHandler.swift",
+      "line": 10,
+      "symbol": "RoutingHandler",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/RoutingOption.swift",
+      "line": 12,
+      "symbol": "RoutingOption.isEqual(otherOption:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/TopControllerResolver.swift",
+      "line": 10,
+      "symbol": "TopControllerResolver",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/TopControllerResolver.swift",
+      "line": 11,
+      "symbol": "TopControllerResolver.isResponsible(controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/TopControllerResolver.swift",
+      "line": 12,
+      "symbol": "TopControllerResolver.topController(of:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
+      "line": null,
+      "symbol": "Wireframe",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
+      "line": 10,
+      "symbol": "Wireframe",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
+      "line": 146,
+      "symbol": "Wireframe.canRoute(url:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
+      "line": 150,
+      "symbol": "Wireframe.canRoute(url:parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
+      "line": 155,
+      "symbol": "Wireframe.canRoute(url:option:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
+      "line": 160,
+      "symbol": "Wireframe.route(url:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
+      "line": 164,
+      "symbol": "Wireframe.route(url:option:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
+      "line": 170,
+      "symbol": "Wireframe.route(url:parameters:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
+      "line": 176,
+      "symbol": "Wireframe.route(route:parameters:option:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
+      "line": 191,
+      "symbol": "Wireframe.controller(url:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
+      "line": 195,
+      "symbol": "Wireframe.add(responsibleFor:handler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
+      "line": 200,
+      "symbol": "Wireframe.add(controllerProvider:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
+      "line": 204,
+      "symbol": "Wireframe.add(optionProvider:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
+      "line": 208,
+      "symbol": "Wireframe.add(routingObserver:routePattern:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
+      "line": 212,
+      "symbol": "Wireframe.add(routingObserver:priority:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
+      "line": 216,
+      "symbol": "Wireframe.add(routingPresenter:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/bartel/Documents/lib/VISPER"
+}

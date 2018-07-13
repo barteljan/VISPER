@@ -1,0 +1,12 @@
+---
+min_acl: public
+github_url: https://github.com/barteljan/VISPER.git
+readme: ../docs/README-VISPER-UIViewController.md
+author: Jan Bartel
+clean:
+sdk: iphonesimulator
+objc: true
+output: ../docs/VISPER-UIViewController/objc
+module: VISPER-UIViewController
+umbrella_header: Classes/objc/VISPER-UIViewController.h 
+framework_root: Classes/objc

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ViewFeature Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/ViewFeature" class="dashAnchor"></a>
+    <a title="ViewFeature Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">VISPER-Wireframe Docs</a> (32% documented)</p>
+        <p class="header-right"><a href="https://github.com/barteljan/VISPER.git"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">VISPER-Wireframe Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ViewFeature Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/BackToRoutingPresenter.html">BackToRoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ChildViewControllerTopControllerResolver.html">ChildViewControllerTopControllerResolver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultComposedControllerDismisser.html">DefaultComposedControllerDismisser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultComposedControllerProvider.html">DefaultComposedControllerProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultComposedPresenterProvider.html">DefaultComposedPresenterProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultComposedRoutingObserver.html">DefaultComposedRoutingObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultComposedRoutingOptionProvider.html">DefaultComposedRoutingOptionProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultComposedRoutingPresenter.html">DefaultComposedRoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultComposedTopControllerResolver.html">DefaultComposedTopControllerResolver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultControllerContainerAwareRoutingPresenter.html">DefaultControllerContainerAwareRoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultRouteResultHandler.html">DefaultRouteResultHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultRouter.html">DefaultRouter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultRoutingDelegate.html">DefaultRoutingDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultRoutingHandlerContainer.html">DefaultRoutingHandlerContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultWireframe.html">DefaultWireframe</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultWireframeApp.html">DefaultWireframeApp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FunctionalControllerProvider.html">FunctionalControllerProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FunctionalRoutingOptionProvider.html">FunctionalRoutingOptionProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ModalControllerDismisser.html">ModalControllerDismisser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ModalRoutingPresenter.html">ModalRoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ModalViewControllerTopControllerResolver.html">ModalViewControllerTopControllerResolver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NavigationControllerDismisser.html">NavigationControllerDismisser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NavigationControllerTopControllerResolver.html">NavigationControllerTopControllerResolver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PushRoutingPresenter.html">PushRoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReplaceTopVCRoutingPresenter.html">ReplaceTopVCRoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RootVCRoutingPresenter.html">RootVCRoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ShowRoutingPresenter.html">ShowRoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TabbarControllerTopControllerResolver.html">TabbarControllerTopControllerResolver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WireframeFactory.html">WireframeFactory</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/BackToRoutingPresenterError.html">BackToRoutingPresenterError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DefaultComposedControllerProviderError.html">DefaultComposedControllerProviderError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DefaultWireframeError.html">DefaultWireframeError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DefautRouterError.html">DefautRouterError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ModalRoutingPresenterError.html">ModalRoutingPresenterError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/PushRoutingPresenterError.html">PushRoutingPresenterError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ReplaceTopVCRoutingPresenterError.html">ReplaceTopVCRoutingPresenterError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RootVCRoutingPresenterError.html">RootVCRoutingPresenterError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ShowRoutingPresenterError.html">ShowRoutingPresenterError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/UIViewController.html">UIViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AnimatedRoutingOption.html">AnimatedRoutingOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ComposedControllerDimisser.html">ComposedControllerDimisser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ComposedControllerProvider.html">ComposedControllerProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ComposedPresenterProvider.html">ComposedPresenterProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ComposedRoutingObserver.html">ComposedRoutingObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ComposedRoutingOptionProvider.html">ComposedRoutingOptionProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ComposedRoutingPresenter.html">ComposedRoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ComposedTopControllerResolver.html">ComposedTopControllerResolver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ControllerContainerAwareRoutingPresenter.html">ControllerContainerAwareRoutingPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PresenterFeature.html">PresenterFeature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RouteResultHandler.html">RouteResultHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Router.html">Router</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RoutingHandlerContainer.html">RoutingHandlerContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:16VISPER_Wireframe19RoutingOptionBackToP">RoutingOptionBackTo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:16VISPER_Wireframe26RoutingOptionGetControllerP">RoutingOptionGetController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RoutingOptionModal.html">RoutingOptionModal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:16VISPER_Wireframe17RoutingOptionPushP">RoutingOptionPush</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:16VISPER_Wireframe25RoutingOptionReplaceTopVCP">RoutingOptionReplaceTopVC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:16VISPER_Wireframe19RoutingOptionRootVCP">RoutingOptionRootVC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:16VISPER_Wireframe17RoutingOptionShowP">RoutingOptionShow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ViewFeature.html">ViewFeature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WireframeApp.html">WireframeApp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WireframeFeatureObserver.html">WireframeFeatureObserver</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultRouteResult.html">DefaultRouteResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultRoutingBackTo.html">DefaultRoutingBackTo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultRoutingOptionGetController.html">DefaultRoutingOptionGetController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultRoutingOptionModal.html">DefaultRoutingOptionModal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultRoutingOptionPush.html">DefaultRoutingOptionPush</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultRoutingOptionReplaceTopVC.html">DefaultRoutingOptionReplaceTopVC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultRoutingOptionRootVC.html">DefaultRoutingOptionRootVC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultRoutingOptionShow.html">DefaultRoutingOptionShow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PresenterFeatureObserver.html">PresenterFeatureObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ViewFeatureObserver.html">ViewFeatureObserver</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ViewFeature</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ViewFeature</span> <span class="p">:</span> <span class="kt">ControllerProvider</span><span class="p">,</span> <span class="kt">Feature</span><span class="p">,</span> <span class="kt">RoutingOptionProvider</span></code></pre>
+
+                </div>
+              </div>
+            <p>A feature providing a view controller and routing options for a specific route pattern</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Routing options specify how your controller will be presented
+
+</div>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe11ViewFeatureP12routePatternSSvp"></a>
+                    <a name="//apple_ref/swift/Property/routePattern" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe11ViewFeatureP12routePatternSSvp">routePattern</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The route pattern of your feature</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">routePattern</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe11ViewFeatureP8prioritySivp"></a>
+                    <a name="//apple_ref/swift/Property/priority" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe11ViewFeatureP8prioritySivp">priority</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>features with high priority will be handeled earlier than features with a low priority
+eg. high priority features might block low priority features</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">priority</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:16VISPER_Wireframe11ViewFeatureP10makeOption0A5_Core07RoutingF0_pAE11RouteResult_p05routeJ0_tF"></a>
+                    <a name="//apple_ref/swift/Method/makeOption(routeResult:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16VISPER_Wireframe11ViewFeatureP10makeOption0A5_Core07RoutingF0_pAE11RouteResult_p05routeJ0_tF">makeOption(routeResult:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a default routing option for your route pattern</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">makeOption</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">RoutingOption</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>routePattern</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a route pattern</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>parameters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the routing option for your controller</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A default routing option if you can provide one for this input parameter combination, nil otherwise</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core21RoutingOptionProviderP6optionAA0cD0_pSgAA11RouteResult_p05routeH0_tF"></a>
+                    <a name="//apple_ref/swift/Method/option(routeResult:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core21RoutingOptionProviderP6optionAA0cD0_pSgAA11RouteResult_p05routeH0_tF">option(routeResult:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">option</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">RoutingOption</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11VISPER_Core18ControllerProviderP13isResponsibleSbAA11RouteResult_p05routeH0_tF"></a>
+                    <a name="//apple_ref/swift/Method/isResponsible(routeResult:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11VISPER_Core18ControllerProviderP13isResponsibleSbAA11RouteResult_p05routeH0_tF">isResponsible(routeResult:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isResponsible</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/barteljan/VISPER" target="_blank" rel="external">Jan Bartel</a>. All rights reserved. (Last updated: 2018-07-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
