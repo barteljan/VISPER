@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
 VISPER-Redux is an implementation of the redux-architecture in swift. It's a core function of the VISPER Application Framework for iOS-Apps. (VISPER is a framework for building component based apps with the viper architecture in swift.)
                        DESC
 
-  s.homepage         = 'https://github.com/barteljan/VISPER/blob/master/README-VISPER-Redux.md'
+  s.homepage         = 'https://github.com/barteljan/VISPER/master/README-VISPER-Redux.md'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Jan Bartel' => 'barteljan@yahoo.de' }
   s.source           = { :git => 'https://github.com/barteljan/VISPER.git', :tag => 'VISPER-Redux-'+String(s.version) }
