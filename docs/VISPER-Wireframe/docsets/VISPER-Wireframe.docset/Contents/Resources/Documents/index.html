@@ -301,12 +301,11 @@
 <h2 id='getting-started' class='heading'>Getting started</h2>
 <h3 id='app' class='heading'>App</h3>
 
-<p>The core component of your VISPER application is an instance of the<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/App.html">App</a>
-protocol which allows you to configure 
-your application by a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP">Feature</a> which represents a distinct functionality of your app and 
+<p>The core component of your VISPER application is an instance of the <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/App.html">App</a>
+protocol, which allows you to configure your application by a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP">Feature</a> which represents a distinct functionality of your app and 
 configures all VISPER components used by it.</p>
 
-<p>The definition of the App protocol is quite simple:</p>
+<p>The definition of the <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/App.html">App</a> protocol is quite simple:</p>
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">App</span> <span class="p">{</span>
 
     <span class="c1">/// Add a feature to your application</span>
@@ -327,18 +326,19 @@ configures all VISPER components used by it.</p>
 
 <span class="p">}</span>
 </code></pre>
+<h3 id='features-and-featureobserver' class='heading'>Features and FeatureObserver</h3>
 
-<p>You can basicly add some<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/FeatureObserver.html">FeatureObservers</a>and<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP">Features</a>to it.</p>
+<p>You can basicly add some <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/FeatureObserver.html">FeatureObservers</a> and <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP">Features</a> to an <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/App.html">App</a>.</p>
 
-<p>A<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/FeatureObserver.html">FeatureObserver</a>will be called whenever a<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP">Feature</a>is added and is responsible for configuring your VIPSER components to provide the functionality implemented by your<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP">Feature</a>.</p>
+<p>A <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/FeatureObserver.html">FeatureObserver</a> will be called whenever a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP">Feature</a> is added and is responsible for configuring your VIPSER components to provide the functionality implemented by your <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP">Feature</a>.</p>
 
-<p>Many VISPER Components implement their own subtypes of<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/App.html">App</a>,<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP">Feature</a>and<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/FeatureObserver.html">FeatureObserver</a>.</p>
+<p>Many VISPER Components implement their own subtypes of <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/App.html">App</a>, <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP">Feature</a> and <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/FeatureObserver.html">FeatureObserver</a>.</p>
 
-<p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/index.html">VISPER-Wireframe</a>provides you with:<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html">WireframeApp</a>,<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/ViewFeature.html">ViewFeature</a>,<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/PresenterFeature.html">PresenterFeature</a>,<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeFeatureObserver.html">WireframeFeatureObserver</a>,<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/ViewFeatureObserver.html">ViewFeatureObserver</a> and<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/PresenterFeatureObserver.html">PresenterFeatureObserver</a>.</p>
+<p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/index.html">VISPER-Wireframe</a> provides you with: <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html">WireframeApp</a>, <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/ViewFeature.html">ViewFeature</a>, <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/PresenterFeature.html">PresenterFeature</a>, <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeFeatureObserver.html">WireframeFeatureObserver</a>, <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/ViewFeatureObserver.html">ViewFeatureObserver</a> and <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/PresenterFeatureObserver.html">PresenterFeatureObserver</a>.</p>
 
-<p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html">VISPER-Redux</a>provides you with:<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ReduxApp.html">ReduxApp</a>,<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/LogicFeature.html">LogicFeature</a>and<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Structs/LogicFeatureObserver.html">LogicFeatureObserver</a>.</p>
+<p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html">VISPER-Redux</a> provides you with: <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ReduxApp.html">ReduxApp</a>, <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/LogicFeature.html">LogicFeature</a> and<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Structs/LogicFeatureObserver.html">LogicFeatureObserver</a>.</p>
 
-<p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Swift/index.html">VISPER-Swift</a> provides you with a<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Swift/Classes/VISPERApp.html">VISPERApp</a> which combines all charactersistics of a<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html">WireframeApp</a> and a<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ReduxApp.html">ReduxApp</a> and is used inthe most Apps build on the VISPER-Framework.</p>
+<p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Swift/index.html">VISPER-Swift</a> provides you with a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Swift/Classes/VISPERApp.html">VISPERApp</a> which combines all charactersistics of a<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html">WireframeApp</a> and a<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ReduxApp.html">ReduxApp</a> and is used inthe most Apps build on the VISPER-Framework.</p>
 
           </section>
         </section>
