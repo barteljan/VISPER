@@ -86,12 +86,15 @@ It is used to create controllers and to route from one controller to an other. I
 
 Here ist a short example how to use VISPER with a wireframe:
 
-#### Example
+### Wireframe-Example
 
-This simple example contains two view controllers with a button one with a blue and one with a green background color.
+This simple example contains two view controllers with a button.
+One has a blue and one has a green background color.
 If you press the button of one controller, a controller with the other color ist presented on a navigation controller
 
 You can find the source code for this Example in the VISPER-Wireframe-Example target.
+
+#### Create a View Feature
 
 Let's start with a BlueFeature.
 It's a [ViewFeature](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/ViewFeature.html) class that creates a blue view controller:
@@ -126,7 +129,9 @@ A [ViewFeature](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe
 and [option(routeResult:)](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/RoutingOptionProvider.html#/s:11VISPER_Core21RoutingOptionProviderP6optionAA0cD0_pSgAA11RouteResult_p05routeH0_tF).
 and two key properties [routePattern](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/ViewFeature.html#/s:16VISPER_Wireframe11ViewFeatureP12routePatternSSvp) and [priority](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/ViewFeature.html#/s:16VISPER_Wireframe11ViewFeatureP8prioritySivp).
 
-The [makeController(routeResult:)](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/ControllerProvider.html#/s:11VISPER_Core18ControllerProviderP04makeC0So06UIViewC0CAA11RouteResult_p05routeH0_tKF) function returns a UIViewController when an URL routet on our Wireframe class matches the routePattern of BlueFeature.
+#### The makeController(routeResult:) function
+
+The [makeController(routeResult:)](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/ControllerProvider.html#/s:11VISPER_Core18ControllerProviderP04makeC0So06UIViewC0CAA11RouteResult_p05routeH0_tKF) function returns a UIViewController when an URL which has been routed on our Wireframe matches the routePattern of BlueFeature.
 
 You would call it in your application like that:
 
@@ -135,6 +140,8 @@ func callBlueFeature(wireframe: Wireframe) throws {
     try wireframe.route(url: URL(string: "/Blue")!)
 }
 ````
+
+#### The option(routeResult:) function
 
 The [option(routeResult:)](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/RoutingOptionProvider.html#/s:11VISPER_Core21RoutingOptionProviderP6optionAA0cD0_pSgAA11RouteResult_p05routeH0_tF) function defines how your controller is presented by the wireframe.
 Actually it returns a [DefaultRoutingOptionPush](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/DefaultRoutingOptionPush.html) which indicates the wireframe to push it's controllers on a wireframe.
@@ -145,6 +152,8 @@ There are several other options already included in VISPER to present a ViewCont
 * [DefaultRoutingOptionReplaceTopVC](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/DefaultRoutingOptionReplaceTopVC.html) - Replaces the top view controller of your navigation controller with the controller returned by BlueFeature.
 * [DefaultRoutingOptionRootVC](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/DefaultRoutingOptionRootVC.html) - Set the rootController of your navigation controller with the controller returnded by BlueFeature.
 
+
+#### Configure a WireframeApplication in your AppDelegate
 But how do we get a [Wireframe](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/Wireframe.html) and a [WireframeApp](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html) to route to our BlueFeature? 
 
 Let's start with your AppDelegate:
@@ -246,6 +255,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ````
 
-If you run your project now, your app will initially show the blue UIViewController provided by our BlueFeature.
+If you start your project now, your app will initially show the blue UIViewController provided by our BlueFeature.
 
 
