@@ -8,9 +8,11 @@
 import Foundation
 import VISPER_Swift
 
+@available(*, deprecated,renamed: "AppFactory")
+public typealias ApplicationFactory<AppState> = VISPER_Swift.AppFactory<AppState>
 public typealias AnyVISPERApp<AppState> = VISPER_Swift.AnyVISPERApp<AppState>
 public typealias VISPERApp<AppState> = VISPER_Swift.VISPERApp<AppState>
-public typealias ApplicationFactory<AppState> = VISPER_Swift.ApplicationFactory<AppState>
+public typealias AppFactory<AppState> = VISPER_Swift.AppFactory<AppState>
 public typealias VISPERAppType = VISPER_Swift.VISPERAppType
 public typealias DefaultStatefulFeature<State> = VISPER_Swift.DefaultStatefulFeature<State>
 public typealias StatefulFeature = VISPER_Swift.StatefulFeature

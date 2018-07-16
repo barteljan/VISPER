@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        let factory = GeneratedApplicationFactoryForAppState()
+        let factory = GeneratedAppFactoryForAppState()
         let appState = AppState(styleState: StyleState(backgroundColor: .yellow, fontColor: .blue),
                                 userState: UserState(firstName: "Jan",
                                                       lastName: "Bartel",

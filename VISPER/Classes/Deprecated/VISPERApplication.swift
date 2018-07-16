@@ -57,7 +57,7 @@ open class VISPERApplication: NSObject,IVISPERApplication {
             controllerContainer = DefaultControllerContainer()
         }
         
-        let applicationFactory = ApplicationFactory<NSMutableDictionary>()
+        let applicationFactory = AppFactory<NSMutableDictionary>()
         let application = applicationFactory.makeApplication(initialState: NSMutableDictionary(),
                                                                appReducer: { (provider, action, state) -> NSMutableDictionary in
                                                 return provider.reduce(action: action, state: state)

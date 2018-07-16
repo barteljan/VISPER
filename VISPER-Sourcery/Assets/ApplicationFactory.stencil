@@ -2,12 +2,12 @@ import VISPER_Swift
 
 {% for type in types.implementing.AutoAppReducer %}
 // generated application factory for {{type.name}}
-class GeneratedApplicationFactoryFor{{type.name|upperFirstLetter}} {
+class GeneratedAppFactoryFor{{type.name|upperFirstLetter}} {
     
     func makeApplication(initialState: {{type.name}}) throws -> AnyVISPERApp<{{type.name}}> {
         
         //create general application factory
-        let applicationFactory = ApplicationFactory<{{type.name}}>()
+        let applicationFactory = AppFactory<{{type.name}}>()
         
         let application = applicationFactory.makeApplication(initialState: initialState,
                                                              appReducer: appReducerFor{{type.name}})

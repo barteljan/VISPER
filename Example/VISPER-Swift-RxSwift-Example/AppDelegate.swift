@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return AppState(startViewState: reducerProvider.reduce(action: action, state: state.startViewState))
         }
         
-        let applicationFactory = ApplicationFactory<AppState>()
+        let applicationFactory = AppFactory<AppState>()
         
         let application = applicationFactory.makeApplication(initialState: appState,
                                                                appReducer: appReducer)

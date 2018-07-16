@@ -11,8 +11,11 @@ import VISPER_Core
 import VISPER_Wireframe
 import VISPER_UIViewController
 
+@available(*, deprecated,renamed: "AppFactory")
+public typealias ApplicationFactory<AppState> = AppFactory<AppState>
+
 /// a factory to create a default SwiftyVISPER application
-open class ApplicationFactory<AppState> {
+open class AppFactory<AppState> {
     
     open var wireframeFactory: WireframeFactory = WireframeFactory()
     open var strictReduxMode: Bool = false

@@ -20,9 +20,9 @@ DESC
   s.frameworks = 'UIKit'
   s.dependency 'VISPER-Core','~> 3.0.0'
   s.dependency 'VISPER-Objc','~> 3.0.0'
-  s.dependency 'VISPER-Swift','~> 3.0.0'
+  s.dependency 'VISPER-Swift','~> 3.1.0'
   s.dependency 'VISPER-Presenter','~> 3.0.0'
-  s.dependency 'VISPER-Wireframe','~> 3.0.0'
+  s.dependency 'VISPER-Wireframe','~> 3.1.0'
   s.dependency 'VISPER-Entity','~> 3.0.0'
 
   s.default_subspec = 'Standard'

@@ -4,10 +4,10 @@
 import VISPER_Swift
 
 // generated application factory for AppState
-class GeneratedApplicationFactoryForAppState {
+class GeneratedAppFactoryForAppState {
     func makeApplication(initialState: AppState) throws -> AnyVISPERApp<AppState> {
         //create general application factory
-        let applicationFactory = ApplicationFactory<AppState>()
+        let applicationFactory = AppFactory<AppState>()
         let application = applicationFactory.makeApplication(initialState: initialState,
                                                              appReducer: appReducerForAppState)
         // add a feature observer for every sub property of our app state

@@ -368,7 +368,7 @@ class GreenFeature: ViewFeature {
 }
 ````
 
-if we add an instance of GreenFeature in the AppDelegate to our App the error is gone:
+If we add an instance of GreenFeature in the AppDelegate to our App the error is gone:
 
  ````swift
  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -398,5 +398,5 @@ if we add an instance of GreenFeature in the AppDelegate to our App the error is
 
  ````
  
- If you like colorful controllers it might be a good exercise to write a new ColoredControllerFeature, which takes a routePattern, a Color and a Route to an other colored ColoredControllerFeature as dependencies.
+ If you like colorful controllers it might be a good exercise to write a new ColoredControllerFeature, which takes a routePattern, a Color and a RouteURL as dependencies.
  Use it to replace our two redundant FeatureClasses by two instances of type ColoredControllerFeature. 

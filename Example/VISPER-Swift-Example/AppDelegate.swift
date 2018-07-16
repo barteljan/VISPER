@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         
-        let applicationFactory = ApplicationFactory<AppState>()
+        let applicationFactory = AppFactory<AppState>()
         
         let visperApplication = applicationFactory.makeApplication(initialState: appState,
                                                                      appReducer: appReducer)
