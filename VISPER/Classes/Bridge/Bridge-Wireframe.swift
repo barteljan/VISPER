@@ -85,3 +85,5 @@ public typealias ViewFeature = VISPER_Wireframe.ViewFeature
 public typealias ViewFeatureObserver = VISPER_Wireframe.ViewFeatureObserver
 public typealias WireframeApp = VISPER_Wireframe.WireframeApp
 public typealias WireframeFeatureObserver = VISPER_Wireframe.WireframeFeatureObserver
+public typealias WireframeAppFactory = VISPER_Wireframe.WireframeAppFactory
+public typealias DefaultWireframeAppFactory = VISPER_Wireframe.DefaultWireframeAppFactory

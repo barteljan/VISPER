@@ -20,7 +20,7 @@ open class ApplicationFactory<AppState> {
     public init(){}
     
     /// create a default application
-    open func makeApplication(  redux: Redux<AppState>,
+    open func makeApplication( redux: Redux<AppState>,
                            wireframe: Wireframe,
                  controllerContainer: ControllerContainer) -> AnyVISPERApp<AppState> {
         

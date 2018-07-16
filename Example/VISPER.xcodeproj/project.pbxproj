@@ -17,6 +17,8 @@
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		78DE78A7AAC21FD43285695C /* Pods_VISPER_Entity_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEBB6F255AC2B5BA221F5D8 /* Pods_VISPER_Entity_Example.framework */; };
 		84FA55F8B8CF030C53E33705 /* Pods_VISPER_Sourcery_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DEE3EBF9CEDD023983A3479 /* Pods_VISPER_Sourcery_Example.framework */; };
+		9A0B22F920FCD10D002957ED /* BlueFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B22F820FCD10D002957ED /* BlueFeature.swift */; };
+		9A0B22FB20FCD127002957ED /* GreenFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B22FA20FCD127002957ED /* GreenFeature.swift */; };
 		9A0D19E91FE0F67E00567A88 /* ViewControllerEventPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D19E81FE0F67E00567A88 /* ViewControllerEventPresenterTests.swift */; };
 		9A0D1A091FE10A2100567A88 /* MockViewControllerEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D1A081FE10A2100567A88 /* MockViewControllerEventPresenter.swift */; };
 		9A0D1A0E1FE12D8F00567A88 /* AssertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5BDB1FDC090E00C401AF /* AssertHelper.swift */; };
@@ -89,8 +91,6 @@
 		9A8C5BA31FDC04E700C401AF /* DataCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5B8F1FDC04E700C401AF /* DataCommandHandler.swift */; };
 		9A8C5BA41FDC04E700C401AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C5B901FDC04E700C401AF /* Images.xcassets */; };
 		9A8C5BAD1FDC07B500C401AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5BAC1FDC07B500C401AF /* AppDelegate.swift */; };
-		9A8C5BAF1FDC07B500C401AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5BAE1FDC07B500C401AF /* ViewController.swift */; };
-		9A8C5BB21FDC07B500C401AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C5BB01FDC07B500C401AF /* Main.storyboard */; };
 		9A8C5BB41FDC07B500C401AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C5BB31FDC07B500C401AF /* Assets.xcassets */; };
 		9A8C5BB71FDC07B500C401AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C5BB51FDC07B500C401AF /* LaunchScreen.storyboard */; };
 		9A8C5BE61FDC090E00C401AF /* MockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5BCC1FDC090E00C401AF /* MockViewController.swift */; };
@@ -244,6 +244,8 @@
 		892ECF6DF25611B83A25B076 /* Pods-VISPER-Sourcery-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Sourcery-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Sourcery-Example/Pods-VISPER-Sourcery-Example.release.xcconfig"; sourceTree = "<group>"; };
 		917A481883243C5E10CC0F71 /* Pods-VISPER-Entity-ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Entity-ExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Entity-ExampleTests/Pods-VISPER-Entity-ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		94914A9D688D67BA61ABFA0E /* Pods_VISPER_Reactive_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VISPER_Reactive_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A0B22F820FCD10D002957ED /* BlueFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueFeature.swift; sourceTree = "<group>"; };
+		9A0B22FA20FCD127002957ED /* GreenFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenFeature.swift; sourceTree = "<group>"; };
 		9A0D19E61FE0F67E00567A88 /* VISPER-UIViewController-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VISPER-UIViewController-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0D19E81FE0F67E00567A88 /* ViewControllerEventPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerEventPresenterTests.swift; sourceTree = "<group>"; };
 		9A0D19EA1FE0F67E00567A88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -347,8 +349,6 @@
 		9A8C5B911FDC04E700C401AF /* VISPER-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "VISPER-Info.plist"; sourceTree = "<group>"; };
 		9A8C5BAA1FDC07B500C401AF /* VISPER-Wireframe-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VISPER-Wireframe-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8C5BAC1FDC07B500C401AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9A8C5BAE1FDC07B500C401AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9A8C5BB11FDC07B500C401AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9A8C5BB31FDC07B500C401AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A8C5BB61FDC07B500C401AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A8C5BB81FDC07B500C401AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -929,9 +929,9 @@
 		9A8C5BAB1FDC07B500C401AF /* VISPER-Wireframe-Example */ = {
 			isa = PBXGroup;
 			children = (
+				9A0B22F820FCD10D002957ED /* BlueFeature.swift */,
+				9A0B22FA20FCD127002957ED /* GreenFeature.swift */,
 				9A8C5BAC1FDC07B500C401AF /* AppDelegate.swift */,
-				9A8C5BAE1FDC07B500C401AF /* ViewController.swift */,
-				9A8C5BB01FDC07B500C401AF /* Main.storyboard */,
 				9A8C5BB31FDC07B500C401AF /* Assets.xcassets */,
 				9A8C5BB51FDC07B500C401AF /* LaunchScreen.storyboard */,
 				9A8C5BB81FDC07B500C401AF /* Info.plist */,
@@ -1613,7 +1613,6 @@
 			files = (
 				9A8C5BB71FDC07B500C401AF /* LaunchScreen.storyboard in Resources */,
 				9A8C5BB41FDC07B500C401AF /* Assets.xcassets in Resources */,
-				9A8C5BB21FDC07B500C401AF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2367,8 +2366,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A8C5BAF1FDC07B500C401AF /* ViewController.swift in Sources */,
+				9A0B22FB20FCD127002957ED /* GreenFeature.swift in Sources */,
 				9A8C5BAD1FDC07B500C401AF /* AppDelegate.swift in Sources */,
+				9A0B22F920FCD10D002957ED /* BlueFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2574,14 +2574,6 @@
 				9A8C5B6B1FDC04E700C401AF /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		9A8C5BB01FDC07B500C401AF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9A8C5BB11FDC07B500C401AF /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		9A8C5BB51FDC07B500C401AF /* LaunchScreen.storyboard */ = {

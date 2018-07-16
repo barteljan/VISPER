@@ -1280,6 +1280,20 @@
       "symbol": "WireframeFeatureObserver",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 88,
+      "symbol": "WireframeAppFactory",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Wireframe.swift",
+      "line": 89,
+      "symbol": "DefaultWireframeAppFactory",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/bartel/Documents/lib/VISPER"
