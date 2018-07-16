@@ -264,6 +264,139 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ````
 
-If you start your project now, your app will initially show the blue UIViewController provided by our BlueFeature.
+If you run your project now, your app will initially show the blue UIViewController provided by our BlueFeature.
 
+#### Route to an other controller
 
+To route to an other controller, we need to extend our BlueFeature and add a wireframe dependency and a button which routes to a new controller if it is tapped.
+
+ ````swift
+ class BlueFeature: ViewFeature {
+     
+     var routePattern: String = "/Blue"
+     var priority: Int = 0
+     let wireframe: Wireframe
+     
+     init(wireframe: Wireframe){
+         self.wireframe = wireframe
+     }
+     
+     // return a routing option to show how this controller should be presented
+     func makeOption(routeResult: RouteResult) -> RoutingOption {
+         return DefaultRoutingOptionPush()
+     }
+     
+     
+     // create a blue controller which will be created when the "blue" route is called
+     func makeController(routeResult: RouteResult) throws -> UIViewController {
+         
+         let controller = UIViewController()
+         controller.view.backgroundColor = .blue
+         
+         let button = UIButton(type: .custom)
+         
+         button.translatesAutoresizingMaskIntoConstraints = false
+         button.setTitle("Tab here to enter a new world", for: .normal)
+         
+         controller.view.addSubview(button)
+         
+         button.centerXAnchor.constraint(equalTo: controller.view.centerXAnchor).isActive = true
+         button.centerYAnchor.constraint(equalTo: controller.view.centerYAnchor).isActive = true
+         
+         button.addTarget(self, action: #selector(nextWorld), for: .touchUpInside)
+         
+         return controller
+     }
+     
+     @objc func nextWorld() {
+         try! self.wireframe.route(url: URL(string: "/Green")!)
+     }
+   
+ }
+ ````
+
+ If you are now running your app and tap on your button a error is thrown since no feature with the route pattern green has been found. 
+
+ 
+ ````swift 
+ VISPER_Wireframe.DefaultWireframeError.noRoutePatternFoundFor(url: /Green, parameters: [:])
+ ````
+
+We need a second Feature to fix this error:
+
+````swift
+class GreenFeature: ViewFeature {
+    
+    var routePattern: String = "/Green"
+    var priority: Int = 0
+    let wireframe: Wireframe
+    
+    init(wireframe: Wireframe){
+        self.wireframe = wireframe
+    }
+    
+    // return a routing option to show how this controller should be presented
+    func makeOption(routeResult: RouteResult) -> RoutingOption {
+        return DefaultRoutingOptionPush()
+    }
+    
+    // create a green controller which will be created when the "green" route is called
+    func makeController(routeResult: RouteResult) throws -> UIViewController {
+        
+        let controller = UIViewController()
+        controller.view.backgroundColor = .green
+        
+        let button = UIButton(type: .custom)
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Tab here to enter a new world", for: .normal)
+        
+        controller.view.addSubview(button)
+        
+        button.centerXAnchor.constraint(equalTo: controller.view.centerXAnchor).isActive = true
+        button.centerYAnchor.constraint(equalTo: controller.view.centerYAnchor).isActive = true
+        
+        button.addTarget(self, action: #selector(nextWorld), for: .touchUpInside)
+        
+        return controller
+    }
+    
+    @objc func nextWorld() {
+        try! self.wireframe.route(url: URL(string: "/Blue")!)
+    }
+    
+}
+````
+
+if we add an instance of GreenFeature in the AppDelegate to our App the error is gone:
+
+ ````swift
+ func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+         
+         let window = UIWindow(frame: UIScreen.main.bounds)
+         self.window = window
+         
+         let factory = DefaultWireframeAppFactory()
+         let visperApp = factory.makeApp()
+         self.visperApp = visperApp
+         
+         let navigationController = UINavigationController()
+         visperApp.add(controllerToNavigate: navigationController)
+         window.rootViewController = navigationController
+         
+         let blueFeature = BlueFeature(wireframe: visperApp.wireframe)
+         try! visperApp.add(feature: blueFeature)
+         
+         let greenFeature = GreenFeature(wireframe: visperApp.wireframe)
+         try! visperApp.add(feature: greenFeature)
+         
+         try! visperApp.wireframe.route(url: URL(string: blueFeature.routePattern)!)
+         
+         self.window?.makeKeyAndVisible()
+         return true
+     }
+
+ ````
+ 
+ If you like colorful controllers it might be a good exercise to write a new ColoredControllerFeature, which takes a routePattern, a Color and a Route to an other colored ColoredControllerFeature as dependencies.
+ Use it to replace our two redundant FeatureClasses by two instances of type ColoredControllerFeature. 

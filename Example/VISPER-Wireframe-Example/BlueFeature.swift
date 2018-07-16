@@ -11,7 +11,6 @@ import UIKit
 import VISPER_Wireframe
 import VISPER_Core
 
-
 class BlueFeature: ViewFeature {
     
     var routePattern: String = "/Blue"
