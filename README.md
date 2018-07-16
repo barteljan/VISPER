@@ -129,6 +129,15 @@ A [ViewFeature](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe
 and [option(routeResult:)](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/RoutingOptionProvider.html#/s:11VISPER_Core21RoutingOptionProviderP6optionAA0cD0_pSgAA11RouteResult_p05routeH0_tF).
 and two key properties [routePattern](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/ViewFeature.html#/s:16VISPER_Wireframe11ViewFeatureP12routePatternSSvp) and [priority](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/ViewFeature.html#/s:16VISPER_Wireframe11ViewFeatureP8prioritySivp).
 
+#### The routePattern property
+
+The route pattern property returns a String which is matched by the wireframe to resolve a UIViewController to present. 
+
+#### The priority property
+
+The priority property describes in which order the wireframe calls the feature to resolve which UIViewController should be presented.
+The heigher the priority, the earlier is a Feature called. A good default value is 0.
+
 #### The makeController(routeResult:) function
 
 The [makeController(routeResult:)](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/ControllerProvider.html#/s:11VISPER_Core18ControllerProviderP04makeC0So06UIViewC0CAA11RouteResult_p05routeH0_tKF) function returns a UIViewController when an URL which has been routed on our Wireframe matches the routePattern of BlueFeature.
