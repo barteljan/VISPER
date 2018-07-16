@@ -1,13 +1,13 @@
 # Be sure to run `pod lib lint VISPER-Redux.podspec' to ensure this is a
 Pod::Spec.new do |s|
   s.name             = 'VISPER-Sourcery'
-  s.version          = '2.3.0'
+  s.version          = '2.3.1'
   s.summary          = 'Sourcery templates for VISPER-Redux'
   s.description      = <<-DESC
 Added some sourcery templates to VISPER Redux to generate AppReducers and States
                        DESC
 
-  s.homepage         = 'https://github.com/barteljan/VISPER/master/README-VISPER-Sourcery.md'
+  s.homepage         = 'https://github.com/barteljan/VISPER/blob/master/docs/README-VISPER-Sourcery.md'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Jan Bartel' => 'barteljan@yahoo.de' }
   s.source           = { :git => 'https://github.com/barteljan/VISPER.git', :tag => 'VISPER-Sourcery-'+String(s.version) }
