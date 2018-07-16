@@ -287,7 +287,7 @@
 
 <ul>
 <li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER/index.html">VISPER</a> - a convenience import wrapper to include all VISPER Components with one import. It contains some deprecated components for backwards compatibility to previous VISPER Versions.</li>
-<li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/index.html">VISPER-Swift</a> - All swift components of the VISPER-Framework, and a convenience import wrapper for all their dependencies.</li>
+<li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Swift/index.html">VISPER-Swift</a> - All swift components of the VISPER-Framework, and a convenience import wrapper for all their dependencies.</li>
 <li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Objc/index.html">VISPER-Objc</a> - A wrapper around the core VISPER classes to use them in an objc codebase.</li>
 <li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/index.html">VISPER-Core</a> - Some common core protocols used to communicate between the different components of your feature. This pod should be used if you want to include VISPER Components into your own projects and components. It&rsquo;s protocols are implemented in the other VISPER component pods.</li>
 <li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/index.html">VISPER-Wireframe</a> - The component containing the implementation of the wireframe layer in a VIPER-Application, it manages the presentation and the lifecycle of your ViewControllers.</li>
@@ -298,11 +298,52 @@
 <li>VISPER-UIViewController (<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-UIViewController/swift/index.html">swift</a>)  /  (<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-UIViewController/objc/index.html">objc</a>) - A component extending UIViewControllers to notify a presenter about it&rsquo;s lifecycle (viewDidLoad, etc.)</li>
 <li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Entity/index.html">VISPER-Entity</a> - A component modeling the entity layer if you do not use your custom layer in your VISPER-Application.</li>
 </ul>
+<h2 id='getting-started' class='heading'>Getting started</h2>
+<h3 id='app' class='heading'>App</h3>
+
+<p>The core component of your VISPER application is an instance of the<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/App.html">App</a>
+protocol which allows you to configure 
+your application by a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP">Feature</a> which represents a distinct functionality of your app and 
+configures all VISPER components used by it.</p>
+
+<p>The definition of the App protocol is quite simple:</p>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">App</span> <span class="p">{</span>
+
+    <span class="c1">/// Add a feature to your application</span>
+    <span class="c1">///</span>
+    <span class="c1">/// - Parameter feature: your feature</span>
+    <span class="c1">/// - Throws: throws errors thrown by your feature observers</span>
+    <span class="c1">///</span>
+    <span class="c1">/// - note: A Feature is an empty protocol representing a distinct funtionality of your application.</span>
+    <span class="c1">///         It will be provided to all FeatureObservers after addition to configure and connect it to</span>
+    <span class="c1">///         your application and your remaining features. Have look at LogicFeature and LogicFeatureObserver for an example.</span>
+    <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="nv">feature</span><span class="p">:</span> <span class="kt">Feature</span><span class="p">)</span> <span class="k">throws</span>
+
+    <span class="c1">/// Add an observer to configure your application after adding a feature.</span>
+    <span class="c1">/// Have look at LogicFeature and LogicFeatureObserver for an example.</span>
+    <span class="c1">///</span>
+    <span class="c1">/// - Parameter featureObserver: an object observing feature addition</span>
+    <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="nv">featureObserver</span><span class="p">:</span> <span class="kt">FeatureObserver</span><span class="p">)</span>
+
+<span class="p">}</span>
+</code></pre>
+
+<p>You can basicly add some<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/FeatureObserver.html">FeatureObservers</a>and<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP">Features</a>to it.</p>
+
+<p>A<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/FeatureObserver.html">FeatureObserver</a>will be called whenever a<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP">Feature</a>is added and is responsible for configuring your VIPSER components to provide the functionality implemented by your<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP">Feature</a>.</p>
+
+<p>Many VISPER Components implement their own subtypes of<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/App.html">App</a>,<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP">Feature</a>and<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/FeatureObserver.html">FeatureObserver</a>.</p>
+
+<p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/index.html">VISPER-Wireframe</a>provides you with:<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html">WireframeApp</a>,<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/ViewFeature.html">ViewFeature</a>,<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/PresenterFeature.html">PresenterFeature</a>,<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeFeatureObserver.html">WireframeFeatureObserver</a>,<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/ViewFeatureObserver.html">ViewFeatureObserver</a> and<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/PresenterFeatureObserver.html">PresenterFeatureObserver</a>.</p>
+
+<p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html">VISPER-Redux</a>provides you with:<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ReduxApp.html">ReduxApp</a>,<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/LogicFeature.html">LogicFeature</a>and<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Structs/LogicFeatureObserver.html">LogicFeatureObserver</a>.</p>
+
+<p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Swift/index.html">VISPER-Swift</a> provides you with a<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Swift/Classes/VISPERApp.html">VISPERApp</a> which combines all charactersistics of a<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html">WireframeApp</a> and a<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ReduxApp.html">ReduxApp</a> and is used inthe most Apps build on the VISPER-Framework.</p>
 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/barteljan/VISPER" target="_blank" rel="external">Jan Bartel</a>. All rights reserved. (Last updated: 2018-07-13)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/barteljan/VISPER" target="_blank" rel="external">Jan Bartel</a>. All rights reserved. (Last updated: 2018-07-16)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
