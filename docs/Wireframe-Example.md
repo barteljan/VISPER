@@ -4,7 +4,7 @@ This simple example contains two view controllers with a button.
 One has a blue and one has a green background color.
 If you press the button of one controller, a controller with the other color ist presented on a navigation controller
 
-You can find the source code for this Example in the VISPER-Wireframe-Example target.
+You can find the source code for this Example in the [VISPER-Wireframe-Example](https://github.com/barteljan/VISPER/tree/master/Example/VISPER-Wireframe-Example) target.
 
 #### Create a View Feature
 
