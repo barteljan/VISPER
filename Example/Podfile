@@ -6,7 +6,7 @@ target 'VISPER_Example' do
   pod 'VISPER-CommandBus'
 end
 
-target 'VISPER-Wireframe-Example' do
+target 'VISPER-Wireframe-Example.md' do
     pod 'VISPER-Wireframe', :path => '../'
     pod 'VISPER-Core', :path => '../'
     pod 'VISPER-UIViewController', :path => '../'

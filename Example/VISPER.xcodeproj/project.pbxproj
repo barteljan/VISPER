@@ -452,6 +452,7 @@
 		A2B46C9395B052B9ED8B343A /* Pods-VISPER-Reactive-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Reactive-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Reactive-Tests/Pods-VISPER-Reactive-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A32861F5A280CB9FB37F6534 /* Pods-VISPER-Entity-ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Entity-ExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Entity-ExampleTests/Pods-VISPER-Entity-ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC72F70D7CBCB8DF29F2A439 /* Pods-VISPER-Swift-RxSwift-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Swift-RxSwift-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Swift-RxSwift-Example/Pods-VISPER-Swift-RxSwift-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		ACC76C0E9FB1D165760C3C6B /* Wireframe-Example.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Wireframe-Example.md"; sourceTree = "<group>"; };
 		B45BF62ACA2A1145CA165209 /* Pods_VISPER_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VISPER_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70C1EC372079195E3C52812 /* Pods-VISPER-Reactive-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Reactive-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Reactive-Example/Pods-VISPER-Reactive-Example.release.xcconfig"; sourceTree = "<group>"; };
 		CFB39C39C2CF363C24B1B6BE /* Pods_VISPER_Reactive_RxSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VISPER_Reactive_RxSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -705,6 +706,7 @@
 				9A15027120F885D400CDB8FC /* README-VISPER-Objc.md */,
 				9A15027220F885D400CDB8FC /* README-Deprecated.md */,
 				9A15027520F885D400CDB8FC /* README-VISPER-Redux.md */,
+				ACC76C0E9FB1D165760C3C6B /* Wireframe-Example.md */,
 			);
 			name = docs;
 			path = ../docs;

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  VISPER-Wireframe-Example
+//  VISPER-Wireframe-Example.md
 //
 //  Created by bartel on 09.12.17.
 //  Copyright © 2017 Jan Bartel. All rights reserved.

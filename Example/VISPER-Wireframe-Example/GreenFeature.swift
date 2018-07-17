@@ -1,6 +1,6 @@
 //
 //  GreenFeature.swift
-//  VISPER-Wireframe-Example
+//  VISPER-Wireframe-Example.md
 //
 //  Created by bartel on 16.07.18.
 //  Copyright © 2018 Jan Bartel. All rights reserved.
