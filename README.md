@@ -100,7 +100,7 @@ let factory = WireframeFactory()
 let wireframe = factory.makeWireframe()
 ````
 
-Now create a ViewFeature which provides with a controller and some RoutingOptions, to define how the controller will be presented, to your wireframe.
+Now create a ViewFeature which provides a ViewController and some RoutingOptions, to define how the controller will be presented, to your wireframe.
 
 ````swift
 class ExampleViewFeature: ViewFeature {
