@@ -84,5 +84,63 @@ The [VISPER-Wireframe](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wi
 The [Wireframe](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/Wireframe.html) manages the lifecycle of UIViewController in an VISPER-Application. 
 It is used to create controllers and to route from one controller to an other. It seperates the ViewController presentation and creation logic from the UIViewController itself.
 
-[Here ist a short example how to use VISPER with a wireframe](docs/Wireframe-Example.md)
+You can use the [DefaultWireframeAppFactory](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Classes/DefaultWireframeAppFactory.html) to create a [WireframeApp](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html) with a default configuration:
+
+````swift
+let navigationController = UINavigationController()
+let factory = DefaultWireframeAppFactory()
+let wireframeApp = factory.makeApp()
+wireframeApp.add(controllerToNavigate: navigationController)
+````
+
+if you want to create a [Wireframe](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/Wireframe.html) without creating a [WireframeApp](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html) use the [WireframeFactory](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Classes/WireframeFactory.html).
+
+````swift
+let factory = WireframeFactory()
+let wireframe = factory.makeWireframe()
+````
+
+Now create a ViewFeature which provides the wireframe with a controller and some RoutingOptions (which define how the controller will be presented).
+
+````swift
+class ExampleViewFeature: ViewFeature {
+    
+    var routePattern: String = "/exampleView"
+    var priority: Int = 0
+    
+    //controller will be pushed on current active navigation controller 
+    func makeOption(routeResult: RouteResult) -> RoutingOption {
+        return DefaultRoutingOptionPush()
+    }
+    
+    func makeController(routeResult: RouteResult) throws -> UIViewController {
+        let controller = UIViewController()
+        return controller
+    }
+}
+````
+
+Add it to your [WireframeApp](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html)
+
+````swift
+let feature = ExampleFeature()
+wireframeApp.add(feature: feature)
+````
+
+or to your [Wireframe](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/Wireframe.html)
+
+````swift
+let feature = ExampleFeature()
+wireframe.add(controllerProvider: feature, priority: feature.priority)
+wireframe.add(optionProvider: feature, priority: feature.priority)
+try wireframe.add(routePattern: feature.routePattern)
+````
+
+You can now route to the controller provided by the ExampleFeature:
+````swift
+try wireframe.route(url: URL(string: "/exampleView")!)
+````
+
+
+[Here ist a full example useing VISPER with a wireframe](docs/Wireframe-Example.md)
 
