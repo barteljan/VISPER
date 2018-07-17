@@ -142,5 +142,5 @@ try wireframe.route(url: URL(string: "/exampleView")!)
 ````
 
 
-[Here ist a full example useing VISPER with a wireframe](docs/Wireframe-Example.md)
+[Here ist a full example using VISPER with a wireframe](docs/Wireframe-Example.md)
 
