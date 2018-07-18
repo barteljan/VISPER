@@ -144,3 +144,18 @@ try wireframe.route(url: URL(string: "/exampleView")!)
 
 [Here ist a full example using VISPER with a wireframe](docs/Wireframe-Example.md)
 
+### VISPER-Redux
+
+[VISPER-Redux](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html) is an implementation of the redux-architecture in swift. 
+
+It provides you with an app architecture to tackle the problem 
+of distributed app state and state changes. It is the implementaion 
+of the interactor layer in many Apps based on the VISPER Framework.
+
+If you want to learn more about redux, have a look at the following tutorials and documentations:
+
+* [A cartoon guide to Flux](https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207)
+* [A cartoon Intro to Redux](https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6)
+* [redux.js Documentation](http://redux.js.org/docs/introduction/)
+
+A comprehensive introduction about [VISPER-Redux]((https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html)) can be found [here]((https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html)).

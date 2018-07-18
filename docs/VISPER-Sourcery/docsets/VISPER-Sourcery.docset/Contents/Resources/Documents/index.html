@@ -133,167 +133,80 @@ configures all VISPER components used by it.</p>
 <p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Swift/index.html">VISPER-Swift</a> provides you with a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Swift/Classes/VISPERApp.html">VISPERApp</a> which combines all characteristics of a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html">WireframeApp</a> and a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ReduxApp.html">ReduxApp</a> and is used in the most Apps build with the VISPER-Framework.</p>
 <h3 id='wireframe' class='heading'>Wireframe</h3>
 
-<p>The <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/index.html">VISPER-Wireframe</a> component contains an implementation of the <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/Wireframe.html">Wireframe</a>-Protocol called <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Classes/DefaultWireframe.html">DefaultWireframe</a>.  </p>
-
 <p>The <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/Wireframe.html">Wireframe</a> manages the lifecycle of UIViewController in an VISPER-Application. 
 It is used to create controllers and to route from one controller to an other. It seperates the ViewController presentation and creation logic from the UIViewController itself.</p>
 
-<p>Here ist a short example how to use VISPER with a wireframe:</p>
-<h4 id='example' class='heading'>Example</h4>
+<p>The <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/index.html">VISPER-Wireframe</a> component contains an implementation of the <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/Wireframe.html">Wireframe</a>-Protocol.  </p>
 
-<p>This simple example contains two view controllers with a button and a blue/green background color.
-If you press the button of one controller, a controller with the other color ist presented on a navigation controller</p>
+<p>You can use the <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Classes/DefaultWireframeAppFactory.html">DefaultWireframeAppFactory</a> to create a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html">WireframeApp</a> with a default configuration:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">navigationController</span> <span class="o">=</span> <span class="kt">UINavigationController</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">factory</span> <span class="o">=</span> <span class="kt">DefaultWireframeAppFactory</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">wireframeApp</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="nf">makeApp</span><span class="p">()</span>
+<span class="n">wireframeApp</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">controllerToNavigate</span><span class="p">:</span> <span class="n">navigationController</span><span class="p">)</span>
+</code></pre>
 
-<p>You can find the source code for this Example in the VISPER-Wireframe-Example target.</p>
+<p>if you want to create a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/Wireframe.html">Wireframe</a> without creating a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html">WireframeApp</a> use the <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Classes/WireframeFactory.html">WireframeFactory</a>.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">factory</span> <span class="o">=</span> <span class="kt">WireframeFactory</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">wireframe</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="nf">makeWireframe</span><span class="p">()</span>
+</code></pre>
 
-<p>Let&rsquo;s start with a BlueFeature.
-It&rsquo;s a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/ViewFeature.html">ViewFeature</a> class that creates a blue view controller:</p>
-<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">VISPER</span>
+<p>Now create a ViewFeature which provides a ViewController and some RoutingOptions, to define how the controller will be presented, to your wireframe.</p>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ExampleViewFeature</span><span class="p">:</span> <span class="kt">ViewFeature</span> <span class="p">{</span>
 
-<span class="kd">class</span> <span class="kt">BlueFeature</span><span class="p">:</span> <span class="kt">ViewFeature</span> <span class="p">{</span>
-
-    <span class="k">var</span> <span class="nv">routePattern</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"/Blue"</span>
+    <span class="k">var</span> <span class="nv">routePattern</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"/exampleView"</span>
     <span class="k">var</span> <span class="nv">priority</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
 
-    <span class="c1">// return a routing option to show how this controller should be presented</span>
+    <span class="c1">//controller will be pushed on current active navigation controller </span>
     <span class="kd">func</span> <span class="nf">makeOption</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">RoutingOption</span> <span class="p">{</span>
         <span class="k">return</span> <span class="kt">DefaultRoutingOptionPush</span><span class="p">()</span>
     <span class="p">}</span>
 
-    <span class="c1">// create a blue controller which will be created when the "blue" route is called</span>
     <span class="kd">func</span> <span class="nf">makeController</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">UIViewController</span> <span class="p">{</span>
         <span class="k">let</span> <span class="nv">controller</span> <span class="o">=</span> <span class="kt">UIViewController</span><span class="p">()</span>
-        <span class="n">controller</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">blue</span>
         <span class="k">return</span> <span class="n">controller</span>
     <span class="p">}</span>
-
-
 <span class="p">}</span>
 </code></pre>
 
-<p>A <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/ViewFeature.html">ViewFeature</a> consists of two key functions
-<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/ControllerProvider.html#/s:11VISPER_Core18ControllerProviderP04makeC0So06UIViewC0CAA11RouteResult_p05routeH0_tKF">makeController(routeResult:)</a> 
-and <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/RoutingOptionProvider.html#/s:11VISPER_Core21RoutingOptionProviderP6optionAA0cD0_pSgAA11RouteResult_p05routeH0_tF">option(routeResult:)</a>.
-and two key properties <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/ViewFeature.html#/s:16VISPER_Wireframe11ViewFeatureP12routePatternSSvp">routePattern</a> and <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/ViewFeature.html#/s:16VISPER_Wireframe11ViewFeatureP8prioritySivp">priority</a>.</p>
-
-<p>The <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/ControllerProvider.html#/s:11VISPER_Core18ControllerProviderP04makeC0So06UIViewC0CAA11RouteResult_p05routeH0_tKF">makeController(routeResult:)</a> function returns a UIViewController when an URL routet on our Wireframe class matches the routePattern of BlueFeature.</p>
-
-<p>You would call it in your application like that:</p>
-<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">callBlueFeature</span><span class="p">(</span><span class="nv">wireframe</span><span class="p">:</span> <span class="kt">Wireframe</span><span class="p">)</span> <span class="k">throws</span> <span class="p">{</span>
-    <span class="k">try</span> <span class="n">wireframe</span><span class="o">.</span><span class="nf">route</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"/Blue"</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
-<span class="p">}</span>
+<p>Add it to your <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html">WireframeApp</a></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">feature</span> <span class="o">=</span> <span class="kt">ExampleFeature</span><span class="p">()</span>
+<span class="n">wireframeApp</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">feature</span><span class="p">:</span> <span class="n">feature</span><span class="p">)</span>
 </code></pre>
 
-<p>The <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/RoutingOptionProvider.html#/s:11VISPER_Core21RoutingOptionProviderP6optionAA0cD0_pSgAA11RouteResult_p05routeH0_tF">option(routeResult:)</a> function defines how your controller is presented by the wireframe.
-Actually it returns a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/DefaultRoutingOptionPush.html">DefaultRoutingOptionPush</a> which indicates the wireframe to push it&rsquo;s controllers on a wireframe.</p>
+<p>or to your <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/Wireframe.html">Wireframe</a></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">feature</span> <span class="o">=</span> <span class="kt">ExampleFeature</span><span class="p">()</span>
+<span class="n">wireframe</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">controllerProvider</span><span class="p">:</span> <span class="n">feature</span><span class="p">,</span> <span class="nv">priority</span><span class="p">:</span> <span class="n">feature</span><span class="o">.</span><span class="n">priority</span><span class="p">)</span>
+<span class="n">wireframe</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">optionProvider</span><span class="p">:</span> <span class="n">feature</span><span class="p">,</span> <span class="nv">priority</span><span class="p">:</span> <span class="n">feature</span><span class="o">.</span><span class="n">priority</span><span class="p">)</span>
+<span class="k">try</span> <span class="n">wireframe</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">routePattern</span><span class="p">:</span> <span class="n">feature</span><span class="o">.</span><span class="n">routePattern</span><span class="p">)</span>
+</code></pre>
 
-<p>There are several other options already included in VISPER to present a ViewController some of them are:</p>
+<p>You can now route to the controller provided by the ExampleFeature:</p>
+<pre class="highlight swift"><code><span class="k">try</span> <span class="n">wireframe</span><span class="o">.</span><span class="nf">route</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"/exampleView"</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
+</code></pre>
+
+<p><a href="docs/Wireframe-Example.md">Here ist a full example using VISPER with a wireframe</a></p>
+<h3 id='visper-redux' class='heading'>VISPER-Redux</h3>
+
+<p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html">VISPER-Redux</a> is an implementation of the redux-architecture in swift. </p>
+
+<p>It provides you with an app architecture to tackle the problem 
+of distributed app state and state changes. It is the implementaion 
+of the interactor layer in many Apps based on the VISPER Framework.</p>
+
+<p>If you want to learn more about redux, have a look at the following tutorials and documentations:</p>
 
 <ul>
-<li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/DefaultRoutingOptionModal.html">DefaultRoutingOptionModal</a> - Presents the controller as a modal. You can configure it&rsquo;s UIModalPresentationStyle and UIModalTransitionStyle as a property of the option instance</li>
-<li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/DefaultRoutingOptionReplaceTopVC.html">DefaultRoutingOptionReplaceTopVC</a> - Replaces the top view controller of your navigation controller with the controller returned by BlueFeature.</li>
-<li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/DefaultRoutingOptionRootVC.html">DefaultRoutingOptionRootVC</a> - Set the rootController of your navigation controller with the controller returnded by BlueFeature.</li>
+<li><a href="https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207">A cartoon guide to Flux</a></li>
+<li><a href="https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6">A cartoon Intro to Redux</a></li>
+<li><a href="http://redux.js.org/docs/introduction/">redux.js Documentation</a></li>
 </ul>
 
-<p>But how do we get a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/Wireframe.html">Wireframe</a> and a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html">WireframeApp</a> to route to our BlueFeature? </p>
-
-<p>Let&rsquo;s start with your AppDelegate:</p>
-<pre class="highlight swift"><code><span class="kd">@UIApplicationMain</span>
-<span class="kd">class</span> <span class="kt">AppDelegate</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">UIApplicationDelegate</span> <span class="p">{</span>
-
-    <span class="k">var</span> <span class="nv">window</span><span class="p">:</span> <span class="kt">UIWindow</span><span class="p">?</span>
-
-    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
-
-        <span class="k">let</span> <span class="nv">window</span> <span class="o">=</span> <span class="kt">UIWindow</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">UIScreen</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span>
-                <span class="k">self</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="n">window</span>
-
-        <span class="c1">//</span>
-        <span class="c1">//we will add some code here soon</span>
-        <span class="c1">//</span>
-
-        <span class="k">self</span><span class="o">.</span><span class="n">window</span><span class="p">?</span><span class="o">.</span><span class="nf">makeKeyAndVisible</span><span class="p">()</span>
-        <span class="k">return</span> <span class="kc">true</span>
-    <span class="p">}</span>
-
-<span class="p">}</span>
-</code></pre>
-
-<p>Add a visperApp property create a DefaultWireframeAppFactory and make a new app.</p>
-<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">VISPER</span>
-
-<span class="kd">@UIApplicationMain</span>
-<span class="kd">class</span> <span class="kt">AppDelegate</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">UIApplicationDelegate</span> <span class="p">{</span>
-
-    <span class="k">var</span> <span class="nv">window</span><span class="p">:</span> <span class="kt">UIWindow</span><span class="p">?</span>
-    <span class="k">var</span> <span class="nv">visperApp</span><span class="p">:</span> <span class="kt">WireframeApp</span><span class="p">?</span>
-
-    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
-
-        <span class="k">let</span> <span class="nv">window</span> <span class="o">=</span> <span class="kt">UIWindow</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">UIScreen</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span>
-        <span class="k">self</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="n">window</span>
-
-        <span class="k">let</span> <span class="nv">factory</span> <span class="o">=</span> <span class="kt">DefaultWireframeAppFactory</span><span class="p">()</span>
-        <span class="k">let</span> <span class="nv">visperApp</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="nf">makeApp</span><span class="p">()</span>
-        <span class="k">self</span><span class="o">.</span><span class="n">visperApp</span> <span class="o">=</span> <span class="n">visperApp</span>
-
-        <span class="k">self</span><span class="o">.</span><span class="n">window</span><span class="p">?</span><span class="o">.</span><span class="nf">makeKeyAndVisible</span><span class="p">()</span>
-        <span class="k">return</span> <span class="kc">true</span>
-    <span class="p">}</span>
-
-<span class="p">}</span>
-</code></pre>
-
-<p>Now add a UINavigationController on top of your window, and add ist to your application</p>
-<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
-
-    <span class="k">let</span> <span class="nv">window</span> <span class="o">=</span> <span class="kt">UIWindow</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">UIScreen</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span>
-    <span class="k">self</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="n">window</span>
-
-    <span class="k">let</span> <span class="nv">factory</span> <span class="o">=</span> <span class="kt">DefaultWireframeAppFactory</span><span class="p">()</span>
-    <span class="k">let</span> <span class="nv">visperApp</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="nf">makeApp</span><span class="p">()</span>
-    <span class="k">self</span><span class="o">.</span><span class="n">visperApp</span> <span class="o">=</span> <span class="n">visperApp</span>
-
-    <span class="k">let</span> <span class="nv">navigationController</span> <span class="o">=</span> <span class="kt">UINavigationController</span><span class="p">()</span>
-    <span class="n">visperApp</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">controllerToNavigate</span><span class="p">:</span> <span class="n">navigationController</span><span class="p">)</span>
-    <span class="n">window</span><span class="o">.</span><span class="n">rootViewController</span> <span class="o">=</span> <span class="n">navigationController</span>
-
-    <span class="k">self</span><span class="o">.</span><span class="n">window</span><span class="p">?</span><span class="o">.</span><span class="nf">makeKeyAndVisible</span><span class="p">()</span>
-    <span class="k">return</span> <span class="kc">true</span>
-
-<span class="p">}</span>
-</code></pre>
-
-<p>Add an instance of our BlueFeature and route to it&rsquo;s route</p>
-<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
-
-    <span class="k">let</span> <span class="nv">window</span> <span class="o">=</span> <span class="kt">UIWindow</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">UIScreen</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span>
-    <span class="k">self</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="n">window</span>
-
-    <span class="k">let</span> <span class="nv">factory</span> <span class="o">=</span> <span class="kt">DefaultWireframeAppFactory</span><span class="p">()</span>
-    <span class="k">let</span> <span class="nv">visperApp</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="nf">makeApp</span><span class="p">()</span>
-    <span class="k">self</span><span class="o">.</span><span class="n">visperApp</span> <span class="o">=</span> <span class="n">visperApp</span>
-
-    <span class="k">let</span> <span class="nv">navigationController</span> <span class="o">=</span> <span class="kt">UINavigationController</span><span class="p">()</span>
-    <span class="n">visperApp</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">controllerToNavigate</span><span class="p">:</span> <span class="n">navigationController</span><span class="p">)</span>
-    <span class="n">window</span><span class="o">.</span><span class="n">rootViewController</span> <span class="o">=</span> <span class="n">navigationController</span>
-
-    <span class="k">let</span> <span class="nv">blueFeature</span> <span class="o">=</span> <span class="kt">BlueFeature</span><span class="p">()</span>
-    <span class="k">try!</span> <span class="n">visperApp</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">feature</span><span class="p">:</span> <span class="n">blueFeature</span><span class="p">)</span>
-
-    <span class="k">try!</span> <span class="n">visperApp</span><span class="o">.</span><span class="n">wireframe</span><span class="o">.</span><span class="nf">route</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">blueFeature</span><span class="o">.</span><span class="n">routePattern</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
-
-    <span class="k">self</span><span class="o">.</span><span class="n">window</span><span class="p">?</span><span class="o">.</span><span class="nf">makeKeyAndVisible</span><span class="p">()</span>
-    <span class="k">return</span> <span class="kc">true</span>
-<span class="p">}</span>
-</code></pre>
-
-<p>If you run your project now, your app will initially show the blue UIViewController provided by our BlueFeature.</p>
+<p>A comprehensive introduction about <a href="(https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html)">VISPER-Redux</a> can be found <a href="(https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html)">here</a>.</p>
 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/barteljan/VISPER/master/README-VISPER-Sourcery.md" target="_blank" rel="external">Jan Bartel</a>. All rights reserved. (Last updated: 2018-07-16)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/barteljan/VISPER/blob/master/docs/README-VISPER-Sourcery.md" target="_blank" rel="external">Jan Bartel</a>. All rights reserved. (Last updated: 2018-07-18)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

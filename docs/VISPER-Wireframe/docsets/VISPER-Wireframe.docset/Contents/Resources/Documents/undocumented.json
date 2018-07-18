@@ -15,6 +15,41 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/App/DefaultWireframeAppFactory.swift",
+      "line": 13,
+      "symbol": "DefaultWireframeAppFactory",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/App/DefaultWireframeAppFactory.swift",
+      "line": 15,
+      "symbol": "DefaultWireframeAppFactory.wireframeFactory",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/App/DefaultWireframeAppFactory.swift",
+      "line": 17,
+      "symbol": "DefaultWireframeAppFactory.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/App/DefaultWireframeAppFactory.swift",
+      "line": 19,
+      "symbol": "DefaultWireframeAppFactory.makeApp(wireframe:controllerContainer:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/App/DefaultWireframeAppFactory.swift",
+      "line": 37,
+      "symbol": "DefaultWireframeAppFactory.addDefaultFeatureObserver(application:controllerContainer:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/App/PresenterFeature.swift",
       "line": null,
       "symbol": "PresenterFeature",
@@ -61,6 +96,20 @@
       "line": 11,
       "symbol": "WireframeApp",
       "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/App/WireframeAppFactory.swift",
+      "line": 11,
+      "symbol": "WireframeAppFactory",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/App/WireframeAppFactory.swift",
+      "line": 12,
+      "symbol": "WireframeAppFactory.makeApp(wireframe:controllerContainer:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
