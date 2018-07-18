@@ -5,6 +5,21 @@
 [![License](https://img.shields.io/cocoapods/l/VISPER-Redux.svg?style=flat)](http://cocoapods.org/pods/VISPER-Redux)
 [![Platform](https://img.shields.io/cocoapods/p/VISPER-Redux.svg?style=flat)](http://cocoapods.org/pods/VISPER-Redux)
 
+---------------------------------------------------------------------------------------------------------
+
+- [VISPER-Redux](#visper-redux)
+  * [State](#state)
+  * [Changing state](#changing-state)
+    + [AppReducer](#appreducer)
+    + [A short state change example](#a-short-state-change-example)
+  * [Observing state change](#observing-state-change)
+  * [Example](#example)
+  * [Installation](#installation)
+  * [Author](#author)
+  * [License](#license)
+  
+---------------------------------------------------------------------------------------------------------
+
 [VISPER-Redux](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html) is an implementation of the redux-architecture in swift. 
 It provides you with an app architecture to tackle the problem of distributed app state and state changes.
 
@@ -16,6 +31,7 @@ If you want to learn more about redux, have a look at the following tutorials an
 * [A cartoon guide to Flux](https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207)
 * [A cartoon Intro to Redux](https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6)
 * [redux.js Documentation](http://redux.js.org/docs/introduction/)
+
 
 ## State
 

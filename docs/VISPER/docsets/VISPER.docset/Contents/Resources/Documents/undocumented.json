@@ -1745,49 +1745,21 @@
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
-      "line": 11,
-      "symbol": "AnyVISPERApp",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
-      "line": 11,
-      "symbol": "AnyVISPERApp",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
-      "line": 11,
-      "symbol": "AnyVISPERApp",
+      "line": 12,
+      "symbol": "ApplicationFactory",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
       "line": 12,
-      "symbol": "VISPERApp",
+      "symbol": "ApplicationFactory",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
       "line": 12,
-      "symbol": "VISPERApp",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
-      "line": 12,
-      "symbol": "VISPERApp",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
-      "line": 13,
       "symbol": "ApplicationFactory",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
@@ -1795,118 +1767,167 @@
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
       "line": 13,
-      "symbol": "ApplicationFactory",
+      "symbol": "AnyVISPERApp",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
       "line": 13,
-      "symbol": "ApplicationFactory",
+      "symbol": "AnyVISPERApp",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
+      "line": 13,
+      "symbol": "AnyVISPERApp",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
       "line": 14,
-      "symbol": "VISPERAppType",
+      "symbol": "VISPERApp",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
       "line": 14,
-      "symbol": "VISPERAppType",
+      "symbol": "VISPERApp",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
       "line": 14,
+      "symbol": "VISPERApp",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
+      "line": 15,
+      "symbol": "AppFactory",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
+      "line": 15,
+      "symbol": "AppFactory",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
+      "line": 15,
+      "symbol": "AppFactory",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
+      "line": 16,
       "symbol": "VISPERAppType",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
-      "line": 15,
-      "symbol": "DefaultStatefulFeature",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
-      "line": 15,
-      "symbol": "DefaultStatefulFeature",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
-      "line": 15,
-      "symbol": "DefaultStatefulFeature",
+      "line": 16,
+      "symbol": "VISPERAppType",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
       "line": 16,
-      "symbol": "StatefulFeature",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
-      "line": 16,
-      "symbol": "StatefulFeature",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
-      "line": 16,
-      "symbol": "StatefulFeature",
+      "symbol": "VISPERAppType",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
       "line": 17,
-      "symbol": "StateObservingFeature",
+      "symbol": "DefaultStatefulFeature",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
       "line": 17,
-      "symbol": "StateObservingFeature",
+      "symbol": "DefaultStatefulFeature",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
       "line": 17,
-      "symbol": "StateObservingFeature",
+      "symbol": "DefaultStatefulFeature",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
       "line": 18,
+      "symbol": "StatefulFeature",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
+      "line": 18,
+      "symbol": "StatefulFeature",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
+      "line": 18,
+      "symbol": "StatefulFeature",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
+      "line": 19,
+      "symbol": "StateObservingFeature",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
+      "line": 19,
+      "symbol": "StateObservingFeature",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
+      "line": 19,
+      "symbol": "StateObservingFeature",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
+      "line": 20,
       "symbol": "StateObservingFeatureObserver",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
-      "line": 18,
+      "line": 20,
       "symbol": "StateObservingFeatureObserver",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
-      "line": 18,
+      "line": 20,
       "symbol": "StateObservingFeatureObserver",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"

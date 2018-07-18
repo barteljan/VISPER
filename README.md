@@ -8,6 +8,16 @@ VISPER is a component based library, which helps you to develop modular apps bas
 
 ---------------------------------------------------------------------------------------------------------
 
+- [VISPER](#visper)
+  * [Currently available VISPER-Components](#currently-available-visper-components)
+  * [Getting started](#getting-started)
+    + [App](#app)
+    + [Features and FeatureObserver](#features-and-featureobserver)
+    + [Wireframe](#wireframe)
+    + [VISPER-Redux](#visper-redux)
+
+---------------------------------------------------------------------------------------------------------
+
 ## Currently available VISPER-Components
 
 * [VISPER](https://rawgit.com/barteljan/VISPER/master/docs/VISPER/index.html) - a convenience import wrapper to include all VISPER Components with one import. It contains some deprecated components for backwards compatibility to previous VISPER Versions.

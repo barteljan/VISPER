@@ -15,30 +15,37 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/ApplicationFactory.swift",
-      "line": 17,
-      "symbol": "ApplicationFactory.wireframeFactory",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/AppFactory.swift",
+      "line": 15,
+      "symbol": "ApplicationFactory",
+      "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/ApplicationFactory.swift",
-      "line": 18,
-      "symbol": "ApplicationFactory.strictReduxMode",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/ApplicationFactory.swift",
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/AppFactory.swift",
       "line": 20,
-      "symbol": "ApplicationFactory.init()",
+      "symbol": "AppFactory.wireframeFactory",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/AppFactory.swift",
+      "line": 21,
+      "symbol": "AppFactory.strictReduxMode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/AppFactory.swift",
+      "line": 23,
+      "symbol": "AppFactory.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/ApplicationFactory.swift",
-      "line": 64,
-      "symbol": "ApplicationFactory.addDefaultFeatureObserver(application:controllerContainer:)",
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/AppFactory.swift",
+      "line": 67,
+      "symbol": "AppFactory.addDefaultFeatureObserver(application:controllerContainer:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
