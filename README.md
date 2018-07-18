@@ -168,4 +168,4 @@ If you want to learn more about redux, have a look at the following tutorials an
 * [A cartoon Intro to Redux](https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6)
 * [redux.js Documentation](http://redux.js.org/docs/introduction/)
 
-A comprehensive introduction about [VISPER-Redux]((https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html)) can be found [here]((https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html)).
+A comprehensive introduction about [VISPER-Redux](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html) can be found [here](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html).
