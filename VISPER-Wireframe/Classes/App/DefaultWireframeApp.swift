@@ -42,7 +42,7 @@ open class DefaultWireframeApp: DefaultApp, WireframeApp {
     }
     
     public func controllerToNavigate(matches: (UIViewController?) -> Bool) -> UIViewController? {
-        return self.controllerToNavigate(matches:matches)
+        return self.controllerContainer.getController(matches:matches)
     }
     
 }

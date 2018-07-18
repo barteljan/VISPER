@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VISPER-Wireframe'
-  s.version          = '3.1.0'
+  s.version          = '3.1.1'
   s.summary          = 'Implementation of viper wireframe layer in the VISPER Application Framework'
 
   s.description      = <<-DESC
