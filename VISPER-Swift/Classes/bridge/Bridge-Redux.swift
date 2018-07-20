@@ -28,7 +28,9 @@ public typealias Redux<State> = VISPER_Redux.Redux<State>
 public typealias ReduxApp = VISPER_Redux.ReduxApp
 public typealias StatefulFeatureObserver = VISPER_Redux.StatefulFeatureObserver
 public typealias Store<State>  = VISPER_Redux.Store<State>
-
+public typealias StateObservingFeatureObserver<ApplicationState,ObservedState> = VISPER_Redux.StateObservingFeatureObserver<ApplicationState,ObservedState>
+public typealias StateObservingFeature<ObservedStateType> = VISPER_Redux.StateObservingFeature<ObservedStateType>
+public typealias StateObservingFeatureError = VISPER_Redux.StateObservingFeatureError
 
 
 

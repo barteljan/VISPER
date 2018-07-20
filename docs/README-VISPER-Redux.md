@@ -13,6 +13,7 @@
     + [AppReducer](#appreducer)
     + [A short state change example](#a-short-state-change-example)
   * [Observing state change](#observing-state-change)
+  * [Using VISPER-Redux with a ReduxApp and Features](#using-visper-redux-with-a-reduxapp-and-features)
   * [Example](#example)
   * [Installation](#installation)
   * [Author](#author)
@@ -165,7 +166,7 @@ struct SetUsernameAction : Action{
 add a specific reducer for changing your UserState
 
 ```swift
-let setUsernameReducer = { (reducerProvider: ReducerProvider, action: SetUsernameAction, currentState: UserState) -> AppState in
+let setUsernameReducer = { (reducerProvider: ReducerProvider, action: SetUsernameAction, currentState: UserState) -> UserState in
     return UserState(userName: action.newUsername,
                      isAuthenticated: currentState.isAuthenticated)
 }
@@ -186,7 +187,7 @@ your reducers will now be called and the setUsernameReducer will set the new Use
 You can prove that by:
 
 ```swift
-assert(redux.store.observable.value.userState.userName == "Max Mustermann")
+assert(redux.store.observableState.value.userState.userName == "Max Mustermann")
 ```
 
 ## Observing state change
@@ -212,9 +213,91 @@ referenceBag.addReference(reference: subscription)
 [ObservableProperty](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Reactive/Classes/ObservableProperty.html) allows you to subscribe for state changes, and can be mapped to a RxSwift-Observable. 
 It is implemented in the [VISPER-Reactive](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Reactive/Classes/ObservableProperty.html) Component.
 
+
+## Using VISPER-Redux with a ReduxApp and Features
+
+It is possible to use VISPER-Redux with a feature based architecture, instead of configuring it manually. 
+
+Let's create an application at first:
+
+````swift
+let appState: AppState = AppState( ... create your state here ...)
+
+let factory = ReduxAppFactory()
+
+let appReducer = { (reducerProvider: ReducerProvider, action: Action, currentState: AppState) -> AppState in
+    let state = AppState(
+        userState: reducerProvider.reduce(action,currentState.userState),
+        todoListState: reducerProvider.reduce(action,currentState.todoListState),
+        imprintState : reducerProvider.reduce(action,currentState.imprintState)
+    )
+    return reducerProvider.reduce(action,state)
+}
+
+let app: ReduxApp<AppState> = factory.makeApplication(initialState: appState, appReducer: appReducer) 
+````
+
+create a SetUsernameAction 
+
+```swift
+struct SetUsernameAction : Action{
+    var newUsername : String
+}
+```
+
+now create a reducer:
+
+````swift
+class SetUsernameReducer: ActionReducerType {
+    
+    typealias ReducerStateType  = UserState
+    typealias ReducerActionType = SetUsernameAction
+    
+    func reduce(provider: ReducerProvider,
+                  action: SetUsernameAction,
+                   state: UserState) -> UserState {
+         return UserState(userName: action.newUsername,
+                    isAuthenticated: state.isAuthenticated)
+    }
+    
+    
+}
+````
+
+now create a LogicFeature and use it to add your Reducer to the global ReducerContainer 
+
+````swift
+import VISPER_Redux
+
+class ExampleLogicFeature: LogicFeature {
+    
+     func injectReducers(container: ReducerContainer) {
+        let reducer = SetUsernameReducer()
+        container.addReducer(reducer: incrementReducer)
+     }
+    
+}
+````
+
+and dispatch a new SetUserNameAction 
+
+```swift
+let action = SetUsernameAction(newUsername: "Max Mustermann")
+app.redux.actionDispatcher.dispatch(action)
+```
+
+your reducers will now be called and the setUsernameReducer will set the new UserStates property userName to "Max Mustermann"
+
+
+You can prove that by:
+
+```swift
+assert(app.redux.store.observableState.value.userState.userName == "Max Mustermann")
+```
+
 ## Example
 
-You can find full example showing a typical counter example in the [VISPER-Redux-Example](https://github.com/barteljan/VISPER/tree/master/Example/VISPER-Redux-Example) target 
+You can find full example showing a typical counter example in the [VISPER-Redux-Example](https://github.com/barteljan/VISPER/tree/master/Example/VISPER-Redux-Example) target
 
 ## Installation
 
