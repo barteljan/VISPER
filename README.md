@@ -387,7 +387,7 @@ app.add(feature: let logicFeature)
 
 #### Observing state change
 
-Observing state change ist simple. Just observe the observable property of your store:
+Observing state change ist simple. Just observe the state of your app:
 
 ```swift
 
@@ -396,7 +396,7 @@ let referenceBag: SubscriptionReferenceBag = self.referenceBag
 
 
 //subscribe to the state
-let subscription = redux.store.observableState.subscribe { appState in
+let subscription = app.state.subscribe { appState in
     print("New username is:\(appState.userState.userName)")                                   
 }
 
