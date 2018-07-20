@@ -1744,6 +1744,69 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Redux.swift",
+      "line": 31,
+      "symbol": "StateObservingFeatureObserver",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Redux.swift",
+      "line": 31,
+      "symbol": "StateObservingFeatureObserver",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Redux.swift",
+      "line": 31,
+      "symbol": "StateObservingFeatureObserver",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Redux.swift",
+      "line": 32,
+      "symbol": "StateObservingFeature",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Redux.swift",
+      "line": 32,
+      "symbol": "StateObservingFeature",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Redux.swift",
+      "line": 32,
+      "symbol": "StateObservingFeature",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Redux.swift",
+      "line": 33,
+      "symbol": "StateObservingFeatureError",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Redux.swift",
+      "line": 33,
+      "symbol": "StateObservingFeatureError",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Redux.swift",
+      "line": 33,
+      "symbol": "StateObservingFeatureError",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
       "line": 12,
       "symbol": "ApplicationFactory",
@@ -1887,48 +1950,6 @@
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
       "line": 18,
       "symbol": "StatefulFeature",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
-      "line": 19,
-      "symbol": "StateObservingFeature",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
-      "line": 19,
-      "symbol": "StateObservingFeature",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
-      "line": 19,
-      "symbol": "StateObservingFeature",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
-      "line": 20,
-      "symbol": "StateObservingFeatureObserver",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
-      "line": 20,
-      "symbol": "StateObservingFeatureObserver",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
-      "line": 20,
-      "symbol": "StateObservingFeatureObserver",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },

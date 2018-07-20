@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>StateObservingFeatureObserver Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/StateObservingFeatureObserver" class="dashAnchor"></a>
+    <a title="StateObservingFeatureObserver Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">VISPER-Redux Docs</a> (52% documented)</p>
+        <p class="header-right"><a href="https://github.com/barteljan/VISPER.git"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">VISPER-Redux Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        StateObservingFeatureObserver Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AnyReduxApp.html">AnyReduxApp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyStatefulFeatureObserver.html">AnyStatefulFeatureObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultReduxApp.html">DefaultReduxApp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReducerContainerImpl.html">ReducerContainerImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Redux.html">Redux</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ReduxAppFactory.html">ReduxAppFactory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/StateObservingFeature.html">StateObservingFeature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/StateObservingFeatureObserver.html">StateObservingFeatureObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Store.html">Store</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/StateObservingFeatureError.html">StateObservingFeatureError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/ActionReducerType.html">ActionReducerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AsyncActionReducerType.html">AsyncActionReducerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LogicFeature.html">LogicFeature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ReducerContainer.html">ReducerContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ReducerProvider.html">ReducerProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ReduxApp.html">ReduxApp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StateChangingReducerContainer.html">StateChangingReducerContainer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StatefulFeatureObserver.html">StatefulFeatureObserver</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/ActionReducer.html">ActionReducer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AnyActionReducer.html">AnyActionReducer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AnyAsyncActionReducer.html">AnyAsyncActionReducer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AsyncActionReducer.html">AsyncActionReducer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/FunctionalReducer.html">FunctionalReducer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LogicFeatureObserver.html">LogicFeatureObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Middleware.html">Middleware</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UpdateStateWithSubStateAction.html">UpdateStateWithSubStateAction</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:12VISPER_Redux10AppReducera">AppReducer</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>StateObservingFeatureObserver</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">StateObservingFeatureObserver</span><span class="o">&lt;</span><span class="kt">ApplicationState</span><span class="p">,</span> <span class="kt">ObservedState</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/StatefulFeatureObserver.html">StatefulFeatureObserver</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12VISPER_Redux29StateObservingFeatureObserverC03AppC0a"></a>
+                    <a name="//apple_ref/swift/Alias/AppState" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12VISPER_Redux29StateObservingFeatureObserverC03AppC0a">AppState</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">AppState</span> <span class="o">=</span> <span class="kt">ApplicationState</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12VISPER_Redux29StateObservingFeatureObserverCACyxq_G0A9_Reactive18ObservablePropertyCyq_G5state_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(state:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12VISPER_Redux29StateObservingFeatureObserverCACyxq_G0A9_Reactive18ObservablePropertyCyq_G5state_tcfc">init(state:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt">ObservableProperty</span><span class="o">&lt;</span><span class="kt">ObservedState</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12VISPER_Redux29StateObservingFeatureObserverC12featureAddedyAA03AnyB3AppCyxG11application_0A5_Core0E0_p0G0tKF"></a>
+                    <a name="//apple_ref/swift/Method/featureAdded(application:feature:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12VISPER_Redux29StateObservingFeatureObserverC12featureAddedyAA03AnyB3AppCyxG11application_0A5_Core0E0_p0G0tKF">featureAdded(application:feature:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">featureAdded</span><span class="p">(</span><span class="nv">application</span><span class="p">:</span> <span class="kt"><a href="../Classes/AnyReduxApp.html">AnyReduxApp</a></span><span class="o">&lt;</span><span class="kt">ApplicationState</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">feature</span><span class="p">:</span> <span class="kt">Feature</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/barteljan/VISPER/blob/master/docs/README-VISPER-Redux.md" target="_blank" rel="external">Jan Bartel</a>. All rights reserved. (Last updated: 2018-07-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
