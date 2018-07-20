@@ -365,7 +365,7 @@ reducerContainer.addReducer(reducer:reducer)
 
 #### LogicFeature
 
-You can use a LogicFeature to add some reducers with to your app.
+You can use a LogicFeature to add some reducers to your app.
 
 ````swift
 import VISPER_Redux
