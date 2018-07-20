@@ -25,7 +25,7 @@ public protocol ReducerContainer : class, ReducerProvider {
     /// Add a reduce function to the container
     ///
     /// - Parameter reduceFunction: a reduce function
-    func addReduceFunction<StateType, ActionType: Action>(    @escaping (_ provider: ReducerProvider,_ action: ActionType, _ state: StateType) -> StateType)
+    func addReduceFunction<StateType, ActionType: Action>(reduceFunction:  @escaping (_ provider: ReducerProvider,_ action: ActionType, _ state: StateType) -> StateType)
     
 }
 
