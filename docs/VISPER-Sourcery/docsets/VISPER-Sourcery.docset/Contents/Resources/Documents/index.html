@@ -77,6 +77,10 @@
 <li><a href="#reduxapp">ReduxApp</a></li>
 <li><a href="#changing-state">Changing state</a></li>
 <li><a href="#reducer">Reducer</a></li>
+<li><a href="#reducefuntion">ReduceFuntion</a></li>
+<li><a href="#functionalreducer">FunctionalReducer</a></li>
+<li><a href="#actionreducertype">ActionReducerType</a></li>
+<li><a href="#asyncactionreducertype">AsyncActionReducerType</a></li>
 <li><a href="#logicfeature">LogicFeature</a></li>
 <li><a href="#observing-state-change">Observing state change</a></li>
 </ul></li>
@@ -313,8 +317,28 @@ A reducer can be added to your redux architecture by adding it to the reducer co
 </code></pre>
 <h4 id='reducer' class='heading'>Reducer</h4>
 
-<p>A reducer is an instance modifying a state in response to an action </p>
-<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">SetUsernameReducer</span><span class="p">:</span> <span class="kt">ActionReducerType</span> <span class="p">{</span>
+<p>Reducers specify how the application&rsquo;s state changes in response to actions sent to the store. Remember that actions only describe what happened, but don&rsquo;t describe how the application&rsquo;s state changes.
+A reducer in VISPER swift could be a reduce-function, or an instance of type <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Structs/FunctionalReducer.html">FunctionalReducer</a>,<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ActionReducerType.html">ActionReducerType</a><br>
+or <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/AsyncActionReducerType.html">AsyncActionReducerType</a>.</p>
+<h5 id='reducefuntion' class='heading'>ReduceFuntion</h5>
+
+<p>A reduce funtion is just a simple function getting a provider, an action and an state, and returning a new state of the same type.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">reduceFunction</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">provider</span><span class="p">:</span> <span class="kt">ReducerProvider</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">SetUsernameAction</span><span class="p">,</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">UserState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UserState</span> <span class="k">in</span>
+    <span class="k">return</span> <span class="kt">UserState</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="n">action</span><span class="o">.</span><span class="n">newUsername</span><span class="p">,</span>
+                        <span class="nv">isAuthenticated</span><span class="p">:</span> <span class="n">state</span><span class="o">.</span><span class="n">isAuthenticated</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">reducerContainer</span><span class="o">.</span><span class="nf">addReduceFunction</span><span class="p">(</span><span class="nv">reduceFunction</span><span class="p">:</span><span class="n">reduceFunction</span><span class="p">)</span>
+</code></pre>
+<h5 id='functionalreducer' class='heading'>FunctionalReducer</h5>
+
+<p>A functional reducer is quite similar, just a reducer taking a reduce function and using it to reduce a state.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">functionalReducer</span> <span class="o">=</span> <span class="kt">FunctionalReducer</span><span class="p">(</span><span class="nv">reduceFunction</span><span class="p">:</span> <span class="n">reduceFunction</span><span class="p">)</span>
+<span class="n">reducerContainer</span><span class="o">.</span><span class="nf">addReducer</span><span class="p">(</span><span class="nv">reducer</span><span class="p">:</span><span class="n">functionalReducer</span><span class="p">)</span>
+</code></pre>
+<h5 id='actionreducertype' class='heading'>ActionReducerType</h5>
+
+<p>An action type reducer is a class of type ActionReducerType which contains a reduce function for a specific action and state type.</p>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">SetUsernameReducer</span><span class="p">:</span> <span class="kt">ActionReducerType</span> <span class="p">{</span>
 
     <span class="kd">typealias</span> <span class="kt">ReducerStateType</span>  <span class="o">=</span> <span class="kt">UserState</span>
     <span class="kd">typealias</span> <span class="kt">ReducerActionType</span> <span class="o">=</span> <span class="kt">SetUsernameAction</span>
@@ -325,13 +349,36 @@ A reducer can be added to your redux architecture by adding it to the reducer co
          <span class="k">return</span> <span class="kt">UserState</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="n">action</span><span class="o">.</span><span class="n">newUsername</span><span class="p">,</span>
                     <span class="nv">isAuthenticated</span><span class="p">:</span> <span class="n">state</span><span class="o">.</span><span class="n">isAuthenticated</span><span class="p">)</span>
     <span class="p">}</span>
-
-
 <span class="p">}</span>
+<span class="k">let</span> <span class="nv">reducer</span> <span class="o">=</span> <span class="kt">SetUsernameReducer</span><span class="p">()</span>
+<span class="n">reducerContainer</span><span class="o">.</span><span class="nf">addReducer</span><span class="p">(</span><span class="nv">reducer</span><span class="p">:</span><span class="n">reducer</span><span class="p">)</span>
+</code></pre>
+<h5 id='asyncactionreducertype' class='heading'>AsyncActionReducerType</h5>
+
+<p>An async reducer is an reducer of AsyncActionReducerType which does not return a new state, but calls a completion with a new state.</p>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">SetUsernameReducer</span><span class="p">:</span> <span class="kt">AsyncActionReducer</span> <span class="p">{</span>
+
+    <span class="kd">typealias</span> <span class="kt">ReducerStateType</span>  <span class="o">=</span> <span class="kt">UserState</span>
+    <span class="kd">typealias</span> <span class="kt">ReducerActionType</span> <span class="o">=</span> <span class="kt">SetUsernameAction</span>
+
+    <span class="k">let</span> <span class="nv">currentState</span><span class="p">:</span> <span class="kt">ObserveableProperty</span><span class="o">&lt;</span><span class="kt">UserState</span><span class="o">&gt;</span>
+
+    <span class="kd">func</span> <span class="nf">reduce</span><span class="p">(</span><span class="nv">provider</span><span class="p">:</span> <span class="kt">ReducerProvider</span><span class="p">,</span>
+                  <span class="nv">action</span><span class="p">:</span> <span class="kt">SetUsernameAction</span><span class="p">,</span>
+              <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">newState</span><span class="p">:</span> <span class="kt">UserState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">let</span> <span class="nv">newState</span> <span class="o">=</span>  <span class="kt">UserState</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="n">action</span><span class="o">.</span><span class="n">newUsername</span><span class="p">,</span>
+                            <span class="nv">isAuthenticated</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">currentState</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">isAuthenticated</span><span class="p">)</span>
+         <span class="nf">completion</span><span class="p">(</span><span class="n">newState</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="k">let</span> <span class="nv">reducer</span> <span class="o">=</span> <span class="kt">SetUsernameReducer</span><span class="p">(</span><span class="nv">currentState</span><span class="p">:</span> <span class="n">app</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">map</span><span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">userState</span> <span class="p">})</span>
+<span class="n">reducerContainer</span><span class="o">.</span><span class="nf">addReducer</span><span class="p">(</span><span class="nv">reducer</span><span class="p">:</span><span class="n">reducer</span><span class="p">)</span>
 </code></pre>
 <h4 id='logicfeature' class='heading'>LogicFeature</h4>
 
-<p>You can use a LogicFeature to add some reducers to your app</p>
+<p>You can use a LogicFeature to add some reducers to your app.</p>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">VISPER_Redux</span>
 
 <span class="kd">class</span> <span class="kt">ExampleLogicFeature</span><span class="p">:</span> <span class="kt">LogicFeature</span> <span class="p">{</span>
@@ -350,14 +397,14 @@ A reducer can be added to your redux architecture by adding it to the reducer co
 </code></pre>
 <h4 id='observing-state-change' class='heading'>Observing state change</h4>
 
-<p>Observing state change ist simple. Just observe the observable property of your store:</p>
+<p>Observing state change ist simple. Just observe the state of your app:</p>
 <pre class="highlight swift"><code>
 <span class="c1">//get your reference bag to retain subscription</span>
 <span class="k">let</span> <span class="nv">referenceBag</span><span class="p">:</span> <span class="kt">SubscriptionReferenceBag</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">referenceBag</span>
 
 
 <span class="c1">//subscribe to the state</span>
-<span class="k">let</span> <span class="nv">subscription</span> <span class="o">=</span> <span class="n">redux</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">observableState</span><span class="o">.</span><span class="n">subscribe</span> <span class="p">{</span> <span class="n">appState</span> <span class="k">in</span>
+<span class="k">let</span> <span class="nv">subscription</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">subscribe</span> <span class="p">{</span> <span class="n">appState</span> <span class="k">in</span>
     <span class="nf">print</span><span class="p">(</span><span class="s">"New username is:</span><span class="se">\(</span><span class="n">appState</span><span class="o">.</span><span class="n">userState</span><span class="o">.</span><span class="n">userName</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>                                   
 <span class="p">}</span>
 

@@ -13,12 +13,16 @@
   * [AppReducer](#appreducer)
   * [A short state change example](#a-short-state-change-example)
   * [Observing state change](#observing-state-change)
+  * [Reducer](#reducer)
+    + [ReduceFuntion](#reducefuntion)
+    + [FunctionalReducer](#functionalreducer)
+    + [ActionReducerType](#actionreducertype)
+    + [AsyncActionReducerType](#asyncactionreducertype)
   * [Using VISPER-Redux with a ReduxApp and Features](#using-visper-redux-with-a-reduxapp-and-features)
   * [Example](#example)
   * [Installation](#installation)
   * [Author](#author)
   * [License](#license)
-
   
 ---------------------------------------------------------------------------------------------------------
 
@@ -214,6 +218,77 @@ referenceBag.addReference(reference: subscription)
 [ObservableProperty](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Reactive/Classes/ObservableProperty.html) allows you to subscribe for state changes, and can be mapped to a RxSwift-Observable. 
 It is implemented in the [VISPER-Reactive](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Reactive/Classes/ObservableProperty.html) Component.
 
+## Reducer 
+
+Reducers specify how the application's state changes in response to actions sent to the store. Remember that actions only describe what happened, but don't describe how the application's state changes.
+A reducer in VISPER swift could be a reduce-function, or an instance of type [FunctionalReducer](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Structs/FunctionalReducer.html),[ActionReducerType](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ActionReducerType.html)                                                                               
+or [AsyncActionReducerType](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/AsyncActionReducerType.html).
+
+### ReduceFuntion
+
+A reduce funtion is just a simple function getting a provider, an action and an state, and returning a new state of the same type.
+```swift
+let reduceFunction = { (provider: ReducerProvider, action: SetUsernameAction, state: UserState) -> UserState in
+    return UserState(userName: action.newUsername,
+                        isAuthenticated: state.isAuthenticated)
+}
+reducerContainer.addReduceFunction(reduceFunction:reduceFunction)
+```
+
+### FunctionalReducer
+A functional reducer is quite similar, just a reducer taking a reduce function and using it to reduce a state.
+
+```swift
+let functionalReducer = FunctionalReducer(reduceFunction: reduceFunction)
+reducerContainer.addReducer(reducer:functionalReducer)
+```
+
+### ActionReducerType
+
+An action type reducer is a class of type ActionReducerType which contains a reduce function for a specific action and state type.
+
+```swift
+struct SetUsernameReducer: ActionReducerType {
+    
+    typealias ReducerStateType  = UserState
+    typealias ReducerActionType = SetUsernameAction
+    
+    func reduce(provider: ReducerProvider,
+                  action: SetUsernameAction,
+                   state: UserState) -> UserState {
+         return UserState(userName: action.newUsername,
+                    isAuthenticated: state.isAuthenticated)
+    }
+}
+let reducer = SetUsernameReducer()
+reducerContainer.addReducer(reducer:reducer)
+```
+
+### AsyncActionReducerType
+
+An async reducer is an reducer of AsyncActionReducerType which does not return a new state, but calls a completion with a new state.
+
+```swift
+struct SetUsernameReducer: AsyncActionReducer {
+    
+    typealias ReducerStateType  = UserState
+    typealias ReducerActionType = SetUsernameAction
+    
+    let currentState: ObserveableProperty<UserState>
+    
+    func reduce(provider: ReducerProvider,
+                  action: SetUsernameAction,
+              completion: @escaping (_ newState: UserState) -> Void) {
+         let newState =  UserState(userName: action.newUsername,
+                            isAuthenticated: self.currentState.value.isAuthenticated)
+         completion(newState)
+    }
+}
+
+
+let reducer = SetUsernameReducer(currentState: app.state.map{ $0.userState })
+reducerContainer.addReducer(reducer:reducer)
+```
 
 ## Using VISPER-Redux with a ReduxApp and Features
 
