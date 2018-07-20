@@ -23,7 +23,7 @@ VISPER is a component based library, which helps you to develop modular apps bas
         * [ReduceFuntion](#reducefuntion)
         * [FunctionalReducer](#functionalreducer)
         * [ActionReducerType](#actionreducertype)
-        * [AsyncReducerType](#asyncreducertype)
+        * [AsyncActionReducerType](#asyncactionreducertype)
       - [LogicFeature](#logicfeature)
       - [Observing state change](#observing-state-change)
 
