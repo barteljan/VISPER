@@ -233,7 +233,7 @@ A reducer can be added to your redux architecture by adding it to the reducer co
     <span class="k">var</span> <span class="nv">newUsername</span><span class="p">:</span> <span class="kt">String</span>
 <span class="p">}</span>
 </code></pre>
-<h3 id='appreducer' class='heading'>AppReducer</h3>
+<h2 id='appreducer' class='heading'>AppReducer</h2>
 
 <p>Each store has a special reducer with the following definition:</p>
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">AppReducer</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="kt">ReducerProvider</span><span class="p">:</span> <span class="kt">ReducerProvider</span><span class="p">,</span><span class="n">_</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">Action</span><span class="p">,</span> <span class="n">_</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">State</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">State</span>
@@ -253,7 +253,7 @@ Since our state is generic it is necessary to delegate the creation of each stat
     <span class="k">return</span> <span class="n">reducerProvider</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="n">action</span><span class="p">,</span><span class="n">state</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre>
-<h3 id='a-short-state-change-example' class='heading'>A short state change example</h3>
+<h2 id='a-short-state-change-example' class='heading'>A short state change example</h2>
 
 <p>At first create an app reducer:</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">appReducer</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">reducerProvider</span><span class="p">:</span> <span class="kt">ReducerProvider</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">Action</span><span class="p">,</span> <span class="nv">currentState</span><span class="p">:</span> <span class="kt">AppState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AppState</span> <span class="k">in</span>

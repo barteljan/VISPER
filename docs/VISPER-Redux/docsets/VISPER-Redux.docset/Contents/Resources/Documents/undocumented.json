@@ -295,6 +295,97 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ReduxAppFactory.swift",
+      "line": 10,
+      "symbol": "ReduxAppFactory",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ReduxAppFactory.swift",
+      "line": 12,
+      "symbol": "ReduxAppFactory.strictReduxMode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ReduxAppFactory.swift",
+      "line": 14,
+      "symbol": "ReduxAppFactory.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ReduxAppFactory.swift",
+      "line": 39,
+      "symbol": "ReduxAppFactory.addDefaultFeatureObserver(application:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/StateObservingFeature.swift",
+      "line": 11,
+      "symbol": "StateObservingFeatureError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/StateObservingFeature.swift",
+      "line": 12,
+      "symbol": "StateObservingFeatureError.methodNotImplemented",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/StateObservingFeature.swift",
+      "line": 15,
+      "symbol": "StateObservingFeature",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/StateObservingFeature.swift",
+      "line": 17,
+      "symbol": "StateObservingFeature.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/StateObservingFeature.swift",
+      "line": 21,
+      "symbol": "StateObservingFeature.observe(state:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/StateObservingFeatureObserver.swift",
+      "line": 12,
+      "symbol": "StateObservingFeatureObserver",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/StateObservingFeatureObserver.swift",
+      "line": 14,
+      "symbol": "StateObservingFeatureObserver.AppState",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/StateObservingFeatureObserver.swift",
+      "line": 19,
+      "symbol": "StateObservingFeatureObserver.init(state:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/StateObservingFeatureObserver.swift",
+      "line": 23,
+      "symbol": "StateObservingFeatureObserver.featureAdded(application:feature:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/StatefulFeatureObserver.swift",
       "line": 13,
       "symbol": "StatefulFeatureObserver.AppState",

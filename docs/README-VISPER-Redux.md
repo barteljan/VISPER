@@ -10,14 +10,15 @@
 - [VISPER-Redux](#visper-redux)
   * [State](#state)
   * [Changing state](#changing-state)
-    + [AppReducer](#appreducer)
-    + [A short state change example](#a-short-state-change-example)
+  * [AppReducer](#appreducer)
+  * [A short state change example](#a-short-state-change-example)
   * [Observing state change](#observing-state-change)
   * [Using VISPER-Redux with a ReduxApp and Features](#using-visper-redux-with-a-reduxapp-and-features)
   * [Example](#example)
   * [Installation](#installation)
   * [Author](#author)
   * [License](#license)
+
   
 ---------------------------------------------------------------------------------------------------------
 
@@ -105,7 +106,7 @@ struct SetUsernameAction: Action {
 }
 ```
 
-### AppReducer
+## AppReducer
 
 Each store has a special reducer with the following definition:
 
@@ -131,7 +132,7 @@ let appReducer = { (reducerProvider: ReducerProvider, action: Action, currentSta
 ```
 
 
-### A short state change example
+## A short state change example
 
 At first create an app reducer:
 

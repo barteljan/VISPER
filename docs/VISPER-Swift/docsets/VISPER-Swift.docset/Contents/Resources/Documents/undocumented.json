@@ -78,69 +78,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StateObservingFeature.swift",
-      "line": 11,
-      "symbol": "StateObservingFeatureError",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StateObservingFeature.swift",
-      "line": 12,
-      "symbol": "StateObservingFeatureError.methodNotImplemented",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StateObservingFeature.swift",
-      "line": 15,
-      "symbol": "StateObservingFeature",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StateObservingFeature.swift",
-      "line": 17,
-      "symbol": "StateObservingFeature.init()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StateObservingFeature.swift",
-      "line": 21,
-      "symbol": "StateObservingFeature.observe(state:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StateObservingFeatureObserver.swift",
-      "line": 13,
-      "symbol": "StateObservingFeatureObserver",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StateObservingFeatureObserver.swift",
-      "line": 15,
-      "symbol": "StateObservingFeatureObserver.AppState",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StateObservingFeatureObserver.swift",
-      "line": 20,
-      "symbol": "StateObservingFeatureObserver.init(state:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StateObservingFeatureObserver.swift",
-      "line": 24,
-      "symbol": "StateObservingFeatureObserver.featureAdded(application:feature:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/StatefulFeature.swift",
       "line": 11,
       "symbol": "StatefulFeature",
@@ -781,6 +718,27 @@
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
       "line": 30,
       "symbol": "Store",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 31,
+      "symbol": "StateObservingFeatureObserver",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 32,
+      "symbol": "StateObservingFeature",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/bridge/Bridge-Redux.swift",
+      "line": 33,
+      "symbol": "StateObservingFeatureError",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
