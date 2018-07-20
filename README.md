@@ -17,8 +17,9 @@ VISPER is a component based library, which helps you to develop modular apps bas
     + [VISPER-Redux](#visper-redux)
       - [State](#state)
       - [AppReducer](#appreducer)
-      - [Reducer](#reducer)
+      - [ReduxApp](#reduxapp)
       - [Changing state](#changing-state)
+      - [Reducer](#reducer)
       - [LogicFeature](#logicfeature)
       - [Observing state change](#observing-state-change)
 
@@ -247,27 +248,6 @@ let factory = ReduxAppFactory()
 let app: ReduxApp<AppState> = factory.makeApplication(initialState: appState, appReducer: appReducer)
 ```
 
-#### Reducer 
-
-A reducer is an instance modifying a state in response to an action 
-
-```swift
-class SetUsernameReducer: ActionReducerType {
-    
-    typealias ReducerStateType  = UserState
-    typealias ReducerActionType = SetUsernameAction
-    
-    func reduce(provider: ReducerProvider,
-                  action: SetUsernameAction,
-                   state: UserState) -> UserState {
-         return UserState(userName: action.newUsername,
-                    isAuthenticated: state.isAuthenticated)
-    }
-    
-    
-}
-```
-
 #### Changing state 
 
 The current state in an app using [VISPER-Redux](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html) 
@@ -305,6 +285,27 @@ struct SetUsernameAction: Action {
 
 let action = SetUsernameAction(newUsername: "Max Mustermann")
 app.redux.actionDispatcher.dispatch(action)
+```
+
+#### Reducer 
+
+A reducer is an instance modifying a state in response to an action 
+
+```swift
+class SetUsernameReducer: ActionReducerType {
+    
+    typealias ReducerStateType  = UserState
+    typealias ReducerActionType = SetUsernameAction
+    
+    func reduce(provider: ReducerProvider,
+                  action: SetUsernameAction,
+                   state: UserState) -> UserState {
+         return UserState(userName: action.newUsername,
+                    isAuthenticated: state.isAuthenticated)
+    }
+    
+    
+}
 ```
 
 #### LogicFeature
