@@ -15,6 +15,12 @@ VISPER is a component based library, which helps you to develop modular apps bas
     + [Features and FeatureObserver](#features-and-featureobserver)
     + [Wireframe](#wireframe)
     + [VISPER-Redux](#visper-redux)
+      - [State](#state)
+      - [AppReducer](#appreducer)
+      - [Reducer](#reducer)
+      - [Changing state](#changing-state)
+      - [LogicFeature](#logicfeature)
+      - [Observing state change](#observing-state-change)
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -169,3 +175,180 @@ If you want to learn more about redux, have a look at the following tutorials an
 * [redux.js Documentation](http://redux.js.org/docs/introduction/)
 
 A comprehensive introduction about [VISPER-Redux](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html) can be found [here](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html).
+
+#### State
+
+[VISPER-Redux](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html) stores the complete state of your app in a central struct to create a transparent representation of the current state of your different app components.
+
+A typical composite app state for an app to manage your todos in the next week might look like that: 
+
+```swift
+struct AppState {
+    var userState: UserState
+    var todoListState: TodoListState
+    var imprintState: ImprintState
+}
+```
+
+with some composite sub states:
+
+```swift
+struct UserState {
+    var userName: String
+    var isAuthenticated: Bool
+}
+```
+
+```swift
+struct TodoListState {
+    var todos: [Todo]
+}
+```
+```swift
+struct ImprintState {
+    var text: String
+    var didAlreadyRead: Bool
+}
+```
+
+
+#### AppReducer
+
+Each store has a special reducer with the following definition:
+
+```swift
+public typealias AppReducer<State> = (_ ReducerProvider: ReducerProvider,_ action: Action, _ state: State) -> State
+```
+
+It is used as a single entrypoint to the store.
+It is called whenever a action is dispatched, to resolve a new state.
+Since our state is generic it is necessary to delegate the creation of each state property to the reducerProvider parameter.
+
+An AppReducer for the previously defined AppState should look like that:
+
+```swift
+let appReducer = { (reducerProvider: ReducerProvider, action: Action, currentState: AppState) -> AppState in
+    let state = AppState(
+        userState: reducerProvider.reduce(action,currentState.userState),
+        todoListState: reducerProvider.reduce(action,currentState.todoListState),
+        imprintState : reducerProvider.reduce(action,currentState.imprintState)
+    )
+    return reducerProvider.reduce(action,state)
+}
+
+
+#### ReduxApp
+
+Createing an redux app is simple
+
+```swift
+let appState: AppState = AppState( ... create your state here ...)
+let factory = ReduxAppFactory()
+let app: ReduxApp<AppState> = factory.makeApplication(initialState: appState, appReducer: appReducer)
+```
+
+#### Reducer 
+
+A reducer is an instance modifying a state in response to an action 
+
+```swift
+class SetUsernameReducer: ActionReducerType {
+    
+    typealias ReducerStateType  = UserState
+    typealias ReducerActionType = SetUsernameAction
+    
+    func reduce(provider: ReducerProvider,
+                  action: SetUsernameAction,
+                   state: UserState) -> UserState {
+         return UserState(userName: action.newUsername,
+                    isAuthenticated: state.isAuthenticated)
+    }
+    
+    
+}
+```
+
+#### Changing state 
+
+The current state in an app using [VISPER-Redux](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html) 
+is stored in a central [Store](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Classes/Store.html) 
+instance, which lives in a convinience wrapper object of type [Redux](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Classes/Redux.html). 
+State change can only be achieved by dispatching an action (a simple message object) at the [ActionDispatcher](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/ActionDispatcher.html),
+and creating a modified new state in a Reducer (A reduce-function or an instance of type [FunctionalReducer](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Structs/FunctionalReducer.html),[ActionReducerType](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ActionReducerType.html) 
+or [AsyncActionReducerType](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/AsyncActionReducerType.html)).
+
+A reduce-function has the following form (where ActionType and StateType are generic types of type Action and Any):
+
+```swift
+(_ provider: ReducerProvider,_ action: ActionType, _ state: StateType) -> StateType
+```
+
+the reduce-function/reducer will be applied to all actions of type ActionType and to all states of type StateType.
+A reducer can be added to your redux architecture by adding it to the reducer container.
+
+```swift
+// add a reduce function
+app.redux.reducerContainer.addReduceFunction(...)
+```
+
+```swift
+// add a action reducer instance
+app.redux.reducerContainer.addReducer(...)
+```
+
+An action is just an simple object conforming to the empty protocol Action, for example:
+
+```swift
+struct SetUsernameAction: Action {
+    var newUsername: String
+}
+
+let action = SetUsernameAction(newUsername: "Max Mustermann")
+app.redux.actionDispatcher.dispatch(action)
+```
+
+#### LogicFeature
+
+You can use a LogicFeature to add some reducers to your app
+
+````swift
+import VISPER_Redux
+
+class ExampleLogicFeature: LogicFeature {
+    
+     func injectReducers(container: ReducerContainer) {
+        let reducer = SetUsernameReducer()
+        container.addReducer(reducer: incrementReducer)
+     }
+    
+}
+
+
+let logicFeature = ExampleLogicFeature()
+app.add(feature: let logicFeature)
+
+````
+
+#### Observing state change
+
+Observing state change ist simple. Just observe the observable property of your store:
+
+```swift
+
+//get your reference bag to retain subscription
+let referenceBag: SubscriptionReferenceBag = self.referenceBag
+
+
+//subscribe to the state
+let subscription = redux.store.observableState.subscribe { appState in
+    print("New username is:\(appState.userState.userName)")                                   
+}
+
+//retain subscription in your reference bag
+referenceBag.addReference(reference: subscription)
+```
+
+[VISPER-Redux](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html) contains a [ObservableProperty<AppState>](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Reactive/Classes/ObservableProperty.html) to represent the changing AppState.
+[ObservableProperty](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Reactive/Classes/ObservableProperty.html) allows you to subscribe for state changes, and can be mapped to a RxSwift-Observable. 
+It is implemented in the [VISPER-Reactive](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Reactive/Classes/ObservableProperty.html) Component.
+
