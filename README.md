@@ -337,7 +337,7 @@ let reducer = SetUsernameReducer()
 reducerContainer.addReducer(reducer:reducer)
 ```
 
-##### AsyncReducerType
+##### AsyncActionReducerType
 
 An async reducer is an reducer of AsyncActionReducerType which does not return a new state, but calls a completion with a new state.
 
