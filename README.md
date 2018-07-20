@@ -20,6 +20,10 @@ VISPER is a component based library, which helps you to develop modular apps bas
       - [ReduxApp](#reduxapp)
       - [Changing state](#changing-state)
       - [Reducer](#reducer)
+        * [ReduceFuntion](#reducefuntion)
+        * [FunctionalReducer](#functionalreducer)
+        * [ActionReducerType](#actionreducertype)
+        * [AsyncReducerType](#asyncreducertype)
       - [LogicFeature](#logicfeature)
       - [Observing state change](#observing-state-change)
 
@@ -289,10 +293,35 @@ app.redux.actionDispatcher.dispatch(action)
 
 #### Reducer 
 
-A reducer is an instance modifying a state in response to an action 
+Reducers specify how the application's state changes in response to actions sent to the store. Remember that actions only describe what happened, but don't describe how the application's state changes.
+A reducer in VISPER swift could be a reduce-function, or an instance of type [FunctionalReducer](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Structs/FunctionalReducer.html),[ActionReducerType](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ActionReducerType.html)                                                                               
+or [AsyncActionReducerType](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/AsyncActionReducerType.html).
+
+##### ReduceFuntion
+
+A reduce funtion is just a simple function getting a provider, an action and an state, and returning a new state of the same type.
+```swift
+let reduceFunction = { (provider: ReducerProvider, action: SetUsernameAction, state: UserState) -> UserState in
+    return UserState(userName: action.newUsername,
+                        isAuthenticated: state.isAuthenticated)
+}
+reducerContainer.addReduceFunction(reduceFunction:reduceFunction)
+```
+
+##### FunctionalReducer
+A functional reducer is quite similar, just a reducer taking a reduce function and using it to reduce a state.
 
 ```swift
-class SetUsernameReducer: ActionReducerType {
+let functionalReducer = FunctionalReducer(reduceFunction: reduceFunction)
+reducerContainer.addReducer(reducer:functionalReducer)
+```
+
+##### ActionReducerType
+
+An action type reducer is a class of type ActionReducerType which contains a reduce function for a specific action and state type.
+
+```swift
+struct SetUsernameReducer: ActionReducerType {
     
     typealias ReducerStateType  = UserState
     typealias ReducerActionType = SetUsernameAction
@@ -303,14 +332,40 @@ class SetUsernameReducer: ActionReducerType {
          return UserState(userName: action.newUsername,
                     isAuthenticated: state.isAuthenticated)
     }
-    
-    
 }
+let reducer = SetUsernameReducer()
+reducerContainer.addReducer(reducer:reducer)
+```
+
+##### AsyncReducerType
+
+An async reducer is an reducer of AsyncActionReducerType which does not return a new state, but calls a completion with a new state.
+
+```swift
+struct SetUsernameReducer: AsyncActionReducer {
+    
+    typealias ReducerStateType  = UserState
+    typealias ReducerActionType = SetUsernameAction
+    
+    let currentState: ObserveableProperty<UserState>
+    
+    func reduce(provider: ReducerProvider,
+                  action: SetUsernameAction,
+              completion: @escaping (_ newState: UserState) -> Void) {
+         let newState =  UserState(userName: action.newUsername,
+                            isAuthenticated: self.currentState.value.isAuthenticated)
+         completion(newState)
+    }
+}
+
+
+let reducer = SetUsernameReducer(currentState: app.state.map{ $0.userState })
+reducerContainer.addReducer(reducer:reducer)
 ```
 
 #### LogicFeature
 
-You can use a LogicFeature to add some reducers to your app
+You can use a LogicFeature to add some reducers with to your app.
 
 ````swift
 import VISPER_Redux
