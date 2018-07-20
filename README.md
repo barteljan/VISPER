@@ -235,7 +235,7 @@ let appReducer = { (reducerProvider: ReducerProvider, action: Action, currentSta
     )
     return reducerProvider.reduce(action,state)
 }
-
+```
 
 #### ReduxApp
 
