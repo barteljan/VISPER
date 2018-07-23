@@ -126,6 +126,7 @@ open class DefaultRouteResultHandler: RouteResultHandler {
             //get all presenters responsible for this route pattern / controller combination
             for presenter in try presenterProvider.makePresenters(routeResult: routeResult, controller: controller) {
                 try presenter.addPresentationLogic(routeResult: routeResult, controller: controller)
+                controller.retainPresenter(PresenterObjc(presenter: presenter))
             }
             
             var routingDelegate = routingDelegate
