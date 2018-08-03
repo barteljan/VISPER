@@ -66,13 +66,17 @@ stateObservableProperty: ObservableProperty<StartViewState>,
                self.disposeBag.addReference(reference: reference)
                 
                controller.modalButtonPressed = {
-                   try! self.wireframe.route(url: URL(string:"/modal/controller")!)
-                   self.actionDispatcher.dispatch(IncrementTimesOpendAControllerAction())
+                    try! self.wireframe.route(url: URL(string:"/modal/controller")!)
+                    self.actionDispatcher.dispatch(IncrementTimesOpendAControllerAction(), completion: {
+                        print("did increment state")
+                    })
                }
                 
                controller.pushedButtonPressed = {
                    try! self.wireframe.route(url: URL(string:"/pushed/controller")!)
-                   self.actionDispatcher.dispatch(IncrementTimesOpendAControllerAction())
+                   self.actionDispatcher.dispatch(IncrementTimesOpendAControllerAction(), completion: {
+                        print("did increment state")
+                   })
                }
             
         })

@@ -12,14 +12,10 @@ open class DefaultWireframeApp: DefaultApp, WireframeApp {
     
     public var wireframe: Wireframe
     
-    internal var controllerContainer: ControllerContainer
     internal var wireframeFeatureObservers = [WireframeFeatureObserver]()
     
-    
-    public init(wireframe: Wireframe,
-      controllerContainer: ControllerContainer) {
+    public init(wireframe: Wireframe) {
         self.wireframe = wireframe
-        self.controllerContainer = controllerContainer
         UIViewController.enableLifecycleEvents()
     }
     
@@ -37,12 +33,6 @@ open class DefaultWireframeApp: DefaultApp, WireframeApp {
         self.wireframeFeatureObservers.append(featureObserver)
     }
     
-    public func add(controllerToNavigate: UIViewController) {
-        self.controllerContainer.add(controller: controllerToNavigate)
-    }
     
-    public func controllerToNavigate(matches: (UIViewController?) -> Bool) -> UIViewController? {
-        return self.controllerContainer.getController(matches:matches)
-    }
     
 }

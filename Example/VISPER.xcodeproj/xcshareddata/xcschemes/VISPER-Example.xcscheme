@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6003F589195388D20070C39A"
-               BuildableName = "VISPER_Example"
+               BuildableName = "VISPER_Example.app"
                BlueprintName = "VISPER_Example"
                ReferencedContainer = "container:VISPER.xcodeproj">
             </BuildableReference>
@@ -120,7 +120,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "VISPER_Example"
+            BuildableName = "VISPER_Example.app"
             BlueprintName = "VISPER_Example"
             ReferencedContainer = "container:VISPER.xcodeproj">
          </BuildableReference>

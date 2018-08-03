@@ -8,7 +8,7 @@
 import Foundation
 import VISPER_Core
 
-public protocol WireframeApp: App {
+public protocol WireframeApp: App, ControllerContainer {
     
     /// the wireframe responsible for routing between your view controllers
     var wireframe: Wireframe {get}
@@ -32,5 +32,29 @@ public protocol WireframeApp: App {
     
     /// return the first navigatableController that matches in a block
     func controllerToNavigate(matches: (_ controller: UIViewController?) -> Bool) -> UIViewController?
+    
+}
+
+public extension WireframeApp {
+    
+    public func add(controllerToNavigate: UIViewController) {
+        self.wireframe.add(controllerToNavigate: controllerToNavigate)
+    }
+    
+    public func controllerToNavigate(matches: (UIViewController?) -> Bool) -> UIViewController? {
+        return self.wireframe.controllerToNavigate(matches:matches)
+    }
+    
+    public func add(controller: UIViewController) {
+        self.add(controllerToNavigate: controller)
+    }
+    
+    public func remove(controller: UIViewController) {
+        self.wireframe.remove(controller: controller)
+    }
+    
+    public func getController(matches: (_ controller: UIViewController?) -> Bool) -> UIViewController? {
+        return self.controllerToNavigate(matches: matches)
+    }
     
 }

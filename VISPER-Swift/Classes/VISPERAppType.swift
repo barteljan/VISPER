@@ -17,7 +17,7 @@ import VISPER_Wireframe
 public typealias ApplicationType = VISPERAppType
 
 /// A SwiftyVisper application type, containing all dependencies which should be configured by features
-public protocol VISPERAppType: ReduxApp, WireframeApp{
+public protocol VISPERAppType: ReduxApp, WireframeApp {
     
     associatedtype ApplicationState
     
@@ -62,3 +62,5 @@ public protocol VISPERAppType: ReduxApp, WireframeApp{
     func controllerToNavigate(matches: (_ controller: UIViewController?) -> Bool) -> UIViewController?
 
 }
+
+

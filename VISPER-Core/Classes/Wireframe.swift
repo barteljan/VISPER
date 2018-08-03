@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol Wireframe {
+public protocol Wireframe: ControllerContainer {
     
     
     /// The top view controller currently used in your application
@@ -216,4 +216,19 @@ public extension Wireframe {
     public func add(routingPresenter: RoutingPresenter) {
         self.add(routingPresenter: routingPresenter, priority: 0)
     }
+    
+    public func add(controller: UIViewController) {
+        self.add(controllerToNavigate: controller)
+    }
+    
+    public func remove(controller: UIViewController) {
+        fatalError("remove has no default implementation on the wireframe protocol")
+    }
+    
+    public func getController(matches: (_ controller: UIViewController?) -> Bool) -> UIViewController? {
+        return self.controllerToNavigate(matches: matches)
+    }
+    
 }
+
+

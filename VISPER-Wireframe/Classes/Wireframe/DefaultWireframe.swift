@@ -307,4 +307,9 @@ open class DefaultWireframe : Wireframe, HasControllerContainer {
         return self.controllerContainer.getController(matches:matches)
     }
     
+    /// delegate removement of a controller to navigate
+    public func remove(controller: UIViewController) {
+        self.controllerContainer.remove(controller: controller)
+    }
+    
 }

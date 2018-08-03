@@ -25,8 +25,7 @@ open class DefaultWireframeAppFactory: WireframeAppFactory{
             shouldNotBeNilWireframe = self.wireframeFactory.makeWireframe(controllerContainer: controllerContainer)
         }
         
-        let app = DefaultWireframeApp(wireframe: shouldNotBeNilWireframe!,
-                                      controllerContainer: controllerContainer)
+        let app = DefaultWireframeApp(wireframe: shouldNotBeNilWireframe!)
         
         self.addDefaultFeatureObserver(application: app, controllerContainer: controllerContainer)
         self.wireframeFactory.configure(wireframe: shouldNotBeNilWireframe!, controllerContainer: controllerContainer)

@@ -43,12 +43,16 @@ class ExampleViewController: UIViewController {
     
     @objc func increment(){
         let action = IncrementAction()
-        self.actionDispatcher.dispatch(action)
+        self.actionDispatcher.dispatch(action, completion: {
+            print("did increment state")
+        })
     }
     
     @objc func decrement() {
         let action = DecrementAction()
-        self.actionDispatcher.dispatch(action)
+        self.actionDispatcher.dispatch(action, completion: {
+            print("did decrement state")
+        })
     }
 
 }

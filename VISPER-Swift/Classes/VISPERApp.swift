@@ -35,8 +35,7 @@ open class VISPERApp<AppState>: VISPERAppType, ReduxApp, WireframeApp {
     public convenience init(reduxApp: AnyReduxApp<AppState>,
                            wireframe: Wireframe,
                  controllerContainer: ControllerContainer) {
-        let wireframeApp = DefaultWireframeApp(wireframe: wireframe,
-                                               controllerContainer: controllerContainer)
+        let wireframeApp = DefaultWireframeApp(wireframe: wireframe)
         self.init(reduxApp: reduxApp, wireframeApp: wireframeApp)
         
     }
