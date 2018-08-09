@@ -19,7 +19,7 @@ open class VISPERApplication: NSObject,IVISPERApplication {
     var _wireframe: IVISPERWireframe
     var _commandBus: VISPERCommandBus
     
-    let application: AnyVISPERApp<NSMutableDictionary>
+    open let application: AnyVISPERApp<NSMutableDictionary>
     
     public override convenience init() {
         let controller = UINavigationController()
