@@ -8,10 +8,9 @@ import Foundation
 import VISPER_Swift
 import VISPER_Core
 import VISPER_Objc
+import VISPER_Wireframe
 
-open class DeprecatedVISPERFeatureObserver: FeatureObserver {
-    
-    
+open class DeprecatedVISPERFeatureObserver: WireframeFeatureObserver {
     
     let wireframe: Wireframe
     let commandBus: VISPERCommandBus
@@ -21,7 +20,7 @@ open class DeprecatedVISPERFeatureObserver: FeatureObserver {
         self.commandBus = commandBus
     }
     
-    public func featureAdded(application: App, feature: Feature) throws {
+    public func featureAdded(application: WireframeApp, feature: Feature) throws  {
         
         guard let visperFeature = feature as? DeprecatedVISPERFeatureWrapper else {
             return
