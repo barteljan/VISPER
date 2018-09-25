@@ -33,7 +33,7 @@ import VISPER_Core
 
 @objc class ControllerPresenterWrapper : ViewControllerLifecycleEventPresenter {
     
-    open let presenter: ControllerPresenter
+    public let presenter: ControllerPresenter
     
     public init(presenter: ControllerPresenter){
         self.presenter = presenter

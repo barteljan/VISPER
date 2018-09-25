@@ -15,7 +15,7 @@ public protocol ControllerContainerAwareRoutingPresenter : RoutingPresenter {
 
 open class DefaultControllerContainerAwareRoutingPresenter : ControllerContainerAwareRoutingPresenter {
     
-    open let controllerContainer : ControllerContainer
+    public let controllerContainer : ControllerContainer
     
     public init(controllerContainer : ControllerContainer){
         self.controllerContainer = controllerContainer

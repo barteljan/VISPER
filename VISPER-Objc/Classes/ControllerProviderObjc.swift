@@ -17,8 +17,8 @@ import VISPER_Core
 
 @objc open class ControllerProviderObjc : NSObject,ControllerProvider,ControllerProviderObjcType{
    
-    open let controllerProvider : ControllerProvider?
-    open let controllerProviderObjc : ControllerProviderObjcType?
+    public let controllerProvider : ControllerProvider?
+    public let controllerProviderObjc : ControllerProviderObjcType?
     
     public init(controllerProvider : ControllerProvider) {
         self.controllerProvider = controllerProvider

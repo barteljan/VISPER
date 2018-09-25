@@ -10,7 +10,7 @@ import VISPER_Core
 
 open class Redux<State> {
     
-    open let store : Store<State>
+    public let store : Store<State>
     
     open var reducerContainer : ReducerContainer
 

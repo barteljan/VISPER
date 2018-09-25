@@ -14,7 +14,7 @@ open class DefaultReduxApp<AppState>: DefaultApp, ReduxApp {
     public typealias ApplicationObservableProperty = ObservableProperty<AppState>
     
     ///redux architecture of your project
-    open let redux: Redux<AppState>
+    public let redux: Redux<AppState>
     
     /// observable app state property
     open var state: ObservableProperty<AppState> {

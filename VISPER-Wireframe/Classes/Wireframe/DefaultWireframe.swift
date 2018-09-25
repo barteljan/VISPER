@@ -35,7 +35,7 @@ open class DefaultWireframe : Wireframe, HasControllerContainer {
     let routeResultHandler: RouteResultHandler
     let topControllerResolver: ComposedTopControllerResolver
     let controllerDismisser: ComposedControllerDimisser
-    open let controllerContainer: ControllerContainer
+    public let controllerContainer: ControllerContainer
    
     
     //MARK: Initializer
