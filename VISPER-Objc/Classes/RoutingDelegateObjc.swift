@@ -44,7 +44,7 @@ import VISPER_Core
                      routeResult:  RouteResult,
                      routingPresenter: RoutingPresenter?,
                      wireframe: Wireframe) {
-        self.didPresent(      controller: controller,
+        self.routingDelegate.didPresent(      controller: controller,
                              routeResult: routeResult,
                         routingPresenter: routingPresenter,
                                wireframe: wireframe)

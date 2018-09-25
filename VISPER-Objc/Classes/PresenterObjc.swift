@@ -15,8 +15,8 @@ import VISPER_Core
 
 @objc open class PresenterObjc: NSObject,Presenter,PresenterObjcType {
     
-    open let presenter: Presenter?
-    open let presenterObjc: PresenterObjcType?
+    public let presenter: Presenter?
+    public let presenterObjc: PresenterObjcType?
     
     public init(presenter: Presenter) {
         self.presenter = presenter

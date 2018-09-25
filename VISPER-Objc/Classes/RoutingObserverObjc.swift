@@ -27,8 +27,8 @@ import VISPER_Core
 
 @objc open class RoutingObserverObjc : NSObject,RoutingObserver,RoutingObserverObjcType {
     
-    open let routingObserver : RoutingObserver?
-    open let routingObserverObjc : RoutingObserverObjcType?
+    public let routingObserver : RoutingObserver?
+    public let routingObserverObjc : RoutingObserverObjcType?
     
     public init(routingObserver : RoutingObserverObjcType){
         

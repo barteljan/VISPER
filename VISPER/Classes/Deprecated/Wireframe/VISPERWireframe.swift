@@ -18,17 +18,17 @@ public enum VISPERWireframeError: Error {
     //MARK: convert options
     static var optionConverters = [RoutingOptionConverter]()
     
-    open static func addRoutingOptionConverter(converter:RoutingOptionConverter){
+    public static func addRoutingOptionConverter(converter:RoutingOptionConverter){
         VISPERWireframe.optionConverters.append(converter)
     }
     
-    @objc open static func addDefaultRoutingOptionConverter(){
+    @objc public static func addDefaultRoutingOptionConverter(){
         let converter = DefaultRoutingOptionConverter()
         VISPERWireframe.addRoutingOptionConverter(converter: converter)
     }
     
     
-    open static func routingOption(visperRoutingOption: IVISPERRoutingOption?) throws -> RoutingOption? {
+    public static func routingOption(visperRoutingOption: IVISPERRoutingOption?) throws -> RoutingOption? {
         
         guard let visperRoutingOption = visperRoutingOption else {
             return nil
@@ -43,7 +43,7 @@ public enum VISPERWireframeError: Error {
         return nil
     }
     
-    open static func routingOption(routingOption: RoutingOption?) throws -> IVISPERRoutingOption? {
+    public static func routingOption(routingOption: RoutingOption?) throws -> IVISPERRoutingOption? {
         
         guard let routingOption = routingOption else {
             return nil
@@ -58,7 +58,7 @@ public enum VISPERWireframeError: Error {
         return nil
     }
     
-    @objc open static func routingOption(routingOptionObjc: RoutingOptionObjc?) throws -> IVISPERRoutingOption {
+    @objc public static func routingOption(routingOptionObjc: RoutingOptionObjc?) throws -> IVISPERRoutingOption {
         
         let routingOptionObjcCopy = routingOptionObjc
         
@@ -78,7 +78,7 @@ public enum VISPERWireframeError: Error {
     
     
     //Wrap WireframeObjc
-    open let wireframe: WireframeObjc
+    public let wireframe: WireframeObjc
     
     @objc public init(wireframe: WireframeObjc) {
         self.wireframe = wireframe

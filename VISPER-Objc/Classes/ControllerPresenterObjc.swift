@@ -11,7 +11,7 @@ import VISPER_Core
 
 @objc open class ControllerPresenterObjc : ViewControllerLifecycleEventPresenter {
     
-    open let presenter: ControllerPresenter
+    public let presenter: ControllerPresenter
     
     public init(presenter: ControllerPresenter){
         self.presenter = presenter

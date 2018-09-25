@@ -31,7 +31,7 @@ import Foundation
 }
 
 @objc open class ViewWillAppearEvent: LifecycleEvent {
-    @objc open let animated: Bool
+    @objc public let animated: Bool
     
     @objc public init(sender: UIViewController,animated: Bool) {
         self.animated = animated
@@ -40,7 +40,7 @@ import Foundation
 }
 
 @objc open class ViewDidAppearEvent: LifecycleEvent {
-    @objc open let animated: Bool
+    @objc public let animated: Bool
     
     @objc public init(sender: UIViewController,animated: Bool) {
         self.animated = animated
@@ -49,7 +49,7 @@ import Foundation
 }
 
 @objc open class ViewWillDisappearEvent: LifecycleEvent {
-    @objc open let animated: Bool
+    @objc public let animated: Bool
     
     @objc public init(sender: UIViewController,animated: Bool) {
         self.animated = animated
@@ -58,7 +58,7 @@ import Foundation
 }
 
 @objc open class ViewDidDisappearEvent: LifecycleEvent {
-    @objc open let animated: Bool
+    @objc public let animated: Bool
     
     @objc public init(sender: UIViewController,animated: Bool) {
         self.animated = animated

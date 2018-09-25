@@ -20,8 +20,8 @@ import VISPER_Core
 
 @objc open class RoutingPresenterObjc : NSObject, RoutingPresenter, RoutingPresenterObjcType{
   
-    open let routingPresenter: RoutingPresenter?
-    open let routingPresenterObjc: RoutingPresenterObjcType?
+    public let routingPresenter: RoutingPresenter?
+    public let routingPresenterObjc: RoutingPresenterObjcType?
     
     
     public init(routingPresenter : RoutingPresenter){

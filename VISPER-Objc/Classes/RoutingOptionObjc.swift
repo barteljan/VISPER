@@ -10,7 +10,7 @@ import VISPER_Core
 
 @objc open class RoutingOptionObjc : NSObject, RoutingOption {
    
-    open let routingOption : RoutingOption
+    public let routingOption : RoutingOption
     
     public init(routingOption : RoutingOption){
         self.routingOption = routingOption
