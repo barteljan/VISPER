@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "VISPER"
-  s.version          = '3.1.3'
+  s.version          = '3.1.4'
   s.summary          = "A library to support building component based apps with the VIPER architecture."
   s.description      = <<-DESC
                        A iOS library to support building component based apps with the VIPER architecture
