@@ -55,7 +55,11 @@ open class Store<State> : ActionDispatcher {
         middleware.transform({ self.observableState.value }, dispatchFunction, action).forEach { action in
             
             self.dispatchQueue.async(execute: {
-                let value = self.appReducer(self.reducerContainer,action, self.observableState.value)
+                
+                let container = ReducerContainerForOneActionTransaction(reducerContainer: self.reducerContainer, completion: completion)
+                
+                let value = self.appReducer(container,action, self.observableState.value)
+                container.startCompleting()
                 
                 DispatchQueue.main.sync {
                     self.observableState.value = value

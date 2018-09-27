@@ -9,10 +9,10 @@
 import XCTest
 @testable import VISPER_Redux
 
-class DidCallAllClosuresPipelineTests: XCTestCase {
+class CombineLatestClosuresTests: XCTestCase {
     
    
-    func testDidNotCallCompletionIfPipelineWasNotStarted() {
+    func testDidNotCallCompletionIfCombineLatestClosuresWasNotStarted() {
         
         var callbackCalled = false
         let testCallback = {
@@ -21,7 +21,7 @@ class DidCallAllClosuresPipelineTests: XCTestCase {
         
         var completionedCalled = false
         
-        let pipeline = DidCallAllClosuresPipeline(allCallbacksAreCalled: {
+        let pipeline = CombineLatestClosures(allCallbacksAreCalled: {
             completionedCalled = true
         })
         
@@ -34,7 +34,7 @@ class DidCallAllClosuresPipelineTests: XCTestCase {
         
     }
     
-    func testDidCallCompletionIfPipelineWasStarted() {
+    func testDidCallCompletionIfCombineLatestClosuresWasStarted() {
         
         var callbackCalled = false
         let testCallback = {
@@ -43,13 +43,13 @@ class DidCallAllClosuresPipelineTests: XCTestCase {
         
         var completionedCalled = false
         
-        let pipeline = DidCallAllClosuresPipeline(allCallbacksAreCalled: {
+        let pipeline = CombineLatestClosures(allCallbacksAreCalled: {
             completionedCalled = true
         })
         
         let callback = pipeline.chainClosure(callback: testCallback)
         
-        pipeline.start()
+        pipeline.combineLatest()
         
         callback()
         
@@ -72,14 +72,14 @@ class DidCallAllClosuresPipelineTests: XCTestCase {
         
         var completionedCalled = false
         
-        let pipeline = DidCallAllClosuresPipeline(allCallbacksAreCalled: {
+        let pipeline = CombineLatestClosures(allCallbacksAreCalled: {
             completionedCalled = true
         })
         
         let callback1 = pipeline.chainClosure(callback: testCallback1)
         let _ = pipeline.chainClosure(callback: testCallback2)
         
-        pipeline.start()
+        pipeline.combineLatest()
         
         callback1()
         
@@ -103,14 +103,14 @@ class DidCallAllClosuresPipelineTests: XCTestCase {
         
         var completionedCalled = false
         
-        let pipeline = DidCallAllClosuresPipeline(allCallbacksAreCalled: {
+        let pipeline = CombineLatestClosures(allCallbacksAreCalled: {
             completionedCalled = true
         })
         
         let callback1 = pipeline.chainClosure(callback: testCallback1)
         let callback2 = pipeline.chainClosure(callback: testCallback2)
         
-        pipeline.start()
+        pipeline.combineLatest()
         
         callback1()
         callback2()
