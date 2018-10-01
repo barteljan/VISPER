@@ -137,7 +137,7 @@
 		9A8C5C7C1FDC101C00C401AF /* TestAnyActionReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5C731FDC101C00C401AF /* TestAnyActionReducer.swift */; };
 		9A8C5CA71FDD022000C401AF /* ReactiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5CA61FDD022000C401AF /* ReactiveTests.swift */; };
 		9A8C5CAF1FDD08DF00C401AF /* TestObservableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5CAE1FDD08DF00C401AF /* TestObservableProperty.swift */; };
-		9A91861C2114822F00C392CE /* DidCallAllClosuresPipelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A91861B2114822F00C392CE /* DidCallAllClosuresPipelineTests.swift */; };
+		9A91861C2114822F00C392CE /* CombineLatestClosuresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A91861B2114822F00C392CE /* CombineLatestClosuresTests.swift */; };
 		9A97EA001FEFF4F0006C50F3 /* ModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A97E9F61FEFF4EF006C50F3 /* ModalViewController.xib */; };
 		9A97EA011FEFF4F0006C50F3 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A97E9F71FEFF4EF006C50F3 /* ModalViewController.swift */; };
 		9A97EA021FEFF4F0006C50F3 /* ModalFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A97E9F81FEFF4EF006C50F3 /* ModalFeature.swift */; };
@@ -147,6 +147,7 @@
 		9A97EA061FEFF4F0006C50F3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A97E9FE1FEFF4EF006C50F3 /* StartViewController.swift */; };
 		9A97EA071FEFF4F0006C50F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A97E9FF1FEFF4EF006C50F3 /* AppDelegate.swift */; };
 		9A97EA091FEFF5DE006C50F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A97EA081FEFF5DE006C50F3 /* LaunchScreen.storyboard */; };
+		9AC048E8215CBC6B008870B2 /* ReducerContainerForOneActionTransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC048E7215CBC6B008870B2 /* ReducerContainerForOneActionTransactionTests.swift */; };
 		9AC334D22067D668006B8F22 /* AppReducer.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC334CF2067D668006B8F22 /* AppReducer.generated.swift */; };
 		9AC334D32067D668006B8F22 /* GenerateInitializers.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC334D02067D668006B8F22 /* GenerateInitializers.generated.swift */; };
 		9AC334D42067D668006B8F22 /* AutoReducer.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC334D12067D668006B8F22 /* AutoReducer.generated.swift */; };
@@ -427,7 +428,7 @@
 		9A8C5CAC1FDD08DF00C401AF /* VISPER-Reactive-RxSwift-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VISPER-Reactive-RxSwift-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8C5CAE1FDD08DF00C401AF /* TestObservableProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestObservableProperty.swift; sourceTree = "<group>"; };
 		9A8C5CB01FDD08DF00C401AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A91861B2114822F00C392CE /* DidCallAllClosuresPipelineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DidCallAllClosuresPipelineTests.swift; sourceTree = "<group>"; };
+		9A91861B2114822F00C392CE /* CombineLatestClosuresTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineLatestClosuresTests.swift; sourceTree = "<group>"; };
 		9A97E9D11FEFF43C006C50F3 /* VISPER-Swift-RxSwift-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VISPER-Swift-RxSwift-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A97E9DF1FEFF43C006C50F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A97E9F61FEFF4EF006C50F3 /* ModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalViewController.xib; sourceTree = "<group>"; };
@@ -439,6 +440,7 @@
 		9A97E9FE1FEFF4EF006C50F3 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		9A97E9FF1FEFF4EF006C50F3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A97EA081FEFF5DE006C50F3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9AC048E7215CBC6B008870B2 /* ReducerContainerForOneActionTransactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReducerContainerForOneActionTransactionTests.swift; sourceTree = "<group>"; };
 		9AC334C62067C954006B8F22 /* VISPER-Sourcery.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Sourcery.podspec"; path = "../VISPER-Sourcery.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9AC334CF2067D668006B8F22 /* AppReducer.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.generated.swift; sourceTree = "<group>"; };
 		9AC334D02067D668006B8F22 /* GenerateInitializers.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateInitializers.generated.swift; sourceTree = "<group>"; };
@@ -1030,7 +1032,8 @@
 		9A8C5C6A1FDC101C00C401AF /* VISPER-Redux-Tests */ = {
 			isa = PBXGroup;
 			children = (
-				9A91861B2114822F00C392CE /* DidCallAllClosuresPipelineTests.swift */,
+				9A91861B2114822F00C392CE /* CombineLatestClosuresTests.swift */,
+				9AC048E7215CBC6B008870B2 /* ReducerContainerForOneActionTransactionTests.swift */,
 				9A8C5C6B1FDC101C00C401AF /* ObservableStoreTests.swift */,
 				9A8C5C6C1FDC101C00C401AF /* TestReducerContainer.swift */,
 				9A8C5C6E1FDC101C00C401AF /* TestFunctionReducer.swift */,
@@ -2450,8 +2453,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A91861C2114822F00C392CE /* DidCallAllClosuresPipelineTests.swift in Sources */,
+				9A91861C2114822F00C392CE /* CombineLatestClosuresTests.swift in Sources */,
 				9A8C5C771FDC101C00C401AF /* TestFunctionReducer.swift in Sources */,
+				9AC048E8215CBC6B008870B2 /* ReducerContainerForOneActionTransactionTests.swift in Sources */,
 				9A8C5C7A1FDC101C00C401AF /* MockObjects.swift in Sources */,
 				9A8C5C791FDC101C00C401AF /* TestStore.swift in Sources */,
 				9A8C5C751FDC101C00C401AF /* TestReducerContainer.swift in Sources */,

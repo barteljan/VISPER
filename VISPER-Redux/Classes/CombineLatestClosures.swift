@@ -7,7 +7,11 @@
 
 import Foundation
 
-public class DidCallAllClosuresPipeline {
+
+/// a class which can be filled with some closures of type () -> Void,
+/// it calls an other completion-closure when all closures are called at least once and
+/// combineLatest was already called from the outside.
+public class CombineLatestClosures {
     
     public typealias PipelineCallback = () -> Void
     
@@ -28,7 +32,7 @@ public class DidCallAllClosuresPipeline {
         return wrapper.callback
     }
     
-    public func start() {
+    public func combineLatest() {
         self.started = true
         checkAllClosures()
     }

@@ -10,13 +10,13 @@ import Foundation
 import VISPER_Core
 @testable import VISPER_Redux
 
-struct TestState {
+struct TestState: Equatable{
     var title : String
 }
 
 let testState = TestState(title: "startingTitle")
 
-struct NewTitleAction : Action{
+struct NewTitleAction : Action, Equatable{
     let newTitle : String
 }
 
@@ -45,6 +45,37 @@ let deleteTitleReducer = { (provider: ReducerProvider,action: DeleteTitleAction,
     return newState
     
 }
+
+class MockActionReducer: NSObject, ActionReducerType {
+
+    typealias ReducerStateType = TestState
+    typealias ReducerActionType = NewTitleAction
+    
+    func reduce(provider: ReducerProvider, action: NewTitleAction, state: TestState) -> TestState {
+        return TestState(title: action.newTitle)
+    }
+}
+
+class MockAsyncReducerCallingTheCompletion: NSObject, AsyncActionReducerType {
+    
+    typealias ReducerStateType = TestState
+    typealias ReducerActionType = NewTitleAction
+    
+    func reduce(provider: ReducerProvider, action: NewTitleAction, completion: @escaping (TestState) -> Void) {
+        completion(TestState(title: action.newTitle))
+    }
+}
+
+class MockAsyncReducerNotCallingTheCompletion: NSObject, AsyncActionReducerType {
+    
+    typealias ReducerStateType = TestState
+    typealias ReducerActionType = NewTitleAction
+    
+    func reduce(provider: ReducerProvider, action: NewTitleAction, completion: @escaping (TestState) -> Void) {
+        
+    }
+}
+
 
 let deleteTitleFunctionReducer = FunctionalReducer(reduceFunction: deleteTitleReducer)
 
