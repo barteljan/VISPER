@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VISPER-Core'
-  s.version          = '3.0.1'
+  s.version          = '3.0.2'
   s.summary          = 'The core protocols and classes used in the VISPER Framework.'
 
   s.description      = <<-DESC
@@ -18,6 +18,7 @@ The core protocols and classes used in the VISPER Framework.
   s.social_media_url = 'https://twitter.com/janbartel'
 
   s.ios.deployment_target = '8.0'
+  s.swift_version = '4.0'
 
   s.source_files = 'VISPER-Core/Classes/**/*'
   
