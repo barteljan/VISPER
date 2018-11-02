@@ -43,9 +43,6 @@ open class ComposedEntityStore: EntityStore {
     }
     
     public func delete<T>(_ item: T!) throws {
-        print(item!)
-        print(type(of: item!))
-        print(item.self)
         let store = try self.responsibleStore(type: type(of: item!))
         try store.delete(item)
     }
