@@ -22,7 +22,7 @@ class GreenFeature: ViewFeature {
     
     // return a routing option to show how this controller should be presented
     func makeOption(routeResult: RouteResult) -> RoutingOption {
-        return DefaultRoutingOptionPush()
+        return DefaultRoutingOptionPush(animated: true, animationTransition: UIViewAnimationTransition.flipFromLeft)
     }
     
     // create a green controller which will be created when the "green" route is called

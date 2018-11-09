@@ -61,7 +61,17 @@ open class PushRoutingPresenter : DefaultControllerContainerAwareRoutingPresente
             CATransaction.begin()
         }
         
-        navigationController.pushViewController(controller, animated: routingOption.animated)
+        if let transition = routingOption.animationTransition {
+            UIView.beginAnimations("pushAnimationTransition", context: nil)
+            UIView.setAnimationDuration(routingOption.animationDuration)
+            navigationController.pushViewController(controller, animated: false)
+            UIView.setAnimationTransition(transition, for: navigationController.view, cache: false)
+            UIView.commitAnimations()
+        } else {
+            navigationController.pushViewController(controller, animated: routingOption.animated)
+        }
+        
+        
         
         if routingOption.animated {
             CATransaction.setCompletionBlock {
