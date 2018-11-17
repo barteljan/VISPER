@@ -1,9 +1,6 @@
- #
-# Be sure to run `pod lib lint SwiftyVISPER.podspec' to ensure this is a
-# valid spec before submitting.
 Pod::Spec.new do |s|
   s.name             = 'VISPER-Swift'
-  s.version          = '3.2.1'
+  s.version          = '3.2.2'
   s.summary          = 'VISPER is a framework for building component based apps with the viper architecture'
 
   s.description      = <<-DESC
