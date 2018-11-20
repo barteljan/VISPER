@@ -11,7 +11,7 @@ public extension ObservableProperty {
     
     public func asObservable() -> Observable<ValueType> {
         
-        let subject = PublishSubject<ValueType>()
+        let subject = BehaviorSubject<ValueType>(value: self.value)
         
         self.disposeBag += subscribe { value in
             subject.on(.next(value))
