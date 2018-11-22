@@ -102,7 +102,8 @@ open class FunctionalEntityStore<EntityType: CanBeIdentified>: EntityStore {
     }
     
     public func getAll<T>(_ type: T.Type) throws -> [T] {
-        if T.self is EntityType {
+        
+        if T.self is EntityType.Type {
             return self.getEntities().map { (entity) -> T in
                 return entity as! T
             }

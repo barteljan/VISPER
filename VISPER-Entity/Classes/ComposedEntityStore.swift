@@ -242,18 +242,15 @@ open class ComposedEntityStore: EntityStore {
             }
             
             self.allEntities = {
+                
                 let items: [T] = try entityStore.getAll(T.self)
                 return items
+                
             }
             
             self.deleteItems = { (fromStore: MemoryEntityStore, inStore: EntityStore) throws -> Void in
                 
-                print(T.self)
-               
                 let items: [T] = fromStore.deletedEntities(type: T.self)
-                
-                print(items)
-                
                 try inStore.delete(items)
                 
             }
