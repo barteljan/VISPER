@@ -1,47 +1,43 @@
 # VISPER
 
-VISPER is a component based library, which helps you to develop modular apps based on the VIPER Pattern.
-
 [![Version](https://img.shields.io/cocoapods/v/VISPER.svg?style=flat)](http://cocoapods.org/pods/VISPER)
 [![License](https://img.shields.io/cocoapods/l/VISPER.svg?style=flat)](http://cocoapods.org/pods/VISPER)
 [![Platform](https://img.shields.io/cocoapods/p/VISPER.svg?style=flat)](http://cocoapods.org/pods/VISPER)
 
----------------------------------------------------------------------------------------------------------
+VISPER is a component based library, which helps you to develop modular apps based on the VIPER Pattern.
 
+VISPER contains of several components to create a flexibel architecture for your iOS-app.
+
+It contains of 3 main components.
+
+At first there is the [App](#app) protocol to create your app from seperated modules called [Features](#features-and-featureobserver) which provide a distinct part of your implementation. 
+
+The second one is the [Wireframe](#wireframe) a powerful router component, which defines a defined workflow for creating, presenting and navigation between ViewControllers.
+
+The main component responsible for the interactor layer is the [Redux](#visper-redux) Object which provides a complete Redux-Architecture to manage state and state transitions in your app.
+
+---------------------------------------------------------------------------------------------------------
 - [VISPER](#visper)
-  * [Currently available VISPER-Components](#currently-available-visper-components)
-  * [Getting started](#getting-started)
-    + [App](#app)
-    + [Features and FeatureObserver](#features-and-featureobserver)
-    + [Wireframe](#wireframe)
-    + [VISPER-Redux](#visper-redux)
-      - [State](#state)
-      - [AppReducer](#appreducer)
-      - [ReduxApp](#reduxapp)
-      - [Changing state](#changing-state)
-      - [Reducer](#reducer)
-        * [ReduceFuntion](#reducefuntion)
-        * [FunctionalReducer](#functionalreducer)
-        * [ActionReducerType](#actionreducertype)
-        * [AsyncActionReducerType](#asyncactionreducertype)
-      - [LogicFeature](#logicfeature)
-      - [Observing state change](#observing-state-change)
-
+* [Getting started](#getting-started)
++ [App](#app)
++ [Features and FeatureObserver](#features-and-featureobserver)
++ [Wireframe](#wireframe)
++ [VISPER-Redux](#visper-redux)
+- [State](#state)
+- [AppReducer](#appreducer)
+- [ReduxApp](#reduxapp)
+- [Changing state](#changing-state)
+- [Reducer](#reducer)
+* [ReduceFuntion](#reducefuntion)
+* [FunctionalReducer](#functionalreducer)
+* [ActionReducerType](#actionreducertype)
+* [AsyncActionReducerType](#asyncactionreducertype)
+- [LogicFeature](#logicfeature)
+- [Observing state change](#observing-state-change)
+* [Currently available VISPER-Components](#complete-list-of-all-available-visper-components)
 ---------------------------------------------------------------------------------------------------------
 
-## Currently available VISPER-Components
 
-* [VISPER](https://rawgit.com/barteljan/VISPER/master/docs/VISPER/index.html) - a convenience import wrapper to include all VISPER Components with one import. It contains some deprecated components for backwards compatibility to previous VISPER Versions.
-* [VISPER-Swift](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Swift/index.html) - All swift components of the VISPER-Framework, and a convenience import wrapper for all their dependencies.
-* [VISPER-Objc](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Objc/index.html) - A wrapper around the core VISPER classes to use them in an objc codebase.
-* [VISPER-Core](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/index.html) - Some common core protocols used to communicate between the different components of your feature. This pod should be used if you want to include VISPER Components into your own projects and components. It's protocols are implemented in the other VISPER component pods.
-* [VISPER-Wireframe](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/index.html) - The component containing the implementation of the wireframe layer in a VIPER-Application, it manages the presentation and the lifecycle of your ViewControllers.
-* VISPER-Presenter([swift](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Presenter/Swift/index.html) / [objc](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Presenter/Objc/index.html)) - The component containing the implementation of the presentation layer in a VIPER-Application. It contains some presenter classes to seperate your application logic, from your view logic. 
-* [VISPER-Redux](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html) - A component containing the implementation of an redux architecture used in many VISPER-Application to represent the interactor layer in a viper application.
-* [VISPER-Reactive](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Reactive/index.html) - A simple implementation of reactive properties to allow the use of a reactive redux architecture in a VISPER-Application. It can be updated by the subspec VISPER-Rective/RxSwift to use the RxSwift framework.
-* [VISPER-Sourcery](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Sourcery/index.html) - A component supporting you to create a VISPER application by creating some nessecary boilerplate code for you.
-* VISPER-UIViewController ([swift](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-UIViewController/swift/index.html))  /  ([objc](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-UIViewController/objc/index.html)) - A component extending UIViewControllers to notify a presenter about it's lifecycle (viewDidLoad, etc.) 
-* [VISPER-Entity](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Entity/index.html) - A component modeling the entity layer if you do not use your custom layer in your VISPER-Application.
 
 ## Getting started 
 
@@ -55,23 +51,23 @@ The definition of the [App](https://rawgit.com/barteljan/VISPER/master/docs/VISP
 
 ````swift
 public protocol App {
-    
-    /// Add a feature to your application
-    ///
-    /// - Parameter feature: your feature
-    /// - Throws: throws errors thrown by your feature observers
-    ///
-    /// - note: A Feature is an empty protocol representing a distinct funtionality of your application.
-    ///         It will be provided to all FeatureObservers after addition to configure and connect it to
-    ///         your application and your remaining features. Have look at LogicFeature and LogicFeatureObserver for an example.
-    func add(feature: Feature) throws
-    
-    /// Add an observer to configure your application after adding a feature.
-    /// Have look at LogicFeature and LogicFeatureObserver for an example.
-    ///
-    /// - Parameter featureObserver: an object observing feature addition
-    func add(featureObserver: FeatureObserver)
-    
+
+/// Add a feature to your application
+///
+/// - Parameter feature: your feature
+/// - Throws: throws errors thrown by your feature observers
+///
+/// - note: A Feature is an empty protocol representing a distinct funtionality of your application.
+///         It will be provided to all FeatureObservers after addition to configure and connect it to
+///         your application and your remaining features. Have look at LogicFeature and LogicFeatureObserver for an example.
+func add(feature: Feature) throws
+
+/// Add an observer to configure your application after adding a feature.
+/// Have look at LogicFeature and LogicFeatureObserver for an example.
+///
+/// - Parameter featureObserver: an object observing feature addition
+func add(featureObserver: FeatureObserver)
+
 }
 ```` 
 
@@ -84,19 +80,19 @@ A [FeatureObserver](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/
 Many VISPER Components implement their own subtypes of [App](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/App.html), [Feature](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP) and [FeatureObserver](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/FeatureObserver.html).
 
 * [VISPER-Wireframe](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/index.html) provides you with: 
-    * [WireframeApp](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html) 
-    * [ViewFeature](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/ViewFeature.html) 
-    * [PresenterFeature](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/PresenterFeature.html)
-    * [WireframeFeatureObserver](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeFeatureObserver.html)
-    * [ViewFeatureObserver](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/ViewFeatureObserver.html) 
-    * [PresenterFeatureObserver](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/PresenterFeatureObserver.html).
+* [WireframeApp](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html) 
+* [ViewFeature](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/ViewFeature.html) 
+* [PresenterFeature](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/PresenterFeature.html)
+* [WireframeFeatureObserver](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeFeatureObserver.html)
+* [ViewFeatureObserver](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/ViewFeatureObserver.html) 
+* [PresenterFeatureObserver](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/PresenterFeatureObserver.html).
 
 * [VISPER-Redux](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html) provides you with: 
-    * [ReduxApp](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ReduxApp.html) 
-    * [LogicFeature](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/LogicFeature.html) 
-    * [LogicFeatureObserver](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Structs/LogicFeatureObserver.html).
+* [ReduxApp](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ReduxApp.html) 
+* [LogicFeature](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/LogicFeature.html) 
+* [LogicFeatureObserver](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Structs/LogicFeatureObserver.html).
 
- [VISPER-Swift](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Swift/index.html) provides you with a [VISPERApp](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Swift/Classes/VISPERApp.html) which combines all characteristics of a [WireframeApp](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html) and a [ReduxApp](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ReduxApp.html) and is used in the most Apps build with the VISPER-Framework.
+[VISPER-Swift](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Swift/index.html) provides you with a [VISPERApp](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Swift/Classes/VISPERApp.html) which combines all characteristics of a [WireframeApp](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html) and a [ReduxApp](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ReduxApp.html) and is used in the most Apps build with the VISPER-Framework.
 
 ### Wireframe
 
@@ -125,19 +121,19 @@ Now create a ViewFeature which provides a ViewController and some RoutingOptions
 
 ````swift
 class ExampleViewFeature: ViewFeature {
-    
-    var routePattern: String = "/exampleView"
-    var priority: Int = 0
-    
-    //controller will be pushed on current active navigation controller 
-    func makeOption(routeResult: RouteResult) -> RoutingOption {
-        return DefaultRoutingOptionPush()
-    }
-    
-    func makeController(routeResult: RouteResult) throws -> UIViewController {
-        let controller = UIViewController()
-        return controller
-    }
+
+var routePattern: String = "/exampleView"
+var priority: Int = 0
+
+//controller will be pushed on current active navigation controller 
+func makeOption(routeResult: RouteResult) -> RoutingOption {
+return DefaultRoutingOptionPush()
+}
+
+func makeController(routeResult: RouteResult) throws -> UIViewController {
+let controller = UIViewController()
+return controller
+}
 }
 ````
 
@@ -189,9 +185,9 @@ A typical composite app state for an app to manage your todos in the next week m
 
 ```swift
 struct AppState {
-    var userState: UserState
-    var todoListState: TodoListState
-    var imprintState: ImprintState
+var userState: UserState
+var todoListState: TodoListState
+var imprintState: ImprintState
 }
 ```
 
@@ -199,20 +195,20 @@ with some composite sub states:
 
 ```swift
 struct UserState {
-    var userName: String
-    var isAuthenticated: Bool
+var userName: String
+var isAuthenticated: Bool
 }
 ```
 
 ```swift
 struct TodoListState {
-    var todos: [Todo]
+var todos: [Todo]
 }
 ```
 ```swift
 struct ImprintState {
-    var text: String
-    var didAlreadyRead: Bool
+var text: String
+var didAlreadyRead: Bool
 }
 ```
 
@@ -233,12 +229,12 @@ An AppReducer for the previously defined AppState should look like that:
 
 ```swift
 let appReducer = { (reducerProvider: ReducerProvider, action: Action, currentState: AppState) -> AppState in
-    let state = AppState(
-        userState: reducerProvider.reduce(action,currentState.userState),
-        todoListState: reducerProvider.reduce(action,currentState.todoListState),
-        imprintState : reducerProvider.reduce(action,currentState.imprintState)
-    )
-    return reducerProvider.reduce(action,state)
+let state = AppState(
+userState: reducerProvider.reduce(action,currentState.userState),
+todoListState: reducerProvider.reduce(action,currentState.todoListState),
+imprintState : reducerProvider.reduce(action,currentState.imprintState)
+)
+return reducerProvider.reduce(action,state)
 }
 ```
 
@@ -284,7 +280,7 @@ An action is just an simple object conforming to the empty protocol Action, for 
 
 ```swift
 struct SetUsernameAction: Action {
-    var newUsername: String
+var newUsername: String
 }
 
 let action = SetUsernameAction(newUsername: "Max Mustermann")
@@ -302,8 +298,8 @@ or [AsyncActionReducerType](https://rawgit.com/barteljan/VISPER/master/docs/VISP
 A reduce funtion is just a simple function getting a provider, an action and an state, and returning a new state of the same type.
 ```swift
 let reduceFunction = { (provider: ReducerProvider, action: SetUsernameAction, state: UserState) -> UserState in
-    return UserState(userName: action.newUsername,
-                        isAuthenticated: state.isAuthenticated)
+return UserState(userName: action.newUsername,
+isAuthenticated: state.isAuthenticated)
 }
 reducerContainer.addReduceFunction(reduceFunction:reduceFunction)
 ```
@@ -322,16 +318,16 @@ An action type reducer is a class of type ActionReducerType which contains a red
 
 ```swift
 struct SetUsernameReducer: ActionReducerType {
-    
-    typealias ReducerStateType  = UserState
-    typealias ReducerActionType = SetUsernameAction
-    
-    func reduce(provider: ReducerProvider,
-                  action: SetUsernameAction,
-                   state: UserState) -> UserState {
-         return UserState(userName: action.newUsername,
-                    isAuthenticated: state.isAuthenticated)
-    }
+
+typealias ReducerStateType  = UserState
+typealias ReducerActionType = SetUsernameAction
+
+func reduce(provider: ReducerProvider,
+action: SetUsernameAction,
+state: UserState) -> UserState {
+return UserState(userName: action.newUsername,
+isAuthenticated: state.isAuthenticated)
+}
 }
 let reducer = SetUsernameReducer()
 reducerContainer.addReducer(reducer:reducer)
@@ -343,19 +339,19 @@ An async reducer is an reducer of AsyncActionReducerType which does not return a
 
 ```swift
 struct SetUsernameReducer: AsyncActionReducer {
-    
-    typealias ReducerStateType  = UserState
-    typealias ReducerActionType = SetUsernameAction
-    
-    let currentState: ObserveableProperty<UserState>
-    
-    func reduce(provider: ReducerProvider,
-                  action: SetUsernameAction,
-              completion: @escaping (_ newState: UserState) -> Void) {
-         let newState =  UserState(userName: action.newUsername,
-                            isAuthenticated: self.currentState.value.isAuthenticated)
-         completion(newState)
-    }
+
+typealias ReducerStateType  = UserState
+typealias ReducerActionType = SetUsernameAction
+
+let currentState: ObserveableProperty<UserState>
+
+func reduce(provider: ReducerProvider,
+action: SetUsernameAction,
+completion: @escaping (_ newState: UserState) -> Void) {
+let newState =  UserState(userName: action.newUsername,
+isAuthenticated: self.currentState.value.isAuthenticated)
+completion(newState)
+}
 }
 
 
@@ -371,12 +367,12 @@ You can use a LogicFeature to add some reducers to your app.
 import VISPER_Redux
 
 class ExampleLogicFeature: LogicFeature {
-    
-     func injectReducers(container: ReducerContainer) {
-        let reducer = SetUsernameReducer()
-        container.addReducer(reducer: incrementReducer)
-     }
-    
+
+func injectReducers(container: ReducerContainer) {
+let reducer = SetUsernameReducer()
+container.addReducer(reducer: incrementReducer)
+}
+
 }
 
 
@@ -397,7 +393,7 @@ let referenceBag: SubscriptionReferenceBag = self.referenceBag
 
 //subscribe to the state
 let subscription = app.state.subscribe { appState in
-    print("New username is:\(appState.userState.userName)")                                   
+print("New username is:\(appState.userState.userName)")                                   
 }
 
 //retain subscription in your reference bag
@@ -407,4 +403,22 @@ referenceBag.addReference(reference: subscription)
 [VISPER-Redux](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html) contains a [ObservableProperty<AppState>](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Reactive/Classes/ObservableProperty.html) to represent the changing AppState.
 [ObservableProperty](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Reactive/Classes/ObservableProperty.html) allows you to subscribe for state changes, and can be mapped to a RxSwift-Observable. 
 It is implemented in the [VISPER-Reactive](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Reactive/Classes/ObservableProperty.html) Component.
+
+---------------------------------------------------------------------------------------------------------
+
+## Complete list of all available VISPER-Components
+
+* [VISPER](https://rawgit.com/barteljan/VISPER/master/docs/VISPER/index.html) - a convenience import wrapper to include all VISPER Components with one import. It contains some deprecated components for backwards compatibility to previous VISPER Versions.
+* [VISPER-Swift](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Swift/index.html) - All swift components of the VISPER-Framework, and a convenience import wrapper for all their dependencies.
+* [VISPER-Objc](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Objc/index.html) - A wrapper around the core VISPER classes to use them in an objc codebase.
+* [VISPER-Core](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/index.html) - Some common core protocols used to communicate between the different components of your feature. This pod should be used if you want to include VISPER Components into your own projects and components. It's protocols are implemented in the other VISPER component pods.
+* [VISPER-Wireframe](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/index.html) - The component containing the implementation of the wireframe layer in a VIPER-Application, it manages the presentation and the lifecycle of your ViewControllers.
+* VISPER-Presenter([swift](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Presenter/Swift/index.html) / [objc](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Presenter/Objc/index.html)) - The component containing the implementation of the presentation layer in a VIPER-Application. It contains some presenter classes to seperate your application logic, from your view logic. 
+* [VISPER-Redux](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html) - A component containing the implementation of an redux architecture used in many VISPER-Application to represent the interactor layer in a viper application.
+* [VISPER-Reactive](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Reactive/index.html) - A simple implementation of reactive properties to allow the use of a reactive redux architecture in a VISPER-Application. It can be updated by the subspec VISPER-Rective/RxSwift to use the RxSwift framework.
+* [VISPER-Sourcery](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Sourcery/index.html) - A component supporting you to create a VISPER application by creating some nessecary boilerplate code for you.
+* VISPER-UIViewController ([swift](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-UIViewController/swift/index.html))  /  ([objc](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-UIViewController/objc/index.html)) - A component extending UIViewControllers to notify a presenter about it's lifecycle (viewDidLoad, etc.) 
+* [VISPER-Entity](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Entity/index.html) - A component modeling the entity layer if you do not use your custom layer in your VISPER-Application.
+
+
 

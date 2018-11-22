@@ -9,8 +9,8 @@
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/App/DefaultWireframeApp.swift",
-      "line": 19,
-      "symbol": "DefaultWireframeApp.init(wireframe:controllerContainer:)",
+      "line": 17,
+      "symbol": "DefaultWireframeApp.init(wireframe:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -44,7 +44,7 @@
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/App/DefaultWireframeAppFactory.swift",
-      "line": 37,
+      "line": 36,
       "symbol": "DefaultWireframeAppFactory.addDefaultFeatureObserver(application:controllerContainer:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -93,9 +93,37 @@
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/App/WireframeApp.swift",
+      "line": null,
+      "symbol": "WireframeApp",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/App/WireframeApp.swift",
       "line": 11,
       "symbol": "WireframeApp",
       "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/App/WireframeApp.swift",
+      "line": 48,
+      "symbol": "WireframeApp.add(controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/App/WireframeApp.swift",
+      "line": 52,
+      "symbol": "WireframeApp.remove(controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/App/WireframeApp.swift",
+      "line": 56,
+      "symbol": "WireframeApp.getController(matches:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -331,14 +359,28 @@
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/RoutingOptions/RoutingOptionPush.swift",
-      "line": 15,
+      "line": 12,
+      "symbol": "RoutingOptionPush.animationTransition",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/RoutingOptions/RoutingOptionPush.swift",
+      "line": 13,
+      "symbol": "RoutingOptionPush.animationDuration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/RoutingOptions/RoutingOptionPush.swift",
+      "line": 16,
       "symbol": "DefaultRoutingOptionPush",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/RoutingOptions/RoutingOptionPush.swift",
-      "line": 17,
+      "line": 18,
       "symbol": "DefaultRoutingOptionPush.animated",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
@@ -346,13 +388,27 @@
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/RoutingOptions/RoutingOptionPush.swift",
       "line": 19,
-      "symbol": "DefaultRoutingOptionPush.init(animated:)",
+      "symbol": "DefaultRoutingOptionPush.animationTransition",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/RoutingOptions/RoutingOptionPush.swift",
+      "line": 20,
+      "symbol": "DefaultRoutingOptionPush.animationDuration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/RoutingOptions/RoutingOptionPush.swift",
+      "line": 22,
+      "symbol": "DefaultRoutingOptionPush.init(animated:animationTransition:animationDuration:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/RoutingOptions/RoutingOptionPush.swift",
-      "line": 23,
+      "line": 28,
       "symbol": "DefaultRoutingOptionPush.isEqual(otherOption:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

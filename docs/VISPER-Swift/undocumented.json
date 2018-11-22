@@ -121,8 +121,22 @@
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/VISPERApp.swift",
-      "line": 45,
+      "line": 44,
       "symbol": "VISPERApp.init(redux:wireframe:controllerContainer:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/VISPERAppFactory.swift",
+      "line": 13,
+      "symbol": "VISPERAppFactory",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Swift/Classes/VISPERAppFactory.swift",
+      "line": 15,
+      "symbol": "VISPERAppFactory.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },

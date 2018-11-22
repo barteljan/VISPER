@@ -13,7 +13,7 @@
     <a title="VISPER-Swift  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">VISPER-Swift Docs</a> (14% documented)</p>
+        <p><a href="index.html">VISPER-Swift Docs</a> (15% documented)</p>
         <p class="header-right"><a href="https://github.com/barteljan/VISPER.git"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -41,6 +41,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Classes/VISPERApp.html">VISPERApp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/VISPERAppFactory.html">VISPERAppFactory</a>
               </li>
             </ul>
           </li>
@@ -551,16 +554,353 @@
             
             <h1 id='visper-swift' class='heading'>VISPER-Swift</h1>
 
-<p>VISPER is a component based library, which helps you to develop modular apps based on the VIPER Pattern.</p>
-
-<p>VISPER-Swift contains a convenience import wrapper for all swift components.</p>
-
 <p><a href="http://cocoapods.org/pods/VISPER"><img src="https://img.shields.io/cocoapods/v/VISPER.svg?style=flat" alt="Version"></a>
 <a href="http://cocoapods.org/pods/VISPER"><img src="https://img.shields.io/cocoapods/l/VISPER.svg?style=flat" alt="License"></a>
 <a href="http://cocoapods.org/pods/VISPER"><img src="https://img.shields.io/cocoapods/p/VISPER.svg?style=flat" alt="Platform"></a></p>
 
+<p>VISPER-Swift is a component based library, which helps you to develop modular apps based on the VIPER Pattern.</p>
+
+<p>VISPER contains of several components to create a flexibel architecture for your iOS-app.</p>
+
+<p>It contains of 3 main components.</p>
+
+<p>At first there is the <a href="#app">App</a> protocol to create your app from seperated modules called <a href="#features-and-featureobserver">Features</a> which provide a distinct part of your implementation. </p>
+
+<p>The second one is the <a href="#wireframe">Wireframe</a> a powerful router component, which defines a defined workflow for creating, presenting and navigation between ViewControllers.</p>
+
+<p>The main component responsible for the interactor layer is the <a href="#visper-redux">Redux</a> Object which provides a complete Redux-Architecture to manage state and state transitions in your app.</p>
+
 <hr>
-<h2 id='currently-available-visper-components' class='heading'>Currently available VISPER-Components</h2>
+
+<ul>
+<li><a href="#visper">VISPER</a></li>
+<li><a href="#getting-started">Getting started</a></li>
+<li><a href="#app">App</a></li>
+<li><a href="#features-and-featureobserver">Features and FeatureObserver</a></li>
+<li><a href="#wireframe">Wireframe</a></li>
+<li><a href="#visper-redux">VISPER-Redux</a></li>
+<li><a href="#state">State</a></li>
+<li><a href="#appreducer">AppReducer</a></li>
+<li><a href="#reduxapp">ReduxApp</a></li>
+<li><a href="#changing-state">Changing state</a></li>
+<li><a href="#reducer">Reducer</a></li>
+<li><a href="#reducefuntion">ReduceFuntion</a></li>
+<li><a href="#functionalreducer">FunctionalReducer</a></li>
+<li><a href="#actionreducertype">ActionReducerType</a></li>
+<li><a href="#asyncactionreducertype">AsyncActionReducerType</a></li>
+<li><a href="#logicfeature">LogicFeature</a></li>
+<li><a href="#observing-state-change">Observing state change</a></li>
+</ul>
+<h2 id='a-href-complete-list-of-all-available-visper-components-currently-available-visper-components-a' class='heading'>* <a href="#complete-list-of-all-available-visper-components">Currently available VISPER-Components</a></h2>
+<h2 id='getting-started' class='heading'>Getting started</h2>
+<h3 id='app' class='heading'>App</h3>
+
+<p>The core component of your VISPER application is an instance of the <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/App.html">App</a>
+protocol, which allows you to configure your application by a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP">Feature</a> which represents a distinct functionality of your app and 
+configures all VISPER components used by it.</p>
+
+<p>The definition of the <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/App.html">App</a> protocol is quite simple:</p>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">App</span> <span class="p">{</span>
+
+<span class="c1">/// Add a feature to your application</span>
+<span class="c1">///</span>
+<span class="c1">/// - Parameter feature: your feature</span>
+<span class="c1">/// - Throws: throws errors thrown by your feature observers</span>
+<span class="c1">///</span>
+<span class="c1">/// - note: A Feature is an empty protocol representing a distinct funtionality of your application.</span>
+<span class="c1">///         It will be provided to all FeatureObservers after addition to configure and connect it to</span>
+<span class="c1">///         your application and your remaining features. Have look at LogicFeature and LogicFeatureObserver for an example.</span>
+<span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="nv">feature</span><span class="p">:</span> <span class="kt">Feature</span><span class="p">)</span> <span class="k">throws</span>
+
+<span class="c1">/// Add an observer to configure your application after adding a feature.</span>
+<span class="c1">/// Have look at LogicFeature and LogicFeatureObserver for an example.</span>
+<span class="c1">///</span>
+<span class="c1">/// - Parameter featureObserver: an object observing feature addition</span>
+<span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="nv">featureObserver</span><span class="p">:</span> <span class="kt">FeatureObserver</span><span class="p">)</span>
+
+<span class="p">}</span>
+</code></pre>
+<h3 id='features-and-featureobserver' class='heading'>Features and FeatureObserver</h3>
+
+<p>You can basicly add some <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/FeatureObserver.html">FeatureObservers</a> and <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP">Features</a> to an <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/App.html">App</a>.</p>
+
+<p>A <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/FeatureObserver.html">FeatureObserver</a> will be called whenever a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP">Feature</a> is added and is responsible for configuring your VISPER components to provide the functionality implemented by your <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP">Feature</a>.</p>
+
+<p>Many VISPER Components implement their own subtypes of <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/App.html">App</a>, <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP">Feature</a> and <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/FeatureObserver.html">FeatureObserver</a>.</p>
+
+<ul>
+<li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/index.html">VISPER-Wireframe</a> provides you with:</li>
+<li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html">WireframeApp</a></li>
+<li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/ViewFeature.html">ViewFeature</a></li>
+<li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/PresenterFeature.html">PresenterFeature</a></li>
+<li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeFeatureObserver.html">WireframeFeatureObserver</a></li>
+<li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/ViewFeatureObserver.html">ViewFeatureObserver</a></li>
+<li><p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/PresenterFeatureObserver.html">PresenterFeatureObserver</a>.</p></li>
+<li><p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html">VISPER-Redux</a> provides you with: </p></li>
+<li><p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ReduxApp.html">ReduxApp</a> </p></li>
+<li><p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/LogicFeature.html">LogicFeature</a> </p></li>
+<li><p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Structs/LogicFeatureObserver.html">LogicFeatureObserver</a>.</p></li>
+</ul>
+
+<p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Swift/index.html">VISPER-Swift</a> provides you with a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Swift/Classes/VISPERApp.html">VISPERApp</a> which combines all characteristics of a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html">WireframeApp</a> and a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ReduxApp.html">ReduxApp</a> and is used in the most Apps build with the VISPER-Framework.</p>
+<h3 id='wireframe' class='heading'>Wireframe</h3>
+
+<p>The <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/Wireframe.html">Wireframe</a> manages the lifecycle of UIViewController in an VISPER-Application. 
+It is used to create controllers and to route from one controller to an other. It seperates the ViewController presentation and creation logic from the UIViewController itself.</p>
+
+<p>The <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/index.html">VISPER-Wireframe</a> component contains an implementation of the <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/Wireframe.html">Wireframe</a>-Protocol.  </p>
+
+<p>You can use the <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Classes/DefaultWireframeAppFactory.html">DefaultWireframeAppFactory</a> to create a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html">WireframeApp</a> with a default configuration:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">navigationController</span> <span class="o">=</span> <span class="kt">UINavigationController</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">factory</span> <span class="o">=</span> <span class="kt">DefaultWireframeAppFactory</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">wireframeApp</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="nf">makeApp</span><span class="p">()</span>
+<span class="n">wireframeApp</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">controllerToNavigate</span><span class="p">:</span> <span class="n">navigationController</span><span class="p">)</span>
+</code></pre>
+
+<p>if you want to create a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/Wireframe.html">Wireframe</a> without creating a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html">WireframeApp</a> use the <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Classes/WireframeFactory.html">WireframeFactory</a>.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">factory</span> <span class="o">=</span> <span class="kt">WireframeFactory</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">wireframe</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="nf">makeWireframe</span><span class="p">()</span>
+</code></pre>
+
+<p>Now create a ViewFeature which provides a ViewController and some RoutingOptions, to define how the controller will be presented, to your wireframe.</p>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ExampleViewFeature</span><span class="p">:</span> <span class="kt">ViewFeature</span> <span class="p">{</span>
+
+<span class="k">var</span> <span class="nv">routePattern</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"/exampleView"</span>
+<span class="k">var</span> <span class="nv">priority</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1">//controller will be pushed on current active navigation controller </span>
+<span class="kd">func</span> <span class="nf">makeOption</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">RoutingOption</span> <span class="p">{</span>
+<span class="k">return</span> <span class="kt">DefaultRoutingOptionPush</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">makeController</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+<span class="k">let</span> <span class="nv">controller</span> <span class="o">=</span> <span class="kt">UIViewController</span><span class="p">()</span>
+<span class="k">return</span> <span class="n">controller</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Add it to your <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html">WireframeApp</a></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">feature</span> <span class="o">=</span> <span class="kt">ExampleFeature</span><span class="p">()</span>
+<span class="n">wireframeApp</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">feature</span><span class="p">:</span> <span class="n">feature</span><span class="p">)</span>
+</code></pre>
+
+<p>or to your <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/Wireframe.html">Wireframe</a></p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">feature</span> <span class="o">=</span> <span class="kt">ExampleFeature</span><span class="p">()</span>
+<span class="n">wireframe</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">controllerProvider</span><span class="p">:</span> <span class="n">feature</span><span class="p">,</span> <span class="nv">priority</span><span class="p">:</span> <span class="n">feature</span><span class="o">.</span><span class="n">priority</span><span class="p">)</span>
+<span class="n">wireframe</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">optionProvider</span><span class="p">:</span> <span class="n">feature</span><span class="p">,</span> <span class="nv">priority</span><span class="p">:</span> <span class="n">feature</span><span class="o">.</span><span class="n">priority</span><span class="p">)</span>
+<span class="k">try</span> <span class="n">wireframe</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">routePattern</span><span class="p">:</span> <span class="n">feature</span><span class="o">.</span><span class="n">routePattern</span><span class="p">)</span>
+</code></pre>
+
+<p>You can now route to the controller provided by the ExampleFeature:</p>
+<pre class="highlight swift"><code><span class="k">try</span> <span class="n">wireframe</span><span class="o">.</span><span class="nf">route</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"/exampleView"</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
+</code></pre>
+
+<p><a href="docs/Wireframe-Example.md">Here ist a full example using VISPER with a wireframe</a></p>
+<h3 id='visper-redux' class='heading'>VISPER-Redux</h3>
+
+<p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html">VISPER-Redux</a> is an implementation of the redux-architecture in swift. </p>
+
+<p>It provides you with an app architecture to tackle the problem 
+of distributed app state and state changes. It is the implementaion 
+of the interactor layer in many Apps based on the VISPER Framework.</p>
+
+<p>If you want to learn more about redux, have a look at the following tutorials and documentations:</p>
+
+<ul>
+<li><a href="https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207">A cartoon guide to Flux</a></li>
+<li><a href="https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6">A cartoon Intro to Redux</a></li>
+<li><a href="http://redux.js.org/docs/introduction/">redux.js Documentation</a></li>
+</ul>
+
+<p>A comprehensive introduction about <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html">VISPER-Redux</a> can be found <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html">here</a>.</p>
+<h4 id='state' class='heading'>State</h4>
+
+<p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html">VISPER-Redux</a> stores the complete state of your app in a central struct to create a transparent representation of the current state of your different app components.</p>
+
+<p>A typical composite app state for an app to manage your todos in the next week might look like that: </p>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">AppState</span> <span class="p">{</span>
+<span class="k">var</span> <span class="nv">userState</span><span class="p">:</span> <span class="kt">UserState</span>
+<span class="k">var</span> <span class="nv">todoListState</span><span class="p">:</span> <span class="kt">TodoListState</span>
+<span class="k">var</span> <span class="nv">imprintState</span><span class="p">:</span> <span class="kt">ImprintState</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>with some composite sub states:</p>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">UserState</span> <span class="p">{</span>
+<span class="k">var</span> <span class="nv">userName</span><span class="p">:</span> <span class="kt">String</span>
+<span class="k">var</span> <span class="nv">isAuthenticated</span><span class="p">:</span> <span class="kt">Bool</span>
+<span class="p">}</span>
+</code></pre>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">TodoListState</span> <span class="p">{</span>
+<span class="k">var</span> <span class="nv">todos</span><span class="p">:</span> <span class="p">[</span><span class="kt">Todo</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">ImprintState</span> <span class="p">{</span>
+<span class="k">var</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span>
+<span class="k">var</span> <span class="nv">didAlreadyRead</span><span class="p">:</span> <span class="kt">Bool</span>
+<span class="p">}</span>
+</code></pre>
+<h4 id='appreducer' class='heading'>AppReducer</h4>
+
+<p>Each store has a special reducer with the following definition:</p>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">AppReducer</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="kt">ReducerProvider</span><span class="p">:</span> <span class="kt">ReducerProvider</span><span class="p">,</span><span class="n">_</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">Action</span><span class="p">,</span> <span class="n">_</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">State</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">State</span>
+</code></pre>
+
+<p>It is used as a single entrypoint to the store.
+It is called whenever a action is dispatched, to resolve a new state.
+Since our state is generic it is necessary to delegate the creation of each state property to the reducerProvider parameter.</p>
+
+<p>An AppReducer for the previously defined AppState should look like that:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">appReducer</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">reducerProvider</span><span class="p">:</span> <span class="kt">ReducerProvider</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">Action</span><span class="p">,</span> <span class="nv">currentState</span><span class="p">:</span> <span class="kt">AppState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AppState</span> <span class="k">in</span>
+<span class="k">let</span> <span class="nv">state</span> <span class="o">=</span> <span class="kt">AppState</span><span class="p">(</span>
+<span class="nv">userState</span><span class="p">:</span> <span class="n">reducerProvider</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="n">action</span><span class="p">,</span><span class="n">currentState</span><span class="o">.</span><span class="n">userState</span><span class="p">),</span>
+<span class="nv">todoListState</span><span class="p">:</span> <span class="n">reducerProvider</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="n">action</span><span class="p">,</span><span class="n">currentState</span><span class="o">.</span><span class="n">todoListState</span><span class="p">),</span>
+<span class="nv">imprintState</span> <span class="p">:</span> <span class="n">reducerProvider</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="n">action</span><span class="p">,</span><span class="n">currentState</span><span class="o">.</span><span class="n">imprintState</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">return</span> <span class="n">reducerProvider</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="n">action</span><span class="p">,</span><span class="n">state</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+<h4 id='reduxapp' class='heading'>ReduxApp</h4>
+
+<p>Createing an redux app is simple</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">appState</span><span class="p">:</span> <span class="kt">AppState</span> <span class="o">=</span> <span class="kt">AppState</span><span class="p">(</span> <span class="o">...</span> <span class="n">create</span> <span class="n">your</span> <span class="n">state</span> <span class="n">here</span> <span class="o">...</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">factory</span> <span class="o">=</span> <span class="kt">ReduxAppFactory</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">ReduxApp</span><span class="o">&lt;</span><span class="kt">AppState</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="nf">makeApplication</span><span class="p">(</span><span class="nv">initialState</span><span class="p">:</span> <span class="n">appState</span><span class="p">,</span> <span class="nv">appReducer</span><span class="p">:</span> <span class="n">appReducer</span><span class="p">)</span>
+</code></pre>
+<h4 id='changing-state' class='heading'>Changing state</h4>
+
+<p>The current state in an app using <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html">VISPER-Redux</a> 
+is stored in a central <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Classes/Store.html">Store</a> 
+instance, which lives in a convinience wrapper object of type <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Classes/Redux.html">Redux</a>. 
+State change can only be achieved by dispatching an action (a simple message object) at the <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/ActionDispatcher.html">ActionDispatcher</a>,
+and creating a modified new state in a Reducer (A reduce-function or an instance of type <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Structs/FunctionalReducer.html">FunctionalReducer</a>,<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ActionReducerType.html">ActionReducerType</a> 
+or <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/AsyncActionReducerType.html">AsyncActionReducerType</a>).</p>
+
+<p>A reduce-function has the following form (where ActionType and StateType are generic types of type Action and Any):</p>
+<pre class="highlight swift"><code><span class="p">(</span><span class="n">_</span> <span class="nv">provider</span><span class="p">:</span> <span class="kt">ReducerProvider</span><span class="p">,</span><span class="n">_</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">ActionType</span><span class="p">,</span> <span class="n">_</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">StateType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">StateType</span>
+</code></pre>
+
+<p>the reduce-function/reducer will be applied to all actions of type ActionType and to all states of type StateType.
+A reducer can be added to your redux architecture by adding it to the reducer container.</p>
+<pre class="highlight swift"><code><span class="c1">// add a reduce function</span>
+<span class="n">app</span><span class="o">.</span><span class="n">redux</span><span class="o">.</span><span class="n">reducerContainer</span><span class="o">.</span><span class="nf">addReduceFunction</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight swift"><code><span class="c1">// add a action reducer instance</span>
+<span class="n">app</span><span class="o">.</span><span class="n">redux</span><span class="o">.</span><span class="n">reducerContainer</span><span class="o">.</span><span class="nf">addReducer</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</code></pre>
+
+<p>An action is just an simple object conforming to the empty protocol Action, for example:</p>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">SetUsernameAction</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{</span>
+<span class="k">var</span> <span class="nv">newUsername</span><span class="p">:</span> <span class="kt">String</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">action</span> <span class="o">=</span> <span class="kt">SetUsernameAction</span><span class="p">(</span><span class="nv">newUsername</span><span class="p">:</span> <span class="s">"Max Mustermann"</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">redux</span><span class="o">.</span><span class="n">actionDispatcher</span><span class="o">.</span><span class="nf">dispatch</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+</code></pre>
+<h4 id='reducer' class='heading'>Reducer</h4>
+
+<p>Reducers specify how the application&rsquo;s state changes in response to actions sent to the store. Remember that actions only describe what happened, but don&rsquo;t describe how the application&rsquo;s state changes.
+A reducer in VISPER swift could be a reduce-function, or an instance of type <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Structs/FunctionalReducer.html">FunctionalReducer</a>,<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ActionReducerType.html">ActionReducerType</a><br>
+or <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/AsyncActionReducerType.html">AsyncActionReducerType</a>.</p>
+<h5 id='reducefuntion' class='heading'>ReduceFuntion</h5>
+
+<p>A reduce funtion is just a simple function getting a provider, an action and an state, and returning a new state of the same type.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">reduceFunction</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">provider</span><span class="p">:</span> <span class="kt">ReducerProvider</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">SetUsernameAction</span><span class="p">,</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">UserState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UserState</span> <span class="k">in</span>
+<span class="k">return</span> <span class="kt">UserState</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="n">action</span><span class="o">.</span><span class="n">newUsername</span><span class="p">,</span>
+<span class="nv">isAuthenticated</span><span class="p">:</span> <span class="n">state</span><span class="o">.</span><span class="n">isAuthenticated</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">reducerContainer</span><span class="o">.</span><span class="nf">addReduceFunction</span><span class="p">(</span><span class="nv">reduceFunction</span><span class="p">:</span><span class="n">reduceFunction</span><span class="p">)</span>
+</code></pre>
+<h5 id='functionalreducer' class='heading'>FunctionalReducer</h5>
+
+<p>A functional reducer is quite similar, just a reducer taking a reduce function and using it to reduce a state.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">functionalReducer</span> <span class="o">=</span> <span class="kt">FunctionalReducer</span><span class="p">(</span><span class="nv">reduceFunction</span><span class="p">:</span> <span class="n">reduceFunction</span><span class="p">)</span>
+<span class="n">reducerContainer</span><span class="o">.</span><span class="nf">addReducer</span><span class="p">(</span><span class="nv">reducer</span><span class="p">:</span><span class="n">functionalReducer</span><span class="p">)</span>
+</code></pre>
+<h5 id='actionreducertype' class='heading'>ActionReducerType</h5>
+
+<p>An action type reducer is a class of type ActionReducerType which contains a reduce function for a specific action and state type.</p>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">SetUsernameReducer</span><span class="p">:</span> <span class="kt">ActionReducerType</span> <span class="p">{</span>
+
+<span class="kd">typealias</span> <span class="kt">ReducerStateType</span>  <span class="o">=</span> <span class="kt">UserState</span>
+<span class="kd">typealias</span> <span class="kt">ReducerActionType</span> <span class="o">=</span> <span class="kt">SetUsernameAction</span>
+
+<span class="kd">func</span> <span class="nf">reduce</span><span class="p">(</span><span class="nv">provider</span><span class="p">:</span> <span class="kt">ReducerProvider</span><span class="p">,</span>
+<span class="nv">action</span><span class="p">:</span> <span class="kt">SetUsernameAction</span><span class="p">,</span>
+<span class="nv">state</span><span class="p">:</span> <span class="kt">UserState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UserState</span> <span class="p">{</span>
+<span class="k">return</span> <span class="kt">UserState</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="n">action</span><span class="o">.</span><span class="n">newUsername</span><span class="p">,</span>
+<span class="nv">isAuthenticated</span><span class="p">:</span> <span class="n">state</span><span class="o">.</span><span class="n">isAuthenticated</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="k">let</span> <span class="nv">reducer</span> <span class="o">=</span> <span class="kt">SetUsernameReducer</span><span class="p">()</span>
+<span class="n">reducerContainer</span><span class="o">.</span><span class="nf">addReducer</span><span class="p">(</span><span class="nv">reducer</span><span class="p">:</span><span class="n">reducer</span><span class="p">)</span>
+</code></pre>
+<h5 id='asyncactionreducertype' class='heading'>AsyncActionReducerType</h5>
+
+<p>An async reducer is an reducer of AsyncActionReducerType which does not return a new state, but calls a completion with a new state.</p>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">SetUsernameReducer</span><span class="p">:</span> <span class="kt">AsyncActionReducer</span> <span class="p">{</span>
+
+<span class="kd">typealias</span> <span class="kt">ReducerStateType</span>  <span class="o">=</span> <span class="kt">UserState</span>
+<span class="kd">typealias</span> <span class="kt">ReducerActionType</span> <span class="o">=</span> <span class="kt">SetUsernameAction</span>
+
+<span class="k">let</span> <span class="nv">currentState</span><span class="p">:</span> <span class="kt">ObserveableProperty</span><span class="o">&lt;</span><span class="kt">UserState</span><span class="o">&gt;</span>
+
+<span class="kd">func</span> <span class="nf">reduce</span><span class="p">(</span><span class="nv">provider</span><span class="p">:</span> <span class="kt">ReducerProvider</span><span class="p">,</span>
+<span class="nv">action</span><span class="p">:</span> <span class="kt">SetUsernameAction</span><span class="p">,</span>
+<span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">newState</span><span class="p">:</span> <span class="kt">UserState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">let</span> <span class="nv">newState</span> <span class="o">=</span>  <span class="kt">UserState</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="n">action</span><span class="o">.</span><span class="n">newUsername</span><span class="p">,</span>
+<span class="nv">isAuthenticated</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">currentState</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">isAuthenticated</span><span class="p">)</span>
+<span class="nf">completion</span><span class="p">(</span><span class="n">newState</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="k">let</span> <span class="nv">reducer</span> <span class="o">=</span> <span class="kt">SetUsernameReducer</span><span class="p">(</span><span class="nv">currentState</span><span class="p">:</span> <span class="n">app</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">map</span><span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">userState</span> <span class="p">})</span>
+<span class="n">reducerContainer</span><span class="o">.</span><span class="nf">addReducer</span><span class="p">(</span><span class="nv">reducer</span><span class="p">:</span><span class="n">reducer</span><span class="p">)</span>
+</code></pre>
+<h4 id='logicfeature' class='heading'>LogicFeature</h4>
+
+<p>You can use a LogicFeature to add some reducers to your app.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">VISPER_Redux</span>
+
+<span class="kd">class</span> <span class="kt">ExampleLogicFeature</span><span class="p">:</span> <span class="kt">LogicFeature</span> <span class="p">{</span>
+
+<span class="kd">func</span> <span class="nf">injectReducers</span><span class="p">(</span><span class="nv">container</span><span class="p">:</span> <span class="kt">ReducerContainer</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">let</span> <span class="nv">reducer</span> <span class="o">=</span> <span class="kt">SetUsernameReducer</span><span class="p">()</span>
+<span class="n">container</span><span class="o">.</span><span class="nf">addReducer</span><span class="p">(</span><span class="nv">reducer</span><span class="p">:</span> <span class="n">incrementReducer</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+
+
+<span class="k">let</span> <span class="nv">logicFeature</span> <span class="o">=</span> <span class="kt">ExampleLogicFeature</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">feature</span><span class="p">:</span> <span class="k">let</span> <span class="nv">logicFeature</span><span class="p">)</span>
+
+</code></pre>
+<h4 id='observing-state-change' class='heading'>Observing state change</h4>
+
+<p>Observing state change ist simple. Just observe the state of your app:</p>
+<pre class="highlight swift"><code>
+<span class="c1">//get your reference bag to retain subscription</span>
+<span class="k">let</span> <span class="nv">referenceBag</span><span class="p">:</span> <span class="kt">SubscriptionReferenceBag</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">referenceBag</span>
+
+
+<span class="c1">//subscribe to the state</span>
+<span class="k">let</span> <span class="nv">subscription</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">subscribe</span> <span class="p">{</span> <span class="n">appState</span> <span class="k">in</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">"New username is:</span><span class="se">\(</span><span class="n">appState</span><span class="o">.</span><span class="n">userState</span><span class="o">.</span><span class="n">userName</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>                                   
+<span class="p">}</span>
+
+<span class="c1">//retain subscription in your reference bag</span>
+<span class="n">referenceBag</span><span class="o">.</span><span class="nf">addReference</span><span class="p">(</span><span class="nv">reference</span><span class="p">:</span> <span class="n">subscription</span><span class="p">)</span>
+</code></pre>
+
+<p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html">VISPER-Redux</a> contains a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Reactive/Classes/ObservableProperty.html">ObservableProperty<AppState></a> to represent the changing AppState.
+<a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Reactive/Classes/ObservableProperty.html">ObservableProperty</a> allows you to subscribe for state changes, and can be mapped to a RxSwift-Observable. 
+It is implemented in the <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Reactive/Classes/ObservableProperty.html">VISPER-Reactive</a> Component.</p>
+
+<hr>
+<h2 id='complete-list-of-all-available-visper-components' class='heading'>Complete list of all available VISPER-Components</h2>
 
 <ul>
 <li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER/index.html">VISPER</a> - a convenience import wrapper to include all VISPER Components with one import. It contains some deprecated components for backwards compatibility to previous VISPER Versions.</li>
@@ -579,7 +919,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/barteljan/VISPER" target="_blank" rel="external">Jan Bartel</a>. All rights reserved. (Last updated: 2018-07-20)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/barteljan/VISPER" target="_blank" rel="external">Jan Bartel</a>. All rights reserved. (Last updated: 2018-11-22)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
