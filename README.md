@@ -14,7 +14,8 @@ At first there is the [App](#app) protocol to create your app from seperated mod
 
 The second one is the [Wireframe](#wireframe) a powerful router component, which defines a defined workflow for creating, presenting and navigation between ViewControllers.
 
-The main component responsible for the interactor layer is the [Redux](#visper-redux) Object which provides a complete Redux-Architecture to manage state and state transitions in your app.
+The last main component is the [Redux](#visper-redux) Object which lives in the interactor layer and provides a complete Redux-Architecture to manage your appstate and it's transition.
+
 
 ---------------------------------------------------------------------------------------------------------
 - [VISPER](#visper)
@@ -52,21 +53,21 @@ The definition of the [App](https://rawgit.com/barteljan/VISPER/master/docs/VISP
 ````swift
 public protocol App {
 
-/// Add a feature to your application
-///
-/// - Parameter feature: your feature
-/// - Throws: throws errors thrown by your feature observers
-///
-/// - note: A Feature is an empty protocol representing a distinct funtionality of your application.
-///         It will be provided to all FeatureObservers after addition to configure and connect it to
-///         your application and your remaining features. Have look at LogicFeature and LogicFeatureObserver for an example.
-func add(feature: Feature) throws
+    /// Add a feature to your application
+    ///
+    /// - Parameter feature: your feature
+    /// - Throws: throws errors thrown by your feature observers
+    ///
+    /// - note: A Feature is an empty protocol representing a distinct funtionality of your application.
+    ///         It will be provided to all FeatureObservers after addition to configure and connect it to
+    ///         your application and your remaining features. Have look at LogicFeature and LogicFeatureObserver for an example.
+    func add(feature: Feature) throws
 
-/// Add an observer to configure your application after adding a feature.
-/// Have look at LogicFeature and LogicFeatureObserver for an example.
-///
-/// - Parameter featureObserver: an object observing feature addition
-func add(featureObserver: FeatureObserver)
+    /// Add an observer to configure your application after adding a feature.
+    /// Have look at LogicFeature and LogicFeatureObserver for an example.
+    ///
+    /// - Parameter featureObserver: an object observing feature addition
+    func add(featureObserver: FeatureObserver)
 
 }
 ```` 
@@ -122,18 +123,18 @@ Now create a ViewFeature which provides a ViewController and some RoutingOptions
 ````swift
 class ExampleViewFeature: ViewFeature {
 
-var routePattern: String = "/exampleView"
-var priority: Int = 0
+    var routePattern: String = "/exampleView"
+    var priority: Int = 0
 
-//controller will be pushed on current active navigation controller 
-func makeOption(routeResult: RouteResult) -> RoutingOption {
-return DefaultRoutingOptionPush()
-}
+    //controller will be pushed on current active navigation controller 
+    func makeOption(routeResult: RouteResult) -> RoutingOption {
+        return DefaultRoutingOptionPush()
+    }
 
-func makeController(routeResult: RouteResult) throws -> UIViewController {
-let controller = UIViewController()
-return controller
-}
+    func makeController(routeResult: RouteResult) throws -> UIViewController {
+        let controller = UIViewController()
+        return controller
+    }
 }
 ````
 
@@ -185,30 +186,30 @@ A typical composite app state for an app to manage your todos in the next week m
 
 ```swift
 struct AppState {
-var userState: UserState
-var todoListState: TodoListState
-var imprintState: ImprintState
+    var userState: UserState
+    var todoListState: TodoListState
+    var imprintState: ImprintState
 }
 ```
 
 with some composite sub states:
 
 ```swift
-struct UserState {
-var userName: String
-var isAuthenticated: Bool
+    struct UserState {
+    var userName: String
+    var isAuthenticated: Bool
 }
 ```
 
 ```swift
 struct TodoListState {
-var todos: [Todo]
+    var todos: [Todo]
 }
 ```
 ```swift
 struct ImprintState {
-var text: String
-var didAlreadyRead: Bool
+    var text: String
+    var didAlreadyRead: Bool
 }
 ```
 
@@ -229,12 +230,12 @@ An AppReducer for the previously defined AppState should look like that:
 
 ```swift
 let appReducer = { (reducerProvider: ReducerProvider, action: Action, currentState: AppState) -> AppState in
-let state = AppState(
-userState: reducerProvider.reduce(action,currentState.userState),
-todoListState: reducerProvider.reduce(action,currentState.todoListState),
-imprintState : reducerProvider.reduce(action,currentState.imprintState)
-)
-return reducerProvider.reduce(action,state)
+    let state = AppState(
+        userState: reducerProvider.reduce(action,currentState.userState),
+        todoListState: reducerProvider.reduce(action,currentState.todoListState),
+        imprintState : reducerProvider.reduce(action,currentState.imprintState)
+    )
+    return reducerProvider.reduce(action,state)
 }
 ```
 
@@ -280,7 +281,7 @@ An action is just an simple object conforming to the empty protocol Action, for 
 
 ```swift
 struct SetUsernameAction: Action {
-var newUsername: String
+    var newUsername: String
 }
 
 let action = SetUsernameAction(newUsername: "Max Mustermann")
@@ -298,8 +299,8 @@ or [AsyncActionReducerType](https://rawgit.com/barteljan/VISPER/master/docs/VISP
 A reduce funtion is just a simple function getting a provider, an action and an state, and returning a new state of the same type.
 ```swift
 let reduceFunction = { (provider: ReducerProvider, action: SetUsernameAction, state: UserState) -> UserState in
-return UserState(userName: action.newUsername,
-isAuthenticated: state.isAuthenticated)
+    return UserState(userName: action.newUsername,
+              isAuthenticated: state.isAuthenticated)
 }
 reducerContainer.addReduceFunction(reduceFunction:reduceFunction)
 ```
@@ -319,16 +320,18 @@ An action type reducer is a class of type ActionReducerType which contains a red
 ```swift
 struct SetUsernameReducer: ActionReducerType {
 
-typealias ReducerStateType  = UserState
-typealias ReducerActionType = SetUsernameAction
+    typealias ReducerStateType  = UserState
+    typealias ReducerActionType = SetUsernameAction
 
-func reduce(provider: ReducerProvider,
-action: SetUsernameAction,
-state: UserState) -> UserState {
-return UserState(userName: action.newUsername,
-isAuthenticated: state.isAuthenticated)
+    func reduce(provider: ReducerProvider,
+                  action: SetUsernameAction,
+                   state: UserState) -> UserState {
+                   
+                   return UserState(userName: action.newUsername,
+                             isAuthenticated: state.isAuthenticated)
+    }
 }
-}
+
 let reducer = SetUsernameReducer()
 reducerContainer.addReducer(reducer:reducer)
 ```
@@ -340,18 +343,18 @@ An async reducer is an reducer of AsyncActionReducerType which does not return a
 ```swift
 struct SetUsernameReducer: AsyncActionReducer {
 
-typealias ReducerStateType  = UserState
-typealias ReducerActionType = SetUsernameAction
+    typealias ReducerStateType  = UserState
+    typealias ReducerActionType = SetUsernameAction
 
-let currentState: ObserveableProperty<UserState>
+    let currentState: ObserveableProperty<UserState>
 
-func reduce(provider: ReducerProvider,
-action: SetUsernameAction,
-completion: @escaping (_ newState: UserState) -> Void) {
-let newState =  UserState(userName: action.newUsername,
-isAuthenticated: self.currentState.value.isAuthenticated)
-completion(newState)
-}
+    func reduce(provider: ReducerProvider,
+                  action: SetUsernameAction,
+              completion: @escaping (_ newState: UserState) -> Void) {
+        let newState =  UserState(userName: action.newUsername,
+        isAuthenticated: self.currentState.value.isAuthenticated)
+        completion(newState)
+    }
 }
 
 
@@ -368,10 +371,10 @@ import VISPER_Redux
 
 class ExampleLogicFeature: LogicFeature {
 
-func injectReducers(container: ReducerContainer) {
-let reducer = SetUsernameReducer()
-container.addReducer(reducer: incrementReducer)
-}
+    func injectReducers(container: ReducerContainer) {
+        let reducer = SetUsernameReducer()
+        container.addReducer(reducer: incrementReducer)
+    }
 
 }
 
@@ -393,7 +396,7 @@ let referenceBag: SubscriptionReferenceBag = self.referenceBag
 
 //subscribe to the state
 let subscription = app.state.subscribe { appState in
-print("New username is:\(appState.userState.userName)")                                   
+    print("New username is:\(appState.userState.userName)")                                   
 }
 
 //retain subscription in your reference bag
