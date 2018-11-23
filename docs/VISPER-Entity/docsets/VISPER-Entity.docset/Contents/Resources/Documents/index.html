@@ -88,12 +88,9 @@
 <a href="http://cocoapods.org/pods/VISPER"><img src="https://img.shields.io/cocoapods/p/VISPER.svg?style=flat" alt="Platform"></a></p>
 
 <p>VISPER is a component based library, which helps you to develop modular apps based on the VIPER Pattern.
-VISPER contains several components to create a flexibel architecture for your iOS-app. It contains of 3 main components.</p>
+VISPER contains of several components to create a flexibel architecture for your iOS-app. It contains of 3 main components.</p>
 
-<p>At first there is the <a href="#app">App</a> protocol to create your app from seperated modules called <a href="#features-and-featureobserver">Features</a> which provide a distinct part of your implementation. 
-The second one is the <a href="#wireframe">Wireframe</a> a powerful router component, which defines a defined workflow for creating, presenting and navigation between ViewControllers.
-The last main component is the <a href="#visper-redux">Redux</a> Object which lives in the interactor layer and provides a complete Redux-Architecture to manage your appstate and it&rsquo;s transition.</p>
-<h1 id='index' class='heading'>Index</h1>
+<p>The most general is the <a href="#app">App</a> protocol, which helps you to compose your app of seperated modules called <a href="#features-and-featureobserver">Features</a>. Each  Feature creates and configures a distinct part of application.  VISPER provides you with the  <a href="#wireframe">Wireframe</a> , since the navigation between view controllers is an important aspect of your application, which should be modelt explicitly without coupling your different UIViewControllers.  The <a href="#wireframe">Wireframe</a> a powerful router component, which defines a defined workflow for creating, presenting and navigation between ViewControllers without requiering a view controller to know about  the implementation of the next presented view controller. An other important concern when creating a new app is state management. In an VISPER-App this is typically done by a  <a href="#visper-redux">Redux</a> Object which lives in the interactor layer and provides a complete Redux-Architecture to manage your appstate and it&rsquo;s transitions.</p>
 
 <ul>
 <li><a href="#visper">VISPER</a>

@@ -5,13 +5,9 @@
 [![Platform](https://img.shields.io/cocoapods/p/VISPER.svg?style=flat)](http://cocoapods.org/pods/VISPER)
 
 VISPER is a component based library, which helps you to develop modular apps based on the VIPER Pattern.
-VISPER contains several components to create a flexibel architecture for your iOS-app. It contains of 3 main components.
+VISPER contains of several components to create a flexibel architecture for your iOS-app. It contains of 3 main components.
 
-At first there is the [App](#app) protocol to create your app from seperated modules called [Features](#features-and-featureobserver) which provide a distinct part of your implementation. 
-The second one is the [Wireframe](#wireframe) a powerful router component, which defines a defined workflow for creating, presenting and navigation between ViewControllers.
-The last main component is the [Redux](#visper-redux) Object which lives in the interactor layer and provides a complete Redux-Architecture to manage your appstate and it's transition.
-
-#Index
+The most general is the [App](#app) protocol, which helps you to compose your app of seperated modules called [Features](#features-and-featureobserver). Each  Feature creates and configures a distinct part of application.  VISPER provides you with the  [Wireframe](#wireframe) , since the navigation between view controllers is an important aspect of your application, which should be modelt explicitly without coupling your different UIViewControllers.  The [Wireframe](#wireframe) a powerful router component, which defines a defined workflow for creating, presenting and navigation between ViewControllers without requiering a view controller to know about  the implementation of the next presented view controller. An other important concern when creating a new app is state management. In an VISPER-App this is typically done by a  [Redux](#visper-redux) Object which lives in the interactor layer and provides a complete Redux-Architecture to manage your appstate and it's transitions.
 
 - [VISPER](#visper)
   * [Getting started](#getting-started)

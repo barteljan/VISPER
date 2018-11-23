@@ -1691,7 +1691,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Entity-ExampleTests/Pods-VISPER-Entity-ExampleTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-VISPER-Entity-ExampleTests/Pods-VISPER-Entity-ExampleTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Entity/VISPER_Entity.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1700,7 +1700,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Entity-ExampleTests/Pods-VISPER-Entity-ExampleTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VISPER-Entity-ExampleTests/Pods-VISPER-Entity-ExampleTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		07F94F361447C082EF5FC9B4 /* [CP] Check Pods Manifest.lock */ = {
@@ -1727,7 +1727,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Sourcery-Example/Pods-VISPER-Sourcery-Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-VISPER-Sourcery-Example/Pods-VISPER-Sourcery-Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/VISPER/VISPER.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-CommandBus/VISPER_CommandBus.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Core/VISPER_Core.framework",
@@ -1758,7 +1758,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Sourcery-Example/Pods-VISPER-Sourcery-Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VISPER-Sourcery-Example/Pods-VISPER-Sourcery-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		1690BEF9EB2D64B4AAED4ED3 /* [CP] Check Pods Manifest.lock */ = {
@@ -1803,18 +1803,20 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Reactive-RxSwift-Tests/Pods-VISPER-Reactive-RxSwift-Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-VISPER-Reactive-RxSwift-Tests/Pods-VISPER-Reactive-RxSwift-Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Reactive-RxSwift/VISPER_Reactive.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Reactive.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Reactive-RxSwift-Tests/Pods-VISPER-Reactive-RxSwift-Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VISPER-Reactive-RxSwift-Tests/Pods-VISPER-Reactive-RxSwift-Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		28F374E9708CBC2014150F64 /* [CP] Embed Pods Frameworks */ = {
@@ -1823,7 +1825,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Redux-Example/Pods-VISPER-Redux-Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-VISPER-Redux-Example/Pods-VISPER-Redux-Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Core/VISPER_Core.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Reactive/VISPER_Reactive.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Redux/VISPER_Redux.framework",
@@ -1836,7 +1838,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Redux-Example/Pods-VISPER-Redux-Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VISPER-Redux-Example/Pods-VISPER-Redux-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2E8C7F8A922925B5DBFFC464 /* [CP] Embed Pods Frameworks */ = {
@@ -1845,7 +1847,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Swift-RxSwift-Example/Pods-VISPER-Swift-RxSwift-Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-VISPER-Swift-RxSwift-Example/Pods-VISPER-Swift-RxSwift-Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/VISPER/VISPER.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-CommandBus/VISPER_CommandBus.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Core/VISPER_Core.framework",
@@ -1857,6 +1859,7 @@
 				"${BUILT_PRODUCTS_DIR}/VISPER-Swift/VISPER_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-UIViewController/VISPER_UIViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Wireframe/VISPER_Wireframe.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1872,11 +1875,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_UIViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VISPER_Wireframe.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Swift-RxSwift-Example/Pods-VISPER-Swift-RxSwift-Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VISPER-Swift-RxSwift-Example/Pods-VISPER-Swift-RxSwift-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		33959D2BCA202BC248A8A97B /* [CP] Check Pods Manifest.lock */ = {
@@ -1921,7 +1925,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Wireframe-Example/Pods-VISPER-Wireframe-Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-VISPER-Wireframe-Example/Pods-VISPER-Wireframe-Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Core/VISPER_Core.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Objc/VISPER_Objc.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Presenter/VISPER_Presenter.framework",
@@ -1938,7 +1942,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Wireframe-Example/Pods-VISPER-Wireframe-Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VISPER-Wireframe-Example/Pods-VISPER-Wireframe-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5E9E81906D898072C609AAFB /* [CP] Check Pods Manifest.lock */ = {
@@ -2019,7 +2023,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Wireframe-Tests/Pods-VISPER-Wireframe-Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-VISPER-Wireframe-Tests/Pods-VISPER-Wireframe-Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Core/VISPER_Core.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Objc/VISPER_Objc.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Presenter/VISPER_Presenter.framework",
@@ -2036,7 +2040,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Wireframe-Tests/Pods-VISPER-Wireframe-Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VISPER-Wireframe-Tests/Pods-VISPER-Wireframe-Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		89094DBBC093FFB8C235FD15 /* [CP] Check Pods Manifest.lock */ = {
@@ -2063,7 +2067,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Redux-Tests/Pods-VISPER-Redux-Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-VISPER-Redux-Tests/Pods-VISPER-Redux-Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Core/VISPER_Core.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Reactive/VISPER_Reactive.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Redux/VISPER_Redux.framework",
@@ -2076,7 +2080,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Redux-Tests/Pods-VISPER-Redux-Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VISPER-Redux-Tests/Pods-VISPER-Redux-Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		95CEAACB734FB4B34576BBE1 /* [CP] Check Pods Manifest.lock */ = {
@@ -2134,7 +2138,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-VISPER_Example/Pods-VISPER_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-VISPER_Example/Pods-VISPER_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/VISPER/VISPER.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-CommandBus/VISPER_CommandBus.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Core/VISPER_Core.framework",
@@ -2163,7 +2167,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER_Example/Pods-VISPER_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VISPER_Example/Pods-VISPER_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C2CAF067659B0E32D19EB94E /* [CP] Embed Pods Frameworks */ = {
@@ -2172,7 +2176,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Reactive-Tests/Pods-VISPER-Reactive-Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-VISPER-Reactive-Tests/Pods-VISPER-Reactive-Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Reactive/VISPER_Reactive.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -2181,7 +2185,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Reactive-Tests/Pods-VISPER-Reactive-Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VISPER-Reactive-Tests/Pods-VISPER-Reactive-Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D29802B4A62AF13C890B3C44 /* [CP] Embed Pods Frameworks */ = {
@@ -2190,7 +2194,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Entity-Example/Pods-VISPER-Entity-Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-VISPER-Entity-Example/Pods-VISPER-Entity-Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Entity/VISPER_Entity.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -2199,7 +2203,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Entity-Example/Pods-VISPER-Entity-Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VISPER-Entity-Example/Pods-VISPER-Entity-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EDC5BDFE01FFDB9789769E83 /* [CP] Check Pods Manifest.lock */ = {
@@ -2226,7 +2230,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-UIViewController-Tests/Pods-VISPER-UIViewController-Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-VISPER-UIViewController-Tests/Pods-VISPER-UIViewController-Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Core/VISPER_Core.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Objc/VISPER_Objc.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Presenter/VISPER_Presenter.framework",
@@ -2243,7 +2247,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-UIViewController-Tests/Pods-VISPER-UIViewController-Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VISPER-UIViewController-Tests/Pods-VISPER-UIViewController-Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FFBA38CE315868761F4A8AE9 /* [CP] Embed Pods Frameworks */ = {
@@ -2252,7 +2256,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Swift-Example/Pods-VISPER-Swift-Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-VISPER-Swift-Example/Pods-VISPER-Swift-Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/VISPER/VISPER.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-CommandBus/VISPER_CommandBus.framework",
 				"${BUILT_PRODUCTS_DIR}/VISPER-Core/VISPER_Core.framework",
@@ -2281,7 +2285,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VISPER-Swift-Example/Pods-VISPER-Swift-Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VISPER-Swift-Example/Pods-VISPER-Swift-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
