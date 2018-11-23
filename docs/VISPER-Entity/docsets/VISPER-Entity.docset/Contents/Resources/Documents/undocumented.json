@@ -79,154 +79,154 @@
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 53,
+      "line": 50,
       "symbol": "ComposedEntityStore.delete(_:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 58,
+      "line": 55,
       "symbol": "ComposedEntityStore.delete(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 69,
+      "line": 66,
       "symbol": "ComposedEntityStore.persist(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 74,
+      "line": 71,
       "symbol": "ComposedEntityStore.persist(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 86,
+      "line": 83,
       "symbol": "ComposedEntityStore.persist(_:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 91,
+      "line": 88,
       "symbol": "ComposedEntityStore.getAll(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 96,
+      "line": 93,
       "symbol": "ComposedEntityStore.getAll(_:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 101,
+      "line": 98,
       "symbol": "ComposedEntityStore.getAll(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 106,
+      "line": 103,
       "symbol": "ComposedEntityStore.getAll(_:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 111,
+      "line": 108,
       "symbol": "ComposedEntityStore.getAll(_:groupName:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 116,
+      "line": 113,
       "symbol": "ComposedEntityStore.getAll(_:groupName:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 122,
+      "line": 119,
       "symbol": "ComposedEntityStore.isResponsible(for:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 133,
+      "line": 130,
       "symbol": "ComposedEntityStore.isResponsible(forType:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 144,
+      "line": 141,
       "symbol": "ComposedEntityStore.exists(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 154,
+      "line": 151,
       "symbol": "ComposedEntityStore.exists(_:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 166,
+      "line": 163,
       "symbol": "ComposedEntityStore.exists(_:type:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 176,
+      "line": 173,
       "symbol": "ComposedEntityStore.exists(_:type:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 186,
+      "line": 183,
       "symbol": "ComposedEntityStore.filter(_:includeElement:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 191,
+      "line": 188,
       "symbol": "ComposedEntityStore.filter(_:includeElement:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 196,
+      "line": 193,
       "symbol": "ComposedEntityStore.addView(_:groupingBlock:sortingBlock:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 201,
+      "line": 198,
       "symbol": "ComposedEntityStore.transaction(transaction:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
-      "line": 215,
+      "line": 212,
       "symbol": "ComposedEntityStore.allEntities()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -590,98 +590,98 @@
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/FunctionalEntityStore.swift",
-      "line": 114,
+      "line": 115,
       "symbol": "FunctionalEntityStore.getAll(_:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/FunctionalEntityStore.swift",
-      "line": 120,
+      "line": 121,
       "symbol": "FunctionalEntityStore.getAll(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/FunctionalEntityStore.swift",
-      "line": 124,
+      "line": 125,
       "symbol": "FunctionalEntityStore.getAll(_:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/FunctionalEntityStore.swift",
-      "line": 129,
+      "line": 130,
       "symbol": "FunctionalEntityStore.getAll(_:groupName:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/FunctionalEntityStore.swift",
-      "line": 134,
+      "line": 135,
       "symbol": "FunctionalEntityStore.getAll(_:groupName:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/FunctionalEntityStore.swift",
-      "line": 140,
+      "line": 141,
       "symbol": "FunctionalEntityStore.exists(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/FunctionalEntityStore.swift",
-      "line": 158,
+      "line": 159,
       "symbol": "FunctionalEntityStore.exists(_:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/FunctionalEntityStore.swift",
-      "line": 164,
+      "line": 165,
       "symbol": "FunctionalEntityStore.exists(_:type:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/FunctionalEntityStore.swift",
-      "line": 178,
+      "line": 179,
       "symbol": "FunctionalEntityStore.exists(_:type:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/FunctionalEntityStore.swift",
-      "line": 185,
+      "line": 186,
       "symbol": "FunctionalEntityStore.filter(_:includeElement:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/FunctionalEntityStore.swift",
-      "line": 190,
+      "line": 191,
       "symbol": "FunctionalEntityStore.filter(_:includeElement:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/FunctionalEntityStore.swift",
-      "line": 197,
+      "line": 198,
       "symbol": "FunctionalEntityStore.addView(_:groupingBlock:sortingBlock:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/FunctionalEntityStore.swift",
-      "line": 203,
+      "line": 204,
       "symbol": "FunctionalEntityStore.transaction(transaction:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/FunctionalEntityStore.swift",
-      "line": 225,
+      "line": 226,
       "symbol": "FunctionalEntityStore.toTypedEntityStore()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

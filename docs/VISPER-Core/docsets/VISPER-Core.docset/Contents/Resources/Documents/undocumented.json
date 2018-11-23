@@ -496,6 +496,27 @@
       "symbol": "Wireframe.add(routingPresenter:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
+      "line": 220,
+      "symbol": "Wireframe.add(controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
+      "line": 224,
+      "symbol": "Wireframe.remove(controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
+      "line": 228,
+      "symbol": "Wireframe.getController(matches:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/bartel/Documents/lib/VISPER"

@@ -113,6 +113,34 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/CombineLatestClosures.swift",
+      "line": 16,
+      "symbol": "CombineLatestClosures.PipelineCallback",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/CombineLatestClosures.swift",
+      "line": 22,
+      "symbol": "CombineLatestClosures.init(allCallbacksAreCalled:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/CombineLatestClosures.swift",
+      "line": 26,
+      "symbol": "CombineLatestClosures.chainClosure(callback:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/CombineLatestClosures.swift",
+      "line": 35,
+      "symbol": "CombineLatestClosures.combineLatest()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/DefaultReduxApp.swift",
       "line": 12,
       "symbol": "DefaultReduxApp",
@@ -228,6 +256,34 @@
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ReducerContainer.swift",
       "line": 44,
       "symbol": "ReducerContainerImpl.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ReducerContainerForOneActionTransaction.swift",
+      "line": 11,
+      "symbol": "ReducerContainerForOneActionTransaction",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ReducerContainerForOneActionTransaction.swift",
+      "line": 13,
+      "symbol": "ReducerContainerForOneActionTransaction.dispatchStateChangeActionCallback",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ReducerContainerForOneActionTransaction.swift",
+      "line": 18,
+      "symbol": "ReducerContainerForOneActionTransaction.init(reducerContainer:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ReducerContainerForOneActionTransaction.swift",
+      "line": 53,
+      "symbol": "ReducerContainerForOneActionTransaction.startCompleting()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -443,7 +499,7 @@
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/Store.swift",
-      "line": 69,
+      "line": 73,
       "symbol": "Store.dispatch(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

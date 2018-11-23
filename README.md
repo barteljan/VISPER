@@ -5,40 +5,32 @@
 [![Platform](https://img.shields.io/cocoapods/p/VISPER.svg?style=flat)](http://cocoapods.org/pods/VISPER)
 
 VISPER is a component based library, which helps you to develop modular apps based on the VIPER Pattern.
-
-VISPER contains of several components to create a flexibel architecture for your iOS-app.
-
-It contains of 3 main components.
+VISPER contains several components to create a flexibel architecture for your iOS-app. It contains of 3 main components.
 
 At first there is the [App](#app) protocol to create your app from seperated modules called [Features](#features-and-featureobserver) which provide a distinct part of your implementation. 
-
 The second one is the [Wireframe](#wireframe) a powerful router component, which defines a defined workflow for creating, presenting and navigation between ViewControllers.
-
 The last main component is the [Redux](#visper-redux) Object which lives in the interactor layer and provides a complete Redux-Architecture to manage your appstate and it's transition.
 
+#Index
 
----------------------------------------------------------------------------------------------------------
 - [VISPER](#visper)
-* [Getting started](#getting-started)
-+ [App](#app)
-+ [Features and FeatureObserver](#features-and-featureobserver)
-+ [Wireframe](#wireframe)
-+ [VISPER-Redux](#visper-redux)
-- [State](#state)
-- [AppReducer](#appreducer)
-- [ReduxApp](#reduxapp)
-- [Changing state](#changing-state)
-- [Reducer](#reducer)
-* [ReduceFuntion](#reducefuntion)
-* [FunctionalReducer](#functionalreducer)
-* [ActionReducerType](#actionreducertype)
-* [AsyncActionReducerType](#asyncactionreducertype)
-- [LogicFeature](#logicfeature)
-- [Observing state change](#observing-state-change)
-* [Currently available VISPER-Components](#complete-list-of-all-available-visper-components)
----------------------------------------------------------------------------------------------------------
-
-
+  * [Getting started](#getting-started)
+    + [App](#app)
+    + [Features and FeatureObserver](#features-and-featureobserver)
+    + [Wireframe](#wireframe)
+    + [VISPER-Redux](#visper-redux)
+      - [State](#state)
+      - [AppReducer](#appreducer)
+      - [ReduxApp](#reduxapp)
+      - [Changing state](#changing-state)
+      - [Reducer](#reducer)
+        * [ReduceFuntion](#reducefuntion)
+        * [FunctionalReducer](#functionalreducer)
+        * [ActionReducerType](#actionreducertype)
+        * [AsyncActionReducerType](#asyncactionreducertype)
+      - [LogicFeature](#logicfeature)
+      - [Observing state change](#observing-state-change)
+  * [Complete list of all available VISPER-Components](#complete-list-of-all-available-visper-components)
 
 ## Getting started 
 
