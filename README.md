@@ -15,7 +15,7 @@ We created a seperate article to dig deeper into this topic. You can find it [he
 
 ![Architecture](docs/img/VISPER.png)
 
-The easiest way to get good grasp about how VISPER can help you building an app, is by having a look at it's main components.
+The easiest way to get good grasp of how VISPER can help you building an app, is by having a look at it's main components.
 
 The most general component is the [App](#app) protocol, which helps you to compose your app of seperated modules 
 called [Features](#features-and-featureobserver). Each Feature creates and configures a distinct part of your application.  
@@ -28,10 +28,10 @@ The [Wireframe](#wireframe) allows you to route to a specific ViewController by 
 It seperates the creation of a ViewController (done by a [ViewFeature](#wireframe)), 
 from it's presentation (done by some weird guy named [RoutingPresenter](#wireframe)).
 
-Since we fought to many fights against massive-ViewControllers, we want the view to be quite stupid. 
+Since we fought to many fights against massive ViewControllers, we want our view to be quite stupid. 
 This prepares the stage for the [Presenter](#wireframe). The wireframe requests all responsible [Presenters](#wireframe) 
-from a [PresenterFeature](#wireframe) before presenting a ViewController and gives them the possibillity to enrich that 
-stupid thing with some data bindings and behaviour. 
+from a [PresenterFeature](#wireframe) before presenting a ViewController. It gives them the possibillity to enrich that 
+stupid thing with some data bindings and behaviour before it is actually presented. 
 
 An other great challenge is controlling the state of your application. VISPER decides to do that in the interactor 
 layer and supports you with an [Redux-Architecture](#visper-redux) to manage your appstate and it's state transitions.
