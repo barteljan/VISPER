@@ -5,10 +5,39 @@
 [![Platform](https://img.shields.io/cocoapods/p/VISPER.svg?style=flat)](http://cocoapods.org/pods/VISPER)
 
 VISPER is a component based library, which helps you to develop modular apps based on the VIPER Pattern.
-VISPER contains of several components to create a flexibel architecture for your iOS-app. It contains of 3 main components.
+VISPER contains several components to create a flexibel architecture without losing too much time with VIPER.
 
-The most general is the [App](#app) protocol, which helps you to compose your app of seperated modules called [Features](#features-and-featureobserver). Each  Feature creates and configures a distinct part of application.  VISPER provides you with the  [Wireframe](#wireframe) , since the navigation between view controllers is an important aspect of your application, which should be modelt explicitly without coupling your different UIViewControllers.  The [Wireframe](#wireframe) a powerful router component, which defines a defined workflow for creating, presenting and navigation between ViewControllers without requiering a view controller to know about  the implementation of the next presented view controller. An other important concern when creating a new app is state management. In an VISPER-App this is typically done by a  [Redux](#visper-redux) Object which lives in the interactor layer and provides a complete Redux-Architecture to manage your appstate and it's transitions.
+The architecture of an typical app, build with VISPER, is shown in the image below.
 
+Well ok ... we know that looks a bit complicated.
+
+We created a seperate article to dig deeper into this topic. You can find it [here](docs/Architecture.md). 
+
+![Architecture](docs/img/VISPER.png)
+
+The easiest way to get good grasp about how VISPER can help you building an app, is by having a look at it's main components.
+
+The most general component is the [App](#app) protocol, which helps you to compose your app of seperated modules 
+called [Features](#features-and-featureobserver). Each Feature creates and configures a distinct part of your application.  
+
+Since the presentation, creation and management of ViewControllers ist an important part of your application, 
+there should be a seperate component responsible for the presentation and the lifecycle of your ViewControllers. 
+This job is done by the [Wireframe](#wireframe).  
+
+The [Wireframe](#wireframe) allows you to route to a specific ViewController by an simple URL (called Route).
+It seperates the creation of a ViewController (done by a [ViewFeature](#wireframe)), 
+from it's presentation (done by some weird guy named [RoutingPresenter](#wireframe)).
+
+Since we fought to many fights against massive-ViewControllers, we want the view to be quite stupid. 
+This prepares the stage for the [Presenter](#wireframe). The wireframe requests all responsible [Presenters](#wireframe) 
+from a [PresenterFeature](#wireframe) before presenting a ViewController and gives them the possibillity to enrich that 
+stupid thing with some data bindings and behaviour. 
+
+An other great challenge is controlling the state of your application. VISPER decides to do that in the interactor 
+layer and supports you with an [Redux-Architecture](#visper-redux) to manage your appstate and it's state transitions.
+A presenter can observe the changing state of your app to update your views and trigger some [Actions](#changing-state) 
+to change it. More on that topic can be found [here](#visper-redux).
+ 
 - [VISPER](#visper)
   * [Getting started](#getting-started)
     + [App](#app)
@@ -27,16 +56,7 @@ The most general is the [App](#app) protocol, which helps you to compose your ap
       - [LogicFeature](#logicfeature)
       - [Observing state change](#observing-state-change)
   * [Complete list of all available VISPER-Components](#complete-list-of-all-available-visper-components)
-  
-## Architecture
-  
-The architecture of an typical app, build with VISPER, is shown in the image below.
 
-Well ok ... we know that looks a bit complicated.
-
-We created a seperate article to dig deeper into this topic. You can find it [here](docs/Architecture.md). 
-  
-![Architecture](docs/img/VISPER.png)
 
 ## Getting started 
 
