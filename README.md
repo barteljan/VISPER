@@ -72,7 +72,7 @@ We will extend this example with some redux stuff in the next steps.
 
 At first create a simple project which uses a UINavigationController. 
 
-VISPER can manage any container view of your choice, but since UINavigationController is preconfigured in the default 
+VISPER can manage any container view controller of your choice, but since UINavigationController is preconfigured in the default 
 implementation it's easy to start with it.
 
 Now create a WireframeApp in your AppDelegate:
@@ -101,7 +101,7 @@ The DefaultWireframeAppFactory creates an WireframeApp which is already configur
 If you want to know more about the Wireframe you can find this information [here](#wireframe), but let's finish the WireframeApp 
 creation for the moment. 
 
-In the next step you have to tell your VisperApp which UINavigationController should be used for navigation and routing. 
+In the next step you have to tell your WireframeApp which UINavigationController should be used for navigation and routing. 
 We need just one line for that ....
 
 ```swift 
@@ -120,14 +120,14 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 
 As you might guess, it's completly irrelevant where our UINavigationController lives, it would also be possible to put 
-it in an UITabbarController or an UISplitViewController, VISPER will just use the last UINavigationController given to it 
+it in an UITabbarController or an UISplitViewController. VISPER will just use the last UINavigationController given to it 
 by the visperApp.add(controllerToNavigate:) method. 
 
-It will not retain it for! So if it becomes unretained, it will be gone and VISPER will complain about knowing no 
+It will not retain it for you! So if it becomes unretained, it will be gone and VISPER will complain about knowing no 
 UINavigationController to use!  
 
 Your WireframeApp is now initialised and eager to route, but it has no ViewController to create, so let's create a 
-ViewFeature to provide some controller to show ... 
+ViewFeature to create some action ... 
 
 The controller can just be a POVC (Plain Old View Controller :sweat_smile: ), it doesn't have to know anything about VISPER.
 So let's create one:
@@ -214,8 +214,8 @@ As you might see there are two methods and a property which have to be implement
 
 Let's start with the routePattern. It is an String that describes the route used to match this controller.
 
-That means the routePattern `var routePattern: String = "/start"` will be matched by the url `var url = URL(string: "/start")`.
-Starts easy but ends complicated ... routePatterns can contain variables, wildcards and other stuff (You can find more about them 
+That means the routePattern `var routePattern: String = "/start"` will be matched by the url `var url = URL(string: "/start")` ...
+starts easy but ends complicated ... routePatterns can contain variables, wildcards and other stuff (You can find more about them 
 in the [RoutePattern](#routepatterns) section), let's pretend for the moment that we have a complete understanding about how they work :grimacing: .
 
 The next method is quite straight forward, the `makeController(routeResult: RouteResult) -> UIViewController` function should 
@@ -229,8 +229,8 @@ The `makeOption(routeResult:)` is a little more complicated (have a look at the 
 It defines how the wireframe should present the ViewController by default. Returning a `DefaultRoutingOptionPush` will result in 
 the wireframe just pushing our ViewController to it's current UINavigationController.
 
-Ok that was easy :innocent: , so let's register our new feature in our app ...
-Go back to your AppDelegate and add it:
+Ok that was easy :innocent: , let's register our new feature in our app ...
+go back to your AppDelegate and add it:
 
 
 ```swift 
@@ -298,8 +298,8 @@ The full code of your AppDelegate should now look like that:
  }
  ```
 
-And if you start your app "drum roll" ... you will see a absolutly useless ugly black ViewController with a centered UIButton.
-But that's great let's add some functionality to it :heart_eyes_cat:.
+And if you start your app ... "drum roll" ... you will see a absolutly useless ugly black ViewController with a centered UIButton.
+But that's great :blush: , let's add some functionality to it :heart_eyes_cat:.
 
  
 
