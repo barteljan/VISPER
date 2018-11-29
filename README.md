@@ -35,8 +35,9 @@ stupid thing with some data bindings and behaviour before it is actually present
 
 An next great challenge is controlling the state of your application. VISPER decides to do that in the interactor 
 layer and supports you with an [Redux-Architecture](#visper-redux) to manage your appstate and it's state transitions.
-A presenter can observe the changing state of your app to update your views and trigger some [Actions](#changing-state) 
-to an [ActionDispatcher](#changing-state) to change it. More on that topic can be found [here](#visper-redux).
+
+You can trigger state change in an presenter by submitting an [Action](#changing-state) to an [ActionDispatcher](#changing-state) and observe 
+the changing state on the other hand to update your views. More on that topic can be found [here](#visper-redux).
  
 - [VISPER](#visper)
   * [Getting started](#getting-started)
