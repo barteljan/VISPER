@@ -32,7 +32,7 @@ The most general is the [App](#app) protocol, which helps you to compose your ap
   
 The architecture of an typical app, build with VISPER, is shown in the image below.
 
-Well ok ... we now that looks a bit complicated.
+Well ok ... we know that looks a bit complicated.
 
 We created a seperate article to dig deeper into this topic. You can find it [here](docs/Architecture.md). 
   
