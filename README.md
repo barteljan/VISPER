@@ -28,7 +28,7 @@ The [Wireframe](#wireframe) allows you to route to a specific ViewController by 
 It seperates the creation of a ViewController (done by a [ViewFeature](#wireframe)), 
 from it's presentation (done by some weird guy named [RoutingPresenter](#wireframe)).
 
-Since we fought to many fights against massive ViewControllers, we want our view to be quite stupid. 
+Since we fought too many fights against massive ViewControllers, we want our view to be quite stupid. 
 This prepares the stage for the [Presenter](#wireframe). The wireframe requests all responsible [Presenters](#wireframe) 
 from a [PresenterFeature](#wireframe) before presenting a ViewController. It gives them the possibillity to enrich that 
 stupid thing with some data bindings and behaviour before it is actually presented. 
@@ -36,7 +36,7 @@ stupid thing with some data bindings and behaviour before it is actually present
 An other great challenge is controlling the state of your application. VISPER decides to do that in the interactor 
 layer and supports you with an [Redux-Architecture](#visper-redux) to manage your appstate and it's state transitions.
 A presenter can observe the changing state of your app to update your views and trigger some [Actions](#changing-state) 
-to change it. More on that topic can be found [here](#visper-redux).
+to an [ActionDispatcher](#changing-state) to change it. More on that topic can be found [here](#visper-redux).
  
 - [VISPER](#visper)
   * [Getting started](#getting-started)
