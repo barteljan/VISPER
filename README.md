@@ -63,6 +63,248 @@ the changing state on the other hand to update your views. More on that topic ca
 
 ## Getting started 
 
+Since VISPER is composed of several independent components which can be used seperatly let's make it easy and start 
+just with an WireframeApp, which uses the wireframe to manage the routing and the lifecycle of your ViewControllers. 
+
+We will extend this example with some redux stuff in the next step. 
+
+### Getting started with the wireframe
+
+At first create a simple project which uses a UINavigationController. 
+
+VISPER can manage any container view of your choice, but since UINavigationController is preconfigured in the default 
+implementation it's easy to start with it.
+
+Now create a WireframeApp in your AppDelegate:
+
+```swift
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    var window: UIWindow?
+    var visperApp: WireframeApp!
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        self.window = window
+        
+        let factory = DefaultWireframeAppFactory()
+        let visperApp = factory.makeApp()
+        self.visperApp = visperApp
+        
+        // the rest of your implementation will follow soon ;)    
+    }
+
+```
+
+The DefaultWireframeAppFactory creates an WireframeApp which is already configured for use with an UINavigationController. 
+If you want to know more about the Wireframe you can find this information [here](#wireframe), but let's finish the WireframeApp 
+creation for the moment. 
+
+In the next step you have to tell your VisperApp which UINavigationController should be used for navigation and routing. 
+We need just one line for that ....
+
+```swift 
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    
+    //just imagine we created your visperApp here
+    
+    let navigationController = UINavigationController()
+    window.rootViewController = navigationController
+    
+    //tell visper to work with this UINavigationController
+    visperApp.add(controllerToNavigate: navigationController)
+        
+}
+
+```
+
+As you might guess, it's completly irrelevant where our UINavigationController lives, it would also be possible to put 
+it in an UITabbarController or an UISplitViewController, VISPER will just use the last UINavigationController given to it 
+by the visperApp.add(controllerToNavigate:) method. 
+
+It will not retain it for! So if it becomes unretained, it will be gone and VISPER will complain about knowing no 
+UINavigationController to use!  
+
+Your WireframeApp is now initialised and eager to route, but it has no ViewController to create, so let's create a 
+ViewFeature to provide some controller to show ... 
+
+The controller can just be a POVC (Plain Old View Controller :sweat_smile: ), it doesn't have to know anything about VISPER.
+So let's create one:
+
+```swift 
+class StartViewController: UIViewController {
+    
+    weak var button: UIButton! {
+        didSet {
+            self.button?.setTitle(self.buttonTitle, for: .normal)
+        }
+    }
+    
+    var buttonTitle: String? {
+        didSet {
+            self.button?.setTitle(self.buttonTitle, for: .normal)
+        }
+    }
+    
+    override func loadView() {
+        
+        let view = UIView()
+        self.view = view
+        
+        let button = UIButton()
+        self.button = button
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(button)
+        
+        NSLayoutConstraint.activate([
+            button.topAnchor.constraint(equalTo: self.view.topAnchor),
+            button.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            button.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            button.rightAnchor.constraint(equalTo: self.view.rightAnchor)
+        ])
+        
+    }
+    
+}
+```
+
+Ok let's not complain, this is a really stupid controller and it isn't even beautiful ...
+but sometimes all you need is someone who is in the right position and willing to help .... 
+
+So let's just use him and put him into a ViewFeature.
+
+> **SPOILER**: A ViewFeature is a protocol from the "VISPER_Wireframe"-pod which has to be implemented to provide a ViewController to the wireframe.
+> We have defined some typealiases in the VISPER-Pod to provide it with an "import VISPER" statement. 
+> Thats's an dirty trick but it allows you to use the "import VISPER" statement for every VISPER class or protocol even if it lives in one of our child pods.  
+
+
+```swift
+import VISPER
+
+class StartFeature: ViewFeature {
+    
+    var routePattern: String
+    
+    // you can ignore the priority for the moment
+    // it is sometimes needed when you want to "override"
+    // an already added Feature
+    var priority: Int = 0
+    
+    init(routePattern: String){
+        self.routePattern = routePattern
+    }
+    
+    // create a blue controller which will be created when the "blue" route is called
+    func makeController(routeResult: RouteResult) throws -> UIViewController {
+        let controller = StartViewController()
+        controller.buttonTitle = "Show Alert"
+        return controller
+    }
+    
+    // return a routing option to show how this controller should be presented
+    func makeOption(routeResult: RouteResult) -> RoutingOption {
+        return DefaultRoutingOptionPush()
+    }
+}
+```
+
+As you might see there are two methods and a property which have to be implemented to provide a ViewController to the Wireframe.
+
+Let's start with the routePattern. It is an String that describes the route used to match this controller.
+
+That means the routePattern `var routePattern: String = "/start"` will be matched by the url `var url = URL(string: "/start")`.
+Starts easy but ends complicated ... routePatterns can contain variables, wildcards and other stuff (You can find more about them 
+in the [RoutePattern](#routepatterns) section), let's pretend for the moment that we have a complete understanding about how they work :grimacing: .
+
+The next method is quite straight forward, the `makeController(routeResult: RouteResult) -> UIViewController` function should 
+just create the viewController to be presented when `wireframe.route(url: URL('/start')!)` is called anywhere in our app 
+(pretending that our routePattern is "/start"). 
+
+It's routeResult-Parameter contains some context information that might be useful when creating a ViewController, 
+although we don't need it here (have a look at the [RouteResult](#routeresult) section later :wink: ).
+
+The `makeOption(routeResult:)` is a little more complicated (have a look at the [RoutingOption](#routingoption) section, when needed).
+It defines how the wireframe should present the ViewController by default. Returning a `DefaultRoutingOptionPush` will result in 
+the wireframe just pushing our ViewController to it's current UINavigationController.
+
+Ok that was easy :innocent: , so let's register our new feature in our app ...
+Go back to your AppDelegate and add it:
+
+
+```swift 
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    
+    //just imagine we created and initialized your visperApp here
+    
+     let startFeature = StartFeature(routePattern: "/start")
+     try! visperApp.add(feature: startFeature)
+        
+}
+```
+
+The visperApp will now register our feature for the "/start" route, which enables us to route to it with an other line of code:
+
+ ```swift 
+ func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+     
+     //just imagine we created and initialized your visperApp here
+     
+      let startFeature = StartFeature(routePattern: "/start")
+      try! visperApp.add(feature: startFeature)
+      
+      try! visperApp.wireframe.route(url: URL(string: "/start")!)
+      
+      self.window?.makeKeyAndVisible()
+ }
+ ```
+
+The full code of your AppDelegate should now look like that:
+
+
+ ```swift 
+ import UIKit
+ import VISPER
+ 
+ @UIApplicationMain
+ class AppDelegate: UIResponder, UIApplicationDelegate {
+ 
+     var window: UIWindow?
+     var visperApp: WireframeApp!
+ 
+     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+         
+         let window = UIWindow(frame: UIScreen.main.bounds)
+         self.window = window
+         
+         let factory = DefaultWireframeAppFactory()
+         let visperApp = factory.makeApp()
+         self.visperApp = visperApp
+         
+         let navigationController = UINavigationController()
+         window.rootViewController = navigationController
+         visperApp.add(controllerToNavigate: navigationController)
+         
+         let startFeature = StartFeature(routePattern: "/start")
+         try! visperApp.add(feature: startFeature)
+     
+         try! visperApp.wireframe.route(url: URL(string: "/start")!)
+         
+         self.window?.makeKeyAndVisible()
+         return true
+     }
+ 
+ }
+ ```
+
+And if you start your app "drum roll" ... you will see a absolutly useless ugly black ViewController with a centered UIButton.
+But that's great let's add some functionality to it :heart_eyes_cat:.
+
+ 
+
+## Components
+
 ### App
 
 The core component of your VISPER application is an instance of the [App](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/App.html)
@@ -180,8 +422,11 @@ You can now route to the controller provided by the ExampleFeature:
 try wireframe.route(url: URL(string: "/exampleView")!)
 ````
 
-
 [Here ist a full example using VISPER with a wireframe](docs/Wireframe-Example.md)
+
+### Routepatterns
+
+Has to be documented have a look at [JLRoutes](https://github.com/joeldev/JLRoutes) definition of RoutePatterns (we stole the idea from them some time ago).
 
 ### VISPER-Redux
 
