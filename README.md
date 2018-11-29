@@ -63,10 +63,10 @@ the changing state on the other hand to update your views. More on that topic ca
 
 ## Getting started 
 
-Since VISPER is composed of several independent components which can be used seperatly let's make it easy and start 
-just with an WireframeApp, which uses the wireframe to manage the routing and the lifecycle of your ViewControllers. 
+Since VISPER is composed of several independent components which can be used seperatly, let's take it easy and start 
+just with an WireframeApp to get a grasp about how the the routing and the lifecycle of your ViewControllers works. 
 
-We will extend this example with some redux stuff in the next step. 
+We will extend this example with some redux stuff in the next steps. 
 
 ### Getting started with the wireframe
 
