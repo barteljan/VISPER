@@ -291,6 +291,7 @@
 		9A408D901FE7A131008048AB /* ModalFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalFeature.swift; sourceTree = "<group>"; };
 		9A408D951FE8E9A1008048AB /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		9A408D961FE8E9A1008048AB /* ModalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalViewController.xib; sourceTree = "<group>"; };
+		9A48E79A21AFD7EB008BFE8F /* Architecture.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Architecture.md; sourceTree = "<group>"; };
 		9A4DEB761FF0F4B5004D88C0 /* VISPER-Swift-Task-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VISPER-Swift-Task-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4DEB781FF0F4B5004D88C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A4DEB7A1FF0F4B5004D88C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -711,6 +712,7 @@
 				9A15027220F885D400CDB8FC /* README-Deprecated.md */,
 				9A15027520F885D400CDB8FC /* README-VISPER-Redux.md */,
 				ACC76C0E9FB1D165760C3C6B /* Wireframe-Example.md */,
+				9A48E79A21AFD7EB008BFE8F /* Architecture.md */,
 			);
 			name = docs;
 			path = ../docs;

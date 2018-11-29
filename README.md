@@ -27,6 +27,13 @@ The most general is the [App](#app) protocol, which helps you to compose your ap
       - [LogicFeature](#logicfeature)
       - [Observing state change](#observing-state-change)
   * [Complete list of all available VISPER-Components](#complete-list-of-all-available-visper-components)
+  
+  ## Architecture
+  
+  The architecture of an typical app build with VISPER is shown in this image, well ok we now that looks a bit complicated.
+  So we created a seperate article to move deeper into this topic. You can find it [here](Architecture.md). 
+  
+  ![Architecture](img/VISPER.png)
 
 ## Getting started 
 
