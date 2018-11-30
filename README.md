@@ -523,6 +523,7 @@ If Redux is a new concept to you, start with reading the two following articles.
 
  
 If you already know Redux but did not comprehend all of it's details think about reading them too :stuck_out_tongue:.
+
 After finishing that have a short look on the project from the last chapter and create two States.
 
 ```swift
@@ -535,7 +536,7 @@ struct AppState: Equatable {
 }
 ```
 
-> **SPOILER**: It's a not necessary but good practice to make your AppState conform to Equatable since this eases handling state changes.
+> **SPOILER**: It's a not necessary but good practice to make your AppState conform to Equatable, since this makes the handling of state changes easier.
 
 
 The AppState should contain the full state of our app. 
