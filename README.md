@@ -546,7 +546,7 @@ substates to conquer state complexity in a more locale manner.
 Although our state isn't really complex it's a good idea to start it this way, to demonstrate how state 
 composition could be done if it would be needed.
 
-The next step should be replacing our [WireframeApp](#app) with a [VISPERApp](#app).
+The next step should be replacing our [WireframeApp](#app) with a [AnyVISPERApp<AppState>](#app).
 This gives us an `Redux` object to manage our state changes. 
 
 Start with creating a new method in your AppDelegate:
