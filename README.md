@@ -697,9 +697,9 @@ Since we changed the url path in `tapEvent` from `presenter.userName` to `presen
 correctly and uses the name from our appstate.    
 
 When you are trying to build your project now, you will get some errors, because the constructor of `StartPresenter` 
-changed. It want's to have ObservableProperty<String> parameter now.
+changed. It want's to have `ObservableProperty<String> parameter now.
 
-Let's change that by injecting such a property into the StartFeature.
+Let's change that by injecting such a property into the `StartFeature` and your `StartPresenter`.
 
 ```swift
 class StartFeature: ViewFeature {
@@ -729,7 +729,7 @@ extension StartFeature: PresenterFeature {
 }
 ```
 
-and injecting it to the `StartFeature` in your `AppDelegate`.
+We will use map to injecting it to the `StartFeature` in your `AppDelegate`.
 
 ```swift
 let startFeature = StartFeature(routePattern: "/start",
