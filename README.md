@@ -180,7 +180,7 @@ class StartViewController: UIViewController {
 ```
 
 Ok let's not complain, this is a really stupid controller and it isn't even beautiful ...
-but sometimes all you need is someone who is competent and willing to help .... 
+but sometimes all you need is someone who can be shown around and is willing to help .... 
 
 So let's just use him and put him into a ViewFeature.
 
@@ -486,11 +486,12 @@ and presents it by interpreting the `RoutingOption` given by the `MessageFeature
 
 And voila! An alert view greeting us is shown.
 
-Quite a lot stuff going on just for an AlertViewController, but it scales quite good with greater ViewControllers, 
-since it helps you to keep them simple and seperated, with an clean architecture keeping presentation and domain logic 
-out of the ViewController and in it's place.   
+Quite a lot stuff going on, just for an AlertViewController. 
+But it scales quite good with greater ViewControllers, 
+helping you to keep them simple, seperated and with an clean architecture keeping presentation and domain logic 
+out of the ViewController and on it's place.   
 
-**You can find the code of this Tutorial in the Wireframe-Example in the VISPER.xcworkspace.**  
+**You can find the code for this Tutorial in the Wireframe-Example in the VISPER.xcworkspace.**  
 
 ## Components
 
