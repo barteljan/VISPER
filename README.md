@@ -502,7 +502,7 @@ We will solve this problem by adding a [Redux](#visper-redux) architecture to th
 
 ### Adding Redux
 
-> You can use the code from the Wireframe-Example in the VISPER.xcworkspace as a starting point for this tutorial if 
+> **SPOILER**: You can use the code from the Wireframe-Example in the VISPER.xcworkspace as a starting point for this tutorial if 
 > you didn't complete the last chapter. You have to replace the "Wireframe-Example" section in the Podfile of this 
 > workspace with the following code to do that:
 > ```swift
