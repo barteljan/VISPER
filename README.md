@@ -644,7 +644,7 @@ It's getting better now :blush:.
 
 It's time to make you and our `StartPresenter` happy by giving him access to the state.
 
-We start with changing it's `userName` property type from `String` to `ObservableProperty<String>`.
+We start that process with changing it's `userName` property type from `String` to `ObservableProperty<String>`.
  
 An ObservableProperty is a ValueWrapper that can notify you when it's value is changed.
 
@@ -693,11 +693,11 @@ func addPresentationLogic(routeResult: RouteResult, controller: UIViewController
 ```
 
 As a result the buttons title will now be changed when the username has been changed.
-Since we changed the url path in `tapEvent` from `presenter.userName` to `presenter.userName.value` even the MessageFeature behaves already
+Since we changed the url path in `tapEvent` from `presenter.userName` to `presenter.userName.value`, even the MessageFeature behaves already
 correctly and uses the name from our appstate.    
 
-When you are trying to build now, you get some errors because the constructor of the Presenter 
-changed and it get's no ObservableProperty<String> parameter in it's constructor.
+When you are trying to build your project now, you will get some errors, because the constructor of `StartPresenter` 
+changed. It want's to have ObservableProperty<String> parameter now.
 
 Let's change that by injecting such a property into the StartFeature.
 
