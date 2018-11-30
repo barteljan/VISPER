@@ -26,7 +26,6 @@
 		9A0D1A111FE12D9000567A88 /* AssertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5BDB1FDC090E00C401AF /* AssertHelper.swift */; };
 		9A0D1A151FE13C7100567A88 /* MockViewControllerLifecycleEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D1A141FE13C7100567A88 /* MockViewControllerLifecycleEventPresenter.swift */; };
 		9A0D1A171FE13FD900567A88 /* ViewControllerLifecycleEventPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D1A161FE13FD900567A88 /* ViewControllerLifecycleEventPresenterTests.swift */; };
-		9A0E1595208E20D3006388F2 /* ObservingFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0E1594208E20D3006388F2 /* ObservingFeature.swift */; };
 		9A15DBCA2078C197006C786D /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15DBC92078C197006C786D /* StringTests.swift */; };
 		9A15DBD4207B8519006C786D /* FunctionalEntityStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15DBD3207B8519006C786D /* FunctionalEntityStoreTests.swift */; };
 		9A26AAE51FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AAE41FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift */; };
@@ -40,13 +39,6 @@
 		9A3C72F0208F00250083E842 /* ApplicationFactory.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3C72EF208F00240083E842 /* ApplicationFactory.generated.swift */; };
 		9A408D631FE4027D008048AB /* MockControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A408D621FE4027D008048AB /* MockControllerPresenter.swift */; };
 		9A408D651FE402F9008048AB /* ControllerPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A408D641FE402F9008048AB /* ControllerPresenterTests.swift */; };
-		9A408D831FE6FF59008048AB /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A408D801FE6FF59008048AB /* StartViewController.xib */; };
-		9A408D841FE6FF59008048AB /* StartFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A408D811FE6FF59008048AB /* StartFeature.swift */; };
-		9A408D851FE6FF59008048AB /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A408D821FE6FF59008048AB /* StartViewController.swift */; };
-		9A408D8C1FE702C0008048AB /* PushedFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A408D8B1FE702BF008048AB /* PushedFeature.swift */; };
-		9A408D911FE7A132008048AB /* ModalFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A408D901FE7A131008048AB /* ModalFeature.swift */; };
-		9A408D971FE8E9A1008048AB /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A408D951FE8E9A1008048AB /* ModalViewController.swift */; };
-		9A408D981FE8E9A1008048AB /* ModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A408D961FE8E9A1008048AB /* ModalViewController.xib */; };
 		9A4DEB791FF0F4B5004D88C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4DEB781FF0F4B5004D88C0 /* AppDelegate.swift */; };
 		9A4DEB7B1FF0F4B5004D88C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4DEB7A1FF0F4B5004D88C0 /* ViewController.swift */; };
 		9A4DEB7E1FF0F4B5004D88C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4DEB7C1FF0F4B5004D88C0 /* Main.storyboard */; };
@@ -149,6 +141,12 @@
 		9AA1DD3C21B11D58003C2697 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1DD3B21B11D58003C2697 /* StartViewController.swift */; };
 		9AA1DD3E21B123E4003C2697 /* StartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1DD3D21B123E4003C2697 /* StartPresenter.swift */; };
 		9AA1DD4021B133F4003C2697 /* MessageFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1DD3F21B133F4003C2697 /* MessageFeature.swift */; };
+		9AA1DD4221B16038003C2697 /* StartFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1DD4121B16038003C2697 /* StartFeature.swift */; };
+		9AA1DD4421B1607C003C2697 /* MessageFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1DD4321B1607C003C2697 /* MessageFeature.swift */; };
+		9AA1DD4621B160B3003C2697 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1DD4521B160B3003C2697 /* StartViewController.swift */; };
+		9AA1DD4821B160D1003C2697 /* StartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1DD4721B160D1003C2697 /* StartPresenter.swift */; };
+		9AA1DD4A21B16134003C2697 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1DD4921B16134003C2697 /* AppState.swift */; };
+		9AA1DD4C21B1613E003C2697 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1DD4B21B1613E003C2697 /* UserState.swift */; };
 		9AC048E8215CBC6B008870B2 /* ReducerContainerForOneActionTransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC048E7215CBC6B008870B2 /* ReducerContainerForOneActionTransactionTests.swift */; };
 		9AC334D22067D668006B8F22 /* AppReducer.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC334CF2067D668006B8F22 /* AppReducer.generated.swift */; };
 		9AC334D32067D668006B8F22 /* GenerateInitializers.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC334D02067D668006B8F22 /* GenerateInitializers.generated.swift */; };
@@ -255,7 +253,6 @@
 		9A0D1A081FE10A2100567A88 /* MockViewControllerEventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewControllerEventPresenter.swift; sourceTree = "<group>"; };
 		9A0D1A141FE13C7100567A88 /* MockViewControllerLifecycleEventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewControllerLifecycleEventPresenter.swift; sourceTree = "<group>"; };
 		9A0D1A161FE13FD900567A88 /* ViewControllerLifecycleEventPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLifecycleEventPresenterTests.swift; sourceTree = "<group>"; };
-		9A0E1594208E20D3006388F2 /* ObservingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservingFeature.swift; sourceTree = "<group>"; };
 		9A15018D20F885D300CDB8FC /* README-VISPER-Sourcery.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README-VISPER-Sourcery.md"; sourceTree = "<group>"; };
 		9A15018F20F885D300CDB8FC /* README-VISPER-Swift.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README-VISPER-Swift.md"; sourceTree = "<group>"; };
 		9A15019020F885D300CDB8FC /* README-VISPER-Core.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README-VISPER-Core.md"; sourceTree = "<group>"; };
@@ -285,13 +282,6 @@
 		9A3C72EF208F00240083E842 /* ApplicationFactory.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationFactory.generated.swift; sourceTree = "<group>"; };
 		9A408D621FE4027D008048AB /* MockControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockControllerPresenter.swift; sourceTree = "<group>"; };
 		9A408D641FE402F9008048AB /* ControllerPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerPresenterTests.swift; sourceTree = "<group>"; };
-		9A408D801FE6FF59008048AB /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
-		9A408D811FE6FF59008048AB /* StartFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartFeature.swift; sourceTree = "<group>"; };
-		9A408D821FE6FF59008048AB /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		9A408D8B1FE702BF008048AB /* PushedFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushedFeature.swift; sourceTree = "<group>"; };
-		9A408D901FE7A131008048AB /* ModalFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalFeature.swift; sourceTree = "<group>"; };
-		9A408D951FE8E9A1008048AB /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
-		9A408D961FE8E9A1008048AB /* ModalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalViewController.xib; sourceTree = "<group>"; };
 		9A48E79A21AFD7EB008BFE8F /* Architecture.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Architecture.md; sourceTree = "<group>"; };
 		9A4DEB761FF0F4B5004D88C0 /* VISPER-Swift-Task-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VISPER-Swift-Task-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4DEB781FF0F4B5004D88C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -445,6 +435,12 @@
 		9AA1DD3B21B11D58003C2697 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		9AA1DD3D21B123E4003C2697 /* StartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPresenter.swift; sourceTree = "<group>"; };
 		9AA1DD3F21B133F4003C2697 /* MessageFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFeature.swift; sourceTree = "<group>"; };
+		9AA1DD4121B16038003C2697 /* StartFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartFeature.swift; sourceTree = "<group>"; };
+		9AA1DD4321B1607C003C2697 /* MessageFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFeature.swift; sourceTree = "<group>"; };
+		9AA1DD4521B160B3003C2697 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		9AA1DD4721B160D1003C2697 /* StartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPresenter.swift; sourceTree = "<group>"; };
+		9AA1DD4921B16134003C2697 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		9AA1DD4B21B1613E003C2697 /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserState.swift; sourceTree = "<group>"; };
 		9AC048E7215CBC6B008870B2 /* ReducerContainerForOneActionTransactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReducerContainerForOneActionTransactionTests.swift; sourceTree = "<group>"; };
 		9AC334C62067C954006B8F22 /* VISPER-Sourcery.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Sourcery.podspec"; path = "../VISPER-Sourcery.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9AC334CF2067D668006B8F22 /* AppReducer.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.generated.swift; sourceTree = "<group>"; };
@@ -598,6 +594,7 @@
 				9A8C5B691FDC04E700C401AF /* VISPER-Example */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				9A8C5BAB1FDC07B500C401AF /* VISPER-Wireframe-Example */,
+				9A8C5C851FDCFEE400C401AF /* VISPER-Reactive-Example */,
 				9A8C5C131FDC0C1D00C401AF /* VISPER-Swift-Example */,
 				9A97E9D21FEFF43C006C50F3 /* VISPER-Swift-RxSwift-Example */,
 				9A8C5C291FDC0D9800C401AF /* VISPER-Redux-Example */,
@@ -733,34 +730,6 @@
 				9A38DB4E206D0EDD00F0C602 /* Info.plist */,
 			);
 			path = "VISPER-Entity-Example";
-			sourceTree = "<group>";
-		};
-		9A408D7F1FE6FF59008048AB /* Start */ = {
-			isa = PBXGroup;
-			children = (
-				9A408D801FE6FF59008048AB /* StartViewController.xib */,
-				9A408D811FE6FF59008048AB /* StartFeature.swift */,
-				9A408D821FE6FF59008048AB /* StartViewController.swift */,
-			);
-			path = Start;
-			sourceTree = "<group>";
-		};
-		9A408D8A1FE702BF008048AB /* PushedController */ = {
-			isa = PBXGroup;
-			children = (
-				9A408D8B1FE702BF008048AB /* PushedFeature.swift */,
-			);
-			path = PushedController;
-			sourceTree = "<group>";
-		};
-		9A408D8F1FE7A131008048AB /* ModalController */ = {
-			isa = PBXGroup;
-			children = (
-				9A408D901FE7A131008048AB /* ModalFeature.swift */,
-				9A408D951FE8E9A1008048AB /* ModalViewController.swift */,
-				9A408D961FE8E9A1008048AB /* ModalViewController.xib */,
-			);
-			path = ModalController;
 			sourceTree = "<group>";
 		};
 		9A4DEB771FF0F4B5004D88C0 /* VISPER-Swift-Task-Example */ = {
@@ -1008,15 +977,16 @@
 		9A8C5C131FDC0C1D00C401AF /* VISPER-Swift-Example */ = {
 			isa = PBXGroup;
 			children = (
-				9A8C5C851FDCFEE400C401AF /* VISPER-Reactive-Example */,
-				9A408D8F1FE7A131008048AB /* ModalController */,
-				9A408D8A1FE702BF008048AB /* PushedController */,
-				9A408D7F1FE6FF59008048AB /* Start */,
 				9A8C5C141FDC0C1D00C401AF /* AppDelegate.swift */,
 				9A8C5C1B1FDC0C1D00C401AF /* Assets.xcassets */,
 				9A8C5C1D1FDC0C1D00C401AF /* LaunchScreen.storyboard */,
 				9A8C5C201FDC0C1D00C401AF /* Info.plist */,
-				9A0E1594208E20D3006388F2 /* ObservingFeature.swift */,
+				9AA1DD4121B16038003C2697 /* StartFeature.swift */,
+				9AA1DD4321B1607C003C2697 /* MessageFeature.swift */,
+				9AA1DD4521B160B3003C2697 /* StartViewController.swift */,
+				9AA1DD4721B160D1003C2697 /* StartPresenter.swift */,
+				9AA1DD4921B16134003C2697 /* AppState.swift */,
+				9AA1DD4B21B1613E003C2697 /* UserState.swift */,
 			);
 			path = "VISPER-Swift-Example";
 			sourceTree = "<group>";
@@ -1643,10 +1613,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A408D981FE8E9A1008048AB /* ModalViewController.xib in Resources */,
 				9A8C5C1F1FDC0C1D00C401AF /* LaunchScreen.storyboard in Resources */,
 				9A8C5C1C1FDC0C1D00C401AF /* Assets.xcassets in Resources */,
-				9A408D831FE6FF59008048AB /* StartViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2442,12 +2410,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A8C5C151FDC0C1D00C401AF /* AppDelegate.swift in Sources */,
-				9A408D911FE7A132008048AB /* ModalFeature.swift in Sources */,
-				9A408D841FE6FF59008048AB /* StartFeature.swift in Sources */,
-				9A0E1595208E20D3006388F2 /* ObservingFeature.swift in Sources */,
-				9A408D851FE6FF59008048AB /* StartViewController.swift in Sources */,
-				9A408D971FE8E9A1008048AB /* ModalViewController.swift in Sources */,
-				9A408D8C1FE702C0008048AB /* PushedFeature.swift in Sources */,
+				9AA1DD4821B160D1003C2697 /* StartPresenter.swift in Sources */,
+				9AA1DD4621B160B3003C2697 /* StartViewController.swift in Sources */,
+				9AA1DD4A21B16134003C2697 /* AppState.swift in Sources */,
+				9AA1DD4421B1607C003C2697 /* MessageFeature.swift in Sources */,
+				9AA1DD4C21B1613E003C2697 /* UserState.swift in Sources */,
+				9AA1DD4221B16038003C2697 /* StartFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

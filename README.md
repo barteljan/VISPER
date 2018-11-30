@@ -494,7 +494,246 @@ But it scales quite good with greater ViewControllers,
 helping you to keep them simple, seperated and with an clean architecture keeping presentation and domain logic 
 out of the ViewController and on it's place.   
 
-**You can find the code for this Tutorial in the Wireframe-Example in the VISPER.xcworkspace.**  
+Do you remember that our StartPresenter doesn't really know from where it should retrieve the username ?
+The reason for this problem that this example doesn't contain a real interactor layer.
+We will solve this problem by adding a [Redux](#visper-redux) architecture to this example in the next chapter. 
+
+**You can find the code for this tutorial in the Wireframe-Example in the VISPER.xcworkspace.**  
+
+### Adding Redux
+
+> You can use the code from the Wireframe-Example in the VISPER.xcworkspace as a starting point for this tutorial if 
+> you didn't complete the last chapter. You have to replace the "Wireframe-Example" section in the Podfile of this 
+> workspace with the following code to do that:
+> ```swift
+> target 'VISPER-Wireframe-Example' do
+>    pod 'VISPER-Wireframe', :path => '../'
+>    pod 'VISPER-Core', :path => '../'
+>    pod 'VISPER-UIViewController', :path => '../'
+>    pod 'VISPER-Objc', :path => '../'
+>    pod 'VISPER', :path => '../'
+> end   
+> ```
+> run `pod install` after that.
+
+If Redux is a new concept to you, start with reading the two following articles.
+
+ * [A cartoon guide to Flux](https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207)
+ * [A cartoon intro into Redux](https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6)
+
+ 
+If you already know Redux but did not comprehend all of it's details think about reading them too :stuck_out_tongue:.
+After finishing that have a short look on the project from the last chapter and create two States.
+
+```swift
+struct UserState: Equatable {
+    let userName: String
+}
+
+struct AppState: Equatable {
+    let userState: UserState
+}
+```
+
+> **SPOILER**: It's a not necessary but good practice to make your AppState conform to Equatable since this eases handling state changes.
+
+
+The AppState should contain the full state of our app. 
+Since the state of an whole app can become quite complex, it is best practice to compose it of different 
+substates to conquer state-complexity in a more locale manner.
+
+Although our state isn't really complex it's a good idea to start this way to demonstrate how state 
+composition could be done if it would be needed.
+
+The next step to do is to replace our [WireframeApp](#app) with a [VISPERApp](#app), which contains an `Redux` object to 
+manage state change. 
+
+Start with creating a new method in your AppDelegate:
+
+```swift
+func createApp() -> AnyVISPERApp<AppState> {
+    fatalError("not implemented")
+}
+```
+
+continue with creating an initial state loaded when the app is loaded:
+
+```swift
+let initalState: AppState = AppState(userState: UserState(userName: "unknown stranger"))
+``` 
+
+
+Now it's time to write some boilerplate code and write the [AppReducer](#visper-redux) a function responsible 
+for composing and reducing our AppState.       
+ 
+```swift
+let appReducer: AppReducer<AppState> = { (reducerProvider: ReducerProvider, action: Action, state: AppState) -> AppState in
+    let newState = AppState(userState: reducerProvider.reduce(action: action, state: state.userState))
+    return reducerProvider.reduce(action: action, state: newState)
+}
+``` 
+
+It's structure is always the same, it creates a new AppState and reduces all substate with it's reducerProvider parameter.
+After that it reduces the newly created state itself with the reducer provider and returns the result.
+
+> **SPOILER**: We would love to do this programatically for you, but since a composed app state is an generic struct 
+> and there is no way to create such an struct dynamically we are just f***ed here. Our best guess is to generate the 
+> AppReducer with [Sourcery](https://github.com/krzysztofzablocki/Sourcery) you can find an tutorial to do that [here](docs/README-VISPER-Sourcery.md).
+
+Now create a `VISPERAppFactory<AppState>` create your app and return it.
+The complete `createApp()` function should now look like that.
+
+```swift
+func createApp() -> AnyVISPERApp<AppState> {
+    let initalState: AppState = AppState(userState: UserState(userName: "unknown stranger"))
+    
+    let appReducer: AppReducer<AppState> = { (reducerProvider: ReducerProvider, action: Action, state: AppState) -> AppState in
+        let newState = AppState(userState: reducerProvider.reduce(action: action, state: state.userState))
+        return reducerProvider.reduce(action: action, state: newState)
+    }
+    
+    let appFactory = VISPERAppFactory<AppState>()
+    return appFactory.makeApplication(initialState: initalState, appReducer: appReducer)
+}
+```
+
+As next step change the Type of your visperApp property to AnyVISPERApp<AppState> and 
+initialize it with your newly crafted `createApp()` function.
+
+Your `AppDelegate` should now look like that:
+
+```swift 
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    var window: UIWindow?
+    var visperApp: AnyVISPERApp<AppState>!
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        self.window = window
+        
+        self.visperApp = self.createApp()
+        
+        //imagine you initialized your features here
+        
+        self.window?.makeKeyAndVisible()
+        return true
+    }
+    
+    func createApp() -> AnyVISPERApp<AppState> {
+        let initalState: AppState = AppState(userState: UserState(userName: "unknown stranger"))
+        
+        let appReducer: AppReducer<AppState> = { (reducerProvider: ReducerProvider, action: Action, state: AppState) -> AppState in
+            let newState = AppState(userState: reducerProvider.reduce(action: action, state: state.userState))
+            return reducerProvider.reduce(action: action, state: newState)
+        }
+        
+        let appFactory = VISPERAppFactory<AppState>()
+        return appFactory.makeApplication(initialState: initalState, appReducer: appReducer)
+    }
+    
+}
+``` 
+
+Wow that was a lot stuff to get it running ...
+
+It get's better now :blush: and it's time to make our `StartPresenter` happy by giving it access to the state.
+
+We start with changing it's `userName` property type from `String` to `ObservableProperty<String>` 
+An ObservableProperty is a ValueWrapper that can notify you when it's value is changed.
+
+```swift
+class StartPresenter: Presenter {
+    
+    var userName: ObservableProperty<String>
+    let wireframe: Wireframe
+    var referenceBag = SubscriptionReferenceBag()
+    
+    init(userName: ObservableProperty<String>, wireframe: Wireframe) {
+        self.userName = userName
+        self.wireframe = wireframe
+    }
+
+    // you already know the rest :P of it's implementation
+    ...    
+}
+```
+
+As you might notice we added another property of type [SubscriptionReferenceBag](#subscriptionreferencebag).
+We will use that to subscribe to the property and store that subscription as 
+long as the presenter exists (which should be as long as it's controller exists).
+Check the [SubscriptionReferenceBag](#subscriptionreferencebag) section if you wanne know more about that.
+
+```swift
+func addPresentationLogic(routeResult: RouteResult, controller: UIViewController) throws {
+    
+    guard let controller = controller as? StartViewController else {
+        fatalError("needs a StartViewController")
+    }
+    
+    let subscription = self.userName.subscribe { (value) in
+        controller.buttonTitle = "Hello \(value)"
+    }
+    self.referenceBag.addReference(reference: subscription)
+    
+    controller.tapEvent = { [weak self] (_) in
+        guard let presenter = self else { return }
+        let path = "/message/\(presenter.userName.value)".addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
+        let url = URL(string:path)
+        try! presenter.wireframe.route(url: url!)
+    }
+    
+}
+```
+
+As a result the buttons title will now be changed when the username has been changed.
+Since we changed the url path in `tapEvent` from `presenter.userName` to `presenter.userName.value` even the MessageFeature behaves already
+correctly and uses the name from our appstate.    
+
+When you are trying to build now, you get some errors because the constructor of the Presenter 
+changed and it get's no ObservableProperty<String> parameter in it's constructor.
+
+Let's change that by injecting such a property into the StartFeature.
+
+```swift
+class StartFeature: ViewFeature {
+    
+    let routePattern: String
+    
+    let priority: Int = 0
+    let wireframe: Wireframe
+    let userName: ObservableProperty<String>
+    
+    init(routePattern: String, wireframe: Wireframe,userName: ObservableProperty<String>){
+        self.routePattern = routePattern
+        self.wireframe = wireframe
+        self.userName = userName
+    }
+    
+    // imageine the ViewFeature functions here
+}
+
+
+extension StartFeature: PresenterFeature {
+    
+    func makePresenters(routeResult: RouteResult, controller: UIViewController) throws -> [Presenter] {
+        return [StartPresenter(userName: self.userName, wireframe: self.wireframe)]
+    }
+    
+}
+```
+
+and injecting it to the `StartFeature` in your `AppDelegate`.
+
+```swift
+let startFeature = StartFeature(routePattern: "/start",
+                                   wireframe: visperApp.wireframe,
+                                    userName: visperApp.redux.store.observableState.map({ return $0.userState.userName}))
+```
+ 
+Building the app now results in an running application using the appstate as it's reactive datasource.
 
 ## Components
 
@@ -526,7 +765,7 @@ public protocol App {
     func add(featureObserver: FeatureObserver)
 
 }
-```` 
+````
 
 ### Features and FeatureObserver
 
@@ -865,6 +1104,11 @@ referenceBag.addReference(reference: subscription)
 [VISPER-Redux](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html) contains a [ObservableProperty<AppState>](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Reactive/Classes/ObservableProperty.html) to represent the changing AppState.
 [ObservableProperty](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Reactive/Classes/ObservableProperty.html) allows you to subscribe for state changes, and can be mapped to a RxSwift-Observable. 
 It is implemented in the [VISPER-Reactive](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Reactive/Classes/ObservableProperty.html) Component.
+
+
+#### SubscriptionReferenceBag
+
+needs to be documented
 
 ---------------------------------------------------------------------------------------------------------
 

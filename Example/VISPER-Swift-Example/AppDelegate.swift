@@ -1,93 +1,56 @@
 //
 //  AppDelegate.swift
-//  VISPER-Swift-Example
+//  VISPER-Wireframe-Example.md
 //
 //  Created by bartel on 09.12.17.
 //  Copyright © 2017 Jan Bartel. All rights reserved.
 //
 
 import UIKit
-import VISPER
+import VISPER_Swift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-    var visperApplication: AnyVISPERApp<AppState>!
-    var disposeBag = SubscriptionReferenceBag()
-
+    var visperApp: AnyVISPERApp<AppState>!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        //create root view controller
-        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        self.window = window
+        
+        self.visperApp = self.createApp()
+        
         let navigationController = UINavigationController()
-        self.window?.rootViewController = navigationController
-    
-        //create visper application
-        self.visperApplication = self.makeVISPERApplication()
+        visperApp.add(controllerToNavigate: navigationController)
+        window.rootViewController = navigationController
         
-        //add root view controller to visper application
-        self.visperApplication?.add(controllerToNavigate: navigationController)
+        let startFeature = StartFeature(routePattern: "/start",
+                                           wireframe: visperApp.wireframe,
+                                            userName: visperApp.redux.store.observableState.map({ return $0.userState.userName}))
+        try! visperApp.add(feature: startFeature)
         
-        //add all features to visper application
-        self.addFeatures()
+        let messageFeature = MessageFeature()
+        try! visperApp.add(feature: messageFeature)
         
-        //route to start view
-        try! self.visperApplication.wireframe.route(url: URL(string: "/start")!)
+        try! visperApp.wireframe.route(url: URL(string: "/start")!)
         
         self.window?.makeKeyAndVisible()
         return true
     }
     
-    func makeVISPERApplication() -> AnyVISPERApp<AppState>!{
+    func createApp() -> AnyVISPERApp<AppState> {
+        let initalState: AppState = AppState(userState: UserState(userName: "unknown stranger"))
         
-        let appState = AppState(startViewState: StartViewState(timesOpendAController: 0))
-        
-        let appReducer: AppReducer<AppState> = { (reducerProvider: ReducerProvider,
-                                                           action: Action,
-                                                            state: AppState) -> AppState in
-            
-            return AppState(startViewState: reducerProvider.reduce(action: action, state: state.startViewState))
-            
+        let appReducer: AppReducer<AppState> = { (reducerProvider: ReducerProvider, action: Action, state: AppState) -> AppState in
+            let newState = AppState(userState: reducerProvider.reduce(action: action, state: state.userState))
+            return reducerProvider.reduce(action: action, state: newState)
         }
         
-        let applicationFactory = AppFactory<AppState>()
-        
-        let visperApplication = applicationFactory.makeApplication(initialState: appState,
-                                                                     appReducer: appReducer)
-        
-        return visperApplication
+        let appFactory = VISPERAppFactory<AppState>()
+        return appFactory.makeApplication(initialState: initalState, appReducer: appReducer)
     }
     
-    func addFeatures(){
-        
-        let appStateObservableProperty = self.visperApplication.redux.store.observableState
-        
-        let startViewStateObservableProperty = appStateObservableProperty.map { (appstate) -> StartViewState in
-            return appstate.startViewState
-        }
-        
-        let startFeature = StartFeature(routePattern: "/start",
-                                           wireframe: self.visperApplication.wireframe,
-                             stateObservableProperty: startViewStateObservableProperty,
-                                    actionDispatcher: self.visperApplication.redux.actionDispatcher)
-        
-        try! self.visperApplication.add(feature: startFeature)
-        
-        let pushedFeature = PushedFeature(routePattern: "/pushed/controller")
-        try! self.visperApplication.add(feature: pushedFeature)
-        
-        let modalFeature = ModalFeature(routePattern: "/modal/controller", wireframe: self.visperApplication.wireframe)
-        try! self.visperApplication.add(feature: modalFeature)
-        
-        let observingFeature = ObservingFeature()
-        try! self.visperApplication.add(feature: observingFeature)
-
-        
-    }
-
 }
 
-struct AppState {
-    var startViewState: StartViewState
-}
