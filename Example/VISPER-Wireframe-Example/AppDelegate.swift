@@ -28,13 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         visperApp.add(controllerToNavigate: navigationController)
         window.rootViewController = navigationController
         
-        let blueFeature = BlueFeature(wireframe: visperApp.wireframe)
-        try! visperApp.add(feature: blueFeature)
+        let startFeature = StartFeature(routePattern: "/start", wireframe: visperApp.wireframe)
+        try! visperApp.add(feature: startFeature)
         
-        let greenFeature = GreenFeature(wireframe: visperApp.wireframe)
-        try! visperApp.add(feature: greenFeature)
+        let messageFeature = MessageFeature()
+        try! visperApp.add(feature: messageFeature)
         
-        try! visperApp.wireframe.route(url: URL(string: blueFeature.routePattern)!)
+        try! visperApp.wireframe.route(url: URL(string: "/start")!)
         
         self.window?.makeKeyAndVisible()
         return true

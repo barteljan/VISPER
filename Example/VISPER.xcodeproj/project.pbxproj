@@ -17,8 +17,7 @@
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		78DE78A7AAC21FD43285695C /* Pods_VISPER_Entity_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEBB6F255AC2B5BA221F5D8 /* Pods_VISPER_Entity_Example.framework */; };
 		84FA55F8B8CF030C53E33705 /* Pods_VISPER_Sourcery_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DEE3EBF9CEDD023983A3479 /* Pods_VISPER_Sourcery_Example.framework */; };
-		9A0B22F920FCD10D002957ED /* BlueFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B22F820FCD10D002957ED /* BlueFeature.swift */; };
-		9A0B22FB20FCD127002957ED /* GreenFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B22FA20FCD127002957ED /* GreenFeature.swift */; };
+		9A0B22F920FCD10D002957ED /* StartFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B22F820FCD10D002957ED /* StartFeature.swift */; };
 		9A0D19E91FE0F67E00567A88 /* ViewControllerEventPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D19E81FE0F67E00567A88 /* ViewControllerEventPresenterTests.swift */; };
 		9A0D1A091FE10A2100567A88 /* MockViewControllerEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D1A081FE10A2100567A88 /* MockViewControllerEventPresenter.swift */; };
 		9A0D1A0E1FE12D8F00567A88 /* AssertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5BDB1FDC090E00C401AF /* AssertHelper.swift */; };
@@ -147,6 +146,9 @@
 		9A97EA061FEFF4F0006C50F3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A97E9FE1FEFF4EF006C50F3 /* StartViewController.swift */; };
 		9A97EA071FEFF4F0006C50F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A97E9FF1FEFF4EF006C50F3 /* AppDelegate.swift */; };
 		9A97EA091FEFF5DE006C50F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A97EA081FEFF5DE006C50F3 /* LaunchScreen.storyboard */; };
+		9AA1DD3C21B11D58003C2697 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1DD3B21B11D58003C2697 /* StartViewController.swift */; };
+		9AA1DD3E21B123E4003C2697 /* StartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1DD3D21B123E4003C2697 /* StartPresenter.swift */; };
+		9AA1DD4021B133F4003C2697 /* MessageFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1DD3F21B133F4003C2697 /* MessageFeature.swift */; };
 		9AC048E8215CBC6B008870B2 /* ReducerContainerForOneActionTransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC048E7215CBC6B008870B2 /* ReducerContainerForOneActionTransactionTests.swift */; };
 		9AC334D22067D668006B8F22 /* AppReducer.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC334CF2067D668006B8F22 /* AppReducer.generated.swift */; };
 		9AC334D32067D668006B8F22 /* GenerateInitializers.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC334D02067D668006B8F22 /* GenerateInitializers.generated.swift */; };
@@ -246,8 +248,7 @@
 		892ECF6DF25611B83A25B076 /* Pods-VISPER-Sourcery-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Sourcery-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Sourcery-Example/Pods-VISPER-Sourcery-Example.release.xcconfig"; sourceTree = "<group>"; };
 		917A481883243C5E10CC0F71 /* Pods-VISPER-Entity-ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VISPER-Entity-ExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VISPER-Entity-ExampleTests/Pods-VISPER-Entity-ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		94914A9D688D67BA61ABFA0E /* Pods_VISPER_Reactive_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VISPER_Reactive_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A0B22F820FCD10D002957ED /* BlueFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueFeature.swift; sourceTree = "<group>"; };
-		9A0B22FA20FCD127002957ED /* GreenFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenFeature.swift; sourceTree = "<group>"; };
+		9A0B22F820FCD10D002957ED /* StartFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartFeature.swift; sourceTree = "<group>"; };
 		9A0D19E61FE0F67E00567A88 /* VISPER-UIViewController-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VISPER-UIViewController-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0D19E81FE0F67E00567A88 /* ViewControllerEventPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerEventPresenterTests.swift; sourceTree = "<group>"; };
 		9A0D19EA1FE0F67E00567A88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -441,6 +442,9 @@
 		9A97E9FE1FEFF4EF006C50F3 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		9A97E9FF1FEFF4EF006C50F3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A97EA081FEFF5DE006C50F3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9AA1DD3B21B11D58003C2697 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		9AA1DD3D21B123E4003C2697 /* StartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPresenter.swift; sourceTree = "<group>"; };
+		9AA1DD3F21B133F4003C2697 /* MessageFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFeature.swift; sourceTree = "<group>"; };
 		9AC048E7215CBC6B008870B2 /* ReducerContainerForOneActionTransactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReducerContainerForOneActionTransactionTests.swift; sourceTree = "<group>"; };
 		9AC334C62067C954006B8F22 /* VISPER-Sourcery.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Sourcery.podspec"; path = "../VISPER-Sourcery.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9AC334CF2067D668006B8F22 /* AppReducer.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.generated.swift; sourceTree = "<group>"; };
@@ -937,12 +941,14 @@
 		9A8C5BAB1FDC07B500C401AF /* VISPER-Wireframe-Example */ = {
 			isa = PBXGroup;
 			children = (
-				9A0B22F820FCD10D002957ED /* BlueFeature.swift */,
-				9A0B22FA20FCD127002957ED /* GreenFeature.swift */,
+				9A0B22F820FCD10D002957ED /* StartFeature.swift */,
+				9AA1DD3F21B133F4003C2697 /* MessageFeature.swift */,
 				9A8C5BAC1FDC07B500C401AF /* AppDelegate.swift */,
 				9A8C5BB31FDC07B500C401AF /* Assets.xcassets */,
 				9A8C5BB51FDC07B500C401AF /* LaunchScreen.storyboard */,
 				9A8C5BB81FDC07B500C401AF /* Info.plist */,
+				9AA1DD3B21B11D58003C2697 /* StartViewController.swift */,
+				9AA1DD3D21B123E4003C2697 /* StartPresenter.swift */,
 			);
 			path = "VISPER-Wireframe-Example";
 			sourceTree = "<group>";
@@ -2380,9 +2386,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A0B22FB20FCD127002957ED /* GreenFeature.swift in Sources */,
+				9AA1DD3E21B123E4003C2697 /* StartPresenter.swift in Sources */,
+				9AA1DD3C21B11D58003C2697 /* StartViewController.swift in Sources */,
 				9A8C5BAD1FDC07B500C401AF /* AppDelegate.swift in Sources */,
-				9A0B22F920FCD10D002957ED /* BlueFeature.swift in Sources */,
+				9AA1DD4021B133F4003C2697 /* MessageFeature.swift in Sources */,
+				9A0B22F920FCD10D002957ED /* StartFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

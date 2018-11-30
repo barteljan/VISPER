@@ -70,10 +70,10 @@ We will extend this example with some redux stuff in the next steps.
 
 ### Getting started with the wireframe
 
-At first create a simple project which uses a UINavigationController. 
+Start with creating a simple project which uses a UINavigationController. 
 
-VISPER can manage any container view controller of your choice, but since UINavigationController is preconfigured in the default 
-implementation it's easy to start with it.
+> SPOILER: VISPER can manage any container view controller of your choice, but since UINavigationController is preconfigured in the default 
+> implementation it's easy to start with it.
 
 Now create a WireframeApp in your AppDelegate:
 
@@ -134,6 +134,8 @@ So let's create one:
 
 ```swift 
 class StartViewController: UIViewController {
+ 
+    typealias ButtonTap = (_ sender: UIButton) -> Void
     
     weak var button: UIButton! {
         didSet {
@@ -147,6 +149,8 @@ class StartViewController: UIViewController {
         }
     }
     
+    var tapEvent: ButtonTap?
+    
     override func loadView() {
         
         let view = UIView()
@@ -155,6 +159,7 @@ class StartViewController: UIViewController {
         let button = UIButton()
         self.button = button
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(self.tapped(sender:)), for: .touchUpInside)
         
         self.view.addSubview(button)
         
@@ -163,15 +168,19 @@ class StartViewController: UIViewController {
             button.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
             button.leftAnchor.constraint(equalTo: self.view.leftAnchor),
             button.rightAnchor.constraint(equalTo: self.view.rightAnchor)
-        ])
+            ])
         
+    }
+    
+    @objc func tapped(sender: UIButton) {
+        self.tapEvent?(sender)
     }
     
 }
 ```
 
 Ok let's not complain, this is a really stupid controller and it isn't even beautiful ...
-but sometimes all you need is someone who is in the right position and willing to help .... 
+but sometimes all you need is someone who is competent and willing to help .... 
 
 So let's just use him and put him into a ViewFeature.
 
@@ -185,12 +194,12 @@ import VISPER
 
 class StartFeature: ViewFeature {
     
-    var routePattern: String
+    let routePattern: String
     
     // you can ignore the priority for the moment
     // it is sometimes needed when you want to "override"
     // an already added Feature
-    var priority: Int = 0
+    let priority: Int = 0
     
     init(routePattern: String){
         self.routePattern = routePattern
@@ -199,7 +208,7 @@ class StartFeature: ViewFeature {
     // create a blue controller which will be created when the "blue" route is called
     func makeController(routeResult: RouteResult) throws -> UIViewController {
         let controller = StartViewController()
-        controller.buttonTitle = "Show Alert"
+        controller.buttonTitle = "Hello unknown User!"
         return controller
     }
     
@@ -299,9 +308,189 @@ The full code of your AppDelegate should now look like that:
  ```
 
 And if you start your app ... "drum roll" ... you will see a absolutly useless ugly black ViewController with a centered UIButton.
-But that's great :blush: , let's add some functionality to it :heart_eyes_cat:.
+But that's great :blush: , let's add some functionality :heart_eyes_cat:.
 
+### Adding a Presenter
  
+Managing application logic, needs a smart guy who knows something about his environment, so that's obviously not our 
+stupid ViewController, he wouldn't be able to cope with anything other than views ...
+
+What we need is someone who connects the stupid view with our one-trick ponys in the interactor and wireframe layer.
+We get that with a [Presenter](#wireframe).
+
+The Presenter-Protocol is quite simple:
+
+```swift
+protocol Presenter {
+    func isResponsible(routeResult: RouteResult, controller: UIViewController) -> Bool
+    func addPresentationLogic( routeResult: RouteResult, controller: UIViewController) throws
+}
+``` 
+
+So let's create one that is capable of configuring our controller.
+
+```swift
+class StartPresenter: Presenter {
+    
+    var userName: String
+    
+    init(userName: String) {
+        self.userName = userName
+    }
+    
+    func isResponsible(routeResult: RouteResult, controller: UIViewController) -> Bool {
+        return controller is StartViewController
+    }
+    
+    func addPresentationLogic(routeResult: RouteResult, controller: UIViewController) throws {
+        
+        guard let controller = controller as? StartViewController else {
+            fatalError("needs a StartViewController")
+        }
+        
+        controller.buttonTitle = "Hello \(self.userName)"
+        
+        controller.tapEvent = { _ in
+            print("Nice to meet you \(self.userName)!")
+        }
+        
+    }
+}
+```
+
+The presenter is responsible for a ViewController of class StartViewController, adds some information to the buttonTitle,
+and some behaviour to the buttons tap event.
+
+Let's pretend that our presenter gets the information about the users name as a dependency from it's environment, we will 
+add that information later in the interactor/redux layer. 
+
+To add the presenter to our application all we need to do is to extend our StartFeature with the new protocol `PresenterFeature`
+
+```swift
+extension StartFeature: PresenterFeature {
+    func makePresenters(routeResult: RouteResult, controller: UIViewController) throws -> [Presenter] {
+        return [StartPresenter(userName: "unknown guy")]
+    }    
+}
+```
+
+and remove the following disgusting line from our StartFeature (it should create components, adding some data is presenter work )
+```swift
+func makeController(routeResult: RouteResult) throws -> UIViewController {
+    let controller = StartViewController()
+    // remove the following line, our feature shouldn't care about usernames ...
+    // controller.buttonTitle = "Hello unknown User!"
+    return controller
+}
+```
+
+Tapping the view button will now result in the debug output "Nice to meet you unknown guy!", but wouldn't it be nicer to present an 
+alert message with this message?
+
+Challenge accepted ?
+
+Let's start with creating a new Feature creating a UIAlertController showing ...
+
+```swift
+class MessageFeature: ViewFeature {
+    
+    var routePattern: String = "/message/:username"
+    var priority: Int = 0
+    
+    
+    func makeController(routeResult: RouteResult) throws -> UIViewController {
+        
+        let username: String = routeResult.parameters["username"] as? String ?? "unknown"
+        
+        let alert = UIAlertController(title: nil,
+                                    message: "Nice to meet you \(username.removingPercentEncoding!)",
+                             preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Goodbye", style: .cancel, handler: nil))
+        
+        return alert
+    }
+    
+    func makeOption(routeResult: RouteResult) -> RoutingOption {
+        return DefaultRoutingOptionModal(animated: true,
+                                         presentationStyle: .popover)
+    }
+    
+}
+
+```
+
+There is happening a lot here, so let's check what we have done ...
+
+First have a look at the route pattern `/message/:username`, it is not a common matchable string.
+The `:username` defines a routing parameter called `'username'`. This route would be matched by any URL starting with 
+`/message/` with the second part being interpreted as the routing parameter `username`. 
+If your routing URL would be `URL(string: '/message/Max%20Mustermann')` the routing parameter `'username'` would be 
+`'Max Mustermann'`. 
+
+Second the `makeController(routeResult:)` function extracts the routing parameter `'username'` from it's RoutingResult.
+
+And at last, the `makeOption(routeResult:)` function creates a `DefaultRoutingOptionModal`, which results in the wireframe 
+presenting the alert as an modal view controller with presentation style `.popover`.  
+
+After having realized all that, it is time to add the new feature in the `AppDelegate` to our `WireframeApp`. 
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        //imagine visperApp is already initialized 
+              
+        let messageFeature = MessageFeature()
+        try! visperApp.add(feature: messageFeature)
+        
+        //followed by other stuff
+}
+```
+
+And to modify our `StartPresenter` to use a `Wireframe` to route to the message feature.
+
+```swift
+class StartPresenter: Presenter {
+    
+    var userName: String
+    let wireframe: Wireframe
+    
+    init(userName: String, wireframe: Wireframe) {
+        self.userName = userName
+        self.wireframe = wireframe
+    }
+    
+    func addPresentationLogic(routeResult: RouteResult, controller: UIViewController) throws {
+        
+        guard let controller = controller as? StartViewController else {
+            fatalError("needs a StartViewController")
+        }
+        
+        controller.buttonTitle = "Hello \(self.userName)"
+        
+        controller.tapEvent = { [weak self] (_) in
+            guard let presenter = self else { return }
+            let path = "/message/\(presenter.userName)".addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
+            let url = URL(string:path)
+            try! presenter.wireframe.route(url: url!)
+        }
+        
+    }
+}
+``` 
+
+The exiting stuff happens in the `tapEvent` closure.
+The presenter creates an `URL(string:"/message/unknown%20guy")` and tells the wireframe 
+to route to this URL (if we pretend that username is still `"unknown guy"`).
+
+The wireframe matches the URL to the routePattern of our `MessageFeature`, asks it for creating the ViewController
+and presents it by interpreting the `RoutingOption` given by the `MessageFeature`.   
+
+And voila! An alert view greeting us is shown.
+
+Quite a lot stuff going on just for an AlertViewController, but it scales quite good with greater ViewControllers, 
+since it helps you to keep them simple and seperated, with an clean architecture keeping presentation and domain logic 
+out of the ViewController and in it's place.   
+
+**You can find the code of this Tutorial in the Wireframe-Example in the VISPER.xcworkspace.**  
 
 ## Components
 

@@ -166,7 +166,7 @@ public class DefaultRouter : Router {
                         return nil
                     }
                 case .variable:
-                    parameters[routeDefinitionComponent.name!] = stringComponent
+                    parameters[routeDefinitionComponent.name!] = stringComponent.removingPercentEncoding!
                 case .wildcard:
                     
                     let additionalParams = self.allItems(from: index, array: stringComponents)
@@ -213,7 +213,7 @@ public class DefaultRouter : Router {
         var result = [String]()
         for (index,item) in array.enumerated() {
             if(index >= from){
-                result.append(item)
+                result.append(item.removingPercentEncoding!)
             }
         }
         return result
