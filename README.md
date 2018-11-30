@@ -43,9 +43,13 @@ the changing state on the other hand to update your views. More on that topic ca
 
 - [VISPER](#visper)
   * [Getting started](#getting-started)
+    + [Getting started with the wireframe](#getting-started-with-the-wireframe)
+    + [Adding a Presenter](#adding-a-presenter)
+  * [Components](#components)
     + [App](#app)
     + [Features and FeatureObserver](#features-and-featureobserver)
     + [Wireframe](#wireframe)
+    + [Routepatterns](#routepatterns)
     + [VISPER-Redux](#visper-redux)
       - [State](#state)
       - [AppReducer](#appreducer)
@@ -59,7 +63,6 @@ the changing state on the other hand to update your views. More on that topic ca
       - [LogicFeature](#logicfeature)
       - [Observing state change](#observing-state-change)
   * [Complete list of all available VISPER-Components](#complete-list-of-all-available-visper-components)
-
 
 ## Getting started 
 
