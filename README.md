@@ -689,7 +689,8 @@ func addPresentationLogic(routeResult: RouteResult, controller: UIViewController
     
     controller.tapEvent = { [weak self] (_) in
         guard let presenter = self else { return }
-        let path = "/message/\(presenter.userName.value)".addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
+        guard let name = presenter.userName.value, name.count > 0 else { return }
+        let path = "/message/\(name)".addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
         let url = URL(string:path)
         try! presenter.wireframe.route(url: url!)
     }
