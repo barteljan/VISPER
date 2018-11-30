@@ -33,7 +33,7 @@ This prepares the stage for the [Presenter](#wireframe). The wireframe requests 
 from a [PresenterFeature](#wireframe) before presenting a ViewController. It gives them the possibillity to enrich that 
 stupid thing with some data bindings and behaviour before it is actually presented. 
 
-An next great challenge is controlling the state of your application. VISPER decides to do that in the interactor 
+The next great challenge is controlling the state of your application. VISPER decides to do that in the interactor 
 layer and supports you with an [Redux-Architecture](#visper-redux) to manage your appstate and it's state transitions.
 
 You can trigger state change in an presenter by submitting an [Action](#changing-state) to an [ActionDispatcher](#changing-state) and observe 
@@ -184,9 +184,9 @@ but sometimes all you need is someone who can be shown around and is willing to 
 
 So let's just use him and put him into a ViewFeature.
 
-> **SPOILER**: A ViewFeature is a protocol from the "VISPER_Wireframe"-pod which has to be implemented to provide a ViewController to the wireframe.
+> **SPOILER**: A ViewFeature is a protocol from the "VISPER_Wireframe"-Pod which has to be implemented to provide a ViewController to the wireframe.
 > We have defined some typealiases in the VISPER-Pod to provide it with an "import VISPER" statement. 
-> Thats's an dirty trick but it allows you to use the "import VISPER" statement for every VISPER class or protocol even if it lives in one of our child pods.  
+> Thats's an dirty trick, but it allows you to use the "import VISPER" statement for every VISPER class or protocol even if it lives in one of our child pods.  
 
 
 ```swift
@@ -533,7 +533,7 @@ A [FeatureObserver](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/
 
 Many VISPER Components implement their own subtypes of [App](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/App.html), [Feature](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP) and [FeatureObserver](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/FeatureObserver.html).
 
-* [VISPER-Wireframe](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/index.html) provides you with: 
+[VISPER-Wireframe](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/index.html) provides you with: 
 * [WireframeApp](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html) 
 * [ViewFeature](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/ViewFeature.html) 
 * [PresenterFeature](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/PresenterFeature.html)
@@ -541,7 +541,7 @@ Many VISPER Components implement their own subtypes of [App](https://rawgit.com/
 * [ViewFeatureObserver](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/ViewFeatureObserver.html) 
 * [PresenterFeatureObserver](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/PresenterFeatureObserver.html).
 
-* [VISPER-Redux](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html) provides you with: 
+[VISPER-Redux](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html) provides you with: 
 * [ReduxApp](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ReduxApp.html) 
 * [LogicFeature](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/LogicFeature.html) 
 * [LogicFeatureObserver](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Structs/LogicFeatureObserver.html).
