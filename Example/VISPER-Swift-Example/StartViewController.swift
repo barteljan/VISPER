@@ -11,9 +11,10 @@ import Foundation
 import Foundation
 import UIKit
 
-class StartViewController: UIViewController {
+class StartViewController: UIViewController, UITextFieldDelegate {
     
     typealias ButtonTap = (_ sender: UIButton) -> Void
+    typealias NameChanged = (_ sender: UITextField, _ username: String?) -> Void
     
     weak var button: UIButton! {
         didSet {
@@ -21,18 +22,28 @@ class StartViewController: UIViewController {
         }
     }
     
+    weak var nameField: UITextField?
+    
     var buttonTitle: String? {
         didSet {
             self.button?.setTitle(self.buttonTitle, for: .normal)
         }
     }
-    
+
     var tapEvent: ButtonTap?
+    var nameChanged: NameChanged?
     
     override func loadView() {
         
         let view = UIView()
         self.view = view
+        
+        let nameField = UITextField(frame: .null)
+        self.nameField = nameField
+        self.navigationItem.titleView = nameField
+        nameField.placeholder = "enter your username here"
+        nameField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        nameField.backgroundColor = .white
         
         let button = UIButton()
         self.button = button
@@ -47,11 +58,15 @@ class StartViewController: UIViewController {
             button.leftAnchor.constraint(equalTo: self.view.leftAnchor),
             button.rightAnchor.constraint(equalTo: self.view.rightAnchor)
             ])
-        
+     
     }
     
     @objc func tapped(sender: UIButton) {
         self.tapEvent?(sender)
+    }
+    
+    @objc func textFieldChanged(textField: UITextField) {
+        self.nameChanged?(textField, textField.text)
     }
     
 }

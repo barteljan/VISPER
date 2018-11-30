@@ -147,6 +147,7 @@
 		9AA1DD4821B160D1003C2697 /* StartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1DD4721B160D1003C2697 /* StartPresenter.swift */; };
 		9AA1DD4A21B16134003C2697 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1DD4921B16134003C2697 /* AppState.swift */; };
 		9AA1DD4C21B1613E003C2697 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1DD4B21B1613E003C2697 /* UserState.swift */; };
+		9AA1DD4E21B19C04003C2697 /* ChangeUserNameReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1DD4D21B19C04003C2697 /* ChangeUserNameReducer.swift */; };
 		9AC048E8215CBC6B008870B2 /* ReducerContainerForOneActionTransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC048E7215CBC6B008870B2 /* ReducerContainerForOneActionTransactionTests.swift */; };
 		9AC334D22067D668006B8F22 /* AppReducer.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC334CF2067D668006B8F22 /* AppReducer.generated.swift */; };
 		9AC334D32067D668006B8F22 /* GenerateInitializers.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC334D02067D668006B8F22 /* GenerateInitializers.generated.swift */; };
@@ -441,6 +442,7 @@
 		9AA1DD4721B160D1003C2697 /* StartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPresenter.swift; sourceTree = "<group>"; };
 		9AA1DD4921B16134003C2697 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		9AA1DD4B21B1613E003C2697 /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserState.swift; sourceTree = "<group>"; };
+		9AA1DD4D21B19C04003C2697 /* ChangeUserNameReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserNameReducer.swift; sourceTree = "<group>"; };
 		9AC048E7215CBC6B008870B2 /* ReducerContainerForOneActionTransactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReducerContainerForOneActionTransactionTests.swift; sourceTree = "<group>"; };
 		9AC334C62067C954006B8F22 /* VISPER-Sourcery.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Sourcery.podspec"; path = "../VISPER-Sourcery.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9AC334CF2067D668006B8F22 /* AppReducer.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.generated.swift; sourceTree = "<group>"; };
@@ -984,6 +986,7 @@
 				9AA1DD4121B16038003C2697 /* StartFeature.swift */,
 				9AA1DD4321B1607C003C2697 /* MessageFeature.swift */,
 				9AA1DD4521B160B3003C2697 /* StartViewController.swift */,
+				9AA1DD4D21B19C04003C2697 /* ChangeUserNameReducer.swift */,
 				9AA1DD4721B160D1003C2697 /* StartPresenter.swift */,
 				9AA1DD4921B16134003C2697 /* AppState.swift */,
 				9AA1DD4B21B1613E003C2697 /* UserState.swift */,
@@ -2410,6 +2413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A8C5C151FDC0C1D00C401AF /* AppDelegate.swift in Sources */,
+				9AA1DD4E21B19C04003C2697 /* ChangeUserNameReducer.swift in Sources */,
 				9AA1DD4821B160D1003C2697 /* StartPresenter.swift in Sources */,
 				9AA1DD4621B160B3003C2697 /* StartViewController.swift in Sources */,
 				9AA1DD4A21B16134003C2697 /* AppState.swift in Sources */,

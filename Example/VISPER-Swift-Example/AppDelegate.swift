@@ -28,7 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let startFeature = StartFeature(routePattern: "/start",
                                            wireframe: visperApp.wireframe,
-                                            userName: visperApp.redux.store.observableState.map({ return $0.userState.userName}))
+                                    actionDispatcher: visperApp.redux.actionDispatcher,
+                                            userName: visperApp.redux.store.observableState.map({ return $0.userState.userName }))
         try! visperApp.add(feature: startFeature)
         
         let messageFeature = MessageFeature()

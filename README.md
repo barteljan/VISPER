@@ -532,7 +532,7 @@ struct UserState: Equatable {
 }
 
 struct AppState: Equatable {
-    let userState: UserState
+    let userState: UserState?
 }
 ```
 
@@ -677,9 +677,14 @@ func addPresentationLogic(routeResult: RouteResult, controller: UIViewController
         fatalError("needs a StartViewController")
     }
     
-    let subscription = self.userName.subscribe { (value) in
-        controller.buttonTitle = "Hello \(value)"
-    }
+    let subscription = self.userName.map({ (name) -> String in
+                                            guard let name = name, name.count > 0 else { return "unknown person"}
+                                            return name
+                                        })
+                                        .subscribe { (value) in
+                                            controller.buttonTitle = "Hello \(value)"
+                                        }
+            
     self.referenceBag.addReference(reference: subscription)
     
     controller.tapEvent = { [weak self] (_) in
@@ -734,7 +739,7 @@ We will use map to inject it to the `StartFeature` in your `AppDelegate`.
 ```swift
 let startFeature = StartFeature(routePattern: "/start",
                                    wireframe: visperApp.wireframe,
-                                    userName: visperApp.redux.store.observableState.map({ return $0.userState.userName}))
+                                    userName: visperApp.redux.store.observableState.map({ return $0.userState.userName ?? "Unknown Person"}))
 ```
  
 Building the app now results in an running application using the appstate as it's reactive datasource.

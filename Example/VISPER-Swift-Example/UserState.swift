@@ -9,5 +9,5 @@
 import Foundation
 
 struct UserState: Equatable {
-    let userName: String
+    let userName: String?
 }

@@ -11,13 +11,15 @@ import VISPER_Swift
 
 class StartPresenter: Presenter {
     
-    var userName: ObservableProperty<String>
+    var userName: ObservableProperty<String?>
     let wireframe: Wireframe
+    let actionDipatcher: ActionDispatcher
     var referenceBag = SubscriptionReferenceBag()
 
-    init(userName: ObservableProperty<String>, wireframe: Wireframe) {
+    init(userName: ObservableProperty<String?>, wireframe: Wireframe, actionDipatcher: ActionDispatcher) {
         self.userName = userName
         self.wireframe = wireframe
+        self.actionDipatcher = actionDipatcher
     }
     
     func isResponsible(routeResult: RouteResult, controller: UIViewController) -> Bool {
@@ -30,9 +32,13 @@ class StartPresenter: Presenter {
             fatalError("needs a StartViewController")
         }
         
-        let subscription = self.userName.subscribe { (value) in
-            controller.buttonTitle = "Hello \(value)"
-        }
+        let subscription = self.userName.map({ (name) -> String in
+                                            guard let name = name, name.count > 0 else { return "unknown person"}
+                                            return name
+                                        })
+                                        .subscribe { (value) in
+                                            controller.buttonTitle = "Hello \(value)"
+                                        }
         self.referenceBag.addReference(reference: subscription)
         
         controller.tapEvent = { [weak self] (_) in
@@ -40,6 +46,10 @@ class StartPresenter: Presenter {
             let path = "/message/\(presenter.userName.value)".addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
             let url = URL(string:path)
             try! presenter.wireframe.route(url: url!)
+        }
+        
+        controller.nameChanged = { [weak self](_, text) in
+            self?.actionDipatcher.dispatch(ChangeUserNameAction(username: text))
         }
         
     }

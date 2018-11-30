@@ -18,12 +18,14 @@ class StartFeature: ViewFeature {
     // an already added Feature
     let priority: Int = 0
     let wireframe: Wireframe
-    let userName: ObservableProperty<String>
+    let actionDispatcher: ActionDispatcher
+    let userName: ObservableProperty<String?>
     
-    init(routePattern: String, wireframe: Wireframe,userName: ObservableProperty<String>){
+    init(routePattern: String, wireframe: Wireframe,actionDispatcher: ActionDispatcher, userName: ObservableProperty<String?>){
         self.routePattern = routePattern
         self.wireframe = wireframe
         self.userName = userName
+        self.actionDispatcher = actionDispatcher
     }
     
     // create a blue controller which will be created when the "blue" route is called
@@ -42,7 +44,13 @@ class StartFeature: ViewFeature {
 extension StartFeature: PresenterFeature {
     
     func makePresenters(routeResult: RouteResult, controller: UIViewController) throws -> [Presenter] {
-        return [StartPresenter(userName: self.userName, wireframe: self.wireframe)]
+        return [StartPresenter(userName: self.userName, wireframe: self.wireframe, actionDipatcher: self.actionDispatcher)]
     }
     
+}
+
+extension StartFeature: LogicFeature {
+    func injectReducers(container: ReducerContainer) {
+        container.addReducer(reducer: ChangeUserNameReducer())
+    }
 }
