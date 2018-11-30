@@ -541,13 +541,13 @@ struct AppState: Equatable {
 
 The AppState should contain the full state of our app. 
 Since the state of an whole app can become quite complex, it is best practice to compose it of different 
-substates to conquer state-complexity in a more locale manner.
+substates to conquer state complexity in a more locale manner.
 
-Although our state isn't really complex it's a good idea to start this way to demonstrate how state 
+Although our state isn't really complex it's a good idea to start it this way, to demonstrate how state 
 composition could be done if it would be needed.
 
-The next step to do is to replace our [WireframeApp](#app) with a [VISPERApp](#app), which contains an `Redux` object to 
-manage state change. 
+The next step should be replacing our [WireframeApp](#app) with a [VISPERApp](#app).
+This gives us an `Redux` object to manage our state changes. 
 
 Start with creating a new method in your AppDelegate:
 
