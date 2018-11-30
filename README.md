@@ -546,7 +546,7 @@ substates to conquer state complexity in a more locale manner.
 Although our state isn't really complex it's a good idea to start it this way, to demonstrate how state 
 composition could be done if it would be needed.
 
-The next step should be replacing our [WireframeApp](#app) with a [AnyVISPERApp\<AppState\>](#app).
+The next step should be replacing our [WireframeApp](#app) with an [AnyVISPERApp\<AppState\>](#app).
 This gives us an `Redux` object to manage our state changes. 
 
 Start with creating a new method in your AppDelegate:
@@ -557,14 +557,14 @@ func createApp() -> AnyVISPERApp<AppState> {
 }
 ```
 
-continue with creating an initial state loaded when the app is loaded:
+continue with creating an initial state used when the app is loaded:
 
 ```swift
 let initalState: AppState = AppState(userState: UserState(userName: "unknown stranger"))
 ``` 
 
 
-Now it's time to write some boilerplate code and write the [AppReducer](#visper-redux) a function responsible 
+Now it's time to write some boilerplate code and write the [AppReducer](#visper-redux), a function responsible 
 for composing and reducing our AppState.       
  
 ```swift
@@ -577,7 +577,7 @@ let appReducer: AppReducer<AppState> = { (reducerProvider: ReducerProvider, acti
 It's structure is always the same, it creates a new AppState and reduces all substate with it's reducerProvider parameter.
 After that it reduces the newly created state itself with the reducer provider and returns the result.
 
-> **SPOILER**: We would love to do this programatically for you, but since a composed app state is an generic struct 
+> **SPOILER**: We would love to do this programatically for you, but since a composed appstate is an generic struct 
 > and there is no way to create such an struct dynamically we are just f***ed here. Our best guess is to generate the 
 > AppReducer with [Sourcery](https://github.com/krzysztofzablocki/Sourcery) you can find an tutorial to do that [here](docs/README-VISPER-Sourcery.md).
 
@@ -640,7 +640,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 Wow that was a lot stuff to get it running ...
 
-It get's better now :blush: and it's time to make our `StartPresenter` happy by giving it access to the state.
+It's getting better now :blush:. It's time to make you and our `StartPresenter` happy by giving it access to the state.
 
 We start with changing it's `userName` property type from `String` to `ObservableProperty<String>` 
 An ObservableProperty is a ValueWrapper that can notify you when it's value is changed.
