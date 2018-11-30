@@ -640,7 +640,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 Wow that was a lot stuff to get it running ...
 
-It's getting better now :blush:. It's time to make you and our `StartPresenter` happy by giving it access to the state.
+It's getting better now :blush:. It's time to make you and our `StartPresenter` happy by giving him access to the state.
 
 We start with changing it's `userName` property type from `String` to `ObservableProperty<String>` 
 An ObservableProperty is a ValueWrapper that can notify you when it's value is changed.
