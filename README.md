@@ -729,7 +729,7 @@ extension StartFeature: PresenterFeature {
 }
 ```
 
-We will use map to injecting it to the `StartFeature` in your `AppDelegate`.
+We will use map to inject it to the `StartFeature` in your `AppDelegate`.
 
 ```swift
 let startFeature = StartFeature(routePattern: "/start",
