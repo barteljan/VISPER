@@ -578,7 +578,7 @@ It's structure is always the same, it creates a new AppState and reduces all sub
 After that it reduces the newly created state itself with the reducer provider and returns the result.
 
 > **SPOILER**: We would love to do this programatically for you, but since a composed appstate is an generic struct 
-> and there is no way to create such an struct dynamically we are just f***ed here. Our best guess is to generate the 
+> and there is no way to create such a struct dynamically we are just f***ed here. Our best guess is to generate the 
 > AppReducer with [Sourcery](https://github.com/krzysztofzablocki/Sourcery) you can find an tutorial to do that [here](docs/README-VISPER-Sourcery.md).
 
 Now create a `VISPERAppFactory<AppState>` create your app and return it.
@@ -716,7 +716,7 @@ class StartFeature: ViewFeature {
         self.userName = userName
     }
     
-    // imageine the ViewFeature functions here
+    // imagine the ViewFeature functions here
 }
 
 
