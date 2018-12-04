@@ -287,18 +287,54 @@
 <a href="http://cocoapods.org/pods/VISPER"><img src="https://img.shields.io/cocoapods/p/VISPER.svg?style=flat" alt="Platform"></a></p>
 
 <p>VISPER is a component based library, which helps you to develop modular apps based on the VIPER Pattern.
-VISPER contains of several components to create a flexibel architecture for your iOS-app. It contains of 3 main components.</p>
+VISPER contains several components to create a flexibel architecture without losing too much time with VIPER.</p>
 
-<p>The most general is the <a href="#app">App</a> protocol, which helps you to compose your app of seperated modules called <a href="#features-and-featureobserver">Features</a>. Each  Feature creates and configures a distinct part of application.  VISPER provides you with the  <a href="#wireframe">Wireframe</a> , since the navigation between view controllers is an important aspect of your application, which should be modelt explicitly without coupling your different UIViewControllers.  The <a href="#wireframe">Wireframe</a> a powerful router component, which defines a defined workflow for creating, presenting and navigation between ViewControllers without requiering a view controller to know about  the implementation of the next presented view controller. An other important concern when creating a new app is state management. In an VISPER-App this is typically done by a  <a href="#visper-redux">Redux</a> Object which lives in the interactor layer and provides a complete Redux-Architecture to manage your appstate and it&rsquo;s transitions.</p>
+<p>The architecture of an typical app, build with VISPER, is shown in the image below.</p>
+
+<p>Well ok &hellip; we know that looks a bit complicated.</p>
+
+<p>We created a seperate article to dig deeper into this topic. You can find it <a href="docs/Architecture.md">here</a>. </p>
+
+<p><img src="docs/img/VISPER.png" alt="Architecture"></p>
+
+<p>The easiest way to get good grasp of how VISPER can help you building an app, is by having a look at it&rsquo;s main components.</p>
+
+<p>The most general component is the <a href="#app">App</a> protocol, which helps you to compose your app of seperated modules 
+called <a href="#features-and-featureobserver">Features</a>. Each Feature creates and configures a distinct part of your application.  </p>
+
+<p>Since the presentation, creation and management of ViewControllers ist an important part of your application, 
+there should be a seperate component responsible for the presentation and the lifecycle of your ViewControllers. 
+This job is done by the <a href="#wireframe">Wireframe</a>.  </p>
+
+<p>The <a href="#wireframe">Wireframe</a> allows you to route to a specific ViewController by an simple URL (called Route).
+It seperates the creation of a ViewController (done by a <a href="#wireframe">ViewFeature</a>), 
+from it&rsquo;s presentation (done by some weird guy named <a href="#wireframe">RoutingPresenter</a>).</p>
+
+<p>Since we fought too many fights against massive ViewControllers, we want our view to be quite stupid. 
+This prepares the stage for the <a href="#wireframe">Presenter</a>. The wireframe requests all responsible <a href="#wireframe">Presenters</a> 
+from a <a href="#wireframe">PresenterFeature</a> before presenting a ViewController. It gives them the possibillity to enrich that 
+stupid thing with some data bindings and behaviour before it is actually presented. </p>
+
+<p>The next great challenge is controlling the state of your application. VISPER decides to do that in the interactor 
+layer and supports you with an <a href="#visper-redux">Redux-Architecture</a> to manage your appstate and it&rsquo;s state transitions.</p>
+
+<p>You can trigger state change in an presenter by submitting an <a href="#changing-state">Action</a> to an <a href="#changing-state">ActionDispatcher</a> and observe 
+the changing state on the other hand to update your views. More on that topic can be found <a href="#visper-redux">here</a>.</p>
+<h2 id='index' class='heading'>Index</h2>
 
 <ul>
 <li><a href="#visper">VISPER</a>
 
 <ul>
 <li><a href="#getting-started">Getting started</a></li>
+<li><a href="#getting-started-with-the-wireframe">Getting started with the wireframe</a></li>
+<li><a href="#adding-a-presenter">Adding a Presenter</a></li>
+<li><a href="#adding-redux">Adding Redux</a></li>
+<li><a href="#components">Components</a></li>
 <li><a href="#app">App</a></li>
 <li><a href="#features-and-featureobserver">Features and FeatureObserver</a></li>
 <li><a href="#wireframe">Wireframe</a></li>
+<li><a href="#routepatterns">Routepatterns</a></li>
 <li><a href="#visper-redux">VISPER-Redux</a>
 
 <ul>
@@ -313,11 +349,856 @@ VISPER contains of several components to create a flexibel architecture for your
 <li><a href="#asyncactionreducertype">AsyncActionReducerType</a></li>
 <li><a href="#logicfeature">LogicFeature</a></li>
 <li><a href="#observing-state-change">Observing state change</a></li>
+<li><a href="#subscriptionreferencebag">SubscriptionReferenceBag</a></li>
 </ul></li>
 <li><a href="#complete-list-of-all-available-visper-components">Complete list of all available VISPER-Components</a></li>
 </ul></li>
 </ul>
 <h2 id='getting-started' class='heading'>Getting started</h2>
+
+<p>Since VISPER is composed of several independent components which can be used seperatly, let&rsquo;s take it easy and start 
+just with an WireframeApp, to get a grasp about how the the routing and the lifecycle of your ViewControllers works. </p>
+
+<p>We will extend this example with some redux stuff in the next steps. </p>
+<h3 id='getting-started-with-the-wireframe' class='heading'>Getting started with the wireframe</h3>
+
+<p>Start with creating a simple project which uses a UINavigationController. </p>
+
+<blockquote>
+<p>SPOILER: VISPER can manage any container view controller of your choice, but since UINavigationController is preconfigured in the default 
+implementation it&rsquo;s easy to start with it.</p>
+</blockquote>
+
+<p>Now create a WireframeApp in your AppDelegate:</p>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">AppDelegate</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">UIApplicationDelegate</span> <span class="p">{</span>
+
+    <span class="k">var</span> <span class="nv">window</span><span class="p">:</span> <span class="kt">UIWindow</span><span class="p">?</span>
+    <span class="k">var</span> <span class="nv">visperApp</span><span class="p">:</span> <span class="kt">WireframeApp</span><span class="o">!</span>
+
+    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+
+        <span class="k">let</span> <span class="nv">window</span> <span class="o">=</span> <span class="kt">UIWindow</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">UIScreen</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="n">window</span>
+
+        <span class="k">let</span> <span class="nv">factory</span> <span class="o">=</span> <span class="kt">DefaultWireframeAppFactory</span><span class="p">()</span>
+        <span class="k">let</span> <span class="nv">visperApp</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="nf">makeApp</span><span class="p">()</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">visperApp</span> <span class="o">=</span> <span class="n">visperApp</span>
+
+        <span class="c1">// the rest of your implementation will follow soon ;)    </span>
+    <span class="p">}</span>
+
+</code></pre>
+
+<p>The DefaultWireframeAppFactory creates an WireframeApp which is already configured for use with an UINavigationController. 
+If you want to know more about the Wireframe you can find this information <a href="#wireframe">here</a>, but let&rsquo;s finish the WireframeApp 
+creation for the moment. </p>
+
+<p>In the next step you have to tell your WireframeApp which UINavigationController should be used for navigation and routing. 
+We need just one line for that &hellip;.</p>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+
+    <span class="c1">//just imagine we created your visperApp here</span>
+
+    <span class="k">let</span> <span class="nv">navigationController</span> <span class="o">=</span> <span class="kt">UINavigationController</span><span class="p">()</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">rootViewController</span> <span class="o">=</span> <span class="n">navigationController</span>
+
+    <span class="c1">//tell visper to work with this UINavigationController</span>
+    <span class="n">visperApp</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">controllerToNavigate</span><span class="p">:</span> <span class="n">navigationController</span><span class="p">)</span>
+
+<span class="p">}</span>
+
+</code></pre>
+
+<p>As you might guess, it&rsquo;s completly irrelevant where our UINavigationController lives, it would also be possible to put 
+it in an UITabbarController or an UISplitViewController. VISPER will just use the last UINavigationController given to it 
+by the visperApp.add(controllerToNavigate:) method. </p>
+
+<p>It will not retain it for you! So if it becomes unretained, it will be gone and VISPER will complain about knowing no 
+UINavigationController to use!  </p>
+
+<p>Your WireframeApp is now initialised and eager to route, but it has no ViewController to create, so let&rsquo;s create a 
+ViewFeature to create some action &hellip; </p>
+
+<p>The controller can just be a POVC (Plain Old View Controller :sweat_smile: ), it doesn&rsquo;t have to know anything about VISPER.
+So let&rsquo;s create one:</p>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">StartViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+
+    <span class="kd">typealias</span> <span class="kt">ButtonTap</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span>
+
+    <span class="k">weak</span> <span class="k">var</span> <span class="nv">button</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span> <span class="p">{</span>
+        <span class="k">didSet</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">button</span><span class="p">?</span><span class="o">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">buttonTitle</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">var</span> <span class="nv">buttonTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">didSet</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">button</span><span class="p">?</span><span class="o">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">buttonTitle</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">var</span> <span class="nv">tapEvent</span><span class="p">:</span> <span class="kt">ButtonTap</span><span class="p">?</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">loadView</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">()</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">view</span>
+
+        <span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="kt">UIButton</span><span class="p">()</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">button</span> <span class="o">=</span> <span class="n">button</span>
+        <span class="n">button</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="n">button</span><span class="o">.</span><span class="nf">addTarget</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kd">#selector(</span><span class="nf">self.tapped(sender:)</span><span class="kd">)</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">touchUpInside</span><span class="p">)</span>
+
+        <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+
+        <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">activate</span><span class="p">([</span>
+            <span class="n">button</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">topAnchor</span><span class="p">),</span>
+            <span class="n">button</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">),</span>
+            <span class="n">button</span><span class="o">.</span><span class="n">leftAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">leftAnchor</span><span class="p">),</span>
+            <span class="n">button</span><span class="o">.</span><span class="n">rightAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">rightAnchor</span><span class="p">)</span>
+            <span class="p">])</span>
+
+    <span class="p">}</span>
+
+    <span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">tapped</span><span class="p">(</span><span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="nf">tapEvent</span><span class="p">?(</span><span class="n">sender</span><span class="p">)</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre>
+
+<p>Ok let&rsquo;s not complain, this is a really stupid controller and it isn&rsquo;t even beautiful &hellip;
+but sometimes all you need is someone who can be shown around and is willing to help &hellip;. </p>
+
+<p>So let&rsquo;s just use him and put him into a ViewFeature.</p>
+
+<blockquote>
+<p><strong>SPOILER</strong>: A ViewFeature is a protocol from the <q>VISPER_Wireframe</q>-Pod which has to be implemented to provide a ViewController to the wireframe.
+We have defined some typealiases in the VISPER-Pod to provide it with an <q>import VISPER</q> statement. 
+Thats&rsquo;s an dirty trick, but it allows you to use the <q>import VISPER</q> statement for every VISPER class or protocol even if it lives in one of our child pods.  </p>
+</blockquote>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">VISPER</span>
+
+<span class="kd">class</span> <span class="kt">StartFeature</span><span class="p">:</span> <span class="kt">ViewFeature</span> <span class="p">{</span>
+
+    <span class="k">let</span> <span class="nv">routePattern</span><span class="p">:</span> <span class="kt">String</span>
+
+    <span class="c1">// you can ignore the priority for the moment</span>
+    <span class="c1">// it is sometimes needed when you want to "override"</span>
+    <span class="c1">// an already added Feature</span>
+    <span class="k">let</span> <span class="nv">priority</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="nf">init</span><span class="p">(</span><span class="nv">routePattern</span><span class="p">:</span> <span class="kt">String</span><span class="p">){</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">routePattern</span> <span class="o">=</span> <span class="n">routePattern</span>
+    <span class="p">}</span>
+
+    <span class="c1">// create a blue controller which will be created when the "blue" route is called</span>
+    <span class="kd">func</span> <span class="nf">makeController</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">controller</span> <span class="o">=</span> <span class="kt">StartViewController</span><span class="p">()</span>
+        <span class="n">controller</span><span class="o">.</span><span class="n">buttonTitle</span> <span class="o">=</span> <span class="s">"Hello unknown User!"</span>
+        <span class="k">return</span> <span class="n">controller</span>
+    <span class="p">}</span>
+
+    <span class="c1">// return a routing option to show how this controller should be presented</span>
+    <span class="kd">func</span> <span class="nf">makeOption</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">RoutingOption</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">DefaultRoutingOptionPush</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>As you might see there are two methods and a property which have to be implemented to provide a ViewController to the Wireframe.</p>
+
+<p>Let&rsquo;s start with the routePattern. It is an String that describes the route used to match this controller.</p>
+
+<p>That means the routePattern <code>var routePattern: String = &quot;/start&quot;</code> will be matched by the url <code>var url = URL(string: &quot;/start&quot;)</code> &hellip;
+starts easy but ends complicated &hellip; routePatterns can contain variables, wildcards and other stuff (You can find more about them 
+in the <a href="#routepatterns">RoutePattern</a> section), let&rsquo;s pretend for the moment that we have a complete understanding about how they work :grimacing: .</p>
+
+<p>The next method is quite straight forward, the <code>makeController(routeResult: RouteResult) -&gt; UIViewController</code> function should 
+just create the viewController to be presented when <code>wireframe.route(url: URL(&#39;/start&#39;)!)</code> is called anywhere in our app 
+(pretending that our routePattern is <q>/start</q>). </p>
+
+<p>It&rsquo;s routeResult-Parameter contains some context information that might be useful when creating a ViewController, 
+although we don&rsquo;t need it here (have a look at the <a href="#routeresult">RouteResult</a> section later :wink: ).</p>
+
+<p>The <code>makeOption(routeResult:)</code> is a little more complicated (have a look at the <a href="#routingoption">RoutingOption</a> section, when needed).
+It defines how the wireframe should present the ViewController by default. Returning a <code><a href="Structs/DefaultRoutingOptionPush.html">DefaultRoutingOptionPush</a></code> will result in 
+the wireframe just pushing our ViewController to it&rsquo;s current UINavigationController.</p>
+
+<p>Ok that was easy :innocent: , let&rsquo;s register our new feature in our app &hellip;
+go back to your AppDelegate and add it:</p>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+
+    <span class="c1">//just imagine we created and initialized your visperApp here</span>
+
+     <span class="k">let</span> <span class="nv">startFeature</span> <span class="o">=</span> <span class="kt">StartFeature</span><span class="p">(</span><span class="nv">routePattern</span><span class="p">:</span> <span class="s">"/start"</span><span class="p">)</span>
+     <span class="k">try!</span> <span class="n">visperApp</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">feature</span><span class="p">:</span> <span class="n">startFeature</span><span class="p">)</span>
+
+<span class="p">}</span>
+</code></pre>
+
+<p>The visperApp will now register our feature for the <q>/start</q> route, which enables us to route to it with an other line of code:</p>
+<pre class="highlight swift"><code> <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+
+     <span class="c1">//just imagine we created and initialized your visperApp here</span>
+
+      <span class="k">let</span> <span class="nv">startFeature</span> <span class="o">=</span> <span class="kt">StartFeature</span><span class="p">(</span><span class="nv">routePattern</span><span class="p">:</span> <span class="s">"/start"</span><span class="p">)</span>
+      <span class="k">try!</span> <span class="n">visperApp</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">feature</span><span class="p">:</span> <span class="n">startFeature</span><span class="p">)</span>
+
+      <span class="k">try!</span> <span class="n">visperApp</span><span class="o">.</span><span class="n">wireframe</span><span class="o">.</span><span class="nf">route</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"/start"</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
+
+      <span class="k">self</span><span class="o">.</span><span class="n">window</span><span class="p">?</span><span class="o">.</span><span class="nf">makeKeyAndVisible</span><span class="p">()</span>
+ <span class="p">}</span>
+</code></pre>
+
+<p>The full code of your AppDelegate should now look like that:</p>
+<pre class="highlight swift"><code> <span class="kd">import</span> <span class="kt">UIKit</span>
+ <span class="kd">import</span> <span class="kt">VISPER</span>
+
+ <span class="kd">@UIApplicationMain</span>
+ <span class="kd">class</span> <span class="kt">AppDelegate</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">UIApplicationDelegate</span> <span class="p">{</span>
+
+     <span class="k">var</span> <span class="nv">window</span><span class="p">:</span> <span class="kt">UIWindow</span><span class="p">?</span>
+     <span class="k">var</span> <span class="nv">visperApp</span><span class="p">:</span> <span class="kt">WireframeApp</span><span class="o">!</span>
+
+     <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+
+         <span class="k">let</span> <span class="nv">window</span> <span class="o">=</span> <span class="kt">UIWindow</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">UIScreen</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span>
+         <span class="k">self</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="n">window</span>
+
+         <span class="k">let</span> <span class="nv">factory</span> <span class="o">=</span> <span class="kt">DefaultWireframeAppFactory</span><span class="p">()</span>
+         <span class="k">let</span> <span class="nv">visperApp</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="nf">makeApp</span><span class="p">()</span>
+         <span class="k">self</span><span class="o">.</span><span class="n">visperApp</span> <span class="o">=</span> <span class="n">visperApp</span>
+
+         <span class="k">let</span> <span class="nv">navigationController</span> <span class="o">=</span> <span class="kt">UINavigationController</span><span class="p">()</span>
+         <span class="n">window</span><span class="o">.</span><span class="n">rootViewController</span> <span class="o">=</span> <span class="n">navigationController</span>
+         <span class="n">visperApp</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">controllerToNavigate</span><span class="p">:</span> <span class="n">navigationController</span><span class="p">)</span>
+
+         <span class="k">let</span> <span class="nv">startFeature</span> <span class="o">=</span> <span class="kt">StartFeature</span><span class="p">(</span><span class="nv">routePattern</span><span class="p">:</span> <span class="s">"/start"</span><span class="p">)</span>
+         <span class="k">try!</span> <span class="n">visperApp</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">feature</span><span class="p">:</span> <span class="n">startFeature</span><span class="p">)</span>
+
+         <span class="k">try!</span> <span class="n">visperApp</span><span class="o">.</span><span class="n">wireframe</span><span class="o">.</span><span class="nf">route</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"/start"</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
+
+         <span class="k">self</span><span class="o">.</span><span class="n">window</span><span class="p">?</span><span class="o">.</span><span class="nf">makeKeyAndVisible</span><span class="p">()</span>
+         <span class="k">return</span> <span class="kc">true</span>
+     <span class="p">}</span>
+
+ <span class="p">}</span>
+</code></pre>
+
+<p>And if you start your app &hellip; <q>drum roll</q> &hellip; you will see a absolutly useless ugly black ViewController with a centered UIButton.
+But that&rsquo;s great :blush: , let&rsquo;s add some functionality :heart_eyes_cat:.</p>
+<h3 id='adding-a-presenter' class='heading'>Adding a Presenter</h3>
+
+<p>Managing application logic, needs a smart guy who knows something about his environment, so that&rsquo;s obviously not our 
+stupid ViewController, he wouldn&rsquo;t be able to cope with anything other than views &hellip;</p>
+
+<p>What we need is someone who connects the stupid view with our one-trick ponys in the interactor and wireframe layer.
+We get that with a <a href="#wireframe">Presenter</a>.</p>
+
+<p>The Presenter-Protocol is quite simple:</p>
+<pre class="highlight swift"><code><span class="kd">protocol</span> <span class="kt">Presenter</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">isResponsible</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">,</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span>
+    <span class="kd">func</span> <span class="nf">addPresentationLogic</span><span class="p">(</span> <span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">,</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="k">throws</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>So let&rsquo;s create one that is capable of configuring our controller.</p>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">StartPresenter</span><span class="p">:</span> <span class="kt">Presenter</span> <span class="p">{</span>
+
+    <span class="k">var</span> <span class="nv">userName</span><span class="p">:</span> <span class="kt">String</span>
+
+    <span class="nf">init</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">userName</span> <span class="o">=</span> <span class="n">userName</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">isResponsible</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">,</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">controller</span> <span class="k">is</span> <span class="kt">StartViewController</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">addPresentationLogic</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">,</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="k">throws</span> <span class="p">{</span>
+
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">controller</span> <span class="o">=</span> <span class="n">controller</span> <span class="k">as?</span> <span class="kt">StartViewController</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">fatalError</span><span class="p">(</span><span class="s">"needs a StartViewController"</span><span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="n">controller</span><span class="o">.</span><span class="n">buttonTitle</span> <span class="o">=</span> <span class="s">"Hello </span><span class="se">\(</span><span class="k">self</span><span class="o">.</span><span class="n">userName</span><span class="se">)</span><span class="s">"</span>
+
+        <span class="n">controller</span><span class="o">.</span><span class="n">tapEvent</span> <span class="o">=</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Nice to meet you </span><span class="se">\(</span><span class="k">self</span><span class="o">.</span><span class="n">userName</span><span class="se">)</span><span class="s">!"</span><span class="p">)</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>The presenter is responsible for a ViewController of class StartViewController, adds some information to the buttonTitle,
+and some behaviour to the buttons tap event.</p>
+
+<p>Let&rsquo;s pretend that our presenter gets the information about the users name as a dependency from it&rsquo;s environment, we will 
+add that information later in the interactor/redux layer. </p>
+
+<p>To add the presenter to our application all we need to do is to extend our StartFeature with the new protocol <code><a href="Protocols/PresenterFeature.html">PresenterFeature</a></code></p>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">StartFeature</span><span class="p">:</span> <span class="kt">PresenterFeature</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">makePresenters</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">,</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Presenter</span><span class="p">]</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span><span class="kt">StartPresenter</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="s">"unknown guy"</span><span class="p">)]</span>
+    <span class="p">}</span>    
+<span class="p">}</span>
+</code></pre>
+
+<p>and remove the following disgusting line from our StartFeature (it should create components, adding some data is presenter work )</p>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">makeController</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">controller</span> <span class="o">=</span> <span class="kt">StartViewController</span><span class="p">()</span>
+    <span class="c1">// remove the following line, our feature shouldn't care about usernames ...</span>
+    <span class="c1">// controller.buttonTitle = "Hello unknown User!"</span>
+    <span class="k">return</span> <span class="n">controller</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Tapping the view button will now result in the debug output <q>Nice to meet you unknown guy!</q>, but wouldn&rsquo;t it be nicer to present an 
+alert message with this message?</p>
+
+<p>Challenge accepted ?</p>
+
+<p>Let&rsquo;s start with creating a new Feature creating a UIAlertController showing &hellip;</p>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MessageFeature</span><span class="p">:</span> <span class="kt">ViewFeature</span> <span class="p">{</span>
+
+    <span class="k">var</span> <span class="nv">routePattern</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"/message/:username"</span>
+    <span class="k">var</span> <span class="nv">priority</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+
+
+    <span class="kd">func</span> <span class="nf">makeController</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+
+        <span class="k">let</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="n">routeResult</span><span class="o">.</span><span class="n">parameters</span><span class="p">[</span><span class="s">"username"</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">String</span> <span class="p">??</span> <span class="s">"unknown"</span>
+
+        <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span>
+                                    <span class="nv">message</span><span class="p">:</span> <span class="s">"Nice to meet you </span><span class="se">\(</span><span class="n">username</span><span class="o">.</span><span class="n">removingPercentEncoding</span><span class="o">!</span><span class="se">)</span><span class="s">"</span><span class="p">,</span>
+                             <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+        <span class="n">alert</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Goodbye"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="n">cancel</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="kc">nil</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">alert</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">makeOption</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">RoutingOption</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">DefaultRoutingOptionModal</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                                         <span class="nv">presentationStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">popover</span><span class="p">)</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+</code></pre>
+
+<p>There is happening a lot here, so let&rsquo;s check what we have done &hellip;</p>
+
+<p>First have a look at the route pattern <code>/message/:username</code>, it is not a common matchable string.
+The <code>:username</code> defines a routing parameter called <code>&#39;username&#39;</code>. This route would be matched by any URL starting with 
+<code>/message/</code> with the second part being interpreted as the routing parameter <code>username</code>. 
+If your routing URL would be <code>URL(string: &#39;/message/Max%20Mustermann&#39;)</code> the routing parameter <code>&#39;username&#39;</code> would be 
+<code>&#39;Max Mustermann&#39;</code>. </p>
+
+<p>Second the <code>makeController(routeResult:)</code> function extracts the routing parameter <code>&#39;username&#39;</code> from it&rsquo;s RoutingResult.</p>
+
+<p>And at last, the <code>makeOption(routeResult:)</code> function creates a <code><a href="Structs/DefaultRoutingOptionModal.html">DefaultRoutingOptionModal</a></code>, which results in the wireframe 
+presenting the alert as an modal view controller with presentation style <code>.popover</code>.  </p>
+
+<p>After having realized all that, it is time to add the new feature in the <code>AppDelegate</code> to our <code><a href="Protocols/WireframeApp.html">WireframeApp</a></code>. </p>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="c1">//imagine visperApp is already initialized </span>
+
+        <span class="k">let</span> <span class="nv">messageFeature</span> <span class="o">=</span> <span class="kt">MessageFeature</span><span class="p">()</span>
+        <span class="k">try!</span> <span class="n">visperApp</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">feature</span><span class="p">:</span> <span class="n">messageFeature</span><span class="p">)</span>
+
+        <span class="c1">//followed by other stuff</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>And to modify our <code>StartPresenter</code> to use a <code>Wireframe</code> to route to the message feature.</p>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">StartPresenter</span><span class="p">:</span> <span class="kt">Presenter</span> <span class="p">{</span>
+
+    <span class="k">var</span> <span class="nv">userName</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">wireframe</span><span class="p">:</span> <span class="kt">Wireframe</span>
+
+    <span class="nf">init</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">wireframe</span><span class="p">:</span> <span class="kt">Wireframe</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">userName</span> <span class="o">=</span> <span class="n">userName</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">wireframe</span> <span class="o">=</span> <span class="n">wireframe</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">addPresentationLogic</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">,</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="k">throws</span> <span class="p">{</span>
+
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">controller</span> <span class="o">=</span> <span class="n">controller</span> <span class="k">as?</span> <span class="kt">StartViewController</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">fatalError</span><span class="p">(</span><span class="s">"needs a StartViewController"</span><span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="n">controller</span><span class="o">.</span><span class="n">buttonTitle</span> <span class="o">=</span> <span class="s">"Hello </span><span class="se">\(</span><span class="k">self</span><span class="o">.</span><span class="n">userName</span><span class="se">)</span><span class="s">"</span>
+
+        <span class="n">controller</span><span class="o">.</span><span class="n">tapEvent</span> <span class="o">=</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">in</span>
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">presenter</span> <span class="o">=</span> <span class="k">self</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+            <span class="k">let</span> <span class="nv">path</span> <span class="o">=</span> <span class="s">"/message/</span><span class="se">\(</span><span class="n">presenter</span><span class="o">.</span><span class="n">userName</span><span class="se">)</span><span class="s">"</span><span class="o">.</span><span class="nf">addingPercentEncoding</span><span class="p">(</span><span class="nv">withAllowedCharacters</span><span class="p">:</span> <span class="o">.</span><span class="n">urlPathAllowed</span><span class="p">)</span><span class="o">!</span>
+            <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span><span class="n">path</span><span class="p">)</span>
+            <span class="k">try!</span> <span class="n">presenter</span><span class="o">.</span><span class="n">wireframe</span><span class="o">.</span><span class="nf">route</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">url</span><span class="o">!</span><span class="p">)</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>The exiting stuff happens in the <code>tapEvent</code> closure.
+The presenter creates an <code>URL(string:&quot;/message/unknown%20guy&quot;)</code> and tells the wireframe 
+to route to this URL (if we pretend that username is still <code>&quot;unknown guy&quot;</code>).</p>
+
+<p>The wireframe matches the URL to the routePattern of our <code>MessageFeature</code>, asks it for creating the ViewController
+and presents it by interpreting the <code>RoutingOption</code> given by the <code>MessageFeature</code>.   </p>
+
+<p>And voila! An alert view greeting us is shown.</p>
+
+<p>Quite a lot stuff going on, just for an AlertViewController. 
+But it scales quite good with greater ViewControllers, 
+helping you to keep them simple, seperated and with an clean architecture keeping presentation and domain logic 
+out of the ViewController and on it&rsquo;s place.   </p>
+
+<p>Do you remember that our StartPresenter doesn&rsquo;t really know from where it should retrieve the username ?
+The reason for this problem that this example doesn&rsquo;t contain a real interactor layer.
+We will solve this problem by adding a <a href="#visper-redux">Redux</a> architecture to this example in the next chapter. </p>
+
+<p><strong>You can find the code for this tutorial in the Wireframe-Example in the VISPER.xcworkspace.</strong>  </p>
+<h3 id='adding-redux' class='heading'>Adding Redux</h3>
+
+<blockquote>
+<p><strong>SPOILER</strong>: You can use the code from the Wireframe-Example in the VISPER.xcworkspace as a starting point for this tutorial if 
+you didn&rsquo;t complete the last chapter. You have to replace the <q>Wireframe-Example</q> section in the Podfile of this 
+workspace with the following code to do that:</p>
+<pre class="highlight swift"><code><span class="n">target</span> <span class="err">'</span><span class="kt">VISPER</span><span class="o">-</span><span class="kt">Wireframe</span><span class="o">-</span><span class="kt">Example</span><span class="err">'</span> <span class="k">do</span>
+   <span class="n">pod</span> <span class="err">'</span><span class="kt">VISPER</span><span class="o">-</span><span class="kt">Wireframe</span><span class="err">'</span><span class="p">,</span> <span class="p">:</span><span class="n">path</span> <span class="o">=&gt;</span> <span class="err">'</span><span class="o">../</span><span class="err">'</span>
+   <span class="n">pod</span> <span class="err">'</span><span class="kt">VISPER</span><span class="o">-</span><span class="kt">Core</span><span class="err">'</span><span class="p">,</span> <span class="p">:</span><span class="n">path</span> <span class="o">=&gt;</span> <span class="err">'</span><span class="o">../</span><span class="err">'</span>
+   <span class="n">pod</span> <span class="err">'</span><span class="kt">VISPER</span><span class="o">-</span><span class="kt">UIViewController</span><span class="err">'</span><span class="p">,</span> <span class="p">:</span><span class="n">path</span> <span class="o">=&gt;</span> <span class="err">'</span><span class="o">../</span><span class="err">'</span>
+   <span class="n">pod</span> <span class="err">'</span><span class="kt">VISPER</span><span class="o">-</span><span class="kt">Objc</span><span class="err">'</span><span class="p">,</span> <span class="p">:</span><span class="n">path</span> <span class="o">=&gt;</span> <span class="err">'</span><span class="o">../</span><span class="err">'</span>
+   <span class="n">pod</span> <span class="err">'</span><span class="kt">VISPER</span><span class="err">'</span><span class="p">,</span> <span class="p">:</span><span class="n">path</span> <span class="o">=&gt;</span> <span class="err">'</span><span class="o">../</span><span class="err">'</span>
+<span class="n">end</span>   
+</code></pre>
+
+<p>run <code>pod install</code> after that.</p>
+</blockquote>
+
+<p>If Redux is a new concept to you, start with reading the two following articles.</p>
+
+<ul>
+<li><a href="https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207">A cartoon guide to Flux</a></li>
+<li><a href="https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6">A cartoon intro into Redux</a></li>
+</ul>
+
+<p>If you already know Redux but did not comprehend all of it&rsquo;s details think about reading them too :stuck_out_tongue:.</p>
+
+<p>After finishing that have a short look on the project from the last chapter and create two States.</p>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">UserState</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">userName</span><span class="p">:</span> <span class="kt">String</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">AppState</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">userState</span><span class="p">:</span> <span class="kt">UserState</span><span class="p">?</span>
+<span class="p">}</span>
+</code></pre>
+
+<blockquote>
+<p><strong>SPOILER</strong>: It&rsquo;s a not necessary but good practice to make your AppState conform to Equatable, since this makes the handling of state changes easier.</p>
+</blockquote>
+
+<p>The AppState should contain the full state of our app. 
+Since the state of an whole app can become quite complex, it is best practice to compose it of different 
+substates to conquer state complexity in a more locale manner.</p>
+
+<p>Although our state isn&rsquo;t really complex it&rsquo;s a good idea to start it this way, to demonstrate how state 
+composition could be done if it would be needed.</p>
+
+<p>The next step should be replacing our <a href="#app">WireframeApp</a> with an <a href="#app">AnyVISPERApp&lt;AppState&gt;</a>.
+This gives us an <code>Redux</code> object to manage our state changes. </p>
+
+<p>Start with creating a new method in your AppDelegate:</p>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">createApp</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">AnyVISPERApp</span><span class="o">&lt;</span><span class="kt">AppState</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="nf">fatalError</span><span class="p">(</span><span class="s">"not implemented"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>continue with creating an initial state used when the app is loaded:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">initalState</span><span class="p">:</span> <span class="kt">AppState</span> <span class="o">=</span> <span class="kt">AppState</span><span class="p">(</span><span class="nv">userState</span><span class="p">:</span> <span class="kt">UserState</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="s">"unknown stranger"</span><span class="p">))</span>
+</code></pre>
+
+<p>Now it&rsquo;s time to write some boilerplate code and write the <a href="#visper-redux">AppReducer</a>, a function responsible 
+for composing and reducing our AppState.       </p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">appReducer</span><span class="p">:</span> <span class="kt">AppReducer</span><span class="o">&lt;</span><span class="kt">AppState</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">reducerProvider</span><span class="p">:</span> <span class="kt">ReducerProvider</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">Action</span><span class="p">,</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">AppState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AppState</span> <span class="k">in</span>
+    <span class="k">let</span> <span class="nv">newState</span> <span class="o">=</span> <span class="kt">AppState</span><span class="p">(</span><span class="nv">userState</span><span class="p">:</span> <span class="n">reducerProvider</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="n">action</span><span class="p">,</span> <span class="nv">state</span><span class="p">:</span> <span class="n">state</span><span class="o">.</span><span class="n">userState</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">reducerProvider</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="n">action</span><span class="p">,</span> <span class="nv">state</span><span class="p">:</span> <span class="n">newState</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>It&rsquo;s structure is always the same, it creates a new AppState and reduces all substate with it&rsquo;s reducerProvider parameter.
+After that it reduces the newly created state itself with the reducer provider and returns the result.</p>
+
+<blockquote>
+<p><strong>SPOILER</strong>: We would love to do this programatically for you, but since a composed appstate is an generic struct 
+and there is no way to create such a struct dynamically we are just f***ed here. Our best guess is to generate the 
+AppReducer with <a href="https://github.com/krzysztofzablocki/Sourcery">Sourcery</a> you can find an tutorial to do that <a href="docs/README-VISPER-Sourcery.md">here</a>.</p>
+</blockquote>
+
+<p>Now create a <code>VISPERAppFactory&lt;AppState&gt;</code> create your app and return it.
+The complete <code>createApp()</code> function should now look like that.</p>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">createApp</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">AnyVISPERApp</span><span class="o">&lt;</span><span class="kt">AppState</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">initalState</span><span class="p">:</span> <span class="kt">AppState</span> <span class="o">=</span> <span class="kt">AppState</span><span class="p">(</span><span class="nv">userState</span><span class="p">:</span> <span class="kt">UserState</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="s">"unknown stranger"</span><span class="p">))</span>
+
+    <span class="k">let</span> <span class="nv">appReducer</span><span class="p">:</span> <span class="kt">AppReducer</span><span class="o">&lt;</span><span class="kt">AppState</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">reducerProvider</span><span class="p">:</span> <span class="kt">ReducerProvider</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">Action</span><span class="p">,</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">AppState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AppState</span> <span class="k">in</span>
+        <span class="k">let</span> <span class="nv">newState</span> <span class="o">=</span> <span class="kt">AppState</span><span class="p">(</span><span class="nv">userState</span><span class="p">:</span> <span class="n">reducerProvider</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="n">action</span><span class="p">,</span> <span class="nv">state</span><span class="p">:</span> <span class="n">state</span><span class="o">.</span><span class="n">userState</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">reducerProvider</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="n">action</span><span class="p">,</span> <span class="nv">state</span><span class="p">:</span> <span class="n">newState</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">let</span> <span class="nv">appFactory</span> <span class="o">=</span> <span class="kt">VISPERAppFactory</span><span class="o">&lt;</span><span class="kt">AppState</span><span class="o">&gt;</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">appFactory</span><span class="o">.</span><span class="nf">makeApplication</span><span class="p">(</span><span class="nv">initialState</span><span class="p">:</span> <span class="n">initalState</span><span class="p">,</span> <span class="nv">appReducer</span><span class="p">:</span> <span class="n">appReducer</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>As next step change the Type of your visperApp property to AnyVISPERApp<AppState> and 
+initialize it with your newly crafted <code>createApp()</code> function.</p>
+
+<p>Your <code>AppDelegate</code> should now look like that:</p>
+<pre class="highlight swift"><code><span class="kd">@UIApplicationMain</span>
+<span class="kd">class</span> <span class="kt">AppDelegate</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">UIApplicationDelegate</span> <span class="p">{</span>
+
+    <span class="k">var</span> <span class="nv">window</span><span class="p">:</span> <span class="kt">UIWindow</span><span class="p">?</span>
+    <span class="k">var</span> <span class="nv">visperApp</span><span class="p">:</span> <span class="kt">AnyVISPERApp</span><span class="o">&lt;</span><span class="kt">AppState</span><span class="o">&gt;!</span>
+
+    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+
+        <span class="k">let</span> <span class="nv">window</span> <span class="o">=</span> <span class="kt">UIWindow</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">UIScreen</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="n">window</span>
+
+        <span class="k">self</span><span class="o">.</span><span class="n">visperApp</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="nf">createApp</span><span class="p">()</span>
+
+        <span class="c1">//imagine you initialized your features here</span>
+
+        <span class="k">self</span><span class="o">.</span><span class="n">window</span><span class="p">?</span><span class="o">.</span><span class="nf">makeKeyAndVisible</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">true</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">createApp</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">AnyVISPERApp</span><span class="o">&lt;</span><span class="kt">AppState</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">initalState</span><span class="p">:</span> <span class="kt">AppState</span> <span class="o">=</span> <span class="kt">AppState</span><span class="p">(</span><span class="nv">userState</span><span class="p">:</span> <span class="kt">UserState</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="s">"unknown stranger"</span><span class="p">))</span>
+
+        <span class="k">let</span> <span class="nv">appReducer</span><span class="p">:</span> <span class="kt">AppReducer</span><span class="o">&lt;</span><span class="kt">AppState</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">reducerProvider</span><span class="p">:</span> <span class="kt">ReducerProvider</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">Action</span><span class="p">,</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">AppState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AppState</span> <span class="k">in</span>
+            <span class="k">let</span> <span class="nv">newState</span> <span class="o">=</span> <span class="kt">AppState</span><span class="p">(</span><span class="nv">userState</span><span class="p">:</span> <span class="n">reducerProvider</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="n">action</span><span class="p">,</span> <span class="nv">state</span><span class="p">:</span> <span class="n">state</span><span class="o">.</span><span class="n">userState</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">reducerProvider</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="n">action</span><span class="p">,</span> <span class="nv">state</span><span class="p">:</span> <span class="n">newState</span><span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="k">let</span> <span class="nv">appFactory</span> <span class="o">=</span> <span class="kt">VISPERAppFactory</span><span class="o">&lt;</span><span class="kt">AppState</span><span class="o">&gt;</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">appFactory</span><span class="o">.</span><span class="nf">makeApplication</span><span class="p">(</span><span class="nv">initialState</span><span class="p">:</span> <span class="n">initalState</span><span class="p">,</span> <span class="nv">appReducer</span><span class="p">:</span> <span class="n">appReducer</span><span class="p">)</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre>
+
+<p>Wow that was a lot stuff to get it running &hellip;</p>
+
+<p>It&rsquo;s getting better now :blush:. </p>
+
+<p>It&rsquo;s time to make you and our <code>StartPresenter</code> happy by giving him access to the state.</p>
+
+<p>We start that process with changing it&rsquo;s <code>userName</code> property type from <code>String</code> to <code>ObservableProperty&lt;String&gt;</code>.</p>
+
+<p>An ObservableProperty is a ValueWrapper that can notify you when it&rsquo;s value is changed.</p>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">StartPresenter</span><span class="p">:</span> <span class="kt">Presenter</span> <span class="p">{</span>
+
+    <span class="k">var</span> <span class="nv">userName</span><span class="p">:</span> <span class="kt">ObservableProperty</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span>
+    <span class="k">let</span> <span class="nv">wireframe</span><span class="p">:</span> <span class="kt">Wireframe</span>
+    <span class="k">var</span> <span class="nv">referenceBag</span> <span class="o">=</span> <span class="kt">SubscriptionReferenceBag</span><span class="p">()</span>
+
+    <span class="nf">init</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="kt">ObservableProperty</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">?</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">wireframe</span><span class="p">:</span> <span class="kt">Wireframe</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="c1">//map our AppState ObservableProperty from String? to String</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">userName</span> <span class="o">=</span> <span class="n">userName</span><span class="o">.</span><span class="nf">map</span><span class="p">({</span> <span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="k">in</span>
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"unknown person"</span><span class="p">}</span>
+            <span class="k">return</span> <span class="n">name</span>
+        <span class="p">})</span>
+
+        <span class="k">self</span><span class="o">.</span><span class="n">wireframe</span> <span class="o">=</span> <span class="n">wireframe</span>
+    <span class="p">}</span>
+
+    <span class="c1">// you already know the rest :P of it's implementation</span>
+    <span class="o">...</span>    
+<span class="p">}</span>
+</code></pre>
+
+<p>As you might notice we added another property of type <a href="#subscriptionreferencebag">SubscriptionReferenceBag</a>.
+We will use that to subscribe to the property and store that subscription as 
+long as the presenter exists (which should be as long as it&rsquo;s controller exists).
+Check the <a href="#subscriptionreferencebag">SubscriptionReferenceBag</a> section if you wanne know more about that.</p>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addPresentationLogic</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">,</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="k">throws</span> <span class="p">{</span>
+
+   <span class="k">guard</span> <span class="k">let</span> <span class="nv">controller</span> <span class="o">=</span> <span class="n">controller</span> <span class="k">as?</span> <span class="kt">StartViewController</span> <span class="k">else</span> <span class="p">{</span>
+       <span class="nf">fatalError</span><span class="p">(</span><span class="s">"needs a StartViewController"</span><span class="p">)</span>
+   <span class="p">}</span>
+
+   <span class="k">let</span> <span class="nv">subscription</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">userName</span><span class="o">.</span><span class="n">subscribe</span> <span class="p">{</span> <span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">in</span>
+               <span class="n">controller</span><span class="o">.</span><span class="n">buttonTitle</span> <span class="o">=</span> <span class="s">"Hello </span><span class="se">\(</span><span class="n">value</span><span class="se">)</span><span class="s">"</span>
+           <span class="p">}</span>
+   <span class="k">self</span><span class="o">.</span><span class="n">referenceBag</span><span class="o">.</span><span class="nf">addReference</span><span class="p">(</span><span class="nv">reference</span><span class="p">:</span> <span class="n">subscription</span><span class="p">)</span>
+
+   <span class="n">controller</span><span class="o">.</span><span class="n">tapEvent</span> <span class="o">=</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">in</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">presenter</span> <span class="o">=</span> <span class="k">self</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        <span class="k">let</span> <span class="nv">path</span> <span class="o">=</span> <span class="s">"/message/</span><span class="se">\(</span><span class="n">presenter</span><span class="o">.</span><span class="n">userName</span><span class="o">.</span><span class="n">value</span><span class="se">)</span><span class="s">"</span><span class="o">.</span><span class="nf">addingPercentEncoding</span><span class="p">(</span><span class="nv">withAllowedCharacters</span><span class="p">:</span> <span class="o">.</span><span class="n">urlPathAllowed</span><span class="p">)</span><span class="o">!</span>
+        <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">try!</span> <span class="n">presenter</span><span class="o">.</span><span class="n">wireframe</span><span class="o">.</span><span class="nf">route</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">url</span><span class="o">!</span><span class="p">)</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>As a result the buttons title will now be changed when the username has been changed.
+Since we changed the url path in <code>tapEvent</code> from <code>presenter.userName</code> to <code>presenter.userName.value</code>, even the MessageFeature behaves already
+correctly and uses the name from our appstate.    </p>
+
+<p>When you are trying to build your project now, you will get some errors, because the constructor of <code>StartPresenter</code> 
+changed. It want&rsquo;s to have `ObservableProperty<String?> parameter now.</p>
+
+<p>Let&rsquo;s change that by injecting such a property into the <code>StartFeature</code> and your <code>StartPresenter</code>.</p>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">StartFeature</span><span class="p">:</span> <span class="kt">ViewFeature</span> <span class="p">{</span>
+
+    <span class="k">let</span> <span class="nv">routePattern</span><span class="p">:</span> <span class="kt">String</span>
+
+    <span class="k">let</span> <span class="nv">priority</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">let</span> <span class="nv">wireframe</span><span class="p">:</span> <span class="kt">Wireframe</span>
+    <span class="k">let</span> <span class="nv">userName</span><span class="p">:</span> <span class="kt">ObservableProperty</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span>
+
+    <span class="nf">init</span><span class="p">(</span><span class="nv">routePattern</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">wireframe</span><span class="p">:</span> <span class="kt">Wireframe</span><span class="p">,</span><span class="nv">userName</span><span class="p">:</span> <span class="kt">ObservableProperty</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">){</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">routePattern</span> <span class="o">=</span> <span class="n">routePattern</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">wireframe</span> <span class="o">=</span> <span class="n">wireframe</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">userName</span> <span class="o">=</span> <span class="n">userName</span>
+    <span class="p">}</span>
+
+    <span class="c1">// imagine the ViewFeature functions here</span>
+<span class="p">}</span>
+
+
+<span class="kd">extension</span> <span class="kt">StartFeature</span><span class="p">:</span> <span class="kt">PresenterFeature</span> <span class="p">{</span>
+
+    <span class="kd">func</span> <span class="nf">makePresenters</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">,</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Presenter</span><span class="p">]</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span><span class="kt">StartPresenter</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">userName</span><span class="p">,</span> <span class="nv">wireframe</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">wireframe</span><span class="p">)]</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre>
+
+<p>We will use map to inject it to the <code>StartFeature</code> in your <code>AppDelegate</code>.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">startFeature</span> <span class="o">=</span> <span class="kt">StartFeature</span><span class="p">(</span><span class="nv">routePattern</span><span class="p">:</span> <span class="s">"/start"</span><span class="p">,</span>
+                                   <span class="nv">wireframe</span><span class="p">:</span> <span class="n">visperApp</span><span class="o">.</span><span class="n">wireframe</span><span class="p">,</span>
+                                    <span class="nv">userName</span><span class="p">:</span> <span class="n">visperApp</span><span class="o">.</span><span class="n">redux</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">observableState</span><span class="o">.</span><span class="nf">map</span><span class="p">({</span> <span class="k">return</span> <span class="nv">$0</span><span class="o">.</span><span class="n">userState</span><span class="o">.</span><span class="n">userName</span> <span class="p">??</span> <span class="s">"Unknown Person"</span><span class="p">}))</span>
+</code></pre>
+
+<p>Building the app now results in an running application using the appstate as it&rsquo;s reactive datasource.</p>
+
+<p>Well having a reactive datasource is quite boring if your state isn&rsquo;t changing.
+Time to introduce some state change.</p>
+
+<p>We are starting by adding an input field to our StartViewController:</p>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">StartViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">UITextFieldDelegate</span> <span class="p">{</span>
+
+    <span class="kd">typealias</span> <span class="kt">ButtonTap</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span>
+    <span class="kd">typealias</span> <span class="kt">NameChanged</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UITextField</span><span class="p">,</span> <span class="n">_</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span>
+
+    <span class="k">weak</span> <span class="k">var</span> <span class="nv">button</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span> <span class="p">{</span>
+        <span class="k">didSet</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">button</span><span class="p">?</span><span class="o">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">buttonTitle</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">weak</span> <span class="k">var</span> <span class="nv">nameField</span><span class="p">:</span> <span class="kt">UITextField</span><span class="p">?</span>
+
+    <span class="k">var</span> <span class="nv">buttonTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">didSet</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">button</span><span class="p">?</span><span class="o">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">buttonTitle</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">var</span> <span class="nv">tapEvent</span><span class="p">:</span> <span class="kt">ButtonTap</span><span class="p">?</span>
+    <span class="k">var</span> <span class="nv">nameChanged</span><span class="p">:</span> <span class="kt">NameChanged</span><span class="p">?</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">loadView</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">()</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">view</span>
+
+        <span class="k">let</span> <span class="nv">nameField</span> <span class="o">=</span> <span class="kt">UITextField</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="o">.</span><span class="n">null</span><span class="p">)</span>
+        <span class="n">nameField</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">nameField</span> <span class="o">=</span> <span class="n">nameField</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">navigationItem</span><span class="o">.</span><span class="n">titleView</span> <span class="o">=</span> <span class="n">nameField</span>
+        <span class="n">nameField</span><span class="o">.</span><span class="n">placeholder</span> <span class="o">=</span> <span class="s">"enter your username here"</span>
+        <span class="n">nameField</span><span class="o">.</span><span class="nf">addTarget</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kd">#selector(</span><span class="nf">textFieldChanged</span><span class="kd">)</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">editingChanged</span><span class="p">)</span>
+        <span class="n">nameField</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span>
+
+        <span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="kt">UIButton</span><span class="p">()</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">button</span> <span class="o">=</span> <span class="n">button</span>
+        <span class="n">button</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="n">button</span><span class="o">.</span><span class="nf">addTarget</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kd">#selector(</span><span class="nf">self.tapped(sender:)</span><span class="kd">)</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">touchUpInside</span><span class="p">)</span>
+
+        <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+
+        <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">activate</span><span class="p">([</span>
+            <span class="n">button</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">topAnchor</span><span class="p">),</span>
+            <span class="n">button</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">),</span>
+            <span class="n">button</span><span class="o">.</span><span class="n">leftAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">leftAnchor</span><span class="p">),</span>
+            <span class="n">button</span><span class="o">.</span><span class="n">rightAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">rightAnchor</span><span class="p">)</span>
+            <span class="p">])</span>
+
+    <span class="p">}</span>
+
+    <span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">tapped</span><span class="p">(</span><span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="nf">tapEvent</span><span class="p">?(</span><span class="n">sender</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">textFieldChanged</span><span class="p">(</span><span class="nv">textField</span><span class="p">:</span> <span class="kt">UITextField</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="nf">nameChanged</span><span class="p">?(</span><span class="n">textField</span><span class="p">,</span> <span class="n">textField</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre>
+
+<p>There&rsquo;s nothing magically happening here, it&rsquo;s just our plain old UIViewController with a button and an UITextField
+in it&rsquo;s title view. Now we wanne to change our appstate if you enter your username in the text field.
+Since our view should only care about viewing stuff and responding to userinput, triggering state change should be done in the presenter.</p>
+
+<p>The presenter triggers a state change by dispatching an <a href="#changing-state">Action</a> (a simple message object)  to an <a href="#changing-state">ActionDispatcher</a> (read more about it <a href="#changing-state">here</a>).
+So let&rsquo;s provide him with such a thing:</p>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">StartPresenter</span><span class="p">:</span> <span class="kt">Presenter</span> <span class="p">{</span>
+
+    <span class="c1">//</span>
+    <span class="c1">// imagine some old properties here ...</span>
+    <span class="c1">// </span>
+    <span class="k">let</span> <span class="nv">actionDipatcher</span><span class="p">:</span> <span class="kt">ActionDispatcher</span>
+
+
+    <span class="nf">init</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="kt">ObservableProperty</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">?</span><span class="o">&gt;</span><span class="p">,</span> 
+        <span class="nv">wireframe</span><span class="p">:</span> <span class="kt">Wireframe</span><span class="p">,</span> 
+  <span class="nv">actionDipatcher</span><span class="p">:</span> <span class="kt">ActionDispatcher</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="c1">//use map to translate from ObservableProperty&lt;String?&gt; to ObservableProperty&lt;String&gt;</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">userName</span> <span class="o">=</span> <span class="n">userName</span><span class="o">.</span><span class="nf">map</span><span class="p">({</span> <span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="k">in</span>
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"unknown person"</span><span class="p">}</span>
+            <span class="k">return</span> <span class="n">name</span>
+        <span class="p">})</span>
+
+        <span class="k">self</span><span class="o">.</span><span class="n">wireframe</span> <span class="o">=</span> <span class="n">wireframe</span>
+
+        <span class="c1">//this one is new</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">actionDipatcher</span> <span class="o">=</span> <span class="n">actionDipatcher</span>
+    <span class="p">}</span>
+
+    <span class="c1">//you already know the rest of our StartPresenter</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Since we now need an <a href="#changing-state">ActionDispatcher</a> to initialize the presenter, let&rsquo;s give it to our <code>StartFeature</code> too:</p>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">StartFeature</span><span class="p">:</span> <span class="kt">ViewFeature</span> <span class="p">{</span>
+
+    <span class="c1">//</span>
+    <span class="c1">// imagine some old properties here ...</span>
+    <span class="c1">// </span>
+    <span class="k">let</span> <span class="nv">actionDispatcher</span><span class="p">:</span> <span class="kt">ActionDispatcher</span>
+
+    <span class="nf">init</span><span class="p">(</span><span class="nv">routePattern</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> 
+            <span class="nv">wireframe</span><span class="p">:</span> <span class="kt">Wireframe</span><span class="p">,</span>
+     <span class="nv">actionDispatcher</span><span class="p">:</span> <span class="kt">ActionDispatcher</span><span class="p">,</span> 
+             <span class="nv">userName</span><span class="p">:</span> <span class="kt">ObservableProperty</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">?</span><span class="o">&gt;</span><span class="p">){</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">routePattern</span> <span class="o">=</span> <span class="n">routePattern</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">wireframe</span> <span class="o">=</span> <span class="n">wireframe</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">userName</span> <span class="o">=</span> <span class="n">userName</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">actionDispatcher</span> <span class="o">=</span> <span class="n">actionDispatcher</span>
+    <span class="p">}</span>
+
+    <span class="c1">//</span>
+    <span class="c1">// and the rest of it's implementation following here ...</span>
+    <span class="c1">// </span>
+<span class="p">}</span>
+
+<span class="kd">extension</span> <span class="kt">StartFeature</span><span class="p">:</span> <span class="kt">PresenterFeature</span> <span class="p">{</span>
+
+    <span class="kd">func</span> <span class="nf">makePresenters</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">,</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Presenter</span><span class="p">]</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span><span class="kt">StartPresenter</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">userName</span><span class="p">,</span> 
+                              <span class="nv">wireframe</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">wireframe</span><span class="p">,</span> 
+                        <span class="nv">actionDipatcher</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">actionDispatcher</span><span class="p">)]</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre>
+
+<p>and inject it in our AppDelegate</p>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+
+    <span class="c1">//</span>
+    <span class="c1">// some intialization before ...</span>
+    <span class="c1">//</span>
+
+    <span class="k">let</span> <span class="nv">startFeature</span> <span class="o">=</span> <span class="kt">StartFeature</span><span class="p">(</span><span class="nv">routePattern</span><span class="p">:</span> <span class="s">"/start"</span><span class="p">,</span>
+                                       <span class="nv">wireframe</span><span class="p">:</span> <span class="n">visperApp</span><span class="o">.</span><span class="n">wireframe</span><span class="p">,</span>
+                                <span class="nv">actionDispatcher</span><span class="p">:</span> <span class="n">visperApp</span><span class="o">.</span><span class="n">redux</span><span class="o">.</span><span class="n">actionDispatcher</span><span class="p">,</span>
+                                        <span class="nv">userName</span><span class="p">:</span> <span class="n">visperApp</span><span class="o">.</span><span class="n">redux</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">observableState</span><span class="o">.</span><span class="nf">map</span><span class="p">({</span> <span class="k">return</span> <span class="nv">$0</span><span class="o">.</span><span class="n">userState</span><span class="o">.</span><span class="n">userName</span> <span class="p">}))</span>
+    <span class="k">try!</span> <span class="n">visperApp</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">feature</span><span class="p">:</span> <span class="n">startFeature</span><span class="p">)</span>
+
+    <span class="c1">//</span>
+    <span class="c1">// some routing afterwards ...</span>
+    <span class="c1">//</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Now we need an Action to be dispatched by the <code>StartPresenter</code>:</p>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">ChangeUserNameAction</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>It&rsquo;s just a very simple struct &lsquo;carring&rsquo; (some people would say &lsquo;messaging&rsquo;) our username string to 
+the reducers changing the app state. </p>
+
+<p>Dispatching it in the presenter is easy:</p>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addPresentationLogic</span><span class="p">(</span><span class="nv">routeResult</span><span class="p">:</span> <span class="kt">RouteResult</span><span class="p">,</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="k">throws</span> <span class="p">{</span>
+
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">controller</span> <span class="o">=</span> <span class="n">controller</span> <span class="k">as?</span> <span class="kt">StartViewController</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nf">fatalError</span><span class="p">(</span><span class="s">"needs a StartViewController"</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1">//ignore the whole view observing stuff normally done here</span>
+
+    <span class="n">controller</span><span class="o">.</span><span class="n">nameChanged</span> <span class="o">=</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">](</span><span class="n">_</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span> <span class="k">in</span>
+        <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">actionDipatcher</span><span class="o">.</span><span class="nf">dispatch</span><span class="p">(</span><span class="kt">ChangeUserNameAction</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="n">text</span><span class="p">))</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>You can build your app now, but the appstate isn&rsquo;t changed if you enter your username. </p>
+
+<p>So what f*ck is that?</p>
+
+<p>Well, there&rsquo;s just no <a href="#reducer">Reducer</a> handling the change of the <code>UserState</code> (and as a result the AppState), 
+when receiving an <code>ChangeUserNameAction</code>.</p>
+
+<p>But there&rsquo;s hope, building such a thing is easy (it can even be generated by <a href="docs/README-VISPER-Sourcery.md">Sourcery</a>):</p>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">ChangeUserNameReducer</span><span class="p">:</span> <span class="kt">ActionReducerType</span> <span class="p">{</span>
+
+    <span class="kd">typealias</span> <span class="kt">ReducerStateType</span> <span class="o">=</span> <span class="kt">UserState</span>
+    <span class="kd">typealias</span> <span class="kt">ReducerActionType</span> <span class="o">=</span> <span class="kt">ChangeUserNameAction</span>
+
+    <span class="kd">func</span> <span class="nf">reduce</span><span class="p">(</span><span class="nv">provider</span><span class="p">:</span> <span class="kt">ReducerProvider</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">ChangeUserNameAction</span><span class="p">,</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">UserState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UserState</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">UserState</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="n">action</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>after adding it in your StartFeature, it&rsquo;s done:</p>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">StartFeature</span><span class="p">:</span> <span class="kt">LogicFeature</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">injectReducers</span><span class="p">(</span><span class="nv">container</span><span class="p">:</span> <span class="kt">ReducerContainer</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">container</span><span class="o">.</span><span class="nf">addReducer</span><span class="p">(</span><span class="nv">reducer</span><span class="p">:</span> <span class="kt">ChangeUserNameReducer</span><span class="p">())</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Starting your app should now result in an reactive app changing the title of your button while 
+you are entering your username. </p>
+
+<p><strong>You can find the code for this tutorial in the VISPER-Swift-Example in the VISPER.xcworkspace.</strong></p>
+<h2 id='components' class='heading'>Components</h2>
 <h3 id='app' class='heading'>App</h3>
 
 <p>The core component of your VISPER application is an instance of the <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/App.html">App</a>
@@ -353,18 +1234,23 @@ configures all VISPER components used by it.</p>
 
 <p>Many VISPER Components implement their own subtypes of <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/App.html">App</a>, <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols.html#/s:11VISPER_Core7FeatureP">Feature</a> and <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/FeatureObserver.html">FeatureObserver</a>.</p>
 
+<p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/index.html">VISPER-Wireframe</a> provides you with: </p>
+
 <ul>
-<li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/index.html">VISPER-Wireframe</a> provides you with:</li>
 <li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html">WireframeApp</a></li>
 <li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/ViewFeature.html">ViewFeature</a></li>
 <li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/PresenterFeature.html">PresenterFeature</a></li>
 <li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeFeatureObserver.html">WireframeFeatureObserver</a></li>
 <li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/ViewFeatureObserver.html">ViewFeatureObserver</a></li>
-<li><p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/PresenterFeatureObserver.html">PresenterFeatureObserver</a>.</p></li>
-<li><p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html">VISPER-Redux</a> provides you with: </p></li>
-<li><p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ReduxApp.html">ReduxApp</a> </p></li>
-<li><p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/LogicFeature.html">LogicFeature</a> </p></li>
-<li><p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Structs/LogicFeatureObserver.html">LogicFeatureObserver</a>.</p></li>
+<li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Structs/PresenterFeatureObserver.html">PresenterFeatureObserver</a>.</li>
+</ul>
+
+<p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html">VISPER-Redux</a> provides you with: </p>
+
+<ul>
+<li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ReduxApp.html">ReduxApp</a></li>
+<li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/LogicFeature.html">LogicFeature</a></li>
+<li><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Structs/LogicFeatureObserver.html">LogicFeatureObserver</a>.</li>
 </ul>
 
 <p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Swift/index.html">VISPER-Swift</a> provides you with a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Swift/Classes/VISPERApp.html">VISPERApp</a> which combines all characteristics of a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html">WireframeApp</a> and a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protocols/ReduxApp.html">ReduxApp</a> and is used in the most Apps build with the VISPER-Framework.</p>
@@ -422,6 +1308,9 @@ It is used to create controllers and to route from one controller to an other. I
 </code></pre>
 
 <p><a href="docs/Wireframe-Example.md">Here ist a full example using VISPER with a wireframe</a></p>
+<h3 id='routepatterns' class='heading'>Routepatterns</h3>
+
+<p>Has to be documented have a look at <a href="https://github.com/joeldev/JLRoutes">JLRoutes</a> definition of RoutePatterns (we stole the idea from them some time ago).</p>
 <h3 id='visper-redux' class='heading'>VISPER-Redux</h3>
 
 <p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html">VISPER-Redux</a> is an implementation of the redux-architecture in swift. </p>
@@ -625,6 +1514,9 @@ or <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/Protoco
 <p><a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Redux/index.html">VISPER-Redux</a> contains a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Reactive/Classes/ObservableProperty.html">ObservableProperty<AppState></a> to represent the changing AppState.
 <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Reactive/Classes/ObservableProperty.html">ObservableProperty</a> allows you to subscribe for state changes, and can be mapped to a RxSwift-Observable. 
 It is implemented in the <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Reactive/Classes/ObservableProperty.html">VISPER-Reactive</a> Component.</p>
+<h4 id='subscriptionreferencebag' class='heading'>SubscriptionReferenceBag</h4>
+
+<p>needs to be documented</p>
 
 <hr>
 <h2 id='complete-list-of-all-available-visper-components' class='heading'>Complete list of all available VISPER-Components</h2>
@@ -646,7 +1538,7 @@ It is implemented in the <a href="https://rawgit.com/barteljan/VISPER/master/doc
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/barteljan/VISPER" target="_blank" rel="external">Jan Bartel</a>. All rights reserved. (Last updated: 2018-11-23)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/barteljan/VISPER" target="_blank" rel="external">Jan Bartel</a>. All rights reserved. (Last updated: 2018-12-04)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

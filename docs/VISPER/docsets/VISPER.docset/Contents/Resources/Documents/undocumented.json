@@ -3509,42 +3509,42 @@
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/DeprecatedVISPERFeatureObserver.swift",
-      "line": 12,
+      "line": 13,
       "symbol": "DeprecatedVISPERFeatureObserver",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/DeprecatedVISPERFeatureObserver.swift",
-      "line": 12,
+      "line": 13,
       "symbol": "DeprecatedVISPERFeatureObserver",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/DeprecatedVISPERFeatureObserver.swift",
-      "line": 19,
+      "line": 18,
       "symbol": "DeprecatedVISPERFeatureObserver.init(wireframe:commandBus:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/DeprecatedVISPERFeatureObserver.swift",
-      "line": 19,
+      "line": 18,
       "symbol": "DeprecatedVISPERFeatureObserver.init(wireframe:commandBus:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/DeprecatedVISPERFeatureObserver.swift",
-      "line": 24,
+      "line": 23,
       "symbol": "DeprecatedVISPERFeatureObserver.featureAdded(application:feature:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/DeprecatedVISPERFeatureObserver.swift",
-      "line": 24,
+      "line": 23,
       "symbol": "DeprecatedVISPERFeatureObserver.featureAdded(application:feature:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -3561,6 +3561,20 @@
       "line": 16,
       "symbol": "VISPERApplication",
       "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
+      "line": 22,
+      "symbol": "VISPERApplication.application",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
+      "line": 22,
+      "symbol": "VISPERApplication.application",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
