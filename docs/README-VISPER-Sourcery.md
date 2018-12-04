@@ -8,9 +8,41 @@ VISPER is a component based library, which helps you to develop modular apps bas
 [![License](https://img.shields.io/cocoapods/l/VISPER.svg?style=flat)](http://cocoapods.org/pods/VISPER)
 [![Platform](https://img.shields.io/cocoapods/p/VISPER.svg?style=flat)](http://cocoapods.org/pods/VISPER)
 
-# Introduction
+## Getting started 
 
-Visper-Sourcery uses the Sourcery-Commandline-Tool to generate Source Code that follows a certain pattern so that automating is possible. Existing classes/structs/enums can be modified (inLine). Extensions or even classes/structs/enums can be auto-created. An example suited for introduction might be the generation of `LogicFeature` with the `AutoReducer` marker protocol.
+### Adding VISPER-Sourcery to your project
+
+**Hier eklärst du einmal wie man sein Projekt einrichten muss um VISPER-Sourcery zu verwenden, wichtig ist hier das run-script und wie man es eventuell anpassen kann. Für alle die Sourcery noch nicht kennen verweist du auf deine Einführung unten.**
+
+### WithAutoInitializer - Generating a default initializer for a struct
+
+**Hier erklärst du einmal konkret an einem Beispiel wie man WithAutoInitializer implementiert was er erzeugt und wo man es findet am besten du beginnst damit das Ziel zu Beschreiben (Ich habe ein struct und möchte das sein Konstruktor automatisch generiert wird).**
+
+## What else can be automated by VISPER-Sourcery? 
+
+### WithAutoGeneralInitializer - Convinience Initializers for property changes of a struct
+
+**Hier erklärst du einmal konkret wie man WithAutoGeneralInitializer implementiert was er erzeugt und wo man es findet am besten du beginnst damit das Ziel zu beschreiben.**
+
+classes that conform to WithAutoGeneralInitializer marker protocol will get an extension with initializers. One initializer that create new Instances of their type with other instances of their type as argument. But there will be initializers that take one instance of their type but change one property.
+
+### AutoAppReducer - AutoGenerating an AppReducer and an ApplicationFactory for a specific state 
+
+**Hier erklärst du einmal konkret wie man AutoAppReducer implementiert was er erzeugt und wo man es findet am besten du beginnst damit das Ziel zu beschreiben.**
+
+Generates an `ApplicationFactory` for any class that implements the `AutoAppReducer` marker protocol. This is usually implemented by the `AppState` and contains the (sub)states of the app. For every (sub)state the code for creating and adding a feature observer is auto generated.
+
+### AutoReducer - Auto genereating convinience reducers for changing a property of an specific state.
+
+**Hier erklärst du einmal konkret wie man AutoReducer implementiert was er erzeugt und wo man es findet am besten du beginnst damit das Ziel zu beschreiben.**
+
+Autocreates Action and Reducer for any type that implements `AutoReducer`
+
+# A short introduction how VISPER-Sourcery works
+
+VISPER-Sourcery uses the Sourcery-Commandline-Tool to generate Source Code that follows a certain pattern so that automating is possible. Existing classes/structs/enums can be modified (inLine). Extensions or even classes/structs/enums can be auto-created. If you don't know how sourcery works have a look at the following example or dive into it's own documentation [documentation](https://github.com/krzysztofzablocki/Sourcery).
+
+An example suited for introduction might be the generation of `LogicFeature` with the `AutoReducer` marker protocol.
 
 The following class was generated with the help of VISPER-Sourcery:
 
@@ -91,22 +123,6 @@ The other methods were generated accordingly - same stencil file, but conformanc
 This is how marker Protocols work with templates in VISPER-Sourcery in general. The explanation was more detailed, the next explanations be less detailed.
 
 VISPER-Sourcery uses the Stencil-Template-Engine, a more detailed and general explanation can be found [here](http://stencil.fuller.li/en/latest/templates.html "Stencil by Kyle Fuller")
-
-## Stencil-Templates used by VISPER
-
-### WithAutoGeneralInitializer
-
-classes that conform to WithAutoGeneralInitializer marker protocol will get an extension with initializers. One initializer that create new Instances of their type with other instances of their type as argument. But there will be initializers that take one instance of their type but change one property.
-
-### ApplicationFactory
-
-Generates an `ApplicationFactory` for any class that implements the `AutoAppReducer` marker protocol. This is usually implemented by the `AppState` and contains the (sub)states of the app. For every (sub)state the code for creating and adding a feature observer is auto generated.
-
-### AutoReducer
-
-Autocreates Action and Reducer for any type that implements `AutoReducer`
-
-
 
 ---------------------------------------------------------------------------------------------------------
 
