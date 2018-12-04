@@ -1,5 +1,7 @@
 #!/bin/bash
 jazzy --config ./VISPER/.jazzy.yaml
+mkdir -p ./docs/VISPER/docs/img
+cp -R ./docs/img/* ./docs/VISPER/docs/img/
 jazzy --config ./VISPER-Core/.jazzy.yaml
 jazzy --config ./VISPER-Entity/.jazzy.yaml
 jazzy --config ./VISPER-Objc/.jazzy.yaml

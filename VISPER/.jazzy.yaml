@@ -1,7 +1,7 @@
 ---
 min_acl: public
 github_url: https://github.com/barteljan/VISPER.git
-readme: ../docs/README-Deprecated.md
+readme: ../README.md
 author: Jan Bartel
 clean:
 sdk: iphonesimulator
