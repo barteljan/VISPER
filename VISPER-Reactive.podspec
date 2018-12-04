@@ -15,7 +15,7 @@ Base implementation of reactive properties for the VISPER Framework.
   s.social_media_url = 'https://twitter.com/barteljan'
 
   s.ios.deployment_target = '8.0'
-  s.swift_version = '4.0'
+  s.swift_version = "4.0"
 
   s.default_subspec = 'Standard'
 
