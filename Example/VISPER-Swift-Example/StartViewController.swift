@@ -39,6 +39,7 @@ class StartViewController: UIViewController, UITextFieldDelegate {
         self.view = view
         
         let nameField = UITextField(frame: .null)
+        nameField.translatesAutoresizingMaskIntoConstraints = false
         self.nameField = nameField
         self.navigationItem.titleView = nameField
         nameField.placeholder = "enter your username here"

@@ -654,9 +654,15 @@ class StartPresenter: Presenter {
     var userName: ObservableProperty<String>
     let wireframe: Wireframe
     var referenceBag = SubscriptionReferenceBag()
-    
-    init(userName: ObservableProperty<String>, wireframe: Wireframe) {
-        self.userName = userName
+
+    init(userName: ObservableProperty<String?>, wireframe: Wireframe) {
+        
+        //map our AppState ObservableProperty from String? to String
+        self.userName = userName.map({ (name) -> String in
+            guard let name = name, name.count > 0 else { return "unknown person"}
+            return name
+        })
+        
         self.wireframe = wireframe
     }
 
@@ -673,28 +679,21 @@ Check the [SubscriptionReferenceBag](#subscriptionreferencebag) section if you w
 ```swift
 func addPresentationLogic(routeResult: RouteResult, controller: UIViewController) throws {
     
-    guard let controller = controller as? StartViewController else {
-        fatalError("needs a StartViewController")
-    }
+   guard let controller = controller as? StartViewController else {
+       fatalError("needs a StartViewController")
+   }
     
-    let subscription = self.userName.map({ (name) -> String in
-                                            guard let name = name, name.count > 0 else { return "unknown person"}
-                                            return name
-                                        })
-                                        .subscribe { (value) in
-                                            controller.buttonTitle = "Hello \(value)"
-                                        }
-            
-    self.referenceBag.addReference(reference: subscription)
+   let subscription = self.userName.subscribe { (value) in
+               controller.buttonTitle = "Hello \(value)"
+           }
+   self.referenceBag.addReference(reference: subscription)
     
-    controller.tapEvent = { [weak self] (_) in
+   controller.tapEvent = { [weak self] (_) in
         guard let presenter = self else { return }
-        guard let name = presenter.userName.value, name.count > 0 else { return }
-        let path = "/message/\(name)".addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
+        let path = "/message/\(presenter.userName.value)".addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
         let url = URL(string:path)
         try! presenter.wireframe.route(url: url!)
-    }
-    
+   }
 }
 ```
 
@@ -703,7 +702,7 @@ Since we changed the url path in `tapEvent` from `presenter.userName` to `presen
 correctly and uses the name from our appstate.    
 
 When you are trying to build your project now, you will get some errors, because the constructor of `StartPresenter` 
-changed. It want's to have `ObservableProperty<String> parameter now.
+changed. It want's to have `ObservableProperty<String?> parameter now.
 
 Let's change that by injecting such a property into the `StartFeature` and your `StartPresenter`.
 
@@ -744,6 +743,231 @@ let startFeature = StartFeature(routePattern: "/start",
 ```
  
 Building the app now results in an running application using the appstate as it's reactive datasource.
+
+Well having a reactive datasource is quite boring if your state isn't changing.
+Time to introduce some state change.
+
+We are starting by adding an input field to our StartViewController:
+
+```swift 
+class StartViewController: UIViewController, UITextFieldDelegate {
+    
+    typealias ButtonTap = (_ sender: UIButton) -> Void
+    typealias NameChanged = (_ sender: UITextField, _ username: String?) -> Void
+    
+    weak var button: UIButton! {
+        didSet {
+            self.button?.setTitle(self.buttonTitle, for: .normal)
+        }
+    }
+    
+    weak var nameField: UITextField?
+    
+    var buttonTitle: String? {
+        didSet {
+            self.button?.setTitle(self.buttonTitle, for: .normal)
+        }
+    }
+
+    var tapEvent: ButtonTap?
+    var nameChanged: NameChanged?
+    
+    override func loadView() {
+        
+        let view = UIView()
+        self.view = view
+        
+        let nameField = UITextField(frame: .null)
+        nameField.translatesAutoresizingMaskIntoConstraints = false
+        self.nameField = nameField
+        self.navigationItem.titleView = nameField
+        nameField.placeholder = "enter your username here"
+        nameField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        nameField.backgroundColor = .white
+        
+        let button = UIButton()
+        self.button = button
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(self.tapped(sender:)), for: .touchUpInside)
+        
+        self.view.addSubview(button)
+        
+        NSLayoutConstraint.activate([
+            button.topAnchor.constraint(equalTo: self.view.topAnchor),
+            button.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            button.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            button.rightAnchor.constraint(equalTo: self.view.rightAnchor)
+            ])
+     
+    }
+    
+    @objc func tapped(sender: UIButton) {
+        self.tapEvent?(sender)
+    }
+    
+    @objc func textFieldChanged(textField: UITextField) {
+        self.nameChanged?(textField, textField.text)
+    }
+    
+}
+```
+
+There's nothing magically happening here, it's just our plain old UIViewController with a button and an UITextField
+in it's title view. Now we wanne to change our appstate if you enter your username in the text field.
+Since our view should only care about viewing stuff and responding to userinput, triggering state change should be done in the presenter.
+
+The presenter triggers a state change by dispatching an [Action](#changing-state) (a simple message object)  to an [ActionDispatcher](#changing-state) (read more about it [here](#changing-state)).
+So let's provide him with such a thing:
+
+```swift
+class StartPresenter: Presenter {
+    
+    //
+    // imagine some old properties here ...
+    // 
+    let actionDipatcher: ActionDispatcher
+    
+
+    init(userName: ObservableProperty<String?>, 
+        wireframe: Wireframe, 
+  actionDipatcher: ActionDispatcher) {
+        
+        //use map to translate from ObservableProperty<String?> to ObservableProperty<String>
+        self.userName = userName.map({ (name) -> String in
+            guard let name = name, name.count > 0 else { return "unknown person"}
+            return name
+        })
+        
+        self.wireframe = wireframe
+        
+        //this one is new
+        self.actionDipatcher = actionDipatcher
+    }
+    
+    //you already know the rest of our StartPresenter
+}
+```  
+
+Since we now need an [ActionDispatcher](#changing-state) to initialize the presenter, let's give it to our `StartFeature` too:
+
+```swift
+class StartFeature: ViewFeature {
+    
+    //
+    // imagine some old properties here ...
+    // 
+    let actionDispatcher: ActionDispatcher
+    
+    init(routePattern: String, 
+            wireframe: Wireframe,
+     actionDispatcher: ActionDispatcher, 
+             userName: ObservableProperty<String?>){
+        self.routePattern = routePattern
+        self.wireframe = wireframe
+        self.userName = userName
+        self.actionDispatcher = actionDispatcher
+    }
+    
+    //
+    // and the rest of it's implementation following here ...
+    // 
+}
+
+extension StartFeature: PresenterFeature {
+    
+    func makePresenters(routeResult: RouteResult, controller: UIViewController) throws -> [Presenter] {
+        return [StartPresenter(userName: self.userName, 
+                              wireframe: self.wireframe, 
+                        actionDipatcher: self.actionDispatcher)]
+    }
+    
+}
+```   
+
+and inject it in our AppDelegate
+
+````swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    
+    //
+    // some intialization before ...
+    //
+       
+    let startFeature = StartFeature(routePattern: "/start",
+                                       wireframe: visperApp.wireframe,
+                                actionDispatcher: visperApp.redux.actionDispatcher,
+                                        userName: visperApp.redux.store.observableState.map({ return $0.userState.userName }))
+    try! visperApp.add(feature: startFeature)
+    
+    //
+    // some routing afterwards ...
+    //
+}
+````
+
+Now we need an Action to be dispatched by the `StartPresenter`:
+
+```swift
+struct ChangeUserNameAction: Action {
+    let username: String?
+}
+```
+
+It's just a very simple struct 'carring' (some people would say 'messaging') our username string to 
+the reducers changing the app state. 
+
+Dispatching it in the presenter is easy:
+
+```swift
+func addPresentationLogic(routeResult: RouteResult, controller: UIViewController) throws {
+    
+    guard let controller = controller as? StartViewController else {
+        fatalError("needs a StartViewController")
+    }
+    
+    //ignore the whole view observing stuff normally done here
+    
+    controller.nameChanged = { [weak self](_, text) in
+        self?.actionDipatcher.dispatch(ChangeUserNameAction(username: text))
+    }
+}
+```
+
+You can build your app now, but the appstate isn't changed if you enter your username. 
+
+So what f*ck is that?
+
+Well, there's just no [Reducer](#reducer) handling the change of the `UserState` (and as a result the AppState), 
+when receiving an `ChangeUserNameAction`.
+
+But there's hope, building such a thing is easy (it can even be generated by [Sourcery](docs/README-VISPER-Sourcery.md)):
+
+
+```swift
+struct ChangeUserNameReducer: ActionReducerType {
+
+    typealias ReducerStateType = UserState
+    typealias ReducerActionType = ChangeUserNameAction
+    
+    func reduce(provider: ReducerProvider, action: ChangeUserNameAction, state: UserState) -> UserState {
+        return UserState(userName: action.username)
+    }
+}
+```
+
+after adding it in your StartFeature, it's done:
+
+```swift
+extension StartFeature: LogicFeature {
+    func injectReducers(container: ReducerContainer) {
+        container.addReducer(reducer: ChangeUserNameReducer())
+    }
+}
+```
+
+Starting your app should now result in an reactive app changing the title of your button while 
+you are entering your username. 
+
 
 ## Components
 

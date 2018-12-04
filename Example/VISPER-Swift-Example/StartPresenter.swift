@@ -11,13 +11,18 @@ import VISPER_Swift
 
 class StartPresenter: Presenter {
     
-    var userName: ObservableProperty<String?>
+    var userName: ObservableProperty<String>
     let wireframe: Wireframe
     let actionDipatcher: ActionDispatcher
     var referenceBag = SubscriptionReferenceBag()
 
     init(userName: ObservableProperty<String?>, wireframe: Wireframe, actionDipatcher: ActionDispatcher) {
-        self.userName = userName
+        
+        self.userName = userName.map({ (name) -> String in
+            guard let name = name, name.count > 0 else { return "unknown person"}
+            return name
+        })
+        
         self.wireframe = wireframe
         self.actionDipatcher = actionDipatcher
     }
@@ -32,19 +37,14 @@ class StartPresenter: Presenter {
             fatalError("needs a StartViewController")
         }
         
-        let subscription = self.userName.map({ (name) -> String in
-                                            guard let name = name, name.count > 0 else { return "unknown person"}
-                                            return name
-                                        })
-                                        .subscribe { (value) in
-                                            controller.buttonTitle = "Hello \(value)"
-                                        }
+        let subscription = self.userName.subscribe { (value) in
+            controller.buttonTitle = "Hello \(value)"
+        }
         self.referenceBag.addReference(reference: subscription)
         
         controller.tapEvent = { [weak self] (_) in
             guard let presenter = self else { return }
-            guard let name = presenter.userName.value, name.count > 0 else { return }
-            let path = "/message/\(name)".addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
+            let path = "/message/\(presenter.userName.value)".addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
             let url = URL(string:path)
             try! presenter.wireframe.route(url: url!)
         }
