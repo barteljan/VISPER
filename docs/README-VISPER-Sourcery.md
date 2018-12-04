@@ -2,7 +2,7 @@
 
 VISPER is a component based library, which helps you to develop modular apps based on the VIPER Pattern.
 
- VISPER-Sourcery is a component supports createing a VISPER application by creating the nessecary boilerplate code for you.
+ VISPER-Sourcery supports you creating a VISPER application by creating the nessecary boilerplate code for you.
 
 [![Version](https://img.shields.io/cocoapods/v/VISPER.svg?style=flat)](http://cocoapods.org/pods/VISPER)
 [![License](https://img.shields.io/cocoapods/l/VISPER.svg?style=flat)](http://cocoapods.org/pods/VISPER)
