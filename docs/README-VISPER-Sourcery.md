@@ -8,6 +8,106 @@ VISPER is a component based library, which helps you to develop modular apps bas
 [![License](https://img.shields.io/cocoapods/l/VISPER.svg?style=flat)](http://cocoapods.org/pods/VISPER)
 [![Platform](https://img.shields.io/cocoapods/p/VISPER.svg?style=flat)](http://cocoapods.org/pods/VISPER)
 
+# Introduction
+
+Visper-Sourcery uses the Sourcery-Commandline-Tool to generate Source Code that follows a certain pattern so that automating is possible. Existing classes/structs/enums can be modified (inLine). Extensions or even classes/structs/enums can be auto-created. An example suited for introduction might be the generation of `LocgicFeature` with the `AutoReducer` marker protocol.
+
+The following class was generated with the help of VISPER-Sourcery:
+
+```swift
+class AutoReducerFeature: LogicFeature {
+    func injectReducers(container: ReducerContainer) {
+        // AppState
+        container.addReducer(reducer: AppStateSetStylestateReducer())
+        container.addReducer(reducer: AppStateSetUserstateReducer())
+        // StyleState
+        container.addReducer(reducer: StyleStateSetBackgroundcolorReducer())
+        container.addReducer(reducer: StyleStateSetFontcolorReducer())
+        // UserState
+        container.addReducer(reducer: UserStateSetFirstnameReducer())
+        container.addReducer(reducer: UserStateSetLastnameReducer())
+        container.addReducer(reducer: UserStateSetUsernameReducer())
+        container.addReducer(reducer: UserStateSetEmailReducer())
+    }
+}
+```
+
+ To have something generated, you need a template, a marker protocol and something that conforms to the marker protocol. There is another way to have code generated inLine with comments but more on that later.
+ `AutoReducer`  is a so called marker protocol. It is some sort of trick to mark a struct or class, in fact the protocols are empty.  
+
+```swift
+import Foundation
+public protocol AutoReducer{}
+```
+
+struct that "conforms" to AutoReducer:   
+
+```swift
+import Foundation
+import VISPER_Sourcery
+
+struct StyleState: AutoReducer, Equatable {
+    let backgroundColor: UIColor
+    let fontColor: UIColor
+}
+```
+
+The struct StyleState conforms to an empty protocol which is syntactically correct but senseless to the compiler. But it is not senseless to sourcery. Sourcery is a command line tool that can identify classes/strucs/enums by their marker protocol(s) and modifies or generates code by evaluating template files. Or as mentioned before: sourcery can add generated code inLine when special comments are used as well, but more on that later.
+
+Hint: marker protocols in production will be mostly added like this:
+
+```swift 
+extension SomeClass: SomeMarkerProtocol {}
+```
+
+Let's have a look at a stencil file that comes with VISPER-Sourcery,  AutoReducerFeature.stencil:
+
+```stencil
+import VISPER_Swift
+import VISPER_Redux
+//
+//
+// Feature to add all auto generated reducers
+//
+//
+class AutoReducerFeature: LogicFeature {
+    func injectReducers(container: ReducerContainer) {
+        {% for type in types.implementing.AutoReducer %}
+            // {{type.name}}
+            {% for property in type.storedVariables|!annotated:"skipAutoStateInitializers" %}
+                container.addReducer(reducer: {{type.name}}Set{{property.name|capitalize}}Reducer())
+            {% endfor %}
+        {% endfor %}
+    }
+}
+```
+
+As you can see, there is a for loop that iterates over `types.implementing.AutoReducer` and a for loop iterating over `type.storedVariables`. Any type that "implements" the AutoReducer marker protocol is found by sourcery and the correspoding template(s) are processed. In this case there will as much addReducer(reducer:_)-methods added as properties are found per Type that conform to `AutoReducer`.
+
+the methods  `container.addReducer(reducer: StyleStateSetFontcolorReducer())` and  `container.addReducer(reducer: StyleStateSetBackgroundcolorReducer())` were added, because StyleState conforms to the marker protocol `AutoReducer` and has the members `let backgroundColor: UIColor` and `let fontColor: UIColor`.
+
+The other methods were generated accordingly - same stencil file, but conformance to the marker protocol in a struct somewhere else.
+
+This is how marker Protocols work with templates in VISPER-Sourcery in general. The explanation was more detailed, the next explanations be less detailed.
+
+VISPER-Sourcery uses the Stencil-Template-Engine, a more detailed and general explanation can be found [here](http://stencil.fuller.li/en/latest/templates.html "Stencil by Kyle Fuller")
+
+## Stencil-Templates used by VISPER
+
+### WithAutoGeneralInitializer
+
+classes that conform to WithAutoGeneralInitializer marker protocol will get an extension with initializers. One initializer that create new Instances of their type with other instances of their type as argument. But there will be initializers that take one instance of their type but change one property.
+
+### ApplicationFactory
+
+Generates an `ApplicationFactory` for any class that implements the `AutoAppReducer` marker protocol. This is usually implemented by the `AppState` and contains the (sub)states of the app. For every (sub)state the code for creating and adding a feature observer is auto generated.
+
+### AutoReducer
+
+Autocreates Action and Reducer for any type that implements `AutoReducer`
+
+
+
 ---------------------------------------------------------------------------------------------------------
 
 ## Currently available VISPER-Components
