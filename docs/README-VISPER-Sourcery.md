@@ -2,7 +2,7 @@
 
 VISPER is a component based library, which helps you to develop modular apps based on the VIPER Pattern.
 
- VISPER-Sourcery is a component supporting you to create a VISPER application by creating some nessecary boilerplate code for you.
+ VISPER-Sourcery is a component supports createing a VISPER application by creating the nessecary boilerplate code for you.
 
 [![Version](https://img.shields.io/cocoapods/v/VISPER.svg?style=flat)](http://cocoapods.org/pods/VISPER)
 [![License](https://img.shields.io/cocoapods/l/VISPER.svg?style=flat)](http://cocoapods.org/pods/VISPER)
@@ -10,7 +10,7 @@ VISPER is a component based library, which helps you to develop modular apps bas
 
 # Introduction
 
-Visper-Sourcery uses the Sourcery-Commandline-Tool to generate Source Code that follows a certain pattern so that automating is possible. Existing classes/structs/enums can be modified (inLine). Extensions or even classes/structs/enums can be auto-created. An example suited for introduction might be the generation of `LocgicFeature` with the `AutoReducer` marker protocol.
+Visper-Sourcery uses the Sourcery-Commandline-Tool to generate Source Code that follows a certain pattern so that automating is possible. Existing classes/structs/enums can be modified (inLine). Extensions or even classes/structs/enums can be auto-created. An example suited for introduction might be the generation of `LogicFeature` with the `AutoReducer` marker protocol.
 
 The following class was generated with the help of VISPER-Sourcery:
 
