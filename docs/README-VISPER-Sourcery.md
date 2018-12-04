@@ -38,7 +38,7 @@ Generates an `ApplicationFactory` for any class that implements the `AutoAppRedu
 
 Autocreates Action and Reducer for any type that implements `AutoReducer`
 
-# A short introduction how VISPER-Sourcery works
+# A short introduction how Sourcery works
 
 VISPER-Sourcery uses the Sourcery-Commandline-Tool to generate Source Code that follows a certain pattern so that automating is possible. Existing classes/structs/enums can be modified (inLine). Extensions or even classes/structs/enums can be auto-created. If you don't know how sourcery works have a look at the following example or dive into it's own documentation [documentation](https://github.com/krzysztofzablocki/Sourcery).
 
