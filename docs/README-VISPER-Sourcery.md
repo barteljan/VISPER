@@ -12,9 +12,50 @@ VISPER is a component based library, which helps you to develop modular apps bas
 
 ### Adding VISPER-Sourcery to your project
 
+sourcery is a command line tool. This means that you need to have it installed on your local machine. If you have the brew packet manager installed, you can install sourcery like this
+
+```bash
+brew install sourcery
+```
+You can add scripts to Xcode that will be run before every built. You can make xcode run sourcery before every built process. Here is a screenshot where to place the script.
+
+![runscript](docs/img/runscriptScreenshot)
+
+The content of the file could look like this, you need to replace YOUR_PROJECT_FOLDER accordingly.
+
+```bash
+#Apply CoreSourcery
+#Sets Sourcery to watch changes in sources and accessibility and update immediately
+#unfortunetaly this is currently broken
+EXAMPLE_DIR="../Example"
+MYSOURCES_DIR="../YOUR_PROJECT_FOLDER/Classes"
+MYPODS_DIR="$EXAMPLE_DIR/Pods"
+MARKER_DIR="../YOUR_PROJECT_FOLDER/generatorhints"
+
+STENCIL_TEMPLATES="../YOUR_PROJECT_FOLDER/templates"
+
+OUTPUT="$MYSOURCES_DIR/generated"
+
+echo "Sources directory = '$MYSOURCES_DIR'"
+echo "Pods directory ='$MYPODS_DIR'"
+echo "Generatorhints ='$MARKER_DIR'"
+
+sourcery --sources $MYPODS_DIR --sources $MARKER_DIR  --sources $MYSOURCES_DIR --templates $STENCIL_TEMPLATES --templates $MYPODS_DIR --output $OUTPUT
+
+#--watch 
+```
+
+What does that do?  
+
+this script will tell sourcery where to look for templates and where to look for marker protocols/comments. And of course where to save the generated code to.
+
+
+
 **Hier eklärst du einmal wie man sein Projekt einrichten muss um VISPER-Sourcery zu verwenden, wichtig ist hier das run-script und wie man es eventuell anpassen kann. Für alle die Sourcery noch nicht kennen verweist du auf deine Einführung unten.**
 
 ### WithAutoInitializer - Generating a default initializer for a struct
+
+Assume the following: You have a struct and want specific initializers. VISPER-sourcery comes with a template that can generate convenience initializers such as
 
 **Hier erklärst du einmal konkret an einem Beispiel wie man WithAutoInitializer implementiert was er erzeugt und wo man es findet am besten du beginnst damit das Ziel zu Beschreiben (Ich habe ein struct und möchte das sein Konstruktor automatisch generiert wird).**
 
