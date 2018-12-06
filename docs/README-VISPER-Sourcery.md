@@ -10,7 +10,7 @@ VISPER is a component based library, which helps you to develop modular apps bas
 
 ## Getting started
 
-Hint: if you have never heard of sourcery before see description at the end of this guide. [End of guide](# A short introduction how Sourcery works)
+Hint: if you have never heard of sourcery before see description at the end of this guide. ![End of guide](# A short introduction how Sourcery works)
 
 ### Adding VISPER-Sourcery to your project/local machine
 
