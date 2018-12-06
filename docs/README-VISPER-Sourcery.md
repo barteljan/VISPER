@@ -86,7 +86,7 @@ The marker protocols and Extensions should not belong to a target as they are us
 
 ### Hint
 
-There are two sorts of code generation. inLine Code is inserted in your Code, the other generated code gets saved to the 'generated` folder.
+There are two sorts of code generation. inLine Code is inserted in your Code, the other generated code gets saved to the `generated` folder.
 
 ### WithAutoGeneralInitializers - Generating a default initializer for a struct
 
@@ -172,6 +172,19 @@ value: birthDate as Any)
 }
 }
 ```
+
+## Hint
+
+*some marker protocols depend on other marker protocols*  
+
+How to use: pick Protocol from most left row to check, which other protocols it depends on.
+
+|   | WithAutoGeneralInitilizer  | WithAutoInitializers  | AutoReducer  |  AutoAppReducer |
+|---|---|---|---|---|
+| WithAutoGeneralInitilizer  | -  |   |   |   |
+|  WithAutoInitializers |   | -  |   |   |
+| AutoReducer  | o  |  o | -  |   |
+| AutoAppReducer  | o  | o  |   | -  |
 
 **Hier erklärst du einmal konkret an einem Beispiel wie man WithAutoInitializer implementiert was er erzeugt und wo man es findet am besten du beginnst damit das Ziel zu Beschreiben (Ich habe ein struct und möchte das sein Konstruktor automatisch generiert wird).**
 
