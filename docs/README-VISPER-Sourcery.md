@@ -33,7 +33,7 @@ Add `pod 'Sourcery'` to your `Podfile` and run `pod update Sourcery`. This will 
 
 You can add scripts to Xcode that will be run before every build. You can make xcode run sourcery before every built process. Here is a screenshot where to place the script.
 
-![runscript](/img/runscriptScreenshot.png)
+![runscript](./img/runscriptScreenshot.png)
 
 press + button to add run script.
 
