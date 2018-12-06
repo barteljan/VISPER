@@ -84,6 +84,10 @@ The marker protocols and Extensions should not belong to a target as they are us
 | no  |  x | x  |   |   |
 |  project |   |   | x  | x  |
 
+### Hint
+
+There are two sorts of code generation. inLine Code is inserted in your Code, the other generated code gets saved to the 'generated` folder.
+
 ### WithAutoGeneralInitializers - Generating a default initializer for a struct
 
 Assume the following: You have a struct and want specific initializers. VISPER-sourcery comes with a template that can generate convenience initializers.
@@ -98,7 +102,7 @@ struct Person {
 }
 ```
 
-after adding `extension Person: WithAutoGeneralInitializers {}` to the generator hints, maybe a file called `Person+Extensions.swift` and running sourcry:
+after adding `extension Person: WithAutoGeneralInitializers {}` to the generator hints, maybe a file called `Person+Extensions.swift` and running sourcery an extension will appear in `generated` folder.
 
 ```swift
 extension Person {
@@ -175,9 +179,39 @@ value: birthDate as Any)
 
 ### WithAutoGeneralInitializer - Convinience Initializers for property changes of a struct
 
-**Hier erklärst du einmal konkret wie man WithAutoGeneralInitializer implementiert was er erzeugt und wo man es findet am besten du beginnst damit das Ziel zu beschreiben.**
+Usually structs come with an auto generated initializer but if you want to have them generated stencil/sourcery-way, you can use the WithAutoGeneralInitializer marker protocol.
 
-classes that conform to WithAutoGeneralInitializer marker protocol will get an extension with initializers. One initializer that create new Instances of their type with other instances of their type as argument. But there will be initializers that take one instance of their type but change one property.
+before conforming to WithAutoGeneralInitializer: 
+
+```swift
+struct Person {
+    var firstName: String
+    var lastName: String
+    var birthDate: Date
+}
+```
+
+after conforming to WithAutoGeneralInitializer and running sourcery:
+
+```swift
+struct Person {
+    var firstName: String
+    var lastName: String
+    var birthDate: Date
+
+    // sourcery:inline:auto:Person.GenerateInitializers
+    // auto generated init function for Person
+    internal init(firstName: String, lastName: String, birthDate: Date){
+        self.firstName = firstName
+        self.lastName = lastName
+        self.birthDate = birthDate
+    }
+    // sourcery:end
+}
+```
+
+
+**Hier erklärst du einmal konkret wie man WithAutoGeneralInitializer implementiert was er erzeugt und wo man es findet am besten du beginnst damit das Ziel zu beschreiben.**
 
 ### AutoAppReducer - AutoGenerating an AppReducer and an ApplicationFactory for a specific state 
 
