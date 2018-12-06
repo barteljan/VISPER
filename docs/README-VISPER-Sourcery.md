@@ -8,54 +8,166 @@ VISPER is a component based library, which helps you to develop modular apps bas
 [![License](https://img.shields.io/cocoapods/l/VISPER.svg?style=flat)](http://cocoapods.org/pods/VISPER)
 [![Platform](https://img.shields.io/cocoapods/p/VISPER.svg?style=flat)](http://cocoapods.org/pods/VISPER)
 
-## Getting started 
+## Getting started
 
-### Adding VISPER-Sourcery to your project
+Hint: if you have never heard of sourcery before see description at the end of this guide. [End of guide](# A short introduction how Sourcery works)
 
-sourcery is a command line tool. This means that you need to have it installed on your local machine. If you have the brew packet manager installed, you can install sourcery like this
+### Adding VISPER-Sourcery to your project/local machine
+
+sourcery is a command line tool. This means that you need to have it installed on your local machine.  
+You can choose brew or cocoapods or even compile it from source, but we will cover only brew and cocoapods in this guide.
+
+*via brew* (needs to be done once)
+
+via brew install sourcery like this
 
 ```bash
 brew install sourcery
 ```
-You can add scripts to Xcode that will be run before every built. You can make xcode run sourcery before every built process. Here is a screenshot where to place the script.
+
+*via cocoapods* (needs to be done for each project)
+
+Add `pod 'Sourcery'` to your `Podfile` and run `pod update Sourcery`. This will download the latest release binary and will put it in your project's CocoaPods path so you will run it with `$PODS_ROOT/Sourcery/bin/sourcery`
+
+### Configuring sourcery (must be done for each project)
+
+You can add scripts to Xcode that will be run before every build. You can make xcode run sourcery before every built process. Here is a screenshot where to place the script.
 
 ![runscript](docs/img/runscriptScreenshot)
 
-The content of the file could look like this, you need to replace YOUR_PROJECT_FOLDER accordingly.
+press + button to add run script.
+
+The content of the file could look like this. *This only works, if the project file name matches the project directory name* This should be the case in 95% of all cases. In other cases you need to set $FOLDERNAME manually.
 
 ```bash
-#Apply CoreSourcery
-#Sets Sourcery to watch changes in sources and accessibility and update immediately
-#unfortunetaly this is currently broken
+PROJECTFILE=$(ls -d ./*.xcodeproj/)
+FOLDERNAME=(`basename $PROJECTFILE .xcodeproj`)
+echo "found folder name $FOLDERNAME"
 EXAMPLE_DIR="../Example"
-MYSOURCES_DIR="../YOUR_PROJECT_FOLDER/Classes"
+MYSOURCES_DIR="../$FOLDERNAME/Classes"
 MYPODS_DIR="$EXAMPLE_DIR/Pods"
-MARKER_DIR="../YOUR_PROJECT_FOLDER/generatorhints"
 
-STENCIL_TEMPLATES="../YOUR_PROJECT_FOLDER/templates"
+echo "generating folders for sourcery if needed"
+mkdir -p "../$FOLDERNAME/generatorhints"
+mkdir -p "../$FOLDERNAME/templates"
+mkdir -p "$MYSOURCES_DIR/generated"
 
+echo "set folders for sourcery"
+MARKER_DIR="../$FOLDERNAME/generatorhints"
+STENCIL_TEMPLATES="../$FOLDERNAME/templates"
 OUTPUT="$MYSOURCES_DIR/generated"
 
 echo "Sources directory = '$MYSOURCES_DIR'"
 echo "Pods directory ='$MYPODS_DIR'"
 echo "Generatorhints ='$MARKER_DIR'"
 
-sourcery --sources $MYPODS_DIR --sources $MARKER_DIR  --sources $MYSOURCES_DIR --templates $STENCIL_TEMPLATES --templates $MYPODS_DIR --output $OUTPUT
-
-#--watch 
+sourcery --sources $MYPODS_DIR --sources $MARKER_DIR  --sources $MYSOURCES_DIR --templates $STENCIL_TEMPLATES --templates $MYPODS_DIR --output $OUTPUT --disableCache
 ```
 
-What does that do?  
+What does that do? 
 
-this script will tell sourcery where to look for templates and where to look for marker protocols/comments. And of course where to save the generated code to.
+Tells sourcery
+- where to look for source code
+- where to look for stencil files
+- where to save the generated sources
+- *disable cache*
+
+*Hint* Usually sourcery would update all the generated code after changes because it is run before every build. Sometimes it fails doing so. (You can tell for sure if the generated output is gibberish and contains unbalanced brackets.) A workaround is adding `--disableCache` to the sourcery call. If even this fails, you can safeley delete generated source code and have it regenerated.
+
+The marker protocols and Extensions should not belong to a target as they are used by sourcery only. Remove them from target to avoid errors or warnings after creating them.
+*The generated folders and their content might not be visible. Maybe you have to add them to project (add, not create!)*
+
+### Quick Lookup for Target Membership settings
+
+|  Target membership  | stencil files  | marker protocols  |  generated code | inLineCode  |
+|---|---|---|---|---|
+| no  |  x | x  |   |   |
+|  project |   |   | x  | x  |
+
+### WithAutoGeneralInitializers - Generating a default initializer for a struct
+
+Assume the following: You have a struct and want specific initializers. VISPER-sourcery comes with a template that can generate convenience initializers.
+
+Example struct
+
+```swift
+struct Person {
+    var firstName: String
+    var lastName: String
+    var birthDate: Date
+}
+```
+
+after adding `extension Person: WithAutoGeneralInitializers {}` to the generator hints, maybe a file called `Person+Extensions.swift` and running sourcry:
+
+```swift
+extension Person {
+
+    // stored properties of Person
+    internal enum Properties: String {
+        case firstName
+        case lastName
+        case birthDate
+    }
+    //init with object of same type
+    internal init(sourceObject: Person) {
+        self.init(
+        firstName: sourceObject.firstName, 
+        lastName: sourceObject.lastName, 
+        birthDate: sourceObject.birthDate
+        )
+    }
+
+    // init to modify one property value of a Person
+    internal init?(sourceObject: Person, property: Properties, value: Any) {
+    switch property {
+    case .firstName:
+    self.init(
+    firstName:  (value as! String), 
+    lastName: sourceObject.lastName, 
+    birthDate: sourceObject.birthDate
+    )
+    case .lastName:
+    self.init(
+    firstName: sourceObject.firstName, 
+    lastName:  (value as! String), 
+    birthDate: sourceObject.birthDate
+    )
+    case .birthDate:
+    self.init(
+    firstName: sourceObject.firstName, 
+    lastName: sourceObject.lastName, 
+    birthDate:  (value as! Date)
+    )
+    }
+}
 
 
 
-**Hier eklärst du einmal wie man sein Projekt einrichten muss um VISPER-Sourcery zu verwenden, wichtig ist hier das run-script und wie man es eventuell anpassen kann. Für alle die Sourcery noch nicht kennen verweist du auf deine Einführung unten.**
+// init to modify the value the property firstName of a Person
+internal init?(sourceObject: Person, firstName: String) {
+self.init(sourceObject: sourceObject,
+property: .firstName,
+value: firstName as Any) 
+}
 
-### WithAutoInitializer - Generating a default initializer for a struct
+// init to modify the value the property lastName of a Person
+internal init?(sourceObject: Person, lastName: String) {
+self.init(sourceObject: sourceObject,
+property: .lastName,
+value: lastName as Any) 
+}
 
-Assume the following: You have a struct and want specific initializers. VISPER-sourcery comes with a template that can generate convenience initializers such as
+// init to modify the value the property birthDate of a Person
+internal init?(sourceObject: Person, birthDate: Date) {
+self.init(sourceObject: sourceObject,
+property: .birthDate,
+value: birthDate as Any) 
+}
+
+}
+}
+```
 
 **Hier erklärst du einmal konkret an einem Beispiel wie man WithAutoInitializer implementiert was er erzeugt und wo man es findet am besten du beginnst damit das Ziel zu Beschreiben (Ich habe ein struct und möchte das sein Konstruktor automatisch generiert wird).**
 
