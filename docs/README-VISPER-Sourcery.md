@@ -95,7 +95,7 @@ Assume the following: You have a struct and want specific initializers. VISPER-s
 Example struct
 
 ```swift
-struct Person {
+struct Person: Equatable {
     var firstName: String
     var lastName: String
     var birthDate: Date
@@ -173,7 +173,7 @@ value: birthDate as Any)
 }
 ```
 
-## Hint
+## Hint ⚠️
 
 *some marker protocols depend on other marker protocols*  
 
@@ -186,6 +186,10 @@ How to use: pick Protocol from most left row to check, which other protocols it 
 | AutoReducer  | o  |  o | -  |   |
 | AutoAppReducer  | o  | o  |   | -  |
 
+If the generated code has errors, you probably forgot to add a marker protocol. Another possibility: sourcery failed overriding previous generated code correctly. In this case you need to delete the generated code manually and rerun sourcery.
+
+It is generally a good Idea to have your models conform to the Equatable protocol. Also AppStates and SubStates should be conform to it.
+
 **Hier erklärst du einmal konkret an einem Beispiel wie man WithAutoInitializer implementiert was er erzeugt und wo man es findet am besten du beginnst damit das Ziel zu Beschreiben (Ich habe ein struct und möchte das sein Konstruktor automatisch generiert wird).**
 
 ## What else can be automated by VISPER-Sourcery? 
@@ -197,7 +201,7 @@ Usually structs come with an auto generated initializer but if you want to have 
 before conforming to WithAutoGeneralInitializer: 
 
 ```swift
-struct Person {
+struct Person: Equatable {
     var firstName: String
     var lastName: String
     var birthDate: Date
@@ -207,7 +211,7 @@ struct Person {
 after conforming to WithAutoGeneralInitializer and running sourcery:
 
 ```swift
-struct Person {
+struct Person: Equatable {
     var firstName: String
     var lastName: String
     var birthDate: Date
@@ -230,7 +234,7 @@ struct Person {
 
 **Hier erklärst du einmal konkret wie man AutoAppReducer implementiert was er erzeugt und wo man es findet am besten du beginnst damit das Ziel zu beschreiben.**
 
-Generates an `ApplicationFactory` for any class that implements the `AutoAppReducer` marker protocol. This is usually implemented by the `AppState` and contains the (sub)states of the app. For every (sub)state the code for creating and adding a feature observer is auto generated.
+Generates an `ApplicationFactory` for any class that implements the `AutoAppReducer` marker protocol. This is usually implemented by the `AppState` and contains the (sub)states of the app. For every (sub)state the code for creating and adding a feature observer is auto generated. Keep in mind, that AutoAppReducer works only, if the properties got generated code delivered by AutoGeneralInitializer.
 
 ### AutoReducer - Auto genereating convinience reducers for changing a property of an specific state.
 
