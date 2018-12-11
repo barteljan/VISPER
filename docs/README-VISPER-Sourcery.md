@@ -262,7 +262,7 @@ If the states conform to those protocols, sourcery will generate a `AutoReducerF
 The `GeneratedAppFactoryForAppState` can be used to create a VISPERApp with an AppState containing a UserState.
 
 ```swift
-var initialState = AppState(userState: UserState(userName: "Mitja Neufeld", isAuthenticated: false)
+var initialState = AppState(userState: UserState(userName: "Max Usermann", isAuthenticated: false)
 var factory = GeneratedAppFactoryForAppState()
 let app = try! factory.makeApplication(initialState: initialState)
 ```
