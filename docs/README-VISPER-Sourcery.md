@@ -75,7 +75,12 @@ Tells sourcery
 *Hint* Usually sourcery would update all the generated code after changes because it is run before every build. Sometimes it fails doing so. (You can tell for sure if the generated output is gibberish and contains unbalanced brackets.) A workaround is adding `--disableCache` to the sourcery call. If even this fails, you can safeley delete generated source code and have it regenerated.
 
 The marker protocols and Extensions should not belong to a target as they are used by sourcery only. Remove them from target to avoid errors or warnings after creating them.
-*The generated folders and their content might not be visible. Maybe you have to add them to project (add, not create!)*
+*The generated folders and their content might not be visible*  
+You can either add them to the project or set their location in the podspec file like this:
+
+```ruby
+s.source_files = 'MyProject/Classes/**/*', 'MyProject/Classes/generatorhints', 'MyProject/Classes/generated', 'MyProject/templates/**/*'
+```
 
 ### Quick Lookup for Target Membership settings
 
