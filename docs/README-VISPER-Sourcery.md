@@ -232,9 +232,51 @@ struct Person: Equatable {
 
 ### AutoAppReducer - AutoGenerating an AppReducer and an ApplicationFactory for a specific state 
 
-**Hier erklärst du einmal konkret wie man AutoAppReducer implementiert was er erzeugt und wo man es findet am besten du beginnst damit das Ziel zu beschreiben.**
+Assume we have a user that can be authenticated. Concerning the authentication there are two states: *authenticated* and *not authenticated*  
 
-Generates an `ApplicationFactory` for any class that implements the `AutoAppReducer` marker protocol. This is usually implemented by the `AppState` and contains the (sub)states of the app. For every (sub)state the code for creating and adding a feature observer is auto generated. Keep in mind, that AutoAppReducer works only, if the properties got generated code delivered by AutoGeneralInitializer.
+So we can have an user state like this:  
+
+```swift
+public struct UserState: Equatable {
+public let userName: String
+public let isAuthenticated: Bool
+}
+```
+
+and an AppState struct like this (containing an userState):  
+
+```swift
+public struct AppState: Equatable {
+public let userState: UserState
+}
+```
+
+The AppState is usually a struct containing other states as members. It conforms to `Equatable`, `AutoReducer`, `WithAutoInitializer`, `AutoAppReducer`, `WithAutoGeneralInitializer`. The substates conform to `Equatable`, `AutoReducer`, `WithAutoInitializer`, `WithAutoGeneralInitializer`.
+
+If the states conform to those protocols, sourcery will generate a `AutoReducerFeature`, an `AppReducer` and a `GeneratedAppFactoryForAppState`.  
+The `GeneratedAppFactoryForAppState` can be used to create a VISPERApp with an AppState containing a UserState.
+
+```swift
+var initialState = AppState(userState: UserState(userName: "Mitja Neufeld", isAuthenticated: false)
+var factory = GeneratedAppFactoryForAppState()
+let app = try! factory.makeApplication(initialState: initialState)
+```
+
+The AutoReducer lets sourcry generate Actions that can change the state. In the example above the user is not authenticated. To change the state we pass actions to the dispatcher:  
+
+```swift
+app.redux.actionDispatcher.dispatch(UserStateSetIsauthenticatedAction(isAuthenticated: true))
+```
+
+if we have subscribed to the appstate we should be able to detect the changing state:
+
+```swift
+let subscription = app.redux.store.observableState.subscribe { (appState: AppState) in
+print("user \(appState.userState.userName) is authticated? \(appState.userState.isAuthenticated)")
+}
+```
+
+**Hier erklärst du einmal konkret wie man AutoAppReducer implementiert was er erzeugt und wo man es findet am besten du beginnst damit das Ziel zu beschreiben.**
 
 ### AutoReducer - Auto genereating convinience reducers for changing a property of an specific state.
 
