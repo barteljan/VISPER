@@ -53,6 +53,8 @@ open class VISPERApp<AppState>: VISPERAppType, ReduxApp, WireframeApp {
     }
     
     
+    
+    
     /// observable app state property
     open var state: ObservableProperty<AppState> {
         get {

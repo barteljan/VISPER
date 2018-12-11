@@ -25,6 +25,13 @@ open class VISPERAppFactory<AppState>  {
         return self.makeApplication(redux: redux, wireframe: wireframe, controllerContainer: controllerContainer)
     }
     
+    /// create a default application
+    open func makeApplication(initialState: AppState,
+                              wireframe: Wireframe? = nil,
+                              controllerContainer: ControllerContainer = DefaultControllerContainer()) -> AnyVISPERApp<AppState> {
+        let redux = Redux(initialState: initialState)
+        return self.makeApplication(redux: redux, wireframe: wireframe, controllerContainer: controllerContainer)
+    }
     
     /// create a default application
     open func makeApplication( redux: Redux<AppState>,

@@ -16,6 +16,7 @@ public typealias AppFactory<AppState> = VISPER_Swift.AppFactory<AppState>
 public typealias VISPERAppType = VISPER_Swift.VISPERAppType
 public typealias DefaultStatefulFeature<State> = VISPER_Swift.DefaultStatefulFeature<State>
 public typealias StatefulFeature = VISPER_Swift.StatefulFeature
+public typealias VISPERAppFactory<AppState> = VISPER_Swift.VISPERAppFactory<AppState>
 
 @available(*, unavailable, message: "replace this class with AnyVISPERApp",renamed: "AnyVISPERApp")
 public typealias AnyApplication<AppState> = AnyVISPERApp<AppState>

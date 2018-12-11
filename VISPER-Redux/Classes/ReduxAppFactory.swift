@@ -14,13 +14,9 @@ open class ReduxAppFactory<AppState> {
     public init(){}
     
     /// create a default application
-    open func makeApplication( redux: Redux<AppState>) -> AnyReduxApp<AppState> {
-        
-        let application = DefaultReduxApp(redux: redux)
-        let anyApplication = AnyReduxApp(application)
-        self.configure(application: anyApplication)
-        return anyApplication
-        
+    open func makeApplication(initialState: AppState) -> AnyReduxApp<AppState>{
+        let redux = Redux(initialState: initialState)
+        return self.makeApplication(redux: redux)
     }
     
     /// create a default application
@@ -29,6 +25,16 @@ open class ReduxAppFactory<AppState> {
         let redux = Redux( appReducer: appReducer,
                            initialState: initialState)
         return self.makeApplication(redux: redux)
+    }
+    
+    /// create a default application
+    open func makeApplication( redux: Redux<AppState>) -> AnyReduxApp<AppState> {
+        
+        let application = DefaultReduxApp(redux: redux)
+        let anyApplication = AnyReduxApp(application)
+        self.configure(application: anyApplication)
+        return anyApplication
+        
     }
     
     /// configure an application
