@@ -91,90 +91,46 @@ s.source_files = 'MyProject/Classes/**/*', 'MyProject/Classes/generatorhints', '
 
 ### Hint
 
-There are two sorts of code generation. inLine Code is inserted in your Code, the other generated code gets saved to the `generated` folder.
+There are two sorts of code generation. inLine Code is inserted in your Code, the other generated code gets saved to the `generated` folder.  
 
-### WithAutoGeneralInitializers - Generating a default initializer for a struct
+The recommended way to use marker protocols is having a file in which the desired type is extended by the marker protocols. Lets assume we have a struct named `MyType` located in the file `MyType.swift`. Then create a new file named `MyType+Extensions.swift`. Its content would look like this:
 
-Assume the following: You have a struct and want specific initializers. VISPER-sourcery comes with a template that can generate convenience initializers.
+```swift
+/// MyType+Extensions.swift
+
+extension MyType: SomeMarkerProtocol {}
+extension MyType: SomeOtherMarkerProtocol {}
+```
+
+*Note, that it should not belong to a target.*
+
+### WithAutoGeneralInitializers - let sourcery generate the constructors that Redux needs!
+
+Assume the following: You have a struct and want to use it in your VISPERApp the VISPER-Redux way.
 
 Example struct
 
 ```swift
-struct Person: Equatable {
-    var firstName: String
-    var lastName: String
-    var birthDate: Date
+public struct UserState: Equatable {
+    public let userName: String
+    public let isAuthenticated: Bool
 }
 ```
 
-after adding `extension Person: WithAutoGeneralInitializers {}` to the generator hints, maybe a file called `Person+Extensions.swift` and running sourcery an extension will appear in `generated` folder.
+after adding `extension UserState: WithAutoGeneralInitializers {}` to the `UserState+Extensions.swift` file (like in the recommendation above) and running sourcery, some inLine generated Code will appear!
 
 ```swift
-extension Person {
+public struct UserState: Equatable {
+    public let userName: String
+    public let isAuthenticated: Bool
 
-    // stored properties of Person
-    internal enum Properties: String {
-        case firstName
-        case lastName
-        case birthDate
+    // sourcery:inline:auto:UserState.GenerateInitializers
+    // auto generated init function for UserState
+    public init(userName: String, isAuthenticated: Bool){
+        self.userName = userName
+        self.isAuthenticated = isAuthenticated
     }
-    //init with object of same type
-    internal init(sourceObject: Person) {
-        self.init(
-        firstName: sourceObject.firstName, 
-        lastName: sourceObject.lastName, 
-        birthDate: sourceObject.birthDate
-        )
-    }
-
-    // init to modify one property value of a Person
-    internal init?(sourceObject: Person, property: Properties, value: Any) {
-    switch property {
-    case .firstName:
-    self.init(
-    firstName:  (value as! String), 
-    lastName: sourceObject.lastName, 
-    birthDate: sourceObject.birthDate
-    )
-    case .lastName:
-    self.init(
-    firstName: sourceObject.firstName, 
-    lastName:  (value as! String), 
-    birthDate: sourceObject.birthDate
-    )
-    case .birthDate:
-    self.init(
-    firstName: sourceObject.firstName, 
-    lastName: sourceObject.lastName, 
-    birthDate:  (value as! Date)
-    )
-    }
-}
-
-
-
-// init to modify the value the property firstName of a Person
-internal init?(sourceObject: Person, firstName: String) {
-self.init(sourceObject: sourceObject,
-property: .firstName,
-value: firstName as Any) 
-}
-
-// init to modify the value the property lastName of a Person
-internal init?(sourceObject: Person, lastName: String) {
-self.init(sourceObject: sourceObject,
-property: .lastName,
-value: lastName as Any) 
-}
-
-// init to modify the value the property birthDate of a Person
-internal init?(sourceObject: Person, birthDate: Date) {
-self.init(sourceObject: sourceObject,
-property: .birthDate,
-value: birthDate as Any) 
-}
-
-}
+    // sourcery:end
 }
 ```
 
@@ -243,8 +199,8 @@ So we can have an user state like this:
 
 ```swift
 public struct UserState: Equatable {
-public let userName: String
-public let isAuthenticated: Bool
+    public let userName: String
+    public let isAuthenticated: Bool
 }
 ```
 
@@ -252,7 +208,7 @@ and an AppState struct like this (containing an userState):
 
 ```swift
 public struct AppState: Equatable {
-public let userState: UserState
+    public let userState: UserState
 }
 ```
 
@@ -284,6 +240,26 @@ print("user \(appState.userState.userName) is authticated? \(appState.userState.
 **Hier erklärst du einmal konkret wie man AutoAppReducer implementiert was er erzeugt und wo man es findet am besten du beginnst damit das Ziel zu beschreiben.**
 
 ### AutoReducer - Auto genereating convinience reducers for changing a property of an specific state.
+
+Assume we have a struct like this
+
+```swift
+public struct UserState: Equatable {
+    public let userName: String
+    public let isAuthenticated: Bool
+}
+```
+There has to be a way to change the state, for example changing the state from *not authenticated* to *authenticated*. How would we do that the VISPER-Redux way?
+First of all, have UserState conform to ` WithAutoInitializers`. This is the requirement that `AutoReducer` needs. It generates structs of type `Action` that are used to change states.
+
+Any property can now be changed via dispatching an `Action`. If the UserState is `false` it can be set to `true` like this:
+
+```swift
+let changeStateAction = UserStateSetIsauthenticatedAction(isAuthenticated: true)
+self.application?.redux.actionDispatcher.dispatch(changeStateAction)
+
+// self.application is the application of type AnyVISPERApp<T>
+```
 
 **Hier erklärst du einmal konkret wie man AutoReducer implementiert was er erzeugt und wo man es findet am besten du beginnst damit das Ziel zu beschreiben.**
 
