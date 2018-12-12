@@ -215,26 +215,28 @@ public struct AppState: Equatable {
 The AppState is usually a struct containing other states as members. It conforms to `Equatable`, `AutoReducer`, `WithAutoInitializer`, `AutoAppReducer`, `WithAutoGeneralInitializer`. The substates conform to `Equatable`, `AutoReducer`, `WithAutoInitializer`, `WithAutoGeneralInitializer`.
 
 If the states conform to those protocols, sourcery will generate a `AutoReducerFeature`, an `AppReducer` and a `GeneratedAppFactoryForAppState`.  
+
+The `AppReducer` is needed to change the state "application wide". It is created and used automatically.
+
+This is, what the `AppReducer` looks like (one property):
+
+```swift
+let appReducerForAppState: AppReducer<AppState> = {
+    (reducerProvider: ReducerProvider, action: Action, state: AppState) -> AppState in
+    var newState = AppState(userState: reducerProvider.reduce(action: action, state: state.userState))
+    newState = reducerProvider.reduce(action: action, state: newState)
+    return newState
+}
+```
+
+It is then used in the `GeneratedAppFactoryForAppState`, in the factory method to create VisperApps, there is no need to use the appReducer manually.
+
 The `GeneratedAppFactoryForAppState` can be used to create a VISPERApp with an AppState containing a UserState.
 
 ```swift
 var initialState = AppState(userState: UserState(userName: "Max Usermann", isAuthenticated: false)
 var factory = GeneratedAppFactoryForAppState()
 let app = try! factory.makeApplication(initialState: initialState)
-```
-
-The AutoReducer lets sourcry generate Actions that can change the state. In the example above the user is not authenticated. To change the state we pass actions to the dispatcher:  
-
-```swift
-app.redux.actionDispatcher.dispatch(UserStateSetIsauthenticatedAction(isAuthenticated: true))
-```
-
-if we have subscribed to the appstate we should be able to detect the changing state:
-
-```swift
-let subscription = app.redux.store.observableState.subscribe { (appState: AppState) in
-print("user \(appState.userState.userName) is authticated? \(appState.userState.isAuthenticated)")
-}
 ```
 
 **Hier erklärst du einmal konkret wie man AutoAppReducer implementiert was er erzeugt und wo man es findet am besten du beginnst damit das Ziel zu beschreiben.**
