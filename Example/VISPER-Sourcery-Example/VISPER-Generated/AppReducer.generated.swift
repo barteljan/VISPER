@@ -8,8 +8,11 @@ import VISPER_Core
 
 // AppReducer for AppState
 let appReducerForAppState: AppReducer<AppState> = { (reducerProvider: ReducerProvider, action: Action, state: AppState) -> AppState in
-    var newState = AppState(styleState: reducerProvider.reduce(action: action, state: state.styleState),
-        userState: reducerProvider.reduce(action: action, state: state.userState))
+    var newState = AppState(
+                                    styleState: reducerProvider.reduce(action: action,
+                                    state: state.styleState),
+                                    userState: reducerProvider.reduce(action: action,
+                                    state: state.userState))
     newState = reducerProvider.reduce(action: action, state: newState)
     return newState
 }
