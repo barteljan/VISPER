@@ -3,9 +3,7 @@
 import VISPER_Swift
 import VISPER_Redux
 
-// These will be used in the Applicationfactory.
-// It will add any generated Reducer to the App
-// Used by sourcery, no need to use this manually.
+// "soucery-internal" - most likely not relevant to developers, because it is created and used in Application Factory automatically.
 
 class AutoReducerFeature: LogicFeature {
     func injectReducers(container: ReducerContainer) {
