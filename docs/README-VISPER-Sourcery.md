@@ -231,7 +231,7 @@ let appReducerForAppState: AppReducer<AppState> = {
 
 It is then used in the `GeneratedAppFactoryForAppState`, in the factory method to create VisperApps, there is no need to use the appReducer manually.
 
-The `GeneratedAppFactoryForAppState` can be used to create a VISPERApp with an AppState containing a UserState.
+The `GeneratedAppFactoryForAppState` can be used to create a VISPERApp with an AppState containing subStatues (in the example we have an UserState).
 
 ```swift
 var initialState = AppState(userState: UserState(userName: "Max Usermann", isAuthenticated: false)
