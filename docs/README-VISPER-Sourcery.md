@@ -323,7 +323,7 @@ extension SomeClass: SomeMarkerProtocol {}
 
 Let's have a look at a stencil file that comes with VISPER-Sourcery,  AutoReducerFeature.stencil:
 
-```stencil
+```swift
 import VISPER_Swift
 import VISPER_Redux
 //
