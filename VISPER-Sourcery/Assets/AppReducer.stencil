@@ -7,19 +7,19 @@ import VISPER_Core
 // AppReducer for {{type.name}}
 //
 let appReducerFor{{type.name}}: AppReducer<{{type.name}}> = {
-    (reducerProvider: ReducerProvider,
-     action:
-     Action,
-     state:
-     {{type.name}}) -> {{type.name}} in
-    
+(reducerProvider: ReducerProvider,
+    action:
+    Action,
+    state:
+    {{type.name}}) -> {{type.name}} in
+
     var newState =  {{type.name}}(
-                                  {% for property in type.storedVariables|!annotated:"skipGeneralInitializer" %}
-                                  {{property.name}}: reducerProvider.reduce(action:
-                                                                            action, state: state.{{property.name}}){% if not forloop.last %}, {% endif %}
-                                  {% endfor %}
-                                  )
-    
+                                    {% for property in type.storedVariables|!annotated:"skipGeneralInitializer" %}
+                                    {{property.name}}: reducerProvider.reduce(action:
+                                    action, state: state.{{property.name}}){% if not forloop.last %}, {% endif %}
+                                    {% endfor %}
+                                    )
+
     newState = reducerProvider.reduce(action: action, state: newState)
     return newState
 }
