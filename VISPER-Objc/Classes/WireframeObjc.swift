@@ -135,8 +135,8 @@ import VISPER_Core
         self.wireframe.add(controllerDimisser: controllerDimisser, priority: priority)
     }
     
-    open func add(controllerToNavigate: UIViewController) {
-        self.wireframe.add(controllerToNavigate: controllerToNavigate)
+    open func navigateOn(_ controller: UIViewController) {
+        self.wireframe.navigateOn(controller)
     }
     
     open func controllerToNavigate(matches: (UIViewController?) -> Bool) -> UIViewController? {

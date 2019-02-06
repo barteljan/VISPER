@@ -141,7 +141,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     self.visperApp = visperApp
     
     let navigationController = UINavigationController()
-    visperApp.add(controllerToNavigate: navigationController)
+    visperApp.navigateOn(navigationController)
     window.rootViewController = navigationController
     
     self.window?.makeKeyAndVisible()
@@ -163,7 +163,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     self.visperApp = visperApp
     
     let navigationController = UINavigationController()
-    visperApp.add(controllerToNavigate: navigationController)
+    visperApp.navigateOn(navigationController)
     window.rootViewController = navigationController
     
     let blueFeature = BlueFeature()
@@ -293,7 +293,7 @@ If we add an instance of GreenFeature in the AppDelegate to our App the error is
          self.visperApp = visperApp
          
          let navigationController = UINavigationController()
-         visperApp.add(controllerToNavigate: navigationController)
+         visperApp.navigateOn(navigationController)
          window.rootViewController = navigationController
          
          let blueFeature = BlueFeature(wireframe: visperApp.wireframe)

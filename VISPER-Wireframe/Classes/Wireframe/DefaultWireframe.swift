@@ -125,7 +125,7 @@ open class DefaultWireframe : Wireframe, HasControllerContainer {
     ///   - url: the url to check for resolution
     ///   - parameters: the parameters (data) given to the controller
     /// - Returns: Can the wireframe find a route for the given url
-    public func canRoute(url: URL, parameters: [String : Any], option: RoutingOption?) throws -> Bool{
+    open func canRoute(url: URL, parameters: [String : Any], option: RoutingOption?) throws -> Bool{
         
         if let _ = try self.router.route(url: url, parameters: parameters, routingOption: option) {
             return true
@@ -210,9 +210,9 @@ open class DefaultWireframe : Wireframe, HasControllerContainer {
     ///   - priority: The priority for calling your handler, higher priorities are called first. (Defaults to 0)
     ///   - responsibleFor: nil if this handler should be registered for every routing option, or a spec
     ///   - handler: A handler called when a route matches your route pattern
-     public func add(priority: Int,
-               responsibleFor: @escaping (RouteResult) -> Bool,
-                      handler: @escaping RoutingHandler) throws {
+    open func add(priority: Int,
+            responsibleFor: @escaping (RouteResult) -> Bool,
+                   handler: @escaping RoutingHandler) throws {
         try self.routingHandlerContainer.add(priority: priority,
                                        responsibleFor: responsibleFor,
                                               handler: handler)
@@ -297,18 +297,18 @@ open class DefaultWireframe : Wireframe, HasControllerContainer {
     /// The last added controller will be used first.
     /// The controller will not be retained by the application (it is weakly stored), you need to store a
     /// link to them elsewhere (if you don't want them to be removed from memory).
-    /// - Parameter controllerToNavigate: a controller that can be used to navigte in your app
-    public func add(controllerToNavigate: UIViewController) {
-        self.controllerContainer.add(controller: controllerToNavigate)
+    /// - Parameter controller: a controller that can be used to navigte in your app
+    open func navigateOn(_ controller: UIViewController){
+        self.controllerContainer.addUnretained(controller: controller)
     }
     
     /// return the first navigatableController that matches in a block
-    public func controllerToNavigate(matches: (UIViewController?) -> Bool) -> UIViewController? {
+    open func controllerToNavigate(matches: (UIViewController?) -> Bool) -> UIViewController? {
         return self.controllerContainer.getController(matches:matches)
     }
     
     /// delegate removement of a controller to navigate
-    public func remove(controller: UIViewController) {
+    open func remove(controller: UIViewController) {
         self.controllerContainer.remove(controller: controller)
     }
     

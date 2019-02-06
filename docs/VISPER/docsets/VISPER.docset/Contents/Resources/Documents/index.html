@@ -520,6 +520,9 @@
                 <a href="Typealiases.html#/s:6VISPER9VISPERAppa">VISPERApp</a>
               </li>
               <li class="nav-group-task">
+                <a href="Typealiases.html#/s:6VISPER16VISPERAppFactorya">VISPERAppFactory</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Typealiases.html#/s:6VISPER13VISPERAppTypea">VISPERAppType</a>
               </li>
               <li class="nav-group-task">
@@ -613,8 +616,7 @@ stupid thing with some data bindings and behaviour before it is actually present
 <p>The next great challenge is controlling the state of your application. VISPER decides to do that in the interactor 
 layer and supports you with an <a href="#visper-redux">Redux-Architecture</a> to manage your appstate and it&rsquo;s state transitions.</p>
 
-<p>You can trigger state change in an presenter by submitting an <a href="#changing-state">Action</a> to an <a href="#changing-state">ActionDispatcher</a> and observe 
-the changing state on the other hand to update your views. More on that topic can be found <a href="#visper-redux">here</a>.</p>
+<p>You can trigger state change in a presenter by submitting an <a href="#changing-state">Action</a> to an <a href="#changing-state">ActionDispatcher</a> and observe the changing state on the other hand to update your views. More on that topic can be found <a href="#visper-redux">here</a>.</p>
 <h2 id='index' class='heading'>Index</h2>
 
 <ul>
@@ -698,7 +700,7 @@ We need just one line for that &hellip;.</p>
     <span class="n">window</span><span class="o">.</span><span class="n">rootViewController</span> <span class="o">=</span> <span class="n">navigationController</span>
 
     <span class="c1">//tell visper to work with this UINavigationController</span>
-    <span class="n">visperApp</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">controllerToNavigate</span><span class="p">:</span> <span class="n">navigationController</span><span class="p">)</span>
+    <span class="n">visperApp</span><span class="o">.</span><span class="nf">navigateOn</span><span class="p">(</span><span class="n">navigationController</span><span class="p">)</span>
 
 <span class="p">}</span>
 
@@ -706,7 +708,7 @@ We need just one line for that &hellip;.</p>
 
 <p>As you might guess, it&rsquo;s completly irrelevant where our UINavigationController lives, it would also be possible to put 
 it in an UITabbarController or an UISplitViewController. VISPER will just use the last UINavigationController given to it 
-by the visperApp.add(controllerToNavigate:) method. </p>
+by the visperApp.navigateOn(controller) method. </p>
 
 <p>It will not retain it for you! So if it becomes unretained, it will be gone and VISPER will complain about knowing no 
 UINavigationController to use!  </p>
@@ -867,7 +869,7 @@ go back to your AppDelegate and add it:</p>
 
          <span class="k">let</span> <span class="nv">navigationController</span> <span class="o">=</span> <span class="kt">UINavigationController</span><span class="p">()</span>
          <span class="n">window</span><span class="o">.</span><span class="n">rootViewController</span> <span class="o">=</span> <span class="n">navigationController</span>
-         <span class="n">visperApp</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">controllerToNavigate</span><span class="p">:</span> <span class="n">navigationController</span><span class="p">)</span>
+         <span class="n">visperApp</span><span class="o">.</span><span class="nf">navigateOn</span><span class="p">(</span><span class="n">navigationController</span><span class="p">)</span>
 
          <span class="k">let</span> <span class="nv">startFeature</span> <span class="o">=</span> <span class="kt">StartFeature</span><span class="p">(</span><span class="nv">routePattern</span><span class="p">:</span> <span class="s">"/start"</span><span class="p">)</span>
          <span class="k">try!</span> <span class="n">visperApp</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">feature</span><span class="p">:</span> <span class="n">startFeature</span><span class="p">)</span>
@@ -1134,7 +1136,7 @@ and there is no way to create such a struct dynamically we are just f***ed here.
 AppReducer with <a href="https://github.com/krzysztofzablocki/Sourcery">Sourcery</a> you can find an tutorial to do that <a href="docs/README-VISPER-Sourcery.md">here</a>.</p>
 </blockquote>
 
-<p>Now create a <code>VISPERAppFactory&lt;AppState&gt;</code> create your app and return it.
+<p>Now create a <code><a href="Typealiases.html#/s:6VISPER16VISPERAppFactorya">VISPERAppFactory&lt;AppState&gt;</a></code> create your app and return it.
 The complete <code>createApp()</code> function should now look like that.</p>
 <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">createApp</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">AnyVISPERApp</span><span class="o">&lt;</span><span class="kt">AppState</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="k">let</span> <span class="nv">initalState</span><span class="p">:</span> <span class="kt">AppState</span> <span class="o">=</span> <span class="kt">AppState</span><span class="p">(</span><span class="nv">userState</span><span class="p">:</span> <span class="kt">UserState</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="s">"unknown stranger"</span><span class="p">))</span>
@@ -1560,7 +1562,7 @@ It is used to create controllers and to route from one controller to an other. I
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">navigationController</span> <span class="o">=</span> <span class="kt">UINavigationController</span><span class="p">()</span>
 <span class="k">let</span> <span class="nv">factory</span> <span class="o">=</span> <span class="kt">DefaultWireframeAppFactory</span><span class="p">()</span>
 <span class="k">let</span> <span class="nv">wireframeApp</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="nf">makeApp</span><span class="p">()</span>
-<span class="n">wireframeApp</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">controllerToNavigate</span><span class="p">:</span> <span class="n">navigationController</span><span class="p">)</span>
+<span class="n">wireframeApp</span><span class="o">.</span><span class="nf">navigateOn</span><span class="p">(</span><span class="n">navigationController</span><span class="p">)</span>
 </code></pre>
 
 <p>if you want to create a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/Wireframe.html">Wireframe</a> without creating a <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html">WireframeApp</a> use the <a href="https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Classes/WireframeFactory.html">WireframeFactory</a>.</p>
@@ -1833,7 +1835,7 @@ It is implemented in the <a href="https://rawgit.com/barteljan/VISPER/master/doc
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/barteljan/VISPER" target="_blank" rel="external">Jan Bartel</a>. All rights reserved. (Last updated: 2018-12-04)</p>
+          <p>&copy; 2019 <a class="link" href="https://github.com/barteljan/VISPER" target="_blank" rel="external">Jan Bartel</a>. All rights reserved. (Last updated: 2019-02-06)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

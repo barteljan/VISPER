@@ -96,7 +96,7 @@ You can use the [DefaultWireframeAppFactory](https://rawgit.com/barteljan/VISPER
 let navigationController = UINavigationController()
 let factory = DefaultWireframeAppFactory()
 let wireframeApp = factory.makeApp()
-wireframeApp.add(controllerToNavigate: navigationController)
+wireframeApp.navigateOn( navigationController)
 ````
 
 if you want to create a [Wireframe](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/Wireframe.html) without creating a [WireframeApp](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html) use the [WireframeFactory](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Classes/WireframeFactory.html).

@@ -92,6 +92,26 @@
                ReferencedContainer = "container:VISPER.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9A5CB7BF20736A5600F99456"
+               BuildableName = "VISPER-Entity-ExampleTests.xctest"
+               BlueprintName = "VISPER-Entity-ExampleTests"
+               ReferencedContainer = "container:VISPER.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9A0D19E51FE0F67E00567A88"
+               BuildableName = "VISPER-UIViewController-Tests.xctest"
+               BlueprintName = "VISPER-UIViewController-Tests"
+               ReferencedContainer = "container:VISPER.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

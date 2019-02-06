@@ -133,8 +133,9 @@ public protocol Wireframe: ControllerContainer {
     /// The last added controller will be used first.
     /// The controller will not be retained by the application (it is weakly stored), you need to store a
     /// link to them elsewhere (if you don't want them to be removed from memory).
-    /// - Parameter controllerToNavigate: a controller that can be used to navigte in your app
-    func add(controllerToNavigate: UIViewController)
+    /// - Parameter controller: a controller that can be used to navigte in your app
+    func navigateOn(_ controller: UIViewController)
+
     
     /// return the first navigatableController that matches in a block
     func controllerToNavigate(matches: (_ controller: UIViewController?) -> Bool) -> UIViewController?
@@ -142,6 +143,12 @@ public protocol Wireframe: ControllerContainer {
 }
 
 public extension Wireframe {
+    
+    @available(*, deprecated, renamed: "navigateOn", message: "This method will be removed in a future release - use navigateOn instead -be aware that neither of this functions will retain your VC")
+    public func add(controllerToNavigate: UIViewController) {
+        self.navigateOn(controllerToNavigate)
+    }
+    
     
     public func canRoute(url: URL) throws -> Bool {
         return try self.canRoute(url: url, parameters: [:], option: nil)
@@ -217,8 +224,8 @@ public extension Wireframe {
         self.add(routingPresenter: routingPresenter, priority: 0)
     }
     
-    public func add(controller: UIViewController) {
-        self.add(controllerToNavigate: controller)
+    public func addUnretained(controller: UIViewController) {
+        self.navigateOn(controller)
     }
     
     public func remove(controller: UIViewController) {

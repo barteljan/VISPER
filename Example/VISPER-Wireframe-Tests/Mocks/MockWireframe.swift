@@ -170,15 +170,15 @@ class MockWireframe: NSObject, Wireframe {
         invokedAddTopControllerResolverParametersList.append((topControllerResolver, priority))
     }
     
-    var invokedAddControllerToNavigate = false
-    var invokedAddControllerToNavigateCount = 0
-    var invokedAddControllerToNavigateParameters: (controllerToNavigate: UIViewController, Void)?
-    var invokedAddControllerToNavigateParametersList = [(controllerToNavigate: UIViewController, Void)]()
-    func add(controllerToNavigate: UIViewController) {
-        invokedAddControllerToNavigate = true
-        invokedAddControllerToNavigateCount += 1
-        invokedAddControllerToNavigateParameters = (controllerToNavigate,())
-        invokedAddControllerToNavigateParametersList.append((controllerToNavigate,()))
+    var invokedNavigateOn = false
+    var invokedNavigateOnCount = 0
+    var invokedNavigateOnParameters: (controllerToNavigate: UIViewController, Void)?
+    var invokedNavigateOnParametersList = [(controllerToNavigate: UIViewController, Void)]()
+    func navigateOn(_ controller: UIViewController) {
+        invokedNavigateOn = true
+        invokedNavigateOnCount += 1
+        invokedNavigateOnParameters = (controller,())
+        invokedNavigateOnParametersList.append((controller,()))
     }
     
     var invokedControllerToNavigateMatches = false

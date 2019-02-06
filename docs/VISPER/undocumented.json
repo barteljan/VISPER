@@ -1954,6 +1954,27 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
+      "line": 19,
+      "symbol": "VISPERAppFactory",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
+      "line": 19,
+      "symbol": "VISPERAppFactory",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-Swift.swift",
+      "line": 19,
+      "symbol": "VISPERAppFactory",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Bridge/Bridge-UIViewController.swift",
       "line": 11,
       "symbol": "DefaultControllerContainer",
@@ -3635,154 +3656,154 @@
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 76,
+      "line": 74,
       "symbol": "VISPERApplication.rootViewController()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 76,
+      "line": 74,
       "symbol": "VISPERApplication.rootViewController()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 80,
+      "line": 78,
       "symbol": "VISPERApplication.wireframe()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 80,
+      "line": 78,
       "symbol": "VISPERApplication.wireframe()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 84,
+      "line": 82,
       "symbol": "VISPERApplication.commandBus()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 84,
+      "line": 82,
       "symbol": "VISPERApplication.commandBus()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 88,
+      "line": 86,
       "symbol": "VISPERApplication.navigationController()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 88,
+      "line": 86,
       "symbol": "VISPERApplication.navigationController()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 92,
+      "line": 90,
       "symbol": "VISPERApplication.setNavigationController(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 92,
+      "line": 90,
       "symbol": "VISPERApplication.setNavigationController(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 97,
+      "line": 95,
       "symbol": "VISPERApplication.add(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 97,
+      "line": 95,
       "symbol": "VISPERApplication.add(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 106,
+      "line": 104,
       "symbol": "VISPERApplication.addCommandHandler(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 106,
+      "line": 104,
       "symbol": "VISPERApplication.addCommandHandler(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 110,
+      "line": 108,
       "symbol": "VISPERApplication.add(_:withPriority:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 110,
+      "line": 108,
       "symbol": "VISPERApplication.add(_:withPriority:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 115,
+      "line": 113,
       "symbol": "VISPERApplication.routeURL(_:withParameters:options:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 115,
+      "line": 113,
       "symbol": "VISPERApplication.routeURL(_:withParameters:options:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 121,
+      "line": 119,
       "symbol": "VISPERApplication.canRouteURL(_:withParameters:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 121,
+      "line": 119,
       "symbol": "VISPERApplication.canRouteURL(_:withParameters:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 125,
+      "line": 123,
       "symbol": "VISPERApplication.controller(for:withParameters:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/VISPERApplication.swift",
-      "line": 125,
+      "line": 123,
       "symbol": "VISPERApplication.controller(for:withParameters:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -3804,28 +3825,28 @@
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/Wireframe/DefaultRoutingOptionConverter.swift",
       "line": 12,
-      "symbol": "DefaultRoutingOptionConverterError.couldNotConvertIVISPERRoutingOption",
+      "symbol": "DefaultRoutingOptionConverterError.couldNotConvertIVISPERRoutingOption(option:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/Wireframe/DefaultRoutingOptionConverter.swift",
       "line": 12,
-      "symbol": "DefaultRoutingOptionConverterError.couldNotConvertIVISPERRoutingOption",
+      "symbol": "DefaultRoutingOptionConverterError.couldNotConvertIVISPERRoutingOption(option:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/Wireframe/DefaultRoutingOptionConverter.swift",
       "line": 13,
-      "symbol": "DefaultRoutingOptionConverterError.couldNotConvertRoutingOption",
+      "symbol": "DefaultRoutingOptionConverterError.couldNotConvertRoutingOption(option:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/Wireframe/DefaultRoutingOptionConverter.swift",
       "line": 13,
-      "symbol": "DefaultRoutingOptionConverterError.couldNotConvertRoutingOption",
+      "symbol": "DefaultRoutingOptionConverterError.couldNotConvertRoutingOption(option:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
@@ -3944,14 +3965,14 @@
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/Wireframe/VISPERWireframe.swift",
       "line": 12,
-      "symbol": "VISPERWireframeError.cannotConvert",
+      "symbol": "VISPERWireframeError.cannotConvert(routingOptionObjc:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER/Classes/Deprecated/Wireframe/VISPERWireframe.swift",
       "line": 12,
-      "symbol": "VISPERWireframeError.cannotConvert",
+      "symbol": "VISPERWireframeError.cannotConvert(routingOptionObjc:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },

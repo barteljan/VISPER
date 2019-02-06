@@ -373,7 +373,7 @@
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Redux/Classes/ReduxAppFactory.swift",
-      "line": 39,
+      "line": 45,
       "symbol": "ReduxAppFactory.addDefaultFeatureObserver(application:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

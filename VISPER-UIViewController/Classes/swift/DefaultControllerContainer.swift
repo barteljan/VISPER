@@ -17,7 +17,7 @@ open class DefaultControllerContainer: ControllerContainer {
         
     }
 
-    open func add(controller: UIViewController) {
+    open func addUnretained(controller: UIViewController) {
         self.clean()
         let wrapper = ControllerWrapper(controller: controller)
         self.controllers.append(wrapper)

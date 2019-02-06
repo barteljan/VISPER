@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.visperApp = visperApp
         
         let navigationController = UINavigationController()
-        visperApp.add(controllerToNavigate: navigationController)
+        visperApp.navigateOn(navigationController)
         window.rootViewController = navigationController
         
         let startFeature = StartFeature(routePattern: "/start", wireframe: visperApp.wireframe)

@@ -29,7 +29,7 @@ open class VISPERApplication: NSObject,IVISPERApplication {
     public convenience init!(navigationController controller: UINavigationController!) {
         
         let wireframe = WireframeFactory().makeWireframe()
-        wireframe.add(controllerToNavigate: controller)
+        wireframe.navigateOn(controller)
         let wireframeObjc = WireframeObjc(wireframe: wireframe)
         let visperWireframe = VISPERWireframe(wireframe: wireframeObjc)
         
@@ -47,8 +47,6 @@ open class VISPERApplication: NSObject,IVISPERApplication {
         self._navigationController = controller
         self._wireframe = wireframe
         self._commandBus = commandBus
-        
-        //VISPERWireframe.addRoutingOptionConverter(converter: DefaultRoutingOptionConverter())
         
         var controllerContainer: ControllerContainer
         if let wireframe = wireframe.wireframe.wireframe as? HasControllerContainer {
@@ -69,7 +67,7 @@ open class VISPERApplication: NSObject,IVISPERApplication {
         let featureObserver = DeprecatedVISPERFeatureObserver(wireframe: wireframe.wireframe.wireframe, commandBus: commandBus)
         self.application.add(featureObserver: featureObserver)
         
-        self.application.add(controllerToNavigate: controller)
+        self.application.navigateOn(controller)
         
     }
     
@@ -91,7 +89,7 @@ open class VISPERApplication: NSObject,IVISPERApplication {
     
     open func setNavigationController(_ navigationController: UINavigationController!) {
         self._navigationController = navigationController
-        self.application.add(controllerToNavigate: navigationController)
+        self.application.navigateOn(navigationController)
     }
     
     open func add(_ feature: IVISPERFeature!) {

@@ -3,7 +3,7 @@
 # valid spec before submitting.
 Pod::Spec.new do |s|
   s.name             = 'VISPER-Presenter'
-  s.version          = '3.0.2'
+  s.version          = '3.1.0'
   s.summary          = 'Presenter layer of the VISPER Application Framework'
 
   s.description      = <<-DESC
@@ -21,5 +21,5 @@ Implementation of the presenter layer of the VISPER Application Framework.
   s.ios.deployment_target = '8.0'
   s.swift_version = '4.0'
   s.source_files = 'VISPER-Presenter/Classes/**/*'
-  s.dependency 'VISPER-Core','~> 3.0.0'
+  s.dependency 'VISPER-Core','~> 3.1.0'
 end

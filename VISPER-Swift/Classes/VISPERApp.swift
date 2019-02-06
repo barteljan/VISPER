@@ -121,9 +121,9 @@ open class VISPERApp<AppState>: VISPERAppType, ReduxApp, WireframeApp {
     /// The last added controller will be used first.
     /// The controller will not be retained by the application (it is weakly stored), you need to store a
     /// link to them elsewhere (if you don't want them to be removed from memory).
-    /// - Parameter controllerToNavigate: a controller that can be used to navigte in your app
-    open func add(controllerToNavigate: UIViewController) {
-        self.wireframeApp.add(controllerToNavigate: controllerToNavigate)
+    /// - Parameter controller: a controller that can be used to navigte in your app
+    open func navigateOn(_ controller: UIViewController) {
+        self.wireframeApp.navigateOn(controller)
     }
     
     

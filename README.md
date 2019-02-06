@@ -117,7 +117,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     window.rootViewController = navigationController
     
     //tell visper to work with this UINavigationController
-    visperApp.add(controllerToNavigate: navigationController)
+    visperApp.navigateOn(navigationController)
         
 }
 
@@ -125,7 +125,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 As you might guess, it's completly irrelevant where our UINavigationController lives, it would also be possible to put 
 it in an UITabbarController or an UISplitViewController. VISPER will just use the last UINavigationController given to it 
-by the visperApp.add(controllerToNavigate:) method. 
+by the visperApp.navigateOn(controller) method. 
 
 It will not retain it for you! So if it becomes unretained, it will be gone and VISPER will complain about knowing no 
 UINavigationController to use!  
@@ -297,7 +297,7 @@ The full code of your AppDelegate should now look like that:
          
          let navigationController = UINavigationController()
          window.rootViewController = navigationController
-         visperApp.add(controllerToNavigate: navigationController)
+         visperApp.navigateOn(navigationController)
          
          let startFeature = StartFeature(routePattern: "/start")
          try! visperApp.add(feature: startFeature)
@@ -1039,7 +1039,7 @@ You can use the [DefaultWireframeAppFactory](https://rawgit.com/barteljan/VISPER
 let navigationController = UINavigationController()
 let factory = DefaultWireframeAppFactory()
 let wireframeApp = factory.makeApp()
-wireframeApp.add(controllerToNavigate: navigationController)
+wireframeApp.navigateOn(navigationController)
 ````
 
 if you want to create a [Wireframe](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Core/Protocols/Wireframe.html) without creating a [WireframeApp](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Protocols/WireframeApp.html) use the [WireframeFactory](https://rawgit.com/barteljan/VISPER/master/docs/VISPER-Wireframe/Classes/WireframeFactory.html).

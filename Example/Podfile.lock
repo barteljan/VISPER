@@ -2,17 +2,17 @@ PODS:
   - RxAtomic (4.4.0)
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
-  - VISPER (3.3.0):
+  - VISPER (3.3.1):
     - VISPER-Core (~> 3.0.0)
     - VISPER-Entity (~> 3.0.0)
     - VISPER-Objc (~> 3.0.0)
     - VISPER-Presenter (~> 3.0.0)
     - VISPER-Swift (~> 3.3.0)
     - VISPER-Wireframe (~> 3.1.0)
-    - VISPER/Standard (= 3.3.0)
+    - VISPER/Standard (= 3.3.1)
   - VISPER-CommandBus (1.0.1)
   - VISPER-Core (3.0.2)
-  - VISPER-Entity (3.0.3)
+  - VISPER-Entity (3.0.4)
   - VISPER-Objc (3.0.3):
     - VISPER-Core (~> 3.0.0)
     - VISPER-Presenter (~> 3.0.0)
@@ -28,7 +28,7 @@ PODS:
     - VISPER-Reactive (~> 3.1.0)
   - VISPER-Sourcery (2.5.0):
     - VISPER-Swift (~> 3.3.0)
-  - VISPER-Swift (3.3.0):
+  - VISPER-Swift (3.3.1):
     - VISPER-Core (~> 3.0.1)
     - VISPER-Entity (~> 3.0.0)
     - VISPER-Objc (~> 3.0.0)
@@ -43,7 +43,7 @@ PODS:
     - VISPER-Objc (~> 3.0.0)
     - VISPER-Presenter (~> 3.0.0)
     - VISPER-UIViewController (~> 3.0.0)
-  - VISPER/Standard (3.3.0):
+  - VISPER/Standard (3.3.1):
     - VISPER-CommandBus
     - VISPER-Core (~> 3.0.0)
     - VISPER-Entity (~> 3.0.0)
@@ -101,16 +101,16 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
-  VISPER: dc17441e11f310a994a351c74ef4e6edc12bfb05
+  VISPER: 70b0e37a823fe21dd6d86781cb6511b0f02a6cfc
   VISPER-CommandBus: 633ad40e1565506db686d13731c6586612e8b62d
   VISPER-Core: 0c55b85dd87272085bcb2606ddba627f9b207d75
-  VISPER-Entity: 4a12b28140603e2493758aa340d6102e44369aef
+  VISPER-Entity: 86b7dca1bf2e52f2abf4000929bf6ce858ba1f78
   VISPER-Objc: 4f858c473cd6c4a0608073e43f017b0661e334a3
   VISPER-Presenter: 7dcfd63d6b94f0f22fbdcc6ca97d42ec9b1ae54a
   VISPER-Reactive: eb862b14a56a5a60b296c620659c8d72eaffbe7b
   VISPER-Redux: dedef7600e66677cb64d180ad905321820a595e3
   VISPER-Sourcery: de453927efef99eea07c7c49092c7b3f72c6f772
-  VISPER-Swift: eebe7c8cbeb447a9014007233c21fab5de5acfbc
+  VISPER-Swift: d66a9b6748beb9742ec3fb66dda6bfa0ae9b1b13
   VISPER-UIViewController: 339e9d4c4ee45a1e785346cf79600be31d2797e5
   VISPER-Wireframe: 2d3f73cae9bfd2aced13d99a82b0453005fbeff0
 

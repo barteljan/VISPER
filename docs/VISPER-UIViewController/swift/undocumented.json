@@ -17,7 +17,7 @@
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-UIViewController/Classes/swift/DefaultControllerContainer.swift",
       "line": 20,
-      "symbol": "DefaultControllerContainer.add(controller:)",
+      "symbol": "DefaultControllerContainer.addUnretained(controller:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },

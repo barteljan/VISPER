@@ -45,7 +45,7 @@ class _AnyApplication<AppState> : VISPERAppType{
         fatalError("override me")
     }
     
-    func add(controllerToNavigate: UIViewController) {
+    func navigateOn(_ controller: UIViewController) {
         fatalError("override me")
     }
     
@@ -92,8 +92,8 @@ final class _AnyApplicationBox<Base: VISPERAppType>: _AnyApplication<Base.Applic
     }
     
     
-    override func add(controllerToNavigate: UIViewController) {
-        self.base.add(controllerToNavigate: controllerToNavigate)
+    override func navigateOn(_ controller: UIViewController) {
+        self.base.navigateOn(controller)
     }
     
     override func controllerToNavigate(matches: (UIViewController?) -> Bool) -> UIViewController? {
@@ -146,8 +146,8 @@ open class AnyVISPERApp<AppState> : VISPERAppType {
         self.box.add(featureObserver: featureObserver)
     }
     
-    public func add(controllerToNavigate: UIViewController) {
-        self.box.add(controllerToNavigate: controllerToNavigate)
+    open func navigateOn(_ controller: UIViewController) {
+        self.box.navigateOn(controller)
     }
     
     public func controllerToNavigate(matches: (UIViewController?) -> Bool) -> UIViewController? {

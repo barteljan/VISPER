@@ -15,6 +15,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/CanBeIdentified.swift",
+      "line": 17,
+      "symbol": "Array.index(identifieable:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
       "line": 10,
       "symbol": "ComposedEntityStore",
@@ -31,7 +38,7 @@
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/ComposedEntityStore.swift",
       "line": 13,
-      "symbol": "ComposedEntityStore.ComposedStoreError.couldNotFoundAStoreFor",
+      "symbol": "ComposedEntityStore.ComposedStoreError.couldNotFoundAStoreFor(type:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
@@ -703,7 +710,7 @@
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/MemoryEntityStore.swift",
       "line": 13,
-      "symbol": "MemoryEntityStore.StoreError.cannotExtractIdentifierFrom",
+      "symbol": "MemoryEntityStore.StoreError.cannotExtractIdentifierFrom(item:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
@@ -955,14 +962,14 @@
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/TypedEntityStore.swift",
       "line": 16,
-      "symbol": "TypedEntityStore.StoreError.entityStoreIsNotResponsibleForType",
+      "symbol": "TypedEntityStore.StoreError.entityStoreIsNotResponsibleForType(store:type:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Entity/Classes/TypedEntityStore.swift",
       "line": 17,
-      "symbol": "TypedEntityStore.StoreError.typeShouldBeASubTypeOfType",
+      "symbol": "TypedEntityStore.StoreError.typeShouldBeASubTypeOfType(type:subType:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },

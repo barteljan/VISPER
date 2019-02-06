@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.visperApplication = self.makeVISPERApplication()
         
         //add root view controller to visper application
-        self.visperApplication?.add(controllerToNavigate: navigationController)
+        self.visperApplication?..navigateOn(navigationController)
         
         //add all features to visper application
         self.addFeatures()

@@ -853,6 +853,13 @@
       "symbol": "WireframeObjc.add(routingPresenter:priority:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Objc/Classes/WireframeObjc.swift",
+      "line": 138,
+      "symbol": "WireframeObjc.navigateOn(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/bartel/Documents/lib/VISPER"

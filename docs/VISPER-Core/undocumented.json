@@ -16,6 +16,13 @@
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerContainer.swift",
+      "line": null,
+      "symbol": "ControllerContainer",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerContainer.swift",
       "line": 11,
       "symbol": "ControllerContainer",
       "symbol_kind": "source.lang.swift.decl.protocol",
@@ -24,7 +31,7 @@
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerContainer.swift",
       "line": 12,
-      "symbol": "ControllerContainer.add(controller:)",
+      "symbol": "ControllerContainer.addUnretained(controller:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -39,6 +46,13 @@
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerContainer.swift",
       "line": 14,
       "symbol": "ControllerContainer.getController(matches:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/ControllerContainer.swift",
+      "line": 20,
+      "symbol": "ControllerContainer.add(controller:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -401,119 +415,126 @@
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
-      "line": 146,
+      "line": 148,
+      "symbol": "Wireframe.add(controllerToNavigate:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
+      "line": 153,
       "symbol": "Wireframe.canRoute(url:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
-      "line": 150,
+      "line": 157,
       "symbol": "Wireframe.canRoute(url:parameters:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
-      "line": 155,
+      "line": 162,
       "symbol": "Wireframe.canRoute(url:option:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
-      "line": 160,
+      "line": 167,
       "symbol": "Wireframe.route(url:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
-      "line": 164,
+      "line": 171,
       "symbol": "Wireframe.route(url:option:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
-      "line": 170,
+      "line": 177,
       "symbol": "Wireframe.route(url:parameters:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
-      "line": 176,
+      "line": 183,
       "symbol": "Wireframe.route(route:parameters:option:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
-      "line": 191,
+      "line": 198,
       "symbol": "Wireframe.controller(url:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
-      "line": 195,
+      "line": 202,
       "symbol": "Wireframe.add(responsibleFor:handler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
-      "line": 200,
+      "line": 207,
       "symbol": "Wireframe.add(controllerProvider:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
-      "line": 204,
+      "line": 211,
       "symbol": "Wireframe.add(optionProvider:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
-      "line": 208,
+      "line": 215,
       "symbol": "Wireframe.add(routingObserver:routePattern:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
-      "line": 212,
+      "line": 219,
       "symbol": "Wireframe.add(routingObserver:priority:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
-      "line": 216,
+      "line": 223,
       "symbol": "Wireframe.add(routingPresenter:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
-      "line": 220,
-      "symbol": "Wireframe.add(controller:)",
+      "line": 227,
+      "symbol": "Wireframe.addUnretained(controller:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
-      "line": 224,
+      "line": 231,
       "symbol": "Wireframe.remove(controller:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Core/Classes/Wireframe.swift",
-      "line": 228,
+      "line": 235,
       "symbol": "Wireframe.getController(matches:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

@@ -107,21 +107,28 @@
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/App/WireframeApp.swift",
-      "line": 48,
-      "symbol": "WireframeApp.add(controller:)",
+      "line": 41,
+      "symbol": "WireframeApp.add(controllerToNavigate:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/App/WireframeApp.swift",
-      "line": 52,
+      "line": 53,
+      "symbol": "WireframeApp.addUnretained(controller:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/App/WireframeApp.swift",
+      "line": 57,
       "symbol": "WireframeApp.remove(controller:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/App/WireframeApp.swift",
-      "line": 56,
+      "line": 61,
       "symbol": "WireframeApp.getController(matches:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -528,7 +535,7 @@
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/RoutingPresenter/BackToRoutingPresenter.swift",
       "line": 12,
-      "symbol": "BackToRoutingPresenterError.didNotReceiveBackToRoutingOptionFor",
+      "symbol": "BackToRoutingPresenterError.didNotReceiveBackToRoutingOptionFor(controller:routeResult:wireframe:delegate:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
@@ -591,7 +598,7 @@
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/RoutingPresenter/ModalRoutingPresenter.swift",
       "line": 12,
-      "symbol": "ModalRoutingPresenterError.didNotReceiveModalRoutingOptionFor",
+      "symbol": "ModalRoutingPresenterError.didNotReceiveModalRoutingOptionFor(controller:routeResult:wireframe:delegate:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
@@ -619,7 +626,7 @@
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/RoutingPresenter/PushRoutingPresenter.swift",
       "line": 12,
-      "symbol": "PushRoutingPresenterError.didNotReceivePushRoutingOptionFor",
+      "symbol": "PushRoutingPresenterError.didNotReceivePushRoutingOptionFor(controller:routeResult:wireframe:delegate:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
@@ -647,7 +654,7 @@
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/RoutingPresenter/ReplaceTopVCRoutingPresenter.swift",
       "line": 12,
-      "symbol": "ReplaceTopVCRoutingPresenterError.didNotReceiveReplaceTopVCRoutingOptionFor",
+      "symbol": "ReplaceTopVCRoutingPresenterError.didNotReceiveReplaceTopVCRoutingOptionFor(controller:routeResult:wireframe:delegate:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
@@ -675,7 +682,7 @@
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/RoutingPresenter/RootVCRoutingPresenter.swift",
       "line": 13,
-      "symbol": "RootVCRoutingPresenterError.didNotReceiveRootVCRoutingOptionFor",
+      "symbol": "RootVCRoutingPresenterError.didNotReceiveRootVCRoutingOptionFor(controller:routeResult:wireframe:delegate:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
@@ -703,7 +710,7 @@
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/RoutingPresenter/ShowRoutingPresenter.swift",
       "line": 12,
-      "symbol": "ShowRoutingPresenterError.didNotReceiveShowRoutingOptionFor",
+      "symbol": "ShowRoutingPresenterError.didNotReceiveShowRoutingOptionFor(controller:routeResult:wireframe:delegate:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
@@ -941,7 +948,7 @@
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/Wireframe/DefaultComposedControllerProvider.swift",
       "line": 12,
-      "symbol": "DefaultComposedControllerProviderError.noControllerFoundFor",
+      "symbol": "DefaultComposedControllerProviderError.noControllerFoundFor(routeResult:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
@@ -1221,35 +1228,35 @@
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/Wireframe/DefaultWireframe.swift",
       "line": 13,
-      "symbol": "DefaultWireframeError.noRoutingOptionFoundFor",
+      "symbol": "DefaultWireframeError.noRoutingOptionFoundFor(routeResult:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/Wireframe/DefaultWireframe.swift",
       "line": 14,
-      "symbol": "DefaultWireframeError.canNotHandleRoute",
+      "symbol": "DefaultWireframeError.canNotHandleRoute(routeResult:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/Wireframe/DefaultWireframe.swift",
       "line": 15,
-      "symbol": "DefaultWireframeError.noRoutingPresenterFoundFor",
+      "symbol": "DefaultWireframeError.noRoutingPresenterFoundFor(result:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/Wireframe/DefaultWireframe.swift",
       "line": 16,
-      "symbol": "DefaultWireframeError.noRoutePatternFoundFor",
+      "symbol": "DefaultWireframeError.noRoutePatternFoundFor(url:parameters:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bartel/Documents/lib/VISPER/VISPER-Wireframe/Classes/Wireframe/DefaultWireframe.swift",
       "line": 17,
-      "symbol": "DefaultWireframeError.noControllerFor",
+      "symbol": "DefaultWireframeError.noControllerFor(routeResult:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
