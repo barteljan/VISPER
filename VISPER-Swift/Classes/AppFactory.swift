@@ -40,7 +40,8 @@ open class AppFactory<AppState> {
     open func makeApplication(initialState: AppState,
                                 appReducer: @escaping AppReducer<AppState>,
                                  wireframe: Wireframe? = nil,
-                       controllerContainer: ControllerContainer = DefaultControllerContainer()
+                       controllerContainer: ControllerContainer = DefaultControllerContainer(),
+                                middleware: Middleware<AppState> = Middleware<AppState>()
         ) -> AnyVISPERApp<AppState>{
 
         var shouldNotBeNilWireframe = wireframe
@@ -50,7 +51,8 @@ open class AppFactory<AppState> {
         }
         
         let redux = Redux( appReducer: appReducer,
-                         initialState: initialState)
+                         initialState: initialState,
+                           middleware: middleware)
         return self.makeApplication(redux: redux,
                             wireframe: shouldNotBeNilWireframe!,
                   controllerContainer:controllerContainer)

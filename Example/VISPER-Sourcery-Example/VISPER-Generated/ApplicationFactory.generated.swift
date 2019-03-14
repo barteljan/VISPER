@@ -1,15 +1,16 @@
-// Generated using Sourcery 0.15.0 — https://github.com/krzysztofzablocki/Sourcery
+// Generated using Sourcery 0.16.0 — https://github.com/krzysztofzablocki/Sourcery
 // DO NOT EDIT
 
 import VISPER_Swift
 
 // generated application factory for AppState
 class GeneratedAppFactoryForAppState {
-    func makeApplication(initialState: AppState) throws -> AnyVISPERApp<AppState> {
+    func makeApplication(initialState: AppState, middleware: Middleware<AppState> = Middleware<AppState>()) throws -> AnyVISPERApp<AppState> {
         //create general application factory
         let applicationFactory = AppFactory<AppState>()
         let application = applicationFactory.makeApplication(initialState: initialState,
-                                                             appReducer: appReducerForAppState)
+                                                               appReducer: appReducerForAppState,
+                                                               middleware: middleware)
         // add a feature observer for every sub property of our app state
         // add feature observer for styleState
         let styleStateFeatureObserver = StateObservingFeatureObserver<AppState,StyleState>(state: application.state.map({return $0.styleState}).distinct())

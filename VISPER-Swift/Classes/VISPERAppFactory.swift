@@ -18,9 +18,11 @@ open class VISPERAppFactory<AppState>  {
     open func makeApplication(initialState: AppState,
                                 appReducer: @escaping AppReducer<AppState>,
                                  wireframe: Wireframe? = nil,
-                       controllerContainer: ControllerContainer = DefaultControllerContainer()) -> AnyVISPERApp<AppState> {
+                       controllerContainer: ControllerContainer = DefaultControllerContainer(),
+                                middleware: Middleware<AppState> = Middleware<AppState>()) -> AnyVISPERApp<AppState> {
         let redux = Redux( appReducer: appReducer,
-                           initialState: initialState)
+                           initialState: initialState,
+                           middleware: middleware)
         
         return self.makeApplication(redux: redux, wireframe: wireframe, controllerContainer: controllerContainer)
     }
@@ -28,8 +30,9 @@ open class VISPERAppFactory<AppState>  {
     /// create a default application
     open func makeApplication(initialState: AppState,
                               wireframe: Wireframe? = nil,
-                              controllerContainer: ControllerContainer = DefaultControllerContainer()) -> AnyVISPERApp<AppState> {
-        let redux = Redux(initialState: initialState)
+                              controllerContainer: ControllerContainer = DefaultControllerContainer(),
+                              middleware: Middleware<AppState> = Middleware<AppState>()) -> AnyVISPERApp<AppState> {
+        let redux = Redux(initialState: initialState, middleware: middleware)
         return self.makeApplication(redux: redux, wireframe: wireframe, controllerContainer: controllerContainer)
     }
     

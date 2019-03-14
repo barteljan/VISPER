@@ -4,13 +4,14 @@ import VISPER_Swift
 // generated application factory for {{type.name}}
 class GeneratedAppFactoryFor{{type.name|upperFirstLetter}} {
     
-    func makeApplication(initialState: {{type.name}}) throws -> AnyVISPERApp<{{type.name}}> {
+    func makeApplication(initialState: {{type.name}}, middleware: Middleware<{{type.name}}> = Middleware<{{type.name}}>()) throws -> AnyVISPERApp<{{type.name}}> {
         
         //create general application factory
         let applicationFactory = AppFactory<{{type.name}}>()
         
         let application = applicationFactory.makeApplication(initialState: initialState,
-                                                             appReducer: appReducerFor{{type.name}})
+                                                               appReducer: appReducerFor{{type.name}},
+                                                               middleware: middleware)
         
         // add a feature observer for every sub property of our app state
         {% for property in type.storedVariables|!annotated:"skipGeneralInitializer" %}
