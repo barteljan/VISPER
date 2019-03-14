@@ -7,7 +7,7 @@ class GeneratedAppFactoryFor{{type.name|upperFirstLetter}} {
     func makeApplication(initialState: {{type.name}}, middleware: Middleware<{{type.name}}> = Middleware<{{type.name}}>()) throws -> AnyVISPERApp<{{type.name}}> {
         
         //create general application factory
-        let applicationFactory = AppFactory<{{type.name}}>()
+        let applicationFactory = VISPERAppFactory<{{type.name}}>()
         
         let application = applicationFactory.makeApplication(initialState: initialState,
                                                                appReducer: appReducerFor{{type.name}},

@@ -49,8 +49,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return reducerProvider.reduce(action: action, state: newState)
         }
         
+        let middleware = Middleware<AppState>().sideEffect { (getState, dispatch, action) in
+            print("\(action)")
+        }
+        
         let appFactory = VISPERAppFactory<AppState>()
-        return appFactory.makeApplication(initialState: initalState, appReducer: appReducer)
+        return appFactory.makeApplication(initialState: initalState, appReducer: appReducer, middleware: middleware)
     }
     
 }
