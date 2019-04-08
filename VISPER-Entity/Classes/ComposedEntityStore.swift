@@ -20,7 +20,7 @@ open class ComposedEntityStore: EntityStore {
         self._version = version
     }
     
-    public func add<T>(store: TypedEntityStore<T>, priority: Int = 0) where T: Entity{
+    open func add<T>(store: TypedEntityStore<T>, priority: Int = 0) where T: Entity{
         let wrapper = StoreWrapper(entityStore: store.entityStore, type: type(of:store).EntityType.self, priority: priority)
         self.wrappers.append(wrapper)
         self.wrappers.sort { (lhs, rhs) -> Bool in
@@ -28,31 +28,31 @@ open class ComposedEntityStore: EntityStore {
         }
     }
     
-    public func version() -> Int {
+    open func version() -> Int {
         return self._version
     }
     
-    public func get<T>(_ identifier: String) throws -> T? {
+    open func get<T>(_ identifier: String) throws -> T? {
         let store = try self.responsibleStore(type: T.self)
         return try store.get(identifier, type: T.self)
     }
 
-    public func get<T>(_ identifier: String, completion: @escaping (T?) -> Void) throws {
+    open func get<T>(_ identifier: String, completion: @escaping (T?) -> Void) throws {
         let store = try self.responsibleStore(type: T.self)
         try store.get(identifier, type: T.self, completion: completion)
     }
     
-    public func delete<T>(_ item: T!) throws {
+    open func delete<T>(_ item: T!) throws {
         let store = try self.responsibleStore(type: type(of: item!))
         try store.delete(item)
     }
     
-    public func delete<T>(_ item: T!, completion: @escaping () -> ()) throws {
+    open func delete<T>(_ item: T!, completion: @escaping () -> ()) throws {
         let store = try self.responsibleStore(type: type(of: item!))
         try store.delete(item, completion: completion)
     }
     
-    public func delete<T>(_ items: [T]) throws {
+    open func delete<T>(_ items: [T]) throws {
         guard items.count != 0 else {
             return
         }
@@ -63,12 +63,12 @@ open class ComposedEntityStore: EntityStore {
         try store.delete(items)
     }
     
-    public func persist<T>(_ item: T!) throws {
+    open func persist<T>(_ item: T!) throws {
         let store = try self.responsibleStore(type: type(of: item!))
         try store.persist(item)
     }
     
-    public func persist<T>(_ items: [T]) throws {
+    open func persist<T>(_ items: [T]) throws {
         
         guard items.count != 0 else {
             return
@@ -80,43 +80,43 @@ open class ComposedEntityStore: EntityStore {
         try store.persist(items)
     }
     
-    public func persist<T>(_ item: T!, completion: @escaping () -> ()) throws {
+    open func persist<T>(_ item: T!, completion: @escaping () -> ()) throws {
         let store = try self.responsibleStore(type: type(of: item!))
         try store.persist(item, completion: completion)
     }
     
-    public func getAll<T>(_ type: T.Type) throws -> [T] {
+    open func getAll<T>(_ type: T.Type) throws -> [T] {
         let store = try self.responsibleStore(type: T.self)
         return try store.getAll(T.self)
     }
     
-    public func getAll<T>(_ type: T.Type, completion: @escaping ([T]) -> Void) throws {
+    open func getAll<T>(_ type: T.Type, completion: @escaping ([T]) -> Void) throws {
         let store = try self.responsibleStore(type: T.self)
         try store.getAll(T.self, completion: completion)
     }
     
-    public func getAll<T>(_ viewName: String) throws -> [T] {
+    open func getAll<T>(_ viewName: String) throws -> [T] {
         let store = try self.responsibleStore(type: T.self)
         return try store.getAll(viewName)
     }
     
-    public func getAll<T>(_ viewName: String, completion: @escaping ([T]) -> Void) throws {
+    open func getAll<T>(_ viewName: String, completion: @escaping ([T]) -> Void) throws {
         let store = try self.responsibleStore(type: T.self)
         try store.getAll(viewName, completion: completion)
     }
     
-    public func getAll<T>(_ viewName: String, groupName: String) throws -> [T] {
+    open func getAll<T>(_ viewName: String, groupName: String) throws -> [T] {
         let store = try self.responsibleStore(type: T.self)
         return try store.getAll(viewName, groupName: groupName)
     }
     
-    public func getAll<T>(_ viewName: String, groupName: String, completion: @escaping ([T]) -> Void) throws {
+    open func getAll<T>(_ viewName: String, groupName: String, completion: @escaping ([T]) -> Void) throws {
         let store = try self.responsibleStore(type: T.self)
         try store.getAll(viewName, groupName: groupName, completion: completion)
     }
     
     
-    public func isResponsible<T>(for object: T) -> Bool {
+    open func isResponsible<T>(for object: T) -> Bool {
         do {
             let store = try self.responsibleStore(type: type(of:object))
             
@@ -127,7 +127,7 @@ open class ComposedEntityStore: EntityStore {
 
     }
     
-    public func isResponsible<T>(forType type: T.Type) -> Bool {
+    open func isResponsible<T>(forType type: T.Type) -> Bool {
         
         do {
             let _ = try self.responsibleStore(type: type.self)
@@ -138,7 +138,7 @@ open class ComposedEntityStore: EntityStore {
 
     }
     
-    public func exists<T>(_ item: T!) throws -> Bool {
+    open func exists<T>(_ item: T!) throws -> Bool {
         var store: EntityStore
         do {
             store = try self.responsibleStore(type: type(of: item!))
@@ -148,7 +148,7 @@ open class ComposedEntityStore: EntityStore {
         return try store.exists(item)
     }
     
-    public func exists<T>(_ item: T!, completion: @escaping (Bool) -> Void) throws {
+    open func exists<T>(_ item: T!, completion: @escaping (Bool) -> Void) throws {
         
         var store: EntityStore
         do {
@@ -160,7 +160,7 @@ open class ComposedEntityStore: EntityStore {
         try store.exists(item, completion: completion)
     }
     
-    public func exists<T>(_ identifier: String, type: T.Type) throws -> Bool {
+    open func exists<T>(_ identifier: String, type: T.Type) throws -> Bool {
         var store: EntityStore
         do {
             store = try self.responsibleStore(type: type.self)
@@ -170,7 +170,7 @@ open class ComposedEntityStore: EntityStore {
         return try store.exists(identifier, type: type.self)
     }
     
-    public func exists<T>(_ identifier: String, type: T.Type, completion: @escaping (Bool) -> Void) throws {
+    open func exists<T>(_ identifier: String, type: T.Type, completion: @escaping (Bool) -> Void) throws {
         var store: EntityStore
         do {
             store = try self.responsibleStore(type: type.self)
@@ -180,22 +180,22 @@ open class ComposedEntityStore: EntityStore {
         try store.exists(identifier, type: type.self, completion: completion)
     }
     
-    public func filter<T>(_ type: T.Type, includeElement: @escaping (T) -> Bool) throws -> [T] {
+    open func filter<T>(_ type: T.Type, includeElement: @escaping (T) -> Bool) throws -> [T] {
         let store = try self.responsibleStore(type: T.self)
         return try store.filter(T.self, includeElement: includeElement)
     }
     
-    public func filter<T>(_ type: T.Type, includeElement: @escaping (T) -> Bool, completion: @escaping ([T]) -> Void) throws {
+    open func filter<T>(_ type: T.Type, includeElement: @escaping (T) -> Bool, completion: @escaping ([T]) -> Void) throws {
         let store = try self.responsibleStore(type: T.self)
         try store.filter(T.self, includeElement: includeElement, completion: completion)
     }
     
-    public func addView<T>(_ viewName: String, groupingBlock: @escaping ((String, String, T) -> String?), sortingBlock: @escaping ((String, String, String, T, String, String, T) -> ComparisonResult)) throws {
+    open func addView<T>(_ viewName: String, groupingBlock: @escaping ((String, String, T) -> String?), sortingBlock: @escaping ((String, String, String, T, String, String, T) -> ComparisonResult)) throws {
         let store = try self.responsibleStore(type: T.self)
         try store.addView(viewName, groupingBlock: groupingBlock, sortingBlock: sortingBlock)
     }
     
-    public func transaction(transaction: @escaping (EntityStore) throws -> Void) throws {
+    open func transaction(transaction: @escaping (EntityStore) throws -> Void) throws {
        
         let allEntities = try self.allEntities()
         let transactionStore = try MemoryEntityStore(allEntities)
@@ -209,7 +209,7 @@ open class ComposedEntityStore: EntityStore {
        
     }
     
-    public func allEntities() throws -> [Any]{
+    open func allEntities() throws -> [Any]{
         
         var result = [Any]()
         

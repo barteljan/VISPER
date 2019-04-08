@@ -32,15 +32,15 @@ open class MemoryEntityStore: EntityStore {
         }
     }
     
-    public func isResponsible<T>(for object: T) -> Bool {
+    open func isResponsible<T>(for object: T) -> Bool {
         return true
     }
     
-    public func isResponsible<T>(forType type: T.Type) -> Bool {
+    open func isResponsible<T>(forType type: T.Type) -> Bool {
         return true
     }
     
-    public func get<T>(_ identifier: String) throws -> T? {
+    open func get<T>(_ identifier: String) throws -> T? {
         
         let typeString = self.typeToKey(type: T.self)
         
@@ -59,12 +59,12 @@ open class MemoryEntityStore: EntityStore {
         return persistenceItem.value as? T
     }
     
-    public func get<T>(_ identifier: String, completion: @escaping (T?) -> Void) throws {
+    open func get<T>(_ identifier: String, completion: @escaping (T?) -> Void) throws {
         let item: T? = try self.get(identifier)
         completion(item)
     }
     
-    public func delete<T>(_ item: T!) throws {
+    open func delete<T>(_ item: T!) throws {
         
         guard let item = item else {
             return
@@ -93,12 +93,12 @@ open class MemoryEntityStore: EntityStore {
         self.store[typeString] = typesDict
     }
     
-    public func delete<T>(_ item: T!, completion: @escaping () -> ()) throws {
+    open func delete<T>(_ item: T!, completion: @escaping () -> ()) throws {
         try self.delete(item)
         completion()
     }
     
-    public func persist<T>(_ item: T!) throws {
+    open func persist<T>(_ item: T!) throws {
         try self.persist(item, markAsUpdated: true)
     }
     
@@ -131,12 +131,12 @@ open class MemoryEntityStore: EntityStore {
         self.store[typeString] = typesDict
     }
     
-    public func persist<T>(_ item: T!, completion: @escaping () -> ()) throws {
+    open func persist<T>(_ item: T!, completion: @escaping () -> ()) throws {
         try self.persist(item)
         completion()
     }
     
-    public func getAll<T>(_ type: T.Type) throws -> [T] {
+    open func getAll<T>(_ type: T.Type) throws -> [T] {
         
         let typeString = self.typeToKey(type: T.self)
         
@@ -157,28 +157,28 @@ open class MemoryEntityStore: EntityStore {
         return result
     }
     
-    public func getAll<T>(_ type: T.Type, completion: @escaping ([T]) -> Void) throws {
+    open func getAll<T>(_ type: T.Type, completion: @escaping ([T]) -> Void) throws {
         let items: [T] = try self.getAll(T.self)
         completion(items)
     }
     
-    public func getAll<T>(_ viewName: String) throws -> [T] {
+    open func getAll<T>(_ viewName: String) throws -> [T] {
         throw StoreError.functionNotImplementedYet
     }
     
-    public func getAll<T>(_ viewName: String, completion: @escaping ([T]) -> Void) throws {
+    open func getAll<T>(_ viewName: String, completion: @escaping ([T]) -> Void) throws {
         throw StoreError.functionNotImplementedYet
     }
     
-    public func getAll<T>(_ viewName: String, groupName: String) throws -> [T] {
+    open func getAll<T>(_ viewName: String, groupName: String) throws -> [T] {
         throw StoreError.functionNotImplementedYet
     }
     
-    public func getAll<T>(_ viewName: String, groupName: String, completion: @escaping ([T]) -> Void) throws {
+    open func getAll<T>(_ viewName: String, groupName: String, completion: @escaping ([T]) -> Void) throws {
         throw StoreError.functionNotImplementedYet
     }
     
-    public func exists<T>(_ item: T!) throws -> Bool {
+    open func exists<T>(_ item: T!) throws -> Bool {
         
         let typeString = self.itemToKey(item: item!)
         
@@ -200,12 +200,12 @@ open class MemoryEntityStore: EntityStore {
         
     }
     
-    public func exists<T>(_ item: T!, completion: @escaping (Bool) -> Void) throws {
+    open func exists<T>(_ item: T!, completion: @escaping (Bool) -> Void) throws {
         let doesExist = try self.exists(item)
         completion(doesExist)
     }
     
-    public func exists<T>(_ identifier: String, type: T.Type) throws -> Bool {
+    open func exists<T>(_ identifier: String, type: T.Type) throws -> Bool {
         
         let typeString = self.typeToKey(type: T.self)
         
@@ -224,27 +224,27 @@ open class MemoryEntityStore: EntityStore {
         }
     }
     
-    public func exists<T>(_ identifier: String, type: T.Type, completion: @escaping (Bool) -> Void) throws {
+    open func exists<T>(_ identifier: String, type: T.Type, completion: @escaping (Bool) -> Void) throws {
         let doesExist = try self.exists(identifier, type: type)
         completion(doesExist)
     }
     
-    public func filter<T>(_ type: T.Type, includeElement: @escaping (T) -> Bool) throws -> [T] {
+    open func filter<T>(_ type: T.Type, includeElement: @escaping (T) -> Bool) throws -> [T] {
         return try self.getAll(type).filter(includeElement)
     }
     
-    public func filter<T>(_ type: T.Type, includeElement: @escaping (T) -> Bool, completion: @escaping ([T]) -> Void) throws {
+    open func filter<T>(_ type: T.Type, includeElement: @escaping (T) -> Bool, completion: @escaping ([T]) -> Void) throws {
         let items = try self.filter(type, includeElement: includeElement)
         completion(items)
     }
     
-    public func addView<T>(_ viewName: String,
+    open func addView<T>(_ viewName: String,
                         groupingBlock: @escaping ((String, String, T) -> String?),
                          sortingBlock: @escaping ((String, String, String, T, String, String, T) -> ComparisonResult)) throws {
         throw StoreError.functionNotImplementedYet
     }
     
-    public func transaction(transaction: @escaping (EntityStore) throws -> Void) throws {
+    open func transaction(transaction: @escaping (EntityStore) throws -> Void) throws {
         
         let allEntities = self.allEntities()
         let transactionStore = try MemoryEntityStore(allEntities)
@@ -261,7 +261,7 @@ open class MemoryEntityStore: EntityStore {
         
     }
     
-    public func allEntities() -> [Any] {
+    open func allEntities() -> [Any] {
         var result = [Any]()
         
         for persistenceItemDict in self.store.enumerated() {
@@ -276,7 +276,7 @@ open class MemoryEntityStore: EntityStore {
         return result
     }
     
-    public func updatedEntities() -> [Any] {
+    open func updatedEntities() -> [Any] {
         var result = [Any]()
         
         for persistenceItemDict in self.store.enumerated() {
@@ -291,7 +291,7 @@ open class MemoryEntityStore: EntityStore {
         return result
     }
     
-    public func updatedEntities<T>(type: T.Type) -> [T] {
+    open func updatedEntities<T>(type: T.Type) -> [T] {
         let typeString = self.typeToKey(type: T.self)
         
         guard let typesDict = self.store[typeString] else {
@@ -312,7 +312,7 @@ open class MemoryEntityStore: EntityStore {
         
     }
     
-    public func deletedEntities<T>(type: T.Type) -> [T] {
+    open func deletedEntities<T>(type: T.Type) -> [T] {
         let typeString = self.typeToKey(type: T.self)
         
         guard let typesDict = self.store[typeString] else {
@@ -333,7 +333,7 @@ open class MemoryEntityStore: EntityStore {
         
     }
     
-    public func deletedEntities() -> [Any] {
+    open func deletedEntities() -> [Any] {
         var result = [Any]()
         
         for persistenceItemDict in self.store.enumerated() {
@@ -348,7 +348,7 @@ open class MemoryEntityStore: EntityStore {
         return result
     }
     
-    public func cleanDeletedEntitesFromMemory() {
+    open func cleanDeletedEntitesFromMemory() {
         var tempStore = [String: [String: PersistenceItem]]()
         
         for type in self.store.enumerated() {
