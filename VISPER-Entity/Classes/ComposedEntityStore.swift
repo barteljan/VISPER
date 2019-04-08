@@ -222,14 +222,14 @@ open class ComposedEntityStore: EntityStore {
     
     public struct StoreWrapper {
         
-        let entityStore: EntityStore
-        let type: Any.Type
-        let priority: Int
+        public let entityStore: EntityStore
+        public let type: Any.Type
+        public let priority: Int
         
-        let isResponsible: (Any.Type) -> Bool
-        let allEntities: () throws -> [Any]
-        let deleteItems: (_ fromStore: MemoryEntityStore, _ inStore: EntityStore) throws -> Void
-        let persistUpdatedItems: (_ fromStore: MemoryEntityStore, _ inStore: EntityStore) throws -> Void
+        public let isResponsible: (Any.Type) -> Bool
+        public let allEntities: () throws -> [Any]
+        public let deleteItems: (_ fromStore: MemoryEntityStore, _ inStore: EntityStore) throws -> Void
+        public let persistUpdatedItems: (_ fromStore: MemoryEntityStore, _ inStore: EntityStore) throws -> Void
         
         init<T>(entityStore: EntityStore,type: T.Type, priority: Int) where T: Entity {
             self.entityStore = entityStore
