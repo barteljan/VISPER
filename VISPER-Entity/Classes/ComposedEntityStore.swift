@@ -13,7 +13,7 @@ open class ComposedEntityStore: EntityStore {
         case couldNotFoundAStoreFor(type: Any.Type)
     }
     
-    var wrappers = [StoreWrapper]()
+    public var wrappers = [StoreWrapper]()
     var _version: Int
     
     public init(version: Int = 0) {
@@ -220,7 +220,7 @@ open class ComposedEntityStore: EntityStore {
         return result
     }
     
-    struct StoreWrapper {
+    public struct StoreWrapper {
         
         let entityStore: EntityStore
         let type: Any.Type
