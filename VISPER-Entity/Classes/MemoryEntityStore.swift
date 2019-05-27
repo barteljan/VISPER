@@ -17,7 +17,7 @@ open class MemoryEntityStore: EntityStore {
     struct PersistenceItem {
         let identifier: String
         let updated: Bool
-        let value: Any
+        let value: Any?
         let deleted: Bool
         let type: Any.Type
     }
@@ -65,11 +65,11 @@ open class MemoryEntityStore: EntityStore {
     }
     
     open func delete<T>(_ item: T!) throws {
-        
+       
         guard let item = item else {
             return
         }
-        
+ 
         let typeString = self.itemToKey(item: item)
         
         var typesDict: [String: PersistenceItem]
@@ -93,9 +93,45 @@ open class MemoryEntityStore: EntityStore {
         self.store[typeString] = typesDict
     }
     
+    
+    
+    
     open func delete<T>(_ item: T!, completion: @escaping () -> ()) throws {
         try self.delete(item)
         completion()
+    }
+    
+    open func delete<T>(_ items: [T]) throws {
+        for item in items {
+            try self.delete(item)
+        }
+    }
+    
+    open func delete<T>(_ identifier: String, type: T.Type) throws {
+        if let item: T = try self.get(identifier){
+            try self.delete(item)
+        } else {
+            let typeString = self.typeToKey(type: type)
+            
+            var typesDict: [String: PersistenceItem]
+            
+            if let dict = self.store[typeString] {
+                typesDict = dict
+            } else {
+                typesDict = [String: PersistenceItem]()
+            }
+            
+            
+            let persistenceItem = PersistenceItem(identifier: identifier,
+                                                  updated: false,
+                                                  value: nil,
+                                                  deleted: true,
+                                                  type: T.self)
+            
+            typesDict[identifier] = persistenceItem
+            
+            self.store[typeString] = typesDict
+        }
     }
     
     open func persist<T>(_ item: T!) throws {
@@ -147,7 +183,7 @@ open class MemoryEntityStore: EntityStore {
         var result = [T]()
         
         for (_,item) in typesDict.enumerated() {
-            if item.value.deleted == false {
+            if item.value.value != nil && item.value.deleted == false {
                 if let value = item.value.value as? T{
                     result.append(value)
                 }
@@ -189,7 +225,7 @@ open class MemoryEntityStore: EntityStore {
         let identifier = try self.identifierForItem(item: item)
         
         if let item = typesDict[identifier] {
-            if item.deleted == false {
+            if item.value != nil && item.deleted == false {
                 return true
             } else {
                 return false
@@ -214,7 +250,7 @@ open class MemoryEntityStore: EntityStore {
         }
         
         if let item = typesDict[identifier] {
-            if item.deleted == false {
+            if item.value != nil && item.deleted == false {
                 return true
             } else {
                 return false
@@ -267,8 +303,8 @@ open class MemoryEntityStore: EntityStore {
         for persistenceItemDict in self.store.enumerated() {
             for entry in persistenceItemDict.element.value.enumerated() {
                 let item = entry.element.value
-                if item.deleted == false {
-                    result.append(item.value)
+                if item.value != nil && item.deleted == false {
+                    result.append(item.value!)
                 }
             }
         }
@@ -282,8 +318,8 @@ open class MemoryEntityStore: EntityStore {
         for persistenceItemDict in self.store.enumerated() {
             for entry in persistenceItemDict.element.value.enumerated() {
                 let item = entry.element.value
-                if item.updated {
-                    result.append(item.value)
+                if item.value != nil && item.updated {
+                    result.append(item.value!)
                 }
             }
         }
@@ -301,7 +337,7 @@ open class MemoryEntityStore: EntityStore {
         var result = [T]()
         
         for (_,item) in typesDict.enumerated() {
-            if item.value.updated == true {
+            if item.value.value != nil && item.value.updated == true {
                 if let value = item.value.value as? T{
                     result.append(value)
                 }
@@ -322,10 +358,28 @@ open class MemoryEntityStore: EntityStore {
         var result = [T]()
         
         for (_,item) in typesDict.enumerated() {
-            if item.value.deleted == true {
+            if item.value.value != nil && item.value.deleted == true {
                 if let value = item.value.value as? T{
                     result.append(value)
                 }
+            }
+        }
+        
+        return result
+    }
+    
+    open func deletedIds<T>(type: T.Type) -> [String] {
+        
+        let typeString = self.typeToKey(type: T.self)
+        
+        guard let typesDict = self.store[typeString] else {
+            return [String]()
+        }
+        var result = [String]()
+        
+        for (_,item) in typesDict.enumerated() {
+            if item.value.deleted == true {
+               result.append(item.value.identifier)
             }
         }
         
@@ -339,8 +393,8 @@ open class MemoryEntityStore: EntityStore {
         for persistenceItemDict in self.store.enumerated() {
             for entry in persistenceItemDict.element.value.enumerated() {
                 let item = entry.element.value
-                if item.deleted {
-                    result.append(item.value)
+                if item.value != nil && item.deleted {
+                    result.append(item.value!)
                 }
             }
         }

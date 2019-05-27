@@ -52,7 +52,13 @@ open class ComposedEntityStore: EntityStore {
         try store.delete(item, completion: completion)
     }
     
+    open func delete<T>(_ identifier: String, type: T.Type) throws {
+        let store = try self.responsibleStore(type: T.self)
+        try store.delete(identifier, type: T.self)
+    }
+        
     open func delete<T>(_ items: [T]) throws {
+        
         guard items.count != 0 else {
             return
         }
@@ -62,6 +68,7 @@ open class ComposedEntityStore: EntityStore {
         let store = try self.responsibleStore(type: type(of: firstItem!))
         try store.delete(items)
     }
+    
     
     open func persist<T>(_ item: T!) throws {
         let store = try self.responsibleStore(type: type(of: item!))
@@ -250,8 +257,9 @@ open class ComposedEntityStore: EntityStore {
             
             self.deleteItems = { (fromStore: MemoryEntityStore, inStore: EntityStore) throws -> Void in
                 
-                let items: [T] = fromStore.deletedEntities(type: T.self)
-                try inStore.delete(items)
+                for id in fromStore.deletedIds(type: T.self) {
+                    try inStore.delete(id, type: T.self)
+                }
                 
             }
             

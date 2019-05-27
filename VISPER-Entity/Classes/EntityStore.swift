@@ -22,6 +22,7 @@ public protocol EntityStore {
     func delete<T>(_ item: T!) throws
     func delete<T>(_ items: [T]) throws
     func delete<T>(_ item: T!, completion: @escaping () -> ()) throws
+    func delete<T>(_ identifier: String, type: T.Type) throws 
     
     func get<T>(_ identifier: String) throws -> T?
     func get<T>(_ identifier: String, completion: @escaping (_ item: T?) -> Void ) throws
@@ -98,7 +99,7 @@ public extension EntityStore {
             try self.delete(item)
         }
     }
-    
+ 
     public func get<T>(_ identifier: String, type: T.Type) throws -> T? {
         let item: T? = try self.get(identifier)
         return item

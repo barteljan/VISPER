@@ -17,6 +17,7 @@ open class FunctionalEntityStore<EntityType: CanBeIdentified>: EntityStore {
     let deleteEntites: (_ entities: [EntityType]) throws -> Void
     let getEntities: ()->[EntityType]
     let getEntity: (_ identifier: String) -> EntityType?
+    let deleteEntity: (_ identifier: String) throws  -> Void
     
     public convenience init(persistEntites: @escaping (_ entities: [EntityType]) throws -> Void,
                             deleteEntites: @escaping (_ entities: [EntityType]) throws -> Void,
@@ -32,15 +33,54 @@ open class FunctionalEntityStore<EntityType: CanBeIdentified>: EntityStore {
                   getEntity: getEntity)
     }
     
+    public convenience init(persistEntites: @escaping (_ entities: [EntityType]) throws -> Void,
+                deleteEntites: @escaping (_ entities: [EntityType]) throws -> Void,
+                getEntities: @escaping ()->[EntityType],
+                getEntity: @escaping (_ identifier: String) -> EntityType?){
+        
+        let deleteEntity = { (identifier: String) throws -> Void in
+            if let entity = getEntity(identifier) {
+              try deleteEntites([entity])
+            }
+        }
+        
+        self.init(persistEntites: persistEntites,
+                   deleteEntites: deleteEntites,
+                     getEntities: getEntities,
+                       getEntity: getEntity,
+                    deleteEntity:  deleteEntity)
+        
+    }
+    
+    public convenience init(persistEntites: @escaping (_ entities: [EntityType]) throws -> Void,
+                            getEntities: @escaping ()->[EntityType],
+                            getEntity: @escaping (_ identifier: String) -> EntityType?,
+                            deleteEntity: @escaping (_ identifier: String) throws  -> Void ){
+        
+        let deleteEntities = { (_ entities: [EntityType]) throws -> Void in
+            for entity in entities {
+                try deleteEntity(entity.identifier())
+            }
+        }
+        
+        self.init(persistEntites: persistEntites,
+                  deleteEntites: deleteEntities,
+                  getEntities: getEntities,
+                  getEntity: getEntity,
+                  deleteEntity:  deleteEntity)
+        
+    }
     
     public init(persistEntites: @escaping (_ entities: [EntityType]) throws -> Void,
                 deleteEntites: @escaping (_ entities: [EntityType]) throws -> Void,
                 getEntities: @escaping ()->[EntityType],
-                getEntity: @escaping (_ identifier: String) -> EntityType?){
+                getEntity: @escaping (_ identifier: String) -> EntityType?,
+                deleteEntity: @escaping (_ identifier: String) throws  -> Void ){
         self.persistEntites = persistEntites
         self.deleteEntites = deleteEntites
         self.getEntities = getEntities
         self.getEntity = getEntity
+        self.deleteEntity = deleteEntity
     }
     
     public func isResponsible<T>(for object: T) -> Bool {
@@ -71,6 +111,11 @@ open class FunctionalEntityStore<EntityType: CanBeIdentified>: EntityStore {
         try self.delete(item)
         completion()
     }
+    
+    public func delete<T>(_ identifier: String, type: T.Type) throws {
+        try self.deleteEntity(identifier)
+    }
+    
     
     public func get<T>(_ identifier: String) throws -> T? {
         return self.getEntity(identifier) as? T
