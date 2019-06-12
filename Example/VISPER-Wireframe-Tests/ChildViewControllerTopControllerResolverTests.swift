@@ -29,7 +29,7 @@ class ChildViewControllerTopControllerResolverTests: XCTestCase {
         let topControllerResolver = ChildViewControllerTopControllerResolver()
         
         let controller = UIViewController()
-        controller.addChildViewController(UIViewController())
+        controller.addChild(UIViewController())
         
         XCTAssertTrue(topControllerResolver.isResponsible(controller: controller))
         
@@ -41,9 +41,9 @@ class ChildViewControllerTopControllerResolverTests: XCTestCase {
         
         let controller = UIViewController()
         let child1 = UIViewController()
-        controller.addChildViewController(child1)
+        controller.addChild(child1)
         let child2 = UITabBarController()
-        controller.addChildViewController(child2)
+        controller.addChild(child2)
         
         let topController = topControllerResolver.topController(of: controller)
         

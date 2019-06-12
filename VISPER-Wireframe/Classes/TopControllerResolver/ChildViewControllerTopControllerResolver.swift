@@ -13,15 +13,15 @@ open class ChildViewControllerTopControllerResolver: TopControllerResolver {
     public init(){}
     
     open func isResponsible(controller: UIViewController) -> Bool {
-        return controller.childViewControllers.count > 0
+        return controller.children.count > 0
     }
     
     open func topController(of controller: UIViewController) -> UIViewController {
         
-        if controller.childViewControllers.count == 0 {
+        if controller.children.count == 0 {
             return controller
         } else {
-            return controller.childViewControllers.last!
+            return controller.children.last!
         }
         
     }

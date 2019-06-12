@@ -9,17 +9,17 @@ import Foundation
 import VISPER_Core
 
 public protocol RoutingOptionPush : AnimatedRoutingOption{
-    var animationTransition: UIViewAnimationTransition? {get}
+    var animationTransition: UIView.AnimationTransition? {get}
     var animationDuration: TimeInterval {get}
 }
 
 public struct DefaultRoutingOptionPush: RoutingOptionPush{
    
     public let animated: Bool
-    public var animationTransition: UIViewAnimationTransition?
+    public var animationTransition: UIView.AnimationTransition?
     public var animationDuration: TimeInterval
     
-    public init(animated: Bool = true, animationTransition: UIViewAnimationTransition? = nil, animationDuration: TimeInterval = 0.6) {
+    public init(animated: Bool = true, animationTransition: UIView.AnimationTransition? = nil, animationDuration: TimeInterval = 0.6) {
         self.animated = animated
         self.animationTransition = animationTransition
         self.animationDuration = animationDuration

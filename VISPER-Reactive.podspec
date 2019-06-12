@@ -1,7 +1,7 @@
 # Be sure to run `pod lib lint VISPER-Redux.podspec' to ensure this is a
 Pod::Spec.new do |s|
   s.name             = 'VISPER-Reactive'
-  s.version          = '3.1.0'
+  s.version          = '4.0.0'
   s.summary          = 'Simple implementation of observable properties used in the VISPER Framework'
   s.description      = <<-DESC
 Base implementation of reactive properties for the VISPER Framework.
@@ -15,7 +15,7 @@ Base implementation of reactive properties for the VISPER Framework.
   s.social_media_url = 'https://twitter.com/barteljan'
 
   s.ios.deployment_target = '8.0'
-  s.swift_version = "4.0"
+  s.swift_version = "4.2"
 
   s.default_subspec = 'Standard'
 
@@ -25,7 +25,7 @@ Base implementation of reactive properties for the VISPER Framework.
 
   s.subspec 'RxSwift' do |rxswift|
     rxswift.source_files = 'VISPER-Reactive/Classes/RxSwift/*.swift','VISPER-Reactive/Classes/Core/*.swift'
-    rxswift.dependency 'RxSwift', '~> 4.0'
+    rxswift.dependency 'RxSwift', '~> 4.5.0'
   end
 
 end

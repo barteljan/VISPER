@@ -222,7 +222,7 @@ class DefaultComposedTopControllerResolverTests: XCTestCase {
         
         let childVC = UIViewController()
         
-        parentVC.addChildViewController(childVC)
+        parentVC.addChild(childVC)
         
         tabbarController.viewControllers = [UIViewController(),navigationController,UIViewController()]
         
