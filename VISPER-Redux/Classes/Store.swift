@@ -59,10 +59,10 @@ open class Store<State> : ActionDispatcher {
                 let container = ReducerContainerForOneActionTransaction(reducerContainer: self.reducerContainer, completion: completion)
                 
                 let value = self.appReducer(container,action, self.observableState.value)
-                container.startCompleting()
                 
                 DispatchQueue.main.sync {
                     self.observableState.value = value
+                    container.startCompleting()
                 }
             })
             
