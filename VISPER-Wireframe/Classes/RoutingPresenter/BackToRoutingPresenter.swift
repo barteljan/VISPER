@@ -79,6 +79,7 @@ public class BackToRoutingPresenter: DefaultControllerContainerAwareRoutingPrese
                                 routeResult: routeResult,
                                 routingPresenter: self,
                                 wireframe: wireframe)
+            completion()
         }
         
     }

@@ -69,12 +69,14 @@ open class ShowRoutingPresenter : DefaultControllerContainerAwareRoutingPresente
                                     routeResult: routeResult,
                                     routingPresenter: self,
                                     wireframe: wireframe)
+                completion()
             }
         } else {
             delegate.didPresent(controller: controller,
                                 routeResult: routeResult,
                                 routingPresenter: self,
                                 wireframe: wireframe)
+            completion()
         }
         
         if routingOption.animated {
