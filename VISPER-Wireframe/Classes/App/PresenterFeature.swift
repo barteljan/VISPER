@@ -17,7 +17,7 @@ public protocol PresenterFeature: Feature, PresenterProvider {
 }
 
 public extension PresenterFeature where Self : ViewFeature {
-    public func isResponsible(routeResult: RouteResult, controller: UIViewController) -> Bool {
+    func isResponsible(routeResult: RouteResult, controller: UIViewController) -> Bool {
         return self.isResponsible(routeResult: routeResult)
     }
 }

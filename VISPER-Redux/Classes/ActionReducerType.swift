@@ -45,7 +45,7 @@ public extension ActionReducerType {
     ///   - action: a given action
     ///   - state: a given state
     /// - Returns: returns if the reducer is responsible for this action/state pair
-    public func isResponsible(action: Action, state: Any) -> Bool {
+    func isResponsible(action: Action, state: Any) -> Bool {
         return action is ReducerActionType && state is ReducerStateType
     }
     

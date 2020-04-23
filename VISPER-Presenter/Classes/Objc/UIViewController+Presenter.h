@@ -18,5 +18,14 @@
 -(void)removeVisperPresenter:(NSObject<ViewControllerEventPresenter> *__nonnull)presenter;
 -(void)notifyPresentersOfView:(UIView* __nonnull)view
                     withEvent:(NSObject* __nonnull)event;
--(void)retainPresenter:(NSObject*)presenter;
+-(void)retainPresenter:(NSObject*_Nonnull)presenter;
 @end
+
+
+
+
+
+
+
+
+

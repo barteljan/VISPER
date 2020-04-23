@@ -17,7 +17,7 @@ public protocol ControllerContainer {
 public extension ControllerContainer {
     
     @available(*, deprecated, renamed: "addUnretained", message: "This method will be removed in a future release - use addUnretained instead")
-    public func add(controller: UIViewController) {
+    func add(controller: UIViewController) {
         self.addUnretained(controller: controller)
     }
     

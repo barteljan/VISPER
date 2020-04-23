@@ -21,7 +21,7 @@ public extension UIViewController {
         }
     }
     
-    public var defaultSubscriptionReferenceBag: SubscriptionReferenceBag {
+    var defaultSubscriptionReferenceBag: SubscriptionReferenceBag {
         
         get {
             if let bag = objc_getAssociatedObject(self, &AssociatedKeys.SubscriptionBagName) as? SubscriptionBagWrapper {

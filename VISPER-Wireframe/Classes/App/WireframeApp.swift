@@ -38,27 +38,27 @@ public protocol WireframeApp: App, ControllerContainer {
 public extension WireframeApp {
     
     @available(*, deprecated, renamed: "navigateOn", message: "This method will be removed in a future release - use navigateOn instead -be aware that neither of this functions will retain your VC")
-    public func add(controllerToNavigate: UIViewController) {
+    func add(controllerToNavigate: UIViewController) {
         self.navigateOn(controllerToNavigate)
     }
     
-    public func navigateOn(_ controller: UIViewController){
+    func navigateOn(_ controller: UIViewController){
         self.wireframe.navigateOn(controller)
     }
     
-    public func controllerToNavigate(matches: (UIViewController?) -> Bool) -> UIViewController? {
+    func controllerToNavigate(matches: (UIViewController?) -> Bool) -> UIViewController? {
         return self.wireframe.controllerToNavigate(matches:matches)
     }
     
-    public func addUnretained(controller: UIViewController) {
+    func addUnretained(controller: UIViewController) {
         self.navigateOn(controller)
     }
     
-    public func remove(controller: UIViewController) {
+    func remove(controller: UIViewController) {
         self.wireframe.remove(controller: controller)
     }
     
-    public func getController(matches: (_ controller: UIViewController?) -> Bool) -> UIViewController? {
+    func getController(matches: (_ controller: UIViewController?) -> Bool) -> UIViewController? {
         return self.controllerToNavigate(matches: matches)
     }
     

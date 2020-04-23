@@ -66,11 +66,11 @@ public protocol EntityStore {
 
 public extension EntityStore {
     
-    public func version() -> Int {
+    func version() -> Int {
         return 0;
     }
     
-    public func persist<T>(_ items: [T]) throws {
+    func persist<T>(_ items: [T]) throws {
         for item in items {
             try self.persist(item)
         }
@@ -83,7 +83,7 @@ public extension EntityStore {
         }
     }
     
-    public func delete<T>(_ identifier: String, type: T.Type, completion: @escaping () -> ())  throws {
+    func delete<T>(_ identifier: String, type: T.Type, completion: @escaping () -> ())  throws {
         try self.get(identifier) { (item: T?) in
             
             if let item = item {
@@ -94,19 +94,19 @@ public extension EntityStore {
         }
     }
     
-    public func delete<T>(_ identifier: String, type: T.Type) throws {
+    func delete<T>(_ identifier: String, type: T.Type) throws {
         if let item: T = try self.get(identifier){
             try self.delete(item)
         }
     }
  
-    public func get<T>(_ identifier: String, type: T.Type) throws -> T? {
+    func get<T>(_ identifier: String, type: T.Type) throws -> T? {
         let item: T? = try self.get(identifier)
         return item
     }
     
     
-    public func get<T>(_ identifier: String, type: T.Type, completion: @escaping (_ item: T?) -> Void ) throws {
+    func get<T>(_ identifier: String, type: T.Type, completion: @escaping (_ item: T?) -> Void ) throws {
         try self.get(identifier, completion: { (item: T?) in
             completion(item)
         })

@@ -8,7 +8,7 @@ PODS:
     - VISPER-Swift (~> 4.0.0)
     - VISPER-Wireframe (~> 4.0.0)
     - VISPER/Standard (= 4.0.0)
-  - VISPER-CommandBus (1.0.1)
+  - VISPER-CommandBus (4.0.0)
   - VISPER-Core (4.0.0)
   - VISPER-Entity (4.0.0)
   - VISPER-Objc (4.0.0):
@@ -21,7 +21,7 @@ PODS:
   - VISPER-Reactive/RxSwift (4.0.0):
     - RxSwift (~> 4.5.0)
   - VISPER-Reactive/Standard (4.0.0)
-  - VISPER-Redux (4.0.0):
+  - VISPER-Redux (4.0.1):
     - VISPER-Core (~> 4.0.0)
     - VISPER-Reactive (~> 4.0.0)
   - VISPER-Sourcery (4.0.0):
@@ -36,7 +36,7 @@ PODS:
   - VISPER-UIViewController (4.0.0):
     - VISPER-Objc (~> 4.0.0)
     - VISPER-Presenter (~> 4.0.0)
-  - VISPER-Wireframe (4.0.0):
+  - VISPER-Wireframe (4.0.1):
     - VISPER-Core (~> 4.0.0)
     - VISPER-Objc (~> 4.0.0)
     - VISPER-Presenter (~> 4.0.0)
@@ -67,7 +67,7 @@ DEPENDENCIES:
   - VISPER-Wireframe (from `../`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - RxSwift
     - VISPER-CommandBus
 
@@ -98,18 +98,18 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   VISPER: f6b3a6f53b82c5209eda8d7bb230b3aaf95a47a9
-  VISPER-CommandBus: 633ad40e1565506db686d13731c6586612e8b62d
+  VISPER-CommandBus: 34333737c9fa6054ab00c5965327736f74c808bf
   VISPER-Core: 71d442417339f3fbb7ee587d114f14e1ed47ea58
   VISPER-Entity: 81224368e821f2e71a7f979ce623cbd197d8c48f
   VISPER-Objc: 857a3d4128d191348ccbfdb2fad6cd80bf190987
   VISPER-Presenter: 2277c97327398f256aa241ce3483bc385f5b29a0
   VISPER-Reactive: c167149a0f35025348ecbaedf0a55e771af52f73
-  VISPER-Redux: e70a24f189fac23307251eddaa5a6bb5b5210954
+  VISPER-Redux: ced351659d81c8ad8f8860d6d55a93d8d1331619
   VISPER-Sourcery: 39f2697e98bf363f46b7ec5637f53be0f6ef311c
   VISPER-Swift: ff63e111c161bbdd92215fc97bd65deed3cd993b
   VISPER-UIViewController: ddb099029b8cb2e8867f252e1f7d3d68a41b8b04
-  VISPER-Wireframe: a7dbaaeb9c23ef190954467eac4868af1259d7fd
+  VISPER-Wireframe: 7ff0e5d386b510fc09d4e8691d7364a84a470c92
 
 PODFILE CHECKSUM: 1dfac91cbaa343ac3d9e342ac65380cbdba203ff
 
-COCOAPODS: 1.7.1
+COCOAPODS: 1.8.4

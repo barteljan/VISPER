@@ -31,7 +31,7 @@ public protocol ViewFeature: Feature, RoutingOptionProvider, ControllerProvider 
 
 public extension ViewFeature {
     
-    public func option(routeResult: RouteResult) -> RoutingOption? {
+    func option(routeResult: RouteResult) -> RoutingOption? {
         
         guard routeResult.routingOption == nil else {
             return routeResult.routingOption

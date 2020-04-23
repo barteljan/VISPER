@@ -170,6 +170,8 @@ extension ObservablePropertySubscriptionReference: Equatable, Hashable {
         return key.hash
     }
     
+    
+    
     /// Compare two `DefaultObservablePropertySubscriptionReference`s.
     public static func == <T>(lhs: ObservablePropertySubscriptionReference<T>, rhs: ObservablePropertySubscriptionReference<T>) -> Bool {
         return lhs.key == rhs.key

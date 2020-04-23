@@ -22,10 +22,19 @@ open class TabbarControllerTopControllerResolver: TopControllerResolver {
             return controller
         }
         
-        guard let controllers = tabbarController.viewControllers else {
+        let controllers = tabbarController.children
+        
+        if(controllers.count == 0) {
             return tabbarController
         }
-        
+            
+        // intercept tabbar controller with more controller
+        // since evry controller greater than the fifth is hidden in
+        // a more navigation controller
+        if(tabbarController.selectedIndex >= controllers.count) {
+            return controllers.last!
+        }
+                
         return controllers[tabbarController.selectedIndex]
     }
     

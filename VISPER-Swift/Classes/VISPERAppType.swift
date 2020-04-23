@@ -66,7 +66,7 @@ public protocol VISPERAppType: ReduxApp, WireframeApp {
 public extension VISPERAppType {
     
     @available(*, deprecated, renamed: "navigateOn", message: "This method will be removed in a future release - use navigateOn instead -be aware that neither of this functions will retain your VC")
-    public func add(controllerToNavigate: UIViewController) {
+    func add(controllerToNavigate: UIViewController) {
         self.navigateOn(controllerToNavigate)
     }
     

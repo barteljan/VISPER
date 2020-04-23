@@ -17,7 +17,7 @@ public protocol RouteResult {
 
 public extension RouteResult {
     
-    public func isEqual(routeResult: RouteResult?) -> Bool {
+    func isEqual(routeResult: RouteResult?) -> Bool {
         
         guard let routeResult = routeResult else {
             return false

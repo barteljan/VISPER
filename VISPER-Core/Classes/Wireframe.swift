@@ -145,42 +145,42 @@ public protocol Wireframe: ControllerContainer {
 public extension Wireframe {
     
     @available(*, deprecated, renamed: "navigateOn", message: "This method will be removed in a future release - use navigateOn instead -be aware that neither of this functions will retain your VC")
-    public func add(controllerToNavigate: UIViewController) {
+    func add(controllerToNavigate: UIViewController) {
         self.navigateOn(controllerToNavigate)
     }
     
     
-    public func canRoute(url: URL) throws -> Bool {
+    func canRoute(url: URL) throws -> Bool {
         return try self.canRoute(url: url, parameters: [:], option: nil)
     }
     
-    public func canRoute(   url: URL,
-                     parameters: [String : Any]) throws -> Bool {
+    func canRoute(   url: URL,
+              parameters: [String : Any]) throws -> Bool {
         return try self.canRoute(url: url, parameters: parameters, option: nil)
     }
     
-    public func canRoute(   url: URL,
-                            option: RoutingOption?) throws -> Bool {
+    func canRoute(   url: URL,
+                  option: RoutingOption?) throws -> Bool {
         return try self.canRoute(url: url, parameters: [:], option: option)
     }
     
-    public func route(url: URL) throws {
+    func route(url: URL) throws {
         try self.route(url: url, parameters: [:], option: nil, completion: {})
     }
     
-    public func route(url: URL,
+    func route(url: URL,
                       option: RoutingOption?,
                       completion: @escaping () -> Void = {}) throws {
         try self.route(url: url, parameters: [:], option: option, completion: completion)
     }
     
-    public func route(url: URL,
+    func route(url: URL,
                       parameters: [String : Any],
                       completion: @escaping () -> Void = {}) throws {
         try self.route(url: url, parameters: parameters, option: nil, completion: completion)
     }
     
-    public func route(route: String,
+    func route(route: String,
                  parameters: [String : Any] = [:],
                      option: RoutingOption? = nil,
                  completion: @escaping () -> Void = {}) throws {
@@ -195,44 +195,44 @@ public extension Wireframe {
     }
    
     
-    public func controller(url: URL) throws -> UIViewController? {
+    func controller(url: URL) throws -> UIViewController? {
         return try self.controller(url: url, parameters: [:])
     }
     
-    public func add(responsibleFor: @escaping (_ routeResult: RouteResult) -> Bool,
+    func add(responsibleFor: @escaping (_ routeResult: RouteResult) -> Bool,
                            handler: @escaping RoutingHandler) throws {
         try self.add(priority: 0, responsibleFor: responsibleFor, handler: handler)
     }
     
-    public func add(controllerProvider: ControllerProvider) {
+    func add(controllerProvider: ControllerProvider) {
         self.add(controllerProvider: controllerProvider, priority: 0)
     }
     
-    public func add(optionProvider: RoutingOptionProvider) {
+    func add(optionProvider: RoutingOptionProvider) {
         self.add(optionProvider: optionProvider, priority: 0)
     }
     
-    public func add(routingObserver: RoutingObserver, routePattern: String?) {
+    func add(routingObserver: RoutingObserver, routePattern: String?) {
         self.add(routingObserver: routingObserver, priority: 0, routePattern:routePattern)
     }
     
-    public func add(routingObserver: RoutingObserver, priority: Int = 0) {
+    func add(routingObserver: RoutingObserver, priority: Int = 0) {
         self.add(routingObserver: routingObserver, priority: priority, routePattern:nil)
     }
     
-    public func add(routingPresenter: RoutingPresenter) {
+    func add(routingPresenter: RoutingPresenter) {
         self.add(routingPresenter: routingPresenter, priority: 0)
     }
     
-    public func addUnretained(controller: UIViewController) {
+    func addUnretained(controller: UIViewController) {
         self.navigateOn(controller)
     }
     
-    public func remove(controller: UIViewController) {
+    func remove(controller: UIViewController) {
         fatalError("remove has no default implementation on the wireframe protocol")
     }
     
-    public func getController(matches: (_ controller: UIViewController?) -> Bool) -> UIViewController? {
+    func getController(matches: (_ controller: UIViewController?) -> Bool) -> UIViewController? {
         return self.controllerToNavigate(matches: matches)
     }
     
