@@ -24,9 +24,9 @@ public class CombineLatestClosures {
     }
     
     public func chainClosure(callback:@escaping PipelineCallback) -> PipelineCallback {
-        let wrapper = ClosureWrapper {
+        let wrapper = ClosureWrapper { [weak self] in
             callback()
-            self.checkAllClosures()
+            self?.checkAllClosures()
         }
         self.callbackWrappers.append(wrapper)
         return wrapper.callback

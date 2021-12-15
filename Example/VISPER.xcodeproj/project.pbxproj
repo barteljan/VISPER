@@ -28,6 +28,7 @@
 		9A0D1A171FE13FD900567A88 /* ViewControllerLifecycleEventPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D1A161FE13FD900567A88 /* ViewControllerLifecycleEventPresenterTests.swift */; };
 		9A15DBCA2078C197006C786D /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15DBC92078C197006C786D /* StringTests.swift */; };
 		9A15DBD4207B8519006C786D /* FunctionalEntityStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15DBD3207B8519006C786D /* FunctionalEntityStoreTests.swift */; };
+		9A19F1C5276A443E009A3944 /* AssetsRedux.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C5C3C1FDC0E0B00C401AF /* AssetsRedux.xcassets */; };
 		9A26AAE51FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AAE41FDE5D98008BB68C /* DefaultComposedPresenterProviderTests.swift */; };
 		9A26AB051FDE89DF008BB68C /* MockPresenterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AB041FDE89DF008BB68C /* MockPresenterProvider.swift */; };
 		9A26AB071FDE8DD4008BB68C /* MockPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26AB061FDE8DD4008BB68C /* MockPresenter.swift */; };
@@ -113,7 +114,6 @@
 		9A8C5C1C1FDC0C1D00C401AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C5C1B1FDC0C1D00C401AF /* Assets.xcassets */; };
 		9A8C5C1F1FDC0C1D00C401AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C5C1D1FDC0C1D00C401AF /* LaunchScreen.storyboard */; };
 		9A8C5C491FDC0E0C00C401AF /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5C3B1FDC0E0B00C401AF /* Actions.swift */; };
-		9A8C5C4A1FDC0E0C00C401AF /* AssetsRedux.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C5C3C1FDC0E0B00C401AF /* AssetsRedux.xcassets */; };
 		9A8C5C4E1FDC0E0C00C401AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5C431FDC0E0B00C401AF /* AppDelegate.swift */; };
 		9A8C5C4F1FDC0E0C00C401AF /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C5C441FDC0E0B00C401AF /* ExampleViewController.swift */; };
 		9A8C5C511FDC0E0C00C401AF /* ExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C5C461FDC0E0B00C401AF /* ExampleViewController.xib */; };
@@ -1523,6 +1523,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1635,7 +1636,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A8C5C511FDC0E0C00C401AF /* ExampleViewController.xib in Resources */,
-				9A8C5C4A1FDC0E0C00C401AF /* AssetsRedux.xcassets in Resources */,
+				9A19F1C5276A443E009A3944 /* AssetsRedux.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2712,7 +2713,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VISPER-Example/VISPER-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/VISPER-Example/VISPER-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
@@ -2738,7 +2739,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VISPER-Example/VISPER-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/VISPER-Example/VISPER-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
@@ -3113,7 +3114,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Wireframe-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Wireframe-Example";
@@ -3148,7 +3149,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Wireframe-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Wireframe-Example";
@@ -3247,7 +3248,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Swift-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Swift-Example";
@@ -3282,7 +3283,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Swift-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Swift-Example";
@@ -3297,6 +3298,7 @@
 			baseConfigurationReference = 3121FC5C62A13EE987900EA5 /* Pods-VISPER-Redux-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -3334,6 +3336,7 @@
 			baseConfigurationReference = EAF7F9F35655A476B490DB35 /* Pods-VISPER-Redux-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;

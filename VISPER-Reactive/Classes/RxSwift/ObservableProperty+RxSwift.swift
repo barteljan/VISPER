@@ -9,7 +9,7 @@ import RxSwift
 
 public extension ObservableProperty {
     
-    public func asObservable() -> Observable<ValueType> {
+    func asObservable() -> Observable<ValueType> {
         
         let subject = BehaviorSubject<ValueType>(value: self.value)
         

@@ -1,7 +1,7 @@
 # Be sure to run `pod lib lint VISPER-Redux.podspec' to ensure this is a
 Pod::Spec.new do |s|
   s.name             = 'VISPER-Reactive'
-  s.version          = '4.0.1'
+  s.version          = '4.0.2'
   s.summary          = 'Simple implementation of observable properties used in the VISPER Framework'
   s.description      = <<-DESC
 Base implementation of reactive properties for the VISPER Framework.
@@ -14,7 +14,7 @@ Base implementation of reactive properties for the VISPER Framework.
   s.source           = { :git => 'https://github.com/barteljan/VISPER.git', :tag => 'VISPER-Reactive-'+String(s.version) }
   s.social_media_url = 'https://twitter.com/barteljan'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
   s.swift_version = "4.2"
 
   s.default_subspec = 'Standard'

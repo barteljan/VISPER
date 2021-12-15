@@ -22,7 +22,7 @@ public extension UIViewController {
         }
     }
     
-    public var defaultDisposeBag: DisposeBag {
+    var defaultDisposeBag: DisposeBag {
         
         get {
             if let bag = objc_getAssociatedObject(self, &AssociatedKeys.DisposeBagName) as? DisposeBagWrapper {
