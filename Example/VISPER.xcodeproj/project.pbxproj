@@ -50,6 +50,7 @@
 		9A5CB7CD2073729400F99456 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CB7CC2073729400F99456 /* User.swift */; };
 		9A5CB7D32073846500F99456 /* TypedEntityStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CB7D22073846500F99456 /* TypedEntityStoreTests.swift */; };
 		9A5CB7D5207384E000F99456 /* MockEntityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CB7D4207384E000F99456 /* MockEntityStore.swift */; };
+		9A6C001128780DF200020A04 /* SwiftUIExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C001028780DF100020A04 /* SwiftUIExampleView.swift */; };
 		9A83A497206621590056A309 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A83A496206621590056A309 /* AppDelegate.swift */; };
 		9A83A499206621590056A309 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A83A498206621590056A309 /* ViewController.swift */; };
 		9A83A49E206621590056A309 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A83A49D206621590056A309 /* Assets.xcassets */; };
@@ -299,6 +300,7 @@
 		9A5CB7D22073846500F99456 /* TypedEntityStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypedEntityStoreTests.swift; sourceTree = "<group>"; };
 		9A5CB7D4207384E000F99456 /* MockEntityStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEntityStore.swift; sourceTree = "<group>"; };
 		9A67425D1FE1A034001BE7BC /* VISPER-Presenter.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = "VISPER-Presenter.podspec"; path = "../VISPER-Presenter.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9A6C001028780DF100020A04 /* SwiftUIExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExampleView.swift; sourceTree = "<group>"; };
 		9A83A494206621590056A309 /* VISPER-Sourcery-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VISPER-Sourcery-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A83A496206621590056A309 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A83A498206621590056A309 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -920,6 +922,7 @@
 				9A8C5BB81FDC07B500C401AF /* Info.plist */,
 				9AA1DD3B21B11D58003C2697 /* StartViewController.swift */,
 				9AA1DD3D21B123E4003C2697 /* StartPresenter.swift */,
+				9A6C001028780DF100020A04 /* SwiftUIExampleView.swift */,
 			);
 			path = "VISPER-Wireframe-Example";
 			sourceTree = "<group>";
@@ -2364,6 +2367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AA1DD3E21B123E4003C2697 /* StartPresenter.swift in Sources */,
+				9A6C001128780DF200020A04 /* SwiftUIExampleView.swift in Sources */,
 				9AA1DD3C21B11D58003C2697 /* StartViewController.swift in Sources */,
 				9A8C5BAD1FDC07B500C401AF /* AppDelegate.swift in Sources */,
 				9AA1DD4021B133F4003C2697 /* MessageFeature.swift in Sources */,
@@ -2651,7 +2655,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.0;
@@ -2690,7 +2694,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
@@ -2713,7 +2717,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VISPER-Example/VISPER-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/VISPER-Example/VISPER-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
@@ -2739,7 +2743,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VISPER-Example/VISPER-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/VISPER-Example/VISPER-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
@@ -2774,7 +2778,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-UIViewController-Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-UIViewController-Tests";
@@ -2812,7 +2816,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-UIViewController-Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-UIViewController-Tests";
@@ -2846,7 +2850,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Entity-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.barteljan.VISPER-Entity-Example";
@@ -2881,7 +2885,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Entity-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.barteljan.VISPER-Entity-Example";
@@ -2912,7 +2916,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Swift-Task-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Swift-Task-Example";
@@ -2946,7 +2950,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Swift-Task-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Swift-Task-Example";
@@ -2978,7 +2982,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Entity-ExampleTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.barteljan.VISPER-Entity-ExampleTests";
@@ -3014,7 +3018,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Entity-ExampleTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.barteljan.VISPER-Entity-ExampleTests";
@@ -3047,7 +3051,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Sourcery-Example/App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.barteljan.VISPER-Sourcery-Example";
@@ -3082,7 +3086,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Sourcery-Example/App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.barteljan.VISPER-Sourcery-Example";
@@ -3114,7 +3118,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Wireframe-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Wireframe-Example";
@@ -3149,7 +3153,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Wireframe-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Wireframe-Example";
@@ -3180,7 +3184,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Wireframe-Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Wireframe-Tests";
@@ -3215,7 +3219,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Wireframe-Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Wireframe-Tests";
@@ -3248,7 +3252,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Swift-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Swift-Example";
@@ -3283,7 +3287,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Swift-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Swift-Example";
@@ -3318,7 +3322,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Redux-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Redux-Example";
@@ -3357,7 +3361,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Redux-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Redux-Example";
@@ -3390,7 +3394,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Redux-Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Redux-Tests";
@@ -3426,7 +3430,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Redux-Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Redux-Tests";
@@ -3458,7 +3462,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Reactive-Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Reactive-Tests";
@@ -3492,7 +3496,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Reactive-Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Reactive-Tests";
@@ -3523,7 +3527,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Reactive-RxSwift-Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Reactive-RxSwift-Tests";
@@ -3557,7 +3561,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Reactive-RxSwift-Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Reactive-RxSwift-Tests";
@@ -3590,7 +3594,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Swift-RxSwift-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Swift-RxSwift-Example";
@@ -3626,7 +3630,7 @@
 				DEVELOPMENT_TEAM = 5M2T33LA2N;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "VISPER-Swift-RxSwift-Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.janbartel.VISPER-Swift-RxSwift-Example";

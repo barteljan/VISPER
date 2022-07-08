@@ -34,6 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let messageFeature = MessageFeature()
         try! visperApp.add(feature: messageFeature)
         
+        let swiftUIView = SwiftUIExampleView()
+        let swiftUIFeature = ContentFeature(routePattern: "/swiftui",content: swiftUIView)
+        try! visperApp.add(feature: swiftUIFeature)
+        
         try! visperApp.wireframe.route(url: URL(string: "/start")!)
         
         self.window?.makeKeyAndVisible()

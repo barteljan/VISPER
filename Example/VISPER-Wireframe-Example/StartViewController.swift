@@ -13,43 +13,73 @@ class StartViewController: UIViewController {
  
     typealias ButtonTap = (_ sender: UIButton) -> Void
     
-    weak var button: UIButton! {
+    weak var messageButton: UIButton! {
         didSet {
-            self.button?.setTitle(self.buttonTitle, for: .normal)
+            self.messageButton?.setTitle(self.messageButtonTitle, for: .normal)
         }
     }
     
-    var buttonTitle: String? {
+    var messageButtonTitle: String? {
         didSet {
-            self.button?.setTitle(self.buttonTitle, for: .normal)
+            self.messageButton?.setTitle(self.messageButtonTitle, for: .normal)
         }
     }
     
-    var tapEvent: ButtonTap?
+    weak var swiftUIButton: UIButton! {
+        didSet {
+            self.swiftUIButton?.setTitle(self.swiftUIButtonTitle, for: .normal)
+        }
+    }
+    
+    var swiftUIButtonTitle: String? {
+        didSet {
+            self.swiftUIButton?.setTitle(self.swiftUIButtonTitle, for: .normal)
+        }
+    }
+    
+    var tapMessageEvent: ButtonTap?
+    var tapSwiftUiEvent: ButtonTap?
     
     override func loadView() {
         
         let view = UIView()
         self.view = view
         
-        let button = UIButton()
-        self.button = button
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(self.tapped(sender:)), for: .touchUpInside)
+        let messageButton = UIButton()
+        self.messageButton = messageButton
+        messageButton.translatesAutoresizingMaskIntoConstraints = false
+        messageButton.addTarget(self, action: #selector(self.tappedMessageButton(sender:)), for: .touchUpInside)
         
-        self.view.addSubview(button)
+        let swiftUIButton = UIButton()
+        swiftUIButton.backgroundColor = .lightGray
+        self.swiftUIButton = swiftUIButton
+        swiftUIButton.translatesAutoresizingMaskIntoConstraints = false
+        swiftUIButton.addTarget(self, action: #selector(self.tappedSwiftUIButton(sender:)), for: .touchUpInside)
+        
+        self.view.addSubview(messageButton)
+        self.view.addSubview(swiftUIButton)
         
         NSLayoutConstraint.activate([
-            button.topAnchor.constraint(equalTo: self.view.topAnchor),
-            button.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            button.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-            button.rightAnchor.constraint(equalTo: self.view.rightAnchor)
-            ])
+            messageButton.topAnchor.constraint(equalTo: self.view.topAnchor),
+            messageButton.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            messageButton.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            messageButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.5),
+            swiftUIButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            swiftUIButton.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            swiftUIButton.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            swiftUIButton.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.5)
+            
+        ])
         
     }
     
-    @objc func tapped(sender: UIButton) {
-        self.tapEvent?(sender)
+    @objc func tappedMessageButton(sender: UIButton) {
+        self.tapMessageEvent?(sender)
     }
+    
+    @objc func tappedSwiftUIButton(sender: UIButton) {
+        self.tapSwiftUiEvent?(sender)
+    }
+    
     
 }

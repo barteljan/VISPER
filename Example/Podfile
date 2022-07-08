@@ -1,5 +1,5 @@
 use_frameworks!
-platform :ios, '11.1'
+platform :ios, '13.0'
 
 target 'VISPER_Example' do
   pod 'VISPER', :path => '../'

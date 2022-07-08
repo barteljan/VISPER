@@ -1,7 +1,6 @@
-# Be sure to run `pod lib lint VISPER-Redux.podspec' to ensure this is a
 Pod::Spec.new do |s|
   s.name             = 'VISPER-Sourcery'
-  s.version          = '4.0.1'
+  s.version          = '5.0.0'
   s.summary          = 'Sourcery templates for VISPER-Redux'
   s.description      = <<-DESC
 Added some sourcery templates to VISPER Redux to generate AppReducers and States
@@ -13,7 +12,7 @@ Added some sourcery templates to VISPER Redux to generate AppReducers and States
   s.source           = { :git => 'https://github.com/barteljan/VISPER.git', :tag => 'VISPER-Sourcery-'+String(s.version) }
   s.social_media_url = 'https://twitter.com/barteljan'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '13.0'
   s.swift_version = '4.2'
   
   s.source_files = 'VISPER-Sourcery/Classes/*.swift'
@@ -22,6 +21,6 @@ Added some sourcery templates to VISPER Redux to generate AppReducers and States
       'VISPER-Redux-Sourcery' => ['VISPER-Sourcery/Assets/*.stencil']
   }
 
-  s.dependency 'VISPER-Swift','~> 4.0.0'
+  s.dependency 'VISPER-Swift','~> 5.0.0'
 
 end

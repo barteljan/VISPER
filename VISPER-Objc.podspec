@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VISPER-Objc'
-  s.version          = '4.0.1'
+  s.version          = '5.0.0'
   s.summary          = 'Objc Wrapper of all public VISPER-Wireframe classes.'
 
   s.description      = <<-DESC
@@ -21,7 +21,7 @@ Objc Wrapper of all public VISPER-Wireframe classes.
   s.swift_version = '4.2'
 
   s.source_files = 'VISPER-Objc/Classes/**/*'
-  s.dependency 'VISPER-Core','~> 4.0.0'
-  s.dependency 'VISPER-Presenter','~> 4.0.0'
+  s.dependency 'VISPER-Core','~> 5.0.0'
+  s.dependency 'VISPER-Presenter','~> 5.0.0'
 
 end

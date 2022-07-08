@@ -1,9 +1,6 @@
-#
-# Be sure to run `pod lib lint VISPER-Wireframe.podspec' to ensure this is a
-
 Pod::Spec.new do |s|
   s.name             = 'VISPER-Core'
-  s.version          = '4.0.2'
+  s.version          = '5.0.0'
   s.summary          = 'The core protocols and classes used in the VISPER Framework.'
 
   s.description      = <<-DESC
@@ -11,7 +8,7 @@ The core protocols and classes used in the VISPER Framework.
 (VISPER is a framework for building component based apps with the viper architecture).
                        DESC
 
-  s.homepage         = 'https://github.com/barteljan/VISPER-Wireframe'
+  s.homepage         = 'https://github.com/barteljan/VISPER'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Jan Bartel' => 'barteljan@yahoo.de' }
   s.source           = { :git => 'https://github.com/barteljan/VISPER.git', :tag => 'VISPER-Core-'+String(s.version) }

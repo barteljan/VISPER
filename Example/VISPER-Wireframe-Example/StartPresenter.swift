@@ -29,11 +29,19 @@ class StartPresenter: Presenter {
             fatalError("needs a StartViewController")
         }
         
-        controller.buttonTitle = "Hello \(self.userName)"
+        controller.messageButtonTitle = "Hello \(self.userName) (press me)"
+        controller.swiftUIButtonTitle = "Hi wanne move to the swift ui world? (press me)"
         
-        controller.tapEvent = { [weak self] (_) in
+        controller.tapMessageEvent = { [weak self] (_) in
             guard let presenter = self else { return }
             let path = "/message/\(presenter.userName)".addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
+            let url = URL(string:path)
+            try! presenter.wireframe.route(url: url!)
+        }
+        
+        controller.tapSwiftUiEvent = { [weak self] (_) in
+            guard let presenter = self else { return }
+            let path = "/swiftui"
             let url = URL(string:path)
             try! presenter.wireframe.route(url: url!)
         }
